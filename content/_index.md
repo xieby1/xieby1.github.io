@@ -12,11 +12,11 @@
 这个涉及、相关的技术其实超级多。
 比如仿真、虚拟化、JIT、编译、AoT...
 
-### runXonY
+### [runXonY](https://github.com/xieby1/runXonY)
 
-[![runXonY](gnuclad.svg)](https://xieby1.github.io/runXonY/)
+![](https://xieby1.github.io/runXonY/gnuclad.svg)
 
-[xieby1/runXonY](https://github.com/xieby1/runXonY)：如上图👆，
+如上图👆，
 是我研究过程中遇到的和二进制翻译相关的项目。
 
 主要都是在Y平台运行X软件的项目，
@@ -26,17 +26,16 @@
 
 ### NixOS
 
-[xieby1/nix_config](https://github.com/xieby1/nix_config)：我的NixOS和home-manager的配置
+#### [nix_config](https://github.com/xieby1/nix_config)
 
-### markdown_revealjs
+我的NixOS和home-manager的配置
 
-[xieby1/markdown_revealjs](https://github.com/xieby1/markdown_revealjs)：
+### [markdown_revealjs](https://github.com/xieby1/markdown_revealjs)
+
 markdown 转 reveal.js的小脚本。
 由pandoc驱动。
 
-### markdown_cheatsheet
+### [markdown_cheatsheet](https://github.com/xieby1/markdown_cheatsheet)
 
-[xieby1/markdown_cheatsheet](https://github.com/xieby1/markdown_cheatsheet)：
 markdown 转 紧凑小清单（cheatsheet）的小脚本。
 由pandoc驱动。
-
