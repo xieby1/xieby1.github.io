@@ -2,6 +2,9 @@ baseURL = "https://xieby1.github.io/"
 title = "xieby1"
 theme = "hugo-book"
 uglyURLs = true
+# refer to: https://github.com/gohugoio/hugo/issues/7182
+relativeURLs = true
+canonifyURLs = true
 disablePathToLower = true
 
 [markup.tableOfContents]
