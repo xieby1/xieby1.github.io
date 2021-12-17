@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = "https://xieby1.github.io/"
 title = "xieby1"
 theme = "hugo-book"
 uglyURLs = true
