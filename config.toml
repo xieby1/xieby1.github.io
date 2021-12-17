@@ -1,0 +1,8 @@
+baseURL = 'http://example.org/'
+title = "xieby1"
+theme = "hugo-book"
+uglyURLs = true
+disablePathToLower = true
+
+[markup.tableOfContents]
+    startLevel = 1
