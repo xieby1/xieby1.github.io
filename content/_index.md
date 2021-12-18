@@ -1,4 +1,4 @@
-# xieby1
+![](xieby1-formatted.svg)
 
 主要研究二进制翻译，喜欢搞有意思的项目。
 
