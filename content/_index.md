@@ -12,7 +12,9 @@
 这个涉及、相关的技术其实超级多。
 比如仿真、虚拟化、JIT、编译、AoT...
 
-### [runXonY](https://github.com/xieby1/runXonY)
+### runXonY
+
+[runXonY的Github页面](https://github.com/xieby1/runXonY)
 
 ![](https://xieby1.github.io/runXonY/gnuclad.svg)
 
@@ -26,16 +28,22 @@
 
 ### NixOS
 
-#### [nix_config](https://github.com/xieby1/nix_config)
+#### nix_config
+
+[nix_config的Github页面](https://github.com/xieby1/nix_config)
 
 我的NixOS和home-manager的配置
 
-### [markdown_revealjs](https://github.com/xieby1/markdown_revealjs)
+### markdown_revealjs
 
-markdown 转 reveal.js的小脚本。
+[markdown_revealjs的Github页面](https://github.com/xieby1/markdown_revealjs)
+
+markdown转reveal.js的小脚本。
 由pandoc驱动。
 
-### [markdown_cheatsheet](https://github.com/xieby1/markdown_cheatsheet)
+### markdown_cheatsheet
 
-markdown 转 紧凑小清单（cheatsheet）的小脚本。
+[markdown_cheatsheet的Github页面](https://github.com/xieby1/markdown_cheatsheet)
+
+markdown转cheatsheet（紧凑小清单）的小脚本。
 由pandoc驱动。
