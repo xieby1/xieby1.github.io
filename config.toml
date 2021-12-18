@@ -7,6 +7,10 @@ relativeURLs = true
 canonifyURLs = true
 disablePathToLower = true
 
+# enable iframe
+[markup.goldmark.renderer]
+  unsafe = true
+
 [markup.tableOfContents]
     startLevel = 1
     endLevel = 6

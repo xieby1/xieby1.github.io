@@ -41,12 +41,22 @@
 markdown转reveal.js的小脚本。
 由pandoc驱动。
 
+<iframe 
+    src="https://xieby1.github.io/markdown_revealjs/README.html"
+    style="width: 100%; aspect-ratio: 12/7;"
+></iframe>
+
 ### markdown_cheatsheet
 
 [markdown_cheatsheet的Github页面](https://github.com/xieby1/markdown_cheatsheet)
 
 markdown转cheatsheet（紧凑小清单）的小脚本。
 由pandoc驱动。
+
+<iframe 
+    src="https://xieby1.github.io/markdown_cheatsheet/README.html"
+    style="width: 100%; aspect-ratio: 12/7;"
+></iframe>
 
 ## 同领域的朋友们
 
