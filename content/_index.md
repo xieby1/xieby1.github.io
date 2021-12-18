@@ -40,6 +40,7 @@
 
 markdown转reveal.js的小脚本。
 由pandoc驱动。
+Demo👇
 
 <iframe 
     src="https://xieby1.github.io/markdown_revealjs/README.html"
@@ -52,6 +53,7 @@ markdown转reveal.js的小脚本。
 
 markdown转cheatsheet（紧凑小清单）的小脚本。
 由pandoc驱动。
+Demo👇
 
 <iframe 
     src="https://xieby1.github.io/markdown_cheatsheet/README.html"
