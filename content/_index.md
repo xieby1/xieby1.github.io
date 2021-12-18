@@ -50,8 +50,8 @@ markdown转cheatsheet（紧凑小清单）的小脚本。
 
 ## 同领域的朋友们
 
+* [martins3](https://martins3.github.io/)
 * [niugenen](https://niugenen.github.io/)
 * [limaomao821](https://limaomao821.github.io/)
 * [foxsen](https://foxsen.github.io/)
 * [SPC 的自由天空](https://blog.spcsky.com/)
-* [xieby1](https://xieby1.github.io/)
