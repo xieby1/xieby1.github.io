@@ -14,3 +14,11 @@ disablePathToLower = true
 [markup.tableOfContents]
     startLevel = 1
     endLevel = 6
+
+[menu]
+[[menu.after]]
+    name = "Github: xieby1"
+    url = "https://github.com/xieby1"
+
+[params]
+    BookSection = '*'
