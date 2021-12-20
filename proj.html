@@ -1,0 +1,204 @@
+<!doctype html><html lang=en dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="2021.7 📊pinPageUnionAnalysor #  pinPageUnionAnalysor
+用pintool统计x86程序碎片页的频次和分布。
+2021.7 🎡wheelOfFortune #  wheelOfFortune
+写给女朋友玩的幸运大转盘
+2021.2 🖼bmprnt-cli #  bmprnt-cli
+Windows的打印bmp图片命令行工具。用来测试Windows打印机驱动。
+2021.1 📱fullscreen #  fullscreen
+全屏chrome插件。主要给触摸设备使用。没有F11，但是要全屏，怎么办？就用这个插件吧。
+2020.9 🔴libbreak #  libbreak
+运行时给自己打断点（类似gdb的断点）。利用undef的指令和信号机制。只支持MIPS指令集。
+2020.9 🗃expmcc #  expmcc
+还在为阅读c项目的一堆宏烦恼吗，用expmcc，把代码的宏展开了再阅读吧。（expand macro c compiler wrapper）
+2019.3 🐭packet-paw #  packet-paw
+网络包嗅探。网络课作业。
+2019.3 🔢random-number-genarator-web-server #  random-number-genarator-web-server
+彩票随机数生成。
+2019.2 🎵DaPuJi #  DaPuJi
+为了联系最终幻想14手柄演奏，一个寒假学了学electron，摸出一个打谱机。
+  支持手柄、键盘
+  演奏排练（类似音游）
+  简单的简谱编写语言
+  ">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="历史项目">
+<meta property="og:description" content>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xieby1.github.io/proj.html">
+<title>历史项目 | xieby1🐭</title>
+<link rel=manifest href=./manifest.json>
+<link rel=icon href=./favicon.png type=image/x-icon>
+<link rel=stylesheet href=./book.min.46181bc93375ba932026e753b37c40e6ff8bb16a9ef770c78bcc663e4577b1ba.css integrity="sha256-RhgbyTN1upMgJudTs3xA5v+LsWqe93DHi8xmPkV3sbo=" crossorigin=anonymous>
+<script defer src=./flexsearch.min.js></script>
+<script defer src=./en.search.min.fc919eea178e2cc91efd17a82f7b13bf4ae99452d08cba4658721cd48042f224.js integrity="sha256-/JGe6heOLMke/ReoL3sTv0rplFLQjLpGWHIc1IBC8iQ=" crossorigin=anonymous></script>
+<link rel=alternate type=application/rss+xml href=https://xieby1.github.io/proj/index.xml title=xieby1🐭>
+<style>body{counter-reset:h1 h2}h1{counter-reset:h2}h2{counter-reset:h3}h3{counter-reset:h4}h4{counter-reset:h5}h5{counter-reset:h6}article h1:before{counter-increment:h1}article h2:before{counter-increment:h2;content:counter(h2)". "}article h3:before{counter-increment:h3;content:counter(h2)"." counter(h3)". "}article h4:before{counter-increment:h4;content:counter(h2)"." counter(h3)"." counter(h4)". "}article h5:before{counter-increment:h5;content:counter(h2)"." counter(h3)"." counter(h4)"." counter(h5)". "}article h6:before{counter-increment:h6;content:counter(h2)"." counter(h3)"." counter(h4)"." counter(h5)"." counter(h6)". "}iframe{border-width:2px 0;border-color:#dcdcdc;border-style:solid}</style>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=./><span>xieby1🐭</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li>
+<a href=https://xieby1.github.io/proj.html class=active>历史项目</a>
+<ul>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<a href=https://github.com/xieby1 target=_blank rel=noopener>
+Github: xieby1
+</a>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=./svg/menu.svg class=book-icon alt=Menu>
+</label>
+<strong>历史项目</strong>
+<label for=toc-control>
+<img src=./svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#20217-pinpageunionanalysor>2021.7 📊pinPageUnionAnalysor</a></li>
+<li><a href=#20217-wheeloffortune>2021.7 🎡wheelOfFortune</a></li>
+<li><a href=#20212-bmprnt-cli>2021.2 🖼bmprnt-cli</a></li>
+<li><a href=#20211-fullscreen>2021.1 📱fullscreen</a></li>
+<li><a href=#20209-libbreak>2020.9 🔴libbreak</a></li>
+<li><a href=#20209-expmcc>2020.9 🗃expmcc</a></li>
+<li><a href=#20193-packet-paw>2019.3 🐭packet-paw</a></li>
+<li><a href=#20193-random-number-genarator-web-server>2019.3 🔢random-number-genarator-web-server</a></li>
+<li><a href=#20192-dapuji>2019.2 🎵DaPuJi</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h2 id=20217-pinpageunionanalysor>
+2021.7 📊pinPageUnionAnalysor
+<a class=anchor href=#20217-pinpageunionanalysor>#</a>
+</h2>
+<p><a href=https://github.com/xieby1/pinPageUnionAnalysor>pinPageUnionAnalysor</a></p>
+<p>用pintool统计x86程序碎片页的频次和分布。</p>
+<h2 id=20217-wheeloffortune>
+2021.7 🎡wheelOfFortune
+<a class=anchor href=#20217-wheeloffortune>#</a>
+</h2>
+<p><a href=https://github.com/xieby1/wheelOfFortune>wheelOfFortune</a></p>
+<p>写给女朋友玩的幸运大转盘</p>
+<h2 id=20212-bmprnt-cli>
+2021.2 🖼bmprnt-cli
+<a class=anchor href=#20212-bmprnt-cli>#</a>
+</h2>
+<p><a href=https://github.com/xieby1/bmprnt-cli>bmprnt-cli</a></p>
+<p>Windows的打印bmp图片命令行工具。用来测试Windows打印机驱动。</p>
+<h2 id=20211-fullscreen>
+2021.1 📱fullscreen
+<a class=anchor href=#20211-fullscreen>#</a>
+</h2>
+<p><a href=https://github.com/xieby1/fullscreen>fullscreen</a></p>
+<p>全屏chrome插件。主要给触摸设备使用。没有F11，但是要全屏，怎么办？就用这个插件吧。</p>
+<h2 id=20209-libbreak>
+2020.9 🔴libbreak
+<a class=anchor href=#20209-libbreak>#</a>
+</h2>
+<p><a href=https://github.com/xieby1/libbreak>libbreak</a></p>
+<p>运行时给自己打断点（类似gdb的断点）。利用undef的指令和信号机制。只支持MIPS指令集。</p>
+<h2 id=20209-expmcc>
+2020.9 🗃expmcc
+<a class=anchor href=#20209-expmcc>#</a>
+</h2>
+<p><a href=https://github.com/xieby1/expmcc>expmcc</a></p>
+<p>还在为阅读c项目的一堆宏烦恼吗，用expmcc，把代码的宏展开了再阅读吧。（expand macro c compiler wrapper）</p>
+<h2 id=20193-packet-paw>
+2019.3 🐭packet-paw
+<a class=anchor href=#20193-packet-paw>#</a>
+</h2>
+<p><a href=https://github.com/xieby1/packet-paw>packet-paw</a></p>
+<p>网络包嗅探。网络课作业。</p>
+<h2 id=20193-random-number-genarator-web-server>
+2019.3 🔢random-number-genarator-web-server
+<a class=anchor href=#20193-random-number-genarator-web-server>#</a>
+</h2>
+<p><a href=https://github.com/xieby1/random-number-genarator-web-server>random-number-genarator-web-server</a></p>
+<p>彩票随机数生成。</p>
+<h2 id=20192-dapuji>
+2019.2 🎵DaPuJi
+<a class=anchor href=#20192-dapuji>#</a>
+</h2>
+<p><a href=https://github.com/xieby1/DaPuJi>DaPuJi</a></p>
+<p>为了联系最终幻想14手柄演奏，一个寒假学了学electron，摸出一个打谱机。</p>
+<ul>
+<li>
+<p>支持手柄、键盘</p>
+</li>
+<li>
+<p>演奏排练（类似音游）</p>
+</li>
+<li>
+<p>简单的简谱编写语言</p>
+</li>
+</ul>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#20217-pinpageunionanalysor>2021.7 📊pinPageUnionAnalysor</a></li>
+<li><a href=#20217-wheeloffortune>2021.7 🎡wheelOfFortune</a></li>
+<li><a href=#20212-bmprnt-cli>2021.2 🖼bmprnt-cli</a></li>
+<li><a href=#20211-fullscreen>2021.1 📱fullscreen</a></li>
+<li><a href=#20209-libbreak>2020.9 🔴libbreak</a></li>
+<li><a href=#20209-expmcc>2020.9 🗃expmcc</a></li>
+<li><a href=#20193-packet-paw>2019.3 🐭packet-paw</a></li>
+<li><a href=#20193-random-number-genarator-web-server>2019.3 🔢random-number-genarator-web-server</a></li>
+<li><a href=#20192-dapuji>2019.2 🎵DaPuJi</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</main>
+</body>
+</html>
