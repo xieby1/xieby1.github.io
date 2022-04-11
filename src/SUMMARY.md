@@ -2,6 +2,7 @@
 
 * [Welcome](./README.md)
 * [cheatsheet](./cheatsheet.md)
+* [Essays](./Essays.md)
 * [Kernel]()
   * [Linux]()
     * [cache_alias](./Kernel/Linux/cache_alias.md)
