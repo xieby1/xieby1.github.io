@@ -1,6 +1,7 @@
 # xieby1's notes
 
 * [Welcome](./README.md)
+* [abbreviations](./abbreviations.md)
 * [cheatsheet](./cheatsheet.md)
 * [Essays](./Essays.md)
 * [Kernel]()
