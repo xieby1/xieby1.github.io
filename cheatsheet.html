@@ -1,0 +1,1020 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>cheatsheet - xieby1&#x27;s notes</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="favicon.svg">
+                        <link rel="shortcut icon" href="favicon.png">
+                <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+                <link rel="stylesheet" href="css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item expanded "><a href="cheatsheet.html" class="active"><strong aria-hidden="true">2.</strong> cheatsheet</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> kernel</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">3.1.</strong> linux</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="kernel/linux/cache_alias.html"><strong aria-hidden="true">3.1.1.</strong> cache_alias</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="proj/index.html"><strong aria-hidden="true">4.</strong> proj</a></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">xieby1&#x27;s notes</h1>
+
+                    <div class="right-buttons">
+                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!DOCTYPE html>
+<!-- 
+    Get this template from `pandoc -D html`
+    pandoc version: 2.5
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Markdown Cheatsheet</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <!-- 2021.8.25 by xieby1 created -->
+<style>
+  *,
+  div.sourceCode {
+      margin: 0;
+  }
+
+  ul {
+      padding-inline-start: 1em;
+  }
+
+  p > code, /* inline code */
+  section > pre, /* unstyled code block */
+  div.sourceCode /* styled code block */ {
+      border: 1px solid #e7eaed;
+      background-color: #f8f8f8;
+      border-radius: 3px;
+  }
+  code.sourceCode {
+      white-space: pre-wrap;
+  }
+
+  #TOC,
+  section.level2 {
+      margin: .5em 0 .5em 0;
+      border: 1px solid #adb3b9;
+      border-radius: 16px;
+      box-shadow: #0c0d0e33 0 3px 0, #fff 0 0 0 6px inset;
+      padding: .2em;
+
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+  }
+  section.level3 {
+      max-width: 20em;
+      max-height: 10em;
+      overflow: auto;
+      margin: .2em;
+      border: 1px solid #adb3b9;
+      border-radius: 8px;
+      box-shadow: #0c0d0e33 0 1px 0, #fff 0 0 0 2px inset;
+      padding: .2em;
+      flex-grow: 1;
+  }
+  h2 {
+      width: 100%;
+  }
+
+  h2,
+  h3 {
+    margin: 0 0 0 0;
+  }
+
+  table,
+  th,
+  tr,
+  td {
+      border: 1px solid #999;
+      border-collapse: collapse;
+  }
+
+  #TOC > ul {
+      /* multiple column in first level TOC */
+      column-width: 6em;
+      width: 100%;
+      column-rule: 1px solid #adb3b9;
+      /* no padding in first level TOC */
+      padding: 0 0 0 0;
+      word-wrap: break-word;
+  }
+
+  #TOC > ul > li > ul {
+      /* no padding in second level TOC */
+      padding: 0 0 0 0;
+  }
+
+  #TOC > ul > li,
+  #TOC > ul > li > ul > li {
+      /* no bullet */
+      list-style-type: none;
+  }
+  </style>
+</head>
+<body>
+<nav id="TOC">
+<ul>
+<li><a href="#xieby1s-cheatsheet">xieby1’s cheatsheet</a>
+<ul>
+<li><a href="#my-scripts">my scripts</a>
+<ul>
+<li><a href="#allfiles.sh"><code>allfiles.sh</code></a></li>
+<li><a href="#as-ld-64i386.sh"><code>as-ld-64/i386.sh</code></a></li>
+<li><a href="#asm.sh"><code>asm.sh</code></a></li>
+<li><a href="#cheatsheet.sh"><code>cheatsheet.sh</code></a></li>
+<li><a href="#distgcc.sh"><code>distgcc/++.sh</code></a></li>
+<li><a href="#ff.sh"><code>ff.sh</code></a></li>
+<li><a href="#formatxml.sh"><code>formatxml.sh</code></a></li>
+<li><a href="#grep.sh"><code>grep.sh</code></a></li>
+<li><a href="#ldd-grep.sh"><code>ldd-grep.sh</code></a></li>
+<li><a href="#ls-git.sh"><code>ls-git.sh</code></a></li>
+<li><a href="#nbd-mount.sh"><code>nbd-mount.sh</code></a></li>
+<li><a href="#pdbsf.sh"><code>pdbsf.sh</code></a></li>
+<li><a href="#pdfbookmark.sh"><code>pdfbookmark.sh</code></a></li>
+<li><a href="#revealjs.sh"><code>revealjs.sh</code></a></li>
+<li><a href="#rsync-git.sh"><code>rsync-git.sh</code></a></li>
+<li><a href="#pwrthr.sh"><code>pwrThr.sh</code></a></li>
+<li><a href="#qemu-runconf.sh"><code>qemu-run/conf.sh</code></a></li>
+<li><a href="#resize_gif.sh"><code>resize_gif.sh</code></a></li>
+<li><a href="#tar-repo.sh"><code>tar-repo.sh</code></a></li>
+<li><a href="#to.do.sh">🐁<code>to.do.sh</code></a></li>
+<li><a href="#m2gfilter.py"><code>m2gFilter.py</code></a></li>
+<li><a href="#ubuntu.sh"><code>ubuntu.sh</code></a></li>
+</ul></li>
+<li><a href="#vim">vim</a>
+<ul>
+<li><a href="#explore">Explore</a></li>
+<li><a href="#syntax">syntax</a></li>
+<li><a href="#markdown-toc">markdown toc</a></li>
+<li><a href="#split调整">split调整</a></li>
+<li><a href="#mapped-keys">mapped keys</a></li>
+<li><a href="#status-line">status line</a></li>
+<li><a href="#popup-window">popup window</a></li>
+<li><a href="#jumplist">jumplist</a></li>
+<li><a href="#git-blame-fugitive">git blame [# fugitive]</a></li>
+<li><a href="#git-historic-file-fugitive">git historic file [# fugitive]</a></li>
+<li><a href="#显示commit信息-git-messenger">显示commit信息 [git-messenger]</a></li>
+<li><a href="#cscope">cscope</a></li>
+<li><a href="#mark">mark</a></li>
+<li><a href="#ale-fix">ale-fix</a></li>
+<li><a href="#diff">diff</a></li>
+</ul></li>
+<li><a href="#git">git</a>
+<ul>
+<li><a href="#remote-branches">remote branches</a></li>
+<li><a href="#查找删除某行的commit">查找删除某行的commit</a></li>
+</ul></li>
+<li><a href="#ocr">ocr</a>
+<ul>
+<li><a href="#tesseract">tesseract</a></li>
+<li><a href="#ocrmypdf">ocrmypdf</a></li>
+</ul></li>
+<li><a href="#file">file</a>
+<ul>
+<li><a href="#查看meta-info例如pdf详细见man">查看meta info，例如pdf，详细见man</a></li>
+</ul></li>
+<li><a href="#pandoc">pandoc</a>
+<ul>
+<li><a href="#可用代码高亮">可用代码高亮</a></li>
+<li><a href="#打印默认模板">打印默认模板</a></li>
+</ul></li>
+<li><a href="#make">make</a>
+<ul>
+<li><a href="#target依赖树">target依赖树</a></li>
+<li><a href="#列出所有targets">列出所有targets</a></li>
+<li><a href="#语法">语法</a></li>
+</ul></li>
+<li><a href="#bash">bash</a>
+<ul>
+<li><a href="#可注释字符串">可注释字符串</a></li>
+<li><a href="#cd上次的目录">cd上次的目录</a></li>
+</ul></li>
+<li><a href="#licenses">Licenses</a>
+<ul>
+<li><a href="#mit">MIT</a></li>
+</ul></li>
+<li><a href="#linux">linux</a>
+<ul>
+<li><a href="#编译">编译</a></li>
+<li><a href="#版本号">版本号</a></li>
+<li><a href="#安装">安装</a></li>
+<li><a href="#生成源码跳转文件">生成源码跳转文件</a></li>
+<li><a href="#内部结构">内部结构</a></li>
+<li><a href="#内核信息重定向">内核信息重定向</a></li>
+</ul></li>
+<li><a href="#rust">rust</a>
+<ul>
+<li><a href="#installed-targets">installed targets</a></li>
+<li><a href="#交叉编译">交叉编译</a></li>
+</ul></li>
+<li><a href="#单个分散的操作">单个、分散的操作</a>
+<ul>
+<li><a href="#pkg-config">pkg-config</a></li>
+<li><a href="#进程树">进程树</a></li>
+<li><a href="#python-object属性">python object属性</a></li>
+<li><a href="#new-user">new user</a></li>
+<li><a href="#gcc预定义宏">gcc预定义宏</a></li>
+<li><a href="#drawio-no-snapping">drawio no snapping</a></li>
+<li><a href="#iconv">iconv</a></li>
+</ul></li>
+<li><a href="#font">font</a>
+<ul>
+<li><a href="#grub">grub</a></li>
+<li><a href="#tty">tty</a></li>
+</ul></li>
+<li><a href="#nix">nix</a>
+<ul>
+<li><a href="#repl">repl</a></li>
+<li><a href="#old-generations">old generations</a></li>
+<li><a href="#sha256">sha256</a></li>
+<li><a href="#path">path</a></li>
+</ul></li>
+<li><a href="#xdg">xdg</a>
+<ul>
+<li><a href="#xdg-mime">xdg-mime</a></li>
+</ul></li>
+<li><a href="#systemd-unit">systemd unit</a>
+<ul>
+<li><a href="#user目录">user目录</a></li>
+<li><a href="#service状态">service状态</a></li>
+<li><a href="#列举unit类">列举unit类</a></li>
+</ul></li>
+<li><a href="#pdf">pdf</a>
+<ul>
+<li><a href="#crop">crop</a></li>
+</ul></li>
+<li><a href="#x11">x11</a>
+<ul>
+<li><a href="#restart-server">restart server</a></li>
+</ul></li>
+<li><a href="#container">container</a>
+<ul>
+<li><a href="#build">build</a></li>
+<li><a href="#image-mount">image mount</a></li>
+<li><a href="#run">run</a></li>
+<li><a href="#debugger">debugger</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<!-- for mdBook -->
+<style>
+.content main {max-width: unset;}
+.nav-chapters {max-width: 0; min-width: 0;}
+</style>
+<section id="xieby1s-cheatsheet" class="level1">
+<h1 id="xieby1s-cheatsheet"><a class="header" href="#xieby1s-cheatsheet">xieby1’s cheatsheet</a></h1>
+<p>符号</p>
+<ul>
+<li>’🐁’仅在我的配置下可用，并不通用</li>
+</ul>
+<section id="my-scripts" class="level2">
+<h2 id="my-scripts"><a class="header" href="#my-scripts">my scripts</a></h2>
+<section id="allfiles.sh" class="level3">
+<h3 id="allfilessh"><a class="header" href="#allfilessh"><code>allfiles.sh</code></a></h3>
+<p>所有非隐藏文件</p>
+</section>
+<section id="as-ld-64i386.sh" class="level3">
+<h3 id="as-ld-64i386sh"><a class="header" href="#as-ld-64i386sh"><code>as-ld-64/i386.sh</code></a></h3>
+<p>汇编链接x64/i386</p>
+</section>
+<section id="asm.sh" class="level3">
+<h3 id="asmsh"><a class="header" href="#asmsh"><code>asm.sh</code></a></h3>
+<p>汇编 =&gt; 机器码</p>
+</section>
+<section id="cheatsheet.sh" class="level3">
+<h3 id="cheatsheetsh"><a class="header" href="#cheatsheetsh"><code>cheatsheet.sh</code></a></h3>
+<p>md =&gt; cheatsheet</p>
+</section>
+<section id="distgcc.sh" class="level3">
+<h3 id="distgccsh"><a class="header" href="#distgccsh"><code>distgcc/++.sh</code></a></h3>
+<p>distcc wrapper</p>
+</section>
+<section id="ff.sh" class="level3">
+<h3 id="ffsh"><a class="header" href="#ffsh"><code>ff.sh</code></a></h3>
+<p>全文件模糊搜索</p>
+</section>
+<section id="formatxml.sh" class="level3">
+<h3 id="formatxmlsh"><a class="header" href="#formatxmlsh"><code>formatxml.sh</code></a></h3>
+<p>format xml</p>
+</section>
+<section id="grep.sh" class="level3">
+<h3 id="grepsh"><a class="header" href="#grepsh"><code>grep.sh</code></a></h3>
+<p>全文件搜索</p>
+</section>
+<section id="ldd-grep.sh" class="level3">
+<h3 id="ldd-grepsh"><a class="header" href="#ldd-grepsh"><code>ldd-grep.sh</code></a></h3>
+<p>收集依赖的so</p>
+</section>
+<section id="ls-git.sh" class="level3">
+<h3 id="ls-gitsh"><a class="header" href="#ls-gitsh"><code>ls-git.sh</code></a></h3>
+<p>ls在git仓库的文件</p>
+</section>
+<section id="nbd-mount.sh" class="level3">
+<h3 id="nbd-mountsh"><a class="header" href="#nbd-mountsh"><code>nbd-mount.sh</code></a></h3>
+<p>nbd mount</p>
+</section>
+<section id="pdbsf.sh" class="level3">
+<h3 id="pdbsfsh"><a class="header" href="#pdbsfsh"><code>pdbsf.sh</code></a></h3>
+<p>pdb源文件信息</p>
+</section>
+<section id="pdfbookmark.sh" class="level3">
+<h3 id="pdfbookmarksh"><a class="header" href="#pdfbookmarksh"><code>pdfbookmark.sh</code></a></h3>
+<p>md &lt;=&gt; pdf书签/目录</p>
+</section>
+<section id="revealjs.sh" class="level3">
+<h3 id="revealjssh"><a class="header" href="#revealjssh"><code>revealjs.sh</code></a></h3>
+<p>md =&gt; reveal.js</p>
+</section>
+<section id="rsync-git.sh" class="level3">
+<h3 id="rsync-gitsh"><a class="header" href="#rsync-gitsh"><code>rsync-git.sh</code></a></h3>
+<p>rsync git unstaged</p>
+</section>
+<section id="pwrthr.sh" class="level3">
+<h3 id="pwrthrsh"><a class="header" href="#pwrthrsh"><code>pwrThr.sh</code></a></h3>
+<p>电池养护模式</p>
+</section>
+<section id="qemu-runconf.sh" class="level3">
+<h3 id="qemu-runconfsh"><a class="header" href="#qemu-runconfsh"><code>qemu-run/conf.sh</code></a></h3>
+<p>运行/conf qemu</p>
+</section>
+<section id="resize_gif.sh" class="level3">
+<h3 id="resize_gifsh"><a class="header" href="#resize_gifsh"><code>resize_gif.sh</code></a></h3>
+<p>压缩gif&lt;=10M</p>
+</section>
+<section id="tar-repo.sh" class="level3">
+<h3 id="tar-reposh"><a class="header" href="#tar-reposh"><code>tar-repo.sh</code></a></h3>
+<p>tar忽略非git文件</p>
+</section>
+<section id="to.do.sh" class="level3">
+<h3 id="todosh"><a class="header" href="#todosh">🐁<code>to.do.sh</code></a></h3>
+<p>TO.DO list</p>
+</section>
+<section id="m2gfilter.py" class="level3">
+<h3 id="m2gfilterpy"><a class="header" href="#m2gfilterpy"><code>m2gFilter.py</code></a></h3>
+<p>提取make dot子图</p>
+</section>
+<section id="ubuntu.sh" class="level3">
+<h3 id="ubuntush"><a class="header" href="#ubuntush"><code>ubuntu.sh</code></a></h3>
+<p>启动ubuntu容器</p>
+</section>
+</section>
+<section id="vim" class="level2">
+<h2 id="vim"><a class="header" href="#vim">vim</a></h2>
+<section id="explore" class="level3">
+<h3 id="explore"><a class="header" href="#explore">Explore</a></h3>
+<pre class="vim"><code>; open current file&#39;s dir
+:E[xplore]</code></pre>
+</section>
+<section id="syntax" class="level3">
+<h3 id="syntax"><a class="header" href="#syntax">syntax</a></h3>
+<pre class="vim"><code>; set
+:set syntax=html
+; get
+:set syntax</code></pre>
+</section>
+<section id="markdown-toc" class="level3">
+<h3 id="markdown-toc"><a class="header" href="#markdown-toc">markdown toc</a></h3>
+<pre class="vim"><code>:GenTocGFM</code></pre>
+</section>
+<section id="split调整" class="level3">
+<h3 id="split调整"><a class="header" href="#split调整">split调整</a></h3>
+<pre class="vim"><code>c-w _ ;当前窗口最高
+c-w = ;所有窗口等高
+:on ;关闭所有其他窗口
+c-w o ;同上</code></pre>
+</section>
+<section id="mapped-keys" class="level3">
+<h3 id="mapped-keys"><a class="header" href="#mapped-keys">mapped keys</a></h3>
+<p><a href="Is%20there%20any%20way%20to%20view%20the%20currently%20mapped%20keys%20in%20Vim?">SO</a></p>
+<pre><code>&quot;:n/v/imap
+:map
+:h inex</code></pre>
+</section>
+<section id="status-line" class="level3">
+<h3 id="status-line"><a class="header" href="#status-line">status line</a></h3>
+<pre><code>set laststatus=2</code></pre>
+</section>
+<section id="popup-window" class="level3">
+<h3 id="popup-window"><a class="header" href="#popup-window">popup window</a></h3>
+<pre><code>🐁 &lt;leader&gt;[</code></pre>
+</section>
+<section id="jumplist" class="level3">
+<h3 id="jumplist"><a class="header" href="#jumplist">jumplist</a></h3>
+<pre><code>:ju &quot; 列出jumplist
+&lt;C-o&gt; &quot; 退
+&lt;C-i&gt; &quot; 进</code></pre>
+</section>
+<section id="git-blame-fugitive" class="level3">
+<h3 id="git-blame--fugitive"><a class="header" href="#git-blame--fugitive">git blame [# fugitive]</a></h3>
+<p>和git相同的略。fugitive的特性：</p>
+<pre><code>:Git blame &quot; blame整个文件
+:Gedit &quot; 跳转光标下到对应的object（某个版本的某个文件）</code></pre>
+</section>
+<section id="git-historic-file-fugitive" class="level3">
+<h3 id="git-historic-file--fugitive"><a class="header" href="#git-historic-file--fugitive">git historic file [# fugitive]</a></h3>
+<pre><code>Gedit &lt;refname&gt;
+enter &quot; opon
+o &quot; horizon open
+O &quot; new tab open
+&lt;num&gt;gt &quot; switch tag</code></pre>
+</section>
+<section id="显示commit信息-git-messenger" class="level3">
+<h3 id="显示commit信息-git-messenger"><a class="header" href="#显示commit信息-git-messenger">显示commit信息 [git-messenger]</a></h3>
+<pre><code>&lt;leader&gt;gm &quot; 在popup窗口显示commit信息</code></pre>
+</section>
+<section id="cscope" class="level3">
+<h3 id="cscope"><a class="header" href="#cscope">cscope</a></h3>
+<pre><code>🐁 &lt;C-\&gt;[cs querytype]</code></pre>
+<p>重新加载</p>
+<pre><code>:!cscope -R
+:cs reset</code></pre>
+</section>
+<section id="mark" class="level3">
+<h3 id="mark"><a class="header" href="#mark">mark</a></h3>
+<pre><code>&lt;leader&gt;m &quot; 标记/取消标记
+{N}&lt;leader&gt;m &quot; 给第N组添加标记词
+{N}&lt;leader&gt;n &quot; 取消第N组的标记
+&lt;leader&gt;M &quot; 显示标记颜色和标记词
+🐁 &lt;leader&gt;&lt;F3&gt; &quot; 取消所有标记</code></pre>
+</section>
+<section id="ale-fix" class="level3">
+<h3 id="ale-fix"><a class="header" href="#ale-fix">ale-fix</a></h3>
+<p>ale支持的fix位于</p>
+<p><code>autoload/ale/fix/registry.vim</code></p>
+<p>所有fixer的调用脚本位于</p>
+<p><code>autoload/ale/fixers/</code></p>
+</section>
+<section id="diff" class="level3">
+<h3 id="diff"><a class="header" href="#diff">diff</a></h3>
+<p>diff两个竖分buffers</p>
+<pre class="vim"><code>; 分别在两个buffer里
+:difft[his]
+; 关闭，分别
+:diffoff</code></pre>
+</section>
+</section>
+<section id="git" class="level2">
+<h2 id="git"><a class="header" href="#git">git</a></h2>
+<section id="remote-branches" class="level3">
+<h3 id="remote-branches"><a class="header" href="#remote-branches">remote branches</a></h3>
+<p>列举remote的分支</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 无需联网</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-r</span> [-l <span class="op">&lt;</span>patthern<span class="op">&gt;</span>]</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 需要联网</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote show <span class="op">&lt;</span>remote<span class="op">&gt;</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> ls-remote <span class="op">&lt;</span>remote<span class="op">&gt;</span></span></code></pre></div>
+</section>
+<section id="查找删除某行的commit" class="level3">
+<h3 id="查找删除某行的commit"><a class="header" href="#查找删除某行的commit">查找删除某行的commit</a></h3>
+<p><a href="https://stackoverflow.com/questions/12591247/how-to-find-commit-when-line-was-deleted-removed">SO: find removed line</a></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 面对merge节点似乎有问题</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">-c</span> <span class="at">-S</span><span class="st">&#39;&lt;string&gt;&#39;</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">-c</span> <span class="at">-G</span><span class="st">&#39;&lt;regex&gt;&#39;</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 然后搜索</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="ex">/</span><span class="op">&lt;</span>string<span class="op">&gt;</span></span></code></pre></div>
+</section>
+</section>
+<section id="ocr" class="level2">
+<h2 id="ocr"><a class="header" href="#ocr">ocr</a></h2>
+<section id="tesseract" class="level3">
+<h3 id="tesseract"><a class="header" href="#tesseract">tesseract</a></h3>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 列支持的语言</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">tesseract</span> <span class="at">--list-langs</span></span></code></pre></div>
+</section>
+<section id="ocrmypdf" class="level3">
+<h3 id="ocrmypdf"><a class="header" href="#ocrmypdf">ocrmypdf</a></h3>
+<p>详细见<code>ocrmypdf.md</code></p>
+<p>ocr会将原pdf栅格化，</p>
+<p>所以需要分离文本和图片</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 去除文本</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gs</span> <span class="at">-o</span> notext.pdf <span class="at">-dFILTERTEXT</span> <span class="dt">\</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>-sDEVICE=pdfwrite <span class="op">&lt;</span>input.pdf<span class="op">&gt;</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 运行ocr</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="ex">ocrmypdf</span> <span class="at">--force-ocr</span> <span class="at">--output-type</span> pdf <span class="dt">\</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>-l <span class="va">$lang</span> notext.pdf ocr.pdf</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 去除图片仅保留文本</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="fu">gs</span> <span class="at">-o</span> textonly.pdf <span class="at">-dFILTERIMAGE</span> <span class="dt">\</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>-dFILTERVECTOR <span class="at">-sDEVICE</span><span class="op">=</span>pdfwrite ocr.pdf</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 叠加文本</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="ex">qpdf</span> notext.pdf <span class="at">--overlay</span> <span class="dt">\</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>textonly.pdf <span class="at">--</span> <span class="op">&lt;</span>output.pdf<span class="op">&gt;</span></span></code></pre></div>
+</section>
+</section>
+<section id="file" class="level2">
+<h2 id="file"><a class="header" href="#file">file</a></h2>
+<section id="查看meta-info例如pdf详细见man" class="level3">
+<h3 id="查看meta-info例如pdf详细见man"><a class="header" href="#查看meta-info例如pdf详细见man">查看meta info，例如pdf，详细见man</a></h3>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">exiftool</span> <span class="at">-Title</span><span class="op">=&lt;</span>title<span class="op">&gt;</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">exiftool</span> <span class="at">-Author</span><span class="op">=&lt;</span>author<span class="op">&gt;</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code></pre></div>
+</section>
+</section>
+<section id="pandoc" class="level2">
+<h2 id="pandoc"><a class="header" href="#pandoc">pandoc</a></h2>
+<section id="可用代码高亮" class="level3">
+<h3 id="可用代码高亮"><a class="header" href="#可用代码高亮">可用代码高亮</a></h3>
+<p><a href="https://pandoc.org/MANUAL.html#syntax-highlighting">pandoc: syntax highlighting</a></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">--list-highlight-languages</span></span></code></pre></div>
+</section>
+<section id="打印默认模板" class="level3">
+<h3 id="打印默认模板"><a class="header" href="#打印默认模板">打印默认模板</a></h3>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-D</span> <span class="op">&lt;</span>FORMAT<span class="op">&gt;</span></span></code></pre></div>
+</section>
+</section>
+<section id="make" class="level2">
+<h2 id="make"><a class="header" href="#make">make</a></h2>
+<section id="target依赖树" class="level3">
+<h3 id="target依赖树"><a class="header" href="#target依赖树">target依赖树</a></h3>
+<p><a href="https://unix.stackexchange.com/questions/283478/how-to-display-dependencies-given-in-a-makefile-as-a-tree">SO: makefile dependency tree</a></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-nd</span> <span class="op">&lt;</span>target<span class="op">&gt;</span> <span class="kw">|</span> <span class="ex">make2graph</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># makefile2graph &lt;target&gt;</span></span></code></pre></div>
+</section>
+<section id="列出所有targets" class="level3">
+<h3 id="列出所有targets"><a class="header" href="#列出所有targets">列出所有targets</a></h3>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">remake</span> <span class="at">--targets</span></span></code></pre></div>
+</section>
+<section id="语法" class="level3">
+<h3 id="语法"><a class="header" href="#语法">语法</a></h3>
+<div class="sourceCode" id="cb25"><pre class="sourceCode makefile"><code class="sourceCode makefile"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 隐式</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="dv">%:</span><span class="dt">%.c</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> <span class="ch">$&lt;</span> -o <span class="ch">$@</span></span></code></pre></div>
+</section>
+</section>
+<section id="bash" class="level2">
+<h2 id="bash"><a class="header" href="#bash">bash</a></h2>
+<section id="可注释字符串" class="level3">
+<h3 id="可注释字符串"><a class="header" href="#可注释字符串">可注释字符串</a></h3>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="va">CMD</span><span class="op">=</span><span class="va">(</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;args&quot;</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;</span><span class="va">${OTHER_ARGS</span><span class="op">[@]</span><span class="va">}</span><span class="st">&quot;</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="va">)</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="bu">eval</span> <span class="st">&quot;</span><span class="va">${CMD</span><span class="op">[@]</span><span class="va">}</span><span class="st">&quot;</span> <span class="co"># &quot;${CMD[*]}&quot;</span></span></code></pre></div>
+</section>
+<section id="cd上次的目录" class="level3">
+<h3 id="cd上次的目录"><a class="header" href="#cd上次的目录">cd上次的目录</a></h3>
+<p>参考bash手册关于cd的说明</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 等价于cd $OLDPATH</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="at">-</span></span></code></pre></div>
+</section>
+</section>
+<section id="licenses" class="level2">
+<h2 id="licenses"><a class="header" href="#licenses">Licenses</a></h2>
+<section id="mit" class="level3">
+<h3 id="mit"><a class="header" href="#mit">MIT</a></h3>
+<ul>
+<li>随意使用</li>
+<li>保留该MIT许可</li>
+<li>作者不负责</li>
+</ul>
+</section>
+</section>
+<section id="linux" class="level2">
+<h2 id="linux"><a class="header" href="#linux">linux</a></h2>
+<section id="编译" class="level3">
+<h3 id="编译"><a class="header" href="#编译">编译</a></h3>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> defconfig <span class="kw">&amp;&amp;</span> <span class="fu">make</span></span></code></pre></div>
+</section>
+<section id="版本号" class="level3">
+<h3 id="版本号"><a class="header" href="#版本号">版本号</a></h3>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">include/config/kernel.release</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> menuconfig: General setup <span class="at">-</span><span class="op">&gt;</span> Local version</span></code></pre></div>
+</section>
+<section id="安装" class="level3">
+<h3 id="安装"><a class="header" href="#安装">安装</a></h3>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> INSTALL_PATH=<span class="op">&lt;</span>path<span class="op">&gt;</span> install</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> INSTALL_MOD_PATH=<span class="op">&lt;</span>path<span class="op">&gt;</span> modules_install</span></code></pre></div>
+</section>
+<section id="生成源码跳转文件" class="level3">
+<h3 id="生成源码跳转文件"><a class="header" href="#生成源码跳转文件">生成源码跳转文件</a></h3>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 需要先编译</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./scripts/clang-tools/gen_compile_commands.py</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> ARCH=x86 COMPILED_SOURCE=1 cscope</span></code></pre></div>
+</section>
+<section id="内部结构" class="level3">
+<h3 id="内部结构"><a class="header" href="#内部结构">内部结构</a></h3>
+<p>符号表<a href="https://en.wikipedia.org/wiki/System.map">WP: System.map</a></p>
+<p>由<code>nm</code>生成，符号类型见<code>man nm</code></p>
+<ul>
+<li>内核暴露的符号<code>/proc/kallsyms</code></li>
+<li>或是由源码生成<code>System.map</code></li>
+</ul>
+<p>系统调用表<code>sys_call_table</code></p>
+</section>
+<section id="内核信息重定向" class="level3">
+<h3 id="内核信息重定向"><a class="header" href="#内核信息重定向">内核信息重定向</a></h3>
+<p>ref: <a href="https://www.linuxquestions.org/questions/linux-newbie-8/dmesg-output-to-tty-707524/">dmesg output to tty</a></p>
+<p>x86上不可靠：输出不全，几次就关闭了</p>
+<pre><code>tty # `who am i` may not output
+cat /proc/kmsg &gt; &lt;stdio dev file&gt;</code></pre>
+</section>
+</section>
+<section id="rust" class="level2">
+<h2 id="rust"><a class="header" href="#rust">rust</a></h2>
+<section id="installed-targets" class="level3">
+<h3 id="installed-targets"><a class="header" href="#installed-targets">installed targets</a></h3>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rustup</span> show</span></code></pre></div>
+</section>
+<section id="交叉编译" class="level3">
+<h3 id="交叉编译"><a class="header" href="#交叉编译">交叉编译</a></h3>
+<div class="sourceCode" id="cb34"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rustc</span> <span class="at">--print</span> target-list</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rustup</span> target add <span class="op">&lt;</span>TARGET<span class="op">&gt;</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build <span class="at">--target</span><span class="op">=&lt;</span>TARGET<span class="op">&gt;</span> --release</span></code></pre></div>
+</section>
+</section>
+<section id="单个分散的操作" class="level2">
+<h2 id="单个分散的操作"><a class="header" href="#单个分散的操作">单个、分散的操作</a></h2>
+<section id="pkg-config" class="level3">
+<h3 id="pkg-config"><a class="header" href="#pkg-config">pkg-config</a></h3>
+<div class="sourceCode" id="cb35"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取package的名字</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pkg-config</span> <span class="at">--list-all</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="op">&lt;</span>xxx<span class="op">&gt;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取c编译、链接参数</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pkg-config</span> <span class="at">--cflags</span> <span class="at">--libs</span> <span class="op">&lt;</span>pkg<span class="op">&gt;</span></span></code></pre></div>
+</section>
+<section id="进程树" class="level3">
+<h3 id="进程树"><a class="header" href="#进程树">进程树</a></h3>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-jHg</span> <span class="op">&lt;</span>pid<span class="op">&gt;</span> # 进程子树</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pstree</span> <span class="at">-psal</span> <span class="op">&lt;</span>pid<span class="op">&gt;</span> # 完整树</span></code></pre></div>
+</section>
+<section id="python-object属性" class="level3">
+<h3 id="python-object属性"><a class="header" href="#python-object属性">python object属性</a></h3>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>()</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">vars</span>()</span></code></pre></div>
+</section>
+<section id="new-user" class="level3">
+<h3 id="new-user"><a class="header" href="#new-user">new user</a></h3>
+<div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">adduser</span> xieby1</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="ex">usermod</span> <span class="at">-aG</span> sudo xieby1</span></code></pre></div>
+</section>
+<section id="gcc预定义宏" class="level3">
+<h3 id="gcc预定义宏"><a class="header" href="#gcc预定义宏">gcc预定义宏</a></h3>
+<p><a href="https://stackoverflow.com/questions/10904873/anyway-to-see-list-of-preprocessor-defined-macros">2012.SO: preprocessor defined macros</a></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="at">-dM</span> <span class="at">-E</span> <span class="at">-</span> <span class="op">&lt;</span> /dev/null</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> bla.c <span class="kw">&amp;&amp;</span> <span class="fu">gcc</span> <span class="at">-dM</span> <span class="at">-E</span> bla.c</span></code></pre></div>
+</section>
+<section id="drawio-no-snapping" class="level3">
+<h3 id="drawio-no-snapping"><a class="header" href="#drawio-no-snapping">drawio no snapping</a></h3>
+<p><a href="https://webapps.stackexchange.com/questions/124103/how-do-i-prevent-arrows-from-snapping-when-moving-them-on-draw-io">SE: no arrows snapping</a></p>
+<p>hold <code>ctrl</code> + <code>shift</code></p>
+</section>
+<section id="iconv" class="level3">
+<h3 id="iconv"><a class="header" href="#iconv">iconv</a></h3>
+<pre><code># 文本编码转换
+iconv -f gb18030 -t utf-8 &lt;output&gt;</code></pre>
+</section>
+</section>
+<section id="font" class="level2">
+<h2 id="font"><a class="header" href="#font">font</a></h2>
+<section id="grub" class="level3">
+<h3 id="grub"><a class="header" href="#grub">grub</a></h3>
+<p><a href="https://unix.stackexchange.com/questions/31672/can-grub-font-size-be-customised">SE: customize GRUB font size</a></p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> grub-mkfont <span class="at">-s</span> 36 <span class="at">-o</span> /boot/grub/fonts/DejaVuSansMono.pf2 /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fc-list</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="ex">vim</span> /boot/grub/grub.cfg</span></code></pre></div>
+</section>
+<section id="tty" class="level3">
+<h3 id="tty"><a class="header" href="#tty">tty</a></h3>
+<p><a href="https://unix.stackexchange.com/questions/161890/how-can-i-make-a-psf-font-for-the-console-from-a-otf-one">SE: otf to psf</a></p>
+<p><a href="https://www.reddit.com/r/linuxquestions/comments/7st7hz/any_way_to_convert_ttf_files_to_psf_files/">reddit: ttf to psf</a></p>
+<p><a href="https://www.sven.de/dpi/">dpi cal</a></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">otf2bdf</span> <span class="at">-r</span> 242 <span class="at">-p</span> 36 /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf <span class="at">-o</span> ~/Desktop/DejaVuSansMono.bdf</span></code></pre></div>
+</section>
+</section>
+<section id="nix" class="level2">
+<h2 id="nix"><a class="header" href="#nix">nix</a></h2>
+<section id="repl" class="level3">
+<h3 id="repl"><a class="header" href="#repl">repl</a></h3>
+<div class="sourceCode" id="cb43"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pkgs</span> = import <span class="op">&lt;</span>nixpkgs<span class="op">&gt;</span> {}</span></code></pre></div>
+</section>
+<section id="old-generations" class="level3">
+<h3 id="old-generations"><a class="header" href="#old-generations">old generations</a></h3>
+<p><a href="https://nixos.wiki/wiki/Storage_optimization">Nix Wiki: Storage Opt</a></p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nix-env <span class="at">-p</span> /nix/var/nix/profiles/system <span class="at">--list-generations</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nix-collect-garbage <span class="at">-d</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="co"># User Generations (Home-Manager)</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-collect-garbage</span> <span class="at">-d</span></span></code></pre></div>
+</section>
+<section id="sha256" class="level3">
+<h3 id="sha256"><a class="header" href="#sha256">sha256</a></h3>
+<p><a href="https://github.com/NixOS/nix/issues/1880">GH</a></p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-prefetch-url</span> <span class="at">--unpack</span></span></code></pre></div>
+</section>
+<section id="path" class="level3">
+<h3 id="path"><a class="header" href="#path">path</a></h3>
+<p><a href="https://nixos.org/guides/nix-pills/nix-search-paths.html">Nix Pills: search Paths</a></p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-instantiate</span> <span class="at">--eval</span> <span class="at">-E</span> <span class="st">&quot;&lt;path&gt;&quot;</span></span></code></pre></div>
+</section>
+</section>
+<section id="xdg" class="level2">
+<h2 id="xdg"><a class="header" href="#xdg">xdg</a></h2>
+<section id="xdg-mime" class="level3">
+<h3 id="xdg-mime"><a class="header" href="#xdg-mime">xdg-mime</a></h3>
+<div class="sourceCode" id="cb47"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xdg-mime</span> query filetype <span class="op">&lt;</span>file<span class="op">&gt;</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="ex">xdg-mime</span> query default <span class="op">&lt;</span>type<span class="op">&gt;</span></span></code></pre></div>
+</section>
+</section>
+<section id="systemd-unit" class="level2">
+<h2 id="systemd-unit"><a class="header" href="#systemd-unit">systemd unit</a></h2>
+<section id="user目录" class="level3">
+<h3 id="user目录"><a class="header" href="#user目录">user目录</a></h3>
+<p><code>man systemd.unit</code></p>
+<p><code>~/.config/systemd/</code></p>
+</section>
+<section id="service状态" class="level3">
+<h3 id="service状态"><a class="header" href="#service状态">service状态</a></h3>
+<div class="sourceCode" id="cb48"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="ex">systemctl</span> <span class="at">--user</span> status <span class="op">&lt;</span>service<span class="op">&gt;</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="ex">journalctl</span> <span class="at">--user</span> <span class="at">-u</span> <span class="op">&lt;</span>service<span class="op">&gt;</span></span></code></pre></div>
+</section>
+<section id="列举unit类" class="level3">
+<h3 id="列举unit类"><a class="header" href="#列举unit类">列举unit类</a></h3>
+<div class="sourceCode" id="cb49"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 例如列出list</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="ex">systemctl</span> list-units <span class="at">--type</span> target</span></code></pre></div>
+</section>
+</section>
+<section id="pdf" class="level2">
+<h2 id="pdf"><a class="header" href="#pdf">pdf</a></h2>
+<section id="crop" class="level3">
+<h3 id="crop"><a class="header" href="#crop">crop</a></h3>
+<pre><code>pdfcrop &lt;input[.pdf]&gt; [output file]</code></pre>
+</section>
+</section>
+<section id="x11" class="level2">
+<h2 id="x11"><a class="header" href="#x11">x11</a></h2>
+<section id="restart-server" class="level3">
+<h3 id="restart-server"><a class="header" href="#restart-server">restart server</a></h3>
+<pre><code>Alt-F2
+r</code></pre>
+</section>
+</section>
+<section id="container" class="level2">
+<h2 id="container"><a class="header" href="#container">container</a></h2>
+<section id="build" class="level3">
+<h3 id="build"><a class="header" href="#build">build</a></h3>
+<div class="sourceCode" id="cb52"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="ex">podman</span> build <span class="at">--network</span><span class="op">=</span>host <span class="at">-t</span> <span class="op">&lt;</span>tag<span class="op">&gt;</span></span></code></pre></div>
+</section>
+<section id="image-mount" class="level3">
+<h3 id="image-mount"><a class="header" href="#image-mount">image mount</a></h3>
+<div class="sourceCode" id="cb53"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="ex">podman</span> unshare</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="ex">podman</span> image mount <span class="op">&lt;</span>image<span class="op">&gt;</span></span></code></pre></div>
+</section>
+<section id="run" class="level3">
+<h3 id="run"><a class="header" href="#run">run</a></h3>
+<div class="sourceCode" id="cb54"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="ex">podman</span> run <span class="at">--rm</span> <span class="at">--network</span><span class="op">=</span>host <span class="at">-it</span> <span class="op">&lt;</span>image<span class="op">&gt;</span></span></code></pre></div>
+</section>
+<section id="debugger" class="level3">
+<h3 id="debugger"><a class="header" href="#debugger">debugger</a></h3>
+<p><a href="https://stackoverflow.com/questions/42029834">SO: gdb in docker</a></p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="ex">--cap-add=SYS_PTRACE</span></span></code></pre></div>
+</section>
+</section>
+</section>
+</body>
+</html>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="kernel/linux/cache_alias.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="kernel/linux/cache_alias.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>
