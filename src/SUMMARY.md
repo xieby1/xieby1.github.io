@@ -2,7 +2,7 @@
 
 * [Welcome](./README.md)
 * [cheatsheet](./cheatsheet.md)
-* [kernel]()
-  * [linux]()
-    * [cache_alias](./kernel/linux/cache_alias.md)
-* [proj](./proj/README.md)
+* [Kernel]()
+  * [Linux]()
+    * [cache_alias](./Kernel/Linux/cache_alias.md)
+* [Proj](./Proj/README.md)
