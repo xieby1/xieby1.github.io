@@ -1,6 +1,7 @@
 # xieby1's notes
 
 * [Welcome](./README.md)
+* [cheatsheet](./cheatsheet.md)
 * [kernel]()
   * [linux]()
     * [cache_alias](./kernel/linux/cache_alias.md)
