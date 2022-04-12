@@ -11,7 +11,6 @@ while [[ ${OPTIND} -le $# ]]; do
         h)
             echo "gather dep so"
             echo "Usage: ${0##*/} [-o DEST] [ FILE | DIR ]"
-            echo
             echo "  List the lib dependencies of FILE or files under DIR"
             echo "  If FILE or DIR is not specified, '.' will be used"
             echo "  If -o DEST is specifed, dependencies will be copied to DEST"

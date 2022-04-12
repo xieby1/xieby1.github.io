@@ -29145,16 +29145,16 @@ directory=/home/ubuntu2004-i386
 <p>DONE: https://gist.github.com/rikka0w0/037b6266976ec6b806127cc41677933f</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="my-scripts-1"><a class="header" href="#my-scripts-1">My Scripts</a></h1>
 <p>All scripts source code see:
-<a href="https://github.com/xieby1/xieby1.github.io/tree/main/src/scripts">github.com/xieby1/xieby1.github.io/tree/main/src/scripts</a></p>
+<a href="https://github.com/xieby1/xieby1.github.io/tree/main/src/scripts">https://github.com/xieby1/xieby1.github.io/tree/main/src/scripts</a></p>
 <h2 id="allfilessh-1"><a class="header" href="#allfilessh-1">allfiles.sh</a></h2>
-<pre><code class="language-bash">un-hidden files
+<pre><code class="language-bash">TLDR: un-hidden files
 </code></pre>
 <h2 id="asmsh-1"><a class="header" href="#asmsh-1">asm.sh</a></h2>
-<pre><code class="language-bash">asm =&gt; bin
-asm.sh [-h] &lt;asm&gt;
-Convert &lt;asm&gt; to machine code, by as
-Escape Note:
-  hash tag (#), simicolon (;), slash (\)
+<pre><code class="language-bash">TLDR: asm =&gt; bin
+Usage: asm.sh [-h] &lt;asm&gt;
+  Convert &lt;asm&gt; to machine code, by GNU assembler 'as'.
+Symbol needs to be escaped:
+  dolar (\$), hash tag (\#), simicolon (\;), slash (\\)
 Example:
   asm.sh &quot;int \$0x80&quot;
   asm.sh &quot;add \$12, %eax&quot;
@@ -29162,64 +29162,60 @@ Example:
   asm.sh &quot;nop\;nop&quot;
 </code></pre>
 <h2 id="ffsh-1"><a class="header" href="#ffsh-1">ff.sh</a></h2>
-<pre><code class="language-bash">fuzzy find
+<pre><code class="language-bash">TLDR: fuzzy find
 </code></pre>
 <h2 id="formatxmlsh-1"><a class="header" href="#formatxmlsh-1">formatxml.sh</a></h2>
-<pre><code class="language-bash">format xml
+<pre><code class="language-bash">TLDR: format xml
 </code></pre>
 <h2 id="grepsh-1"><a class="header" href="#grepsh-1">grep.sh</a></h2>
-<pre><code class="language-bash">my grep
+<pre><code class="language-bash">TLDR: my grep
 </code></pre>
 <h2 id="ldd-grepsh-1"><a class="header" href="#ldd-grepsh-1">ldd-grep.sh</a></h2>
-<pre><code class="language-bash">gather dep so
+<pre><code class="language-bash">TLDR: gather dep so
 Usage: ldd-grep.sh [-o DEST] [ FILE | DIR ]
-
   List the lib dependencies of FILE or files under DIR
   If FILE or DIR is not specified, '.' will be used
   If -o DEST is specifed, dependencies will be copied to DEST
 </code></pre>
 <h2 id="ls-gitsh-1"><a class="header" href="#ls-gitsh-1">ls-git.sh</a></h2>
-<pre><code class="language-bash">ls files in git
+<pre><code class="language-bash">TLDR: ls files in git
 </code></pre>
 <h2 id="nbd-mountsh-1"><a class="header" href="#nbd-mountsh-1">nbd-mount.sh</a></h2>
-<pre><code class="language-bash">nbd mount
+<pre><code class="language-bash">TLDR: nbd mount
 Usage: nbd-mount.sh DISK_IMAGE [-o MOUNT_DIR]
-
   export DISK_IMAGE using the NBD protocol
   mount the nbd dev to MOUNT_DIR
   default MOUNT_DIR is c/, not create dir if c/ not exist
 </code></pre>
 <h2 id="pdbsfsh-1"><a class="header" href="#pdbsfsh-1">pdbsf.sh</a></h2>
-<pre><code class="language-bash">pdb src file
+<pre><code class="language-bash">TLDR: pdb src file
 </code></pre>
 <h2 id="pdfbookmarksh-1"><a class="header" href="#pdfbookmarksh-1">pdfbookmark.sh</a></h2>
-<pre><code class="language-bash">md &lt;=&gt; pdf toc
+<pre><code class="language-bash">TLDR: md &lt;=&gt; pdf toc
 Usage:
-  Extract Bookmarks: pdfbookmark.sh FILE.pdf [FILE.md]
-  Update Bookmarks:  pdfbookmark.sh FILE.md FILE.pdf
+  Extract Bookmarks from pdf: pdfbookmark.sh FILE.pdf [FILE.md]
+  Update Bookmarks to pdf:  pdfbookmark.sh FILE.md FILE.pdf
 </code></pre>
 <h2 id="pwrthrsh-1"><a class="header" href="#pwrthrsh-1">pwrThr.sh</a></h2>
-<pre><code class="language-bash">toggle pwrThr
+<pre><code class="language-bash">TLDR: toggle pwrThr
 </code></pre>
 <h2 id="resize_gifsh-1"><a class="header" href="#resize_gifsh-1">resize_gif.sh</a></h2>
-<pre><code class="language-bash">gif&lt;=10M
-Usage:
-  resize_gif.sh &lt;xxx.gif&gt;
-
-Compress &lt;xxx.gif&gt; under and near 10M
-output to &lt;xxx.resized.gif&gt;
+<pre><code class="language-bash">TLDR: gif&lt;=10M
+Usage: resize_gif.sh &lt;xxx.gif&gt;
+  Compress &lt;xxx.gif&gt; under and near 10M,
+  output to &lt;xxx.resized.gif&gt;
 </code></pre>
 <h2 id="tar-reposh-1"><a class="header" href="#tar-reposh-1">tar-repo.sh</a></h2>
-<pre><code class="language-bash">tar git files
-tar-repo.sh [-h] &lt;DIR&gt;
-tar git repo &lt;DIR&gt;, exclude patterns from
+<pre><code class="language-bash">TLDR: tar git files
+Usage: tar-repo.sh [-h] &lt;DIR&gt;
+  tar git repo &lt;DIR&gt;, exclude patterns from
   * global gitignore
   * repo's gitignore
   * repo's git/info/exclude
-output to DIR.tar.gz
+  output to &lt;DIR&gt;.tar.gz
 </code></pre>
 <h2 id="ubuntush-1"><a class="header" href="#ubuntush-1">ubuntu.sh</a></h2>
-<pre><code class="language-bash">ubuntu container
+<pre><code class="language-bash">TLDR: ubuntu container
 Usage: ubuntu.sh [-h] [-c]
   run with no arg: enter a ubuntu container
   -c: reate a ubuntu container image

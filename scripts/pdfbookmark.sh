@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+echoHelp() {
+    echo "md <=> pdf toc"
+    echo "Usage:"
+    echo "  Extract Bookmarks from pdf: ${0##*/} FILE.pdf [FILE.md]" 
+    echo "  Update Bookmarks to pdf:  ${0##*/} FILE.md FILE.pdf"
+    exit 0
+}
+
 # default value
 BKMRK="Bookmark"
 BEGIN="${BKMRK}Begin"
@@ -63,14 +71,6 @@ markdown_to_pdfdata() {
     echo "${LEVEL}: ${LEVELV}"
     echo "${PGNUM}: ${PGNUMV}"
 done
-}
-
-echoHelp() {
-    echo "md <=> pdf toc"
-    echo "Usage:"
-    echo "  Extract Bookmarks: ${0##*/} FILE.pdf [FILE.md]" 
-    echo "  Update Bookmarks:  ${0##*/} FILE.md FILE.pdf"
-    exit 0
 }
 
 # main function
