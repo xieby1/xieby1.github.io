@@ -38,6 +38,12 @@ solve_an_entry()
         return 0
     fi
 
+    # ignore pictures folder
+    if [[ ${1##*/} == "pictures" ]]
+    then
+        return 0
+    fi
+
     # count indentation # $1   = ./miao/wang/x.md
     TMP1=${1#./}        # TMP1 = miao/wang/x.md
     TMP2=${TMP1//[^\/]} # TMP2 = //
