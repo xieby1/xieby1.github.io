@@ -1,0 +1,143 @@
+/* Template:
+"2021xby+" -> "2021wxy-" -> "2021wxy+";
+subgraph cluster_wxy
+{
+
+}
+{rank=same;
+"2021wxy-";
+}
+{rank=same;
+"2021wxy+";
+}
+*/
+// command line:
+//   dot -Tsvg -O sixu.dot
+
+
+digraph {
+// attributes
+/// graph
+rankdir=TB;
+/// subgraph
+newrank=true;
+style=filled;
+//// color name: https://graphviz.org/doc/info/colors.html
+color=whitesmoke;
+/// node
+node[
+shape=box,
+style="filled, solid",
+color=black,
+fillcolor=white,
+];
+/// edge
+edge[
+minlen=1,
+//weight=1,
+// If false, the edge is not used in ranking the nodes.
+//constraint=true,
+];
+
+__do_page_fault -> kmemcheck_active;
+
+kmemcheck_active -> kmmio_fault;
+
+kmmio_fault -> fault_in_kernel_space [label="N"];
+fault_in_kernel_space -> rsvd_user_prot [label="Y"];
+rsvd_user_prot [label="并非访问保留区\n且访问并非来自用户\n且页不存在"];
+rsvd_user_prot -> vmalloc_fault [label="Y"];
+vmalloc_fault -> kmemcheck_fault [label="N"];
+
+rsvd_user_prot -> spurious_fault [label="N"];
+spurious_fault -> kprobes_fault_1 [label="N"];
+kprobes_fault_1 [label="是否是kprobes fault"];
+kprobes_fault_1 -> bad_area_nosemaphore [label="N"];
+kprobes_fault_1 -> kprobes_fault [label="Y"];
+
+fault_in_kernel_space -> kprobes_fault_2 [label="N"];
+kprobes_fault_2 [label="是否是kprobes fault"];
+kprobes_fault_2 -> rsvd [label="N"];
+kprobes_fault_2 -> kprobes_fault [label="Y"];
+rsvd [label="访问保留区"]
+rsvd -> pgtable_bad [label="Y"];
+rsvd -> smap_violation [label="N"];
+smap_violation -> bad_area_nosemaphore [label="Y"];
+smap_violation -> in_atomic_not_mm [label="N"];
+in_atomic_not_mm [label="在中断里(没有用户上下文)\n或是在atomic region"];
+in_atomic_not_mm -> bad_area_nosemaphore [label="Y"];
+
+in_atomic_not_mm -> down_read_mmap_sem [label="N"];
+down_read_mmap_sem [label="获取mmap的读semaphore"];
+
+down_read_mmap_sem -> find_vma;
+find_vma -> bad_area [label="N：不存在\nvma->end\n在address后"];
+find_vma -> vma_start_lt [label="Y"];
+vma_start_lt [label="vma->start小于address"];
+vma_start_lt -> good_area [label="Y"];
+vma_start_lt -> VM_GROWDOWN [label="N"];
+VM_GROWDOWN -> bad_area [label="N"];
+VM_GROWDOWN -> sp_tolerance [label="Y"];
+sp_tolerance [label="超出范围是否在栈操作容忍范围"];
+sp_tolerance -> bad_area [label="N"];
+sp_tolerance -> expand_stack [label="Y"];
+
+bad_area -> up_read_mmap_sem;
+up_read_mmap_sem [label="释放mmap的读semaphore"];
+up_read_mmap_sem -> down_read_mmap_sem [dir=none, constraint=false, color=green];
+bad_area -> bad_area_nosemaphore;
+bad_area_nosemaphore -> bad_area_user;
+bad_area_user [label="访存来自用户"];
+bad_area_user -> is_prefetch [label="Y"];
+is_prefetch -> is_errata100 [label="N"];
+is_errata100 -> instr_prefetch_vsyscall [label="N"];
+instr_prefetch_vsyscall [label="指令预取vsyscall区域"];
+instr_prefetch_vsyscall -> emulate_vsyscall [label="Y"];
+instr_prefetch_vsyscall -> force_sig_info_fault [label="N"];
+force_sig_info_fault -> SIGSEGV;
+
+bad_area_user -> no_context [label="N"];
+no_context -> fixup_exception;
+fixup_exception -> exception_tables [label="Y"];
+doc_ex_table [label="参考文档Documentation/x86/exception-tables.txt", shape=note];
+doc_ex_table -> exception_tables;
+exception_tables -> in_interrupt;
+in_interrupt -> force_sig_info_fault [label="N"];
+
+fixup_exception -> oops [label="N"];
+
+good_area -> access_error;
+access_error -> bad_area_access_error [label="Y"];
+bad_area_access_error -> bad_area;
+
+access_error -> handle_mm_fault [label="N"];
+handle_mm_fault -> is_vm_hugetlb_page;
+is_vm_hugetlb_page -> hugetlb_fault [label="Y"];
+is_vm_hugetlb_page -> pgd_offset -> pud_alloc -> pmd_alloc -> huge_page;
+huge_page [label="大页相关操作略"];
+pmd_alloc -> pte_offset_map;
+pte_offset_map -> handle_pte_fault;
+
+handle_pte_fault -> pte_present;
+pte_present -> pte_none [label="N"];
+pte_none -> vma_vm_ops_fault [label="Y"];
+vma_vm_ops_fault [label="vma->vm_ops->fault存在"];
+vma_vm_ops_fault -> do_linear_fault [label="Y"];
+vma_vm_ops_fault -> do_anonymous_page [label="N"];
+pte_none -> pte_file [label="N"];
+pte_file -> do_nonlinear_fault [label="Y"];
+pte_file -> do_swap_page [label="N"];
+
+pte_present -> pte_numa [label="Y"];
+pte_numa -> do_numa_page [label="Y"];
+pte_numa -> FAULT_FLAG_WRITE [label="N"];
+FAULT_FLAG_WRITE -> pte_write [label="Y"];
+pte_write -> do_wp_page [label="N"];
+do_wp_page -> copy_on_write;
+
+vmalloc_fault -> in_vmalloc_area [label="Y"];
+in_vmalloc_area [label="在vmalloc区域里"];
+in_vmalloc_area -> vmalloc_sync_one [label="Y"];
+vmalloc_sync_one -> init_mm_pgd_pgd;
+init_mm_pgd_pgd [label="复制主内核页表（init_mm.pgd）的页表项到pgd"];
+}

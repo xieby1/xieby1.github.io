@@ -1,0 +1,910 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>qemu-wine-logs - xieby1&#x27;s notes</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="../../favicon.svg">
+                        <link rel="shortcut icon" href="../../favicon.png">
+                <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+                <link rel="stylesheet" href="../../css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+                <link rel="stylesheet" href="../../custom.css">
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../../index.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item "><a href="../../abbreviations.html"><strong aria-hidden="true">2.</strong> abbreviations</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.</strong> ABI</div></li><li class="chapter-item "><div><strong aria-hidden="true">4.</strong> Algo</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">4.1.</strong> Graph</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Algo/Graph/1998.distance.bunke.prl.775.html"><strong aria-hidden="true">4.1.1.</strong> 1998.distance.bunke.prl.775</a></li><li class="chapter-item "><a href="../../Algo/Graph/2002.inexact_match.bengoetxea.doc_thesis.107.html"><strong aria-hidden="true">4.1.2.</strong> 2002.inexact_match.bengoetxea.doc_thesis.107</a></li><li class="chapter-item "><a href="../../Algo/Graph/2014.attributed.zhang.cvpr.19.html"><strong aria-hidden="true">4.1.3.</strong> 2014.attributed.zhang.cvpr.19</a></li><li class="chapter-item "><a href="../../Algo/Graph/2016.survey.yan.icmr.108.html"><strong aria-hidden="true">4.1.4.</strong> 2016.survey.yan.icmr.108</a></li><li class="chapter-item "><a href="../../Algo/Graph/2021.igraphmatch.qiao..0.html"><strong aria-hidden="true">4.1.5.</strong> 2021.igraphmatch.qiao..0</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">5.</strong> analysis</div></li><li class="chapter-item "><div><strong aria-hidden="true">6.</strong> Arch</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">6.1.</strong> HT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Arch/HT/2005.cell.kahle.ibmjrd.1093.html"><strong aria-hidden="true">6.1.1.</strong> 2005.cell.kahle.ibmjrd.1093</a></li><li class="chapter-item "><a href="../../Arch/HT/2012.process_migration.devuyst.asplos.83.html"><strong aria-hidden="true">6.1.2.</strong> 2012.process_migration.devuyst.asplos.83</a></li><li class="chapter-item "><a href="../../Arch/HT/2015.overview.mitra.jip.15.html"><strong aria-hidden="true">6.1.3.</strong> 2015.overview.mitra.jip.15</a></li><li class="chapter-item "><a href="../../Arch/HT/2018.process_migration.venkat.doc_thesis.5.html"><strong aria-hidden="true">6.1.4.</strong> 2018.process_migration.venkat.doc_thesis.5</a></li><li class="chapter-item "><a href="../../Arch/HT/2020.byoc_framework.balkind.asplos.3.html"><strong aria-hidden="true">6.1.5.</strong> 2020.byoc_framework.balkind.asplos.3</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">6.2.</strong> reconf</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Arch/reconf/1997.chimaera.hauck.fccm.461.html"><strong aria-hidden="true">6.2.1.</strong> 1997.chimaera.hauck.fccm.461</a></li><li class="chapter-item "><a href="../../Arch/reconf/2008.reconf_acc.beck.date.97.html"><strong aria-hidden="true">6.2.2.</strong> 2008.reconf_acc.beck.date.97</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">6.3.</strong> VLIW</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">6.3.1.</strong> pictures</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">7.</strong> Benchmarks</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">7.1.</strong> herdtools7</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Benchmarks/herdtools7/overview.html"><strong aria-hidden="true">7.1.1.</strong> overview</a></li></ol></li><li class="chapter-item "><a href="../../Benchmarks/spec/index.html"><strong aria-hidden="true">7.2.</strong> spec</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Benchmarks/spec/deprecated.README.html"><strong aria-hidden="true">7.2.1.</strong> deprecated.README</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.</strong> BT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">8.1.</strong> algo</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/algo/2006.lib.杨浩.计算机研究与发展.0.html"><strong aria-hidden="true">8.1.1.</strong> 2006.lib.杨浩.计算机研究与发展.0</a></li><li class="chapter-item "><a href="../../BT/algo/2016.static_identify_jump_target.federico.cases.9.html"><strong aria-hidden="true">8.1.2.</strong> 2016.static_identify_jump_target.federico.cases.9</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.3.</strong> bt_rules</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/algo/bt_rules/2006.peephole_superopt.bansal.asplos.134.html"><strong aria-hidden="true">8.1.3.1.</strong> 2006.peephole_superopt.bansal.asplos.134</a></li><li class="chapter-item "><a href="../../BT/algo/bt_rules/2018.learn.wwwang.asplos.11.html"><strong aria-hidden="true">8.1.3.2.</strong> 2018.learn.wwwang.asplos.11</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.4.</strong> offload</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/algo/offload/2010.distribit.guan.hpdc.5.html"><strong aria-hidden="true">8.1.4.1.</strong> 2010.distribit.guan.hpdc.5</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.5.</strong> pictures</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.6.</strong> reg</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.7.</strong> smc</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/algo/smc/2015.detect.hawkins.cgo.24.html"><strong aria-hidden="true">8.1.7.1.</strong> 2015.detect.hawkins.cgo.24</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.8.</strong> trace</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/algo/trace/1994.opt_profiling_tracing.ball.toplas.580.html"><strong aria-hidden="true">8.1.8.1.</strong> 1994.opt_profiling_tracing.ball.toplas.580</a></li><li class="chapter-item "><a href="../../BT/algo/trace/2000.net.duesterwald.asplos.141.html"><strong aria-hidden="true">8.1.8.2.</strong> 2000.net.duesterwald.asplos.141</a></li><li class="chapter-item "><a href="../../BT/algo/trace/2005.edge_profile.白童心.计算机工程.2.html"><strong aria-hidden="true">8.1.8.3.</strong> 2005.edge_profile.白童心.计算机工程.2</a></li><li class="chapter-item "><a href="../../BT/algo/trace/2005.lei_net.hiniker.micro.39.html"><strong aria-hidden="true">8.1.8.4.</strong> 2005.lei_net.hiniker.micro.39</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.2.</strong> analysis</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/analysis/2014.simulators_harm.nowatki..19.html"><strong aria-hidden="true">8.2.1.</strong> 2014.simulators_harm.nowatki..19</a></li><li class="chapter-item "><a href="../../BT/analysis/2020.perfdbt.wu.iccd.2.html"><strong aria-hidden="true">8.2.2.</strong> 2020.perfdbt.wu.iccd.2</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.3.</strong> application</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.4.</strong> Box86</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/Box86/logs.html"><strong aria-hidden="true">8.4.1.</strong> logs</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.5.</strong> dynamic</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/dynamic/2017.mambox64.dantras.pldi.18.html"><strong aria-hidden="true">8.5.1.</strong> 2017.mambox64.dantras.pldi.18</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.6.</strong> Emulator</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">8.6.1.</strong> Emulator_Design</div></li></ol></li><li class="chapter-item "><a href="../../BT/exagear.html"><strong aria-hidden="true">8.7.</strong> exagear</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.8.</strong> HQEMU</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/HQEMU/codeReading-deprecated.html"><strong aria-hidden="true">8.8.1.</strong> codeReading-deprecated</a></li><li class="chapter-item "><a href="../../BT/HQEMU/codeReading.html"><strong aria-hidden="true">8.8.2.</strong> codeReading</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.8.3.</strong> pictures</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.</strong> HW</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/HW/2008.coprocessor.li.amasbt.3.html"><strong aria-hidden="true">8.9.1.</strong> 2008.coprocessor.li.amasbt.3</a></li><li class="chapter-item "><a href="../../BT/HW/2009.godson3_x86_emu.hu.micro.84.html"><strong aria-hidden="true">8.9.2.</strong> 2009.godson3_x86_emu.hu.micro.84</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.3.</strong> codeCache</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.4.</strong> reconf</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/HW/reconf/2013.x86_mips_reconf.junior.jsa.4.html"><strong aria-hidden="true">8.9.4.1.</strong> 2013.x86_mips_reconf.junior.jsa.4</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.5.</strong> VLIW</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/HW/VLIW/2015.denver.nvidia.micro.36.html"><strong aria-hidden="true">8.9.5.1.</strong> 2015.denver.nvidia.micro.36</a></li><li class="chapter-item "><a href="../../BT/HW/VLIW/2019.hybrid_dbt.rokicki.cadics.2.html"><strong aria-hidden="true">8.9.5.2.</strong> 2019.hybrid_dbt.rokicki.cadics.2</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.5.3.</strong> crusoe</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/HW/VLIW/crusoe/2000.crusoe.klaiber.transmeta.118.html"><strong aria-hidden="true">8.9.5.3.1.</strong> 2000.crusoe.klaiber.transmeta.118</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.5.4.</strong> daisy</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.10.</strong> kernel</div></li><li class="chapter-item "><a href="../../BT/libDBT/index.html"><strong aria-hidden="true">8.11.</strong> libDBT</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.</strong> lift</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.</strong> IR</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.1.</strong> LLBT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/lift/IR/LLBT/LLBT调研.html"><strong aria-hidden="true">8.12.1.1.1.</strong> LLBT调研</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.1.2.</strong> pictures</div></li><li class="chapter-item "><a href="../../BT/lift/IR/LLBT/二进制翻译调研报告（LLBT相关）.html"><strong aria-hidden="true">8.12.1.1.3.</strong> 二进制翻译调研报告（LLBT相关）</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.2.</strong> mcsema</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/lift/IR/mcsema/2019.mcsema_dyninst.korencik...html"><strong aria-hidden="true">8.12.1.2.1.</strong> 2019.mcsema_dyninst.korencik..</a></li><li class="chapter-item "><a href="../../BT/lift/IR/mcsema/2019.mcsema.researchLogs.html"><strong aria-hidden="true">8.12.1.2.2.</strong> 2019.mcsema.researchLogs</a></li><li class="chapter-item "><a href="../../BT/lift/IR/mcsema/remill.html"><strong aria-hidden="true">8.12.1.2.3.</strong> remill</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.3.</strong> mctoll</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/lift/IR/mctoll/2019.mctoll.yadavalli.lctes.5.html"><strong aria-hidden="true">8.12.1.3.1.</strong> 2019.mctoll.yadavalli.lctes.5</a></li><li class="chapter-item "><a href="../../BT/lift/IR/mctoll/codesReading.html"><strong aria-hidden="true">8.12.1.3.2.</strong> codesReading</a></li><li class="chapter-item "><a href="../../BT/lift/IR/mctoll/run.html"><strong aria-hidden="true">8.12.1.3.3.</strong> run</a></li></ol></li><li class="chapter-item "><a href="../../BT/lift/IR/overview.html"><strong aria-hidden="true">8.12.1.4.</strong> overview</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.5.</strong> pictures</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.6.</strong> REVNG</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.13.</strong> Mem</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/Mem/2008.thread_safe_by_tm.chung.hpca.51.html"><strong aria-hidden="true">8.13.1.</strong> 2008.thread_safe_by_tm.chung.hpca.51</a></li><li class="chapter-item "><a href="../../BT/Mem/2016.atomic.rigo.taco.6.html"><strong aria-hidden="true">8.13.2.</strong> 2016.atomic.rigo.taco.6</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.14.</strong> oldProj</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/oldProj/1993.mips2alphaaxp.sites.cacm.267.html"><strong aria-hidden="true">8.14.1.</strong> 1993.mips2alphaaxp.sites.cacm.267</a></li><li class="chapter-item "><a href="../../BT/oldProj/1998.fx32.chernoff.micro.217.html"><strong aria-hidden="true">8.14.2.</strong> 1998.fx32.chernoff.micro.217</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.14.3.</strong> dbt4AndStatic</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/oldProj/dbt4AndStatic/DBT4代码阅读笔记.html"><strong aria-hidden="true">8.14.3.1.</strong> DBT4代码阅读笔记</a></li><li class="chapter-item "><a href="../../BT/oldProj/dbt4AndStatic/dbt-static.html"><strong aria-hidden="true">8.14.3.2.</strong> dbt-static</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.14.3.3.</strong> pictures</div></li><li class="chapter-item "><a href="../../BT/oldProj/dbt4AndStatic/去除orc工作量和难度.html"><strong aria-hidden="true">8.14.3.4.</strong> 去除orc工作量和难度</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.14.4.</strong> pictures</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.15.</strong> others</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.16.</strong> overview</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/overview/2001.bt_opt_challenges.altman.pieee.38.html"><strong aria-hidden="true">8.16.1.</strong> 2001.bt_opt_challenges.altman.pieee.38</a></li><li class="chapter-item "><a href="../../BT/overview/2004.bibliography_of_simulators.html"><strong aria-hidden="true">8.16.2.</strong> 2004.bibliography_of_simulators</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.17.</strong> pictures</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.18.</strong> QEMU</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/QEMU/16k.html"><strong aria-hidden="true">8.18.1.</strong> 16k</a></li><li class="chapter-item "><a href="../../BT/QEMU/2005.qemu.bellard.usenix.2217.html"><strong aria-hidden="true">8.18.2.</strong> 2005.qemu.bellard.usenix.2217</a></li><li class="chapter-item "><a href="../../BT/QEMU/2017.qemu_multi_cores.cota.cgo.8.html"><strong aria-hidden="true">8.18.3.</strong> 2017.qemu_multi_cores.cota.cgo.8</a></li><li class="chapter-item "><a href="../../BT/QEMU/LA-backend.html"><strong aria-hidden="true">8.18.4.</strong> LA-backend</a></li><li class="chapter-item "><a href="../../BT/QEMU/linux-user-32.html"><strong aria-hidden="true">8.18.5.</strong> linux-user-32</a></li><li class="chapter-item "><a href="../../BT/QEMU/linux-user.html"><strong aria-hidden="true">8.18.6.</strong> linux-user</a></li><li class="chapter-item "><a href="../../BT/QEMU/linux-user-memory_region.html"><strong aria-hidden="true">8.18.7.</strong> linux-user-memory_region</a></li><li class="chapter-item "><a href="../../BT/QEMU/logs.html"><strong aria-hidden="true">8.18.8.</strong> logs</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.18.9.</strong> lx</div></li><li class="chapter-item "><a href="../../BT/QEMU/mt-tcg.html"><strong aria-hidden="true">8.18.10.</strong> mt-tcg</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.18.11.</strong> pictures</div></li><li class="chapter-item "><a href="../../BT/QEMU/qemu-wine.html"><strong aria-hidden="true">8.18.12.</strong> qemu-wine</a></li><li class="chapter-item "><a href="../../BT/QEMU/QnA.html"><strong aria-hidden="true">8.18.13.</strong> QnA</a></li><li class="chapter-item "><a href="../../BT/QEMU/signal.html"><strong aria-hidden="true">8.18.14.</strong> signal</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.18.15.</strong> target</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.19.</strong> rewrite</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/rewrite/2018.superset_disassembly.bauman.ndss.40.html"><strong aria-hidden="true">8.19.1.</strong> 2018.superset_disassembly.bauman.ndss.40</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.19.2.</strong> instru</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/rewrite/instru/2009.mt.hazelwood.ismm.28.html"><strong aria-hidden="true">8.19.2.1.</strong> 2009.mt.hazelwood.ismm.28</a></li><li class="chapter-item "><a href="../../BT/rewrite/instru/mem_count.html"><strong aria-hidden="true">8.19.2.2.</strong> mem_count</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.20.</strong> security</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.21.</strong> static</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.22.</strong> sys</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.23.</strong> Tarmac</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.24.</strong> test</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.25.</strong> x86-qemu-mips</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/x86-qemu-mips/check_manual.html"><strong aria-hidden="true">8.25.1.</strong> check_manual</a></li><li class="chapter-item "><a href="../../BT/x86-qemu-mips/check.html"><strong aria-hidden="true">8.25.2.</strong> check</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.25.3.</strong> debugs</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/x86-qemu-mips/debugs/OPEN.unknown-loop-in-bios.html"><strong aria-hidden="true">8.25.3.1.</strong> OPEN.unknown-loop-in-bios</a></li></ol></li><li class="chapter-item "><a href="../../BT/x86-qemu-mips/linux-user.html"><strong aria-hidden="true">8.25.4.</strong> linux-user</a></li><li class="chapter-item "><a href="../../BT/x86-qemu-mips/mips-llvm.html"><strong aria-hidden="true">8.25.5.</strong> mips-llvm</a></li><li class="chapter-item "><a href="../../BT/x86-qemu-mips/mt-tcg.html"><strong aria-hidden="true">8.25.6.</strong> mt-tcg</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.25.7.</strong> pictures</div></li><li class="chapter-item "><a href="../../BT/x86-qemu-mips/tr_misc修改记录.html"><strong aria-hidden="true">8.25.8.</strong> tr_misc修改记录</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.26.</strong> X86toMips</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/X86toMips/dbt测试结果.html"><strong aria-hidden="true">8.26.1.</strong> dbt测试结果</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.26.2.</strong> pictures</div></li><li class="chapter-item "><a href="../../BT/X86toMips/Pseudo-README.html"><strong aria-hidden="true">8.26.3.</strong> Pseudo-README</a></li><li class="chapter-item "><a href="../../BT/X86toMips/X86toMips调研.html"><strong aria-hidden="true">8.26.4.</strong> X86toMips调研</a></li><li class="chapter-item "><a href="../../BT/X86toMips/X86toMips调研-续.html"><strong aria-hidden="true">8.26.5.</strong> X86toMips调研-续</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.</strong> Build</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">9.1.</strong> Autotools</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Build/Autotools/2012.autotools_criticism.kamp..html"><strong aria-hidden="true">9.1.1.</strong> 2012.autotools_criticism.kamp.</a></li><li class="chapter-item "><a href="../../Build/Autotools/autotools.html"><strong aria-hidden="true">9.1.2.</strong> autotools</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.2.</strong> CMake</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Build/CMake/Notes.html"><strong aria-hidden="true">9.2.1.</strong> Notes</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.</strong> Compiler</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Build/Compiler/1992.hyperblock.mahlke.micro.html"><strong aria-hidden="true">9.3.1.</strong> 1992.hyperblock.mahlke.micro</a></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.2.</strong> llvm</div></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.3.</strong> mingw</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Build/Compiler/mingw/overview.html"><strong aria-hidden="true">9.3.3.1.</strong> overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.4.</strong> ORC</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Build/Compiler/ORC/2004.ORC-LCPC04-Tutorial.html"><strong aria-hidden="true">9.3.4.1.</strong> 2004.ORC-LCPC04-Tutorial</a></li><li class="chapter-item "><a href="../../Build/Compiler/ORC/2004.overview_orc.wuchengyong.iwlcpc.html"><strong aria-hidden="true">9.3.4.2.</strong> 2004.overview_orc.wuchengyong.iwlcpc</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.5.</strong> trans</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.4.</strong> Disassemble</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Build/Disassemble/2002.disassembly.bschwarz.pieee.html"><strong aria-hidden="true">9.4.1.</strong> 2002.disassembly.bschwarz.pieee</a></li></ol></li><li class="chapter-item "><a href="../../Build/ELF/index.html"><strong aria-hidden="true">9.5.</strong> ELF</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Build/ELF/ELF调研.html"><strong aria-hidden="true">9.5.1.</strong> ELF调研</a></li><li class="chapter-item "><div><strong aria-hidden="true">9.5.2.</strong> pictures</div></li><li class="chapter-item "><a href="../../Build/ELF/QnA.html"><strong aria-hidden="true">9.5.3.</strong> QnA</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.6.</strong> Linker_Loader</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Build/Linker_Loader/QnA.html"><strong aria-hidden="true">9.6.1.</strong> QnA</a></li></ol></li><li class="chapter-item "><a href="../../Build/mingw.html"><strong aria-hidden="true">9.7.</strong> mingw</a></li></ol></li><li class="chapter-item "><a href="../../cheatsheet.html"><strong aria-hidden="true">10.</strong> cheatsheet</a></li><li class="chapter-item "><div><strong aria-hidden="true">11.</strong> CLI</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">11.1.</strong> pictures</div></li><li class="chapter-item "><a href="../../CLI/term_pty_sh.html"><strong aria-hidden="true">11.2.</strong> term_pty_sh</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> CompatLayer</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../CompatLayer/2006.linuxulator.divacky.freebsd..html"><strong aria-hidden="true">12.1.</strong> 2006.linuxulator.divacky.freebsd.</a></li><li class="chapter-item "><a href="../../CompatLayer/Alky.html"><strong aria-hidden="true">12.2.</strong> Alky</a></li><li class="chapter-item "><div><strong aria-hidden="true">12.3.</strong> UML</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../CompatLayer/UML/user_mode_linux.html"><strong aria-hidden="true">12.3.1.</strong> user_mode_linux</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.4.</strong> WINE</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../CompatLayer/WINE/2020_6_25.emu_win_syscall.corbet.lwn.html"><strong aria-hidden="true">12.4.1.</strong> 2020_6_25.emu_win_syscall.corbet.lwn</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/Design_of_WINE.html"><strong aria-hidden="true">12.4.2.</strong> Design_of_WINE</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/optimizable.html"><strong aria-hidden="true">12.4.3.</strong> optimizable</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/others.html"><strong aria-hidden="true">12.4.4.</strong> others</a></li><li class="chapter-item "><div><strong aria-hidden="true">12.4.5.</strong> pictures</div></li><li class="chapter-item expanded "><a href="../../CompatLayer/WINE/qemu-wine-logs.html" class="active"><strong aria-hidden="true">12.4.6.</strong> qemu-wine-logs</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/qemu-wine.html"><strong aria-hidden="true">12.4.7.</strong> qemu-wine</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/qemu-winetest_debug_logs.html"><strong aria-hidden="true">12.4.8.</strong> qemu-winetest_debug_logs</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/qemu-wine环境搭建.html"><strong aria-hidden="true">12.4.9.</strong> qemu-wine环境搭建</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/QnA.html"><strong aria-hidden="true">12.4.10.</strong> QnA</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/References.html"><strong aria-hidden="true">12.4.11.</strong> References</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/Winegcc调研.html"><strong aria-hidden="true">12.4.12.</strong> Winegcc调研</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/Winelib调研报告.html"><strong aria-hidden="true">12.4.13.</strong> Winelib调研报告</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/WINE设备驱动调研.html"><strong aria-hidden="true">12.4.14.</strong> WINE设备驱动调研</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/WINE调研.html"><strong aria-hidden="true">12.4.15.</strong> WINE调研</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/二进制翻译调研报告_FX32_Wine.html"><strong aria-hidden="true">12.4.16.</strong> 二进制翻译调研报告_FX32_Wine</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/二进制翻译调研报告_Wine.html"><strong aria-hidden="true">12.4.17.</strong> 二进制翻译调研报告_Wine</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.</strong> Connect</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Connect/Bluetooth/index.html"><strong aria-hidden="true">13.1.</strong> Bluetooth</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.1.1.</strong> bluez</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.1.1.1.</strong> pictures</div></li><li class="chapter-item "><a href="../../Connect/Bluetooth/bluez/profile_input.html"><strong aria-hidden="true">13.1.1.2.</strong> profile_input</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.2.</strong> btkbdd</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.1.2.1.</strong> pictures</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.3.</strong> dbus</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Connect/Bluetooth/dbus/Overview.html"><strong aria-hidden="true">13.1.3.1.</strong> Overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.4.</strong> Essays</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.1.4.1.</strong> 2005.bluez_intro</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Connect/Bluetooth/Essays/2005.bluez_intro.albert/An_Introduction_to_Bluetooth_Programming.html"><strong aria-hidden="true">13.1.4.1.1.</strong> An_Introduction_to_Bluetooth_Programming</a></li></ol></li><li class="chapter-item "><a href="../../Connect/Bluetooth/Essays/阅读记录.html"><strong aria-hidden="true">13.1.4.2.</strong> 阅读记录</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.5.</strong> hidclient</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Connect/Bluetooth/hidclient/logs.html"><strong aria-hidden="true">13.1.5.1.</strong> logs</a></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.5.2.</strong> pictures</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.2.</strong> Network</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.2.1.</strong> bittorrent</div></li><li class="chapter-item "><div><strong aria-hidden="true">13.2.2.</strong> nginx</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Connect/Network/nginx/logs.html"><strong aria-hidden="true">13.2.2.1.</strong> logs</a></li></ol></li><li class="chapter-item "><a href="../../Connect/Network/p2p.html"><strong aria-hidden="true">13.2.3.</strong> p2p</a></li><li class="chapter-item "><a href="../../Connect/Network/streaming_server.html"><strong aria-hidden="true">13.2.4.</strong> streaming_server</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.3.</strong> NFC</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.3.1.</strong> Essays</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">14.</strong> dataViz</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../dataViz/overview.html"><strong aria-hidden="true">14.1.</strong> overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">15.</strong> Distro</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Distro/JingOS.html"><strong aria-hidden="true">15.1.</strong> JingOS</a></li><li class="chapter-item "><div><strong aria-hidden="true">15.2.</strong> Nix</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Distro/Nix/nixpkgs.html"><strong aria-hidden="true">15.2.1.</strong> nixpkgs</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../Essays.html"><strong aria-hidden="true">16.</strong> Essays</a></li><li class="chapter-item "><div><strong aria-hidden="true">17.</strong> FPGA</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../FPGA/iverilog.html"><strong aria-hidden="true">17.1.</strong> iverilog</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">18.</strong> hackthon</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../hackthon/Untitled.html"><strong aria-hidden="true">18.1.</strong> Untitled</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">19.</strong> Input</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Input/logs.html"><strong aria-hidden="true">19.1.</strong> logs</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">20.</strong> ISA</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ISA/2013.power_of_risc_cisc.blem.hpca.144.html"><strong aria-hidden="true">20.1.</strong> 2013.power_of_risc_cisc.blem.hpca.144</a></li><li class="chapter-item "><div><strong aria-hidden="true">20.2.</strong> arm</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.3.</strong> enhance</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.4.</strong> mips</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.5.</strong> mips_lx</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.6.</strong> riscv</div></li><li class="chapter-item "><a href="../../ISA/Semantics/index.html"><strong aria-hidden="true">20.7.</strong> Semantics</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ISA/Semantics/2013.locate.lakhotia.pprew.75.html"><strong aria-hidden="true">20.7.1.</strong> 2013.locate.lakhotia.pprew.75</a></li><li class="chapter-item "><a href="../../ISA/Semantics/2014.lem.mulligan.icfp.79.html"><strong aria-hidden="true">20.7.2.</strong> 2014.lem.mulligan.icfp.79</a></li><li class="chapter-item "><a href="../../ISA/Semantics/2015.sail.gray.micro.31.html"><strong aria-hidden="true">20.7.3.</strong> 2015.sail.gray.micro.31</a></li><li class="chapter-item "><a href="../../ISA/Semantics/2016.learn.heule.pldi.56.html"><strong aria-hidden="true">20.7.4.</strong> 2016.learn.heule.pldi.56</a></li><li class="chapter-item "><a href="../../ISA/Semantics/2018.sail.armstrong..3.html"><strong aria-hidden="true">20.7.5.</strong> 2018.sail.armstrong..3</a></li><li class="chapter-item "><a href="../../ISA/Semantics/2019.x64_validation.dasgupta.sigplan.24.html"><strong aria-hidden="true">20.7.6.</strong> 2019.x64_validation.dasgupta.sigplan.24</a></li><li class="chapter-item "><a href="../../ISA/Semantics/2021.sail.armstrong.manual.html"><strong aria-hidden="true">20.7.7.</strong> 2021.sail.armstrong.manual</a></li><li class="chapter-item "><div><strong aria-hidden="true">20.7.8.</strong> k</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ISA/Semantics/k/logs.html"><strong aria-hidden="true">20.7.8.1.</strong> logs</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">20.8.</strong> ultrasparc</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.9.</strong> Uop</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ISA/Uop/1990.nec_intel.elkins...html"><strong aria-hidden="true">20.9.1.</strong> 1990.nec_intel.elkins..</a></li><li class="chapter-item "><a href="../../ISA/Uop/1996.palcode..manual..html"><strong aria-hidden="true">20.9.2.</strong> 1996.palcode..manual.</a></li><li class="chapter-item "><a href="../../ISA/Uop/2003.ucache.solomon.tvlsi.13.html"><strong aria-hidden="true">20.9.3.</strong> 2003.ucache.solomon.tvlsi.13</a></li><li class="chapter-item "><a href="../../ISA/Uop/2019.reverse_engineer.koppe.usenix_security.16.html"><strong aria-hidden="true">20.9.4.</strong> 2019.reverse_engineer.koppe.usenix_security.16</a></li><li class="chapter-item "><a href="../../ISA/Uop/2020.improve_ucache.kotra.micro.1.html"><strong aria-hidden="true">20.9.5.</strong> 2020.improve_ucache.kotra.micro.1</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">20.10.</strong> x86</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">21.</strong> JIT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../JIT/2008.llvm_sim.brandner..29.html"><strong aria-hidden="true">21.1.</strong> 2008.llvm_sim.brandner..29</a></li><li class="chapter-item "><a href="../../JIT/2011.llvm_sim.helmstetter.imecs.6.html"><strong aria-hidden="true">21.2.</strong> 2011.llvm_sim.helmstetter.imecs.6</a></li><li class="chapter-item "><div><strong aria-hidden="true">21.3.</strong> dynarmic</div></li><li class="chapter-item "><div><strong aria-hidden="true">21.4.</strong> opt</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.</strong> Kernel</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/2020_9_9.prepare_new_feat.edge.lwn-lpc.html"><strong aria-hidden="true">22.1.</strong> 2020_9_9.prepare_new_feat.edge.lwn-lpc</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.2.</strong> Driver</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/Driver/2019.linux_win_printer.金融通.软件所硕士.html"><strong aria-hidden="true">22.2.1.</strong> 2019.linux_win_printer.金融通.软件所硕士</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.3.</strong> exo</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/exo/1995.intro.engler.sosp.1259.html"><strong aria-hidden="true">22.3.1.</strong> 1995.intro.engler.sosp.1259</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.</strong> Linux</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/Linux/2002.rcu.mckenney..216.html"><strong aria-hidden="true">22.4.1.</strong> 2002.rcu.mckenney..216</a></li><li class="chapter-item "><a href="../../Kernel/Linux/2016.sched_bug.lozi.eurosys.120.html"><strong aria-hidden="true">22.4.2.</strong> 2016.sched_bug.lozi.eurosys.120</a></li><li class="chapter-item "><a href="../../Kernel/Linux/2018.concurrency.alglave.asplos.31.html"><strong aria-hidden="true">22.4.3.</strong> 2018.concurrency.alglave.asplos.31</a></li><li class="chapter-item "><a href="../../Kernel/Linux/2020.rcu.mckenney...html"><strong aria-hidden="true">22.4.4.</strong> 2020.rcu.mckenney..</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.5.</strong> Android</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/Linux/Android/anbox.html"><strong aria-hidden="true">22.4.5.1.</strong> anbox</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.5.2.</strong> pictures</div></li><li class="chapter-item "><a href="../../Kernel/Linux/Android/QnA.html"><strong aria-hidden="true">22.4.5.3.</strong> QnA</a></li><li class="chapter-item "><a href="../../Kernel/Linux/Android/to_mainline.html"><strong aria-hidden="true">22.4.5.4.</strong> to_mainline</a></li><li class="chapter-item "><a href="../../Kernel/Linux/Android/Waydroid.html"><strong aria-hidden="true">22.4.5.5.</strong> Waydroid</a></li></ol></li><li class="chapter-item "><a href="../../Kernel/Linux/cache_alias.html"><strong aria-hidden="true">22.4.6.</strong> cache_alias</a></li><li class="chapter-item "><a href="../../Kernel/Linux/cache_alias_page_color.html"><strong aria-hidden="true">22.4.7.</strong> cache_alias_page_color</a></li><li class="chapter-item "><a href="../../Kernel/Linux/docsReading.html"><strong aria-hidden="true">22.4.8.</strong> docsReading</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.9.</strong> drivers</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/Linux/drivers/ioctl.html"><strong aria-hidden="true">22.4.9.1.</strong> ioctl</a></li><li class="chapter-item "><a href="../../Kernel/Linux/drivers/QnA.html"><strong aria-hidden="true">22.4.9.2.</strong> QnA</a></li></ol></li><li class="chapter-item "><a href="../../Kernel/Linux/idle.html"><strong aria-hidden="true">22.4.10.</strong> idle</a></li><li class="chapter-item "><a href="../../Kernel/Linux/lx.html"><strong aria-hidden="true">22.4.11.</strong> lx</a></li><li class="chapter-item "><a href="../../Kernel/Linux/memory_mapping.html"><strong aria-hidden="true">22.4.12.</strong> memory_mapping</a></li><li class="chapter-item "><a href="../../Kernel/Linux/module.logs.html"><strong aria-hidden="true">22.4.13.</strong> module.logs</a></li><li class="chapter-item "><a href="../../Kernel/Linux/mtlb.logs.html"><strong aria-hidden="true">22.4.14.</strong> mtlb.logs</a></li><li class="chapter-item "><a href="../../Kernel/Linux/page_fault.html"><strong aria-hidden="true">22.4.15.</strong> page_fault</a></li><li class="chapter-item "><a href="../../Kernel/Linux/page_size.html"><strong aria-hidden="true">22.4.16.</strong> page_size</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.17.</strong> pictures</div></li><li class="chapter-item "><a href="../../Kernel/Linux/QnA-alpine.html"><strong aria-hidden="true">22.4.18.</strong> QnA-alpine</a></li><li class="chapter-item "><a href="../../Kernel/Linux/QnA.html"><strong aria-hidden="true">22.4.19.</strong> QnA</a></li><li class="chapter-item "><a href="../../Kernel/Linux/startup.html"><strong aria-hidden="true">22.4.20.</strong> startup</a></li><li class="chapter-item "><a href="../../Kernel/Linux/syscalls.html"><strong aria-hidden="true">22.4.21.</strong> syscalls</a></li></ol></li><li class="chapter-item "><a href="../../Kernel/memory.html"><strong aria-hidden="true">22.5.</strong> memory</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.6.</strong> micro</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/micro/1995.u_kernel.lietdke.sosp.308.html"><strong aria-hidden="true">22.6.1.</strong> 1995.u_kernel.lietdke.sosp.308</a></li><li class="chapter-item "><a href="../../Kernel/micro/2013.l3_sel4.elphinstone.sosp.126.html"><strong aria-hidden="true">22.6.2.</strong> 2013.l3_sel4.elphinstone.sosp.126</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.7.</strong> multi</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/multi/2009.intro.baumann.sosp.856.html"><strong aria-hidden="true">22.7.1.</strong> 2009.intro.baumann.sosp.856</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.8.</strong> pictures</div></li><li class="chapter-item "><div><strong aria-hidden="true">22.9.</strong> syscall</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/syscall/2020_9_8.extensible_syscall.corbet.lwn-lpc.html"><strong aria-hidden="true">22.9.1.</strong> 2020_9_8.extensible_syscall.corbet.lwn-lpc</a></li></ol></li><li class="chapter-item "><a href="../../Kernel/transkernel.html"><strong aria-hidden="true">22.10.</strong> transkernel</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.11.</strong> unikernel</div></li><li class="chapter-item "><div><strong aria-hidden="true">22.12.</strong> WinCmptbl</div></li><li class="chapter-item "><div><strong aria-hidden="true">22.13.</strong> Windows</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/Windows/compilation.html"><strong aria-hidden="true">22.13.1.</strong> compilation</a></li><li class="chapter-item "><a href="../../Kernel/Windows/driver/index.html"><strong aria-hidden="true">22.13.2.</strong> driver</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/Windows/driver/ddiwrapper.html"><strong aria-hidden="true">22.13.2.1.</strong> ddiwrapper</a></li><li class="chapter-item "><a href="../../Kernel/Windows/driver/logs-1.html"><strong aria-hidden="true">22.13.2.2.</strong> logs-1</a></li><li class="chapter-item "><a href="../../Kernel/Windows/driver/logs.html"><strong aria-hidden="true">22.13.2.3.</strong> logs</a></li><li class="chapter-item "><a href="../../Kernel/Windows/driver/ndis.html"><strong aria-hidden="true">22.13.2.4.</strong> ndis</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.13.2.5.</strong> pictures</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">22.13.2.5.1.</strong> err</div></li></ol></li><li class="chapter-item "><a href="../../Kernel/Windows/driver/printer.html"><strong aria-hidden="true">22.13.2.6.</strong> printer</a></li><li class="chapter-item "><a href="../../Kernel/Windows/driver/QnA.html"><strong aria-hidden="true">22.13.2.7.</strong> QnA</a></li><li class="chapter-item "><a href="../../Kernel/Windows/driver/types.html"><strong aria-hidden="true">22.13.2.8.</strong> types</a></li></ol></li><li class="chapter-item "><a href="../../Kernel/Windows/nameConventions.html"><strong aria-hidden="true">22.13.3.</strong> nameConventions</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.13.4.</strong> pictures</div></li><li class="chapter-item "><a href="../../Kernel/Windows/QnA.html"><strong aria-hidden="true">22.13.5.</strong> QnA</a></li><li class="chapter-item "><a href="../../Kernel/Windows/ReactOS/index.html"><strong aria-hidden="true">22.13.6.</strong> ReactOS</a></li><li class="chapter-item "><a href="../../Kernel/Windows/service.html"><strong aria-hidden="true">22.13.7.</strong> service</a></li><li class="chapter-item "><a href="../../Kernel/Windows/subsystem.html"><strong aria-hidden="true">22.13.8.</strong> subsystem</a></li><li class="chapter-item "><a href="../../Kernel/Windows/syscall.html"><strong aria-hidden="true">22.13.9.</strong> syscall</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.14.</strong> XNU</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">22.14.1.</strong> Darling</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/XNU/Darling/overview.html"><strong aria-hidden="true">22.14.1.1.</strong> overview</a></li></ol></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.</strong> Lang</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">23.1.</strong> Asm</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lang/Asm/asm.html"><strong aria-hidden="true">23.1.1.</strong> asm</a></li><li class="chapter-item "><div><strong aria-hidden="true">23.1.2.</strong> riscv</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lang/Asm/riscv/QnA.html"><strong aria-hidden="true">23.1.2.1.</strong> QnA</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.2.</strong> C</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lang/C.f/macro.html"><strong aria-hidden="true">23.2.1.</strong> macro</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.3.</strong> Dot</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lang/Dot/overview.html"><strong aria-hidden="true">23.3.1.</strong> overview</a></li><li class="chapter-item "><a href="../../Lang/Dot/QnA.html"><strong aria-hidden="true">23.3.2.</strong> QnA</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.4.</strong> IR</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lang/IR/1999.JVM_Specification.html"><strong aria-hidden="true">23.4.1.</strong> 1999.JVM_Specification</a></li><li class="chapter-item "><a href="../../Lang/IR/2000.llvm.lattner.master_thesis.241.html"><strong aria-hidden="true">23.4.2.</strong> 2000.llvm.lattner.master_thesis.241</a></li><li class="chapter-item "><a href="../../Lang/IR/2004.llvm.lattner.cgo.4340.html"><strong aria-hidden="true">23.4.3.</strong> 2004.llvm.lattner.cgo.4340</a></li><li class="chapter-item "><a href="../../Lang/IR/2013.importance.chow...html"><strong aria-hidden="true">23.4.4.</strong> 2013.importance.chow..</a></li><li class="chapter-item "><div><strong aria-hidden="true">23.4.5.</strong> Common2</div></li><li class="chapter-item "><a href="../../Lang/IR/LLVM-IR.html"><strong aria-hidden="true">23.4.6.</strong> LLVM-IR</a></li><li class="chapter-item "><a href="../../Lang/IR/MapleIRDesign.html"><strong aria-hidden="true">23.4.7.</strong> MapleIRDesign</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.5.</strong> JS</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lang/JS/overview.html"><strong aria-hidden="true">23.5.1.</strong> overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.6.</strong> Latex</div></li><li class="chapter-item "><div><strong aria-hidden="true">23.7.</strong> Lisp</div></li><li class="chapter-item "><div><strong aria-hidden="true">23.8.</strong> Py</div></li><li class="chapter-item "><div><strong aria-hidden="true">23.9.</strong> SMT-LIB</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lang/SMT-LIB/2012.smt_lib_v2.cok..47.html"><strong aria-hidden="true">23.9.1.</strong> 2012.smt_lib_v2.cok..47</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.10.</strong> WebAsm</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lang/WebAsm/2017.intro.haas.pldi.194.html"><strong aria-hidden="true">23.10.1.</strong> 2017.intro.haas.pldi.194</a></li><li class="chapter-item "><a href="../../Lang/WebAsm/overview.html"><strong aria-hidden="true">23.10.2.</strong> overview</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">24.</strong> Lib</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">24.1.</strong> Glibc</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lib/Glibc/glibc.html"><strong aria-hidden="true">24.1.1.</strong> glibc</a></li><li class="chapter-item "><a href="../../Lib/Glibc/mmap.html"><strong aria-hidden="true">24.1.2.</strong> mmap</a></li><li class="chapter-item "><div><strong aria-hidden="true">24.1.3.</strong> pictures</div></li><li class="chapter-item "><a href="../../Lib/Glibc/pthread.html"><strong aria-hidden="true">24.1.4.</strong> pthread</a></li><li class="chapter-item "><a href="../../Lib/Glibc/QnA.html"><strong aria-hidden="true">24.1.5.</strong> QnA</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">24.2.</strong> igraph</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lib/igraph/QnA.html"><strong aria-hidden="true">24.2.1.</strong> QnA</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">24.3.</strong> Libc</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lib/Libc/Musl/index.html"><strong aria-hidden="true">24.3.1.</strong> Musl</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">25.</strong> Mem</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Mem/cat.html"><strong aria-hidden="true">25.1.</strong> cat</a></li><li class="chapter-item "><div><strong aria-hidden="true">25.2.</strong> model</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Mem/model/2017.memalloy.wickerson.popl.77.html"><strong aria-hidden="true">25.2.1.</strong> 2017.memalloy.wickerson.popl.77</a></li></ol></li><li class="chapter-item "><a href="../../Mem/order.html"><strong aria-hidden="true">25.3.</strong> order</a></li><li class="chapter-item "><a href="../../Mem/test.html"><strong aria-hidden="true">25.4.</strong> test</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">26.</strong> other_read_list</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../other_read_list/cambridge.html"><strong aria-hidden="true">26.1.</strong> cambridge</a></li><li class="chapter-item "><a href="../../other_read_list/stanford/index.html"><strong aria-hidden="true">26.2.</strong> stanford</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../other_read_list/stanford/1999.codesigned_vm.smith.iwia.html"><strong aria-hidden="true">26.2.1.</strong> 1999.codesigned_vm.smith.iwia</a></li><li class="chapter-item "><a href="../../other_read_list/stanford/2001.vm_intro.smith.html"><strong aria-hidden="true">26.2.2.</strong> 2001.vm_intro.smith</a></li><li class="chapter-item "><a href="../../other_read_list/stanford/2002.vector_vs_ss.kozyrakis.micro.html"><strong aria-hidden="true">26.2.3.</strong> 2002.vector_vs_ss.kozyrakis.micro</a></li><li class="chapter-item "><div><strong aria-hidden="true">26.2.4.</strong> pictures</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">27.</strong> Perf</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Perf/flamegraph.html"><strong aria-hidden="true">27.1.</strong> flamegraph</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">28.</strong> PoSh</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../PoSh/QnA.html"><strong aria-hidden="true">28.1.</strong> QnA</a></li></ol></li><li class="chapter-item "><a href="../../Proj/index.html"><strong aria-hidden="true">29.</strong> Proj</a></li><li class="chapter-item "><div><strong aria-hidden="true">30.</strong> Pwr</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Pwr/2009.mcpat.li.micro.2319.html"><strong aria-hidden="true">30.1.</strong> 2009.mcpat.li.micro.2319</a></li></ol></li><li class="chapter-item "><a href="../../QnA-Daliy.html"><strong aria-hidden="true">31.</strong> QnA-Daliy</a></li><li class="chapter-item "><div><strong aria-hidden="true">32.</strong> Repos</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Repos/llvm-tutor.html"><strong aria-hidden="true">32.1.</strong> llvm-tutor</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">33.</strong> Sandbox</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Sandbox/chroot.html"><strong aria-hidden="true">33.1.</strong> chroot</a></li><li class="chapter-item "><div><strong aria-hidden="true">33.2.</strong> Docker</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Sandbox/Docker/Overview.html"><strong aria-hidden="true">33.2.1.</strong> Overview</a></li><li class="chapter-item "><a href="../../Sandbox/Docker/QnA.html"><strong aria-hidden="true">33.2.2.</strong> QnA</a></li></ol></li><li class="chapter-item "><a href="../../Sandbox/proot.html"><strong aria-hidden="true">33.3.</strong> proot</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">34.</strong> security</div></li><li class="chapter-item "><div><strong aria-hidden="true">35.</strong> SftwStack</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SftwStack/applications_arch.html"><strong aria-hidden="true">35.1.</strong> applications_arch</a></li><li class="chapter-item "><a href="../../SftwStack/linux_desktop.html"><strong aria-hidden="true">35.2.</strong> linux_desktop</a></li><li class="chapter-item "><div><strong aria-hidden="true">35.3.</strong> pictures</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">36.</strong> Sim</div></li><li class="chapter-item "><div><strong aria-hidden="true">37.</strong> Softwares</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Softwares/ocrmypdf.html"><strong aria-hidden="true">37.1.</strong> ocrmypdf</a></li><li class="chapter-item "><a href="../../Softwares/tree_timeline_note.html"><strong aria-hidden="true">37.2.</strong> tree_timeline_note</a></li><li class="chapter-item "><div><strong aria-hidden="true">37.3.</strong> Vim</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Softwares/Vim/QnA.html"><strong aria-hidden="true">37.3.1.</strong> QnA</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../SPIN.html"><strong aria-hidden="true">38.</strong> SPIN</a></li><li class="chapter-item "><div><strong aria-hidden="true">39.</strong> SQL</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SQL/overview.html"><strong aria-hidden="true">39.1.</strong> overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">40.</strong> SymExec</div></li><li class="chapter-item "><div><strong aria-hidden="true">41.</strong> Temp</div></li><li class="chapter-item "><div><strong aria-hidden="true">42.</strong> uArch</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">42.1.</strong> TLB</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">42.1.1.</strong> pictures</div></li><li class="chapter-item "><a href="../../uArch/TLB/QnA.html"><strong aria-hidden="true">42.1.2.</strong> QnA</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">43.</strong> Virt</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Virt/1988.386.smith.programmers_journal..html"><strong aria-hidden="true">43.1.</strong> 1988.386.smith.programmers_journal.</a></li><li class="chapter-item "><a href="../../Virt/2002.esx.waldspurger.opsr.1402.html"><strong aria-hidden="true">43.2.</strong> 2002.esx.waldspurger.opsr.1402</a></li><li class="chapter-item "><a href="../../Virt/2003.xen.barham.opsr.6475.html"><strong aria-hidden="true">43.3.</strong> 2003.xen.barham.opsr.6475</a></li><li class="chapter-item "><a href="../../Virt/2003.xen.barham.opsr.6475.sync-conflict-20211220-085833-2SHHM4X.html"><strong aria-hidden="true">43.4.</strong> 2003.xen.barham.opsr.6475.sync-conflict-20211220-085833-2SHHM4X</a></li><li class="chapter-item "><a href="../../Virt/2006.cmp_soft_hard_x86.adams.asplos.700.html"><strong aria-hidden="true">43.5.</strong> 2006.cmp_soft_hard_x86.adams.asplos.700</a></li><li class="chapter-item "><a href="../../Virt/2012.dune.belay.osdi.215.html"><strong aria-hidden="true">43.6.</strong> 2012.dune.belay.osdi.215</a></li><li class="chapter-item "><div><strong aria-hidden="true">43.7.</strong> addr_trans</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Virt/addr_trans/2018.1_qemu_dune_2_lkm.faravelon.doc_thesis.1.html"><strong aria-hidden="true">43.7.1.</strong> 2018.1_qemu_dune_2_lkm.faravelon.doc_thesis.1</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">43.8.</strong> BT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Virt/BT/2016.cross_arch_captive.spink.taco.3.html"><strong aria-hidden="true">43.8.1.</strong> 2016.cross_arch_captive.spink.taco.3</a></li><li class="chapter-item "><a href="../../Virt/BT/2019.cross_arch_captive.spink.usenix.1.html"><strong aria-hidden="true">43.8.2.</strong> 2019.cross_arch_captive.spink.usenix.1</a></li><li class="chapter-item "><div><strong aria-hidden="true">43.8.3.</strong> pictures</div></li></ol></li><li class="chapter-item "><a href="../../Virt/overview.html"><strong aria-hidden="true">43.9.</strong> overview</a></li><li class="chapter-item "><div><strong aria-hidden="true">43.10.</strong> pictures</div></li><li class="chapter-item "><div><strong aria-hidden="true">43.11.</strong> virtualBox</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Virt/virtualBox/install.html"><strong aria-hidden="true">43.11.1.</strong> install</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../X11/index.html"><strong aria-hidden="true">44.</strong> X11</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../X11/windowManage.html"><strong aria-hidden="true">44.1.</strong> windowManage</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">45.</strong> 行业报告</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">45.1.</strong> LF</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../行业报告/LF/2020-Linux-Foundation-Annual-Report_120520.html"><strong aria-hidden="true">45.1.1.</strong> 2020-Linux-Foundation-Annual-Report_120520</a></li><li class="chapter-item "><a href="../../行业报告/LF/FINOS-business-value-of-open-source.html"><strong aria-hidden="true">45.1.2.</strong> FINOS-business-value-of-open-source</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">45.2.</strong> 企业年报</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">45.2.1.</strong> apple</div></li><li class="chapter-item "><div><strong aria-hidden="true">45.2.2.</strong> 华为</div></li><li class="chapter-item "><div><strong aria-hidden="true">45.2.3.</strong> 海信</div></li><li class="chapter-item "><div><strong aria-hidden="true">45.2.4.</strong> 联想</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">45.3.</strong> 网信自主创新</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../行业报告/网信自主创新/2020.html"><strong aria-hidden="true">45.3.1.</strong> 2020</a></li></ol></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">xieby1&#x27;s notes</h1>
+
+                    <div class="right-buttons">
+                                                <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p><strong>前言</strong>：以下工作，若无特别标注，均在龙芯上用qemu-i386运行wine（32位）然后执行win32程序。</p>
+<div style="text-align:right; font-size:3em;">2020.7.9</div>
+<h2 id="segment-fault其一"><a class="header" href="#segment-fault其一">segment fault其一</a></h2>
+<p><strong>TLDR</strong>：动态链接库不全。<strong>注意</strong>除了wine所需的动态链接库，还有wine相关的程序和动态链接库（比如这里的<code>ntdll.dll.so</code>）所需的动态链接库。</p>
+<p>运行一段时间后除了segment fault无其他报错。仔细跟踪一番源码找到了segment fault错误的来源，<code>dlls/ntdll/ntdll.dll.so</code>依赖的动态链接库没有放到龙芯机器里去。但这里使用<code>ldd</code>分析<code>ntdll.dll.so</code>所需的依赖出现了问题，分析出的依赖全是64位的，可是需要的是32位。把32位的库放进龙芯机器，<code>ping</code>便可以执行了，虽然过程中有许多报错，很多<code>.dll</code>没找到的报错。</p>
+<h2 id="正常运行ping但仍有报错"><a class="header" href="#正常运行ping但仍有报错">正常运行ping但仍有报错</a></h2>
+<p><strong>在x86_64电脑上用qemu-i386运行wine ping的输出信息</strong>和<strong>在3a4000电脑上用qemu-i386运行wine ping的输出信息</strong>用patch的形式表达如下：</p>
+<pre><code class="language-diff">--- /home/xieby1/x86_64-qemu-wine-ping
++++ /home/xieby1/3a4000-qemu-wine-ping
+@@ -1,13 +1,53 @@
+-xieby1@xieby1-Lenovo-Y50-70:~/Codes/wine$ loader/wine ping
++xieby1@thtf-pc:~/Codes/wine$ loader/wine ping
+# 2020.7.17: 下面两条报错大概是因为竞争产生，详细说明见关于报错 
++002c:err:virtual:virtual_map_section mapping 0x880000 1000 000000000 failed
++002c:err:wineboot:create_user_shared_data cannot map __wine_user_shared_data
+# 2020.7.17: ==========================================
++0034:err:module:open_builtin_file failed to load .so lib &quot;/home/xieby1/Codes/wine/dlls/ole32/ole32.dll.so&quot;
++0034:err:module:import_dll Loading library ole32.dll (which is needed by L&quot;C:\\windows\\system32\\shcore.dll&quot;) failed (error c000007a).
++0034:err:module:import_dll Library shcore.dll (which is needed by L&quot;C:\\windows\\system32\\shlwapi.dll&quot;) not found
++0034:err:module:import_dll Library shlwapi.dll (which is needed by L&quot;C:\\windows\\system32\\shell32.dll&quot;) not found
++0034:err:module:import_dll Library shell32.dll (which is needed by L&quot;C:\\windows\\system32\\winemenubuilder.exe&quot;) not found
++0034:err:module:open_builtin_file failed to load .so lib &quot;/home/xieby1/Codes/wine/dlls/ole32/ole32.dll.so&quot;
++0034:err:module:import_dll Loading library ole32.dll (which is needed by L&quot;C:\\windows\\system32\\shcore.dll&quot;) failed (error c000007a).
++0034:err:module:import_dll Library shcore.dll (which is needed by L&quot;C:\\windows\\system32\\shlwapi.dll&quot;) not found
++0034:err:module:import_dll Library shlwapi.dll (which is needed by L&quot;C:\\windows\\system32\\winemenubuilder.exe&quot;) not found
++0034:err:module:open_builtin_file failed to load .so lib &quot;/home/xieby1/Codes/wine/dlls/ole32/ole32.dll.so&quot;
++0034:err:module:import_dll Loading library ole32.dll (which is needed by L&quot;C:\\windows\\system32\\winemenubuilder.exe&quot;) failed (error c000007a).
++0034:err:module:open_builtin_file failed to load .so lib &quot;/home/xieby1/Codes/wine/dlls/ole32/ole32.dll.so&quot;
++0034:err:module:import_dll Loading library ole32.dll (which is needed by L&quot;C:\\windows\\system32\\windowscodecs.dll&quot;) failed (error c000007a).
++0034:err:module:open_builtin_file failed to load .so lib &quot;/home/xieby1/Codes/wine/dlls/oleaut32/oleaut32.dll.so&quot;
++0034:err:module:import_dll Loading library oleaut32.dll (which is needed by L&quot;C:\\windows\\system32\\windowscodecs.dll&quot;) failed (error c000007a).
++0034:err:module:open_builtin_file failed to load .so lib &quot;/home/xieby1/Codes/wine/dlls/ole32/ole32.dll.so&quot;
++0034:err:module:import_dll Loading library ole32.dll (which is needed by L&quot;C:\\windows\\system32\\propsys.dll&quot;) failed (error c000007a).
++0034:err:module:open_builtin_file failed to load .so lib &quot;/home/xieby1/Codes/wine/dlls/oleaut32/oleaut32.dll.so&quot;
++0034:err:module:import_dll Loading library oleaut32.dll (which is needed by L&quot;C:\\windows\\system32\\propsys.dll&quot;) failed (error c000007a).
++0034:err:module:import_dll Library propsys.dll (which is needed by L&quot;C:\\windows\\system32\\windowscodecs.dll&quot;) not found
++0034:err:module:open_builtin_file failed to load .so lib &quot;/home/xieby1/Codes/wine/dlls/ole32/ole32.dll.so&quot;
++0034:err:module:import_dll Loading library ole32.dll (which is needed by L&quot;C:\\windows\\system32\\shcore.dll&quot;) failed (error c000007a).
++0034:err:module:import_dll Library shcore.dll (which is needed by L&quot;C:\\windows\\system32\\shlwapi.dll&quot;) not found
++0034:err:module:import_dll Library shlwapi.dll (which is needed by L&quot;C:\\windows\\system32\\windowscodecs.dll&quot;) not found
++0034:err:module:import_dll Library windowscodecs.dll (which is needed by L&quot;C:\\windows\\system32\\winemenubuilder.exe&quot;) not found
++0034:err:module:LdrInitializeThunk Importing dlls for L&quot;C:\\windows\\system32\\winemenubuilder.exe&quot; failed, status c0000135
++Wine cannot find the FreeType font library.  To enable Wine to
++use TrueType fonts please install a version of FreeType greater than
++or equal to 2.0.5.
++http://www.freetype.org
++wine client error:70: wine client error:70: read: Bad address
++read: Bad address
++0070:err:seh:segv_handler Got unexpected trap -1
++0070:err:seh:NtRaiseException Exception frame is not in stack limits =&gt; unable to dispatch exception.
++wine client error:70: write: Bad file descriptor
++003c:err:service:process_send_command service protocol error - failed to read pipe r = 0  count = 0!
++003c:fixme:service:scmdatabase_autostart_services Auto-start service L&quot;winebus&quot; failed to start: 1053
+ 0080:err:ntoskrnl:ZwLoadDriver failed to create driver L&quot;\\Registry\\Machine\\System\\CurrentControlSet\\Services\\wineusb&quot;: c0000142
+ 003c:fixme:service:scmdatabase_autostart_services Auto-start service L&quot;wineusb&quot; failed to start: 1114
++Wine cannot find the FreeType font library.  To enable Wine to
++use TrueType fonts please install a version of FreeType greater than
++or equal to 2.0.5.
++http://www.freetype.org
+ Usage: ping [-n count] [-w timeout] [-l buffer_length] target_name
+ 
+ Options:
+     -n  Number of echo requests to send.
+     -w  Timeout in milliseconds to wait for each reply.
+     -l  Length of send buffer.
+-xieby1@xieby1-Lenovo-Y50-70:~/Codes/wine$ 0088:err:seh:segv_handler Got unexpected trap -1
+-0088:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7bc88207
+-wine client error:90: write: Bad file descriptor
++xieby1@thtf-pc:~/Codes/wine$ qemu: uncaught target signal 11 (Segmentation fault) - core dumped
+^C
+</code></pre>
+<div style="text-align:right; font-size:3em;">2020.7.10</div>
+<p>用gdb的add-symbol-file [-o]终于锁定了出错的地方，winNT的“系统调用“<code>NTResumeThread</code>，具体的调用路据如下：</p>
+<p><span style="color:red;"><strong>ABORTED</strong></span>：将下面的图画成流程图</p>
+<p>第二次执行wine（经过wine-preloader的各种操作后）在<code>dlls/ntdll/ntdll.so</code></p>
+<ul>
+<li><code>__wine_main</code>
+<ul>
+<li><code>start_main_thread</code>
+<ul>
+<li><code>p__wine_set_unix_funcs</code><strong>就是winNT的”系统调用“暴露给unix的意思</strong>，若想看winNT函数如何来的，大概可以从这里入手！</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>然后转到<code>dlls/ntdll/ntdll.dll.so</code>里的函数去执行</p>
+<ul>
+<li><code>__wine_set_unix_funcs</code>
+<ul>
+<li><code>__wine_process_init</code>
+<ul>
+<li><code>init_user_process_params</code>
+<ul>
+<li><code>run_wineboot</code>
+<ul>
+<li><code>NtResumeThread</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>然后wine会给wine-server发送请求（感觉就是用户程序给内核发送请求），让wine-server来执行<code>resume_thread</code>。在<code>wine/server/thread.c</code>里，</p>
+<ul>
+<li><code>resume_thread</code></li>
+</ul>
+<div style="text-align:right; font-size:3em;">2020.7.13</div>
+<h2 id="gdb连上了wine-server"><a class="header" href="#gdb连上了wine-server">gdb连上了wine-server</a></h2>
+<p>wine-server默认为backguound的模式工作，即在后台（fork然后让父进程推出）。但是qemu的gdbstub不支持<code>set follow-fork-mode</code>所以现阶段，我完全没有任何办法通过gdb连上fork出来的进程。测试了一下用wine-server的foreground模式报错信息似乎（没有仔细去对照）是一样的，所以那就直接在前台用qemu运行一个wine-server再连上gdb就方便了！下面是gdb break到<code>req_resume_thread</code>时的backtrace：</p>
+<div>
+    <pre>#0  <font color="#C4A000">req_resume_thread</font> (<font color="#06989A">req</font>=0xff3914b8, <font color="#06989A">reply</font>=0xfef5ac8c) at <font color="#4E9A06">thread.c</font>:1600
+#1  <font color="#3465A4">0xfef9e589</font> in <font color="#C4A000">call_req_handler</font> (<font color="#06989A">thread</font>=0xff3913d0) at <font color="#4E9A06">request.c</font>:310
+#2  <font color="#3465A4">0xfef9e6c6</font> in <font color="#C4A000">read_request</font> (<font color="#06989A">thread</font>=0xff3913d0) at <font color="#4E9A06">request.c</font>:344
+#3  <font color="#3465A4">0xfefa592a</font> in <font color="#C4A000">thread_poll_event</font> (<font color="#06989A">fd</font>=0xff391590, <font color="#06989A">event</font>=1) at <font color="#4E9A06">thread.c</font>:369
+#4  <font color="#3465A4">0xfef763b6</font> in <font color="#C4A000">fd_poll_event</font> (<font color="#06989A">fd</font>=0xff391590, <font color="#06989A">event</font>=1) at <font color="#4E9A06">fd.c</font>:519
+#5  <font color="#3465A4">0xfef766af</font> in <font color="#C4A000">main_loop_epoll</font> () at <font color="#4E9A06">fd.c</font>:614
+#6  <font color="#3465A4">0xfef76c33</font> in <font color="#C4A000">main_loop</font> () at <font color="#4E9A06">fd.c</font>:980
+#7  <font color="#3465A4">0xfef81466</font> in <font color="#C4A000">main</font> (<font color="#06989A">argc</font>=2, <font color="#06989A">argv</font>=0xfef5b494) at <font color="#4E9A06">main.c</font>:148</pre>
+</div>
+<div style="text-align:right; font-size:3em;">2020.7.14</div>
+<h2 id="在没有考虑语义的基础上定位报错"><a class="header" href="#在没有考虑语义的基础上定位报错">在没有考虑语义的基础上定位报错</a></h2>
+<p>想要定位第一个报错的位置，这里一段的“报错”都指第一个报错，即<code>err:virtual:virtual_map_section mapping 0x880000 1000 000000000 failed</code>。</p>
+<p>运行两个gdb，</p>
+<ol>
+<li>修改<strong>wine</strong>的源码让第二次启动wine时打开gdb端口1234，</li>
+<li>在前台运行<strong>wineserver</strong>且打开gdb端口1235，可以打开wineserver的debug_level，命令行<code>-d1</code>，也可以在合适的地方用gdb<code>set debug_level=1</code>，</li>
+</ol>
+<p>通过打印出的“系统调用”，可以大致锁定报错的范围，在<strong>wine</strong>调用函数<code>NtResumeThread</code>后的两个<code>open_mapping</code>调用之间，（下面的第一个open_mapping的调用阶段没有输出，只有返回阶段，因为在break到<code>req_open_mapping</code>后才设置的<code>debug_level</code>）</p>
+<pre><code class="language-shell">002c: open_mapping() = 0 { handle=0024 }
+002c: get_mapping_info( handle=0024, access=00000002 )
+002c: get_mapping_info() = 0 { size=00001000, flags=08000000, shared_file=0000, image={} }
+002c: get_handle_fd( handle=0024 )
+002c: *fd* 0024 -&gt; 21
+002c: get_handle_fd() = 0 { type=1, cacheable=1, access=000f001f, options=00000020 }
+002c: close_handle( handle=0024 )
+002c: close_handle() = 0
+002c: create_key( access=000f003f, options=00000001, objattr={rootdir=000c,attributes=00000000,sd={},name=L&quot;Hardware\\Description\\System&quot;}, class=L&quot;&quot; )
+002c: create_key() = OBJECT_NAME_NOT_FOUND { hkey=0000, created=0 }
+002c: create_key( access=000f003f, options=00000001, objattr={rootdir=000c,attributes=00000000,sd={},name=L&quot;Hardware&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0024, created=1 }
+002c: create_key( access=000f003f, options=00000001, objattr={rootdir=0024,attributes=00000000,sd={},name=L&quot;Description&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0028, created=1 }
+002c: close_handle( handle=0024 )
+002c: close_handle() = 0
+002c: create_key( access=000f003f, options=00000001, objattr={rootdir=0028,attributes=00000000,sd={},name=L&quot;System&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0024, created=1 }
+002c: close_handle( handle=0028 )
+002c: close_handle() = 0
+002c: set_key_value( hkey=0024, type=1, namelen=20, name=L&quot;Identifier&quot;, data={41,00,54,00,20,00,63,00,6f,00,6d,00,70,00,61,00,74,00,69,00,62,00,6c,00,65,00,00,00} )
+002c: set_key_value() = 0
+002c: create_key( access=000f003f, options=00000001, objattr={rootdir=0024,attributes=00000000,sd={},name=L&quot;FloatingPointProcessor&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0028, created=1 }
+002c: create_key( access=000f003f, options=00000001, objattr={rootdir=0024,attributes=00000000,sd={},name=L&quot;CentralProcessor&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=002c, created=1 }
+002c: create_key( access=000f003f, options=00000001, objattr={rootdir=002c,attributes=00000000,sd={},name=L&quot;0&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0030, created=1 }
+002c: set_key_value( hkey=0030, type=4, namelen=20, name=L&quot;FeatureSet&quot;, data={bf,3f,69,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=20, name=L&quot;Identifier&quot;, data={78,00,38,00,36,00,20,00,46,00,61,00,6d,00,69,00,6c,00,79,00,20,00,36,00,20,00,4d,00,6f,00,64,00,65,00,6c,00,20,00,36,00,20,00,53,00,74,00,65,00,70,00,70,00,69,00,6e,00,67,00,20,00,33,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=38, name=L&quot;ProcessorNameString&quot;, data={51,00,45,00,4d,00,55,00,20,00,56,00,69,00,72,00,74,00,75,00,61,00,6c,00,20,00,43,00,50,00,55,00,20,00,76,00,65,00,72,00,73,00,69,00,6f,00,6e,00,20,00,32,00,2e,00,35,00,2b,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=32, name=L&quot;VendorIdentifier&quot;, data={47,00,65,00,6e,00,75,00,69,00,6e,00,65,00,49,00,6e,00,74,00,65,00,6c,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=4, namelen=8, name=L&quot;~MHz&quot;, data={e8,03,00,00} )
+002c: set_key_value() = 0
+002c: close_handle( handle=0030 )
+002c: close_handle() = 0
+002c: create_key( access=000f003f, options=00000001, objattr={rootdir=0028,attributes=00000000,sd={},name=L&quot;0&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0030, created=1 }
+002c: set_key_value( hkey=0030, type=1, namelen=20, name=L&quot;Identifier&quot;, data={78,00,38,00,36,00,20,00,46,00,61,00,6d,00,69,00,6c,00,79,00,20,00,36,00,20,00,4d,00,6f,00,64,00,65,00,6c,00,20,00,36,00,20,00,53,00,74,00,65,00,70,00,70,00,69,00,6e,00,67,00,20,00,33,00,00,00} )
+002c: set_key_value() = 0
+002c: close_handle( handle=0030 )
+002c: close_handle() = 0
+002c: create_key( access=000f003f, options=00000001, objattr={rootdir=002c,attributes=00000000,sd={},name=L&quot;1&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0030, created=1 }
+002c: set_key_value( hkey=0030, type=4, namelen=20, name=L&quot;FeatureSet&quot;, data={bf,3f,69,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=20, name=L&quot;Identifier&quot;, data={78,00,38,00,36,00,20,00,46,00,61,00,6d,00,69,00,6c,00,79,00,20,00,36,00,20,00,4d,00,6f,00,64,00,65,00,6c,00,20,00,36,00,20,00,53,00,74,00,65,00,70,00,70,00,69,00,6e,00,67,00,20,00,33,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=38, name=L&quot;ProcessorNameString&quot;, data={51,00,45,00,4d,00,55,00,20,00,56,00,69,00,72,00,74,00,75,00,61,00,6c,00,20,00,43,00,50,00,55,00,20,00,76,00,65,00,72,00,73,00,69,00,6f,00,6e,00,20,00,32,00,2e,00,35,00,2b,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=32, name=L&quot;VendorIdentifier&quot;, data={47,00,65,00,6e,00,75,00,69,00,6e,00,65,00,49,00,6e,00,74,00,65,00,6c,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=4, namelen=8, name=L&quot;~MHz&quot;, data={e8,03,00,00} )
+002c: set_key_value() = 0
+002c: close_handle( handle=0030 )
+002c: close_handle() = 0
+002c: create_key( access=000f003f, options=00000001, objattr={rootdir=0028,attributes=00000000,sd={},name=L&quot;1&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0030, created=1 }
+002c: set_key_value( hkey=0030, type=1, namelen=20, name=L&quot;Identifier&quot;, data={78,00,38,00,36,00,20,00,46,00,61,00,6d,00,69,00,6c,00,79,00,20,00,36,00,20,00,4d,00,6f,00,64,00,65,00,6c,00,20,00,36,00,20,00,53,00,74,00,65,00,70,00,70,00,69,00,6e,00,67,00,20,00,33,00,00,00} )
+002c: set_key_value() = 0
+002c: close_handle( handle=0030 )
+002c: close_handle() = 0
+002c: create_key( access=000f003f, options=00000001, objattr={rootdir=002c,attributes=00000000,sd={},name=L&quot;2&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0030, created=1 }
+002c: set_key_value( hkey=0030, type=4, namelen=20, name=L&quot;FeatureSet&quot;, data={bf,3f,69,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=20, name=L&quot;Identifier&quot;, data={78,00,38,00,36,00,20,00,46,00,61,00,6d,00,69,00,6c,00,79,00,20,00,36,00,20,00,4d,00,6f,00,64,00,65,00,6c,00,20,00,36,00,20,00,53,00,74,00,65,00,70,00,70,00,69,00,6e,00,67,00,20,00,33,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=38, name=L&quot;ProcessorNameString&quot;, data={51,00,45,00,4d,00,55,00,20,00,56,00,69,00,72,00,74,00,75,00,61,00,6c,00,20,00,43,00,50,00,55,00,20,00,76,00,65,00,72,00,73,00,69,00,6f,00,6e,00,20,00,32,00,2e,00,35,00,2b,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=32, name=L&quot;VendorIdentifier&quot;, data={47,00,65,00,6e,00,75,00,69,00,6e,00,65,00,49,00,6e,00,74,00,65,00,6c,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=4, namelen=8, name=L&quot;~MHz&quot;, data={e8,03,00,00} )
+002c: set_key_value() = 0
+002c: close_handle( handle=0030 )
+002c: close_handle() = 0
+002c: create_key( access=000f003f, options=00000001, objattr={rootdir=0028,attributes=00000000,sd={},name=L&quot;2&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0030, created=1 }
+002c: set_key_value( hkey=0030, type=1, namelen=20, name=L&quot;Identifier&quot;, data={78,00,38,00,36,00,20,00,46,00,61,00,6d,00,69,00,6c,00,79,00,20,00,36,00,20,00,4d,00,6f,00,64,00,65,00,6c,00,20,00,36,00,20,00,53,00,74,00,65,00,70,00,70,00,69,00,6e,00,67,00,20,00,33,00,00,00} )
+002c: set_key_value() = 0
+002c: close_handle( handle=0030 )
+002c: close_handle() = 0
+002c: create_key( access=000f003f, options=00000001, objattr={rootdir=002c,attributes=00000000,sd={},name=L&quot;3&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0030, created=1 }
+002c: set_key_value( hkey=0030, type=4, namelen=20, name=L&quot;FeatureSet&quot;, data={bf,3f,69,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=20, name=L&quot;Identifier&quot;, data={78,00,38,00,36,00,20,00,46,00,61,00,6d,00,69,00,6c,00,79,00,20,00,36,00,20,00,4d,00,6f,00,64,00,65,00,6c,00,20,00,36,00,20,00,53,00,74,00,65,00,70,00,70,00,69,00,6e,00,67,00,20,00,33,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=38, name=L&quot;ProcessorNameString&quot;, data={51,00,45,00,4d,00,55,00,20,00,56,00,69,00,72,00,74,00,75,00,61,00,6c,00,20,00,43,00,50,00,55,00,20,00,76,00,65,00,72,00,73,00,69,00,6f,00,6e,00,20,00,32,00,2e,00,35,00,2b,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=32, name=L&quot;VendorIdentifier&quot;, data={47,00,65,00,6e,00,75,00,69,00,6e,00,65,00,49,00,6e,00,74,00,65,00,6c,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=4, namelen=8, name=L&quot;~MHz&quot;, data={e8,03,00,00} )
+002c: set_key_value() = 0
+002c: close_handle( handle=0030 )
+002c: close_handle() = 0
+002c: create_key( access=000f003f, options=00000001, objattr={rootdir=0028,attributes=00000000,sd={},name=L&quot;3&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0030, created=1 }
+002c: set_key_value( hkey=0030, type=1, namelen=20, name=L&quot;Identifier&quot;, data={78,00,38,00,36,00,20,00,46,00,61,00,6d,00,69,00,6c,00,79,00,20,00,36,00,20,00,4d,00,6f,00,64,00,65,00,6c,00,20,00,36,00,20,00,53,00,74,00,65,00,70,00,70,00,69,00,6e,00,67,00,20,00,33,00,00,00} )
+002c: set_key_value() = 0
+002c: close_handle( handle=0030 )
+002c: close_handle() = 0
+002c: create_key( access=000f003f, options=00000001, objattr={rootdir=0024,attributes=00000000,sd={},name=L&quot;BIOS&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0030, created=1 }
+002c: set_key_value( hkey=0030, type=1, namelen=42, name=L&quot;BaseBoardManufacturer&quot;, data={54,00,48,00,54,00,46,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=32, name=L&quot;BaseBoardProduct&quot;, data={54,00,48,00,54,00,46,00,2d,00,4c,00,53,00,33,00,41,00,34,00,30,00,30,00,30,00,2d,00,37,00,41,00,31,00,30,00,30,00,30,00,2d,00,31,00,57,00,2d,00,56,00,42,00,33,00,2d,00,4d,00,4c,00,34,00,41,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=32, name=L&quot;BaseBoardVersion&quot;, data={56,00,42,00,33,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=20, name=L&quot;BIOSVendor&quot;, data={5a,00,44,00,20,00,74,00,65,00,63,00,68,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=22, name=L&quot;BIOSVersion&quot;, data={56,00,32,00,2e,00,30,00,2e,00,34,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=30, name=L&quot;BIOSReleaseDate&quot;, data={30,00,35,00,2f,00,32,00,36,00,2f,00,32,00,30,00,32,00,30,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=4, namelen=32, name=L&quot;BiosMajorRelease&quot;, data={ff,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=4, namelen=32, name=L&quot;BiosMinorRelease&quot;, data={ff,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=4, namelen=44, name=L&quot;ECFirmwareMajorVersion&quot;, data={ff,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=4, namelen=44, name=L&quot;ECFirmwareMinorVersion&quot;, data={ff,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=36, name=L&quot;SystemManufacturer&quot;, data={54,00,48,00,54,00,46,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=34, name=L&quot;SystemProductName&quot;, data={43,00,58,00,20,00,54,00,4c,00,36,00,33,00,30,00,20,00,53,00,65,00,72,00,69,00,65,00,73,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=26, name=L&quot;SystemVersion&quot;, data={31,00,2e,00,30,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=18, name=L&quot;SystemSKU&quot;, data={00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0030, type=1, namelen=24, name=L&quot;SystemFamily&quot;, data={00,00} )
+002c: set_key_value() = 0
+002c: close_handle( handle=0030 )
+002c: close_handle() = 0
+002c: close_handle( handle=0028 )
+002c: close_handle() = 0
+002c: close_handle( handle=002c )
+002c: close_handle() = 0
+002c: close_handle( handle=0024 )
+002c: close_handle() = 0
+002c: create_key( access=02000000, options=00000000, objattr={rootdir=0000,attributes=00000000,sd={},name=L&quot;\\Registry\\DynData&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0024, created=1 }
+002c: create_key( access=00020006, options=00000000, objattr={rootdir=0024,attributes=00000000,sd={},name=L&quot;PerfStats\\StatData&quot;}, class=L&quot;&quot; )
+002c: create_key() = OBJECT_NAME_NOT_FOUND { hkey=0000, created=0 }
+002c: create_key( access=00020006, options=00000000, objattr={rootdir=0024,attributes=00000000,sd={},name=L&quot;PerfStats&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0028, created=1 }
+002c: create_key( access=00020006, options=00000000, objattr={rootdir=0028,attributes=00000000,sd={},name=L&quot;StatData&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=002c, created=1 }
+002c: close_handle( handle=0028 )
+002c: close_handle() = 0
+002c: close_handle( handle=002c )
+002c: close_handle() = 0
+002c: create_key( access=00020006, options=00000000, objattr={rootdir=0024,attributes=00000000,sd={},name=L&quot;Config Manager\\Enum&quot;}, class=L&quot;&quot; )
+002c: create_key() = OBJECT_NAME_NOT_FOUND { hkey=0000, created=0 }
+002c: create_key( access=00020006, options=00000000, objattr={rootdir=0024,attributes=00000000,sd={},name=L&quot;Config Manager&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0028, created=1 }
+002c: create_key( access=00020006, options=00000000, objattr={rootdir=0028,attributes=00000000,sd={},name=L&quot;Enum&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=002c, created=1 }
+002c: close_handle( handle=0028 )
+002c: close_handle() = 0
+002c: close_handle( handle=002c )
+002c: close_handle() = 0
+002c: create_key( access=02000000, options=00000000, objattr={rootdir=000c,attributes=00000000,sd={},name=L&quot;System\\CurrentControlSet\\Control\\Session Manager\\Environment&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0028, created=0 }
+002c: set_key_value( hkey=0028, type=1, namelen=40, name=L&quot;NUMBER_OF_PROCESSORS&quot;, data={34,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0028, type=1, namelen=44, name=L&quot;PROCESSOR_ARCHITECTURE&quot;, data={78,00,38,00,36,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0028, type=1, namelen=40, name=L&quot;PROCESSOR_IDENTIFIER&quot;, data={78,00,38,00,36,00,20,00,46,00,61,00,6d,00,69,00,6c,00,79,00,20,00,36,00,20,00,4d,00,6f,00,64,00,65,00,6c,00,20,00,36,00,20,00,53,00,74,00,65,00,70,00,70,00,69,00,6e,00,67,00,20,00,33,00,2c,00,20,00,47,00,65,00,6e,00,75,00,69,00,6e,00,65,00,49,00,6e,00,74,00,65,00,6c,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0028, type=1, namelen=30, name=L&quot;PROCESSOR_LEVEL&quot;, data={36,00,00,00} )
+002c: set_key_value() = 0
+002c: set_key_value( hkey=0028, type=1, namelen=36, name=L&quot;PROCESSOR_REVISION&quot;, data={30,00,36,00,30,00,33,00,00,00} )
+002c: set_key_value() = 0
+002c: close_handle( handle=0028 )
+002c: close_handle() = 0
+002c: open_key( parent=000c, access=000f003f, attributes=00000000, name=L&quot;System\\CurrentControlSet\\Control\\Session Manager&quot; )
+002c: open_key() = 0 { hkey=0028 }
+002c: get_key_value( hkey=0028, name=L&quot;PendingFileRenameOperations&quot; )
+002c: get_key_value() = OBJECT_NAME_NOT_FOUND { type=-1, total=0, data={} }
+002c: close_handle( handle=0028 )
+002c: close_handle() = 0
+002c: open_key( parent=000c, access=02000000, attributes=00000000, name=L&quot;Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon&quot; )
+002c: open_key() = 0 { hkey=0028 }
+002c: get_key_value( hkey=0028, name=L&quot;SFCDllCacheDir&quot; )
+002c: get_key_value() = OBJECT_NAME_NOT_FOUND { type=-1, total=0, data={} }
+002c: close_handle( handle=0028 )
+002c: close_handle() = 0
+002c: create_key( access=00020019, options=00000000, objattr={rootdir=000c,attributes=00000000,sd={},name=L&quot;Software\\Microsoft\\Windows\\CurrentVersion&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0028, created=0 }
+002c: create_key( access=000f003f, options=00000000, objattr={rootdir=0028,attributes=00000000,sd={},name=L&quot;RunServicesOnce&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=002c, created=0 }
+002c: enum_key( hkey=002c, index=-1, info_class=2 )
+002c: enum_key() = 0 { subkeys=0, max_subkey=0, max_class=0, values=0, max_value=0, max_data=0, modif=1d6559b2ed4a1e2 (-456739.1624650), total=0, namelen=30, name=L&quot;&quot;, class=L&quot;&quot; }
+002c: close_handle( handle=002c )
+002c: close_handle() = 0
+002c: close_handle( handle=0028 )
+002c: close_handle() = 0
+002c: create_key( access=00020019, options=00000000, objattr={rootdir=000c,attributes=00000000,sd={},name=L&quot;Software\\Microsoft\\Windows\\CurrentVersion&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=0028, created=0 }
+002c: create_key( access=00020019, options=00000000, objattr={rootdir=0028,attributes=00000000,sd={},name=L&quot;RunServices&quot;}, class=L&quot;&quot; )
+002c: create_key() = 0 { hkey=002c, created=0 }
+002c: enum_key( hkey=002c, index=-1, info_class=2 )
+002c: enum_key() = 0 { subkeys=0, max_subkey=0, max_class=0, values=1, max_value=30, max_data=92, modif=1d6559b3b4053f4 (-456718.3268140), total=0, namelen=22, name=L&quot;&quot;, class=L&quot;&quot; }
+002c: enum_key_value( hkey=002c, index=0, info_class=1 )
+002c: enum_key_value() = 0 { type=1, total=122, namelen=30, name=L&quot;winemenubuilder&quot;, data={43,00,3a,00,5c,00,77,00,69,00,6e,00,64,00,6f,00,77,00,73,00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,77,00,69,00,6e,00,65,00,6d,00,65,00,6e,00,75,00,62,00,75,00,69,00,6c,00,64,00,65,00,72,00,2e,00,65,00,78,00,65,00,20,00,2d,00,61,00,20,00,2d,00,72,00,00,00} }
+002c: create_file( access=80100080, sharing=00000005, create=1, options=00000060, attrs=00000000, objattr={rootdir=0000,attributes=00000040,sd={},name=L&quot;&quot;}, filename=&quot;/home/xieby1/.wine/dosdevices/c:/windows/system32/winemenubuilder.exe&quot; )
+002c: create_file() = 0 { handle=0030 }
+002c: close_handle( handle=0030 )
+002c: close_handle() = 0
+002c: create_file( access=80100000, sharing=00000003, create=1, options=00004021, attrs=00000000, objattr={rootdir=0000,attributes=00000040,sd={},name=L&quot;&quot;}, filename=&quot;/home/xieby1/.wine/dosdevices/c:/&quot; )
+002c: create_file() = 0 { handle=0030 }
+002c: get_handle_fd( handle=0030 )
+002c: *fd* 0030 -&gt; 31
+002c: get_handle_fd() = 0 { type=2, cacheable=1, access=00120089, options=00004021 }
+002c: get_directory_cache_entry( handle=0030 )
+002c: get_directory_cache_entry() = 0 { entry=0, free={} }
+002c: close_handle( handle=0030 )
+002c: close_handle() = 0
+002c: create_file( access=80100000, sharing=00000003, create=1, options=00004021, attrs=00000000, objattr={rootdir=0000,attributes=00000040,sd={},name=L&quot;&quot;}, filename=&quot;/home/xieby1/.wine/dosdevices/c:/windows/&quot; )
+002c: create_file() = 0 { handle=0030 }
+002c: get_handle_fd( handle=0030 )
+002c: *fd* 0030 -&gt; 31
+002c: get_handle_fd() = 0 { type=2, cacheable=1, access=00120089, options=00004021 }
+002c: get_directory_cache_entry( handle=0030 )
+002c: get_directory_cache_entry() = 0 { entry=1, free={0} }
+002c: close_handle( handle=0030 )
+002c: close_handle() = 0
+002c: create_file( access=80100000, sharing=00000003, create=1, options=00004021, attrs=00000000, objattr={rootdir=0000,attributes=00000040,sd={},name=L&quot;&quot;}, filename=&quot;/home/xieby1/.wine/dosdevices/c:/windows/system32/&quot; )
+002c: create_file() = 0 { handle=0030 }
+002c: get_handle_fd( handle=0030 )
+002c: *fd* 0030 -&gt; 31
+002c: get_handle_fd() = 0 { type=2, cacheable=1, access=00120089, options=00004021 }
+002c: get_directory_cache_entry( handle=0030 )
+002c: get_directory_cache_entry() = 0 { entry=0, free={1} }
+002c: close_handle( handle=0030 )
+002c: close_handle() = 0
+002c: create_file( access=00100020, sharing=00000003, create=1, options=00000021, attrs=00000000, objattr={rootdir=0000,attributes=00000040,sd={},name=L&quot;&quot;}, filename=&quot;/home/xieby1/.wine/dosdevices/c:/windows/&quot; )
+002c: create_file() = 0 { handle=0030 }
+002c: get_handle_fd( handle=0030 )
+002c: *fd* 0030 -&gt; 31
+002c: get_handle_fd() = 0 { type=2, cacheable=1, access=00100020, options=00000021 }
+002c: close_handle( handle=0030 )
+002c: close_handle() = 0
+002c: create_file( access=80000000, sharing=00000005, create=1, options=00000020, attrs=00000000, objattr={rootdir=0000,attributes=00000040,sd={},name=L&quot;&quot;}, filename=&quot;/home/xieby1/.wine/dosdevices/c:/windows/system32/winemenubuilder.exe&quot; )
+002c: create_file() = 0 { handle=0030 }
+002c: create_mapping( access=000f000d, flags=01000000, file_access=00000001, size=00000000, file_handle=0030, objattr={} )
+002c: create_mapping() = 0 { handle=0034 }
+002c: get_mapping_info( handle=0034, access=00000001 )
+002c: get_mapping_info() = 0 { size=00003000, flags=01800000, shared_file=0000, image={base=10000000,entry_point=10001000,map_size=00003000,stack_size=00100000,stack_commit=00001000,zerobits=00000000,subsystem=00000002,subsystem_low=0000,subsystem_high=0004,gp=00000000,image_charact=0102,dll_charact=0100,machine=014c,contains_code=1,image_flags=80,loader_flags=00000000,header_size=00000200,file_size=00000408,checksum=00000000,cpu=x86} }
+002c: close_handle( handle=0034 )
+002c: close_handle() = 0
+002c: *fd* 12 &lt;- 32
+002c: new_process( parent_process=0000, inherit_all=0, create_flags=00000000, socket_fd=12, exe_file=0030, access=001fffff, cpu=x86, info_size=698, objattr={rootdir=0000,attributes=00000000,sd={},name=L&quot;&quot;}, info={debug_flags=0,console_flags=0,console=0000,hstdin=0000,hstdout=0000,hstderr=0000,x=0,y=0,xsize=0,ysize=0,xchars=0,ychars=0,attribute=00,flags=0,show=0,curdir=L&quot;C:\\windows\\&quot;,dllpath=L&quot;C:\\windows\\system32;C:\\windows\\system32;C:\\windows\\system;C:\\windows;.;C:\\windows\\system32;C:\\windows;C:\\windows\\system32\\wbem;C:\\windows\\system32\\WindowsPowershell\\v1.0&quot;,imagepath=L&quot;C:\\windows\\system32\\winemenubuilder.exe&quot;,cmdline=L&quot;C:\\windows\\system32\\winemenubuilder.exe -a -r&quot;,title=L&quot;C:\\windows\\system32\\winemenubuilder.exe&quot;,desktop=L&quot;&quot;,shellinfo=L&quot;&quot;,runtime=L&quot;&quot;}, env=L&quot;WINELOADERNOEXEC=1\0LC_PAPER=zh_CN.UTF-8\0XDG_SESSION_ID=49\0LC_ADDRESS=zh_CN.UTF-8\0HOSTNAME=thtf-pc\0LC_MONETARY=zh_CN.UTF-8\0TERM=xterm-256color\0SHELL=/bin/bash\0HISTSIZE=1000\0SSH_CLIENT=10.160.1.32 38182 22\0LC_NUMERIC=zh_CN.UTF-8\0QTDIR=/usr/lib64/qt-3.3\0OLDPWD=/home/xieby1\0QTINC=/usr/lib64/qt-3.3/include\0SSH_TTY=/dev/pts/1\0USER=xieby1\0LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:\0LC_TELEPHONE=zh_CN.UTF-8\0MOZ_GMP_PATH=/usr/lib64/mozilla/plugins/gmp-gmpopenh264/system-installed\0MAIL=/var/spool/mail/xieby1\0LC_IDENTIFICATION=zh_CN.UTF-8\0LANG=en_US.UTF-8\0LC_MEASUREMENT=zh_CN.UTF-8\0SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass\0HISTCONTROL=ignoreboth\0SHLVL=1\0QEMU_LD_PREFIX=/home/xieby1/\0LOGNAME=xieby1\0QTLIB=/usr/lib64/qt-3.3/lib\0SSH_CONNECTION=10.160.1.32 38182 10.160.1.87 22\0LESSOPEN=||/usr/bin/lesspipe.sh %s\0XDG_RUNTIME_DIR=/run/user/1001\0LC_TIME=zh_CN.UTF-8\0CCACHE_HASHDIR=\0LC_NAME=zh_CN.UTF-8\0_=loader/wine\0NUMBER_OF_PROCESSORS=4\0OS=Windows_NT\0PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH\0PROCESSOR_ARCHITECTURE=x86\0PROCESSOR_IDENTIFIER=x86 Family 6 Model 6 Stepping 3, GenuineIntel\0PROCESSOR_LEVEL=6\0PROCESSOR_REVISION=0603\0SystemDrive=c:\0SYSTEMROOT=C:\\windows\0winsysdir=C:\\windows\\system32\0ComSpec=C:\\windows\\system32\\cmd.exe\0PATH=C:\\windows\\system32;C:\\windows;C:\\windows\\system32\\wbem;C:\\windows\\system32\\WindowsPowershell\\v1.0\0TEMP=C:\\users\\xieby1\\Temp\0TMP=C:\\users\\xieby1\\Temp\0windir=C:\\windows\0ALLUSERSPROFILE=C:\\ProgramData\0ProgramData=C:\\ProgramData\0PUBLIC=C:\\users\\Public\0WINEHOMEDIR=\\??\\unix\\home\\xieby1\0WINEBUILDDIR=\\??\\unix\\home\\xieby1\\Codes\\wine\0WINECONFIGDIR=\\??\\unix\\home\\xieby1\\.wine\0WINEUSERNAME=xieby1\0ProgramFiles=C:\\Program Files\0CommonProgramFiles=C:\\Program Files\\Common Files\0&quot; )
+002c: new_process() = 0 { info=0034, pid=0030, handle=0038 }
+002c: new_thread( process=0038, access=001fffff, suspend=1, request_fd=-1, objattr={rootdir=0000,attributes=00000000,sd={},name=L&quot;&quot;} )
+002c: *fd* 0265 -&gt; 34
+002c: new_thread() = 0 { tid=0034, handle=003c }
+002c: get_handle_fd( handle=0000 )
+002c: get_handle_fd() = INVALID_HANDLE { type=0, cacheable=0, access=00000000, options=00000000 }
+002c: get_handle_fd( handle=0000 )
+002c: get_handle_fd() = INVALID_HANDLE { type=0, cacheable=0, access=00000000, options=00000000 }
+002c: select( flags=2, cookie=0031f044, timeout=infinite, size=8, prev_apc=0000, result={}, data={WAIT_ALL,handles={0034}}, context={} )
+002c: select() = PENDING { call={APC_NONE}, apc_handle=0000, context={} }
+0034: *fd* 7 &lt;- 34
+0034: *fd* 9 &lt;- 35
+0034: init_thread( unix_pid=942, unix_tid=942, debug_level=0, teb=7ffd8000, entry=7ffdf000, reply_fd=7, wait_fd=9, cpu=x86 )
+0034: init_thread() = 0 { pid=0030, tid=0034, server_start=1d659c2801c66fe (-48.7599160), info_size=6896, version=613, all_cpus=00000001, suspend=1 }
+0034: open_mapping( access=000f001f, attributes=00000080, rootdir=0000, name=L&quot;\\KernelObjects\\__wine_user_shared_data&quot; )
+</code></pre>
+<p>接下来就是逐步定位，究竟是哪个“系统调用”报的错误。最后找到这个报错来自与上面第4~5行的<code>get_handle_fd</code>调用。</p>
+<p>上面的定位过程太过于无脑，太过于费时。不过第一次调试完全没经验，接下里是一点点简单分析，下次遇到相似的问题应该能够能够大幅度简化定位过程，</p>
+<h3 id="分析"><a class="header" href="#分析">分析</a></h3>
+<p>在分析wine代码时就确定了报错的直接来源并不是wine，而是wineserver。而wineserver承担的是模拟windows的内核，那么不妨就假设报错是来自于某个windows的“系统调用”。这些可能出错的“系统调用”如下：</p>
+<ul>
+<li>
+<p>wine报错之前的系统调用是<code>NtResumeThread</code>（<code>resume_thread</code>），所以极其有可能是这个。而在wineserver里打断点，排除了。</p>
+</li>
+<li>
+<p>之前使用的wine提供的debug信息，见<a href="qemu-wine.html">qemu-wine.md</a>2020.7.9的笔记，打印出的第一个err如下（第3行）：</p>
+<pre><code class="language-shell">002c:Call KERNEL32.MapViewOfFile(00000028,00000002,00000000,00000000,000005e8) ret=7e701731
+002c:Call ntdll.NtMapViewOfSection(00000028,ffffffff,0031f934,00000000,00000000,0031f8e0,0031f930,00000001,00000000,00000004) ret=7e7706fc
+002c:err:virtual:virtual_map_section mapping 0x880000 1000 000000000 failed
+002c:Ret  ntdll.NtMapViewOfSection() retval=c0000017 ret=7e7706fc
+002c:Call ntdll.RtlNtStatusTo.DosError(c0000017) ret=7e770713
+002c:Ret  ntdll.RtlNtStatusTo.DosError() retval=00000008 ret=7e770713
+002c:Ret  KERNEL32.MapViewOfFile() retval=00000000 ret=7e701731
+002c:Call KERNEL32.CloseHandle(00000028) ret=7e701746
+</code></pre>
+<p>函数<code>virtual_map_section</code>只调用了<code>get_mapping_info</code>和<code>map_view</code>。然而也通过gdb断点排除了。</p>
+</li>
+</ul>
+<p>且考虑wine在报错时是在启动<code>wineboot.exe</code>进程，且第二个报错<code>002c:err:wineboot:create_user_shared_data cannot map __wine_user_shared_data</code>就来自<code>wineboot</code>，所以我猜测报错应该是来自<code>wineboot.exe</code>，而不是wine。</p>
+<div style="text-align:right; font-size:3em;">2020.07.15</div>
+<h2 id="尝试debug-winebootexe"><a class="header" href="#尝试debug-winebootexe">尝试debug wineboot.exe</a></h2>
+<p><strong>注1</strong>：下面的测试都是在x86直接运行的（qemu还无法跟踪fork的子进程和exec的新进程），这样才能够跟踪到调用<code>NtCreateUserProcess</code>调用<code>spawn_process</code>fork之后的子进程和孙子进程。</p>
+<p><strong>注2</strong>：虽然创建进程的“系统调用”是发送给winNT内核的，但是实际还是应用程序自身收到“系统调用”的结果后执行fork+exec完成的。具体操作过程留着以后需要的时候来分析。</p>
+<p>启动wineboot.exe前（执行execv前）的参数argv，4个：</p>
+<pre><code class="language-shell">argv[0]=&quot;/home/xieby1/Codes/wine/loader/wine-preloader&quot;
+argv[1]=&quot;/home/xieby1/Codes/wine/loader/wine&quot;
+argv[2]=&quot;C:\\windows\\system32\\wineboot.exe&quot;
+argv[3]=&quot;--init&quot;
+</code></pre>
+<p>启动wineboot.exe前（执行execv前）的backtrace：</p>
+<div>
+<pre>#0  <font color="#C4A000">preloader_exec</font> (<font color="#06989A">argv</font>=0x7d409b00) at <font color="#4E9A06">unix/loader.c</font>:423
+#1  <font color="#3465A4">0xf7ba9862</font> in <font color="#C4A000">loader_exec</font> (
+    <font color="#06989A">loader</font>=0x7d4061d0 &quot;/home/xieby1/Codes/wine/loader/wine&quot;, <font color="#06989A">argv</font>=0x7d409b00, <font color="#06989A">cpu</font>=0)
+    at <font color="#4E9A06">unix/loader.c</font>:436
+#2  <font color="#3465A4">0xf7ba9bbc</font> in <font color="#C4A000">exec_wineloader</font> (<font color="#06989A">argv</font>=0x7d409b00, <font color="#06989A">socketfd</font>=6, <font color="#06989A">pe_info</font>=0xffffc120)
+    at <font color="#4E9A06">unix/loader.c</font>:512
+#3  <font color="#3465A4">0xf7bad384</font> in <font color="#C4A000">spawn_process</font> (<font color="#06989A">params</font>=0x114c00, <font color="#06989A">socketfd</font>=6, <font color="#06989A">unixdir</font>=9, 
+    <font color="#06989A">winedebug</font>=0x0, <font color="#06989A">pe_info</font>=0xffffc120) at <font color="#4E9A06">unix/process.c</font>:558
+#4  <font color="#3465A4">0xf7bae132</font> in <font color="#C4A000">NtCreateUserProcess</font> (<font color="#06989A">process_handle_ptr</font>=0xffffc470, 
+    <font color="#06989A">thread_handle_ptr</font>=0xffffc474, <font color="#06989A">process_access</font>=2097151, <font color="#06989A">thread_access</font>=2097151, 
+    <font color="#06989A">process_attr</font>=0xffffc3b0, <font color="#06989A">thread_attr</font>=0xffffc398, <font color="#06989A">process_flags</font>=0, 
+    <font color="#06989A">thread_flags</font>=1, <font color="#06989A">params</font>=0x114c00, <font color="#06989A">info</font>=0xffffc350, <font color="#06989A">attr</font>=0xffffc2fc)
+    at <font color="#4E9A06">unix/process.c</font>:908
+#5  <font color="#3465A4">0x7bc6fcbb</font> in <font color="#C4A000">NtCreateUserProcess</font> (<font color="#06989A">process_handle_ptr</font>=0xffffc470, 
+    <font color="#06989A">thread_handle_ptr</font>=0xffffc474, <font color="#06989A">process_access</font>=2097151, <font color="#06989A">thread_access</font>=2097151, 
+    <font color="#06989A">process_attr</font>=0xffffc3b0, <font color="#06989A">thread_attr</font>=0xffffc398, <font color="#06989A">process_flags</font>=0, 
+    <font color="#06989A">thread_flags</font>=1, <font color="#06989A">params</font>=0x114c00, <font color="#06989A">info</font>=0xffffc350, <font color="#06989A">attr</font>=0xffffc2fc)
+    at <font color="#4E9A06">process.c</font>:255
+#6  <font color="#3465A4">0x7bc6ff6b</font> in <font color="#C4A000">RtlCreateUserProcess</font> (<font color="#06989A">path</font>=0xffffc4c4, <font color="#06989A">attributes</font>=64, 
+    <font color="#06989A">params</font>=0x114c00, <font color="#06989A">process_descr</font>=0x0, <font color="#06989A">thread_descr</font>=0x0, <font color="#06989A">parent</font>=0x0, 
+    <font color="#06989A">inherit</font>=0 &apos;\000&apos;, <font color="#06989A">debug</font>=0x0, <font color="#06989A">exception</font>=0x0, <font color="#06989A">info</font>=0xffffc46c) at <font color="#4E9A06">process.c</font>:317
+#7  <font color="#3465A4">0x7bc4cd34</font> in <font color="#C4A000">run_wineboot</font> (<font color="#06989A">env</font>=0x110518) at <font color="#4E9A06">env.c</font>:1207
+#8  <font color="#3465A4">0x7bc4d0e0</font> in <font color="#C4A000">init_user_process_params</font> () at <font color="#4E9A06">env.c</font>:1282
+#9  <font color="#3465A4">0x7bc5e82d</font> in <font color="#C4A000">__wine_process_init</font> () at <font color="#4E9A06">loader.c</font>:3965
+#10 <font color="#3465A4">0x7bc5ee39</font> in <font color="#C4A000">__wine_set_unix_funcs</font> (<font color="#06989A">version</font>=70, <font color="#06989A">funcs</font>=0xf7be85a0 &lt;unix_funcs&gt;)
+    at <font color="#4E9A06">loader.c</font>:4056
+#11 <font color="#3465A4">0xf7babcfc</font> in <font color="#C4A000">start_main_thread</font> () at <font color="#4E9A06">unix/loader.c</font>:1566
+#12 <font color="#3465A4">0xf7babf77</font> in <font color="#C4A000">__wine_main</font> (<font color="#06989A">argc</font>=2, <font color="#06989A">argv</font>=0xffffd064, <font color="#06989A">envp</font>=0xffffd070)
+    at <font color="#4E9A06">unix/loader.c</font>:1834
+#13 <font color="#3465A4">0x7d001920</font> in <font color="#C4A000">main</font> (<font color="#06989A">argc</font>=2, <font color="#06989A">argv</font>=0xffffd064) at <font color="#4E9A06">main.c</font>:287</pre>
+</div>
+<div style="text-align:right; font-size:3em;">2020.07.17</div>
+<h3 id="windows程序入口"><a class="header" href="#windows程序入口">windows程序入口</a></h3>
+<p>在看wineboot.exe.so的objdump时发现了<code>mainCRTStartup</code>地址<code>1998c</code>后3位和昨天看到的<code>call *12(%ebp)</code>目标地址<code>7e70598c</code>后3位一致，瞬间警觉！</p>
+<p><strong>E U R E K A ！</strong></p>
+<p>所以只要把wineboot.exe.so的符号添加<code>7E6EC000</code>的偏移加载gdb里，然后就可以在wineboot里打断点了！</p>
+<h3 id="关于报错"><a class="header" href="#关于报错">关于报错</a></h3>
+<p>报错的开头数字大概是进程号。</p>
+<h4 id="开头两个来自002c的报错"><a class="header" href="#开头两个来自002c的报错">开头两个来自002c的报错</a></h4>
+<p>这俩报错来自于<code>programs/wineboot/wineboot.c:213, 217</code>。这俩报错涉及wineboot.exe和wineserver之间交互。我觉得这极有可能是是因为竞争造成的。因为单步执行wineserver时有报错，而单步执行wineboot.exe却没有报错。</p>
+<p>2020.7.22: ✅将内核页大小替换为4k后，这个报错消失了！！！（和原本期待的不一样，本以为换成4k页后，dlopen的问题会消失。）</p>
+<p>2020.8.13: 在运行别的程序和winedbg打印bt all时都遇到了<code>virtual_map_section mapping 0x880000 1000 000000000 failed</code>这个报错，别的程序报错是因为别的程序需要启动wineboot而winedbg是本身报错（在virtual_map_section的ERR里增加了当前进程名，用<code>prctl(PR_GET_NAME, xxx)</code>，因此报错的程序名）。打印出出错时（在出错时调用scanf，然后去打印）的memory maps，发现0x880000已经被映射为大小为1040K的RW的内存区域了。我猜测应该可能是QEMU的分配逻辑有问题。有必要去看看<code>virtual_map_section</code>的逻辑和WINE为啥要分配0x880000。</p>
+<p>2020.8.17：报错出现在<code>programs/wineboo.c: 1592 create_user_shared_data()</code>，在进行windows系统调用<code>NtMapViewOfSection</code>（归根结底是向wineserver请求<code>map_view</code>系统调用时）时出错，且这个错误和wineboot的执行的速度有关系，将报错代码打印出来是<code>c0000017</code>。</p>
+<p>2020.8.18：今天一点点试出来，在<code>programs/wineboot.c: 1511: GetWindowsDirectoryW(...)</code>（未执行这个函数）到<code>programs/wineboot.c: 1592</code>之间存在竞争，下文我称这个区间为<em>竞争区间</em>。</p>
+<p>2020.8.19 v：</p>
+<p>目前的情况：一点一点通过在QEMU里插入fprintf（为什么不用printf？因为wine是多进程应程序，），通过在WINE里使用ERR()，（为什么不用gdb？因为gdb在这个竞争的场景下不好使，执行太慢，错误消失，所以只能用输出到文件/终端的方法），找到了一些有趣的事情。</p>
+<p>首先，在<em>竞争区间</em>里qemu一共<span style="color: red;"><strong>收到</strong></span>3个来自wineboot执行mmap系统调用的请求，经过阅读代码（还没去gdb实际查看）这3个mmap分别来自<code>create_user_shared_data=&gt;...=&gt;dlls/ntdlls/unix/virtual.c: </code>的#1<code>2249: map_view</code>, #2#3<code>2254: 2021: map_image_into_view: map_file_into_view</code>。</p>
+<p>但是，通过在qemu执行mmap系统调用的函数（target_mmap）里插fprintf发现，无论竞争是否出现（快速执行或慢慢执行），#2mmap都执行失败了的，但是表现给应用程序（wineboot）的是有竞争时是#2mmap失败，无竞争时#2mmap成功。#2mmap失败在qemu的<code>linux-user/mmap.c: target_mmap: /*handle the end of the mapping*/ mmap_frag</code>里，即#2mmap并<span style="color: red;"><strong>未实际执行</strong></span>。</p>
+<p>失败了不要紧，但是qemu在mmap未执行后没有设置正确的errno。这导致errno是上一次某个函数设置的。这个上个函数大概就是和竞争相关的了，使得有竞争时errno是<code>21 (Is a directory)</code>，没竞争时errno是<code>0 (Success)</code>。根据<code>man errno</code>，</p>
+<blockquote>
+<p>The  &lt;errno.h&gt;  header file defines the integer variable errno, which is set by system calls and some library functions in the event of an error to indicate what went wrong. </p>
+<p>... a function that succeeds is allowed to change errno.  The value of errno is never set to zero by any system call or library function.</p>
+<p>For some system calls and library functions (e.g., getpriority(2)), -1 is  a valid  return on success.  In such cases, a successful return can be distinguished from an error return by setting errno to zero before the  call,  and then, if the call returns a status that indicates that an error may have occurred, checking to see if errno has a nonzero value.</p>
+</blockquote>
+<p>即一个成功执行的函数是可以改errno，但绝对不会设置成0。莫非未作任何修改默认的值就是0？即一次错都没出？（做个测试吧，x86 gcc 9.3编译确实初始值为0）（还需要担心qemu的系统调用实现可信吗？会吧errno改为0吗？）但是为啥又说特殊情况可能会置0？</p>
+<p>现在这个问题可以分成两个部分了，一是qemu的mmap的问题，而是竞争的问题。竞争问题来源wine还是qemu有待查明。</p>
+<h5 id="qemu的mmap失败"><a class="header" href="#qemu的mmap失败">qemu的mmap失败</a></h5>
+<p>给mmap失败后加上errno这个很简单，但是qemu为什么在处理不同页大小的host和guest会完全处理不了呢？出错代码位于<code>linux-user/mmap.c: /*map an incomplete host page*/ mmap_frag:</code> qemu里的注释为<em>msync() won't work here, so we return an error if write is possible while it is a shared mapping</em>。</p>
+<p>qemu对host和guest页大小不同的理论上的思考，见<a href="qemu-wine.html">qemu-wine.md#页属性的管理</a>。</p>
+<h5 id="竞争问题"><a class="header" href="#竞争问题">竞争问题</a></h5>
+<p>2020.8.19 ^</p>
+<h4 id="dlopen失败-failed-to-map-segment-from-shared-object"><a class="header" href="#dlopen失败-failed-to-map-segment-from-shared-object">dlopen失败: &quot;failed to map segment from shared object&quot;</a></h4>
+<p>来自于启动winemenubuilder前，<code>server_start_thread</code> -&gt; <code>attach_thread</code> -&gt; <code>LdrInotialize Thunk</code> -&gt; <code>fixup_imports</code> -&gt; <code>import_dll</code> -&gt; <code>load_dll</code> -&gt; <code>dlopen</code>动态加载<code>ole32.dll.so</code>和<code>oleaut32.dll.so</code>失败。dlerror显示为“failed to map segment from shared object”，原因暂时未解。</p>
+<div style="text-align:right; font-size:3em;">2020.07.22</div>
+<ul>
+<li>用mmap可以分配一个4k对齐但非16k对齐的内存地址来进行测试。</li>
+<li>在x86-64上编译glibc参考<a href="https://stackoverflow.com/questions/8004241/how-to-compile-glibc-32bit-on-an-x86-64-machine">How to compile glibc 32bit on an x86_64 machine</a>，参考glibc的笔记<a href="../../Glibc/glibc.html">glibc.md</a>。</li>
+</ul>
+<p>切换成4k页和带debug符号的glibc后，变成了dlopen加载<code>winex11.drv.so</code>失败，由此创建图形化窗口失败。</p>
+<div style="text-align:right; font-size:3em;">2020.07.25</div>
+<p>上面的<code>winex11.drv.so</code>dlopen失败是源于<code>libX11.so.6</code>加载失败，失败原因同上：dlerror显示为“failed to map segment from shared object”，原因暂时未解。张老师问为什么去看源码而不是不用strace工具看看，其实我之前看过了，没到mmap系统调用就dlopen就出错终止了。下面将一个正常的dlopen打开文件的strace和<code>libX11.so.6</code>失败的strace列举如下，</p>
+<pre><code class="language-shell"># 加载winex11.drv.so成功（但是winex11.drv.so依赖于libX11.so.6，所以已加载的winex11.drv.so之后也会被清空）
+openat(AT_FDCWD, &quot;/home/xieby1/Codes/wine/dlls/winex11.drv/winex11.drv.so&quot;, O_RDONLY) = 13
+read(13, &quot;\177ELF\1\1\1&quot;, 7)            = 7
+openat(AT_FDCWD, &quot;/home/xieby1/Codes/wine/dlls/winex11.drv/winex11.drv.so&quot;, O_RDONLY|O_CLOEXEC) = 14
+read(14, &quot;\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0P \2\0004\0\0\0&quot;..., 512) = 512
+fstat(14, {st_mode=S_IFREG|0775, st_size=3474012, ...}) = 0
+mmap(0xff5e7a4000, 602112, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS|MAP_DENYWRITE, -1, 0) = 0xff5e7a4000
+mmap(0xff5e7a4000, 602112, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 14, 0) = 0xff5e7a4000
+mmap(0xff5e7b5000, 315392, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 14, 0x11000) = 0xff5e7b5000
+mmap(0xff5e802000, 196608, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 14, 0x5e000) = 0xff5e802000
+mmap(0xff5e832000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 14, 0x8d000) = 0xff5e832000
+close(14)
+</code></pre>
+<pre><code class="language-shell"># dlopen加载libX11.so.6失败
+access(&quot;/home/xieby1/glibc32-debug/lib/libX11.so.6&quot;, F_OK) = 0
+openat(AT_FDCWD, &quot;/home/xieby1/glibc32-debug/lib/libX11.so.6&quot;, O_RDONLY|O_CLOEXEC) = 14   
+read(14, &quot;\177ELF\1\1\1\0\0\0\0\0\0\0\0\0\3\0\3\0\1\0\0\0\320 \1\0004\0\0\0&quot;..., 512) = 512
+fstat(14, {st_mode=S_IFREG|0644, st_size=1364940, ...}) = 0
+close(14)
+</code></pre>
+<p><strong>注</strong>：其中有诸多<code>rt_sigprocmask</code>和<code>cacheflush</code>调用，被我剔除了。这些调用在x86机器上直接运行时没有，而在龙芯机器上用qemu模拟会有，意义暂时未知，应该不会影响什么吧。</p>
+<p>如上，正因为还没到mmap系统调用dlopen就失败，应该是dlopen里有什么检查机制，使得dlopen直接放弃执行mmap，这就是我想去看dlopen源码的原因。</p>
+<div style="text-align:right; font-size:3em;">2020.07.27</div>
+<p>找到问题所在：dlopen在加载<code>libX11.so</code>调用mmap时，qemu已经找不到连续大小为0x14f000B的内存空间给<code>libX11.so</code>了，所以失败。这样之前的strace没有输出mmap的疑惑就能解释了：因为qemu在模拟mmap时发现没有空间了，所以根本还没调用mips的mmap就出错返回了。</p>
+<p>🤔🤔🤔可是为什么会空间不够呢？我看了看<code>reserved_va=0xfffff000</code>啊，这个是表示大小吧，为什么不够？</p>
+<div style="text-align:right; font-size:3em;">2020.07.28</div>
+<p>将qemu内存分配略做修改，<code>linux-user/mmap.c： 235</code>若prot的rwx位有标志才表示被使用，便可以运行notepad（保存/加载文件会崩溃，可以正常的打字。）。</p>
+<div style="text-align:right; font-size:3em;">2020.07.30</div>
+<p><strong>是谁偷走了我的内存？</strong></p>
+<p>分配新页的函数，可能是<code>page_find_alloc</code>，随意浏览PageDesc代码时发现的。<code>l1_map</code>和<code>v_l2_levels</code>是啥？</p>
+<p>qemu查询一个页是否被使用的，通过page_get_flags判断，若有任何标志位就表示被使用了。这个函数有待认真看看🤔。在这个函数附近有一个叫<code>page_dump</code>用来打印guest内存使用情况的函数，可以看到qemu给页定义了新的标志位PAGE_VALID，PAGE_WRITE_ORG和PAGE_WRITE_INV。<code>walk_memory_regions</code>函数能够便利一遍guest内存。有必要去看看这个函数和memory_regions在用户态中存在的意义<a href="../QEMU/memory_region.html">memory_region.md</a>。</p>
+<div style="text-align:right; font-size:3em;">2020.08.03</div>
+<p>在QEMU每次遇到<code>openat</code>系统调用时就dump一次x86的内存（使用page_dump函数）。由此发现了两个大块内存被分配走了，</p>
+<p><strong>注1</strong>：下面是notepad运行的结果。<strong>注2</strong>：下面的空间都是wine主动分配的。</p>
+<ol>
+<li><code>...</code>~<code>7b000000</code>大约1.7GB空间，wine-preloader分配的；</li>
+<li><code>80000000</code>~<code>...</code>大约1.98GB空间，第二次运行wine时调用<code>__wine_main</code>-&gt;<code>virtual_init</code>-&gt;<code>mmap_init</code>分配的。</li>
+</ol>
+<p>QEMU之后的分配失败就是来自于前者。</p>
+<div style="text-align:right; font-size:3em;">2020.08.06</div>
+<p>将预留内存的图引用如下，</p>
+<p><img src="pictures/reserve_memory-formatted.svg" alt="reserve_memory-formatted" /></p>
+<p>当分配<code>110000</code>~<code>68000000</code>这一段时发生了问题，</p>
+<p>qemu模拟的x86内存空间如下（qemu的page_dump函数提供），</p>
+<pre><code># before alloc 110000~68000000       |    # after alloc 110000~68000000
+00000000-00110000 00110000 ----OI    |    00000000-7d400000 7d400000 ----OI
+08048000-08049000 00001000 r--VOI    |    
+08049000-7d400000 753b7000 ----OI    |    
+7d400000-7d402000 00002000 r-xVOI    |    7d400000-7d402000 00002000 r-xVOI
+7d402000-7d403000 00001000 r--VOI    |    7d402000-7d403000 00001000 r--VOI
+7d403000-7d404000 00001000 ----OI    |    7d403000-7d404000 00001000 ----OI
+7d404000-7d405000 00001000 rw-VOI    |    7d404000-7d405000 00001000 rw-VOI
+ff7fc000-ff7fe000 00002000 rw-VOI    |    ff7fc000-ff7fe000 00002000 rw-VOI
+ff7fe000-ff7ff000 00001000 ----OI    |    ff7fe000-ff7ff000 00001000 ----OI
+ff7ff000-fffff000 00800000 rw-VOI    |    ff7ff000-fffff000 00800000 rw-VOI
+</code></pre>
+<p>问题来自于08048000-08049000(rVOI)和08049000-7d400000(OI)这两段本不应该有东西。且qemu的mmap覆盖算法也有问题，08048000-08049000(rVOI)和08049000-7d400000(OI)被110000~68000000(OI)覆盖后居然变为了110000~7d400000(OI)而不是110000~68000000(OI)和68000000~7d40000000(rVOI)。</p>
+<p>x86直接运行如下（pmap命令提供）</p>
+<pre><code># before alloc 110000~68000000           |    # after alloc 110000~68000000
+00010000   1024K -----   [ anon ]        |    00010000 1703872K -----   [ anon ]
+08048000      4K r---- wine-preloader    |        
+7d400000      8K r-x-- wine-preloader    |    7d400000      8K r-x-- wine-preloader
+7d402000      4K r---- wine-preloader    |    7d402000      4K r---- wine-preloader
+7d404000      4K rw--- wine-preloader    |    7d404000      4K rw--- wine-preloader
+f7ffa000     12K r----   [ anon ]        |    f7ffa000     12K r----   [ anon ]
+f7ffd000      4K r-x--   [ anon ]        |    f7ffd000      4K r-x--   [ anon ]
+fffdd000    132K rw---   [ stack ]       |    fffdd000    132K rw---   [ stack ]
+ total             1192K                 |     total          1704036K
+</code></pre>
+<p>所以到底是qemu的覆盖算法有问题还是多出了08049000-7d400000(OI)有问题？</p>
+<div style="text-align:right; font-size:3em;">2020.08.07</div>
+<p>qemu的预留内存的算法有问题，</p>
+<ul>
+<li>linux-user/main.c: main
+<ul>
+<li>827: linux-user/linuxload.c: 127: loader_exec
+<ul>
+<li>147: linux-user/elfload.c: 2807: load_elf_binary
+<ul>
+<li>2821: linux-user/elfload.c: 2324: load_elf_image</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>分配的segments所需的最低地址(loaddr)到最高地址(loaddr)的所有内存。</p>
+<p>对于wine-preloader，<code>readelf -l loader/wine-preloader </code>，最低地址和最高地址差接近2GB，导致之后加载.so文件内存不足。上述问题如下图，</p>
+<p><img src="../QEMU/pictures/memory_reserve_problem-formatted.svg" alt="memory_reserve_problem-formatted" /></p>
+<p>这使得留给wine加载so文件的内存变得很少。解决办法分两种情况，一是让qemu的内存和x86的内存保持一直，二是让qemu的mmap可以分配已被分配但是为<code>---</code>的页。前者应该是最好的解决办法，可是为啥qemu官方不这样做？后者算是饮鸩止渴。</p>
+<div style="text-align:right; font-size:3em;">2020.09.14</div>
+<h2 id="尝试解决pdf2vecexe问题"><a class="header" href="#尝试解决pdf2vecexe问题">尝试解决pdf2vec.exe问题</a></h2>
+<p>pdf2vec.exe可以在x86-linux上用目前修改版的qemu wine正常运行，但是在龙芯上用qemu wine无法运行。基本没有报错。</p>
+<p>用gdb跟踪wine发现，wine能够正常进入到pdf2vec.exe的入口开始执行。虽然大页碎片的问题还没完全修完（目前修到了分支指令的地方），但是没有任何信息显示这个pdf2vec.exe触及到了共享页碎片问题。这非常奇怪。</p>
+<div style="text-align:right; font-size:3em;">2020.09.15</div>
+<p>出现过的报错：</p>
+<p>用户程序结束前</p>
+<pre><code>003c:err:service:process_send_command receiving command result timed out
+003c:fixme:service:scmdatabase_autostart_services Auto-start service L&quot;winebus&quot; failed to start: 1053
+003c:err:service:process_send_command receiving command result timed out
+003c:fixme:service:scmdatabase_autostart_services Auto-start service L&quot;wineusb&quot; failed to start: 1053
+</code></pre>
+<pre><code>0080:err:ntoskrnl:ZwLoadDriver failed to create driver L&quot;\\Registry\\Machine\\System\\CurrentControlSet\\Services\\wineusb&quot;: c0000142
+003c:fixme:service:scmdatabase_autostart_services Auto-start service L&quot;wineusb&quot; failed to start: 1114
+</code></pre>
+<p>用户程序结束后</p>
+<pre><code>wineserver crashed, please enable coredumps (ulimit -c unlimited) and restart.
+0070:err:ntdll:RtlpWaitForCriticalSection section 7EC44C78 &quot;service.c: service_cs&quot; wait timed out in thread 0070, blocked by 0080, retrying (60 sec)
+...
+</code></pre>
+<pre><code>0088:err:seh:segv_handler Got unexpected trap -1
+0088:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7bc88207
+0088:err:seh:segv_handler Got unexpected trap -1
+0088:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7ec350b6
+00a4:err:seh:segv_handler Got unexpected trap -1
+00a4:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7bc88207
+00a4:err:seh:segv_handler Got unexpected trap -1
+00a4:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7ec350b6
+0090:err:seh:segv_handler Got unexpected trap -1
+0090:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7ec350b6
+0090:err:seh:segv_handler Got unexpected trap -1
+wine client error:90: 0090:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7bc88207
+wine client error:90: write: Bad file descriptor
+write: Bad file descriptor
+0090:err:seh:segv_handler Got unexpected trap -1
+0090:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7dedbe2e
+Got unexpected trap -1
+wine client error:90: write: Bad file descriptor
+0090:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7dedbe2e
+wine client error:90: write: Bad file descriptor
+0090:err:seh:segv_handler Got unexpected trap -1
+0090:err:seh:NtRaiseException 0090:err:seh:segv_handler Unhandled exception code c000001d flags 0 addr 0x7dedbe2e
+0090:err:seh:NtRaiseException 0090:err:seh:segv_handler Unhandled exception code c000001d flags 0 addr 0x7dedbe2e
+Got unexpected trap -1
+wine client error:90: write: Bad file descriptor
+0090:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7dedbe2e
+wine client error:90: write: Bad file descriptor
+0070:err:ntdll:RtlpWaitForCriticalSection section 7EC44C78 &quot;service.c: service_cs&quot; wait timed out in thread 0070, blocked by 0080, retrying (60 sec)
+...
+</code></pre>
+<pre><code>wine client error:b8: write: Bad file descriptor
+009c:err:seh:segv_handler Got unexpected trap -1
+0068:err:seh:segv_handler Got unexpected trap -1
+0068:err:seh:segv_handler Got unexpected trap -1
+Got unexpected trap -1
+009c:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7bc88207
+009c:err:seh:segv_handler Got unexpected trap -1
+009c:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7ec350b6
+0068:err:seh:NtRaiseException 0068:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7bc88207
+wine client error:84: partial wakeup read 0
+</code></pre>
+<pre><code>wine client error:b0: 0088:err:seh:segv_handler Got unexpected trap -1
+0088:err:seh:segv_handler Got unexpected trap -1
+Got unexpected trap -1
+0088:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7ec350b6
+0088:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7bc88207
+write: Bad file descriptor
+00b0:err:seh:segv_handler Got unexpected trap -1
+00b0:err:seh:NtRaiseException Exception frame is not in stack limits =&gt; unable to dispatch exception.
+wine client error:b0: write: Bad file descriptor
+00a4:err:seh:segv_handler Got unexpected trap -1
+00a4:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7bc88207
+00a4:err:seh:segv_handler Got unexpected trap -1
+00a4:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7ec350b6
+0090:err:seh:segv_handler Got unexpected trap -1
+0090:err:seh:segv_handler Got unexpected trap -1
+0090:err:seh:segv_handler Got unexpected trap -1
+0090:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7bc88207
+wine client error:90: 0090:err:seh:NtRaiseException Unhandled exception code c000001d flags 0 addr 0x7ec350b6
+wine client error:90: write: Bad file descriptor
+write: Bad file descriptor
+qemu: uncaught target signal 11 (Segmentation fault) - core dumped
+</code></pre>
+<div style="text-align:right; font-size:3em;">2020.09.16</div>
+<p>把winedebug的通道都打开后</p>
+<pre><code class="language-shell">WINEDEBUG=warn+all wine ...
+</code></pre>
+<p>发现是无法打开pdf2vec.exe所以没有任何输出。把pdf2vec.exe移到了Windows的“文件系统”里就没问题了<code>~/.wine/drive_c</code>。</p>
+<div style="text-align:right; font-size:3em;">2020.09.25</div>
+<p>今日共享页碎片的问题基本修完，（ABORT: 多次mmap同一大页的碎片，需要合并这些碎片）</p>
+<h2 id="性能测试"><a class="header" href="#性能测试">性能测试</a></h2>
+<h3 id="coremark"><a class="header" href="#coremark">coremark</a></h3>
+<div style="text-align:right; font-size:3em;">2020.10.09</div>
+<h2 id="将现有工作rebase到xqm的思考"><a class="header" href="#将现有工作rebase到xqm的思考">将现有工作rebase到xqm的思考</a></h2>
+<p>大前提是原生qemu 5.0以后才能运行wine，然而现在的xqm还是4.1版本的qemu。所以xqm需要将其升级到5.0以上后才有机会开始rebase现有关于wine的修复到xqm上去。</p>
+<h2 id="尝试解决wine无法显示汉字的问题"><a class="header" href="#尝试解决wine无法显示汉字的问题">尝试解决wine无法显示汉字的问题</a></h2>
+<p>参考<a href="http://linux-wiki.cn/wiki/Wine%E7%9A%84%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%B8%8E%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE">Wine的中文显示与字体设置</a>，使用字体链接即可，</p>
+<p>可以通过</p>
+<pre><code class="language-shell">sudo apt install fonts-wqy-microhei
+</code></pre>
+<p>安装这个<code>wqy-microhei.ttc</code>字体，中文/日文/韩文正常显示。</p>
+<p>执行</p>
+<pre><code class="language-shell">winetricks riched20 # winetricks dlls list可以查看
+</code></pre>
+<p>发送框便能正常显示。</p>
+<p>调试相关的调试信息，</p>
+<pre><code class="language-shell">env WINEDEBUG=+font wine &lt;program&gt;
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../../CompatLayer/WINE/others.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="../../CompatLayer/WINE/qemu-wine.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../../CompatLayer/WINE/others.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="../../CompatLayer/WINE/qemu-wine.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>

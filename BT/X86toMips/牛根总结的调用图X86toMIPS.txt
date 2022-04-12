@@ -1,0 +1,456 @@
+X86toMIPS
+-----------------------------------------------------------------------------
+main()			// main/main.cpp
+----------------------------------------------------------------------------- 0
+|	1. main_init_1()
+|	------------------------------------------------------------------------ 1
+|	|	1. mm_main_init();
+|	|	------------------------------------------------------------------------ 2
+|	|	| x86_mem_start = 0x10000
+|	|	| mmap( x86_mem_start , SIZE )
+|	|	------------------------------------------------------------------------
+|	|	2. TB::main_init();
+|	|	------------------------------------------------------------------------ 2
+|	|	| _tb_fast_table[i] = _tb_array
+|	|	------------------------------------------------------------------------
+|	|	3. ENV::allocate();
+|	|	------------------------------------------------------------------------ 2
+|	|	| alloc ENV
+|	|	------------------------------------------------------------------------
+|	|	4. env->register_init();
+|	|	------------------------------------------------------------------------ 2
+|	|	| segment register = 0x0
+|	|	| es/cs/ss/ds/fs/gs
+|	|	------------------------------------------------------------------------
+|	|	5. env->thread_init();
+|	|	------------------------------------------------------------------------ 2
+|	|	| alloc it_data, tr_data
+|	|	| alloc rc_data, sg_data
+|	|	| alloc fp_data
+|	|	------------------------------------------------------------------------
+|	------------------------------------------------------------------------
+|
+|	2. main_init_2()
+|	------------------------------------------------------------------------ 1
+|	|	1. cc_main_init();
+|	|	------------------------------------------------------------------------ 2
+|	|	| code cache
+|	|	------------------------------------------------------------------------
+|	|	2. sg_main_init();
+|	|	------------------------------------------------------------------------ 2
+|	|	|
+|	|	------------------------------------------------------------------------
+|	|	3. generate_and_assemble_utility()	// translator/translate.cpp
+|	|	------------------------------------------------------------------------ 2
+|	|	|	1. generate_native_rotate_fpu_by()
+|	|	|	2. generate_context_switch_native_to_bt()
+|	|	|	------------------------------------------------------------------------ 3
+|	|	|	|	context_switch writen in IR2
+|	|	|	------------------------------------------------------------------------
+|	|	|	3. context_switch_native_to_bt = tr_ir2_assemble()	// IR2_INST to code cache
+|	|	|	4. generate_context_switch_bt_to_native()
+|	|	|	------------------------------------------------------------------------ 3
+|	|	|	|	context_switch writen in IR2
+|	|	|	------------------------------------------------------------------------
+|	|	|	5. context_switch_bt_to_native = tr_ir2_assemble()	// IR2_INST to code cache
+|	|	|	6. init_tb->generate_tb_look_up()
+|	|	|	------------------------------------------------------------------------ 3
+|	|	|	|	_tb_fast_table and _tb_slow_table search writen in IR2
+|	|	|	------------------------------------------------------------------------
+|	|	|	7. tb_look_up_native = tr_ir2_assemble()			// IR2_INST to code cache
+|	|	|	8. init_tb2->ss_generate_match_fail_native_code()
+|	|	|	------------------------------------------------------------------------ 3
+|	|	|	|	
+|	|	|	------------------------------------------------------------------------
+|	|	|	9. ss_match_fail_native = tr_ir2_assemble()			// IR2_INST to code cache
+|	|	------------------------------------------------------------------------
+|	------------------------------------------------------------------------
+|
+|	3. ld_loader_exec( ... )
+|	------------------------------------------------------------------------ 1
+|	|	1. ldi_load_x86_binary( filename, true) => entry 
+|	|	------------------------------------------------------------------------ 2
+|	|	|	1. open( file_name ) => fd
+|	|	|	2. check_x86_binary( fd )
+|	|	|	------------------------------------------------------------------------ 3
+|	|	|	| check mode & ELF format
+|	|	|	| through fstat & ELF header
+|	|	|	------------------------------------------------------------------------
+|	|	|	3. ldi_mmap_x86_binary( fd, true )  => entry
+|	|	|	------------------------------------------------------------------------ 3
+|	|	|	| 	1. read ELF header
+|	|	|	| 	2. read program header
+|	|	|	| 	3. fixed_base = x86_main_so_mmap_start
+|	|	|	| 	4. ldi_mmap_x86_segments( fd, fixed_base, ... ) => entry_offset
+|	|	|	|	------------------------------------------------------------------------ 4
+|	|	|	|	|	# for each header in elf_header
+|	|	|	|	|	1. only need p_type == PT_LOADr
+|	|	|	|	|	2. set mmap flags
+|	|	|	|	|	3. mmap_start = PAGE_ALIGNED( fixed_base + phdr->p_vaddr )
+|	|	|	|	|	   extra_size = PAGE_OFFSET ( phdr->p_vaddr )
+|	|	|	|	|	4. sc_mmap( mmap_start + entry_offset, phdr->p_memsz + extra_size )
+|	|	|	|	|	------------------------------------------------------------------------ 5
+|	|	|	|	|	|	sc_mmap_noprint( start, len, ... )
+|	|	|	|	|	|	------------------------------------------------------------------------ 6
+|	|	|	|	|	|	|	1. for x86_so, recode file information
+|	|	|	|	|	|	|	2. sci_mmap( start, len, ... )
+|	|	|	|	|	|	|	------------------------------------------------------------------------ 7
+|	|	|	|	|	|	|	|	sci_mmap_fixed( start, len, ... )
+|	|	|	|	|	|	|	|	------------------------------------------------------------------------ 8
+|	|	|	|	|	|	|	|	|	sci_mmap_fixed_within_one_mips_page
+|	|	|	|	|	|	|	|	------------------------------------------------------------------------
+|	|	|	|	|	|	|	------------------------------------------------------------------------
+|	|	|	|	|	|	|	3. recode regular_x86_so file information
+|	|	|	|	|	|	------------------------------------------------------------------------
+|	|	|	|	|	|	# if OPTIONS::print_syscall
+|	|	|	|	|	|	printf some information while running
+|	|	|	|	|	|	# endif
+|	|	|	|	|	------------------------------------------------------------------------
+|	|	|	|	|	5. entry_offset = retval - phdr->p_vaddr // only the first time
+|	|	|	|	|	# if x86_main_exe or x86_main_so
+|	|	|	|	|	6. BIN_INFO::recoed_after_mmap( fd, file_type, ... )
+|	|	|	|	|	# endif
+|	|	|	|	|	7. mmap and bzero the tailing space
+|	|	|	|	|	# endfor
+|	|	|	|	------------------------------------------------------------------------
+|	|	|	|	5. entry_offset + elf_header.e_entry => entry
+|	|	|	------------------------------------------------------------------------
+|	|	|	4. close( fd )
+|	|	------------------------------------------------------------------------
+|	|	2. ldi_initalize_heap()
+|	|	------------------------------------------------------------------------ 2
+|	|	|	1. BIN_INFO::find( file_name ) => *bi
+|	|	|	# for i = 0 -> bi->mmap_times()
+|	|	|	# if bi->mmap_addr(i) + bi->mmap_len(i) > brk_addr
+|	|	|	2. brk_addr = bi->mmap_addr(i) + bi->mmap_len(i)
+|	|	|	# endif
+|	|	|	# endfor
+|	|	|	3. sc_brk( brk_addr )
+|	|	|	------------------------------------------------------------------------ 3
+|	|	|	|	sci_brk( new_brk )
+|	|	|	|	------------------------------------------------------------------------ 4
+|	|	|	|	|	# if the first brk in loader
+|	|	|	|	| 	1. curr = lowest = highest = new ; return
+|	|	|	|	|	# endif
+|	|	|	|	|	2. old_end = PAGE_ALIGNED( curr )
+|	|	|	|	|      new_end = PAGE_ALIGNED( new  )
+|	|	|	|	|	3. sci_mmap( old_end, new_end - old_end, ... )
+|	|	|	|	------------------------------------------------------------------------
+|	|	|	------------------------------------------------------------------------
+|	|	------------------------------------------------------------------------
+|	|	3. ldi_initalize_stack() => esp
+|	|	------------------------------------------------------------------------ 2
+|	|	|	1. ldi_stack_allocate() => stack_start
+|	|	|	2. BIN_INFO::find( file_name ) => *
+|	|	|	3. esp = ldi_stack_prepare_arguments( argc, argv, bi, stack_start )
+|	|	|	------------------------------------------------------------------------ 3
+|	|	|	|	1. prepare argument strings
+|	|	|	|	2. prepare environment variable strings
+|	|	|	|	3. copy argu/envi strings to stack
+|	|	|	|	   strings_start_on_stack = stack_start + OPTINOS::stack_size() - 1
+|	|	|	|	   memcpy( strings_start_on_stack, arg_strings, arg_strings_size )
+|	|	|	|	4. prepare argc and argu/envi pointers
+|	|	|	|	   # for i = 0 -> arg_pointers_num
+|	|	|	|	   # if arg_pointers[i] > 0xbadbeef
+|	|	|	|	   arg_pointers[i] = arg_pointers[i] - 0xbadbeef + strings_start_on_stack
+|	|	|	|	   # endif
+|	|	|	|	   # endfor
+|	|	|	|	5. write "i686" on stack
+|	|	|	|	6. write random bytes on stack
+|	|	|	|	7. ldi_stack_prepare_auxiliary_table( aux, ... )
+|	|	|	|	8. write argc and argu/envi pointers and axuiliary table on stack
+|	|	|	------------------------------------------------------------------------
+|	|	------------------------------------------------------------------------
+|	|	# if ( dynamic link )
+|	|	4. find elf interpreter file name
+|	|	5. ldi_load_x86_binary( elf_interp, false )
+|	|	6. ldi_run_elf_interpreter()
+|	|	------------------------------------------------------------------------ 2
+|	|	|	exec( elf_interp_entry, x86_main_entry ) 	// (start_addr, end_addr)
+|	|	|	------------------------------------------------------------------------
+|	|	|	|	env->set_eip( start_addr )
+|	|	|	|	# while ( env->eip() != end_addr )
+|	|	|	|	1. sg_process_pending_signals()
+|	|	|	|	2. TB *curr_tb = TB::find( env->rip() )
+|	|	|	|	3. curr_tb->exec()
+|	|	|	|	# endwhile
+|	|	|	------------------------------------------------------------------------
+|	|	------------------------------------------------------------------------
+|	|	# endif
+|	------------------------------------------------------------------------
+|	4. OPTIONS::parse_after_ld()
+|	# if OPTIONS::disasm_exe()
+|	5. disassemble()	// main/exec.cpp
+|	------------------------------------------------------------------------ 1
+|	|	1. start_addr = OPTINS::disasm_start() => curr_addr
+|	|	2. end_addr   = OPTINS::disasm_end()
+|	|	# while curr_addr < end_addr
+|	|	3. TB *curr_tb = TB::find( curr_addr )
+|	|	4. curr_tb->disasm();	// decode x86 binary 	// TB::disasm()		// ir1/tb.cpp
+|	|	5. curr_tb->dump();		// print instructions 	// TB::dump()		// ir1/tb.cpp
+|	|	6. curr_addr = curr_tb->addr_next();
+|	|	# endwhile
+|	|	7. exit(0)
+|	------------------------------------------------------------------------
+|	# else if OPTIONS::static_translate
+|		static_translate( ... )
+|	# else
+|	6. exec( entry, -1 ) 	// exec(start_addr, end_addr)	// main/exec.cpp
+|	------------------------------------------------------------------------ 1
+|	|	env->set_eip( start_addr )
+|	|	# while ( env->eip() != end_addr )
+|	|	1. sg_process_pending_signals()
+|	|	2. TB *curr_tb = TB::find( env->eip() )
+|	|	------------------------------------------------------------------------ 2
+|	|	|	1. try_find( pc )
+|	|	|	------------------------------------------------------------------------ 3
+|	|	|	|	1. hash_value( pc )
+|	|	|	|	2. _tb_fast_table search
+|	|	|	|	3. _tb_slow_table search
+|	|	|	------------------------------------------------------------------------
+|	|	|	2. TB::allocate( pc ) if not found
+|	|	------------------------------------------------------------------------
+|	|	3. curr_tb->exec() 	// TB::exec() 	// main/exec.cpp
+|	|	------------------------------------------------------------------------ 2
+|	|	|	disasm()  &  translate()  &  run_native()
+|	|	------------------------------------------------------------------------
+|	|	# endwhile
+|	------------------------------------------------------------------------
+|	# endif
+-----------------------------------------------------------------------------
+
+
+TB* TB::find( ADDRX pc )	// ir1/tb.cpp
+-----------------------------------------------------------------------------
+|	1. TB *ptb = try_find( pc )		//	TB::try_find()	// ir1/tb.cpp
+|	------------------------------------------------------------------------
+|	|	1. hash_value = TB::hash_value( pc )
+|	|	2. ptb = _tb_fast_table[ hash_value ]
+|	|	# if ptb != NULL && ptb->addr() == pc
+|	|	   return ptb
+|	|	# endif
+|	|	3. ptb = tb_slow_table[ hash_value ]
+|	|	   search via ptb->hash_next();
+|	|	   return ptb
+|	|	4. return NULL
+|	------------------------------------------------------------------------
+|	# if ptb == NULL
+|	2. ptb = TB:allocate( pc )		// TB::allocate()	// ir1/tb.cpp
+|	------------------------------------------------------------------------
+|	|	1. *ptb = _tb_array + _tb_num
+|	|	   _tb_num ++
+|	|	2. ptb->init( pc ) 			// TB::init( pc )	// ir1/tb.cpp
+|	|	------------------------------------------------------------------------
+|	|	|	_addr = pc
+|	|	|	*bi = BIN_INFO::find( pc ) ; *fi = bi->find_func_info( pc )
+|	|	|	_func_name = fi->name
+|	|	|	_func_offset = pc - fi->start_addr
+|	|	|	_native_code_start = context_switch_native_to_bt
+|	|	------------------------------------------------------------------------
+|	|	3. insert into _tb_slow_table
+|	|	4. insert into _tb_fase_table
+|	|	5. return ptb
+|	------------------------------------------------------------------------
+|	# endif
+|	3. return ptb
+-----------------------------------------------------------------------------
+
+
+TB::disasm()	// ir1/tb.cpp
+-----------------------------------------------------------------------------
+|	// pseudo TB : FT_FAKE_TB	// not translate
+|	// wrapped lib func 		// not translate
+|	IR1_INST *pir1
+|	1. _ir1_instructions = mm_calloc( max_ir1_inst, ... )
+|	2. next_pc  = _addr; // TB::pc
+|	   _ir1_num = 0
+|	# do
+|	3. pir1    = _ir1_instructions + _ir1_num
+|	   next_pc = pir1->disasm( next_pc )	// IR1_INST::disasm( ins_addr ) 	// ir1/ir1.cpp
+|	------------------------------------------------------------------------
+|	|	// disasm one x86 instruction
+|	|	_DInst di;
+|	|	_DecodeType dt = Decode32Bits or Decode64Bits
+|	|	docede_instruction( ins_addr, &di, dt )		// diStorm3 - Powerful disassembler	// distorm/decoder.c
+|	|	_addr         =  di.addr
+|	|	_opcode       =  convert_opcode( di.opcode )
+|	|	_inst_length  =  di.size
+|	|	_opnd[i].convert( &di, i ) for i = 0 -> 3
+|	------------------------------------------------------------------------
+|	   _ir1_num ++
+|	4. mark on specical instruction
+|	   x86_int || x86_syscall
+|	5. too large then stop
+|	# while !pir1->is_tb_ending()
+|	6. _size = next_pc - _addr
+|	   _ir1_instructions = mm_realloc()
+|	7. last instruction type
+|	   branch / call / jump / return / x86_callin / x86_jumpin / none
+|	8. alloc_all_succ()
+|	   direct link TB on jump / call instruction
+|	   record two branch target in _next_tb_in_the_pred_chain[0] and [1]
+-----------------------------------------------------------------------------
+
+
+TB::dump()	// ir1/tb.cpp
+-----------------------------------------------------------------------------
+|	disasm & print instructions
+-----------------------------------------------------------------------------
+
+
+TB::exec()	// main/exec.cpp
+-----------------------------------------------------------------------------
+|	1. disasm();	// TB::disasm() // x86 binary to IR1_INST *_ir1_instructions
+|	# if need_translate() && translate() && precision_match()	// TB::translate()
+|	2. run_native();											// TB::run_native()
+|	# else
+|	3. interpret();												// TB::interpret()
+|	#endif	
+|	4. env->last_executed_tb()->check_top_out( env->top() );
+-----------------------------------------------------------------------------
+
+
+TB::translate()
+-----------------------------
+|	1. check if already translated
+|	2. tr_init( this )
+|	3. ir2_generate() => translation_done			// TB::ir2_generate()
+|	------------------------------------------------------------------------
+|	|	1. generate IR2 for profiling
+|	|	2. generate IR2 for tarcing executed x86_pc
+|	|	3. generate IR2 for the instructions
+|	|	# for i = 0 -> ir1_num()
+|	|	*pir1 = tr_init_for_each_ir1_in_tb( this, i )
+|	|	translation_success = pir1->translate()		// IR1_INST::translate()
+|	|	------------------------------------------------------------------------
+|	|	|	translate_functions[ opcode()->x86_undefined ]( this )
+|	|	|	------------------------------------------------------------------------
+|	|	|	|	append_ir2( mips_xxx, ... )
+|	|	|	|	------------------------------------------------------------------------
+|	|	|	|	|	1. IR2_INST *p = ir2_allocate()
+|	|	|	|	|	   p->append()					// IR2_INST::append()
+|	|	|	|	|	------------------------------------------------------------------------
+|	|	|	|	|	|	1. *t = env->tr_data TRANSLATION_DATA
+|	|	|	|	|	|	   *former_last = t->last_ir2
+|	|	|	|	|	|	2. insert into this list
+|	|	|	|	|	|	   _prev = former_last->id()
+|	|	|	|	|	|	   _next = -1
+|	|	|	|	|	|	   t->last_ir2 = this
+|	|	|	|	|	|	   formet_last->_next = id()
+|	|	|	|	|	------------------------------------------------------------------------
+|	|	|	|	|	2. switch( opcode )
+|	|	|	|	|	   p->build( mips_daddu, opnd0, opnd1, opnd2 )	// IR2_INST::build
+|	|	|	|	|	------------------------------------------------------------------------
+|	|	|	|	|	|	_opcode  = opcode
+|	|	|	|	|	|	_opnd[0] = opnd0
+|	|	|	|	|	|	_opnd[1] = opnd1
+|	|	|	|	|	|	_opnd[2] = opnd2
+|	|	|	|	|	------------------------------------------------------------------------
+|	|	|	|	|	3. return p
+|	|	|	|	------------------------------------------------------------------------
+|	|	|	------------------------------------------------------------------------
+|	|	------------------------------------------------------------------------
+|	|	# endfor
+|	|	4.  check_top_out( env->tr_data->curr_top )
+|	------------------------------------------------------------------------
+|	# if translation_done is true
+|	4. tr_ir2_optimize()
+|	5. set_native_code_addr( tr_ir2_assemble() )  // _native_code_start = code_start
+|	------------------------ ------------------------------------------------
+|	|	// tr_ir2_assemble() => code_start
+|	|	1. assembled_ir2_num = env->tr_data->ir2_num_assembled()
+|	|	2. bytes = assembled_ir2_num << 2
+|	|	   code_start = cc_alloc( bytes )	// allocate code cache
+|	|	3. update TB's native code length
+|	|	   env->tr_data->curr_tb->set_native_code_length( bytes )
+|	|	4. assemble
+|	|	   *pir2 = t->first_ir2
+|	|	   code_addr = code_start
+|	|	# while pir2 != NULL	// for each IR2_INST
+|	|	# not assemble mips_label and mips_x86_inst
+|	|	   uint32 result = pir2->assemble()
+|	|	   *(uint32*)code_addr = result		// write MIPS instruction into code cache
+|	|		codeaddr = code_addr + 4
+|	|	   pir2 = pir2->next()
+|	|	# endwhile
+|	------------------------------------------------------------------------
+|	6. tr_fini( translation_done )
+|	7. link_pred_native_code
+|	   link_succ_native_code
+-----------------------------------------------------------------------------
+
+
+
+TB::run_native()		// translator/translate.cpp
+-----------------------------------------------------------------------------
+|	1. preprocess
+|	2. void (*native_code_function)(ADDR, TB*) = (void(*)(ADDR,TB*))context_switch_bt_to_native
+|	   native_code_function( native_code_addr(), this )		// run native code
+|	3. postprocess
+-----------------------------------------------------------------------------
+
+
+
+
+translate_jmp( IR1_INST *pir1 )		// translator/tr_misc.cpp
+-----------------------------------------------------------------------------
+|	env->tr_data->curr_tb->generate_tb_linkage(0)
+|	// TB::generate_tb_linkage( int succ_id )		// translator/translate.ccp
+|	-----------------------------------------------------------------------------
+|	|	1. set a label for native code linkage
+|	|	append_ir2( mips_label, IR2_OPND(IR2_OPND_LABEL) )
+|	|	2. load_tb_addr_to_reg( this )
+|	|	3. set next_pc and jump to context switch
+|	|	succ_x86_addr_opnd = ra_alloc_dbt_arg2()
+|	|	succ_x86_addr = succ(succ_id)->addr()
+|	|	lui 	succ_x86_addr_opnd,		succ_x86_addr >> 16
+|	|	j 		context_switch_native_to_bt
+|	|	ori		succ_x86_addr_opnd, 	succ_x86_addr_opnd, 	succ_x86_addr & 0xffff
+|	-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
+
+
+
+
+===============================
+Project Direcgtory Information
+===============================
+distorm 			:	diStorm3 Powerful disassembler for X86/AMD64
+intgerpreter		:	
+ir1 				:	IR1_INST and TB
+ir2 				:	IR2_INST
+loader 				:	load execuable / so file and mmap them
+main 				:	main entry and main loop
+mips_disassemble	:	defination of MIPS instruction and disassembler for MIPS
+optimization 		:	optimization for IR2 (MIPS)
+signal 				:
+syscall 			:	syscall used by X86toMIPS
+translator 			:	translate IR1_INST (x86) to IR2_INST (MIPS)
+
+
+
+
+
+
+===============================
+The main process
+===============================
+0. init and load x86 
+	0.0 init
+	0.1 load x86 binary PT_LOAD segment
+	0.2 init heap
+	0.3 init stack
+1. find TB via pc : TB::find(pc)
+	1.1 TB::try_find(pc)
+		1.1.1 _tb_fast_table
+		1.1.2 _tb_slow_table
+	1.2 TB::allocate() if not found
+2. tb->exec()
+	2.1 tb->disasm()			// binary to IR1
+	2.2 tb->translate()
+		2.2.1 ir2_generate()	// IR1 to IR2
+		2.2.2 tr_ir2_optimize()
+|		2.2.3 tr_ir2_assemble()	// IR2 writen into code cache
+	2.3 tb->run_native()
+

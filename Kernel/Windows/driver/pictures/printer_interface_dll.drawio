@@ -1,0 +1,395 @@
+<mxfile host="Electron" modified="2020-12-09T10:26:07.755Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/13.3.9 Chrome/83.0.4103.119 Electron/9.0.5 Safari/537.36" etag="E8juCkB4QqHoJ8kzoFvY" compressed="false" version="13.3.9" type="device">
+  <diagram id="AeJixdXfKZg__O0e1zei" name="Page-1">
+    <mxGraphModel dx="1221" dy="748" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-104" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#f5f5f5;strokeColor=#666666;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-89" target="GL7Cq1kSh6y_qz7vDYO7-97">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="580" y="840" />
+              <mxPoint x="550" y="840" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-2" value="BOOL_PTR CALLBACK &lt;b&gt;Print_GeneralDlgProc&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-3" value="srv03rtm/shell/comdlg32/printnew.cpp: 976~1194" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="60" width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-4" value="HWND hDlg" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="220" y="80" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-5" target="GL7Cq1kSh6y_qz7vDYO7-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="280" y="120" />
+              <mxPoint x="180" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-5" value="UINT uMsg" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="260" y="80" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-6" target="GL7Cq1kSh6y_qz7vDYO7-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-6" value="WPARAM wParam" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="300" y="80" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#f5f5f5;strokeColor=#666666;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-7" target="GL7Cq1kSh6y_qz7vDYO7-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-7" value="LPARAM lParam" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="360" y="80" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-8" value="&lt;font color=&quot;#999999&quot;&gt;/// 在printnew.cpp:851该函数设置为打印窗口的处理函数&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="40" width="310" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-9" value="CPrintBrowser:: &lt;b&gt;OnCommandMessage&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="200" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-12" value="1061: srv03rtm/shell/comdlg32/printnew.cpp: 3695~3856" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="180" width="320" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-13" value="&lt;b&gt;&lt;font color=&quot;#b85450&quot;&gt;switch&lt;/font&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="140" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-14" value="uMsg" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="160" y="140" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-16" value="&lt;b&gt;&lt;font color=&quot;#b85450&quot;&gt;case&lt;/font&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="160" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-17" value="WM_COMMAND" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="160" y="160" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-27" value="LOWORD(wParam)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-18" target="GL7Cq1kSh6y_qz7vDYO7-24">
+          <mxGeometry x="0.5" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="290" y="240" />
+              <mxPoint x="220" y="240" />
+            </Array>
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-18" value="WPARAM wParam" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="260" y="200" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-19" value="LPARAM lParam" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="320" y="200" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-23" value="&lt;b&gt;&lt;font color=&quot;#b85450&quot;&gt;switch&lt;/font&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="260" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-24" value="uMsg" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="200" y="260" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-25" value="&lt;b&gt;&lt;font color=&quot;#b85450&quot;&gt;case&lt;/font&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="280" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-26" value="IDC_DRIVER" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="200" y="280" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-28" value="&lt;b&gt;g_pfnDocumentPropertiesWrap&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="320" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-29" value="&lt;b&gt;DocumentPropertiesWrap&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="340" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-30" value="Long &lt;b&gt;Document&lt;br&gt;PropertiesWrapNative&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="360" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-31" value="" style="shape=link;html=1;strokeWidth=1;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-28" target="GL7Cq1kSh6y_qz7vDYO7-29">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="360" y="310" as="sourcePoint" />
+            <mxPoint x="390" y="330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="150" y="330" />
+              <mxPoint x="150" y="350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-32" value="" style="shape=link;html=1;strokeWidth=1;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-29" target="GL7Cq1kSh6y_qz7vDYO7-30">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="160" y="350" as="sourcePoint" />
+            <mxPoint x="160" y="370" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="150" y="350" />
+              <mxPoint x="150" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-33" value="HWND hwnd" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="360" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-34" value="HANDLE hPrinter" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="360" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-35" value="LPTSTR pDeviceName" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="360" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-36" value="PDEVMODE pDevModeOutput" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="360" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-37" value="PDEVMODE pDevModeInput" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="360" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-39" value="DWORD fMode" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="360" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-40" value="DWORD fExclusionFlags" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="360" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-41" value="&lt;font color=&quot;#999999&quot;&gt;// modified device mode&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="340" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-42" value="&lt;font color=&quot;#999999&quot;&gt;// original device mode&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="330" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-43" value="3731: srv03rtm/printscan/ui/printui/docprop.cxx: 1499~1531" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="300" width="330" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-45" value="BOOL TPropertySheetManager:: &lt;b&gt;bDispalyPages&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="440" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-46" value="IN HWND hWnd" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="440" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-47" value="OUT LONG *pResult" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="440" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-48" value="1512: srv03rtm/printscan/ui/printui/propmgr.cxx: 101~169" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="420" width="320" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-49" value="LONG APIENTRY&lt;b&gt; CommonPropertySheetUIW&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="520" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-50" value="137: srv03rtm/printscan/ui/compstui/apilayer.c: 5657~5663" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="500" width="330" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-51" value="&lt;font color=&quot;#999999&quot;&gt;/// COMmon Property Sheet UI&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="480" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-52" value="HWND hWndOwner" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="520" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-53" value="PFNPROPSHEETUI pfnPropSheetUI" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="520" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-54" target="GL7Cq1kSh6y_qz7vDYO7-62">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="560" />
+              <mxPoint x="670" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-54" value="LPARAM lParam" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="600" y="520" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-55" value="LPDWORD pResult" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="520" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-56" target="GL7Cq1kSh6y_qz7vDYO7-53">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="615" />
+              <mxPoint x="260" y="575" />
+              <mxPoint x="760" y="575" />
+              <mxPoint x="760" y="500" />
+              <mxPoint x="540" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-56" value="LONG CALLBACK TPropertySheetManager:: &lt;b&gt;CPSUIFunc&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="600" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-61" target="GL7Cq1kSh6y_qz7vDYO7-75">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="570" y="640" />
+              <mxPoint x="390" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-86" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-61" target="GL7Cq1kSh6y_qz7vDYO7-83">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-61" value="PPROPSHEETUI_INFO pCPSUIINFO" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="500" y="600" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-62" target="GL7Cq1kSh6y_qz7vDYO7-84">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-62" value="LPARAM lParam" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="640" y="600" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-63" value="this" style="endArrow=classic;html=1;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" target="GL7Cq1kSh6y_qz7vDYO7-54">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="490" as="sourcePoint" />
+            <mxPoint x="660" y="670" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-65" value="srv03rtm/printscan/ui/printui/propmgr.cxx: 288~350" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="580" width="290" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-74" value="&lt;b&gt;&lt;font color=&quot;#b85450&quot;&gt;switch&lt;/font&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="660" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-75" value="pCPSUIINFO-&amp;gt;Reason" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="320" y="660" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-76" value="&lt;b&gt;&lt;font color=&quot;#b85450&quot;&gt;case&lt;/font&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="680" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-77" value="PROPSHEETUI_REASON_INIT" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="320" y="680" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-81" value="LONG TPropertySheetManager:: &lt;b&gt;lReasopnInit&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="720" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-82" value="308: srv03rtm/printscan/ui/printui/propmgr.cxx: 183~196" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="700" width="310" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-83" value="IN PPROPSHEETUI_INFO pCPSUIInfo" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="460" y="720" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-91" value="pCPSUIInfo-&amp;gt;UserData=lParam" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-84" target="GL7Cq1kSh6y_qz7vDYO7-89">
+          <mxGeometry x="-0.8177" y="10" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="760" />
+              <mxPoint x="580" y="760" />
+            </Array>
+            <mxPoint x="10" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-84" value="IN LPARAM lParam" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="620" y="720" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-87" value="BOOL TDocumentProperties:: &lt;b&gt;bBuildPages&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="780" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-93" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-89" target="GL7Cq1kSh6y_qz7vDYO7-92">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="580" y="820" />
+              <mxPoint x="340" y="820" />
+              <mxPoint x="340" y="850" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-89" value="IN PPROPSHEETUI_INFO pCPSUIInfo" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="500" y="780" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-90" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-83" target="GL7Cq1kSh6y_qz7vDYO7-89">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="760" />
+              <mxPoint x="580" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-92" value="pfnComPropSheet" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="840" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-94" value="LONG_PTR CALLBACK &lt;b&gt;CPSUICallBack&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="860" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-95" value="" style="shape=link;html=1;strokeWidth=1;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-92" target="GL7Cq1kSh6y_qz7vDYO7-94">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="360" y="870" as="sourcePoint" />
+            <mxPoint x="460" y="870" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="350" y="860" />
+              <mxPoint x="350" y="870" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-96" value="1409: srv03rtm/printscan/ui/compstui/apilayer.c: 4381~4877" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="820" width="330" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-97" value="HANDLE hComPropSheet" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="500" y="860" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-98" value="UINT Function" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="600" y="860" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-99" value="LPARAM lParam1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="860" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-112" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-100" target="GL7Cq1kSh6y_qz7vDYO7-111">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-100" value="LPARAM lParam2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="720" y="860" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-103" value="&lt;font color=&quot;#999999&quot;&gt;由compstui提供&lt;/font&gt;" style="endArrow=classic;html=1;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;" edge="1" parent="1" target="GL7Cq1kSh6y_qz7vDYO7-61">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="560" as="sourcePoint" />
+            <mxPoint x="620" y="660" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-88" value="191: srv03rtm/printscan/ui/printui/docprop.cxx: 1366~1417" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="760" width="320" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-105" value="CPSFUNC_ADD_PFNPROPSHEETUI" style="endArrow=classic;html=1;strokeWidth=2;fillColor=#f5f5f5;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="840" as="sourcePoint" />
+            <mxPoint x="630" y="860" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-107" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-106" target="GL7Cq1kSh6y_qz7vDYO7-99">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="930" />
+              <mxPoint x="380" y="900" />
+              <mxPoint x="790" y="900" />
+              <mxPoint x="790" y="850" />
+              <mxPoint x="690" y="850" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-106" value="LONG_PTR &lt;b&gt;DocumentPropertySheets&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="920" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-108" value="(this)&lt;br&gt;DOCUMENTPROPERTYHEADER&lt;br&gt;_dph" style="endArrow=classic;html=1;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" target="GL7Cq1kSh6y_qz7vDYO7-100">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="750" y="810" as="sourcePoint" />
+            <mxPoint x="810" y="740" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-109" value="srv03rtm/printscan/print/spooler/spoolss/client/prop.c: 451~611" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="900" width="350" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-110" value="PPROPSHEETUI_INFO pCPSUIInfo" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="560" y="920" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-111" value="LPARAM lParam" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="700" y="920" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-113" value="&lt;font color=&quot;#999999&quot;&gt;/// 507行再次使用pfnComPropSheet的手法&lt;br&gt;&lt;/font&gt;&lt;span style=&quot;color: rgb(153 , 153 , 153)&quot;&gt;/// 调用&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;Tinypdf2!DrvDocumentPropertySheets&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="970" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-114" value="" style="shape=link;html=1;strokeWidth=1;" edge="1" parent="1" source="GL7Cq1kSh6y_qz7vDYO7-92" target="GL7Cq1kSh6y_qz7vDYO7-113">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="360" y="880.0033333333334" as="sourcePoint" />
+            <mxPoint x="370" y="950" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="350" y="860" />
+              <mxPoint x="350" y="985" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GL7Cq1kSh6y_qz7vDYO7-115" value="&lt;font color=&quot;#999999&quot;&gt;/// 从该函数返回时&lt;br&gt;/// 显示设置界面&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="520" width="110" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

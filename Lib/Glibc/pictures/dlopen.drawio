@@ -1,0 +1,296 @@
+<mxfile host="Electron" modified="2020-07-23T08:20:05.618Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/13.3.9 Chrome/83.0.4103.119 Electron/9.0.5 Safari/537.36" etag="fZXZr1N28xsReQTJmtYN" compressed="false" version="13.3.9" type="device">
+  <diagram id="xGGZC-5SCeOVTpQXLPn3" name="Page-1">
+    <mxGraphModel dx="903" dy="553" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-96" value="访问动态链接器提供的内容（tlrd大概是Run Time LD.so的缩写）" style="endArrow=none;dashed=1;html=1;strokeWidth=1;fillColor=#f5f5f5;strokeColor=#666666;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="550" as="sourcePoint" />
+            <mxPoint x="740" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-88" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="8s7_lbbOQmsA9GF5N9Dw-85" target="8s7_lbbOQmsA9GF5N9Dw-70">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="720" y="680" />
+              <mxPoint x="480" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-79" value="" style="shape=link;html=1;strokeWidth=1;" edge="1" parent="1" source="8s7_lbbOQmsA9GF5N9Dw-69" target="8s7_lbbOQmsA9GF5N9Dw-67">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="350" y="750" as="sourcePoint" />
+            <mxPoint x="450" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="8s7_lbbOQmsA9GF5N9Dw-74" target="8s7_lbbOQmsA9GF5N9Dw-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-72" value="" style="shape=link;html=1;strokeWidth=1;" edge="1" parent="1" source="8s7_lbbOQmsA9GF5N9Dw-45" target="8s7_lbbOQmsA9GF5N9Dw-16">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="200" y="530" as="sourcePoint" />
+            <mxPoint x="300" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-1" value="&lt;b&gt;dlopen&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-2" value="const char *file" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="140" y="80" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-3" value="int mode" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="240" y="80" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-4" value="dlfcn/dlopen.c: 29~31" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="60" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-5" value="&lt;b&gt;__dlopen&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="120" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" edge="1" parent="1" source="8s7_lbbOQmsA9GF5N9Dw-6" target="8s7_lbbOQmsA9GF5N9Dw-15">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="230" y="160" />
+              <mxPoint x="390" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-6" value="const char *file" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="180" y="120" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="8s7_lbbOQmsA9GF5N9Dw-7" target="8s7_lbbOQmsA9GF5N9Dw-15">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="150" />
+              <mxPoint x="390" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-7" value="int mode" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="280" y="120" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-8" value="&lt;span&gt;DL_CALLER_DECL&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="340" y="120" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-9" value="&lt;font color=&quot;#999999&quot;&gt;// nothing&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="100" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-10" value="&lt;b&gt;_dlerror_run&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="220" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-11" value="30: dlfcn/dlopen.c: 75~97" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="100" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-12" value="&lt;font color=&quot;#999999&quot;&gt;/// 若动态链接器没有在运行，则执行_dlfcn_hook-&amp;gt;dlopen(...)&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="140" width="340" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-13" value="87: dlfcn/dlerror.c: 132~177" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="200" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="8s7_lbbOQmsA9GF5N9Dw-14" target="8s7_lbbOQmsA9GF5N9Dw-30">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="340" />
+              <mxPoint x="530" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-14" value="void (*operate) (void*)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="220" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="8s7_lbbOQmsA9GF5N9Dw-15" target="8s7_lbbOQmsA9GF5N9Dw-31">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="330" />
+              <mxPoint x="600" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-15" value="void *args" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="360" y="220" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-16" value="&lt;b&gt;dlopen_doit&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="520" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-20" value="int &lt;b&gt;_dl_catch_error&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="360" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-22" value="&lt;font color=&quot;#999999&quot;&gt;// Helper function for &amp;lt;dlfcn.h&amp;gt; functions.&amp;nbsp; Runs the OPERATE function via _dl_catch_error.&lt;br&gt;// Returns zero for success, nonzero for failure; and arranges for `dlerror&#39; to&lt;br&gt;// return the error details. ARGS is passed as argument to OPERATE.&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="160" width="500" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-25" value="170: elf/dl-error-skeleton.c: 225~232" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="340" width="210" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-26" value="&lt;font color=&quot;#999999&quot;&gt;// Call OPERATE, catching errors from `_dl_signal_error&#39; and related functions.&lt;br&gt;// If there is no error, *ERRSTRING is set to null. If there is an error,&lt;br&gt;// *ERRSTRING is set to a string constructed from the strings passed to _dl_signal_error,&lt;br&gt;// and the error code passed is the return value and *OBJNAME is set to the object name&lt;br&gt;// which experienced the problems. ERRSTRING if nonzero points to a malloc&#39;ed string&lt;br&gt;// which the caller has to free after use. ARGS is passed as argument to OPERATE.&lt;br&gt;// MALLOCEDP is set to true only if the returned string is allocated using the libc&#39;s malloc.&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="240" width="490" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-27" value="const char **objname" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="300" y="360" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-28" value="const char **errstring" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="360" y="360" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-29" value="bool *mallocedp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="420" y="360" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="8s7_lbbOQmsA9GF5N9Dw-30" target="8s7_lbbOQmsA9GF5N9Dw-39">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="440" />
+              <mxPoint x="530" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-30" value="void (*operate)(void*)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="360" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="8s7_lbbOQmsA9GF5N9Dw-31" target="8s7_lbbOQmsA9GF5N9Dw-40">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="440" />
+              <mxPoint x="600" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-31" value="void *args" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="580" y="360" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-34" value="&lt;font color=&quot;#999999&quot;&gt;/// objname, errstring, mallocedp均为输出&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="340" width="230" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-35" value="int &lt;b&gt;_dl_catch_exception&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="460" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-36" value="&lt;font color=&quot;#999999&quot;&gt;// Call OPERATE (ARGS). If no error occurs, set *EXCEPTION to zero.&lt;br&gt;// Otherwise, store a copy of the raised exception in *EXCEPTION,&lt;br&gt;// which has to be freed by _dl_exception_free. As a special case,&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: rgb(153 , 153 , 153)&quot;&gt;if EXCEPTION is null,&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;&lt;br&gt;// call OPERATE (ARGS) with exception handling disabled (so that exceptions are fatal).&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="390" width="480" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-37" value="strcut dl_exception *exception" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="360" y="460" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="8s7_lbbOQmsA9GF5N9Dw-39" target="8s7_lbbOQmsA9GF5N9Dw-44">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="500" />
+              <mxPoint x="310" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-39" value="void (*operate)(void*)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="460" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#ffe6cc;strokeColor=#d79b00;" edge="1" parent="1" source="8s7_lbbOQmsA9GF5N9Dw-40" target="8s7_lbbOQmsA9GF5N9Dw-45">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="510" />
+              <mxPoint x="360" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-40" value="void *args" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="580" y="460" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-43" value="227: elf/dl-error-skeleton.c: 175~219" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="440" width="210" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-44" value="operate" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="520" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-50" value="dlfcn/dlopen.c: 58~70" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="500" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-53" value="void *a" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="480" y="520" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-55" value="&lt;font color=&quot;#666600&quot;&gt;GLRO&lt;/font&gt;(dl_open)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="590" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-56" value="_trld_global_ro._dl_open" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="590" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-57" value="" style="shape=link;html=1;strokeWidth=1;" edge="1" parent="1" source="8s7_lbbOQmsA9GF5N9Dw-55" target="8s7_lbbOQmsA9GF5N9Dw-56">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="450" y="620" as="sourcePoint" />
+            <mxPoint x="550" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-58" value="&lt;font color=&quot;#999999&quot;&gt;/// 通过gdb跟踪发现这个宏函数跳到了dl-error-skeleton.c:175&lt;br&gt;///&amp;nbsp; __GI__dl_catch_exception去执行，名字多了__GI_&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="560" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-65" value="&lt;span&gt;elf/dl-error-skeleton.c: 175~219&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="610" width="180" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-66" value="" style="shape=link;html=1;strokeWidth=1;" edge="1" parent="1" source="8s7_lbbOQmsA9GF5N9Dw-35" target="8s7_lbbOQmsA9GF5N9Dw-82">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="50" y="690" as="sourcePoint" />
+            <mxPoint x="363.3333333333335" y="630" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="230" y="475" />
+              <mxPoint x="230" y="645" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-67" value="&lt;b&gt;dl_open_worker&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="690" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-69" value="operate" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="690" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-70" value="void*" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="460" y="690" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-74" value="&lt;b&gt;dlopen_doit&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="200" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="8s7_lbbOQmsA9GF5N9Dw-77" target="8s7_lbbOQmsA9GF5N9Dw-84">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="720" y="630" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-77" value="&lt;b&gt;dl_open_worker&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="590" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-45" value="void*" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="340" y="520" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-81" value="" style="shape=link;html=1;strokeWidth=1;" edge="1" parent="1" source="8s7_lbbOQmsA9GF5N9Dw-44" target="8s7_lbbOQmsA9GF5N9Dw-45">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="340" y="532.3076923076924" as="sourcePoint" />
+            <mxPoint x="400" y="536.923076923077" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-82" value="int &lt;b&gt;_dl_catch_exception&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="630" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-83" value="strcut dl_exception *exception" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="480" y="630" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" edge="1" parent="1" source="8s7_lbbOQmsA9GF5N9Dw-84" target="8s7_lbbOQmsA9GF5N9Dw-69">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="650" y="670" />
+              <mxPoint x="430" y="670" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-84" value="void (*operate)(void*)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="630" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-85" value="void *args" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="700" y="630" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-87" value="void*" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="620" y="690" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="8s7_lbbOQmsA9GF5N9Dw-94" value="&lt;span&gt;elf/dl-open.c: 474~775&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="670" width="130" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

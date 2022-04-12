@@ -1,0 +1,1759 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>logs - xieby1&#x27;s notes</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="../../../favicon.svg">
+                        <link rel="shortcut icon" href="../../../favicon.png">
+                <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+                <link rel="stylesheet" href="../../../css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../../../fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+                <link rel="stylesheet" href="../../../custom.css">
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../../../index.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item "><a href="../../../abbreviations.html"><strong aria-hidden="true">2.</strong> abbreviations</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.</strong> ABI</div></li><li class="chapter-item "><div><strong aria-hidden="true">4.</strong> Algo</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">4.1.</strong> Graph</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Algo/Graph/1998.distance.bunke.prl.775.html"><strong aria-hidden="true">4.1.1.</strong> 1998.distance.bunke.prl.775</a></li><li class="chapter-item "><a href="../../../Algo/Graph/2002.inexact_match.bengoetxea.doc_thesis.107.html"><strong aria-hidden="true">4.1.2.</strong> 2002.inexact_match.bengoetxea.doc_thesis.107</a></li><li class="chapter-item "><a href="../../../Algo/Graph/2014.attributed.zhang.cvpr.19.html"><strong aria-hidden="true">4.1.3.</strong> 2014.attributed.zhang.cvpr.19</a></li><li class="chapter-item "><a href="../../../Algo/Graph/2016.survey.yan.icmr.108.html"><strong aria-hidden="true">4.1.4.</strong> 2016.survey.yan.icmr.108</a></li><li class="chapter-item "><a href="../../../Algo/Graph/2021.igraphmatch.qiao..0.html"><strong aria-hidden="true">4.1.5.</strong> 2021.igraphmatch.qiao..0</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">5.</strong> analysis</div></li><li class="chapter-item "><div><strong aria-hidden="true">6.</strong> Arch</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">6.1.</strong> HT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Arch/HT/2005.cell.kahle.ibmjrd.1093.html"><strong aria-hidden="true">6.1.1.</strong> 2005.cell.kahle.ibmjrd.1093</a></li><li class="chapter-item "><a href="../../../Arch/HT/2012.process_migration.devuyst.asplos.83.html"><strong aria-hidden="true">6.1.2.</strong> 2012.process_migration.devuyst.asplos.83</a></li><li class="chapter-item "><a href="../../../Arch/HT/2015.overview.mitra.jip.15.html"><strong aria-hidden="true">6.1.3.</strong> 2015.overview.mitra.jip.15</a></li><li class="chapter-item "><a href="../../../Arch/HT/2018.process_migration.venkat.doc_thesis.5.html"><strong aria-hidden="true">6.1.4.</strong> 2018.process_migration.venkat.doc_thesis.5</a></li><li class="chapter-item "><a href="../../../Arch/HT/2020.byoc_framework.balkind.asplos.3.html"><strong aria-hidden="true">6.1.5.</strong> 2020.byoc_framework.balkind.asplos.3</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">6.2.</strong> reconf</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Arch/reconf/1997.chimaera.hauck.fccm.461.html"><strong aria-hidden="true">6.2.1.</strong> 1997.chimaera.hauck.fccm.461</a></li><li class="chapter-item "><a href="../../../Arch/reconf/2008.reconf_acc.beck.date.97.html"><strong aria-hidden="true">6.2.2.</strong> 2008.reconf_acc.beck.date.97</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">6.3.</strong> VLIW</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">6.3.1.</strong> pictures</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">7.</strong> Benchmarks</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">7.1.</strong> herdtools7</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Benchmarks/herdtools7/overview.html"><strong aria-hidden="true">7.1.1.</strong> overview</a></li></ol></li><li class="chapter-item "><a href="../../../Benchmarks/spec/index.html"><strong aria-hidden="true">7.2.</strong> spec</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Benchmarks/spec/deprecated.README.html"><strong aria-hidden="true">7.2.1.</strong> deprecated.README</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.</strong> BT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">8.1.</strong> algo</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/algo/2006.lib.杨浩.计算机研究与发展.0.html"><strong aria-hidden="true">8.1.1.</strong> 2006.lib.杨浩.计算机研究与发展.0</a></li><li class="chapter-item "><a href="../../../BT/algo/2016.static_identify_jump_target.federico.cases.9.html"><strong aria-hidden="true">8.1.2.</strong> 2016.static_identify_jump_target.federico.cases.9</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.3.</strong> bt_rules</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/algo/bt_rules/2006.peephole_superopt.bansal.asplos.134.html"><strong aria-hidden="true">8.1.3.1.</strong> 2006.peephole_superopt.bansal.asplos.134</a></li><li class="chapter-item "><a href="../../../BT/algo/bt_rules/2018.learn.wwwang.asplos.11.html"><strong aria-hidden="true">8.1.3.2.</strong> 2018.learn.wwwang.asplos.11</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.4.</strong> offload</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/algo/offload/2010.distribit.guan.hpdc.5.html"><strong aria-hidden="true">8.1.4.1.</strong> 2010.distribit.guan.hpdc.5</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.5.</strong> pictures</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.6.</strong> reg</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.7.</strong> smc</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/algo/smc/2015.detect.hawkins.cgo.24.html"><strong aria-hidden="true">8.1.7.1.</strong> 2015.detect.hawkins.cgo.24</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.8.</strong> trace</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/algo/trace/1994.opt_profiling_tracing.ball.toplas.580.html"><strong aria-hidden="true">8.1.8.1.</strong> 1994.opt_profiling_tracing.ball.toplas.580</a></li><li class="chapter-item "><a href="../../../BT/algo/trace/2000.net.duesterwald.asplos.141.html"><strong aria-hidden="true">8.1.8.2.</strong> 2000.net.duesterwald.asplos.141</a></li><li class="chapter-item "><a href="../../../BT/algo/trace/2005.edge_profile.白童心.计算机工程.2.html"><strong aria-hidden="true">8.1.8.3.</strong> 2005.edge_profile.白童心.计算机工程.2</a></li><li class="chapter-item "><a href="../../../BT/algo/trace/2005.lei_net.hiniker.micro.39.html"><strong aria-hidden="true">8.1.8.4.</strong> 2005.lei_net.hiniker.micro.39</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.2.</strong> analysis</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/analysis/2014.simulators_harm.nowatki..19.html"><strong aria-hidden="true">8.2.1.</strong> 2014.simulators_harm.nowatki..19</a></li><li class="chapter-item "><a href="../../../BT/analysis/2020.perfdbt.wu.iccd.2.html"><strong aria-hidden="true">8.2.2.</strong> 2020.perfdbt.wu.iccd.2</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.3.</strong> application</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.4.</strong> Box86</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/Box86/logs.html"><strong aria-hidden="true">8.4.1.</strong> logs</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.5.</strong> dynamic</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/dynamic/2017.mambox64.dantras.pldi.18.html"><strong aria-hidden="true">8.5.1.</strong> 2017.mambox64.dantras.pldi.18</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.6.</strong> Emulator</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">8.6.1.</strong> Emulator_Design</div></li></ol></li><li class="chapter-item "><a href="../../../BT/exagear.html"><strong aria-hidden="true">8.7.</strong> exagear</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.8.</strong> HQEMU</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/HQEMU/codeReading-deprecated.html"><strong aria-hidden="true">8.8.1.</strong> codeReading-deprecated</a></li><li class="chapter-item "><a href="../../../BT/HQEMU/codeReading.html"><strong aria-hidden="true">8.8.2.</strong> codeReading</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.8.3.</strong> pictures</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.</strong> HW</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/HW/2008.coprocessor.li.amasbt.3.html"><strong aria-hidden="true">8.9.1.</strong> 2008.coprocessor.li.amasbt.3</a></li><li class="chapter-item "><a href="../../../BT/HW/2009.godson3_x86_emu.hu.micro.84.html"><strong aria-hidden="true">8.9.2.</strong> 2009.godson3_x86_emu.hu.micro.84</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.3.</strong> codeCache</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.4.</strong> reconf</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/HW/reconf/2013.x86_mips_reconf.junior.jsa.4.html"><strong aria-hidden="true">8.9.4.1.</strong> 2013.x86_mips_reconf.junior.jsa.4</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.5.</strong> VLIW</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/HW/VLIW/2015.denver.nvidia.micro.36.html"><strong aria-hidden="true">8.9.5.1.</strong> 2015.denver.nvidia.micro.36</a></li><li class="chapter-item "><a href="../../../BT/HW/VLIW/2019.hybrid_dbt.rokicki.cadics.2.html"><strong aria-hidden="true">8.9.5.2.</strong> 2019.hybrid_dbt.rokicki.cadics.2</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.5.3.</strong> crusoe</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/HW/VLIW/crusoe/2000.crusoe.klaiber.transmeta.118.html"><strong aria-hidden="true">8.9.5.3.1.</strong> 2000.crusoe.klaiber.transmeta.118</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.5.4.</strong> daisy</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.10.</strong> kernel</div></li><li class="chapter-item "><a href="../../../BT/libDBT/index.html"><strong aria-hidden="true">8.11.</strong> libDBT</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.</strong> lift</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.</strong> IR</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.1.</strong> LLBT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/lift/IR/LLBT/LLBT调研.html"><strong aria-hidden="true">8.12.1.1.1.</strong> LLBT调研</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.1.2.</strong> pictures</div></li><li class="chapter-item "><a href="../../../BT/lift/IR/LLBT/二进制翻译调研报告（LLBT相关）.html"><strong aria-hidden="true">8.12.1.1.3.</strong> 二进制翻译调研报告（LLBT相关）</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.2.</strong> mcsema</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/lift/IR/mcsema/2019.mcsema_dyninst.korencik...html"><strong aria-hidden="true">8.12.1.2.1.</strong> 2019.mcsema_dyninst.korencik..</a></li><li class="chapter-item "><a href="../../../BT/lift/IR/mcsema/2019.mcsema.researchLogs.html"><strong aria-hidden="true">8.12.1.2.2.</strong> 2019.mcsema.researchLogs</a></li><li class="chapter-item "><a href="../../../BT/lift/IR/mcsema/remill.html"><strong aria-hidden="true">8.12.1.2.3.</strong> remill</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.3.</strong> mctoll</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/lift/IR/mctoll/2019.mctoll.yadavalli.lctes.5.html"><strong aria-hidden="true">8.12.1.3.1.</strong> 2019.mctoll.yadavalli.lctes.5</a></li><li class="chapter-item "><a href="../../../BT/lift/IR/mctoll/codesReading.html"><strong aria-hidden="true">8.12.1.3.2.</strong> codesReading</a></li><li class="chapter-item "><a href="../../../BT/lift/IR/mctoll/run.html"><strong aria-hidden="true">8.12.1.3.3.</strong> run</a></li></ol></li><li class="chapter-item "><a href="../../../BT/lift/IR/overview.html"><strong aria-hidden="true">8.12.1.4.</strong> overview</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.5.</strong> pictures</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.6.</strong> REVNG</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.13.</strong> Mem</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/Mem/2008.thread_safe_by_tm.chung.hpca.51.html"><strong aria-hidden="true">8.13.1.</strong> 2008.thread_safe_by_tm.chung.hpca.51</a></li><li class="chapter-item "><a href="../../../BT/Mem/2016.atomic.rigo.taco.6.html"><strong aria-hidden="true">8.13.2.</strong> 2016.atomic.rigo.taco.6</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.14.</strong> oldProj</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/oldProj/1993.mips2alphaaxp.sites.cacm.267.html"><strong aria-hidden="true">8.14.1.</strong> 1993.mips2alphaaxp.sites.cacm.267</a></li><li class="chapter-item "><a href="../../../BT/oldProj/1998.fx32.chernoff.micro.217.html"><strong aria-hidden="true">8.14.2.</strong> 1998.fx32.chernoff.micro.217</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.14.3.</strong> dbt4AndStatic</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/oldProj/dbt4AndStatic/DBT4代码阅读笔记.html"><strong aria-hidden="true">8.14.3.1.</strong> DBT4代码阅读笔记</a></li><li class="chapter-item "><a href="../../../BT/oldProj/dbt4AndStatic/dbt-static.html"><strong aria-hidden="true">8.14.3.2.</strong> dbt-static</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.14.3.3.</strong> pictures</div></li><li class="chapter-item "><a href="../../../BT/oldProj/dbt4AndStatic/去除orc工作量和难度.html"><strong aria-hidden="true">8.14.3.4.</strong> 去除orc工作量和难度</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.14.4.</strong> pictures</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.15.</strong> others</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.16.</strong> overview</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/overview/2001.bt_opt_challenges.altman.pieee.38.html"><strong aria-hidden="true">8.16.1.</strong> 2001.bt_opt_challenges.altman.pieee.38</a></li><li class="chapter-item "><a href="../../../BT/overview/2004.bibliography_of_simulators.html"><strong aria-hidden="true">8.16.2.</strong> 2004.bibliography_of_simulators</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.17.</strong> pictures</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.18.</strong> QEMU</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/QEMU/16k.html"><strong aria-hidden="true">8.18.1.</strong> 16k</a></li><li class="chapter-item "><a href="../../../BT/QEMU/2005.qemu.bellard.usenix.2217.html"><strong aria-hidden="true">8.18.2.</strong> 2005.qemu.bellard.usenix.2217</a></li><li class="chapter-item "><a href="../../../BT/QEMU/2017.qemu_multi_cores.cota.cgo.8.html"><strong aria-hidden="true">8.18.3.</strong> 2017.qemu_multi_cores.cota.cgo.8</a></li><li class="chapter-item "><a href="../../../BT/QEMU/LA-backend.html"><strong aria-hidden="true">8.18.4.</strong> LA-backend</a></li><li class="chapter-item "><a href="../../../BT/QEMU/linux-user-32.html"><strong aria-hidden="true">8.18.5.</strong> linux-user-32</a></li><li class="chapter-item "><a href="../../../BT/QEMU/linux-user.html"><strong aria-hidden="true">8.18.6.</strong> linux-user</a></li><li class="chapter-item "><a href="../../../BT/QEMU/linux-user-memory_region.html"><strong aria-hidden="true">8.18.7.</strong> linux-user-memory_region</a></li><li class="chapter-item "><a href="../../../BT/QEMU/logs.html"><strong aria-hidden="true">8.18.8.</strong> logs</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.18.9.</strong> lx</div></li><li class="chapter-item "><a href="../../../BT/QEMU/mt-tcg.html"><strong aria-hidden="true">8.18.10.</strong> mt-tcg</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.18.11.</strong> pictures</div></li><li class="chapter-item "><a href="../../../BT/QEMU/qemu-wine.html"><strong aria-hidden="true">8.18.12.</strong> qemu-wine</a></li><li class="chapter-item "><a href="../../../BT/QEMU/QnA.html"><strong aria-hidden="true">8.18.13.</strong> QnA</a></li><li class="chapter-item "><a href="../../../BT/QEMU/signal.html"><strong aria-hidden="true">8.18.14.</strong> signal</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.18.15.</strong> target</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.19.</strong> rewrite</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/rewrite/2018.superset_disassembly.bauman.ndss.40.html"><strong aria-hidden="true">8.19.1.</strong> 2018.superset_disassembly.bauman.ndss.40</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.19.2.</strong> instru</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/rewrite/instru/2009.mt.hazelwood.ismm.28.html"><strong aria-hidden="true">8.19.2.1.</strong> 2009.mt.hazelwood.ismm.28</a></li><li class="chapter-item "><a href="../../../BT/rewrite/instru/mem_count.html"><strong aria-hidden="true">8.19.2.2.</strong> mem_count</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.20.</strong> security</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.21.</strong> static</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.22.</strong> sys</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.23.</strong> Tarmac</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.24.</strong> test</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.25.</strong> x86-qemu-mips</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/x86-qemu-mips/check_manual.html"><strong aria-hidden="true">8.25.1.</strong> check_manual</a></li><li class="chapter-item "><a href="../../../BT/x86-qemu-mips/check.html"><strong aria-hidden="true">8.25.2.</strong> check</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.25.3.</strong> debugs</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/x86-qemu-mips/debugs/OPEN.unknown-loop-in-bios.html"><strong aria-hidden="true">8.25.3.1.</strong> OPEN.unknown-loop-in-bios</a></li></ol></li><li class="chapter-item "><a href="../../../BT/x86-qemu-mips/linux-user.html"><strong aria-hidden="true">8.25.4.</strong> linux-user</a></li><li class="chapter-item "><a href="../../../BT/x86-qemu-mips/mips-llvm.html"><strong aria-hidden="true">8.25.5.</strong> mips-llvm</a></li><li class="chapter-item "><a href="../../../BT/x86-qemu-mips/mt-tcg.html"><strong aria-hidden="true">8.25.6.</strong> mt-tcg</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.25.7.</strong> pictures</div></li><li class="chapter-item "><a href="../../../BT/x86-qemu-mips/tr_misc修改记录.html"><strong aria-hidden="true">8.25.8.</strong> tr_misc修改记录</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.26.</strong> X86toMips</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../BT/X86toMips/dbt测试结果.html"><strong aria-hidden="true">8.26.1.</strong> dbt测试结果</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.26.2.</strong> pictures</div></li><li class="chapter-item "><a href="../../../BT/X86toMips/Pseudo-README.html"><strong aria-hidden="true">8.26.3.</strong> Pseudo-README</a></li><li class="chapter-item "><a href="../../../BT/X86toMips/X86toMips调研.html"><strong aria-hidden="true">8.26.4.</strong> X86toMips调研</a></li><li class="chapter-item "><a href="../../../BT/X86toMips/X86toMips调研-续.html"><strong aria-hidden="true">8.26.5.</strong> X86toMips调研-续</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.</strong> Build</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">9.1.</strong> Autotools</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Build/Autotools/2012.autotools_criticism.kamp..html"><strong aria-hidden="true">9.1.1.</strong> 2012.autotools_criticism.kamp.</a></li><li class="chapter-item "><a href="../../../Build/Autotools/autotools.html"><strong aria-hidden="true">9.1.2.</strong> autotools</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.2.</strong> CMake</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Build/CMake/Notes.html"><strong aria-hidden="true">9.2.1.</strong> Notes</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.</strong> Compiler</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Build/Compiler/1992.hyperblock.mahlke.micro.html"><strong aria-hidden="true">9.3.1.</strong> 1992.hyperblock.mahlke.micro</a></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.2.</strong> llvm</div></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.3.</strong> mingw</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Build/Compiler/mingw/overview.html"><strong aria-hidden="true">9.3.3.1.</strong> overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.4.</strong> ORC</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Build/Compiler/ORC/2004.ORC-LCPC04-Tutorial.html"><strong aria-hidden="true">9.3.4.1.</strong> 2004.ORC-LCPC04-Tutorial</a></li><li class="chapter-item "><a href="../../../Build/Compiler/ORC/2004.overview_orc.wuchengyong.iwlcpc.html"><strong aria-hidden="true">9.3.4.2.</strong> 2004.overview_orc.wuchengyong.iwlcpc</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.5.</strong> trans</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.4.</strong> Disassemble</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Build/Disassemble/2002.disassembly.bschwarz.pieee.html"><strong aria-hidden="true">9.4.1.</strong> 2002.disassembly.bschwarz.pieee</a></li></ol></li><li class="chapter-item "><a href="../../../Build/ELF/index.html"><strong aria-hidden="true">9.5.</strong> ELF</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Build/ELF/ELF调研.html"><strong aria-hidden="true">9.5.1.</strong> ELF调研</a></li><li class="chapter-item "><div><strong aria-hidden="true">9.5.2.</strong> pictures</div></li><li class="chapter-item "><a href="../../../Build/ELF/QnA.html"><strong aria-hidden="true">9.5.3.</strong> QnA</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.6.</strong> Linker_Loader</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Build/Linker_Loader/QnA.html"><strong aria-hidden="true">9.6.1.</strong> QnA</a></li></ol></li><li class="chapter-item "><a href="../../../Build/mingw.html"><strong aria-hidden="true">9.7.</strong> mingw</a></li></ol></li><li class="chapter-item "><a href="../../../cheatsheet.html"><strong aria-hidden="true">10.</strong> cheatsheet</a></li><li class="chapter-item "><div><strong aria-hidden="true">11.</strong> CLI</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">11.1.</strong> pictures</div></li><li class="chapter-item "><a href="../../../CLI/term_pty_sh.html"><strong aria-hidden="true">11.2.</strong> term_pty_sh</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">12.</strong> CompatLayer</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../CompatLayer/2006.linuxulator.divacky.freebsd..html"><strong aria-hidden="true">12.1.</strong> 2006.linuxulator.divacky.freebsd.</a></li><li class="chapter-item "><a href="../../../CompatLayer/Alky.html"><strong aria-hidden="true">12.2.</strong> Alky</a></li><li class="chapter-item "><div><strong aria-hidden="true">12.3.</strong> UML</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../CompatLayer/UML/user_mode_linux.html"><strong aria-hidden="true">12.3.1.</strong> user_mode_linux</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">12.4.</strong> WINE</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../CompatLayer/WINE/2020_6_25.emu_win_syscall.corbet.lwn.html"><strong aria-hidden="true">12.4.1.</strong> 2020_6_25.emu_win_syscall.corbet.lwn</a></li><li class="chapter-item "><a href="../../../CompatLayer/WINE/Design_of_WINE.html"><strong aria-hidden="true">12.4.2.</strong> Design_of_WINE</a></li><li class="chapter-item "><a href="../../../CompatLayer/WINE/optimizable.html"><strong aria-hidden="true">12.4.3.</strong> optimizable</a></li><li class="chapter-item "><a href="../../../CompatLayer/WINE/others.html"><strong aria-hidden="true">12.4.4.</strong> others</a></li><li class="chapter-item "><div><strong aria-hidden="true">12.4.5.</strong> pictures</div></li><li class="chapter-item "><a href="../../../CompatLayer/WINE/qemu-wine-logs.html"><strong aria-hidden="true">12.4.6.</strong> qemu-wine-logs</a></li><li class="chapter-item "><a href="../../../CompatLayer/WINE/qemu-wine.html"><strong aria-hidden="true">12.4.7.</strong> qemu-wine</a></li><li class="chapter-item "><a href="../../../CompatLayer/WINE/qemu-winetest_debug_logs.html"><strong aria-hidden="true">12.4.8.</strong> qemu-winetest_debug_logs</a></li><li class="chapter-item "><a href="../../../CompatLayer/WINE/qemu-wine环境搭建.html"><strong aria-hidden="true">12.4.9.</strong> qemu-wine环境搭建</a></li><li class="chapter-item "><a href="../../../CompatLayer/WINE/QnA.html"><strong aria-hidden="true">12.4.10.</strong> QnA</a></li><li class="chapter-item "><a href="../../../CompatLayer/WINE/References.html"><strong aria-hidden="true">12.4.11.</strong> References</a></li><li class="chapter-item "><a href="../../../CompatLayer/WINE/Winegcc调研.html"><strong aria-hidden="true">12.4.12.</strong> Winegcc调研</a></li><li class="chapter-item "><a href="../../../CompatLayer/WINE/Winelib调研报告.html"><strong aria-hidden="true">12.4.13.</strong> Winelib调研报告</a></li><li class="chapter-item "><a href="../../../CompatLayer/WINE/WINE设备驱动调研.html"><strong aria-hidden="true">12.4.14.</strong> WINE设备驱动调研</a></li><li class="chapter-item "><a href="../../../CompatLayer/WINE/WINE调研.html"><strong aria-hidden="true">12.4.15.</strong> WINE调研</a></li><li class="chapter-item "><a href="../../../CompatLayer/WINE/二进制翻译调研报告_FX32_Wine.html"><strong aria-hidden="true">12.4.16.</strong> 二进制翻译调研报告_FX32_Wine</a></li><li class="chapter-item "><a href="../../../CompatLayer/WINE/二进制翻译调研报告_Wine.html"><strong aria-hidden="true">12.4.17.</strong> 二进制翻译调研报告_Wine</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.</strong> Connect</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Connect/Bluetooth/index.html"><strong aria-hidden="true">13.1.</strong> Bluetooth</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.1.1.</strong> bluez</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.1.1.1.</strong> pictures</div></li><li class="chapter-item "><a href="../../../Connect/Bluetooth/bluez/profile_input.html"><strong aria-hidden="true">13.1.1.2.</strong> profile_input</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.2.</strong> btkbdd</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.1.2.1.</strong> pictures</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.3.</strong> dbus</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Connect/Bluetooth/dbus/Overview.html"><strong aria-hidden="true">13.1.3.1.</strong> Overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.4.</strong> Essays</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.1.4.1.</strong> 2005.bluez_intro</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Connect/Bluetooth/Essays/2005.bluez_intro.albert/An_Introduction_to_Bluetooth_Programming.html"><strong aria-hidden="true">13.1.4.1.1.</strong> An_Introduction_to_Bluetooth_Programming</a></li></ol></li><li class="chapter-item "><a href="../../../Connect/Bluetooth/Essays/阅读记录.html"><strong aria-hidden="true">13.1.4.2.</strong> 阅读记录</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.5.</strong> hidclient</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Connect/Bluetooth/hidclient/logs.html"><strong aria-hidden="true">13.1.5.1.</strong> logs</a></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.5.2.</strong> pictures</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.2.</strong> Network</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.2.1.</strong> bittorrent</div></li><li class="chapter-item "><div><strong aria-hidden="true">13.2.2.</strong> nginx</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Connect/Network/nginx/logs.html"><strong aria-hidden="true">13.2.2.1.</strong> logs</a></li></ol></li><li class="chapter-item "><a href="../../../Connect/Network/p2p.html"><strong aria-hidden="true">13.2.3.</strong> p2p</a></li><li class="chapter-item "><a href="../../../Connect/Network/streaming_server.html"><strong aria-hidden="true">13.2.4.</strong> streaming_server</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.3.</strong> NFC</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.3.1.</strong> Essays</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">14.</strong> dataViz</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../dataViz/overview.html"><strong aria-hidden="true">14.1.</strong> overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">15.</strong> Distro</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Distro/JingOS.html"><strong aria-hidden="true">15.1.</strong> JingOS</a></li><li class="chapter-item "><div><strong aria-hidden="true">15.2.</strong> Nix</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Distro/Nix/nixpkgs.html"><strong aria-hidden="true">15.2.1.</strong> nixpkgs</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../Essays.html"><strong aria-hidden="true">16.</strong> Essays</a></li><li class="chapter-item "><div><strong aria-hidden="true">17.</strong> FPGA</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../FPGA/iverilog.html"><strong aria-hidden="true">17.1.</strong> iverilog</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">18.</strong> hackthon</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../hackthon/Untitled.html"><strong aria-hidden="true">18.1.</strong> Untitled</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">19.</strong> Input</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Input/logs.html"><strong aria-hidden="true">19.1.</strong> logs</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">20.</strong> ISA</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../ISA/2013.power_of_risc_cisc.blem.hpca.144.html"><strong aria-hidden="true">20.1.</strong> 2013.power_of_risc_cisc.blem.hpca.144</a></li><li class="chapter-item "><div><strong aria-hidden="true">20.2.</strong> arm</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.3.</strong> enhance</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.4.</strong> mips</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.5.</strong> mips_lx</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.6.</strong> riscv</div></li><li class="chapter-item "><a href="../../../ISA/Semantics/index.html"><strong aria-hidden="true">20.7.</strong> Semantics</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../ISA/Semantics/2013.locate.lakhotia.pprew.75.html"><strong aria-hidden="true">20.7.1.</strong> 2013.locate.lakhotia.pprew.75</a></li><li class="chapter-item "><a href="../../../ISA/Semantics/2014.lem.mulligan.icfp.79.html"><strong aria-hidden="true">20.7.2.</strong> 2014.lem.mulligan.icfp.79</a></li><li class="chapter-item "><a href="../../../ISA/Semantics/2015.sail.gray.micro.31.html"><strong aria-hidden="true">20.7.3.</strong> 2015.sail.gray.micro.31</a></li><li class="chapter-item "><a href="../../../ISA/Semantics/2016.learn.heule.pldi.56.html"><strong aria-hidden="true">20.7.4.</strong> 2016.learn.heule.pldi.56</a></li><li class="chapter-item "><a href="../../../ISA/Semantics/2018.sail.armstrong..3.html"><strong aria-hidden="true">20.7.5.</strong> 2018.sail.armstrong..3</a></li><li class="chapter-item "><a href="../../../ISA/Semantics/2019.x64_validation.dasgupta.sigplan.24.html"><strong aria-hidden="true">20.7.6.</strong> 2019.x64_validation.dasgupta.sigplan.24</a></li><li class="chapter-item "><a href="../../../ISA/Semantics/2021.sail.armstrong.manual.html"><strong aria-hidden="true">20.7.7.</strong> 2021.sail.armstrong.manual</a></li><li class="chapter-item "><div><strong aria-hidden="true">20.7.8.</strong> k</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../ISA/Semantics/k/logs.html"><strong aria-hidden="true">20.7.8.1.</strong> logs</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">20.8.</strong> ultrasparc</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.9.</strong> Uop</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../ISA/Uop/1990.nec_intel.elkins...html"><strong aria-hidden="true">20.9.1.</strong> 1990.nec_intel.elkins..</a></li><li class="chapter-item "><a href="../../../ISA/Uop/1996.palcode..manual..html"><strong aria-hidden="true">20.9.2.</strong> 1996.palcode..manual.</a></li><li class="chapter-item "><a href="../../../ISA/Uop/2003.ucache.solomon.tvlsi.13.html"><strong aria-hidden="true">20.9.3.</strong> 2003.ucache.solomon.tvlsi.13</a></li><li class="chapter-item "><a href="../../../ISA/Uop/2019.reverse_engineer.koppe.usenix_security.16.html"><strong aria-hidden="true">20.9.4.</strong> 2019.reverse_engineer.koppe.usenix_security.16</a></li><li class="chapter-item "><a href="../../../ISA/Uop/2020.improve_ucache.kotra.micro.1.html"><strong aria-hidden="true">20.9.5.</strong> 2020.improve_ucache.kotra.micro.1</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">20.10.</strong> x86</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">21.</strong> JIT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../JIT/2008.llvm_sim.brandner..29.html"><strong aria-hidden="true">21.1.</strong> 2008.llvm_sim.brandner..29</a></li><li class="chapter-item "><a href="../../../JIT/2011.llvm_sim.helmstetter.imecs.6.html"><strong aria-hidden="true">21.2.</strong> 2011.llvm_sim.helmstetter.imecs.6</a></li><li class="chapter-item "><div><strong aria-hidden="true">21.3.</strong> dynarmic</div></li><li class="chapter-item "><div><strong aria-hidden="true">21.4.</strong> opt</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">22.</strong> Kernel</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Kernel/2020_9_9.prepare_new_feat.edge.lwn-lpc.html"><strong aria-hidden="true">22.1.</strong> 2020_9_9.prepare_new_feat.edge.lwn-lpc</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.2.</strong> Driver</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Kernel/Driver/2019.linux_win_printer.金融通.软件所硕士.html"><strong aria-hidden="true">22.2.1.</strong> 2019.linux_win_printer.金融通.软件所硕士</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.3.</strong> exo</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Kernel/exo/1995.intro.engler.sosp.1259.html"><strong aria-hidden="true">22.3.1.</strong> 1995.intro.engler.sosp.1259</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.</strong> Linux</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Kernel/Linux/2002.rcu.mckenney..216.html"><strong aria-hidden="true">22.4.1.</strong> 2002.rcu.mckenney..216</a></li><li class="chapter-item "><a href="../../../Kernel/Linux/2016.sched_bug.lozi.eurosys.120.html"><strong aria-hidden="true">22.4.2.</strong> 2016.sched_bug.lozi.eurosys.120</a></li><li class="chapter-item "><a href="../../../Kernel/Linux/2018.concurrency.alglave.asplos.31.html"><strong aria-hidden="true">22.4.3.</strong> 2018.concurrency.alglave.asplos.31</a></li><li class="chapter-item "><a href="../../../Kernel/Linux/2020.rcu.mckenney...html"><strong aria-hidden="true">22.4.4.</strong> 2020.rcu.mckenney..</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.5.</strong> Android</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Kernel/Linux/Android/anbox.html"><strong aria-hidden="true">22.4.5.1.</strong> anbox</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.5.2.</strong> pictures</div></li><li class="chapter-item "><a href="../../../Kernel/Linux/Android/QnA.html"><strong aria-hidden="true">22.4.5.3.</strong> QnA</a></li><li class="chapter-item "><a href="../../../Kernel/Linux/Android/to_mainline.html"><strong aria-hidden="true">22.4.5.4.</strong> to_mainline</a></li><li class="chapter-item "><a href="../../../Kernel/Linux/Android/Waydroid.html"><strong aria-hidden="true">22.4.5.5.</strong> Waydroid</a></li></ol></li><li class="chapter-item "><a href="../../../Kernel/Linux/cache_alias.html"><strong aria-hidden="true">22.4.6.</strong> cache_alias</a></li><li class="chapter-item "><a href="../../../Kernel/Linux/cache_alias_page_color.html"><strong aria-hidden="true">22.4.7.</strong> cache_alias_page_color</a></li><li class="chapter-item "><a href="../../../Kernel/Linux/docsReading.html"><strong aria-hidden="true">22.4.8.</strong> docsReading</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.9.</strong> drivers</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Kernel/Linux/drivers/ioctl.html"><strong aria-hidden="true">22.4.9.1.</strong> ioctl</a></li><li class="chapter-item "><a href="../../../Kernel/Linux/drivers/QnA.html"><strong aria-hidden="true">22.4.9.2.</strong> QnA</a></li></ol></li><li class="chapter-item "><a href="../../../Kernel/Linux/idle.html"><strong aria-hidden="true">22.4.10.</strong> idle</a></li><li class="chapter-item "><a href="../../../Kernel/Linux/lx.html"><strong aria-hidden="true">22.4.11.</strong> lx</a></li><li class="chapter-item "><a href="../../../Kernel/Linux/memory_mapping.html"><strong aria-hidden="true">22.4.12.</strong> memory_mapping</a></li><li class="chapter-item "><a href="../../../Kernel/Linux/module.logs.html"><strong aria-hidden="true">22.4.13.</strong> module.logs</a></li><li class="chapter-item "><a href="../../../Kernel/Linux/mtlb.logs.html"><strong aria-hidden="true">22.4.14.</strong> mtlb.logs</a></li><li class="chapter-item "><a href="../../../Kernel/Linux/page_fault.html"><strong aria-hidden="true">22.4.15.</strong> page_fault</a></li><li class="chapter-item "><a href="../../../Kernel/Linux/page_size.html"><strong aria-hidden="true">22.4.16.</strong> page_size</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.17.</strong> pictures</div></li><li class="chapter-item "><a href="../../../Kernel/Linux/QnA-alpine.html"><strong aria-hidden="true">22.4.18.</strong> QnA-alpine</a></li><li class="chapter-item "><a href="../../../Kernel/Linux/QnA.html"><strong aria-hidden="true">22.4.19.</strong> QnA</a></li><li class="chapter-item "><a href="../../../Kernel/Linux/startup.html"><strong aria-hidden="true">22.4.20.</strong> startup</a></li><li class="chapter-item "><a href="../../../Kernel/Linux/syscalls.html"><strong aria-hidden="true">22.4.21.</strong> syscalls</a></li></ol></li><li class="chapter-item "><a href="../../../Kernel/memory.html"><strong aria-hidden="true">22.5.</strong> memory</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.6.</strong> micro</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Kernel/micro/1995.u_kernel.lietdke.sosp.308.html"><strong aria-hidden="true">22.6.1.</strong> 1995.u_kernel.lietdke.sosp.308</a></li><li class="chapter-item "><a href="../../../Kernel/micro/2013.l3_sel4.elphinstone.sosp.126.html"><strong aria-hidden="true">22.6.2.</strong> 2013.l3_sel4.elphinstone.sosp.126</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.7.</strong> multi</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Kernel/multi/2009.intro.baumann.sosp.856.html"><strong aria-hidden="true">22.7.1.</strong> 2009.intro.baumann.sosp.856</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.8.</strong> pictures</div></li><li class="chapter-item "><div><strong aria-hidden="true">22.9.</strong> syscall</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Kernel/syscall/2020_9_8.extensible_syscall.corbet.lwn-lpc.html"><strong aria-hidden="true">22.9.1.</strong> 2020_9_8.extensible_syscall.corbet.lwn-lpc</a></li></ol></li><li class="chapter-item "><a href="../../../Kernel/transkernel.html"><strong aria-hidden="true">22.10.</strong> transkernel</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.11.</strong> unikernel</div></li><li class="chapter-item "><div><strong aria-hidden="true">22.12.</strong> WinCmptbl</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">22.13.</strong> Windows</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Kernel/Windows/compilation.html"><strong aria-hidden="true">22.13.1.</strong> compilation</a></li><li class="chapter-item expanded "><a href="../../../Kernel/Windows/driver/index.html"><strong aria-hidden="true">22.13.2.</strong> driver</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Kernel/Windows/driver/ddiwrapper.html"><strong aria-hidden="true">22.13.2.1.</strong> ddiwrapper</a></li><li class="chapter-item "><a href="../../../Kernel/Windows/driver/logs-1.html"><strong aria-hidden="true">22.13.2.2.</strong> logs-1</a></li><li class="chapter-item expanded "><a href="../../../Kernel/Windows/driver/logs.html" class="active"><strong aria-hidden="true">22.13.2.3.</strong> logs</a></li><li class="chapter-item "><a href="../../../Kernel/Windows/driver/ndis.html"><strong aria-hidden="true">22.13.2.4.</strong> ndis</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.13.2.5.</strong> pictures</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">22.13.2.5.1.</strong> err</div></li></ol></li><li class="chapter-item "><a href="../../../Kernel/Windows/driver/printer.html"><strong aria-hidden="true">22.13.2.6.</strong> printer</a></li><li class="chapter-item "><a href="../../../Kernel/Windows/driver/QnA.html"><strong aria-hidden="true">22.13.2.7.</strong> QnA</a></li><li class="chapter-item "><a href="../../../Kernel/Windows/driver/types.html"><strong aria-hidden="true">22.13.2.8.</strong> types</a></li></ol></li><li class="chapter-item "><a href="../../../Kernel/Windows/nameConventions.html"><strong aria-hidden="true">22.13.3.</strong> nameConventions</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.13.4.</strong> pictures</div></li><li class="chapter-item "><a href="../../../Kernel/Windows/QnA.html"><strong aria-hidden="true">22.13.5.</strong> QnA</a></li><li class="chapter-item "><a href="../../../Kernel/Windows/ReactOS/index.html"><strong aria-hidden="true">22.13.6.</strong> ReactOS</a></li><li class="chapter-item "><a href="../../../Kernel/Windows/service.html"><strong aria-hidden="true">22.13.7.</strong> service</a></li><li class="chapter-item "><a href="../../../Kernel/Windows/subsystem.html"><strong aria-hidden="true">22.13.8.</strong> subsystem</a></li><li class="chapter-item "><a href="../../../Kernel/Windows/syscall.html"><strong aria-hidden="true">22.13.9.</strong> syscall</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.14.</strong> XNU</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">22.14.1.</strong> Darling</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Kernel/XNU/Darling/overview.html"><strong aria-hidden="true">22.14.1.1.</strong> overview</a></li></ol></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.</strong> Lang</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">23.1.</strong> Asm</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Lang/Asm/asm.html"><strong aria-hidden="true">23.1.1.</strong> asm</a></li><li class="chapter-item "><div><strong aria-hidden="true">23.1.2.</strong> riscv</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Lang/Asm/riscv/QnA.html"><strong aria-hidden="true">23.1.2.1.</strong> QnA</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.2.</strong> C</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Lang/C.f/macro.html"><strong aria-hidden="true">23.2.1.</strong> macro</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.3.</strong> Dot</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Lang/Dot/overview.html"><strong aria-hidden="true">23.3.1.</strong> overview</a></li><li class="chapter-item "><a href="../../../Lang/Dot/QnA.html"><strong aria-hidden="true">23.3.2.</strong> QnA</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.4.</strong> IR</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Lang/IR/1999.JVM_Specification.html"><strong aria-hidden="true">23.4.1.</strong> 1999.JVM_Specification</a></li><li class="chapter-item "><a href="../../../Lang/IR/2000.llvm.lattner.master_thesis.241.html"><strong aria-hidden="true">23.4.2.</strong> 2000.llvm.lattner.master_thesis.241</a></li><li class="chapter-item "><a href="../../../Lang/IR/2004.llvm.lattner.cgo.4340.html"><strong aria-hidden="true">23.4.3.</strong> 2004.llvm.lattner.cgo.4340</a></li><li class="chapter-item "><a href="../../../Lang/IR/2013.importance.chow...html"><strong aria-hidden="true">23.4.4.</strong> 2013.importance.chow..</a></li><li class="chapter-item "><div><strong aria-hidden="true">23.4.5.</strong> Common2</div></li><li class="chapter-item "><a href="../../../Lang/IR/LLVM-IR.html"><strong aria-hidden="true">23.4.6.</strong> LLVM-IR</a></li><li class="chapter-item "><a href="../../../Lang/IR/MapleIRDesign.html"><strong aria-hidden="true">23.4.7.</strong> MapleIRDesign</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.5.</strong> JS</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Lang/JS/overview.html"><strong aria-hidden="true">23.5.1.</strong> overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.6.</strong> Latex</div></li><li class="chapter-item "><div><strong aria-hidden="true">23.7.</strong> Lisp</div></li><li class="chapter-item "><div><strong aria-hidden="true">23.8.</strong> Py</div></li><li class="chapter-item "><div><strong aria-hidden="true">23.9.</strong> SMT-LIB</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Lang/SMT-LIB/2012.smt_lib_v2.cok..47.html"><strong aria-hidden="true">23.9.1.</strong> 2012.smt_lib_v2.cok..47</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.10.</strong> WebAsm</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Lang/WebAsm/2017.intro.haas.pldi.194.html"><strong aria-hidden="true">23.10.1.</strong> 2017.intro.haas.pldi.194</a></li><li class="chapter-item "><a href="../../../Lang/WebAsm/overview.html"><strong aria-hidden="true">23.10.2.</strong> overview</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">24.</strong> Lib</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">24.1.</strong> Glibc</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Lib/Glibc/glibc.html"><strong aria-hidden="true">24.1.1.</strong> glibc</a></li><li class="chapter-item "><a href="../../../Lib/Glibc/mmap.html"><strong aria-hidden="true">24.1.2.</strong> mmap</a></li><li class="chapter-item "><div><strong aria-hidden="true">24.1.3.</strong> pictures</div></li><li class="chapter-item "><a href="../../../Lib/Glibc/pthread.html"><strong aria-hidden="true">24.1.4.</strong> pthread</a></li><li class="chapter-item "><a href="../../../Lib/Glibc/QnA.html"><strong aria-hidden="true">24.1.5.</strong> QnA</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">24.2.</strong> igraph</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Lib/igraph/QnA.html"><strong aria-hidden="true">24.2.1.</strong> QnA</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">24.3.</strong> Libc</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Lib/Libc/Musl/index.html"><strong aria-hidden="true">24.3.1.</strong> Musl</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">25.</strong> Mem</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Mem/cat.html"><strong aria-hidden="true">25.1.</strong> cat</a></li><li class="chapter-item "><div><strong aria-hidden="true">25.2.</strong> model</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Mem/model/2017.memalloy.wickerson.popl.77.html"><strong aria-hidden="true">25.2.1.</strong> 2017.memalloy.wickerson.popl.77</a></li></ol></li><li class="chapter-item "><a href="../../../Mem/order.html"><strong aria-hidden="true">25.3.</strong> order</a></li><li class="chapter-item "><a href="../../../Mem/test.html"><strong aria-hidden="true">25.4.</strong> test</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">26.</strong> other_read_list</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../other_read_list/cambridge.html"><strong aria-hidden="true">26.1.</strong> cambridge</a></li><li class="chapter-item "><a href="../../../other_read_list/stanford/index.html"><strong aria-hidden="true">26.2.</strong> stanford</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../other_read_list/stanford/1999.codesigned_vm.smith.iwia.html"><strong aria-hidden="true">26.2.1.</strong> 1999.codesigned_vm.smith.iwia</a></li><li class="chapter-item "><a href="../../../other_read_list/stanford/2001.vm_intro.smith.html"><strong aria-hidden="true">26.2.2.</strong> 2001.vm_intro.smith</a></li><li class="chapter-item "><a href="../../../other_read_list/stanford/2002.vector_vs_ss.kozyrakis.micro.html"><strong aria-hidden="true">26.2.3.</strong> 2002.vector_vs_ss.kozyrakis.micro</a></li><li class="chapter-item "><div><strong aria-hidden="true">26.2.4.</strong> pictures</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">27.</strong> Perf</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Perf/flamegraph.html"><strong aria-hidden="true">27.1.</strong> flamegraph</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">28.</strong> PoSh</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../PoSh/QnA.html"><strong aria-hidden="true">28.1.</strong> QnA</a></li></ol></li><li class="chapter-item "><a href="../../../Proj/index.html"><strong aria-hidden="true">29.</strong> Proj</a></li><li class="chapter-item "><div><strong aria-hidden="true">30.</strong> Pwr</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Pwr/2009.mcpat.li.micro.2319.html"><strong aria-hidden="true">30.1.</strong> 2009.mcpat.li.micro.2319</a></li></ol></li><li class="chapter-item "><a href="../../../QnA-Daliy.html"><strong aria-hidden="true">31.</strong> QnA-Daliy</a></li><li class="chapter-item "><div><strong aria-hidden="true">32.</strong> Repos</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Repos/llvm-tutor.html"><strong aria-hidden="true">32.1.</strong> llvm-tutor</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">33.</strong> Sandbox</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Sandbox/chroot.html"><strong aria-hidden="true">33.1.</strong> chroot</a></li><li class="chapter-item "><div><strong aria-hidden="true">33.2.</strong> Docker</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Sandbox/Docker/Overview.html"><strong aria-hidden="true">33.2.1.</strong> Overview</a></li><li class="chapter-item "><a href="../../../Sandbox/Docker/QnA.html"><strong aria-hidden="true">33.2.2.</strong> QnA</a></li></ol></li><li class="chapter-item "><a href="../../../Sandbox/proot.html"><strong aria-hidden="true">33.3.</strong> proot</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">34.</strong> security</div></li><li class="chapter-item "><div><strong aria-hidden="true">35.</strong> SftwStack</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../SftwStack/applications_arch.html"><strong aria-hidden="true">35.1.</strong> applications_arch</a></li><li class="chapter-item "><a href="../../../SftwStack/linux_desktop.html"><strong aria-hidden="true">35.2.</strong> linux_desktop</a></li><li class="chapter-item "><div><strong aria-hidden="true">35.3.</strong> pictures</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">36.</strong> Sim</div></li><li class="chapter-item "><div><strong aria-hidden="true">37.</strong> Softwares</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Softwares/ocrmypdf.html"><strong aria-hidden="true">37.1.</strong> ocrmypdf</a></li><li class="chapter-item "><a href="../../../Softwares/tree_timeline_note.html"><strong aria-hidden="true">37.2.</strong> tree_timeline_note</a></li><li class="chapter-item "><div><strong aria-hidden="true">37.3.</strong> Vim</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Softwares/Vim/QnA.html"><strong aria-hidden="true">37.3.1.</strong> QnA</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../SPIN.html"><strong aria-hidden="true">38.</strong> SPIN</a></li><li class="chapter-item "><div><strong aria-hidden="true">39.</strong> SQL</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../SQL/overview.html"><strong aria-hidden="true">39.1.</strong> overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">40.</strong> SymExec</div></li><li class="chapter-item "><div><strong aria-hidden="true">41.</strong> Temp</div></li><li class="chapter-item "><div><strong aria-hidden="true">42.</strong> uArch</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">42.1.</strong> TLB</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">42.1.1.</strong> pictures</div></li><li class="chapter-item "><a href="../../../uArch/TLB/QnA.html"><strong aria-hidden="true">42.1.2.</strong> QnA</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">43.</strong> Virt</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Virt/1988.386.smith.programmers_journal..html"><strong aria-hidden="true">43.1.</strong> 1988.386.smith.programmers_journal.</a></li><li class="chapter-item "><a href="../../../Virt/2002.esx.waldspurger.opsr.1402.html"><strong aria-hidden="true">43.2.</strong> 2002.esx.waldspurger.opsr.1402</a></li><li class="chapter-item "><a href="../../../Virt/2003.xen.barham.opsr.6475.html"><strong aria-hidden="true">43.3.</strong> 2003.xen.barham.opsr.6475</a></li><li class="chapter-item "><a href="../../../Virt/2003.xen.barham.opsr.6475.sync-conflict-20211220-085833-2SHHM4X.html"><strong aria-hidden="true">43.4.</strong> 2003.xen.barham.opsr.6475.sync-conflict-20211220-085833-2SHHM4X</a></li><li class="chapter-item "><a href="../../../Virt/2006.cmp_soft_hard_x86.adams.asplos.700.html"><strong aria-hidden="true">43.5.</strong> 2006.cmp_soft_hard_x86.adams.asplos.700</a></li><li class="chapter-item "><a href="../../../Virt/2012.dune.belay.osdi.215.html"><strong aria-hidden="true">43.6.</strong> 2012.dune.belay.osdi.215</a></li><li class="chapter-item "><div><strong aria-hidden="true">43.7.</strong> addr_trans</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Virt/addr_trans/2018.1_qemu_dune_2_lkm.faravelon.doc_thesis.1.html"><strong aria-hidden="true">43.7.1.</strong> 2018.1_qemu_dune_2_lkm.faravelon.doc_thesis.1</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">43.8.</strong> BT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Virt/BT/2016.cross_arch_captive.spink.taco.3.html"><strong aria-hidden="true">43.8.1.</strong> 2016.cross_arch_captive.spink.taco.3</a></li><li class="chapter-item "><a href="../../../Virt/BT/2019.cross_arch_captive.spink.usenix.1.html"><strong aria-hidden="true">43.8.2.</strong> 2019.cross_arch_captive.spink.usenix.1</a></li><li class="chapter-item "><div><strong aria-hidden="true">43.8.3.</strong> pictures</div></li></ol></li><li class="chapter-item "><a href="../../../Virt/overview.html"><strong aria-hidden="true">43.9.</strong> overview</a></li><li class="chapter-item "><div><strong aria-hidden="true">43.10.</strong> pictures</div></li><li class="chapter-item "><div><strong aria-hidden="true">43.11.</strong> virtualBox</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../Virt/virtualBox/install.html"><strong aria-hidden="true">43.11.1.</strong> install</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../X11/index.html"><strong aria-hidden="true">44.</strong> X11</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../X11/windowManage.html"><strong aria-hidden="true">44.1.</strong> windowManage</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">45.</strong> 行业报告</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">45.1.</strong> LF</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../行业报告/LF/2020-Linux-Foundation-Annual-Report_120520.html"><strong aria-hidden="true">45.1.1.</strong> 2020-Linux-Foundation-Annual-Report_120520</a></li><li class="chapter-item "><a href="../../../行业报告/LF/FINOS-business-value-of-open-source.html"><strong aria-hidden="true">45.1.2.</strong> FINOS-business-value-of-open-source</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">45.2.</strong> 企业年报</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">45.2.1.</strong> apple</div></li><li class="chapter-item "><div><strong aria-hidden="true">45.2.2.</strong> 华为</div></li><li class="chapter-item "><div><strong aria-hidden="true">45.2.3.</strong> 海信</div></li><li class="chapter-item "><div><strong aria-hidden="true">45.2.4.</strong> 联想</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">45.3.</strong> 网信自主创新</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../行业报告/网信自主创新/2020.html"><strong aria-hidden="true">45.3.1.</strong> 2020</a></li></ol></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">xieby1&#x27;s notes</h1>
+
+                    <div class="right-buttons">
+                                                <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p><strong>术语</strong></p>
+<table><thead><tr><th>Windows</th><th>Linux</th><th>注</th></tr></thead><tbody>
+<tr><td>checked</td><td>debug</td><td>build类型</td></tr>
+<tr><td>free</td><td>release</td><td>build类型</td></tr>
+<tr><td></td><td></td><td></td></tr>
+</tbody></table>
+<div style="text-align:right; font-size:3em;">2020.10.30</div>
+<h2 id="windows驱动发展"><a class="header" href="#windows驱动发展">Windows驱动发展</a></h2>
+<p>参考<a href="https://www.cnblogs.com/hyddd/archive/2009/03/15/1412684.html">【hyddd驱动开发学习】DDK与WDK</a>，</p>
+<table><thead><tr><th>系统</th><th>驱动模型</th><th>驱动后缀</th><th>开发包</th></tr></thead><tbody>
+<tr><td>95/98/ME</td><td>Vxd</td><td>.vxd</td><td>无</td></tr>
+<tr><td>2000/XP/2003</td><td>WDM (Windows Driver Model)</td><td>.sys</td><td>DDK</td></tr>
+<tr><td>Vista和之后</td><td>WDF (Windows Driver Frameworks)</td><td>.sys</td><td>WDK</td></tr>
+</tbody></table>
+<p>WDK兼容DDK。</p>
+<div style="text-align:right; font-size:3em;">2020.10.27</div>
+<h2 id="安装"><a class="header" href="#安装">安装</a></h2>
+<p>安装包来自微软官方<a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/other-wdk-downloads">Other WDK downloads</a>的Windows XP Windows Server 2003的<a href="https://www.microsoft.com/download/confirmation.aspx?id=11800">WDK 7.1.0</a>。</p>
+<p>在windows XP虚拟机（virtual box）里安装。</p>
+<p>装好了发现就是DDK！位于<code>C:\WinDDK\</code>！</p>
+<div style="text-align:right; font-size:3em;">2020.10.26</div>
+<h2 id="编译程序"><a class="header" href="#编译程序">编译程序</a></h2>
+<p>在winXP里编译了打印机驱动的示例程序——msplot（在<code>C:\WinDDK\版本\src\print\msplot\</code>里），运行<code>x86 Checked Build Environment</code>然后去msplot目录里运行<code>build</code>就可以了。更想了解windows的编译系统了。</p>
+<p>2020.10.28</p>
+<p><strong><a href="https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=vs-2019">Use the Microsoft C++ toolset from the command line</a></strong></p>
+<p><a href="https://docs.microsoft.com/en-us/cpp/build/reference/compiling-a-c-cpp-program?view=vs-2019">CL</a>
+Use the compiler (cl.exe) to compile and link source code files into apps, libraries, and DLLs.</p>
+<p><a href="https://docs.microsoft.com/en-us/cpp/build/reference/linking?view=vs-2019">Link</a>
+Use the linker (link.exe) to link compiled object files and libraries into apps and DLLs.</p>
+<p><a href="https://docs.microsoft.com/en-us/cpp/build/reference/nmake-reference?view=vs-2019">NMAKE</a>
+Use NMAKE (nmake.exe) on Windows to build C++ projects based on a traditional makefile.</p>
+<p><strong><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/print/plotter-driver-components">Plotter Driver Components</a></strong></p>
+<p>msplot的编译过程应该不是由namek+makefile完成的，而是<code>plotter/sources</code>和<code>plotui/sources</code>这俩文件指导某个程序完成的。</p>
+<p>2020.10.29</p>
+<p>通过搜索sources里的关键词<code>TARGETNAME=</code>，搜索到了source文件相关的历史文档：</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/previous-versions/ff552920(v=vs.85)">TARGETTYPE</a>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/previous-versions/ff551804(v=vs.85)">Sources file</a>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/previous-versions/ff554126(v=vs.85)">Using Macros and Environment Variables</a>
+<ul>
+<li><a href="http://go.microsoft.com/fwlink/?linkid=153241">Macros and NMAKE</a>：可以下载到Visual Studio 2003 Retired Technical documentation。<strong>注</strong>：这些pdf就是网页文档一模一样的格式，链接非常多。</li>
+</ul>
+</li>
+<li><a href="https://docs.microsoft.com/en-us/previous-versions/ff556072(v=vs.85)">Utilizing a Sources file Template</a>：说明了sources文件的使用方法。模板里对TARGETNAME的注释“It is the name of the target (component) that is being built by this makefile”说明了sources文件的本质是makefile！</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><code>build</code>在运行时输出信息显示会去读取Winddk根目录里的<code>build.dat</code>文件，这个文件的用途是？</p>
+<div style="text-align:right; font-size:3em;">2020.10.30</div>
+<p>找到编译相关的文档了，安装DDK时就同时安装了开发文档在开始菜单找找DDK的help子目录，找到这个文档的过程有点曲折，总的来说还是不熟悉windows开发流程，</p>
+<ul>
+<li>stack overflow <a href="https://stackoverflow.com/questions/10197148/how-to-start-writing-ddk-code">How to start writing DDK code ?</a> quasoft的回答提到xp编程可以参考，
+<ul>
+<li>guide from Donald D. Burn can be a good start - <a href="https://msdn.microsoft.com/en-us/library/windows/hardware/dn613923(v=vs.85).aspx">Getting Started with Windows Driver Development</a>，下载到了Books里<a href="../../../../../Books/Kernel/Windows/drivers/drv_dev_intro.docx">drv_dev_intro.docx</a>；这个文档在讲Build Commandl Line时提到了“The Build utility has many options, which are all documented in the WDK.”，我当时惊呆了，WDK有文档？！仔细想想，当时只搜索了<code>C:\WinDDK</code>目录，没有找到文档，文档可能在别的地方放着！
+<ul>
+<li>果然DDK的开发者文档在开始菜单里的DDK-help子目录下有！（在安装时要选择安装帮助文档才会有！）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div style="text-align:right; font-size:3em;">2020.11.06</div>
+<p><strong>注</strong>：很多程序在Z盘安装失败，在C盘安装成功。</p>
+<hr />
+<p>HP 1020 plus windows xp 32驱动（在HP官网下载）</p>
+<ul>
+<li>Windows XP：一切正常，可以直接驱动USB打印机</li>
+<li>ReactOS：安装程序卡死</li>
+<li>WINE：安装程序无法找到USB设备</li>
+</ul>
+<hr />
+<p>PDF虚拟打印机TinyPDF</p>
+<ul>
+<li>Windows XP：一切正常，可以打印出PDF文件</li>
+<li>ReactOS：安装正常，但打印机列表没有出现虚拟打印机</li>
+<li>WINE：安装正常，打印机列表里有虚拟打印机，但是打印会卡死</li>
+</ul>
+<hr />
+<div style="text-align:right; font-size:3em;">2020.11.19</div>
+<h2 id="调试notepadtinypdf"><a class="header" href="#调试notepadtinypdf">调试notepad+TinyPDF</a></h2>
+<p>总路线</p>
+<ul>
+<li>
+<p>WINE</p>
+<ul>
+<li>winedbg: 调试notepad打印过程winedbg总是乱跳，很多变量无法显示。猜测是winedbg对内核的debug支持的不好。直接用gdb调试吧。</li>
+<li>🌱gdb: </li>
+</ul>
+</li>
+<li>
+<p>winxp</p>
+<ul>
+<li>
+<p>windbg/ollydbg：参考<a href="https://stackoverflow.com/questions/19269350/how-to-generate-pdb-files-while-building-library-using-mingw">how to generate pdb files while building library using mingw?</a>，需要pdb符号文件和gnu(mingw)的<code>-g</code>不一样，需要用vc编译，但notepad源码是用mingw的Makefile写的。</p>
+<ul>
+<li>把mingw编译出来的notepad中的debug信息转换成windbg可以识别的pdb文件</li>
+</ul>
+</li>
+<li>
+<p>gdb</p>
+<ul>
+<li>
+<p>直接下载bin文件缺各种依赖无法运行</p>
+<ul>
+<li>🌟缺啥dll装啥dll，添加了9个dll最终可以运行gdb了🌟</li>
+</ul>
+</li>
+<li>
+<p>用mingw-get（命令行）安装网络完全连不上，<a href="https://superuser.com/questions/434686/where-can-i-find-system-proxy-settings">Where can I find “system proxy settings”?</a></p>
+<p><a href="https://superuser.com/questions/ask">Ask Question</a>，winxp的系统代理（IE里设置）似乎不管用，IE可以正常访问google。<strong>注</strong>：virtualbox网络设置为NAT，winxp的ipconfig命令可以看到宿主机ip应该是10.0.2.2。</p>
+</li>
+<li>
+<p>用mingw-get-setup（图形界面）和命令行报错一模一样</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div style="text-align:right; font-size:3em;">2020.11.20</div>
+<h2 id="win内核debug"><a class="header" href="#win内核debug">Win内核debug</a></h2>
+<p>参考<a href="https://stackoverflow.com/questions/12696825/debugging-windows-kernel-from-linux">Debugging Windows Kernel from Linux</a>，<strong>注</strong>：debugger创建pipe，debuggee连接pipe。</p>
+<div style="text-align:right; font-size:3em;">2020.11.30</div>
+<h3 id="dll内部函数"><a class="header" href="#dll内部函数">dll内部函数</a></h3>
+<ul>
+<li>
+<p>用户态调调试用户态</p>
+<p>因为看不到dll内部的函数（和export相对立），以为需要内核态才能看到哦，所以尝试去用内核态调试。</p>
+</li>
+<li>
+<p>内核态调试用户态</p>
+<p><strong>注</strong>：参考<a href="https://blog.csdn.net/lixiangminghate/article/details/52847658">用windbg内核模式调试用户态程序</a>发现：诸多内核debug指令在<a href="http://windbg.info/doc/1-common-cmds.html">Common WinDbg Commands</a>里没有。</p>
+<p>内核态结果一样看不到。强制重新加载不行，<code>.reload /f &lt;module&gt;</code>。</p>
+</li>
+</ul>
+<p>参考<a href="https://blog.csdn.net/cssxn/article/details/101371417">手动加载PDB符号文件</a>可以用<code>!sym noisy</code>提示加载符号的很多错误信息！报错信息是<code>mismatched pdb</code>。由此发现的问题是<span style="background:red; color:white; font-weight: bold;">dll和pdb不匹配！</span></p>
+<p>依稀记得之前在某个地方看到过，为了保证调试信息（pdb）和二进制文件（dll和exe）对应，存在一个pdb匹配机制的。</p>
+<p>大概需要自己编译一遍windows才好吧。编译windows这个坎始终得迈过去。</p>
+<div style="text-align:right; font-size:3em;">2020.12.01</div>
+<p><code>binaries.x86fre/</code>文件夹里的dll和<code>WINDOWS/system32/</code>里的dll的大小一模一样，我以为文件是一样的。但是用<code>diff -s</code>比较竟然不一样，尝试着用前者覆盖后者，pdb文件就可以加载上了！大概目前可以不用重新编译windows！直接用<code>binaries.x86fre/</code>的dll覆盖<code>WINDOWS/system32/</code>就好了。</p>
+<p>所以不是内核调试和用户调试的问题，而是加载符号信息的问题。</p>
+<h2 id="加载comdlg符号"><a class="header" href="#加载comdlg符号">加载comdlg符号</a></h2>
+<p>comdlg32的<code>g_hinst</code>来自于<code>init.c</code>的<code>LibMain</code>，在<code>sources.inc</code>里声明为dll的入口函数。入口函数的参数是运行环境给的，见<a href="https://docs.microsoft.com/en-us/windows/win32/dlls/dllmain">DllMain entry point</a>。</p>
+<div style="text-align:right; font-size:3em;">2020.12.02</div>
+<p>comctl32有点特殊，用的是<code>C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.100.0_x-ww_8417450B\comctl32.dll</code>，没有对应的pdb文件。</p>
+<p>用<code>binaries.x86fre/winsxs/x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.100.0_x-ww_8417450B/comctl32.dll</code>替换就好了！！！</p>
+<p>很有意思！！！原因不明，为啥同一个comctl32会有这么多版本？很多dll都有很多版本。</p>
+<p>命令<code>sxe ld:tinypdf.dll</code>和<code>sxe ld:tinypdf2.dll</code>当加载tinypdf.dll和tinypdf2.dll时停下来。</p>
+<p>✅<span style="background: green; color: white; font-weight: bold;">打印出加载tinypdf.dll时候的调用栈，里边完全没有出现notepad。这是为什么？此时只有一个进程和一个线程。</span></p>
+<p><strong>猜测</strong>：</p>
+<ul>
+<li>notepad走系统调用完成的工作，所以在用户调用栈里看不到。</li>
+<li>windbg不可靠，它自己报错为<code>Stack unwind information not available. Following frames may be wrong</code></li>
+</ul>
+<p><strong>已解决</strong>：把所有相关的dll的符号信息添加上就好了。（把dll替换成有pdb对应的版本）</p>
+<div style="text-align:right; font-size:3em;">2020.12.03</div>
+<h2 id="tinypdf"><a class="header" href="#tinypdf">tinypdf</a></h2>
+<p><del>通过<code>sxe ld:tinypdf.dll</code>和<code>sxe ld:tinypdf2.dll</code>停在加载这俩dll时，调用栈如下，</del></p>
+<p>通过<code>sxe ld</code>发现还会加载tinypdf1.dll，在**同一次windbg环境里（调用栈相同）**顺序依次为tinypdf2, tinypdf, tinypdf1，如下，</p>
+<h3 id="tinypdf2dll"><a class="header" href="#tinypdf2dll">tinypdf2.dll</a></h3>
+<pre><code>ChildEBP RetAddr  
+0006e2d0 77f4be04 SharedUserData!SystemCallStub+0x4
+0006e2d4 77f57b8e ntdll!ZwMapViewOfSection(void)+0xc [c:\srv03rtm\base\ntdll\daytona\obj\i386\usrstubs.asm @ 1027]
+0006e3c4 77f511df ntdll!LdrpMapDll(
+			unsigned short * DllPath = 0x0009a960, 
+			unsigned short * DllName = 0x0006e3f0, 
+			unsigned long * DllCharacteristics = 0x0006e904, 
+			unsigned char StaticLink = 0x00 '', 
+			unsigned char Redirected = 0x00 '', 
+			struct _LDR_DATA_TABLE_ENTRY ** LdrDataTableEntry = 0x0006e634)+0x75a [c:\srv03rtm\base\ntdll\ldrsnap.c @ 2781]
+0006e650 77f472df ntdll!LdrpLoadDll(
+			unsigned long Flags = 0, 
+			unsigned short * DllPath = 0x0009a960, 
+			unsigned long * DllCharacteristics = 0x0006e904, 
+			struct _UNICODE_STRING * DllName = 0x0006e8e4 &quot;C:\WINDOWS\system32\spool\DRIVERS\W32X86\3\tinypdf2.dll&quot;, 
+			void ** DllHandle = 0x0006e900, 
+			unsigned char RunInitRoutines = 0x01 '')+0x16f [c:\srv03rtm\base\ntdll\ldrapi.c @ 385]
+0006e8b8 77e7439f ntdll!LdrLoadDll(
+			unsigned short * DllPath = 0x0009a960, 
+			unsigned long * DllCharacteristics = 0x0006e904, 
+			struct _UNICODE_STRING * DllName = 0x0006e8e4 &quot;C:\WINDOWS\system32\spool\DRIVERS\W32X86\3\tinypdf2.dll&quot;, 
+			void ** DllHandle = 0x0006e900)+0x133 [c:\srv03rtm\base\ntdll\ldrapi.c @ 219]
+0006e920 73159904 kernel32!LoadLibraryExW(
+			unsigned short * lpwLibFileName = 0x0006ec0a, 
+			void * hFile = 0x00000000, 
+			unsigned long dwFlags = 8)+0x1af [c:\srv03rtm\base\win32\client\module.c @ 506]
+0006e940 7315c83b WINSPOOL!LoadNewCopy(
+			unsigned short * pConfigFile = 0x0006ec0a, 
+			unsigned long dwFlags = 8, 
+			unsigned long dwVersion = 0)+0x27 [c:\srv03rtm\printscan\print\spooler\spoolss\client\winspool.c @ 5452]
+0006e95c 7315c92e WINSPOOL!RefCntLoadDriver(
+			unsigned short * pConfigFile = 0x0006ec0a, 
+			unsigned long dwFlags = 8, 
+			unsigned long dwVersion = 0, 
+			int bUseVersion = 0n1)+0x42 [c:\srv03rtm\printscan\print\spooler\spoolss\client\winspool.c @ 5578]
+0006ed88 73156a44 WINSPOOL!LoadPrinterDriver(
+			void * hPrinter = 0x0009632c)+0x88 [c:\srv03rtm\printscan\print\spooler\spoolss\client\winspool.c @ 5722]
+0006eda4 7315ca3a WINSPOOL!DocumentPropertySheets(
+			struct _PROPSHEETUI_INFO * pCPSUIInfo = 0x00000000, 
+			long lParam = 0n454072)+0x11e [c:\srv03rtm\printscan\print\spooler\spoolss\client\prop.c @ 591]
+0006eddc 76339ccc WINSPOOL!DocumentPropertiesWNative(
+			void * hWnd = 0x000700f2, 
+			void * hPrinter = 0x0009632c, 
+			unsigned short * pDeviceName = 0x0009c1dc, 
+			struct _devicemodeW * pDevModeOutput = 0x00000000, 
+			struct _devicemodeW * pDevModeInput = 0x00000000, 
+			unsigned long fMode = 0)+0xe4 [c:\srv03rtm\printscan\print\spooler\spoolss\client\winspool.c @ 5892]
+0006f244 7633a0d9 comdlg32!PrintDlgX(
+			struct PRINTINFO * pPI = 0x00096200)+0x2f7 [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 525]
+0006f28c 7633ad01 comdlg32!PageSetupDlgX(
+			struct PRINTINFO * pPI = 0x0006f2a0)+0x1af [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 1031]
+0006f740 01005c41 comdlg32!PageSetupDlgW(
+			struct tagPSDW * pPSD = 0x0100a4a0)+0x41 [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 835]
+0006f7ac 01006ab9 notepad!GetPrinterDCviaDialog(void)+0x2e [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 283]
+0006f7b4 01006aee notepad!NpPrint(
+			_PRINT_DIALOG_TYPE type = 0n16788912 (No matching enumerant))+0x2f [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 381]
+0006fae8 01002db0 notepad!PrintIt(
+			_PRINT_DIALOG_TYPE type = UseDialog (0n0))+0x1a [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 1218]
+0006fd58 010037e1 notepad!NPCommand(
+			struct HWND__ * hwnd = 0x000700f2, 
+			unsigned int wParam = 0x10006, 
+			long lParam = 0n0)+0x308 [c:\srv03rtm\shell\osshell\accesory\notepad\notepad.c @ 907]
+0006fd7c 77d38403 notepad!NPWndProc(
+			struct HWND__ * hwnd = 0x000700f2, 
+			unsigned int message = 0x111, 
+			unsigned int wParam = 0x10006, 
+			long lParam = 0n0)+0x4fc [c:\srv03rtm\shell\osshell\accesory\notepad\notepad.c @ 1348]
+0006fda8 77d3ddde USER32!InternalCallWinProc(void)+0x1b [C:\srv03rtm\windows\core\ntuser\client\i386\callproc.asm @ 102]
+0006fe20 77d1470f USER32!UserCallWinProcCheckWow(
+			struct _ACTIVATION_CONTEXT * pActCtx = 0x00000000, 
+			&lt;function&gt; * pfn = 0x010032e5, 
+			struct HWND__ * hwnd = 0x000700f2, 
+			unsigned int msg = 0x111, 
+			unsigned int wParam = 0x10006, 
+			long lParam = 0n0, 
+			void * pww = 0x0046d05c, 
+			int fEnableLiteHooks = 0n1)+0x151 [c:\srv03rtm\windows\core\ntuser\client\clmsg.c @ 165]
+0006fe7c 77d14924 USER32!DispatchClientMessage(
+			struct tagWND * pwnd = 0x0046d048, 
+			unsigned int message = 0x111, 
+			unsigned int wParam = 0x10006, 
+			long lParam = 0n0, 
+			unsigned long pfn = 0x10032e5)+0xd9 [c:\srv03rtm\windows\core\ntuser\client\client.c @ 3037]
+0006fea4 77f66dbf USER32!__fnDWORD(
+			struct _FNDWORDMSG * pmsg = 0x0006feb4)+0x22 [c:\srv03rtm\windows\core\ntuser\inc\ntcb.h @ 639]
+0006fec8 77d5c2ec ntdll!KiUserCallbackDispatcher(void)+0x13 [C:\srv03rtm\base\ntos\rtl\i386\userdisp.asm @ 153]
+0006fecc 77d19845 USER32!NtUserTranslateAccelerator(
+			int a1 = 0n16777216, 
+			int a2 = 0n0, 
+			int a3 = 0n597750)+0xc [c:\srv03rtm\windows\core\umode\daytona\obj\i386\usrstubs.c @ 4619]
+0006fedc 01002927 USER32!TranslateAcceleratorW(
+			struct HWND__ * hwnd = 0x010070f0, 
+			struct HACCEL__ * hAccel = 0x01000000, 
+			struct tagMSG * lpMsg = 0x00000000)+0x33 [c:\srv03rtm\windows\core\ntuser\client\client.c @ 236]
+0006ff1c 010070f0 notepad!WinMain(
+			struct HINSTANCE__ * hInstance = 0x01000000, 
+			struct HINSTANCE__ * hPrevInstance = 0x00000000, 
+			char * lpAnsiCmdLine = 0x00091ef6 &quot;&quot;, 
+			int cmdShow = 0n10)+0xc2 [c:\srv03rtm\shell\osshell\accesory\notepad\notepad.c @ 1522]
+0006ffc0 77e7d5ba notepad!WinMainCRTStartup(void)+0x182 [c:\srv03rtm\base\crts\crtw32\dllstuff\crtexe.c @ 493]
+0006fff0 00000000 kernel32!BaseProcessStart(
+			&lt;function&gt; * lpStartAddress = 0x01006f6e)+0x23 [c:\srv03rtm\base\win32\client\support.c @ 580]
+</code></pre>
+<h3 id="tinypdfdll--tinypdf1dll"><a class="header" href="#tinypdfdll--tinypdf1dll">tinypdf.dll &amp; tinypdf1.dll</a></h3>
+<p>tinypdf.dll</p>
+<pre><code>ChildEBP RetAddr  
+0006d6ec 77f4be04 SharedUserData!SystemCallStub+0x4
+0006d6f0 77f57767 ntdll!ZwMapViewOfSection(void)+0xc [c:\srv03rtm\base\ntdll\daytona\obj\i386\usrstubs.asm @ 1027]
+0006d7e0 77f57fd7 ntdll!LdrpMapDll(
+			unsigned short * DllPath = 0x0009be08, 
+			unsigned short * DllName = 0x7ffdec00, 
+			unsigned long * DllCharacteristics = 0x00000000, 
+			unsigned char StaticLink = 0x01 '', 
+			unsigned char Redirected = 0x00 '', 
+			struct _LDR_DATA_TABLE_ENTRY ** LdrDataTableEntry = 0x0006da58)+0x333 [c:\srv03rtm\base\ntdll\ldrsnap.c @ 2290]
+0006da34 77f58635 ntdll!LdrpLoadImportModule(
+			unsigned short * DllPath = 0x0009be08, 
+			char * ImportName = 0x008e7fbc &quot;tinypdf1.dll&quot;, 
+			struct _LDR_DATA_TABLE_ENTRY ** DataTableEntry = 0x0006da58, 
+			unsigned char * AlreadyLoaded = 0x0006da5f &quot;&quot;)+0x10f [c:\srv03rtm\base\ntdll\ldrsnap.c @ 254]
+0006da60 77f586f2 ntdll!LdrpHandleOneOldFormatImportDescriptor(
+			unsigned short * DllPath = 0x0009be08, 
+			struct _LDR_DATA_TABLE_ENTRY * LdrDataTableEntry = 0x00192b70, 
+			struct _IMAGE_IMPORT_DESCRIPTOR ** ImportDescriptorInOut = 0x0006da84)+0x59 [c:\srv03rtm\base\ntdll\ldrsnap.c @ 530]
+0006da74 77f46427 ntdll!LdrpHandleOldFormatImportDescriptors(
+			unsigned short * DllPath = 0x0009be08, 
+			struct _LDR_DATA_TABLE_ENTRY * LdrDataTableEntry = 0x00192b70, 
+			struct _IMAGE_IMPORT_DESCRIPTOR * ImportDescriptor = 0x008e7938)+0x1a [c:\srv03rtm\base\ntdll\ldrsnap.c @ 601]
+0006dafc 77f5122f ntdll!LdrpWalkImportDescriptor(
+			unsigned short * DllPath = 0x0009be08, 
+			struct _LDR_DATA_TABLE_ENTRY * LdrDataTableEntry = 0x00192b70)+0x1a5 [c:\srv03rtm\base\ntdll\ldrsnap.c @ 848]
+0006dd78 77f472df ntdll!LdrpLoadDll(
+			unsigned long Flags = 0, 
+			unsigned short * DllPath = 0x0009be08, 
+			unsigned long * DllCharacteristics = 0x0006e02c, 
+			struct _UNICODE_STRING * DllName = 0x0006e00c &quot;C:\WINDOWS\system32\spool\DRIVERS\W32X86\3\tinypdf.dll&quot;, 
+			void ** DllHandle = 0x0006e028, 
+			unsigned char RunInitRoutines = 0x01 '')+0x1bf [c:\srv03rtm\base\ntdll\ldrapi.c @ 426]
+0006dfe0 77e7439f ntdll!LdrLoadDll(
+			unsigned short * DllPath = 0x0009be08, 
+			unsigned long * DllCharacteristics = 0x0006e02c, 
+			struct _UNICODE_STRING * DllName = 0x0006e00c &quot;C:\WINDOWS\system32\spool\DRIVERS\W32X86\3\tinypdf.dll&quot;, 
+			void ** DllHandle = 0x0006e028)+0x133 [c:\srv03rtm\base\ntdll\ldrapi.c @ 219]
+0006e048 77c6374d kernel32!LoadLibraryExW(
+			unsigned short * lpwLibFileName = 0x0009aeea, 
+			void * hFile = 0x00000000, 
+			unsigned long dwFlags = 8)+0x1af [c:\srv03rtm\base\win32\client\module.c @ 506]
+0006e080 77c63890 GDI32!LoadUserModePrinterDriverEx(
+			struct _DRIVER_INFO_5W * pDriverInfo5 = 0x0009b8f8, 
+			unsigned short * pwstrPrinterName = 0x0009bfe8, 
+			struct _UMPD ** ppUMPD = 0x0006e0f8, 
+			struct _PRINTER_DEFAULTSW * pdefaults = 0x0006e0dc, 
+			void * hPrinter = 0x00099474)+0xff [c:\srv03rtm\windows\core\ntgdi\client\umpd.cxx @ 429]
+0006e0a8 77c3bf56 GDI32!LoadUserModePrinterDriver(
+			void * hPrinter = 0x00099474, 
+			unsigned short * pwstrPrinterName = 0x0009bfe8, 
+			struct _UMPD ** ppUMPD = 0x0006e0f8, 
+			struct _PRINTER_DEFAULTSW * pdefaults = 0x0006e0dc)+0x3f [c:\srv03rtm\windows\core\ntgdi\client\umpd.cxx @ 544]
+0006e108 77c3ccbf GDI32!hdcCreateDCW(
+			struct _UNICODE_STRING * pustrDevice = 0x0006e12c &quot;TinyPDF&quot;, 
+			struct _UNICODE_STRING * pustrPort = 0x00000000, 
+			struct _devicemodeW * pdm = 0x0009bfe8, 
+			int bDisplay = 0n0, 
+			int bIC = 0n1)+0x8b [c:\srv03rtm\windows\core\ntgdi\client\object.c @ 392]
+0006e140 77c3ccda GDI32!bCreateDCW(
+			unsigned short * pszDriver = 0x00000000, 
+			unsigned short * pszDevice = 0x0009bfe8, 
+			unsigned short * pszPort = 0x00000000, 
+			struct _devicemodeW * pdm = 0x0009bfe8, 
+			int bIC = 0n1)+0xb4 [c:\srv03rtm\windows\core\ntgdi\client\object.c @ 739]
+0006e158 76333eed GDI32!CreateICW(
+			unsigned short * pwszDriver = 0x76337777, 
+			unsigned short * pwszDevice = 0x000600de, 
+			unsigned short * pwszPort = 0x0006f2a0, 
+			struct _devicemodeW * pdm = 0x0009bfe8)+0x17 [c:\srv03rtm\windows\core\ntgdi\client\object.c @ 931]
+0006e1a4 76337777 comdlg32!PrintSetMinMargins(
+			struct HWND__ * hDlg = 0x000600de, 
+			struct PRINTINFO * pPI = 0x0006f2a0, 
+			struct _devicemodeW * pDM = 0x0009bfe8)+0xd7 [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 4490]
+0006e240 76337d32 comdlg32!PrintUpdatePageSetup(
+			struct HWND__ * hDlg = 0x000600de, 
+			struct PRINTINFO * pPI = 0x0000002a, 
+			struct _devicemodeW * pDM = 0x0009bfe8, 
+			unsigned int uiOldId = 0x420, 
+			unsigned int uiNewId = 3)+0x401 [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 7179]
+0006e25c 7633820e comdlg32!PrintSetOrientation(
+			struct HWND__ * hDlg = 0x000600de, 
+			struct PRINTINFO * pPI = 0x0006f2a0, 
+			struct _devicemodeW * pDM = 0x0009bfe8, 
+			unsigned int uiOldId = 0x420, 
+			unsigned int uiNewId = 0x420)+0x93 [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 6893]
+0006ea94 7633aa12 comdlg32!PrintInitSetupDlg(
+			struct HWND__ * hDlg = 0x00096200, 
+			unsigned int wParam = 0x100a4a0, 
+			struct PRINTINFO * pPI = 0x00000002)+0xd0 [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 3916]
+0006eac8 77d38403 comdlg32!PrintSetupDlgProc(
+			struct HWND__ * hDlg = 0x000600de, 
+			unsigned int wMsg = 0x110, 
+			unsigned int wParam = 0x1015a, 
+			long lParam = 0n0)+0x8eb [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 2268]
+0006eaf4 77d3deef USER32!InternalCallWinProc(void)+0x1b [C:\srv03rtm\windows\core\ntuser\client\i386\callproc.asm @ 102]
+0006eb70 77d273b3 USER32!UserCallDlgProcCheckWow(
+			struct _ACTIVATION_CONTEXT * pActCtx = 0x00000000, 
+			&lt;function&gt; * pfn = 0x7633a127, 
+			struct HWND__ * hwnd = 0x000600de, 
+			unsigned int msg = 0x110, 
+			unsigned int wParam = 0x1015a, 
+			long lParam = 0n455328, 
+			void * pww = 0x0046f114, 
+			int * pret = 0x0006ebc0)+0xf1 [c:\srv03rtm\windows\core\ntuser\client\clmsg.c @ 218]
+0006ebb8 77d375c2 USER32!DefDlgProcWorker(
+			struct tagWND * pwnd = 0x00000000, 
+			unsigned int message = 0x110, 
+			unsigned int wParam = 0x1015a, 
+			long lParam = 0n455328, 
+			unsigned long fAnsi = 0)+0xa6 [c:\srv03rtm\windows\core\ntuser\client\dlgmgr.c @ 511]
+0006ebd0 77d38403 USER32!DefDlgProcW(
+			struct HWND__ * hwnd = 0x77d3ddde, 
+			unsigned int message = 0x77d375a1, 
+			unsigned int wParam = 0x600de, 
+			long lParam = 0n272)+0x21 [c:\srv03rtm\windows\core\ntuser\client\dlgmgr.c @ 1021]
+0006ebfc 77d3ddde USER32!InternalCallWinProc(void)+0x1b [C:\srv03rtm\windows\core\ntuser\client\i386\callproc.asm @ 102]
+0006ec74 77d157f6 USER32!UserCallWinProcCheckWow(
+			struct _ACTIVATION_CONTEXT * pActCtx = 0x00000000, 
+			&lt;function&gt; * pfn = 0x77d375a1, 
+			struct HWND__ * hwnd = 0x000600de, 
+			unsigned int msg = 0x110, 
+			unsigned int wParam = 0x1015a, 
+			long lParam = 0n455328, 
+			void * pww = 0x0046f114, 
+			int fEnableLiteHooks = 0n1)+0x151 [c:\srv03rtm\windows\core\ntuser\client\clmsg.c @ 165]
+0006ecb0 77d28481 USER32!SendMessageWorker(
+			struct tagWND * pwnd = 0x0046f100, 
+			unsigned int message = 0x46be80, 
+			unsigned int wParam = 0x1015a, 
+			long lParam = 0n455328, 
+			int fAnsi = 0n0)+0x4bb [c:\srv03rtm\windows\core\ntuser\client\clmsg.c @ 697]
+0006ed68 77d45834 USER32!InternalCreateDialog(
+			void * hmod = 0x01000000, 
+			struct DLGTEMPLATE * lpdt = 0x0046f100, 
+			unsigned long cb = 0, 
+			struct HWND__ * hwndOwner = 0x000600de, 
+			&lt;function&gt; * lpfnDialog = 0x7633a127, 
+			long lParam = 0n455328, 
+			unsigned int fSCDLGFlags = 1)+0x9c9 [c:\srv03rtm\windows\core\ntuser\client\dlgbegin.c @ 1309]
+0006ed9c 77d369db USER32!InternalDialogBox(
+			void * hModule = 0x01000000, 
+			struct DLGTEMPLATE * lpdt = 0x01012088, 
+			struct HWND__ * hwndOwner = 0x00050138, 
+			&lt;function&gt; * pfnDialog = 0x7633a127, 
+			long lParam = 0n455328, 
+			unsigned int fSCDLGFlags = 1)+0xa7 [c:\srv03rtm\windows\core\ntuser\client\dlgmgr.c @ 1339]
+0006edbc 76335352 USER32!DialogBoxIndirectParamAorW(
+			struct HINSTANCE__ * hmod = 0x01000000, 
+			struct DLGTEMPLATE * lpDlgTemplate = 0x01012088, 
+			struct HWND__ * hwndOwner = 0x00050138, 
+			&lt;function&gt; * lpDialogFunc = 0x7633a127, 
+			long dwInitParam = 0n455328, 
+			unsigned int fAnsiFlags = 0)+0x35 [c:\srv03rtm\windows\core\ntuser\client\clres.c @ 806]
+0006edf0 76339e97 comdlg32!PrintDisplaySetupDlg(
+			struct PRINTINFO * pPI = 0x01000000)+0xe1 [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 1353]
+0006f244 7633a0d9 comdlg32!PrintDlgX(
+			struct PRINTINFO * pPI = 0x00096200)+0x4c2 [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 620]
+0006f28c 7633ad01 comdlg32!PageSetupDlgX(
+			struct PRINTINFO * pPI = 0x0006f2a0)+0x1af [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 1031]
+0006f740 01005c41 comdlg32!PageSetupDlgW(
+			struct tagPSDW * pPSD = 0x0100a4a0)+0x41 [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 835]
+0006f7ac 01006ab9 notepad!GetPrinterDCviaDialog(void)+0x2e [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 283]
+0006f7b4 01006aee notepad!NpPrint(
+			_PRINT_DIALOG_TYPE type = 0n16788912 (No matching enumerant))+0x2f [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 381]
+0006fae8 01002db0 notepad!PrintIt(
+			_PRINT_DIALOG_TYPE type = UseDialog (0n0))+0x1a [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 1218]
+0006fd58 010037e1 notepad!NPCommand(
+			struct HWND__ * hwnd = 0x00050138, 
+			unsigned int wParam = 0x10006, 
+			long lParam = 0n0)+0x308 [c:\srv03rtm\shell\osshell\accesory\notepad\notepad.c @ 907]
+0006fd7c 77d38403 notepad!NPWndProc(
+			struct HWND__ * hwnd = 0x00050138, 
+			unsigned int message = 0x111, 
+			unsigned int wParam = 0x10006, 
+			long lParam = 0n0)+0x4fc [c:\srv03rtm\shell\osshell\accesory\notepad\notepad.c @ 1348]
+0006fda8 77d3ddde USER32!InternalCallWinProc(void)+0x1b [C:\srv03rtm\windows\core\ntuser\client\i386\callproc.asm @ 102]
+0006fe20 77d1470f USER32!UserCallWinProcCheckWow(
+			struct _ACTIVATION_CONTEXT * pActCtx = 0x00000000, 
+			&lt;function&gt; * pfn = 0x010032e5, 
+			struct HWND__ * hwnd = 0x00050138, 
+			unsigned int msg = 0x111, 
+			unsigned int wParam = 0x10006, 
+			long lParam = 0n0, 
+			void * pww = 0x0046c724, 
+			int fEnableLiteHooks = 0n1)+0x151 [c:\srv03rtm\windows\core\ntuser\client\clmsg.c @ 165]
+0006fe7c 77d14924 USER32!DispatchClientMessage(
+			struct tagWND * pwnd = 0x0046c710, 
+			unsigned int message = 0x111, 
+			unsigned int wParam = 0x10006, 
+			long lParam = 0n0, 
+			unsigned long pfn = 0x10032e5)+0xd9 [c:\srv03rtm\windows\core\ntuser\client\client.c @ 3037]
+0006fea4 77f66dbf USER32!__fnDWORD(
+			struct _FNDWORDMSG * pmsg = 0x0006feb4)+0x22 [c:\srv03rtm\windows\core\ntuser\inc\ntcb.h @ 639]
+0006fec8 77d5c2ec ntdll!KiUserCallbackDispatcher(void)+0x13 [C:\srv03rtm\base\ntos\rtl\i386\userdisp.asm @ 153]
+0006fecc 77d19845 USER32!NtUserTranslateAccelerator(
+			int a1 = 0n16777216, 
+			int a2 = 0n0, 
+			int a3 = 0n597750)+0xc [c:\srv03rtm\windows\core\umode\daytona\obj\i386\usrstubs.c @ 4619]
+0006fedc 01002927 USER32!TranslateAcceleratorW(
+			struct HWND__ * hwnd = 0x010070f0, 
+			struct HACCEL__ * hAccel = 0x01000000, 
+			struct tagMSG * lpMsg = 0x00000000)+0x33 [c:\srv03rtm\windows\core\ntuser\client\client.c @ 236]
+0006ff1c 010070f0 notepad!WinMain(
+			struct HINSTANCE__ * hInstance = 0x01000000, 
+			struct HINSTANCE__ * hPrevInstance = 0x00000000, 
+			char * lpAnsiCmdLine = 0x00091ef6 &quot;&quot;, 
+			int cmdShow = 0n10)+0xc2 [c:\srv03rtm\shell\osshell\accesory\notepad\notepad.c @ 1522]
+0006ffc0 77e7d5ba notepad!WinMainCRTStartup(void)+0x182 [c:\srv03rtm\base\crts\crtw32\dllstuff\crtexe.c @ 493]
+0006fff0 00000000 kernel32!BaseProcessStart(
+			&lt;function&gt; * lpStartAddress = 0x01006f6e)+0x23 [c:\srv03rtm\base\win32\client\support.c @ 580]
+</code></pre>
+<p>tinypdf1.dll</p>
+<pre><code>ChildEBP RetAddr  
+0006d6ec 77f4be04 SharedUserData!SystemCallStub+0x4
+0006d6f0 77f57767 ntdll!ZwMapViewOfSection(void)+0xc [c:\srv03rtm\base\ntdll\daytona\obj\i386\usrstubs.asm @ 1027]
+0006d7e0 77f57fd7 ntdll!LdrpMapDll(
+			unsigned short * DllPath = 0x0009b950, 
+			unsigned short * DllName = 0x7ffdec00, 
+			unsigned long * DllCharacteristics = 0x00000000, 
+			unsigned char StaticLink = 0x01 '', 
+			unsigned char Redirected = 0x00 '', 
+			struct _LDR_DATA_TABLE_ENTRY ** LdrDataTableEntry = 0x0006da58)+0x333 [c:\srv03rtm\base\ntdll\ldrsnap.c @ 2290]
+0006da34 77f58635 ntdll!LdrpLoadImportModule(
+			unsigned short * DllPath = 0x0009b950, 
+			char * ImportName = 0x008e7fbc &quot;tinypdf1.dll&quot;, 
+			struct _LDR_DATA_TABLE_ENTRY ** DataTableEntry = 0x0006da58, 
+			unsigned char * AlreadyLoaded = 0x0006da5f &quot;&quot;)+0x10f [c:\srv03rtm\base\ntdll\ldrsnap.c @ 254]
+0006da60 77f586f2 ntdll!LdrpHandleOneOldFormatImportDescriptor(
+			unsigned short * DllPath = 0x0009b950, 
+			struct _LDR_DATA_TABLE_ENTRY * LdrDataTableEntry = 0x00192b70, 
+			struct _IMAGE_IMPORT_DESCRIPTOR ** ImportDescriptorInOut = 0x0006da84)+0x59 [c:\srv03rtm\base\ntdll\ldrsnap.c @ 530]
+0006da74 77f46427 ntdll!LdrpHandleOldFormatImportDescriptors(
+			unsigned short * DllPath = 0x0009b950, 
+			struct _LDR_DATA_TABLE_ENTRY * LdrDataTableEntry = 0x00192b70, 
+			struct _IMAGE_IMPORT_DESCRIPTOR * ImportDescriptor = 0x008e7938)+0x1a [c:\srv03rtm\base\ntdll\ldrsnap.c @ 601]
+0006dafc 77f5122f ntdll!LdrpWalkImportDescriptor(
+			unsigned short * DllPath = 0x0009b950, 
+			struct _LDR_DATA_TABLE_ENTRY * LdrDataTableEntry = 0x00192b70)+0x1a5 [c:\srv03rtm\base\ntdll\ldrsnap.c @ 848]
+0006dd78 77f472df ntdll!LdrpLoadDll(
+			unsigned long Flags = 0, 
+			unsigned short * DllPath = 0x0009b950, 
+			unsigned long * DllCharacteristics = 0x0006e02c, 
+			struct _UNICODE_STRING * DllName = 0x0006e00c &quot;C:\WINDOWS\system32\spool\DRIVERS\W32X86\3\tinypdf.dll&quot;, 
+			void ** DllHandle = 0x0006e028, 
+			unsigned char RunInitRoutines = 0x01 '')+0x1bf [c:\srv03rtm\base\ntdll\ldrapi.c @ 426]
+0006dfe0 77e7439f ntdll!LdrLoadDll(
+			unsigned short * DllPath = 0x0009b950, 
+			unsigned long * DllCharacteristics = 0x0006e02c, 
+			struct _UNICODE_STRING * DllName = 0x0006e00c &quot;C:\WINDOWS\system32\spool\DRIVERS\W32X86\3\tinypdf.dll&quot;, 
+			void ** DllHandle = 0x0006e028)+0x133 [c:\srv03rtm\base\ntdll\ldrapi.c @ 219]
+0006e048 77c6374d kernel32!LoadLibraryExW(
+			unsigned short * lpwLibFileName = 0x0009f012, 
+			void * hFile = 0x00000000, 
+			unsigned long dwFlags = 8)+0x1af [c:\srv03rtm\base\win32\client\module.c @ 506]
+0006e080 77c63890 GDI32!LoadUserModePrinterDriverEx(
+			struct _DRIVER_INFO_5W * pDriverInfo5 = 0x0009b440, 
+			unsigned short * pwstrPrinterName = 0x0009c208, 
+			struct _UMPD ** ppUMPD = 0x0006e0f8, 
+			struct _PRINTER_DEFAULTSW * pdefaults = 0x0006e0dc, 
+			void * hPrinter = 0x00099694)+0xff [c:\srv03rtm\windows\core\ntgdi\client\umpd.cxx @ 429]
+0006e0a8 77c3bf56 GDI32!LoadUserModePrinterDriver(
+			void * hPrinter = 0x00099694, 
+			unsigned short * pwstrPrinterName = 0x0009c208, 
+			struct _UMPD ** ppUMPD = 0x0006e0f8, 
+			struct _PRINTER_DEFAULTSW * pdefaults = 0x0006e0dc)+0x3f [c:\srv03rtm\windows\core\ntgdi\client\umpd.cxx @ 544]
+0006e108 77c3ccbf GDI32!hdcCreateDCW(
+			struct _UNICODE_STRING * pustrDevice = 0x0006e12c &quot;TinyPDF&quot;, 
+			struct _UNICODE_STRING * pustrPort = 0x00000000, 
+			struct _devicemodeW * pdm = 0x0009c208, 
+			int bDisplay = 0n0, 
+			int bIC = 0n1)+0x8b [c:\srv03rtm\windows\core\ntgdi\client\object.c @ 392]
+0006e140 77c3ccda GDI32!bCreateDCW(
+			unsigned short * pszDriver = 0x00000000, 
+			unsigned short * pszDevice = 0x0009c208, 
+			unsigned short * pszPort = 0x00000000, 
+			struct _devicemodeW * pdm = 0x0009c208, 
+			int bIC = 0n1)+0xb4 [c:\srv03rtm\windows\core\ntgdi\client\object.c @ 739]
+0006e158 76333eed GDI32!CreateICW(
+			unsigned short * pwszDriver = 0x76337777, 
+			unsigned short * pwszDevice = 0x000d00a0, 
+			unsigned short * pwszPort = 0x0006f2a0, 
+			struct _devicemodeW * pdm = 0x0009c208)+0x17 [c:\srv03rtm\windows\core\ntgdi\client\object.c @ 931]
+0006e1a4 76337777 comdlg32!PrintSetMinMargins(
+			struct HWND__ * hDlg = 0x000d00a0, 
+			struct PRINTINFO * pPI = 0x0006f2a0, 
+			struct _devicemodeW * pDM = 0x0009c208)+0xd7 [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 4490]
+0006e240 76337d32 comdlg32!PrintUpdatePageSetup(
+			struct HWND__ * hDlg = 0x000d00a0, 
+			struct PRINTINFO * pPI = 0x0000002a, 
+			struct _devicemodeW * pDM = 0x0009c208, 
+			unsigned int uiOldId = 0x420, 
+			unsigned int uiNewId = 3)+0x401 [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 7179]
+0006e25c 7633820e comdlg32!PrintSetOrientation(
+			struct HWND__ * hDlg = 0x000d00a0, 
+			struct PRINTINFO * pPI = 0x0006f2a0, 
+			struct _devicemodeW * pDM = 0x0009c208, 
+			unsigned int uiOldId = 0x420, 
+			unsigned int uiNewId = 0x420)+0x93 [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 6893]
+0006ea94 7633aa12 comdlg32!PrintInitSetupDlg(
+			struct HWND__ * hDlg = 0x00096200, 
+			unsigned int wParam = 0x100a4a0, 
+			struct PRINTINFO * pPI = 0x00000002)+0xd0 [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 3916]
+0006eac8 77d38403 comdlg32!PrintSetupDlgProc(
+			struct HWND__ * hDlg = 0x000d00a0, 
+			unsigned int wMsg = 0x110, 
+			unsigned int wParam = 0x600c0, 
+			long lParam = 0n0)+0x8eb [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 2268]
+0006eaf4 77d3deef USER32!InternalCallWinProc(void)+0x1b [C:\srv03rtm\windows\core\ntuser\client\i386\callproc.asm @ 102]
+0006eb70 77d273b3 USER32!UserCallDlgProcCheckWow(
+			struct _ACTIVATION_CONTEXT * pActCtx = 0x00000000, 
+			&lt;function&gt; * pfn = 0x7633a127, 
+			struct HWND__ * hwnd = 0x000d00a0, 
+			unsigned int msg = 0x110, 
+			unsigned int wParam = 0x600c0, 
+			long lParam = 0n455328, 
+			void * pww = 0x00483ea4, 
+			int * pret = 0x0006ebc0)+0xf1 [c:\srv03rtm\windows\core\ntuser\client\clmsg.c @ 218]
+0006ebb8 77d375c2 USER32!DefDlgProcWorker(
+			struct tagWND * pwnd = 0x00000000, 
+			unsigned int message = 0x110, 
+			unsigned int wParam = 0x600c0, 
+			long lParam = 0n455328, 
+			unsigned long fAnsi = 0)+0xa6 [c:\srv03rtm\windows\core\ntuser\client\dlgmgr.c @ 511]
+0006ebd0 77d38403 USER32!DefDlgProcW(
+			struct HWND__ * hwnd = 0x77d3ddde, 
+			unsigned int message = 0x77d375a1, 
+			unsigned int wParam = 0xd00a0, 
+			long lParam = 0n272)+0x21 [c:\srv03rtm\windows\core\ntuser\client\dlgmgr.c @ 1021]
+0006ebfc 77d3ddde USER32!InternalCallWinProc(void)+0x1b [C:\srv03rtm\windows\core\ntuser\client\i386\callproc.asm @ 102]
+0006ec74 77d157f6 USER32!UserCallWinProcCheckWow(
+			struct _ACTIVATION_CONTEXT * pActCtx = 0x00000000, 
+			&lt;function&gt; * pfn = 0x77d375a1, 
+			struct HWND__ * hwnd = 0x000d00a0, 
+			unsigned int msg = 0x110, 
+			unsigned int wParam = 0x600c0, 
+			long lParam = 0n455328, 
+			void * pww = 0x00483ea4, 
+			int fEnableLiteHooks = 0n1)+0x151 [c:\srv03rtm\windows\core\ntuser\client\clmsg.c @ 165]
+0006ecb0 77d28481 USER32!SendMessageWorker(
+			struct tagWND * pwnd = 0x00483e90, 
+			unsigned int message = 0x46d920, 
+			unsigned int wParam = 0x600c0, 
+			long lParam = 0n455328, 
+			int fAnsi = 0n0)+0x4bb [c:\srv03rtm\windows\core\ntuser\client\clmsg.c @ 697]
+0006ed68 77d45834 USER32!InternalCreateDialog(
+			void * hmod = 0x01000000, 
+			struct DLGTEMPLATE * lpdt = 0x00483e90, 
+			unsigned long cb = 0, 
+			struct HWND__ * hwndOwner = 0x000d00a0, 
+			&lt;function&gt; * lpfnDialog = 0x7633a127, 
+			long lParam = 0n455328, 
+			unsigned int fSCDLGFlags = 1)+0x9c9 [c:\srv03rtm\windows\core\ntuser\client\dlgbegin.c @ 1309]
+0006ed9c 77d369db USER32!InternalDialogBox(
+			void * hModule = 0x01000000, 
+			struct DLGTEMPLATE * lpdt = 0x01012088, 
+			struct HWND__ * hwndOwner = 0x000700f2, 
+			&lt;function&gt; * pfnDialog = 0x7633a127, 
+			long lParam = 0n455328, 
+			unsigned int fSCDLGFlags = 1)+0xa7 [c:\srv03rtm\windows\core\ntuser\client\dlgmgr.c @ 1339]
+0006edbc 76335352 USER32!DialogBoxIndirectParamAorW(
+			struct HINSTANCE__ * hmod = 0x01000000, 
+			struct DLGTEMPLATE * lpDlgTemplate = 0x01012088, 
+			struct HWND__ * hwndOwner = 0x000700f2, 
+			&lt;function&gt; * lpDialogFunc = 0x7633a127, 
+			long dwInitParam = 0n455328, 
+			unsigned int fAnsiFlags = 0)+0x35 [c:\srv03rtm\windows\core\ntuser\client\clres.c @ 806]
+0006edf0 76339e97 comdlg32!PrintDisplaySetupDlg(
+			struct PRINTINFO * pPI = 0x01000000)+0xe1 [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 1353]
+0006f244 7633a0d9 comdlg32!PrintDlgX(
+			struct PRINTINFO * pPI = 0x00096200)+0x4c2 [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 620]
+0006f28c 7633ad01 comdlg32!PageSetupDlgX(
+			struct PRINTINFO * pPI = 0x0006f2a0)+0x1af [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 1031]
+0006f740 01005c41 comdlg32!PageSetupDlgW(
+			struct tagPSDW * pPSD = 0x0100a4a0)+0x41 [c:\srv03rtm\shell\comdlg32\prnsetup.c @ 835]
+0006f7ac 01006ab9 notepad!GetPrinterDCviaDialog(void)+0x2e [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 283]
+0006f7b4 01006aee notepad!NpPrint(
+			_PRINT_DIALOG_TYPE type = 0n16788912 (No matching enumerant))+0x2f [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 381]
+0006fae8 01002db0 notepad!PrintIt(
+			_PRINT_DIALOG_TYPE type = UseDialog (0n0))+0x1a [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 1218]
+0006fd58 010037e1 notepad!NPCommand(
+			struct HWND__ * hwnd = 0x000700f2, 
+			unsigned int wParam = 0x10006, 
+			long lParam = 0n0)+0x308 [c:\srv03rtm\shell\osshell\accesory\notepad\notepad.c @ 907]
+0006fd7c 77d38403 notepad!NPWndProc(
+			struct HWND__ * hwnd = 0x000700f2, 
+			unsigned int message = 0x111, 
+			unsigned int wParam = 0x10006, 
+			long lParam = 0n0)+0x4fc [c:\srv03rtm\shell\osshell\accesory\notepad\notepad.c @ 1348]
+0006fda8 77d3ddde USER32!InternalCallWinProc(void)+0x1b [C:\srv03rtm\windows\core\ntuser\client\i386\callproc.asm @ 102]
+0006fe20 77d1470f USER32!UserCallWinProcCheckWow(
+			struct _ACTIVATION_CONTEXT * pActCtx = 0x00000000, 
+			&lt;function&gt; * pfn = 0x010032e5, 
+			struct HWND__ * hwnd = 0x000700f2, 
+			unsigned int msg = 0x111, 
+			unsigned int wParam = 0x10006, 
+			long lParam = 0n0, 
+			void * pww = 0x0046d05c, 
+			int fEnableLiteHooks = 0n1)+0x151 [c:\srv03rtm\windows\core\ntuser\client\clmsg.c @ 165]
+0006fe7c 77d14924 USER32!DispatchClientMessage(
+			struct tagWND * pwnd = 0x0046d048, 
+			unsigned int message = 0x111, 
+			unsigned int wParam = 0x10006, 
+			long lParam = 0n0, 
+			unsigned long pfn = 0x10032e5)+0xd9 [c:\srv03rtm\windows\core\ntuser\client\client.c @ 3037]
+0006fea4 77f66dbf USER32!__fnDWORD(
+			struct _FNDWORDMSG * pmsg = 0x0006feb4)+0x22 [c:\srv03rtm\windows\core\ntuser\inc\ntcb.h @ 639]
+0006fec8 77d5c2ec ntdll!KiUserCallbackDispatcher(void)+0x13 [C:\srv03rtm\base\ntos\rtl\i386\userdisp.asm @ 153]
+0006fecc 77d19845 USER32!NtUserTranslateAccelerator(
+			int a1 = 0n16777216, 
+			int a2 = 0n0, 
+			int a3 = 0n597750)+0xc [c:\srv03rtm\windows\core\umode\daytona\obj\i386\usrstubs.c @ 4619]
+0006fedc 01002927 USER32!TranslateAcceleratorW(
+			struct HWND__ * hwnd = 0x010070f0, 
+			struct HACCEL__ * hAccel = 0x01000000, 
+			struct tagMSG * lpMsg = 0x00000000)+0x33 [c:\srv03rtm\windows\core\ntuser\client\client.c @ 236]
+0006ff1c 010070f0 notepad!WinMain(
+			struct HINSTANCE__ * hInstance = 0x01000000, 
+			struct HINSTANCE__ * hPrevInstance = 0x00000000, 
+			char * lpAnsiCmdLine = 0x00091ef6 &quot;&quot;, 
+			int cmdShow = 0n10)+0xc2 [c:\srv03rtm\shell\osshell\accesory\notepad\notepad.c @ 1522]
+0006ffc0 77e7d5ba notepad!WinMainCRTStartup(void)+0x182 [c:\srv03rtm\base\crts\crtw32\dllstuff\crtexe.c @ 493]
+0006fff0 00000000 kernel32!BaseProcessStart(
+			&lt;function&gt; * lpStartAddress = 0x01006f6e)+0x23 [c:\srv03rtm\base\win32\client\support.c @ 580]
+</code></pre>
+<p>2020.12.04：通过比较（meld）上面tinypdf.dll和tinypdf1.dll的调用栈，大概推测在<code>GDI!hdcCreateDCW</code>分叉。用windbg<code>sxn ld</code>发现这个函数执行完确实加载了这俩dll。大致调用路径如下，</p>
+<ul>
+<li><code>LoadUserModePrinterDriver(...)</code> @srv03rtm/windows/core/ntgdi/client/umpd.cxx
+<ul>
+<li><code>LoadUserModePrinterDriverEx(...)</code>
+<ul>
+<li><code>LoadLibraryExW(DriverPath, ...)</code>，DriverPath字符串用<code>dW</code>指令打出来（有没有更好的方法打印字符串？）是<code>C:\WINDOWS\system32\spool\DRIVERS\W32X86\3\tinypdf.dll</code>。参考<a href="https://docs.microsoft.com/en-us/windows/win32/api/libloaderapi/nf-libloaderapi-loadlibraryexa">LoadLibraryExA function (libloaderapi.h)</a>，同时会加载它相关的dll，因此加载了<code>tingpdf1.dll</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>✅<span style="background: green; color:white; font-weight: bold;">哪里循环调用的？</span>再装一个打印驱动，看两次调用栈在哪里分叉的就好！</p>
+<p>2020.12.04：<strong>答</strong>：没有循环调用装载所有打印驱动。用<code>sxe ld</code>追踪所有加载dll的事件能够看的很清晰。上一次使用的打印机会成为默认打印机，只会加载默认打印机。当选择其他打印机图时才会去加载对应的打印驱动。</p>
+<p>切换调用栈帧用<code>.frame &lt;frame index&gt;</code>指令。</p>
+<p>windbg输出变量信息参考<a href="https://www.bojankomazec.com/2011/08/some-windbg-commands-for-memory-dump.html">Some WinDbg commands for memory dump analysis</a>，使用<code>dt</code>指令，详细见windbg附带的手册。</p>
+<div style="text-align:right; font-size:3em;">2020.12.04</div>
+<h2 id="所有打印机"><a class="header" href="#所有打印机">所有打印机</a></h2>
+<p>既然只装了默认打印机驱动和所有打印机的图标，那么所有打印机的信息是集中存放在哪里的？</p>
+<h3 id="从第一次加载驱动入手"><a class="header" href="#从第一次加载驱动入手">从第一次加载驱动入手</a></h3>
+<p><code>bp PageSetupDlgW</code>看其参数<code>dt LPPAGESETUPDLG (tagPSDW) pPSD</code>，第一次调用PageSetupDlgW是不显示打印窗口的，如下黑底白字的那个变量，</p>
+<ul>
+<li><code>Flags: 0xa486</code>
+<ul>
+<li><code>0x8000</code>: <strong>PSD_ENABLEPAGESETUPTEMPLATE</strong>: Indicates that the <strong>hInstance</strong> and <strong>lpPageSetupTemplateName</strong> members specify a dialog box template to use in place of the default template.</li>
+<li><code>0x2000</code>: <strong>PSD_ENABLEPAGESETUPHOOK</strong>: Enables the hook procedure specified in the <strong>lpfnPageSetupHook</strong> member.</li>
+<li><code>0x0400</code>: <span style="background: black; color: white;"><strong>PSD_RETURNDEFAULT</strong></span>: <a href="https://docs.microsoft.com/en-us/previous-versions/windows/desktop/legacy/ms646937(v=vs.85)">PageSetupDlg</a> does not display the dialog box. Instead, it sets the <strong>hDevNames</strong> and <strong>hDevMode</strong> members to handles to <a href="https://docs.microsoft.com/en-us/windows/win32/api/wingdi/ns-wingdi-devmodea">DEVMODE</a> and <a href="https://docs.microsoft.com/en-us/windows/desktop/api/commdlg/ns-commdlg-devnames">DEVNAMES</a> structures that are initialized for the system default printer. <strong>PageSetupDlg</strong> returns an error if either <strong>hDevNames</strong> or <strong>hDevMode</strong> is not <strong>NULL</strong>.</li>
+<li><code>0x0080</code>: <strong>PSD_NOWARNING</strong>: Prevents the system from displaying a warning message when there is no default printer.</li>
+<li><code>0x0004</code>: <strong>PSD_INTHOUSANDTHSOFINCHES</strong>: Indicates that thousandths of inches are the unit of measurement for margins and paper size. The values in the <strong>rtMargin</strong>, <strong>rtMinMargin</strong>, and <strong>ptPaperSize</strong> members are in thousandths of inches. You can set this flag on input to override the default unit of measurement for the user's locale. When the function returns, the dialog box sets this flag to indicate the units used.</li>
+<li><code>0x0002</code>: <strong>PSD_MARGINS</strong>: Causes the system to use the values specified in the <strong>rtMargin</strong> member as the initial widths for the left, top, right, and bottom margins. If <strong>PSD_MARGINS</strong> is not set, the system sets the initial widths to one inch for all margins.</li>
+</ul>
+</li>
+<li><code>lpfnPageSetupHook</code>指向<code>notepad!PageSetupHookProc</code> </li>
+</ul>
+<h3 id="从界面绘制入手找到了"><a class="header" href="#从界面绘制入手找到了">从界面绘制入手(找到了)</a></h3>
+<p>搜索打印机选择页面的用词”Select Printer“，找到了<code>srv03rtm/shell/comdlg32/printnew.dlg</code>文件。</p>
+<p>虽然不是很懂dlg文件的语法，不过大概猜到了dlg文件由编译器处理后可供C语言直接调用。<code>printnew.dlg</code>文件定义了两个页面<code>IDD_PRINT_GENERAL</code>和<code>IDD_PRINT_GENERAL_LARGE</code>。且看dlg文件很明显这俩页面就是打印机选择页面的模板，剩下的就是找到在运行时是在哪里把内容填入模板的。</p>
+<p>顺着这个找<code>IDD_PRINT_GENERAL</code>找，如下，</p>
+<p><code>printnew.cpp: Print_GeneralDlgProc(...)</code>，参考<a href="https://docs.microsoft.com/en-us/windows/win32/dlgbox/dlgbox-programming-considerations">Dialog Box Programming Considerations</a>，打印机选择页面窗口的任何操作会交给这个函数处理（感觉之前写打铺机积累的GUI编程经验，让我一下明白这个函数的功能）</p>
+<p><code>WM_INITDIALOG</code>的case</p>
+<p><code>printnew.cpp: Print_InitDialog(...)</code></p>
+<p>通过windbg找到<code>pDlgStruct-&gt;OnInitDialog</code>指向<code>printnew.cpp: CPrintBrowser::OnInitDialog(...)</code></p>
+<p><code>CPrintBrowser::CreatePrinterShellView</code></p>
+<p><code>shell/shell32/folder.cpp: SHCloneSpecialIDList(... ,CSIDL_PRINTERS ,...)</code>，参考<a href="https://docs.microsoft.com/en-us/windows/win32/shell/csidl">CSIDL</a>，其中CSIDL_PRINTERS表示要寻找The virtual folder than contains installed printers.所有特殊文件夹信息在<code>shell/shell32/folder.cpp: 114~463</code></p>
+<p>在cmd里输入<code>shell:&lt;特殊文件夹名字&gt;</code>可以打开这些特殊文件夹，参考<a href="https://superuser.com/questions/673960/shell-shortcuts-in-windows-os">Shell Shortcuts in Windows OS</a>。<strong>注</strong>：没能在regedit里找到<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\explorer\FolderDescriptions</code>这个表项。</p>
+<div style="text-align:right; font-size:3em;">2020.12.07</div>
+<h2 id="调用打印机驱动"><a class="header" href="#调用打印机驱动">调用打印机驱动</a></h2>
+<h3 id="打印"><a class="header" href="#打印">打印</a></h3>
+<p><code>printnew.cpp: 4910: GetWindowRect(hWnd, lpRect)</code>参考<a href="https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getwindowrect">GetWindowRect function (winuser.h)</a>，</p>
+<p><code>4911: MapWindowRect(hwndFrom, hwndTo, lprc)</code>没有直接收录的官方文档，HWND_DESKTOP的使用十分tricky，其实是NULL，表示按照屏幕坐标，参考<a href="https://stackoverflow.com/questions/26696093/difference-between-getdesktopwindow-and-hwnd-desktop">difference between GetDesktopWindow() and HWND_DESKTOP</a>，指向了类似的函数<a href="https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-mapwindowpoints?redirectedfrom=MSDN">MapWindowPoints function (winuser.h)</a>。</p>
+<p>在printnew.h里声明的<code>IShellView</code>, <code>IShellFolderView</code>, <code>IShellFolder2</code>, <code>IPrinterFolder</code>，在上面提到的过程中多次使用。<span style="background: red; color: white; font-weight: bold;">这一套的编程模型，直接看代码看不出来，挺乱的。有必要理一理。</span></p>
+<h3 id="页面设置"><a class="header" href="#页面设置">页面设置</a></h3>
+<p>打印页面<button>P<u>r</u>eferences</button>是对各个打印驱动的设置。通过printnew.dlg可以知道，<button>P<u>r</u>eferences</button>对应的WM_COMMAND处理case的调用的<code>CPrintBrowser::OnCommandMessage()</code>的IDC_DRIVER的case。</p>
+<div style="text-align:right; font-size:3em;">2020.12.08</div>
+<p><code>winspool!OpenPrinter(pPrinterName, phPrinter, pDefault)</code>，打印机名字为TinyPDF。参考<a href="https://docs.microsoft.com/en-us/windows/win32/printdocs/openprinter">OpenPrinter Function</a>。</p>
+<p><code>printui!DocumentPropertiesWrap(hwnd, hPrinter, pDeviceName, pDevModeOutput, pDevModeInput, fMode, fExclusionFlags)</code><strong>注</strong>：wine的printui.dll没有export任何函数！和windows的printui.dll不一样。位于<code>srv03rtm/printscan/ui/printui/docprop.cxx: 1557</code></p>
+<p><code>propmgr.cxx: TPropertySheetManager::bDispalyPages(hWnd, pResult)</code></p>
+<p>加载<code>COMMON_UI</code>即<code>compstui.dll</code>和函数<code>COMMON_PROPERTY_SHEETUI</code>即<code>CommonPropertySheetUIW</code>，define在propmgr.hxx。</p>
+<p>调用tinypdf2的DrvDocumentPropertySheets绘制设置界面的代码框架图如下，</p>
+<p><img src="pictures/printer_interface_dll-formatted.svg" alt="printer_interface_dll-formatted" /></p>
+<div style="text-align:right; font-size:3em;">2020.12.14</div>
+<h2 id="unidrv"><a class="header" href="#unidrv">unidrv</a></h2>
+<p>今天才发现（在姚长力的提醒下）winxp里有编译unidrv，但是没有放到系统的镜像里边！将binaries.x86fre的<code>unidrv.dll</code>、<code>unidrv.hlp</code>、<code>unidrvui.dll</code>放到虚拟机的<code>c/WINDOWS/system32/spool/drivers/w32x86/3/</code>里。</p>
+<p>试了之后才想起，装驱动不仅仅是把文件复制到上边那个目录里！</p>
+<div style="text-align:right; font-size:3em;">2020.12.15</div>
+<h2 id="graphics_dll"><a class="header" href="#graphics_dll">graphics_dll</a></h2>
+<p>tinypdf</p>
+<p>在看GDI32!GdiPrinterThunk - UMPDDrvEnableDriver时发现，windbg显示的值并不准，pDriverDllName字符串不正常，用<code>dS</code>命令，这个字符串的地址和版本号iEngineVersion就会变正确？！</p>
+<p>调用NtGdiOpenDCW，</p>
+<pre><code class="language-c">// srv03rtm/windows/core/umode/daytona/obj/i386/usrstubs.c
+void __declspec(naked) NtGdiOpenDCW(ARGS7)
+{
+    __asm mov eax, 1000h + 232 // ServiceNumber
+    __asm mov edx, call_func
+    __asm call edx
+    __asm ret 7*4 // NumArgs*4
+}
+
+call_func = SharedUserData!SystemCallStub // get by windbg
+
+// call_func指向的代码位于KUSER_SHAERD_DATA结构体的ULONGLONG SystemCall[4]中，64*4字节
+// KUSER_SHARED_DATA在多个文件中都有定义，似乎是一样的，用ctags随意看一个即可。
+// base/ntos/ke/i386/misc.c: 655~657将KiFastSystemCallCode复制到SystemCall[4]中
+// 猜测编译器会给C语言函数加上_，_KiFastSystemCallCode能够在base/ntos/ke/i386/trap.asm被找到。
+call_func:
+    mov edx, esp
+    sysenter
+    ret
+</code></pre>
+<p>这是个很明显的汇编级别的系统调用，参考<a href="https://github.com/j00ru/windows-syscalls.git">github上的windows-syscalls项目</a>。尽管这个表说winxp的NtGdiOpenDCW调用号是0x1000+233，win2000的调用号才是0x1000+232。</p>
+<div style="text-align:right; font-size:3em;">2020.12.16</div>
+<h3 id="内核调试"><a class="header" href="#内核调试">内核调试</a></h3>
+<p>内核windbg调试用户程序，参考</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/42776503/how-to-do-hybrid-user-mode-kernel-mode-debugging">How to do hybrid user-mode/kernel-mode debugging?</a>
+<ul>
+<li><a href="https://mike.melnyk.org/post/windbg_debug_user_mode/">Debug user mode application with kernel debugger</a></li>
+</ul>
+</li>
+</ul>
+<p>简述如下</p>
+<pre><code class="language-powershell"># stackoverflow的conio回答建议添加这个
+# In order for the kernel debugger to work well with user-mode modules you have to enable the Enable loading of kernel debugger symbols GlobalFlag.
+!gflag +ksl
+# 原问题和conio提到的链接的流程
+!process 0 0 &lt;myproc.exe&gt; # 打印出myproc.exe进程号
+.process /i /r /p &lt;myproc-process-id&gt; # 切换到myproc.exe进程
+g
+.reload /user # 重新加载用户进程的模块的符号信息
+lm u # 打印用户进程加载的模块，可以写在一起即lmu
+</code></pre>
+<p>内核调用GdiPrinterThunk的调用栈，栈根部并不完整</p>
+<ul>
+<li>GDI3!GdiPrinterThunk</li>
+<li>...</li>
+<li>win32k!NtGdiOpenDCW</li>
+<li>...</li>
+<li>comdlg32!PrintSetOrientation</li>
+</ul>
+<p>发现有意思的是<code>binaries.x86fre</code>的符号文件夹<code>symbol/</code>只有和<code>symbol.pri/</code>的区别，前者包含函数信息但没有源码信息，后者都有。这个可以通过交换windbg的symbol path里的两个目录的顺序测试出来。</p>
+<h3 id="gdiprinterthunk纵"><a class="header" href="#gdiprinterthunk纵">GdiPrinterThunk纵</a></h3>
+<p>由此得到调用一个驱动的函数的流程，由GdiPrinterThunk集束，以DrvEnableDriver为例，<strong>注</strong>：2021.1.13：CreateDCW似乎最后也会调用到这个函数，</p>
+<p><img src="pictures/DrvXxx-formatted.svg" alt="DrvXxx-formatted" /></p>
+<div style="text-align:right; font-size:3em;">2020.12.17</div>
+<h3 id="gdiprinterthunk横"><a class="header" href="#gdiprinterthunk横">GdiPrinterThunk横</a></h3>
+<p>依次调用的Drv函数为，位于srv03rtm/windows/core/ntgdi/client/umpddrv.c</p>
+<p>首次调用</p>
+<ul>
+<li>529: UMPDDrvEnableDriver，间接调用驱动</li>
+<li>367: INDEX_UMDrverFN，并未直接或间接调用驱动，而是将打印驱动支持的函数地址导入pbDrvFn数组里</li>
+<li>559: DrvEnablePDEV</li>
+<li>641: DrvCompletePDEV</li>
+<li>772: DrvDisableDriver</li>
+<li>675: DrvDisablePDEV</li>
+</ul>
+<p>打印</p>
+<p>2020.12.29: 用tesseract识别</p>
+<pre><code>GDI32!GdiPrinterThunk
+USER32!__ClientPrinterThunk+0x26
+ntd1l1l!KiUserCallbackDispatcher+0x13
+nt !KiCal lUserMode+0x4
+nt ! KeUserModeCal lback+0x85
+win32k! pppUserModeCal lback+0x23
+win32k!ClientPrinterThunk+0*40
+win32k!UMPDDrvEnableDriver+0x54
+win32k!UMPD_ldevLoadDriver+0x30
+win32k!hdcOpenDCW+0x1cc
+win32k!NtGdiOpenDCW+0*121
+nt !KiSystemService+0xd0
+SharedUserData! SystemCallStub+0x4
+ntd1ll!KiUserCallbackDispatcher+0x13
+GDI32!NtGdiOpenDCW+0xc
+GDI32!bCreateDCW+0xb4
+GDI32!CreateICU+0x17
+comdlg32!PrintSetMinMargins+0xd?
+comd1g32!PrintUpdatePageSetup+0#401
+comdlg32!PrintSetOrientation+0x93
+</code></pre>
+<p><code>bp gdi32!GdiPrinterThunk</code>可以看到</p>
+<p><img src="pictures/DrvXxxs_call_stack-rotated-formatted.svg" alt="DrvXxxs_call_stack-rotated-formatted" /></p>
+<div style="text-align:right; font-size:3em;">2020.12.19</div>
+<h2 id="猜测gdi用户态维稳状态机"><a class="header" href="#猜测gdi用户态维稳状态机">~~猜测：~~GDI用户态维稳状态机</a></h2>
+<p>~~猜测：~~已大致确认：GDI设备是Client-server模式，用户态-内核态，为了稳定性，在用户态有容忍度高的状态机。</p>
+<p>证据参考windows/core/ntgdi/client/output.c: 2911, 2944, 2955, 2999, 3019，StartPage函数会调整状态。</p>
+<p>状态机的状态是ldc.fl变量(Local Device Context flags)，状态的值@<code>windows/core/ntgdi/client/local.h: 313~336</code>。</p>
+<div style="text-align:right; font-size:3em;">2020.12.22</div>
+<h2 id="graphics_dll回调gdi"><a class="header" href="#graphics_dll回调gdi">graphics_dll回调GDI</a></h2>
+<h3 id="wdk-documentation"><a class="header" href="#wdk-documentation">WDK Documentation</a></h3>
+<ul>
+<li>
+<p>搜索<code>surface</code>，找到index为surface device-managed [WDK Unidrv]题目为Handling Device-Managed Surfaces</p>
+<ul>
+<li>
+<p>Rendering a Print Job</p>
+<p>讲述了CreateDC进行的操作，包含我已看到的GDI调graphics_dll的<code>DrvEnableDriver</code>, <code>DrvEnablePDEV</code>, <code>DrvCompletePDEV</code>, <code>DrvEnableSurface</code>，和我没看到的graphics_dll回调GDI的<code>EngCreateBitmap</code>or<code>EngCreateDeviceSurface</code>, <code>EngMarkBandingSurface</code>, <code>EngAssociateSurface</code>。</p>
+<ul>
+<li>GDI Support Services：GDI提供的函数</li>
+<li>EngWritePrinter：graphics_dll向spooler发数据，spooler向print monitor发数据。
+<ul>
+<li>print monitor：用户态dll，通过内核向硬件执行IO。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>回调gdi32!Eng*函数</p>
+<ul>
+<li>3: EngGetCurrentCodePage</li>
+</ul>
+<div style="text-align:right; font-size:3em;">2020.12.23</div>
+<p>昨晚跟踪notepad通过i80打印一行字（第一次是在PrintHeaderFooter里）的过程，发现和tinypdf不一样，</p>
+<ul>
+<li>i80调用TextOutW [srv03rtm\windows\core\ntgdi\client\output.c @ 1997]后，调用MF_ExtTextOut [c:\srv03rtm\windows\core\ntgdi\client\metarec.cxx @ 3801]，其中MF是Metadata File，我猜测是在生产EMF文件给spooler，由spooler渲染后，再调用打印机驱动。</li>
+<li>tinypdf调用TextOutW [c:\srv03rtm\windows\core\ntgdi\client\output.c @ 2011]后调用StartPage [c:\srv03rtm\windows\core\ntgdi\client\output.c @ 3030]。</li>
+</ul>
+<p><strong>猜测</strong>：因为渲染和调用打印机驱动是由spooler完成的，所以在notepad里看不到对i80 graphics dll的调用。应该去调试spooler。</p>
+<h2 id="spooler"><a class="header" href="#spooler">spooler</a></h2>
+<p><strong>WDK Documentation: Print Spooler Architecture页面</strong></p>
+<p>enhanced metafile (EMF): 在我看来就是异步打印。
+同步打印（用户程序直接调用打印机驱动graphics dll）会阻塞很久；
+异步打印生成EMF便能返回程序继续执行，EMF交由spooler（另一个进程）异步完成渲染（time-consuming execution of these stored GDI functions）、打印。
+异步打印从原理上看，对打印机驱动透明。</p>
+<p><strong>WDK Documentation: Introduction to Print Providers页面</strong></p>
+<p>有层次流程图，临摹如下，</p>
+<p><img src="pictures/wdk_doc_printer_provider_flow_paths-formatted.svg" alt="wdk_doc_printer_provider_flow_paths-formatted" /></p>
+<p>以<code>OpenPrinter</code>函数为例用户程序通过<code>winspool.drv</code>调用spoolsv.exe的<code>OpenPrinter</code>函数（应该是进程间调用，RPC），spoolsv.exe再通过<code>spoolss.dll</code>（spooler's router）调用合适的print provider的<code>OpenPrinter</code>函数。</p>
+<p>print provider有4个，</p>
+<ol>
+<li>本地<code>localspl.dll</code>，</li>
+<li>网络机器的本地<code>win32spl.dll</code>，</li>
+<li>Novel NetWare的<code>nwprovau.dll</code>，</li>
+<li>http的<code>inetpp.dll</code>。</li>
+</ol>
+<p>此页面能够找到Local print provider页面，即目前我关注的直接连接在电脑usb上的打印机。</p>
+<p><strong>WDK Documentation: Local print provider页面</strong>（即<code>localspl.dll</code>）</p>
+<p>Local print provider控制流图临摹如下，</p>
+<p><img src="pictures/wdk_doc_control_flow_in_local_printer_provider-formatted.svg" alt="wdk_doc_control_flow_in_local_printer_provider" /></p>
+<ul>
+<li>
+<p>functions defined by print providers页面</p>
+</li>
+<li>
+<p>printer driver architecture页面</p>
+<p>如下3个驱动能够支持市面上大部分打印机，</p>
+<ul>
+<li>Microsoft Universal Printer Driver页面</li>
+<li>Microsoft PostScript Printer Driver页面</li>
+<li>Microsoft Plotter Driver页面</li>
+</ul>
+</li>
+</ul>
+<p>Local print provider需要支持</p>
+<ul>
+<li>vendor-supplied print processors（Writing a Print Processor页面）</li>
+<li>vendor-supplied print monitors（Writing a Print Monitor页面）</li>
+</ul>
+<div style="text-align:right; font-size:3em;">2020.12.24</div>
+<p>在windbg里通过指令<code>x GDI32!MF*</code>可以打印出和生成Metadata File相关的函数，<code>MFP</code>我猜测是Metadata File Printer的简写。</p>
+<h3 id="调试spooler"><a class="header" href="#调试spooler">调试spooler</a></h3>
+<p>notepad.exe是一个进程，spoolsv.exe是另一个进程，这俩配合完成异步打印，（中间通过metadata file传递打印信息。2021.4.19：打印处理器设置页面选的是RAW，看来并没有用metadata file，但依旧是异步打印）</p>
+<ul>
+<li>notepad.exe执行WINSPOOL!RpcCommitSpoolData2之前，即会让spoolsv.exe开始打印，</li>
+<li>spoolsv.exe在GDI32!GdiPrinterThunk打断点即可，</li>
+</ul>
+<p>spoolsv.exe调用的DrvXxx函数如下，</p>
+<ol>
+<li>UMPDDrvEnableDriver</li>
+<li>INDEX_UMDriverFN</li>
+<li>DrvEnablePDEV (1)</li>
+</ol>
+<p>--- 出现Canon的打印UI界面显示Collecting printer status ---</p>
+<ol start="4">
+<li>DrvCompletePDEV (1)</li>
+<li>DrvEscape@srv03rtm/windows/core/ntgdi/client/object.c: 518从打印机获取信息，看是否是metafile打印机</li>
+<li>DrvEnableSurface (1)</li>
+<li>DrvStartDoc (1)</li>
+<li>UMPDDrvEnableDriver</li>
+<li></li>
+<li>554: DrvEnablePDEV (2)</li>
+<li>641: DrvCompletePDEV (2)</li>
+<li>665: DrvResetPDEV</li>
+<li>702: DrvDisableSurface (0)</li>
+<li>675: DrvDisablePDEV (1)</li>
+<li>692: DrvEnableSurface (1)</li>
+<li>720: DrvStartDoc (2)</li>
+<li>529: UMPDDrvEnableDriver</li>
+<li></li>
+<li>554: DrvEnablePDEV (2)</li>
+<li>641: DrvCompletePDEV (2)</li>
+<li>665: DrvResetPDEV</li>
+<li>702: DrvDisableSurface (0)</li>
+<li>675: DrvDisablePDEV (1)</li>
+<li>692: DrvEnableSurface (1)</li>
+<li>720: DrvStartDoc (3)</li>
+<li>745: DrvStartPage</li>
+</ol>
+<p>--- 加载cnmd55u.dll和cnmop5u.dll --- </p>
+<ol start="27">
+<li>734: DrvEndDoc </li>
+<li>734: DrvEndDoc</li>
+<li>1161: DrvTextOut</li>
+<li>1161: DrvTextOut</li>
+</ol>
+<p>--- 已经显示Printer is online了，在这之前变化的 --- </p>
+<ol start="31">
+<li>1161: DrvTextOut</li>
+<li>734: DrvEndDoc</li>
+<li>734: DrvEndDoc</li>
+<li>734: DrvEndDoc</li>
+<li>734: DrvEndDoc</li>
+<li>734: DrvEndDoc</li>
+<li>734:</li>
+<li>734:</li>
+<li>734:</li>
+<li>734:</li>
+<li>734:</li>
+<li>734:</li>
+<li>1161: DrvTextOut</li>
+<li>734:</li>
+<li>734:</li>
+</ol>
+<p>--- 打印 ---</p>
+<p>--- 打印完成后开始闪灯 ---</p>
+<ol start="46">
+<li>734:</li>
+<li>702: DrvDisableSurface (0)</li>
+</ol>
+<p>--- 打印机已经不闪灯了 ---</p>
+<ol start="48">
+<li>675: DrvDisbalePDEV (0)</li>
+</ol>
+<div style="text-align:right; font-size:3em;">2020.12.25</div>
+<p>要是能够把打印机驱动的过程也看清楚就好了</p>
+<p>参考<a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/print/installing-a-unidrv-minidriver">Installing a Unidrv Minidriver</a>，</p>
+<p>winxp中ntprint.dll和ntprint.inf里包含各种打印机的驱动？</p>
+<p>中间文件，打印栈调研</p>
+<h2 id="graphics_dll回调gre函数"><a class="header" href="#graphics_dll回调gre函数">graphics_dll回调GRE函数</a></h2>
+<p>按照<a href="../../../../../Essays/Kernel/Driver/2019.linux_win_printer.%E9%87%91%E8%9E%8D%E9%80%9A.%E8%BD%AF%E4%BB%B6%E6%89%80%E7%A1%95%E5%A3%AB.pdf">2019 - Linux 平台下 Windows 打印设备驱动兼容框架设计与实现</a>论文的说法，DDI函数（驱动中Drv开头的函数）会回调GRE函数（Eng开头），帮助驱动进行绘制。
+我猜测这是和驱动选择实现DDI函数相关，没实现的DDI函数需要以来GRE转换成已实现的DDI进行绘制（有最基础的必须要实现的DDI集合，所以理论上一定能够转换）。
+因此需要测试复杂的图形打印才有机会看到GRE回调，notepad仅仅输出文字（驱动一定会实现DrvTextOut），所以12.22的没能看不到GRE函数回调。
+DDI函数参考</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/display/using-the-graphics-ddi">Using the Graphics DDI</a>，
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/display/supporting-graphics-output">Supporting Graphics Output</a>包含DrvTextOut为必须实现的说明。</li>
+</ul>
+</li>
+</ul>
+<div style="text-align:right; font-size:3em;">2020.12.28</div>
+<p>srv03rtm/public/oak/inc/winddi.h ClientPrinterThunk各种DrvXxx函数的index的宏定义</p>
+<h2 id="小插曲-激活winxp"><a class="header" href="#小插曲-激活winxp">[小插曲] 激活winxp</a></h2>
+<p>已过30天，开机按F8进入安全模式，删除Hkey_Local_Machine\Software\Microsoft\WindowsNT\CurrentVersion\ WPAEvents\lastWPAEventLoged（若有的话）和OOBETimer</p>
+<p>未过30天，参考https://blog.csdn.net/wangyaqi123/article/details/24743605，</p>
+<blockquote>
+<ol start="3">
+<li>找到主键Hkey_Local_Machine\Software\Microsoft\WindowsNT\CurrentVersion\ WPAEvents\ </li>
+<li>删除子键lastWPAEventLoged (如果有的话） </li>
+<li>修改子键OOBETimer键值为：ff d5 71 d6 8b 6a 8d 6f d5 33 93 fd </li>
+<li>右击注册表中“WPAEvents”键→“权限”→“高级”→“所有者”→你的用户名→“应用”→“确定” </li>
+<li>回到“安全”标签→“高级”→选择列表中的“system”→“编辑” </li>
+<li>把“拒绝”列下的方框全部打勾即可 </li>
+</ol>
+</blockquote>
+<p>重启提示激活点联网激活后会显示已激活。</p>
+<p>其他可能的参考，</p>
+<ul>
+<li>https://www.cnblogs.com/albertfg/p/10032006.html
+<ul>
+<li>https://www.reddit.com/r/sysadmin/comments/5m9240/activating_windows_xp_in_2017_still_possible/
+<ul>
+<li>https://www.wikihow.com/Make-Windows-XP-Genuine-Forever</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="drvtextout"><a class="header" href="#drvtextout">DrvTextOut</a></h2>
+<p>截图用tesseract识别</p>
+<ol start="13">
+<li></li>
+</ol>
+<pre><code>GDI32!GdiPrinterThunk+0x460 [c:\srv03rtm\windows\core\ntgdi\client\umpddrv.c @ 1161]
+USER32!__ClientPrinterThunk+0x26
+ntd1ll!KiUserCallbackDispatcher+0x13 [C:\srv03rtm\base\ntos\rt1\i386\userdisp.asn @ 153]
+nt!KiCallUserMode+0x4 [C:\srv03rtm\base\ntos\ke\i386\callout.asm @ 109]
+nt! KeUserModeCallback+0x85 [c:\srv03rtm\base\ntos\ke\i386\callback.c @ 127]
+win32k! pppUserModeCallback+0x23 [c:\srv03rtm\windows\core\ntuser\ine\ntcb.h @ 6375]
+win32k!ClientPrinterThunk+0x40 [c:\srv03rtm\windows\core\ntuser\inc\ntcb.h @ 6458]
+win32k!UMPDDrvTextOut+0x1f1 [c:\srv03rtm\windows\core\ntgdi\gre\umpddrv.cxx @ 3466]
+win32k!GreExtTextOutWLocked+0xf56 [c:\srv03rtm\windows\core\ntgdi\gre\textgdi.cxx @ 2114]
+win32k!GreBatchTextOut+0x34a [c:\srv03rtm\windows\core\ntgdi\gre\textgdi.cxx @ 724
+win32k!NtGdiFlushUserBatch+0#119 [c:\srv03rtm\windows\core\ntgdi\gre\maskblt.cxx @ 1018]
+nt!_KiSystemService+Oxal [C:\srv03rtm\base\ntos\ke\i386\trap.asm @ 1239]
+SharedUserData!SystemCallStub+0x4
+ntd1ll!KiUserCallbackDispatcher+0x13 [C:\srv03rtm\base\ntos\rt1\i386\userdisp.asm @ 153]
+GDI32!NtGdiGetTextCharsetInfo+0xc [c:\srv03rtm\windows\core\umode\daytona\obj\i386\usrstub
+USER32!DrawTextExWorker+0x62 [c:\srv03rtm\windows\core\ntuser\rt l\dravtext.c @ 1795]
+USER32!DrawTextExW+0x1lc [c:\srv03rtm\windows\core\ntuser\rtl\drawtext.c @ 1718]
+notepad! NpPrintGivenDC+0x4al [c:\srv03rtm\shell\osshell\accesory\notepad\npprint .c @ 784]
+notepad! NpPrint+0x46 [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 387]
+notepad! PrintIt+0zla [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 1218]
+</code></pre>
+<ol start="14">
+<li></li>
+</ol>
+<pre><code>GDI32!GdiPrinterThunk+0x460 [c:\srv03rtm\windows\core\ntgdi\client\umpddrv.c @ 1161]
+USER32!__ClientPrinterThunk+0x26
+ntd1ll!KiUserCallbackDispatcher+0x13 [C:\srv03rtm\base\ntos\rt1\i386\userdisp.asm @ 153]
+nt !KiCallUserMode+0x4 [C:\srv03rtm\base\ntos\ke\i386\callout.asm @ 109]
+nt !KeUserModeCallback+0x85 [c:\srv03rtm\base\ntos\ke\i386\callback.c @ 127]
+win32k! pppUserModeCallback+0x23 [c:\srv03rtm\windows\core\ntuser\inc\ntcb.h @ 6375]
+win32k!ClientPrinterThunk+0x40 [c:\srv03rtm\windows\core\ntuser\inc\ntcb.h @ 6458]
+win32k!UMPDDrvTextOut+0x1f1 [c:\srv03rtm\windows\core\ntgdi\gre\umpddrv.cxx @ 3466]
+win32k!GreExtTextOutWLocked+0xf56 [c:\srv03rtm\windows\core\ntgdi\gre\textgdi.cxx @ 2114]
+win32k!GreBatchTextOut+0x34a [c:\srv03rtm\windows\core\ntgdi\gre\textgdi.cxx @ 724]
+win32k!NtGdiFlushUserBatch+0#119 [c:\srv03rtm\windows\core\ntgdi\gre\maskblt .cxx @ 1018]
+nt!_KiSystemServicetOxal [C:\srv03rtm\base\ntos\ke\i386\trap.asm @ 1239]
+SharedUserData! SystemCallStubt+0x4
+ntdll!KiUserCallbackDispatcher+0x13 [C:\srv03rtm\base\ntos\rt1\i386\userdisp.asm @ 153]
+GDI32!NtGdiExtSelectClipRgn+0xc [c:\srv03rtm\windows\core\umode\daytona\obj\i386\usrstubs.c @ 1267]
+USER32!DrawTextExWorker+0x31d [c:\srv03rtm\windows\core\ntuser\rtl\drawtext.c @ 1984]
+USER32!DrawTextExW+0xle [c:\srv03rtm\windows\core\ntuser\rt l\dravtext .c 8
+notepad! NpPrintGivenDC+0x4al [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 784]
+notepad!NpPrint+0x46 [c:\srv03rtm\shel1l\osshell\accesory\notepad\npprint .c 387
+notepad!PrintIt+0xla [srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 1218]
+</code></pre>
+<ol start="15">
+<li></li>
+</ol>
+<pre><code>GDI32!GdiPrinterThunk+0x460 [c:\srv03rtm\windows\core\ntgdi\client\umpddrv.c @ 1161]
+USER32!__ClientPrinterThunk+0x26
+ntd1l1l!KiUserCallbackDispatcher+0x13 [C:\srv03rtm\base\ntos\rt1\i386\userdisp.asm @ 153]
+nt !KiCallUserMode+0x4 [C:\srv03rtm\base\ntos\ke\i386\callout.asm @ 109)
+nt !KeUserModeCallback+0x85 [c:\srv03rtm\base\ntos\ke\i386\callback.c @ 127]
+win32k! pppUserModeCallback+0x23 [c:\srv03rtm\windows\core\ntuser\inc\ntcb.h @ 6375]
+win32k!ClientPrinterThunk+0#40 [c:\srv03rtm\windows\core\ntuser\inc\ntcb.h @ 6458]
+win32k!UMPDDrvTextOut+0x1f1 [c:\srv03rtm\windows\core\ntgdi\gre\umpddrv.cxx @ 3466]
+win32k!GreExtTextOutWLocked+0xf56 [c:\srv03rtm\windows\core\ntgdi\gre\textgdi.cxx @ 2114]
+win32k!GreBatchTextOut+0x34a [c:\srv03rtm\windows\core\ntgdi\gre\textgdi.cxx @ 724]
+win32k!NtGdiFlushUserBatch+0x119 [c:\srv03rtm\windows\core\ntgdi\gre\maskblt .czx @ 1018]
+nt!_KiSystemServicetOxal [C:\srv03rtm\base\ntos\ke\i386\trap.asm @ 1239]
+SharedUserData! SystemCallStub+0x4
+ntd1ll!KiUserCallbackDispatcher+0x13 [C:\srv03rtm\base\ntos\rt1\i386\userdisp.asm @ 153]
+GDI32'!NtGdiExtSelectClipRgn+0xc [c:\srv03rtm\windows\core\umode\daytona\obj\i386N\usrstubs.c @ 1267]
+USER32! DrawTextExWorker+0x31d [c:\srv03rtm\windows\core\ntuser\rtl\dravtext.c @ 1984]
+USER32!DrawTextExW+0xle [c:\srv03rtm\windows\core\ntuser\rtl\drawtext .c @ 1718]
+notepad! NpPrintGivenDC+0x4al [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 784]
+notepad!NpPrint+0x46 [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 387]
+notepad! PrintIt+0xla [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 1218]
+</code></pre>
+<ol start="16">
+<li></li>
+</ol>
+<pre><code>GDI32!GdiPrinterThunk+0#460 [c:\srv03rtm\windows\core\ntgdi\client\umpddrv.c @ 1161]
+USER32!__ClientPrinterThunk+0x26
+ntd1ll!KiUserCallbackDispatcher+0#13 [C:\srv03rtm\base\ntos\rt1\i386\userdisp.asm @ 153]
+nt !KiCallUserMode+0x4 [C:\srv03rtm\base\ntos\ke\i386\callout.asm @ 109]
+nt !KeUserModeCallback+0x85 [c:\srv03rtm\base\ntos\ke\i386\callback.c @ 127]
+win32k! pppUserModeCallback+0x23 [c:\srv03rtm\windows\core\ntuser\inc\ntcb.h @ 6375]
+win32k!ClientPrinterThunk+0x40 [c:\srv03rtm\windows\core\ntuser\inc\ntcb.h @ 6458]
+win32k!UMPDDrvTextOut+0x1f1 [c:\srv03rtm\windows\core\ntgdi\gre\umpddrv.cxx @ 3466]
+win32k!GreExtTextOutWLocked+0xf56 [c:\srv03rtm\windows\core\ntgdi\gre\textgdi.cxx @ 2114]
+win32k!GreBatchTextOut+0x34a [c:\srv03rtm\windows\core\ntgdi\gre\textgdi.cxx @ 724]
+win32k!NtGdiFlushUserBatch+0*119 [c:\srv03rtm\windows\core\ntgdi\gre\maskblt .cxx @ 1018]
+nt!_KiSystemService+Oxal [C:\srv03rtm\base\ntos\ke\i386\trap.asm @ 1239]
+SharedUserData! SystemCallStubt+0x4
+ntd1ll!KiUserCallbackDispatcher+0x13 [C:\srv03rtm\base\ntos\rt1\i386\userdisp.asm @ 153]
+GDI32!NtGdiEndPagetOxc [c:\srv03rtm\windows\core\umode\daytona\obj\i386\usrstubs.c @ 1155]
+GDI32!EndPage+O0xb [c:\srv03rtm\windows\core\ntgdi\clientNoutput.c @ 2958]
+notepad!NpPrintGivenDC+0x4af [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 786]
+notepad! NpPrint+0x46 [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 387]
+notepad! PrintIt+0xla_ [c:\srv03rtm\shell\Nosshell\accesory\notepad\npprint.c @ 1218]
+notepad! NPCommand+0x308 [c:\srv03rtm\shell\osshell\accesory\notepad\notepad.c @ 907]
+</code></pre>
+<div style="text-align:right; font-size:3em;">2020.12.29</div>
+<p>参考《Windows内核原理与实现》5.2章，windows中断例程入口的表是<code>base/ntos/ke/i386/trap.asm</code>的<code>_IDT</code>，在<code>base/ntos/ke/i386/newsysbg.asm</code>中被复制到idt寄存器（大概是KissIdt?）所指的位置。
+参考第8章系统调用的中断例程为<code>_KiSystemService</code>。</p>
+<p>系统调用会看是否是图形的系统用，若是则会先调用<code>_KeGdiFlushUserBatch</code>。这一段内容见<code>srv03rtm/base/ntos/ke/i386/trap.asm: 1222~1240</code>的代码和注释。</p>
+<p>参考<a href="https://docs.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-gdiflush">GdiFlush function (wingdi.h)</a>，GDI drawing函数会累计，然后当</p>
+<ul>
+<li>Calling the GdiFlush function.</li>
+<li>Reaching or exceeding the batch limit set by the GdiSetBatchLimit function.</li>
+<li>Filling the batching buffers.</li>
+<li>Calling any GDI function that does not return a Boolean value.</li>
+</ul>
+<p>时才会执行。</p>
+<h3 id="batch"><a class="header" href="#batch">Batch</a></h3>
+<p>绘图会倾向延迟操作，堆在一个系统调用中完成，这个上面已经提到了。之前在<code>GdiPrinterThunk</code>打断看到的<code>DrvXxx</code>函数的调用栈总觉得有问题，是因为绘图操作被延迟到另一个不相关的系统调用中了。</p>
+<p>会实际调用写入batch的函数，比如<code>TextOutW</code>会调用<code>bBatchTextOut</code>，若成功的话就不会调用系统调用<code>NtGdiExtTextOutW</code>了。</p>
+<p>比如Notepad的写字的调用栈实际为，</p>
+<p>PrintHeaderFooter:</p>
+<pre><code>ChildEBP RetAddr  
+0006f398 01006462 GDI32!TextOutW [c:\srv03rtm\windows\core\ntgdi\client\output.c @ 1970]
+0006f3c8 01006959 notepad!PrintHeaderFooter+0xce [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 167]
+0006f7a8 01006ad0 notepad!NpPrintGivenDC+0x4a8 [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 786]
+0006f7b4 01006aee notepad!NpPrint+0x46 [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 387]
+0006fae8 01002db0 notepad!PrintIt+0x1a [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 1218]
+0006fd58 010037e1 notepad!NPCommand+0x308 [c:\srv03rtm\shell\osshell\accesory\notepad\notepad.c @ 907]
+0006fd7c 77d38403 notepad!NPWndProc+0x4fc [c:\srv03rtm\shell\osshell\accesory\notepad\notepad.c @ 1348]
+0006fda8 77d3ddde USER32!InternalCallWinProc+0x1b [C:\srv03rtm\windows\core\ntuser\client\i386\callproc.asm @ 102]
+0006fe20 77d1470f USER32!UserCallWinProcCheckWow+0x151 [c:\srv03rtm\windows\core\ntuser\client\clmsg.c @ 165]
+0006fe7c 77d14924 USER32!DispatchClientMessage+0xd9 [c:\srv03rtm\windows\core\ntuser\client\client.c @ 3037]
+0006fea4 77f66dbf USER32!__fnDWORD+0x22 [c:\srv03rtm\windows\core\ntuser\inc\ntcb.h @ 639]
+0006fec8 77d5c2ec ntdll!KiUserCallbackDispatcher+0x13 [C:\srv03rtm\base\ntos\rtl\i386\userdisp.asm @ 153]
+0006fecc 77d19845 USER32!NtUserTranslateAccelerator+0xc [c:\srv03rtm\windows\core\umode\daytona\obj\i386\usrstubs.c @ 4619]
+0006fedc 01002927 USER32!TranslateAcceleratorW+0x33 [c:\srv03rtm\windows\core\ntuser\client\client.c @ 236]
+0006ff1c 010070f0 notepad!WinMain+0xc2 [c:\srv03rtm\shell\osshell\accesory\notepad\notepad.c @ 1522]
+0006ffc0 77e7d5ba notepad!WinMainCRTStartup+0x182 [c:\srv03rtm\base\crts\crtw32\dllstuff\crtexe.c @ 493]
+0006fff0 00000000 kernel32!BaseProcessStart+0x23 [c:\srv03rtm\base\win32\client\support.c @ 580]
+</code></pre>
+<p>DrawTextEx:</p>
+<pre><code>ChildEBP RetAddr  
+0006f264 77d5d12d GDI32!TextOutW [c:\srv03rtm\windows\core\ntgdi\client\output.c @ 1970]
+0006f280 77d5d440 USER32!UserTextOutWInternal+0x18 [c:\srv03rtm\windows\core\ntuser\rtl\drawtext.c @ 591]
+0006f2b4 77d5d528 USER32!DT_DrawStr+0xaf [c:\srv03rtm\windows\core\ntuser\rtl\drawtext.c @ 1031]
+0006f2e8 77d5dcc0 USER32!DT_DrawJustifiedLine+0x5d [c:\srv03rtm\windows\core\ntuser\rtl\drawtext.c @ 1089]
+0006f394 77d20f3c USER32!DrawTextExWorker+0x268 [c:\srv03rtm\windows\core\ntuser\rtl\drawtext.c @ 1936]
+0006f3b8 01006952 USER32!DrawTextExW+0x1c [c:\srv03rtm\windows\core\ntuser\rtl\drawtext.c @ 1718]
+0006f7a8 01006ad0 notepad!NpPrintGivenDC+0x4a1 [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 784]
+0006f7b4 01006aee notepad!NpPrint+0x46 [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 387]
+0006fae8 01002db0 notepad!PrintIt+0x1a [c:\srv03rtm\shell\osshell\accesory\notepad\npprint.c @ 1218]
+0006fd58 010037e1 notepad!NPCommand+0x308 [c:\srv03rtm\shell\osshell\accesory\notepad\notepad.c @ 907]
+0006fd7c 77d38403 notepad!NPWndProc+0x4fc [c:\srv03rtm\shell\osshell\accesory\notepad\notepad.c @ 1348]
+0006fda8 77d3ddde USER32!InternalCallWinProc+0x1b [C:\srv03rtm\windows\core\ntuser\client\i386\callproc.asm @ 102]
+0006fe20 77d1470f USER32!UserCallWinProcCheckWow+0x151 [c:\srv03rtm\windows\core\ntuser\client\clmsg.c @ 165]
+0006fe7c 77d14924 USER32!DispatchClientMessage+0xd9 [c:\srv03rtm\windows\core\ntuser\client\client.c @ 3037]
+0006fea4 77f66dbf USER32!__fnDWORD+0x22 [c:\srv03rtm\windows\core\ntuser\inc\ntcb.h @ 639]
+0006fec8 77d5c2ec ntdll!KiUserCallbackDispatcher+0x13 [C:\srv03rtm\base\ntos\rtl\i386\userdisp.asm @ 153]
+0006fecc 77d19845 USER32!NtUserTranslateAccelerator+0xc [c:\srv03rtm\windows\core\umode\daytona\obj\i386\usrstubs.c @ 4619]
+0006fedc 01002927 USER32!TranslateAcceleratorW+0x33 [c:\srv03rtm\windows\core\ntuser\client\client.c @ 236]
+0006ff1c 010070f0 notepad!WinMain+0xc2 [c:\srv03rtm\shell\osshell\accesory\notepad\notepad.c @ 1522]
+0006ffc0 77e7d5ba notepad!WinMainCRTStartup+0x182 [c:\srv03rtm\base\crts\crtw32\dllstuff\crtexe.c @ 493]
+0006fff0 00000000 kernel32!BaseProcessStart+0x23 [c:\srv03rtm\base\win32\client\support.c @ 580]
+</code></pre>
+<div style="text-align:right; font-size:3em;">2021.01.11</div>
+<h2 id="wine的physdev-stack"><a class="header" href="#wine的physdev-stack">WINE的physdev stack</a></h2>
+<p>创建DC时会生成DC的成员变量physdev栈，grep搜索<code>&quot;gdi_dc_funcs.*=&quot;</code>就能搜到很多physdev对应的函数。</p>
+<p>DIB：Device-Independent Bitmaps</p>
+<div style="text-align:right; font-size:3em;">2021.01.12</div>
+<h3 id="wine-notepad打印的createdc调用栈"><a class="header" href="#wine-notepad打印的createdc调用栈">WINE notepad打印的CreateDC调用栈</a></h3>
+<p>仅分析源码（运行打断点到PRINTDLG_CreateDCW总是运行起来崩溃），</p>
+<ul>
+<li>
+<p>PrintDlgW</p>
+<ul>
+<li>
+<p>PRINTDLG_CreateDCW</p>
+<ul>
+<li>
+<p>CreateDCW/CreateICW</p>
+<p>读取设备对应的驱动，调用设备驱动提供的CreateDC</p>
+<ul>
+<li>pCreateDC（设备驱动提供的函数），例如PSDRV_CreateDC</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="wine的设备栈physdev-stack设计的猜测"><a class="header" href="#wine的设备栈physdev-stack设计的猜测">WINE的设备栈（physdev stack）设计的猜测</a></h3>
+<p>windows各个GDI函数内部做各个设备的multiplexer机制是不公开的，wine通过设备栈做multiplexer。</p>
+<p><strong>问题</strong>：WINE的DC定义和Windows的DC定义不一致，怎么处理？</p>
+<p>应用程序员完全看不见DC的定义，能看见的HDC仅仅只是个指针！所以没问题。</p>
+<hr />
+<h2 id="补全一个驱动函数以gettextextentexpoint为例"><a class="header" href="#补全一个驱动函数以gettextextentexpoint为例">补全一个驱动函数，以GetTextExtentExPoint为例</a></h2>
+<p>参考wineps.drv进行补全wingdi.drv，</p>
+<p>CreateDC时DC驱动栈里只有一个wineps.drv设备驱动，font的驱动何时被压入驱动栈？</p>
+<div style="text-align:right; font-size:3em;">2021.01.18</div>
+<h2 id="bitmapprintwine"><a class="header" href="#bitmapprintwine">bitmapPrint+WINE</a></h2>
+<p>这是上周做的事情，现在详细记录下来。</p>
+<p>总体思路：</p>
+<ul>
+<li>Linux打印流程输出bmp文件</li>
+<li>bitmapPrint（Windows程序，WINE运行）调用打印机驱动打印bmp文件
+<ul>
+<li>bitmapPrint来自<a href="https://www.dreamincode.net/forums/topic/261009-bitmap-printing-tutorial-in-c-win32/">Printing a Bitmap to Screen and Printer in C++ Win32</a>，</li>
+<li>WINE打印逻辑来自ddiwrapper。</li>
+</ul>
+</li>
+</ul>
+<p>2021.1.27：bitmapPrint+ddiwrapper框架图：</p>
+<p><img src="pictures/bitmapPrint_stretchBlt-formatted.svg" alt="bitmapPrint_stretchBlt-formatted" /></p>
+<p>目前的问题出现在调用<code>DrvNextBand</code>失败，错误编号1813。
+Windows的错误编号在<code>winerror.h</code>中定义，
+描述在<a href="https://docs.microsoft.com/en-us/windows/win32/debug/system-error-codes">微软文档System Error Codes</a>中可查阅。</p>
+<p>ERROR_RESOURCE_TYPE_NOT_FOUND
+1813 (0x715)
+The specified resource type cannot be found in the image file.</p>
+<h3 id="drvnextband-err1813"><a class="header" href="#drvnextband-err1813">DrvNextBand err1813</a></h3>
+<p>打断点SetLastError，看SetLastError的调用者。
+SetLastError是内联函数（改变SetLastError，要重新完全编译WINE），
+不过通过设置特殊的值可以找到SetLastError所设定的内存地址，
+比如SetLastError(0xcafe)然后运行时gdb去逐条汇编寻找，
+便能看到存储错误编号的内存地址为<code>0x7ffd8034</code>，
+在gdb里watch该内存地址即可。</p>
+<p>出错的SetLastError的调用栈为
+<code>0x6640dbc0@cnmdr5u</code>-&gt;<code>FindResourceW+0x23</code>-&gt;<code>FindResourceExW+0x205</code></p>
+<p>FindResourceEXW隶属module，WINEDEBUG=+module运行，
+找到执行DrvNextBand过程的module相关的trace信息，
+可以看到驱动cnmdr5u在尝试加载wingdi.drv，
+我猜测是注册表里<code>.../Print/Environments/.../Canon i80</code>里
+原本Driver=CNMDR5u.DLL，
+被改为了Driver=wingdi.drv，新增DriverWin=CNMDR5u.DLL有密切关系。</p>
+<p>打开了WINE=+reg，和注册表相关的访问，
+在DrvNextBand之间并没有TRACE信息输出，也就是说DrvNextBand并没有访问读取注册表，应该是之前客户程序读取的或者驱动读取的。</p>
+<p>尝试去看CNMDR5u.DLL如何调用FindResourceExW的，
+来源张福新提供的CNMDR5u反汇编并提升到C的文件（用IDA Pro搞的），
+调用框架图如下，可以看到&quot;wingdi.drv&quot;字符串的来源是dhpdev，是驱动自定义数据结构PDEV，</p>
+<p><img src="pictures/err/drvNextBand_Err1813-formatted.svg" alt="drvNextBand_Err1813-formatted" /></p>
+<p>PDEV的生成来自DrvEnablePDEV，
+最有可能的是pi-&gt;Devmode（第1个参数）里和pi-&gt;devname（倒数第2个参数）会直接/间接地提供&quot;wingdi.drv&quot;，而</p>
+<ul>
+<li>pi-&gt;Devmode只设置了打印纸张色彩的参数，</li>
+<li>查看DrvEnablePDEV的反汇编发现并没有直接用device name，</li>
+</ul>
+<p>这边有点棘手了，应该从其他角度入手。</p>
+<p>从全局来说，应该不影响所有windows的程序的正常行为，
+所以注册表中打印机Environments的Driver变量不应该更改，
+可以尝试从这个角度出发。</p>
+<h3 id="可以打印到文件"><a class="header" href="#可以打印到文件">可以打印到文件！</a></h3>
+<p>成功输出到文件！</p>
+<p>将注册表的Driver变量还原成驱动的graphics dll（CNMDR5u.DLL），
+且将WINE中load.c的DriverW的Key的名字还原即可。</p>
+<div style="text-align:right; font-size:3em;">2021.01.27</div>
+<h3 id="drvcopybits-or-drvbitblt"><a class="header" href="#drvcopybits-or-drvbitblt">DrvCopyBits or DrvBitBlt</a></h3>
+<p>DrvBitBlt会回调EngEraseSurface和EngBitBlt。</p>
+<p>DrvBitBlt会回调EngEraseSurface和EngCopyBits，（EngCopyBits返回失败，所以之后还会调用其他的EngXxx还不知道）。</p>
+<p>打印机坏掉</p>
+<hr />
+<p>在winxp里测试bitmapPrint，用mingw在linux里交叉编译出win32程序，
+在winemaker生成的Makefile基础上，</p>
+<ul>
+<li>winegcc换为i686-w64-mingw32-gcc</li>
+<li>wineg++换为i686-w64-mingw32-g++</li>
+<li>ar换为i686-w64-mingw32-ar</li>
+<li>wrc换为i686-w64-mingw32-windres
+<ul>
+<li>wrc生成.res换为i686-w64-mingw32-windres生成.coff文件</li>
+</ul>
+</li>
+</ul>
+<div style="text-align:right; font-size:3em;">2021.01.28</div>
+<h2 id="龙芯winebitmapprint"><a class="header" href="#龙芯winebitmapprint">龙芯+WINE+bitmapPrint</a></h2>
+<p>在龙芯上测试QEMU-i386 + WINE-printer + bitmapPrint，wineg++编译的无法运行，mingw32-g++可以运行但是打印页面出错。</p>
+<div style="text-align:right; font-size:3em;">2021.01.29</div>
+<p>出错在0xb7b02e586，lppd-&gt;lpPrintDlg-&gt;hDevNames为-1，
+在x86平台winedbg跟踪（龙芯平台的winedbg暂时没有去修）如下图：</p>
+<p><img src="pictures/err/loongson_lppd_hdevnames_-1-formatted.svg" alt="loongson_lppd_hdevnames_-1-formatted" /></p>
+<p>龙芯上对照着notepad打印，打印窗口不会出错。
+notepad使用的是unicode版本的调用，
+bitmapPrint使用的是ascii版本的调用，
+尝试换成unicode版本还是有有问题。</p>
+<div style="text-align:right; font-size:3em;">2021.02.01</div>
+<h3 id="找到问题"><a class="header" href="#找到问题">找到问题！</a></h3>
+<p>是共享可写页修补还不完全导致的，
+看GlobalLock确实是要去尝试访问0地址，然后自己捕获错误！
+所以我的处理里方式也是刻意去访问0地址，应该修正一下用其他方式。</p>
+<p>选择文件路径的窗口会用到共享可写页，
+所以把bitmapPrint改成全命令行就可以避开这个问题。</p>
+<h2 id="winxp打印到文件"><a class="header" href="#winxp打印到文件">winxp打印到文件</a></h2>
+<p>winxp打印到文件，记事本和图片查看器可以成功，
+但是bitmapPrint总是生成很小的文件？</p>
+<hr />
+<div style="text-align:center;">新年</div>
+<hr />
+<div style="text-align:right; font-size:3em;">2021.02.25</div>
+<h2 id="printprocessor"><a class="header" href="#printprocessor">PrintProcessor</a></h2>
+<p>根据WDK的文档，</p>
+<ul>
+<li><strong>PrintProcessor</strong>有俩Localspl.dll（EMF、RAW、TEXT格式）和Sfmpsprt.dll（PSCRIPT1格式）。转换出来的RAW格式数据发给PrintMonitor。</li>
+<li><strong>PrintMonitor</strong>将PrintProcessor发来的RAW数据发给<strong>PortDriver</strong>。PrintMonitor包含两类，LanguageMonitor和PortMonitor。</li>
+</ul>
+<h3 id="配置信息"><a class="header" href="#配置信息">配置信息</a></h3>
+<p>通过Localspl.dll的函数InitializaPrintProcessor（srv03rtm/printscan/print/spooler/localspl/init.c），看出Print Processor来源于读注册表，看开头注释大致确认是HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Environments\Windows NT x86\Print Processors\，不过为啥Localspl.dll自己即为Print Processor还需要初始化Print Processor？</p>
+<div style="text-align:right; font-size:3em;">2021.04.14</div>
+<h2 id="printuidll"><a class="header" href="#printuidll">printui.dll</a></h2>
+<p>printui.dll负责打印机目录。commdlg.dll也是调用它的。参考srv03rtm/printscan/ui/printui/base/obj/i386/printui.res，用Resource Hacker (WINE)打开，在WinXP上操作，对比两者的窗口得出下表。Dialog包含如下，</p>
+<table><thead><tr><th>编号</th><th>窗口名字</th><th>打开方式&amp;注</th></tr></thead><tbody>
+<tr><td>501</td><td>Driver Properties</td><td>右键-&gt;服务器属性-&gt;驱动程序-&gt;属性</td></tr>
+<tr><td>502</td><td>Printer User Interface</td><td></td></tr>
+<tr><td>503</td><td>Connecting to printer</td><td></td></tr>
+<tr><td>504</td><td>Additional Drivers</td><td></td></tr>
+<tr><td>505</td><td></td><td>注：测试页说明</td></tr>
+<tr><td>506</td><td><strong>General（打印队列里的任务）</strong></td><td>右键打印机-&gt;打开-&gt;右键任务-&gt;属性-&gt;常规</td></tr>
+<tr><td>507</td><td>General</td><td>右键打印机-&gt;属性-&gt;常规</td></tr>
+<tr><td>508</td><td>Ports</td><td>右键打印机-&gt;属性-&gt;端口</td></tr>
+<tr><td>509</td><td>Advanced</td><td>右键打印机-&gt;属性-&gt;高级</td></tr>
+<tr><td>510</td><td>Sharing</td><td>右键打印机-&gt;属性-&gt;共享？</td></tr>
+<tr><td>511</td><td>Printer Ports</td><td>右键打印机-&gt;属性-&gt;端口-&gt;添加端口</td></tr>
+<tr><td>512</td><td>Separator Page</td><td>右键打印机-&gt;属性-&gt;高级-&gt;分隔页</td></tr>
+<tr><td>513</td><td>Print Processor</td><td>右键打印机-&gt;属性-&gt;高级-&gt;打印处理器</td></tr>
+<tr><td>516</td><td>Forms</td><td>右键-&gt;服务器属性-&gt;格式</td></tr>
+<tr><td>517</td><td>Advanced (Server name)</td><td>右键-&gt;服务器属性-&gt;高级</td></tr>
+<tr><td>518</td><td>Ports (Server name)</td><td>右键-&gt;服务器属性-&gt;端口</td></tr>
+<tr><td>519</td><td>Drivers (Server name)</td><td>右键-&gt;服务器属性-&gt;驱动程序</td></tr>
+<tr><td>520</td><td>添加打印机驱动程序向导</td><td>右键打印机-&gt;属性-&gt;高级-&gt;新驱动程序</td></tr>
+<tr><td>521</td><td></td><td>注：添加打印机，改名字，设默认</td></tr>
+<tr><td>522</td><td></td><td>注：是否分享打印机</td></tr>
+<tr><td>523</td><td></td><td>注：是否打印测试页</td></tr>
+<tr><td>524</td><td></td><td>注：是否设置默认</td></tr>
+<tr><td>525</td><td>添加打印机向导</td><td>右键-&gt;添加打印机-&gt;下一步</td></tr>
+<tr><td>526</td><td>添加打印机向导</td><td>右键-&gt;添加打印机</td></tr>
+<tr><td>527</td><td>添加打印机向导</td><td>右键-&gt;添加打印机-&gt;下一步-网络下一步</td></tr>
+<tr><td>528</td><td></td><td>注：给驱动选择处理器和操作系统</td></tr>
+<tr><td>529</td><td></td><td>注：选择端口</td></tr>
+<tr><td>530</td><td></td><td>注：替换驱动</td></tr>
+<tr><td>531</td><td></td><td>注：添加打印机驱动完成</td></tr>
+<tr><td>532</td><td></td><td>注：添加打印机完成</td></tr>
+<tr><td>533</td><td></td><td>注：打印机描述</td></tr>
+<tr><td>534</td><td>Settings</td><td>注：设备类型打印机，打开Printer Folder</td></tr>
+<tr><td>535</td><td>Message Box Dialog</td><td>注：没有内容</td></tr>
+<tr><td>536</td><td>Connect to Printer</td><td></td></tr>
+<tr><td>537</td><td>Location</td><td></td></tr>
+<tr><td>538</td><td>Browse For Location</td><td></td></tr>
+<tr><td>4591</td><td>Enable Printer Sharing</td><td></td></tr>
+<tr><td>10000</td><td></td><td></td></tr>
+<tr><td>10001</td><td></td><td></td></tr>
+<tr><td>10002</td><td></td><td></td></tr>
+<tr><td>10003</td><td></td><td>注：共享打印机列表</td></tr>
+<tr><td>10004</td><td>Location</td><td></td></tr>
+<tr><td>10005</td><td></td><td>注：正在搜索PnP打印机</td></tr>
+<tr><td>10006</td><td></td><td>注：指导连接端口</td></tr>
+</tbody></table>
+<p>506，507常规并行的有打印机驱动提供的设置，应该就是Print Interface DLL提供的。</p>
+<p>打印机队列的菜单是Menu 403</p>
+<div style="text-align:right; font-size:3em;">2021.04.16</div>
+<h2 id="打印框架新增内容总结"><a class="header" href="#打印框架新增内容总结">打印框架新增内容总结</a></h2>
+<pre><code class="language-shell">$ git diff wine-5.2 wgf --compact-summary
+ configure                             |    4 +
+ configure.ac                          |    2 +
+ dlls/gdi32/Makefile.in                |    3 +-
+ dlls/gdi32/eng.c (new)                |  226 +++
+ dlls/gdi32/gdi32.spec                 |   55 +
+ # winspool import localspl
+ dlls/localspl/Makefile.in             |    2 +
+ dlls/localspl/localspl.spec           |   12 +-
+ # 直接调用驱动提供的print processor提供的函数，比如
+ ## PrintDocumentOnPrintProcessor
+ dlls/localspl/printprocessor.c (new)  |  301 +++ 
+ ## 添加了CallPrintProcessor()、EnumForms()、readPrinter()
+ ### ScheduleJob将调用CallPrintProcessor
+ dlls/winspool.drv/Makefile.in         |    2 +-
+ dlls/winspool.drv/info.c              |  120 +-
+ 
+ dlls/wingdi.drv/Makefile.in (new)     |   12 +
+ dlls/wingdi.drv/driver.c (new)        |  536 +++++
+ dlls/wingdi.drv/graphics.c (new)      |  490 +++++
+ dlls/wingdi.drv/init.c (new)          |  720 +++++++
+ dlls/wingdi.drv/load.c (new)          |  270 +++
+ dlls/wingdi.drv/wingdi.drv.spec (new) |    1 +
+ dlls/wingdi.drv/wingdi.rc (new)       |   58 +
+ dlls/wingdi.drv/wingdidlg.h (new)     |   37 +
+ dlls/wingdi.drv/wingdidrv.h (new)     |  279 +++
+ include/winddi.h (new)                | 4188 +++++++++++++++++++++++++++++++++++++++
+ programs/printer/Makefile.in (new)    |    8 +
+ programs/printer/common.h (new)       |   98 +
+ programs/printer/getopt.c (new)       | 1224 ++++++++++++
+ programs/printer/getopt.h (new)       |  193 ++
+ programs/printer/load.c (new)         |  216 ++
+ programs/printer/main.c (new)         |  129 ++
+ programs/printer/options.c (new)      |  524 +++++
+ programs/printer/render.c (new)       |  293 +++
+ programs/printer/util.c (new)         |   36 +
+ 29 files changed, 10024 insertions(+), 15 deletions(-)
+
+$ git diff i80-work wgf --compact-summary
+ # 添加DrvDocumentEvent支持
+ dlls/gdi32/eng.c                     |  11 +-
+ dlls/localspl/Makefile.in            |   2 +
+ dlls/localspl/localspl.spec          |  12 +-
+ dlls/localspl/printprocessor.c (new) | 301 +++++++++++++++++++++++++++++++++++++++++
+ dlls/winspool.drv/Makefile.in        |   2 +-
+ dlls/winspool.drv/info.c             |  92 ++++++++++++-
+ # 新增WINGDIDRV_DocumentEvent，对应interface的DrvDocumentEvent
+ # 在WINGDI_{Start/End}{Doc/Page}、WINGDIDRV_CreateDC中调用
+ dlls/wingdi.drv/driver.c             |  52 ++++++-
+ # 重写渲染函数，不用复制了，而是直接调用DrvStretchBlt()，
+ # 调用DrvSendPage
+ dlls/wingdi.drv/graphics.c           | 230 ++++++++++++++++++++++---------
+ dlls/wingdi.drv/init.c               |  87 +++++++++---
+ dlls/wingdi.drv/load.c               |  82 ++++++-----
+ dlls/wingdi.drv/wingdidrv.h          |  67 ++++++++-
+ 11 files changed, 799 insertions(+), 139 deletions(-)
+ 
+ $ git diff (wgf)582eec2 (loongson)84796c0 --compact-summary
+ dlls/gdi32/eng.c               |  81 ++++++++++-----
+ dlls/localspl/printprocessor.c | 254 +++++++++++++++++++++++++++++++++++++++--------
+ dlls/spoolss/spoolss.spec      |  22 ++--
+ dlls/spoolss/spoolss_main.c    | 143 ++++++++++++++++++++++++++
+ dlls/wingdi.drv/driver.c       |  26 +++--
+ dlls/wingdi.drv/graphics.c     |  27 +++--
+ dlls/wingdi.drv/init.c         | 207 +++++++++++++++++++++++++++++++-------
+ dlls/wingdi.drv/load.c         |  51 ++++++++--
+ dlls/wingdi.drv/wingdidrv.h    |   2 +-
+ dlls/winspool.drv/info.c       | 238 ++++++++++++++++++++++++++++++++++++++++----
+ 10 files changed, 889 insertions(+), 162 deletions(-)
+</code></pre>
+<h3 id="localspl和print-processor"><a class="header" href="#localspl和print-processor">localspl和print processor</a></h3>
+<p>其中调用DrvSendPage大概和localspl联系上，参考<a href="https://docs.microsoft.com/en-us/windows/win32/api/winddi/nf-winddi-drvsendpage">DrvSendPage function (winddi.h)</a>，说device-managed surface用着个函数就好，DrvNextBand是给GDI-managed用的，所以我之前需要跑去实现EngCopyBits（在printer分支，忘记合进主分支了）。用device-managed的就好。DrvSendPage会调用EngWritePrinter？</p>
+<blockquote>
+<p>来自<a href="https://docs.microsoft.com/en-us/windows/win32/api/winddi/nf-winddi-engwriteprinter">EngWritePrinter function (winddi.h)</a>:</p>
+<p><a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/print/printer-graphics-dll">Printer graphics DLLs</a> call <strong>EngWritePrinter</strong> to send data streams (either control sequences or image data) to the print spooler, which in turn sends the data to the printer hardware by calling the appropriate <a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/">print monitor</a>. The function returns after the spooler receives the data.</p>
+</blockquote>
+<p>看WINE代码没看到EngWritePrinter？应该是WritPrinter，参见9fc0474be7bebf3bccd9cab18db17917b30e5018。</p>
+<p>搞清楚WritePrinter怎么被调用的，为什么没有EngWritePrinter。金融通的论文很清楚了。就是调用WritePrinter，而不是EngWritePrinter深层原因未知。</p>
+<div style="text-align:right; font-size:3em;">2021.04.17</div>
+<p>WINE流程，在ScheduleJob中打int $3得到</p>
+<ul>
+<li>EndDoc
+<ul>
+<li>WINGDIDRV_EndDoc
+<ul>
+<li>EndDocPrinter@winspool
+<ul>
+<li>winspool.drv: ScheduleJob
+<ul>
+<li>winspool.drv: CallPrintProcessor
+<ul>
+<li>print processor: PrintDocumentOnPrintProcessor
+<ul>
+<li>print processor: WritePrinter</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Windows中EMF print processor流程</p>
+<ul>
+<li>printscan/print/spooler/prtprocs/winprint/winprint.c: PrintDocumentOnPrintProcessor
+<ul>
+<li>emf.c: PrintEMFJob
+<ul>
+<li>GdiStartDocEMF</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Windows中RAW print processor流程</p>
+<ul>
+<li>（同上）printscan/print/spooler/prtprocs/winprint/winprint.c: PrintDocumentOnPrintProcessor
+<ul>
+<li>raw.c: PrintRawJob
+<ul>
+<li>应该就是直接传给打印机了</li>
+<li>OpenPrinter</li>
+<li>WritePrinter</li>
+<li>ClosePrinter</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div style="text-align:right; font-size:3em;">2021.04.19</div>
+<p>DrvDocumentEvent是Print Interface DLL的函数！</p>
+<p>要想实现图形界面的设置窗口，就去看看DrvDocumentPropertySheets</p>
+<p>WINE OpenPrinter的backtrace，在InitializePrintProvidor中int $3</p>
+<ul>
+<li>WINGDIDRV_FindPrinterInfo @wingdi
+<ul>
+<li>OpenPrinterW @winspool
+<ul>
+<li>?get_opened_printer_entry @winspool
+<ul>
+<li>load_backend  @winspool
+<ul>
+<li>InitializePrintProvidor @localspl</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../../../Kernel/Windows/driver/logs-1.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="../../../Kernel/Windows/driver/ndis.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../../../Kernel/Windows/driver/logs-1.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="../../../Kernel/Windows/driver/ndis.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>

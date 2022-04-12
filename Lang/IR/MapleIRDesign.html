@@ -1,0 +1,1180 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>MapleIRDesign - xieby1&#x27;s notes</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="../../favicon.svg">
+                        <link rel="shortcut icon" href="../../favicon.png">
+                <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+                <link rel="stylesheet" href="../../css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../../fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+                <link rel="stylesheet" href="../../custom.css">
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../../index.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item "><a href="../../abbreviations.html"><strong aria-hidden="true">2.</strong> abbreviations</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.</strong> ABI</div></li><li class="chapter-item "><div><strong aria-hidden="true">4.</strong> Algo</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">4.1.</strong> Graph</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Algo/Graph/1998.distance.bunke.prl.775.html"><strong aria-hidden="true">4.1.1.</strong> 1998.distance.bunke.prl.775</a></li><li class="chapter-item "><a href="../../Algo/Graph/2002.inexact_match.bengoetxea.doc_thesis.107.html"><strong aria-hidden="true">4.1.2.</strong> 2002.inexact_match.bengoetxea.doc_thesis.107</a></li><li class="chapter-item "><a href="../../Algo/Graph/2014.attributed.zhang.cvpr.19.html"><strong aria-hidden="true">4.1.3.</strong> 2014.attributed.zhang.cvpr.19</a></li><li class="chapter-item "><a href="../../Algo/Graph/2016.survey.yan.icmr.108.html"><strong aria-hidden="true">4.1.4.</strong> 2016.survey.yan.icmr.108</a></li><li class="chapter-item "><a href="../../Algo/Graph/2021.igraphmatch.qiao..0.html"><strong aria-hidden="true">4.1.5.</strong> 2021.igraphmatch.qiao..0</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">5.</strong> analysis</div></li><li class="chapter-item "><div><strong aria-hidden="true">6.</strong> Arch</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">6.1.</strong> HT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Arch/HT/2005.cell.kahle.ibmjrd.1093.html"><strong aria-hidden="true">6.1.1.</strong> 2005.cell.kahle.ibmjrd.1093</a></li><li class="chapter-item "><a href="../../Arch/HT/2012.process_migration.devuyst.asplos.83.html"><strong aria-hidden="true">6.1.2.</strong> 2012.process_migration.devuyst.asplos.83</a></li><li class="chapter-item "><a href="../../Arch/HT/2015.overview.mitra.jip.15.html"><strong aria-hidden="true">6.1.3.</strong> 2015.overview.mitra.jip.15</a></li><li class="chapter-item "><a href="../../Arch/HT/2018.process_migration.venkat.doc_thesis.5.html"><strong aria-hidden="true">6.1.4.</strong> 2018.process_migration.venkat.doc_thesis.5</a></li><li class="chapter-item "><a href="../../Arch/HT/2020.byoc_framework.balkind.asplos.3.html"><strong aria-hidden="true">6.1.5.</strong> 2020.byoc_framework.balkind.asplos.3</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">6.2.</strong> reconf</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Arch/reconf/1997.chimaera.hauck.fccm.461.html"><strong aria-hidden="true">6.2.1.</strong> 1997.chimaera.hauck.fccm.461</a></li><li class="chapter-item "><a href="../../Arch/reconf/2008.reconf_acc.beck.date.97.html"><strong aria-hidden="true">6.2.2.</strong> 2008.reconf_acc.beck.date.97</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">6.3.</strong> VLIW</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">6.3.1.</strong> pictures</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">7.</strong> Benchmarks</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">7.1.</strong> herdtools7</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Benchmarks/herdtools7/overview.html"><strong aria-hidden="true">7.1.1.</strong> overview</a></li></ol></li><li class="chapter-item "><a href="../../Benchmarks/spec/index.html"><strong aria-hidden="true">7.2.</strong> spec</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Benchmarks/spec/deprecated.README.html"><strong aria-hidden="true">7.2.1.</strong> deprecated.README</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.</strong> BT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">8.1.</strong> algo</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/algo/2006.lib.杨浩.计算机研究与发展.0.html"><strong aria-hidden="true">8.1.1.</strong> 2006.lib.杨浩.计算机研究与发展.0</a></li><li class="chapter-item "><a href="../../BT/algo/2016.static_identify_jump_target.federico.cases.9.html"><strong aria-hidden="true">8.1.2.</strong> 2016.static_identify_jump_target.federico.cases.9</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.3.</strong> bt_rules</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/algo/bt_rules/2006.peephole_superopt.bansal.asplos.134.html"><strong aria-hidden="true">8.1.3.1.</strong> 2006.peephole_superopt.bansal.asplos.134</a></li><li class="chapter-item "><a href="../../BT/algo/bt_rules/2018.learn.wwwang.asplos.11.html"><strong aria-hidden="true">8.1.3.2.</strong> 2018.learn.wwwang.asplos.11</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.4.</strong> offload</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/algo/offload/2010.distribit.guan.hpdc.5.html"><strong aria-hidden="true">8.1.4.1.</strong> 2010.distribit.guan.hpdc.5</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.5.</strong> pictures</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.6.</strong> reg</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.7.</strong> smc</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/algo/smc/2015.detect.hawkins.cgo.24.html"><strong aria-hidden="true">8.1.7.1.</strong> 2015.detect.hawkins.cgo.24</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.8.</strong> trace</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/algo/trace/1994.opt_profiling_tracing.ball.toplas.580.html"><strong aria-hidden="true">8.1.8.1.</strong> 1994.opt_profiling_tracing.ball.toplas.580</a></li><li class="chapter-item "><a href="../../BT/algo/trace/2000.net.duesterwald.asplos.141.html"><strong aria-hidden="true">8.1.8.2.</strong> 2000.net.duesterwald.asplos.141</a></li><li class="chapter-item "><a href="../../BT/algo/trace/2005.edge_profile.白童心.计算机工程.2.html"><strong aria-hidden="true">8.1.8.3.</strong> 2005.edge_profile.白童心.计算机工程.2</a></li><li class="chapter-item "><a href="../../BT/algo/trace/2005.lei_net.hiniker.micro.39.html"><strong aria-hidden="true">8.1.8.4.</strong> 2005.lei_net.hiniker.micro.39</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.2.</strong> analysis</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/analysis/2014.simulators_harm.nowatki..19.html"><strong aria-hidden="true">8.2.1.</strong> 2014.simulators_harm.nowatki..19</a></li><li class="chapter-item "><a href="../../BT/analysis/2020.perfdbt.wu.iccd.2.html"><strong aria-hidden="true">8.2.2.</strong> 2020.perfdbt.wu.iccd.2</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.3.</strong> application</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.4.</strong> Box86</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/Box86/logs.html"><strong aria-hidden="true">8.4.1.</strong> logs</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.5.</strong> dynamic</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/dynamic/2017.mambox64.dantras.pldi.18.html"><strong aria-hidden="true">8.5.1.</strong> 2017.mambox64.dantras.pldi.18</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.6.</strong> Emulator</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">8.6.1.</strong> Emulator_Design</div></li></ol></li><li class="chapter-item "><a href="../../BT/exagear.html"><strong aria-hidden="true">8.7.</strong> exagear</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.8.</strong> HQEMU</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/HQEMU/codeReading-deprecated.html"><strong aria-hidden="true">8.8.1.</strong> codeReading-deprecated</a></li><li class="chapter-item "><a href="../../BT/HQEMU/codeReading.html"><strong aria-hidden="true">8.8.2.</strong> codeReading</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.8.3.</strong> pictures</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.</strong> HW</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/HW/2008.coprocessor.li.amasbt.3.html"><strong aria-hidden="true">8.9.1.</strong> 2008.coprocessor.li.amasbt.3</a></li><li class="chapter-item "><a href="../../BT/HW/2009.godson3_x86_emu.hu.micro.84.html"><strong aria-hidden="true">8.9.2.</strong> 2009.godson3_x86_emu.hu.micro.84</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.3.</strong> codeCache</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.4.</strong> reconf</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/HW/reconf/2013.x86_mips_reconf.junior.jsa.4.html"><strong aria-hidden="true">8.9.4.1.</strong> 2013.x86_mips_reconf.junior.jsa.4</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.5.</strong> VLIW</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/HW/VLIW/2015.denver.nvidia.micro.36.html"><strong aria-hidden="true">8.9.5.1.</strong> 2015.denver.nvidia.micro.36</a></li><li class="chapter-item "><a href="../../BT/HW/VLIW/2019.hybrid_dbt.rokicki.cadics.2.html"><strong aria-hidden="true">8.9.5.2.</strong> 2019.hybrid_dbt.rokicki.cadics.2</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.5.3.</strong> crusoe</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/HW/VLIW/crusoe/2000.crusoe.klaiber.transmeta.118.html"><strong aria-hidden="true">8.9.5.3.1.</strong> 2000.crusoe.klaiber.transmeta.118</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.5.4.</strong> daisy</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.10.</strong> kernel</div></li><li class="chapter-item "><a href="../../BT/libDBT/index.html"><strong aria-hidden="true">8.11.</strong> libDBT</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.</strong> lift</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.</strong> IR</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.1.</strong> LLBT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/lift/IR/LLBT/LLBT调研.html"><strong aria-hidden="true">8.12.1.1.1.</strong> LLBT调研</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.1.2.</strong> pictures</div></li><li class="chapter-item "><a href="../../BT/lift/IR/LLBT/二进制翻译调研报告（LLBT相关）.html"><strong aria-hidden="true">8.12.1.1.3.</strong> 二进制翻译调研报告（LLBT相关）</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.2.</strong> mcsema</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/lift/IR/mcsema/2019.mcsema_dyninst.korencik...html"><strong aria-hidden="true">8.12.1.2.1.</strong> 2019.mcsema_dyninst.korencik..</a></li><li class="chapter-item "><a href="../../BT/lift/IR/mcsema/2019.mcsema.researchLogs.html"><strong aria-hidden="true">8.12.1.2.2.</strong> 2019.mcsema.researchLogs</a></li><li class="chapter-item "><a href="../../BT/lift/IR/mcsema/remill.html"><strong aria-hidden="true">8.12.1.2.3.</strong> remill</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.3.</strong> mctoll</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/lift/IR/mctoll/2019.mctoll.yadavalli.lctes.5.html"><strong aria-hidden="true">8.12.1.3.1.</strong> 2019.mctoll.yadavalli.lctes.5</a></li><li class="chapter-item "><a href="../../BT/lift/IR/mctoll/codesReading.html"><strong aria-hidden="true">8.12.1.3.2.</strong> codesReading</a></li><li class="chapter-item "><a href="../../BT/lift/IR/mctoll/run.html"><strong aria-hidden="true">8.12.1.3.3.</strong> run</a></li></ol></li><li class="chapter-item "><a href="../../BT/lift/IR/overview.html"><strong aria-hidden="true">8.12.1.4.</strong> overview</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.5.</strong> pictures</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.6.</strong> REVNG</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.13.</strong> Mem</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/Mem/2008.thread_safe_by_tm.chung.hpca.51.html"><strong aria-hidden="true">8.13.1.</strong> 2008.thread_safe_by_tm.chung.hpca.51</a></li><li class="chapter-item "><a href="../../BT/Mem/2016.atomic.rigo.taco.6.html"><strong aria-hidden="true">8.13.2.</strong> 2016.atomic.rigo.taco.6</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.14.</strong> oldProj</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/oldProj/1993.mips2alphaaxp.sites.cacm.267.html"><strong aria-hidden="true">8.14.1.</strong> 1993.mips2alphaaxp.sites.cacm.267</a></li><li class="chapter-item "><a href="../../BT/oldProj/1998.fx32.chernoff.micro.217.html"><strong aria-hidden="true">8.14.2.</strong> 1998.fx32.chernoff.micro.217</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.14.3.</strong> dbt4AndStatic</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/oldProj/dbt4AndStatic/DBT4代码阅读笔记.html"><strong aria-hidden="true">8.14.3.1.</strong> DBT4代码阅读笔记</a></li><li class="chapter-item "><a href="../../BT/oldProj/dbt4AndStatic/dbt-static.html"><strong aria-hidden="true">8.14.3.2.</strong> dbt-static</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.14.3.3.</strong> pictures</div></li><li class="chapter-item "><a href="../../BT/oldProj/dbt4AndStatic/去除orc工作量和难度.html"><strong aria-hidden="true">8.14.3.4.</strong> 去除orc工作量和难度</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.14.4.</strong> pictures</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.15.</strong> others</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.16.</strong> overview</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/overview/2001.bt_opt_challenges.altman.pieee.38.html"><strong aria-hidden="true">8.16.1.</strong> 2001.bt_opt_challenges.altman.pieee.38</a></li><li class="chapter-item "><a href="../../BT/overview/2004.bibliography_of_simulators.html"><strong aria-hidden="true">8.16.2.</strong> 2004.bibliography_of_simulators</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.17.</strong> pictures</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.18.</strong> QEMU</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/QEMU/16k.html"><strong aria-hidden="true">8.18.1.</strong> 16k</a></li><li class="chapter-item "><a href="../../BT/QEMU/2005.qemu.bellard.usenix.2217.html"><strong aria-hidden="true">8.18.2.</strong> 2005.qemu.bellard.usenix.2217</a></li><li class="chapter-item "><a href="../../BT/QEMU/2017.qemu_multi_cores.cota.cgo.8.html"><strong aria-hidden="true">8.18.3.</strong> 2017.qemu_multi_cores.cota.cgo.8</a></li><li class="chapter-item "><a href="../../BT/QEMU/LA-backend.html"><strong aria-hidden="true">8.18.4.</strong> LA-backend</a></li><li class="chapter-item "><a href="../../BT/QEMU/linux-user-32.html"><strong aria-hidden="true">8.18.5.</strong> linux-user-32</a></li><li class="chapter-item "><a href="../../BT/QEMU/linux-user.html"><strong aria-hidden="true">8.18.6.</strong> linux-user</a></li><li class="chapter-item "><a href="../../BT/QEMU/linux-user-memory_region.html"><strong aria-hidden="true">8.18.7.</strong> linux-user-memory_region</a></li><li class="chapter-item "><a href="../../BT/QEMU/logs.html"><strong aria-hidden="true">8.18.8.</strong> logs</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.18.9.</strong> lx</div></li><li class="chapter-item "><a href="../../BT/QEMU/mt-tcg.html"><strong aria-hidden="true">8.18.10.</strong> mt-tcg</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.18.11.</strong> pictures</div></li><li class="chapter-item "><a href="../../BT/QEMU/qemu-wine.html"><strong aria-hidden="true">8.18.12.</strong> qemu-wine</a></li><li class="chapter-item "><a href="../../BT/QEMU/QnA.html"><strong aria-hidden="true">8.18.13.</strong> QnA</a></li><li class="chapter-item "><a href="../../BT/QEMU/signal.html"><strong aria-hidden="true">8.18.14.</strong> signal</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.18.15.</strong> target</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.19.</strong> rewrite</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/rewrite/2018.superset_disassembly.bauman.ndss.40.html"><strong aria-hidden="true">8.19.1.</strong> 2018.superset_disassembly.bauman.ndss.40</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.19.2.</strong> instru</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/rewrite/instru/2009.mt.hazelwood.ismm.28.html"><strong aria-hidden="true">8.19.2.1.</strong> 2009.mt.hazelwood.ismm.28</a></li><li class="chapter-item "><a href="../../BT/rewrite/instru/mem_count.html"><strong aria-hidden="true">8.19.2.2.</strong> mem_count</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.20.</strong> security</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.21.</strong> static</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.22.</strong> sys</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.23.</strong> Tarmac</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.24.</strong> test</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.25.</strong> x86-qemu-mips</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/x86-qemu-mips/check_manual.html"><strong aria-hidden="true">8.25.1.</strong> check_manual</a></li><li class="chapter-item "><a href="../../BT/x86-qemu-mips/check.html"><strong aria-hidden="true">8.25.2.</strong> check</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.25.3.</strong> debugs</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/x86-qemu-mips/debugs/OPEN.unknown-loop-in-bios.html"><strong aria-hidden="true">8.25.3.1.</strong> OPEN.unknown-loop-in-bios</a></li></ol></li><li class="chapter-item "><a href="../../BT/x86-qemu-mips/linux-user.html"><strong aria-hidden="true">8.25.4.</strong> linux-user</a></li><li class="chapter-item "><a href="../../BT/x86-qemu-mips/mips-llvm.html"><strong aria-hidden="true">8.25.5.</strong> mips-llvm</a></li><li class="chapter-item "><a href="../../BT/x86-qemu-mips/mt-tcg.html"><strong aria-hidden="true">8.25.6.</strong> mt-tcg</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.25.7.</strong> pictures</div></li><li class="chapter-item "><a href="../../BT/x86-qemu-mips/tr_misc修改记录.html"><strong aria-hidden="true">8.25.8.</strong> tr_misc修改记录</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.26.</strong> X86toMips</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../BT/X86toMips/dbt测试结果.html"><strong aria-hidden="true">8.26.1.</strong> dbt测试结果</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.26.2.</strong> pictures</div></li><li class="chapter-item "><a href="../../BT/X86toMips/Pseudo-README.html"><strong aria-hidden="true">8.26.3.</strong> Pseudo-README</a></li><li class="chapter-item "><a href="../../BT/X86toMips/X86toMips调研.html"><strong aria-hidden="true">8.26.4.</strong> X86toMips调研</a></li><li class="chapter-item "><a href="../../BT/X86toMips/X86toMips调研-续.html"><strong aria-hidden="true">8.26.5.</strong> X86toMips调研-续</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.</strong> Build</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">9.1.</strong> Autotools</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Build/Autotools/2012.autotools_criticism.kamp..html"><strong aria-hidden="true">9.1.1.</strong> 2012.autotools_criticism.kamp.</a></li><li class="chapter-item "><a href="../../Build/Autotools/autotools.html"><strong aria-hidden="true">9.1.2.</strong> autotools</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.2.</strong> CMake</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Build/CMake/Notes.html"><strong aria-hidden="true">9.2.1.</strong> Notes</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.</strong> Compiler</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Build/Compiler/1992.hyperblock.mahlke.micro.html"><strong aria-hidden="true">9.3.1.</strong> 1992.hyperblock.mahlke.micro</a></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.2.</strong> llvm</div></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.3.</strong> mingw</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Build/Compiler/mingw/overview.html"><strong aria-hidden="true">9.3.3.1.</strong> overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.4.</strong> ORC</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Build/Compiler/ORC/2004.ORC-LCPC04-Tutorial.html"><strong aria-hidden="true">9.3.4.1.</strong> 2004.ORC-LCPC04-Tutorial</a></li><li class="chapter-item "><a href="../../Build/Compiler/ORC/2004.overview_orc.wuchengyong.iwlcpc.html"><strong aria-hidden="true">9.3.4.2.</strong> 2004.overview_orc.wuchengyong.iwlcpc</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.5.</strong> trans</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.4.</strong> Disassemble</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Build/Disassemble/2002.disassembly.bschwarz.pieee.html"><strong aria-hidden="true">9.4.1.</strong> 2002.disassembly.bschwarz.pieee</a></li></ol></li><li class="chapter-item "><a href="../../Build/ELF/index.html"><strong aria-hidden="true">9.5.</strong> ELF</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Build/ELF/ELF调研.html"><strong aria-hidden="true">9.5.1.</strong> ELF调研</a></li><li class="chapter-item "><div><strong aria-hidden="true">9.5.2.</strong> pictures</div></li><li class="chapter-item "><a href="../../Build/ELF/QnA.html"><strong aria-hidden="true">9.5.3.</strong> QnA</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.6.</strong> Linker_Loader</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Build/Linker_Loader/QnA.html"><strong aria-hidden="true">9.6.1.</strong> QnA</a></li></ol></li><li class="chapter-item "><a href="../../Build/mingw.html"><strong aria-hidden="true">9.7.</strong> mingw</a></li></ol></li><li class="chapter-item "><a href="../../cheatsheet.html"><strong aria-hidden="true">10.</strong> cheatsheet</a></li><li class="chapter-item "><div><strong aria-hidden="true">11.</strong> CLI</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">11.1.</strong> pictures</div></li><li class="chapter-item "><a href="../../CLI/term_pty_sh.html"><strong aria-hidden="true">11.2.</strong> term_pty_sh</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">12.</strong> CompatLayer</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../CompatLayer/2006.linuxulator.divacky.freebsd..html"><strong aria-hidden="true">12.1.</strong> 2006.linuxulator.divacky.freebsd.</a></li><li class="chapter-item "><a href="../../CompatLayer/Alky.html"><strong aria-hidden="true">12.2.</strong> Alky</a></li><li class="chapter-item "><div><strong aria-hidden="true">12.3.</strong> UML</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../CompatLayer/UML/user_mode_linux.html"><strong aria-hidden="true">12.3.1.</strong> user_mode_linux</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">12.4.</strong> WINE</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../CompatLayer/WINE/2020_6_25.emu_win_syscall.corbet.lwn.html"><strong aria-hidden="true">12.4.1.</strong> 2020_6_25.emu_win_syscall.corbet.lwn</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/Design_of_WINE.html"><strong aria-hidden="true">12.4.2.</strong> Design_of_WINE</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/optimizable.html"><strong aria-hidden="true">12.4.3.</strong> optimizable</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/others.html"><strong aria-hidden="true">12.4.4.</strong> others</a></li><li class="chapter-item "><div><strong aria-hidden="true">12.4.5.</strong> pictures</div></li><li class="chapter-item "><a href="../../CompatLayer/WINE/qemu-wine-logs.html"><strong aria-hidden="true">12.4.6.</strong> qemu-wine-logs</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/qemu-wine.html"><strong aria-hidden="true">12.4.7.</strong> qemu-wine</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/qemu-winetest_debug_logs.html"><strong aria-hidden="true">12.4.8.</strong> qemu-winetest_debug_logs</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/qemu-wine环境搭建.html"><strong aria-hidden="true">12.4.9.</strong> qemu-wine环境搭建</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/QnA.html"><strong aria-hidden="true">12.4.10.</strong> QnA</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/References.html"><strong aria-hidden="true">12.4.11.</strong> References</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/Winegcc调研.html"><strong aria-hidden="true">12.4.12.</strong> Winegcc调研</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/Winelib调研报告.html"><strong aria-hidden="true">12.4.13.</strong> Winelib调研报告</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/WINE设备驱动调研.html"><strong aria-hidden="true">12.4.14.</strong> WINE设备驱动调研</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/WINE调研.html"><strong aria-hidden="true">12.4.15.</strong> WINE调研</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/二进制翻译调研报告_FX32_Wine.html"><strong aria-hidden="true">12.4.16.</strong> 二进制翻译调研报告_FX32_Wine</a></li><li class="chapter-item "><a href="../../CompatLayer/WINE/二进制翻译调研报告_Wine.html"><strong aria-hidden="true">12.4.17.</strong> 二进制翻译调研报告_Wine</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.</strong> Connect</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Connect/Bluetooth/index.html"><strong aria-hidden="true">13.1.</strong> Bluetooth</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.1.1.</strong> bluez</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.1.1.1.</strong> pictures</div></li><li class="chapter-item "><a href="../../Connect/Bluetooth/bluez/profile_input.html"><strong aria-hidden="true">13.1.1.2.</strong> profile_input</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.2.</strong> btkbdd</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.1.2.1.</strong> pictures</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.3.</strong> dbus</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Connect/Bluetooth/dbus/Overview.html"><strong aria-hidden="true">13.1.3.1.</strong> Overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.4.</strong> Essays</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.1.4.1.</strong> 2005.bluez_intro</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Connect/Bluetooth/Essays/2005.bluez_intro.albert/An_Introduction_to_Bluetooth_Programming.html"><strong aria-hidden="true">13.1.4.1.1.</strong> An_Introduction_to_Bluetooth_Programming</a></li></ol></li><li class="chapter-item "><a href="../../Connect/Bluetooth/Essays/阅读记录.html"><strong aria-hidden="true">13.1.4.2.</strong> 阅读记录</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.5.</strong> hidclient</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Connect/Bluetooth/hidclient/logs.html"><strong aria-hidden="true">13.1.5.1.</strong> logs</a></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.5.2.</strong> pictures</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.2.</strong> Network</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.2.1.</strong> bittorrent</div></li><li class="chapter-item "><div><strong aria-hidden="true">13.2.2.</strong> nginx</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Connect/Network/nginx/logs.html"><strong aria-hidden="true">13.2.2.1.</strong> logs</a></li></ol></li><li class="chapter-item "><a href="../../Connect/Network/p2p.html"><strong aria-hidden="true">13.2.3.</strong> p2p</a></li><li class="chapter-item "><a href="../../Connect/Network/streaming_server.html"><strong aria-hidden="true">13.2.4.</strong> streaming_server</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.3.</strong> NFC</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.3.1.</strong> Essays</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">14.</strong> dataViz</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../dataViz/overview.html"><strong aria-hidden="true">14.1.</strong> overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">15.</strong> Distro</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Distro/JingOS.html"><strong aria-hidden="true">15.1.</strong> JingOS</a></li><li class="chapter-item "><div><strong aria-hidden="true">15.2.</strong> Nix</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Distro/Nix/nixpkgs.html"><strong aria-hidden="true">15.2.1.</strong> nixpkgs</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../Essays.html"><strong aria-hidden="true">16.</strong> Essays</a></li><li class="chapter-item "><div><strong aria-hidden="true">17.</strong> FPGA</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../FPGA/iverilog.html"><strong aria-hidden="true">17.1.</strong> iverilog</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">18.</strong> hackthon</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../hackthon/Untitled.html"><strong aria-hidden="true">18.1.</strong> Untitled</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">19.</strong> Input</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Input/logs.html"><strong aria-hidden="true">19.1.</strong> logs</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">20.</strong> ISA</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ISA/2013.power_of_risc_cisc.blem.hpca.144.html"><strong aria-hidden="true">20.1.</strong> 2013.power_of_risc_cisc.blem.hpca.144</a></li><li class="chapter-item "><div><strong aria-hidden="true">20.2.</strong> arm</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.3.</strong> enhance</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.4.</strong> mips</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.5.</strong> mips_lx</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.6.</strong> riscv</div></li><li class="chapter-item "><a href="../../ISA/Semantics/index.html"><strong aria-hidden="true">20.7.</strong> Semantics</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ISA/Semantics/2013.locate.lakhotia.pprew.75.html"><strong aria-hidden="true">20.7.1.</strong> 2013.locate.lakhotia.pprew.75</a></li><li class="chapter-item "><a href="../../ISA/Semantics/2014.lem.mulligan.icfp.79.html"><strong aria-hidden="true">20.7.2.</strong> 2014.lem.mulligan.icfp.79</a></li><li class="chapter-item "><a href="../../ISA/Semantics/2015.sail.gray.micro.31.html"><strong aria-hidden="true">20.7.3.</strong> 2015.sail.gray.micro.31</a></li><li class="chapter-item "><a href="../../ISA/Semantics/2016.learn.heule.pldi.56.html"><strong aria-hidden="true">20.7.4.</strong> 2016.learn.heule.pldi.56</a></li><li class="chapter-item "><a href="../../ISA/Semantics/2018.sail.armstrong..3.html"><strong aria-hidden="true">20.7.5.</strong> 2018.sail.armstrong..3</a></li><li class="chapter-item "><a href="../../ISA/Semantics/2019.x64_validation.dasgupta.sigplan.24.html"><strong aria-hidden="true">20.7.6.</strong> 2019.x64_validation.dasgupta.sigplan.24</a></li><li class="chapter-item "><a href="../../ISA/Semantics/2021.sail.armstrong.manual.html"><strong aria-hidden="true">20.7.7.</strong> 2021.sail.armstrong.manual</a></li><li class="chapter-item "><div><strong aria-hidden="true">20.7.8.</strong> k</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ISA/Semantics/k/logs.html"><strong aria-hidden="true">20.7.8.1.</strong> logs</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">20.8.</strong> ultrasparc</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.9.</strong> Uop</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../ISA/Uop/1990.nec_intel.elkins...html"><strong aria-hidden="true">20.9.1.</strong> 1990.nec_intel.elkins..</a></li><li class="chapter-item "><a href="../../ISA/Uop/1996.palcode..manual..html"><strong aria-hidden="true">20.9.2.</strong> 1996.palcode..manual.</a></li><li class="chapter-item "><a href="../../ISA/Uop/2003.ucache.solomon.tvlsi.13.html"><strong aria-hidden="true">20.9.3.</strong> 2003.ucache.solomon.tvlsi.13</a></li><li class="chapter-item "><a href="../../ISA/Uop/2019.reverse_engineer.koppe.usenix_security.16.html"><strong aria-hidden="true">20.9.4.</strong> 2019.reverse_engineer.koppe.usenix_security.16</a></li><li class="chapter-item "><a href="../../ISA/Uop/2020.improve_ucache.kotra.micro.1.html"><strong aria-hidden="true">20.9.5.</strong> 2020.improve_ucache.kotra.micro.1</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">20.10.</strong> x86</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">21.</strong> JIT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../JIT/2008.llvm_sim.brandner..29.html"><strong aria-hidden="true">21.1.</strong> 2008.llvm_sim.brandner..29</a></li><li class="chapter-item "><a href="../../JIT/2011.llvm_sim.helmstetter.imecs.6.html"><strong aria-hidden="true">21.2.</strong> 2011.llvm_sim.helmstetter.imecs.6</a></li><li class="chapter-item "><div><strong aria-hidden="true">21.3.</strong> dynarmic</div></li><li class="chapter-item "><div><strong aria-hidden="true">21.4.</strong> opt</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.</strong> Kernel</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/2020_9_9.prepare_new_feat.edge.lwn-lpc.html"><strong aria-hidden="true">22.1.</strong> 2020_9_9.prepare_new_feat.edge.lwn-lpc</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.2.</strong> Driver</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/Driver/2019.linux_win_printer.金融通.软件所硕士.html"><strong aria-hidden="true">22.2.1.</strong> 2019.linux_win_printer.金融通.软件所硕士</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.3.</strong> exo</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/exo/1995.intro.engler.sosp.1259.html"><strong aria-hidden="true">22.3.1.</strong> 1995.intro.engler.sosp.1259</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.</strong> Linux</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/Linux/2002.rcu.mckenney..216.html"><strong aria-hidden="true">22.4.1.</strong> 2002.rcu.mckenney..216</a></li><li class="chapter-item "><a href="../../Kernel/Linux/2016.sched_bug.lozi.eurosys.120.html"><strong aria-hidden="true">22.4.2.</strong> 2016.sched_bug.lozi.eurosys.120</a></li><li class="chapter-item "><a href="../../Kernel/Linux/2018.concurrency.alglave.asplos.31.html"><strong aria-hidden="true">22.4.3.</strong> 2018.concurrency.alglave.asplos.31</a></li><li class="chapter-item "><a href="../../Kernel/Linux/2020.rcu.mckenney...html"><strong aria-hidden="true">22.4.4.</strong> 2020.rcu.mckenney..</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.5.</strong> Android</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/Linux/Android/anbox.html"><strong aria-hidden="true">22.4.5.1.</strong> anbox</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.5.2.</strong> pictures</div></li><li class="chapter-item "><a href="../../Kernel/Linux/Android/QnA.html"><strong aria-hidden="true">22.4.5.3.</strong> QnA</a></li><li class="chapter-item "><a href="../../Kernel/Linux/Android/to_mainline.html"><strong aria-hidden="true">22.4.5.4.</strong> to_mainline</a></li><li class="chapter-item "><a href="../../Kernel/Linux/Android/Waydroid.html"><strong aria-hidden="true">22.4.5.5.</strong> Waydroid</a></li></ol></li><li class="chapter-item "><a href="../../Kernel/Linux/cache_alias.html"><strong aria-hidden="true">22.4.6.</strong> cache_alias</a></li><li class="chapter-item "><a href="../../Kernel/Linux/cache_alias_page_color.html"><strong aria-hidden="true">22.4.7.</strong> cache_alias_page_color</a></li><li class="chapter-item "><a href="../../Kernel/Linux/docsReading.html"><strong aria-hidden="true">22.4.8.</strong> docsReading</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.9.</strong> drivers</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/Linux/drivers/ioctl.html"><strong aria-hidden="true">22.4.9.1.</strong> ioctl</a></li><li class="chapter-item "><a href="../../Kernel/Linux/drivers/QnA.html"><strong aria-hidden="true">22.4.9.2.</strong> QnA</a></li></ol></li><li class="chapter-item "><a href="../../Kernel/Linux/idle.html"><strong aria-hidden="true">22.4.10.</strong> idle</a></li><li class="chapter-item "><a href="../../Kernel/Linux/lx.html"><strong aria-hidden="true">22.4.11.</strong> lx</a></li><li class="chapter-item "><a href="../../Kernel/Linux/memory_mapping.html"><strong aria-hidden="true">22.4.12.</strong> memory_mapping</a></li><li class="chapter-item "><a href="../../Kernel/Linux/module.logs.html"><strong aria-hidden="true">22.4.13.</strong> module.logs</a></li><li class="chapter-item "><a href="../../Kernel/Linux/mtlb.logs.html"><strong aria-hidden="true">22.4.14.</strong> mtlb.logs</a></li><li class="chapter-item "><a href="../../Kernel/Linux/page_fault.html"><strong aria-hidden="true">22.4.15.</strong> page_fault</a></li><li class="chapter-item "><a href="../../Kernel/Linux/page_size.html"><strong aria-hidden="true">22.4.16.</strong> page_size</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.17.</strong> pictures</div></li><li class="chapter-item "><a href="../../Kernel/Linux/QnA-alpine.html"><strong aria-hidden="true">22.4.18.</strong> QnA-alpine</a></li><li class="chapter-item "><a href="../../Kernel/Linux/QnA.html"><strong aria-hidden="true">22.4.19.</strong> QnA</a></li><li class="chapter-item "><a href="../../Kernel/Linux/startup.html"><strong aria-hidden="true">22.4.20.</strong> startup</a></li><li class="chapter-item "><a href="../../Kernel/Linux/syscalls.html"><strong aria-hidden="true">22.4.21.</strong> syscalls</a></li></ol></li><li class="chapter-item "><a href="../../Kernel/memory.html"><strong aria-hidden="true">22.5.</strong> memory</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.6.</strong> micro</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/micro/1995.u_kernel.lietdke.sosp.308.html"><strong aria-hidden="true">22.6.1.</strong> 1995.u_kernel.lietdke.sosp.308</a></li><li class="chapter-item "><a href="../../Kernel/micro/2013.l3_sel4.elphinstone.sosp.126.html"><strong aria-hidden="true">22.6.2.</strong> 2013.l3_sel4.elphinstone.sosp.126</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.7.</strong> multi</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/multi/2009.intro.baumann.sosp.856.html"><strong aria-hidden="true">22.7.1.</strong> 2009.intro.baumann.sosp.856</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.8.</strong> pictures</div></li><li class="chapter-item "><div><strong aria-hidden="true">22.9.</strong> syscall</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/syscall/2020_9_8.extensible_syscall.corbet.lwn-lpc.html"><strong aria-hidden="true">22.9.1.</strong> 2020_9_8.extensible_syscall.corbet.lwn-lpc</a></li></ol></li><li class="chapter-item "><a href="../../Kernel/transkernel.html"><strong aria-hidden="true">22.10.</strong> transkernel</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.11.</strong> unikernel</div></li><li class="chapter-item "><div><strong aria-hidden="true">22.12.</strong> WinCmptbl</div></li><li class="chapter-item "><div><strong aria-hidden="true">22.13.</strong> Windows</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/Windows/compilation.html"><strong aria-hidden="true">22.13.1.</strong> compilation</a></li><li class="chapter-item "><a href="../../Kernel/Windows/driver/index.html"><strong aria-hidden="true">22.13.2.</strong> driver</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/Windows/driver/ddiwrapper.html"><strong aria-hidden="true">22.13.2.1.</strong> ddiwrapper</a></li><li class="chapter-item "><a href="../../Kernel/Windows/driver/logs-1.html"><strong aria-hidden="true">22.13.2.2.</strong> logs-1</a></li><li class="chapter-item "><a href="../../Kernel/Windows/driver/logs.html"><strong aria-hidden="true">22.13.2.3.</strong> logs</a></li><li class="chapter-item "><a href="../../Kernel/Windows/driver/ndis.html"><strong aria-hidden="true">22.13.2.4.</strong> ndis</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.13.2.5.</strong> pictures</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">22.13.2.5.1.</strong> err</div></li></ol></li><li class="chapter-item "><a href="../../Kernel/Windows/driver/printer.html"><strong aria-hidden="true">22.13.2.6.</strong> printer</a></li><li class="chapter-item "><a href="../../Kernel/Windows/driver/QnA.html"><strong aria-hidden="true">22.13.2.7.</strong> QnA</a></li><li class="chapter-item "><a href="../../Kernel/Windows/driver/types.html"><strong aria-hidden="true">22.13.2.8.</strong> types</a></li></ol></li><li class="chapter-item "><a href="../../Kernel/Windows/nameConventions.html"><strong aria-hidden="true">22.13.3.</strong> nameConventions</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.13.4.</strong> pictures</div></li><li class="chapter-item "><a href="../../Kernel/Windows/QnA.html"><strong aria-hidden="true">22.13.5.</strong> QnA</a></li><li class="chapter-item "><a href="../../Kernel/Windows/ReactOS/index.html"><strong aria-hidden="true">22.13.6.</strong> ReactOS</a></li><li class="chapter-item "><a href="../../Kernel/Windows/service.html"><strong aria-hidden="true">22.13.7.</strong> service</a></li><li class="chapter-item "><a href="../../Kernel/Windows/subsystem.html"><strong aria-hidden="true">22.13.8.</strong> subsystem</a></li><li class="chapter-item "><a href="../../Kernel/Windows/syscall.html"><strong aria-hidden="true">22.13.9.</strong> syscall</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.14.</strong> XNU</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">22.14.1.</strong> Darling</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Kernel/XNU/Darling/overview.html"><strong aria-hidden="true">22.14.1.1.</strong> overview</a></li></ol></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">23.</strong> Lang</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">23.1.</strong> Asm</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lang/Asm/asm.html"><strong aria-hidden="true">23.1.1.</strong> asm</a></li><li class="chapter-item "><div><strong aria-hidden="true">23.1.2.</strong> riscv</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lang/Asm/riscv/QnA.html"><strong aria-hidden="true">23.1.2.1.</strong> QnA</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.2.</strong> C</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lang/C.f/macro.html"><strong aria-hidden="true">23.2.1.</strong> macro</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.3.</strong> Dot</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lang/Dot/overview.html"><strong aria-hidden="true">23.3.1.</strong> overview</a></li><li class="chapter-item "><a href="../../Lang/Dot/QnA.html"><strong aria-hidden="true">23.3.2.</strong> QnA</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">23.4.</strong> IR</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lang/IR/1999.JVM_Specification.html"><strong aria-hidden="true">23.4.1.</strong> 1999.JVM_Specification</a></li><li class="chapter-item "><a href="../../Lang/IR/2000.llvm.lattner.master_thesis.241.html"><strong aria-hidden="true">23.4.2.</strong> 2000.llvm.lattner.master_thesis.241</a></li><li class="chapter-item "><a href="../../Lang/IR/2004.llvm.lattner.cgo.4340.html"><strong aria-hidden="true">23.4.3.</strong> 2004.llvm.lattner.cgo.4340</a></li><li class="chapter-item "><a href="../../Lang/IR/2013.importance.chow...html"><strong aria-hidden="true">23.4.4.</strong> 2013.importance.chow..</a></li><li class="chapter-item "><div><strong aria-hidden="true">23.4.5.</strong> Common2</div></li><li class="chapter-item "><a href="../../Lang/IR/LLVM-IR.html"><strong aria-hidden="true">23.4.6.</strong> LLVM-IR</a></li><li class="chapter-item expanded "><a href="../../Lang/IR/MapleIRDesign.html" class="active"><strong aria-hidden="true">23.4.7.</strong> MapleIRDesign</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.5.</strong> JS</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lang/JS/overview.html"><strong aria-hidden="true">23.5.1.</strong> overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.6.</strong> Latex</div></li><li class="chapter-item "><div><strong aria-hidden="true">23.7.</strong> Lisp</div></li><li class="chapter-item "><div><strong aria-hidden="true">23.8.</strong> Py</div></li><li class="chapter-item "><div><strong aria-hidden="true">23.9.</strong> SMT-LIB</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lang/SMT-LIB/2012.smt_lib_v2.cok..47.html"><strong aria-hidden="true">23.9.1.</strong> 2012.smt_lib_v2.cok..47</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.10.</strong> WebAsm</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lang/WebAsm/2017.intro.haas.pldi.194.html"><strong aria-hidden="true">23.10.1.</strong> 2017.intro.haas.pldi.194</a></li><li class="chapter-item "><a href="../../Lang/WebAsm/overview.html"><strong aria-hidden="true">23.10.2.</strong> overview</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">24.</strong> Lib</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">24.1.</strong> Glibc</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lib/Glibc/glibc.html"><strong aria-hidden="true">24.1.1.</strong> glibc</a></li><li class="chapter-item "><a href="../../Lib/Glibc/mmap.html"><strong aria-hidden="true">24.1.2.</strong> mmap</a></li><li class="chapter-item "><div><strong aria-hidden="true">24.1.3.</strong> pictures</div></li><li class="chapter-item "><a href="../../Lib/Glibc/pthread.html"><strong aria-hidden="true">24.1.4.</strong> pthread</a></li><li class="chapter-item "><a href="../../Lib/Glibc/QnA.html"><strong aria-hidden="true">24.1.5.</strong> QnA</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">24.2.</strong> igraph</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lib/igraph/QnA.html"><strong aria-hidden="true">24.2.1.</strong> QnA</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">24.3.</strong> Libc</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Lib/Libc/Musl/index.html"><strong aria-hidden="true">24.3.1.</strong> Musl</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">25.</strong> Mem</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Mem/cat.html"><strong aria-hidden="true">25.1.</strong> cat</a></li><li class="chapter-item "><div><strong aria-hidden="true">25.2.</strong> model</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Mem/model/2017.memalloy.wickerson.popl.77.html"><strong aria-hidden="true">25.2.1.</strong> 2017.memalloy.wickerson.popl.77</a></li></ol></li><li class="chapter-item "><a href="../../Mem/order.html"><strong aria-hidden="true">25.3.</strong> order</a></li><li class="chapter-item "><a href="../../Mem/test.html"><strong aria-hidden="true">25.4.</strong> test</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">26.</strong> other_read_list</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../other_read_list/cambridge.html"><strong aria-hidden="true">26.1.</strong> cambridge</a></li><li class="chapter-item "><a href="../../other_read_list/stanford/index.html"><strong aria-hidden="true">26.2.</strong> stanford</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../other_read_list/stanford/1999.codesigned_vm.smith.iwia.html"><strong aria-hidden="true">26.2.1.</strong> 1999.codesigned_vm.smith.iwia</a></li><li class="chapter-item "><a href="../../other_read_list/stanford/2001.vm_intro.smith.html"><strong aria-hidden="true">26.2.2.</strong> 2001.vm_intro.smith</a></li><li class="chapter-item "><a href="../../other_read_list/stanford/2002.vector_vs_ss.kozyrakis.micro.html"><strong aria-hidden="true">26.2.3.</strong> 2002.vector_vs_ss.kozyrakis.micro</a></li><li class="chapter-item "><div><strong aria-hidden="true">26.2.4.</strong> pictures</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">27.</strong> Perf</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Perf/flamegraph.html"><strong aria-hidden="true">27.1.</strong> flamegraph</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">28.</strong> PoSh</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../PoSh/QnA.html"><strong aria-hidden="true">28.1.</strong> QnA</a></li></ol></li><li class="chapter-item "><a href="../../Proj/index.html"><strong aria-hidden="true">29.</strong> Proj</a></li><li class="chapter-item "><div><strong aria-hidden="true">30.</strong> Pwr</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Pwr/2009.mcpat.li.micro.2319.html"><strong aria-hidden="true">30.1.</strong> 2009.mcpat.li.micro.2319</a></li></ol></li><li class="chapter-item "><a href="../../QnA-Daliy.html"><strong aria-hidden="true">31.</strong> QnA-Daliy</a></li><li class="chapter-item "><div><strong aria-hidden="true">32.</strong> Repos</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Repos/llvm-tutor.html"><strong aria-hidden="true">32.1.</strong> llvm-tutor</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">33.</strong> Sandbox</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Sandbox/chroot.html"><strong aria-hidden="true">33.1.</strong> chroot</a></li><li class="chapter-item "><div><strong aria-hidden="true">33.2.</strong> Docker</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Sandbox/Docker/Overview.html"><strong aria-hidden="true">33.2.1.</strong> Overview</a></li><li class="chapter-item "><a href="../../Sandbox/Docker/QnA.html"><strong aria-hidden="true">33.2.2.</strong> QnA</a></li></ol></li><li class="chapter-item "><a href="../../Sandbox/proot.html"><strong aria-hidden="true">33.3.</strong> proot</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">34.</strong> security</div></li><li class="chapter-item "><div><strong aria-hidden="true">35.</strong> SftwStack</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SftwStack/applications_arch.html"><strong aria-hidden="true">35.1.</strong> applications_arch</a></li><li class="chapter-item "><a href="../../SftwStack/linux_desktop.html"><strong aria-hidden="true">35.2.</strong> linux_desktop</a></li><li class="chapter-item "><div><strong aria-hidden="true">35.3.</strong> pictures</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">36.</strong> Sim</div></li><li class="chapter-item "><div><strong aria-hidden="true">37.</strong> Softwares</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Softwares/ocrmypdf.html"><strong aria-hidden="true">37.1.</strong> ocrmypdf</a></li><li class="chapter-item "><a href="../../Softwares/tree_timeline_note.html"><strong aria-hidden="true">37.2.</strong> tree_timeline_note</a></li><li class="chapter-item "><div><strong aria-hidden="true">37.3.</strong> Vim</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Softwares/Vim/QnA.html"><strong aria-hidden="true">37.3.1.</strong> QnA</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../SPIN.html"><strong aria-hidden="true">38.</strong> SPIN</a></li><li class="chapter-item "><div><strong aria-hidden="true">39.</strong> SQL</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../SQL/overview.html"><strong aria-hidden="true">39.1.</strong> overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">40.</strong> SymExec</div></li><li class="chapter-item "><div><strong aria-hidden="true">41.</strong> Temp</div></li><li class="chapter-item "><div><strong aria-hidden="true">42.</strong> uArch</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">42.1.</strong> TLB</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">42.1.1.</strong> pictures</div></li><li class="chapter-item "><a href="../../uArch/TLB/QnA.html"><strong aria-hidden="true">42.1.2.</strong> QnA</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">43.</strong> Virt</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Virt/1988.386.smith.programmers_journal..html"><strong aria-hidden="true">43.1.</strong> 1988.386.smith.programmers_journal.</a></li><li class="chapter-item "><a href="../../Virt/2002.esx.waldspurger.opsr.1402.html"><strong aria-hidden="true">43.2.</strong> 2002.esx.waldspurger.opsr.1402</a></li><li class="chapter-item "><a href="../../Virt/2003.xen.barham.opsr.6475.html"><strong aria-hidden="true">43.3.</strong> 2003.xen.barham.opsr.6475</a></li><li class="chapter-item "><a href="../../Virt/2003.xen.barham.opsr.6475.sync-conflict-20211220-085833-2SHHM4X.html"><strong aria-hidden="true">43.4.</strong> 2003.xen.barham.opsr.6475.sync-conflict-20211220-085833-2SHHM4X</a></li><li class="chapter-item "><a href="../../Virt/2006.cmp_soft_hard_x86.adams.asplos.700.html"><strong aria-hidden="true">43.5.</strong> 2006.cmp_soft_hard_x86.adams.asplos.700</a></li><li class="chapter-item "><a href="../../Virt/2012.dune.belay.osdi.215.html"><strong aria-hidden="true">43.6.</strong> 2012.dune.belay.osdi.215</a></li><li class="chapter-item "><div><strong aria-hidden="true">43.7.</strong> addr_trans</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Virt/addr_trans/2018.1_qemu_dune_2_lkm.faravelon.doc_thesis.1.html"><strong aria-hidden="true">43.7.1.</strong> 2018.1_qemu_dune_2_lkm.faravelon.doc_thesis.1</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">43.8.</strong> BT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Virt/BT/2016.cross_arch_captive.spink.taco.3.html"><strong aria-hidden="true">43.8.1.</strong> 2016.cross_arch_captive.spink.taco.3</a></li><li class="chapter-item "><a href="../../Virt/BT/2019.cross_arch_captive.spink.usenix.1.html"><strong aria-hidden="true">43.8.2.</strong> 2019.cross_arch_captive.spink.usenix.1</a></li><li class="chapter-item "><div><strong aria-hidden="true">43.8.3.</strong> pictures</div></li></ol></li><li class="chapter-item "><a href="../../Virt/overview.html"><strong aria-hidden="true">43.9.</strong> overview</a></li><li class="chapter-item "><div><strong aria-hidden="true">43.10.</strong> pictures</div></li><li class="chapter-item "><div><strong aria-hidden="true">43.11.</strong> virtualBox</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../Virt/virtualBox/install.html"><strong aria-hidden="true">43.11.1.</strong> install</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../X11/index.html"><strong aria-hidden="true">44.</strong> X11</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../X11/windowManage.html"><strong aria-hidden="true">44.1.</strong> windowManage</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">45.</strong> 行业报告</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">45.1.</strong> LF</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../行业报告/LF/2020-Linux-Foundation-Annual-Report_120520.html"><strong aria-hidden="true">45.1.1.</strong> 2020-Linux-Foundation-Annual-Report_120520</a></li><li class="chapter-item "><a href="../../行业报告/LF/FINOS-business-value-of-open-source.html"><strong aria-hidden="true">45.1.2.</strong> FINOS-business-value-of-open-source</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">45.2.</strong> 企业年报</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">45.2.1.</strong> apple</div></li><li class="chapter-item "><div><strong aria-hidden="true">45.2.2.</strong> 华为</div></li><li class="chapter-item "><div><strong aria-hidden="true">45.2.3.</strong> 海信</div></li><li class="chapter-item "><div><strong aria-hidden="true">45.2.4.</strong> 联想</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">45.3.</strong> 网信自主创新</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../行业报告/网信自主创新/2020.html"><strong aria-hidden="true">45.3.1.</strong> 2020</a></li></ol></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">xieby1&#x27;s notes</h1>
+
+                    <div class="right-buttons">
+                                                <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>[TOC]</p>
+<h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<p>MAPLE IR is an internal program representation to support program compilation and execution.  Because any information in the source program may be useful for program analysis and optimization, MAPLE IR aims to provide information about the source program that is as complete as possible.</p>
+<p>Program information consists of two parts: declaration part for defining the program constructs and the executable program code.  The former is commonly referred to as the <em>symbol table</em>.</p>
+<p>MAPLE IR is target-independent.  It is not pre-disposed towards any specific target processor or processor characteristic.</p>
+<p>MAPLE IR can be regarded as the ISA of a virtual machine (VM).  The MAPLE VM can be regarded as a general purpose processor that takes MAPLE IR as input and directly executes the program portion of the MAPLE IR.  MAPLE VM can be regarded as the first consumer of MAPLE IR.  A program compiled into MAPLE IR can be executed on MAPLE VM without the need to finish its compilation to the machine instructions of any target processor.</p>
+<p>MAPLE IR is the common representation for programs compiled from different programming languages, which include general purpose languages like C, C++ and Java.  MAPLE IR is extensible.  As additional languages, including domain-specific languages, are compiled into MAPLE IR, more constructs will be
+added to represent constructs unique to each language.</p>
+<p>MAPLE IR is capable of supporting all known program analyses and optimizations, owing to its flexibility of being able to represent program code at different semantic levels.   MAPLE IR's program representation at the highest level exhibits the following characteristics:</p>
+<ul>
+<li>
+<p>Many language constructs</p>
+</li>
+<li>
+<p>Short code sequences</p>
+</li>
+<li>
+<p>Constructs are hierarchical</p>
+</li>
+<li>
+<p>No loss of program information</p>
+</li>
+</ul>
+<p>Language-specific analyses and optimizations are best performed at the high level.  As compilation proceeds, MAPLE IR is gradually lowered so that the granularity of its operations corresponds more closely to the instructions of a general purpose processor.  At the lower levels, general purpose optimizations are performed.  In particular, at the lowest level, MAPLE IR instructions map one-to-one to machine instructions most of the time, for the mainstream processor ISAs.  This is important to maximize the effects of optimizations at the IR level, as each eliminated operation will have the corresponding effect on the target machine.  At the lowest level, all operations, including type conversion operations, are explicitly expressed at the IR level. </p>
+<p>MAPLE IR represents program code intrinsically in the form of trees.  At the highest level, it honors the hierarchical form of the program as it exists at the source level via the tree representation.  It also honors the abstract operations defined by the language.  As compilation proceeds, the abstract operations are lowered into general-purpose operations that require longer code sequences.  The program structure also becomes more flat, as general-purpose processors work by executing lists of instructions sequentially.</p>
+<p>Since MAPLE IR is one IR that can exist at multiple levels of semantics, the level of a MAPLE IR program is dictated by the constraints that it adheres to. 
+These constraints are of the following two types:</p>
+<ul>
+<li>
+<p>Opcodes allowed - The higher the level, the more types of opcodes allowed, including opcodes generated only from specific languages.  At the lowest level, only opcodes that correspond one-to-one to operations in a general purpose processor are allowed.</p>
+</li>
+<li>
+<p>Code structure - The program structure is hierarchical at the higher levels.  The hierarchical constructs become less and less as lowering proceeds.  At the lowest level, the program structure is flat, consisting of sequences of primitive instructions consumed by the general purpose processor.</p>
+</li>
+</ul>
+<p>Though MAPLE IR is target-independent at the highest level, the lowering process will make it become target-dependent.<br />
+ </p>
+<h1 id="program-representation"><a class="header" href="#program-representation">Program Representation</a></h1>
+<p>There are additional design criteria at the implementation level.  To be friendly to compiler developers, MAPLE IR exists in both binary and ASCII forms.  Conversion between the two forms can be viewed as assembly and dis-assembly.  Thus, the ASCII form can be viewed as the assembler language of the MAPLE VM instructions.  The ASCII form is editable, which implies that it is possible to program in MAPLE IR directly.  Thus, the ASCII form of MAPLE IR is modeled after a typical C program, which is made up of:</p>
+<ul>
+<li>
+<p>declaration statements - these represent the symbol table information</p>
+</li>
+<li>
+<p>executable statements - these represent the executable program code</p>
+</li>
+</ul>
+<p>But an ASCII MAPLE IR is <em>not</em> intended to obey C programming syntax.</p>
+<p>The language front-end compiles a source file into a MAPLE IR file.  Thus, each MAPLE IR file corresponds to a CU (compilation unit).  A CU is made up of declarations at the global scope.  Among the declarations are functions, also known as PUs (program units).  Inside PUs are declarations at the local scope followed by the executable code of the function.</p>
+<p>There are three kinds of executable nodes in MAPLE IR:</p>
+<ul>
+<li>Leaf nodes - Also called terminal nodes, these nodes denote a value at execution time,  which may be a constant or the value of a storage unit.</li>
+<li>Expression nodes - An expression node performs an operation on its operands to compute a result.  Its result is a function of the values of its operands and nothing else.  Each operand can be either a leaf node or another expression node.  Expression nodes are the internal nodes of expression trees.  The type field in the expression node gives the type associated with the result of the operation.</li>
+<li>Statement nodes - These represent the flow of control.  Execution starts at the entry of the function and continues sequentially statement by statement until a control flow statement is executed.  Apart from modifying control flow, statements can also modify data storage in the program.  A statement nodes has operands that can be leaf, expression or statement nodes. </li>
+</ul>
+<p>In all the executable nodes, the <em>opcode</em> field specifies the operation of the node, followed by additional field specification relevant to the opcode. 
+The operands for the node are specified inside <em>parentheses</em> separated <em>commas</em>.  The general form is:</p>
+<p><em>opcode fields (opnd0, opnd1, opnd2)</em></p>
+<p>For example, the C statement &quot;a = b&quot; is specified using the direct assignment opcode <strong>dassign</strong> that assigns the rhs operand <em>b</em>  to <em>a</em> .</p>
+<pre><code>dassign $a (dread i32 $b)
+</code></pre>
+<p>To enable easy visualization in the ASCII IR, whenever an operand is <em>not</em> a leaf node, we require the start of a new line indented to the right by two spaces relative to the last line.  Thus, the statement &quot;a = b + c&quot; is:</p>
+<pre><code>dassign $a (
+  add i32(dread i32 $b, dread i32 $c))
+</code></pre>
+<p>and the statement &quot;a = b + c - d&quot; is:</p>
+<pre><code>dassign $a (
+  sub i32(
+   add i32(dread i32 $b, dread i32 $c),
+   dread i32 $d))
+</code></pre>
+<p>The general rules regarding line breaks are as follows:</p>
+<ul>
+<li>
+<p>Each expression or statement node must occupy its own line, and each line cannot contain more than one expression or statement node.</p>
+</li>
+<li>
+<p>When there is at least one operand that is not a leaf node, then all the operands of the current expression or statement node must be specified in separate new lines, including operands that are leaf nodes.</p>
+</li>
+<li>
+<p>Comments can be specified via the character '#', which can be regarded as the end of line character by the IR parser.</p>
+</li>
+</ul>
+<p>For human-edited MAPLE IR files, the line breaks are not enforced for expressions, as they do not affect the correctness of the program, since the end of operand specification is indicated by the closing parenthesis.  But there must not be more than one statement node per line, because we do not use the ';'character to delimit statement boundary.</p>
+<h2 id="symbol-tables"><a class="header" href="#symbol-tables">Symbol Tables</a></h2>
+<p>Program information that is of declarative nature is best stored in the symbol table portion of the IR.  Having the executable instructions refer to the symbol tables reduces the amount of information that needs to be stored in the executable instructions.  For each declaration scope, there is a main table called the Symbol Table that manages all the user-defined names in that scope.  This implies one global Symbol Table and a local Symbol Table for each function declared in the file.  The various types of symbol entries correspond to the various types of declarations supported in typical programming languages:</p>
+<ol>
+<li>
+<p>Storage variables</p>
+</li>
+<li>
+<p>Types</p>
+</li>
+<li>
+<p>PUs (program units, functions or their prototypes)</p>
+</li>
+</ol>
+<p>The PU table only exists at the global scope.</p>
+<p>In ASCII IR, the IR instructions refer to the various symbols by their names.  In the binary representation, only the appropriate scope+index needs to be encoded in the instruction.</p>
+<h2 id="primitive-types"><a class="header" href="#primitive-types">Primitive Types</a></h2>
+<p>Primitive types can be regarded as pre-defined types supported by the execution engine such that they can be directly operated on.  They also play a part in conveying the semantics of operations, as addresses are distinct from unsigned integers.  The number in the primitive type name indicates the storage size in bits.</p>
+<p>The primitive types are:</p>
+<ul>
+<li>
+<p>no type - void</p>
+</li>
+<li>
+<p>signed integers - i8, i16, i32, i64</p>
+</li>
+<li>
+<p>unsigned integers - u8, u16, u32, u64</p>
+</li>
+<li>
+<p>booleans- u1</p>
+</li>
+<li>
+<p>addresses - ptr, ref, I'a32, a64</p>
+</li>
+<li>
+<p>floating point numbers - f32, f64</p>
+</li>
+<li>
+<p>complex numbers - c64, c128</p>
+</li>
+<li>
+<p>javascript types:</p>
+<ul>
+<li>
+<p>dynany</p>
+</li>
+<li>
+<p>dynu32</p>
+</li>
+<li>
+<p>dyni32</p>
+</li>
+<li>
+<p>dynundef</p>
+</li>
+<li>
+<p>dynnull</p>
+</li>
+<li>
+<p>dynhole</p>
+</li>
+<li>
+<p>dynbool</p>
+</li>
+<li>
+<p>dynptr</p>
+</li>
+<li>
+<p>dynf64</p>
+</li>
+<li>
+<p>dynf32</p>
+</li>
+<li>
+<p>dynstr</p>
+</li>
+<li>
+<p>dynobj</p>
+</li>
+</ul>
+</li>
+<li>
+<p>SIMD types - (to be defined)</p>
+</li>
+<li>
+<p>unknown</p>
+</li>
+</ul>
+<p>An instruction that produces or operates on values must specify the primitive type in the instruction, as the type is not necessarily implied by the opcode. There is the distinction between <em>result type</em> and <em>operand type</em>. Result type can be regarded as the type of the value as it resides in a machine register, because arithmetic operations in the mainstream processor architectures are mostly register-based.  When an instruction only specifies a single type, the type specified applies to both the operands and the result.  In the case of instructions where the operand and result types may differ, the type specified is the result type, and a second field specifies the operand type.</p>
+<p>Some opcodes are applicable to non-primitive (or derived) types, as in an aggregate assignment.  When the type is derived, the designation <em>agg</em> can be used.  In such cases, the data size can be looked up from the type of the symbol.</p>
+<p>The primitive types <em>ptr</em> and <em>ref</em> are the target-independent types for addresses.  <em>ref</em> conveys the additional semantics that the address is a reference to a run-time managed block of memory or object in the heap. Uses of <em>ptr</em> or <em>ref</em> instead of <em>a32</em> or <em>a64</em> allow the IR to be independent of the target machine by not manifesting the size of addresses until the later target-dependent compilation phases.</p>
+<p>The primitive type <em>unknown</em> is used by the language front-end when the type of a field in an object has not been fully resolved because the full definition resides in a different compilation unit.</p>
+<h2 id="constants"><a class="header" href="#constants">Constants</a></h2>
+<p>Constants in MAPLE IR are always of one of the primitive types.</p>
+<p>Integer and address (pointer) types can be specified in decimal or in hexadecimal using the 0x prefix.</p>
+<p>Floating point types can be specified in hexadecimal or as floating point literal as in standard C.</p>
+<p>Single characters enclosed in single quotes can be used for i8 and u8 constants.</p>
+<p>String literals are enclosed in double quotes.</p>
+<p>For the complex and SIMD types, the group of values are enclosed in square brackets separated by commas.</p>
+<h2 id="identifiers"><a class="header" href="#identifiers">Identifiers</a></h2>
+<p>In ASCII MAPLE IR, standalone identifier names are regarded as keywords of the IR language.  To refer to entries in the symbol tables, identifier names must be prefixed.  Identifiers prefixed with '$' are global variables and will be looked up in the global Symbol Table.  Identifiers prefixed with '%' are local variables and will be looked up in the local Symbol Table.  Identifiers prefixed with '&amp;' are function or method names and will be looked up in the Functions Table.  The major purpose of these prefixes is to avoid name clash with the keywords (opcode names, etc.) in the IR. </p>
+<h2 id="pseudo-registers"><a class="header" href="#pseudo-registers">Pseudo-registers</a></h2>
+<p>Pseudo-registers can be regarded as local variables of a primitive type whose addresses are never taken.  They can be declared implicitly by their appearances.  The primitive type associated with a pseudo-register is sticky. With the exception that integer and address types of the same size can be associated with a pseudo-register.</p>
+<p>Because pseudo-registers can only be created to store primitive types, the use of field IDs does not apply to them. Pseudo-registers are referred to by the '%' prefix followed by a number. This distinguishes them from other local variables that are not pseudo-registers, as their names cannot start with a number.</p>
+<p>The compiler will promote variables to pseudo-registers.  To avoid the loss of high level type information when a variable is promoted to pseudo-registers, reg declarations are used to provide the type information associated with the pseudo-registers.</p>
+<h2 id="special-registers"><a class="header" href="#special-registers">Special Registers</a></h2>
+<p>Special registers are registers with special meaning.  They are all specified using %% as prefix.  %%SP is the stack pointer and %%FP the frame pointer in referencing the stack frame of the current function.  %%GP is the global pointer used for addressing global variables.</p>
+<p>Special registers %%retval0, %%retval1, %%retval2, etc. are used for fetching the multiple values returned by a call.  They are overwritten by each call, and should only be read <em>at most once</em> after each call.  They can assume whatever is the type of the return value. </p>
+<h2 id="statement-labels"><a class="header" href="#statement-labels">Statement Labels</a></h2>
+<p>Label names are prefixed with '@' which serves to identify them.  Any statement beginning with a label name defines that label as referring to that text position.  Labels are only referred to locally by goto and branch statements.</p>
+<h2 id="storage-accesses"><a class="header" href="#storage-accesses">Storage Accesses</a></h2>
+<p>Since MAPLE IR is target-independent, it does not exhibit any pre-disposition as to how storage are allocated for the program variables.  It only applies rules defined by the language regarding storage.</p>
+<p>In general, there are two distinct kinds of storage accesses: direct and indirect.  Direct accesses do not require any run-time computation to determine the exact address location.  Indirect accesses require address arithmetic before the location can be determined.  Indirect accesses are associated with pointer dereferences and arrays.  Direct accesses are associated with scalar variables and fixed fields inside structures.</p>
+<p>Direct accesses can be mapped to pseudo-register if the variable or field has no alias.  Indirect accesses cannot be mapped to pseudo-registers unless the computed address does not change.  But since indirect accesses may represent array and matrix elements, there are many optimizations relevant only to indirect storage accesses.</p>
+<p>In MAPLE IR, <strong>dassign</strong> and <strong>dread</strong>are the opcodes for direct assignments and direct references; <strong>iassign</strong> and <strong>iread</strong> are the opcodes for indirect assignments and indirect references.</p>
+<h2 id="aggregates"><a class="header" href="#aggregates">Aggregates</a></h2>
+<p>Aggregates (or composites) are either structures or arrays.  They both designate a grouping of storage elements.  In structures, the storage elements are designated by field names and can be of different types and sizes. In this document, the structure designation includes classes and objects in object-oriented programming languages.  In arrays, the same storage element is repeated a number of times and the elements are accessed via index (or subscript).</p>
+<p><strong>Arrays</strong></p>
+<p>Array subscripting designate address computation.  Since making the subscripts stand out facilitate data dependency analysis and other loop nest optimizations, MAPLE IR represents array subscripting using the special <strong>array</strong> opcode, which returns the address resulting from the subscripting operation.  For example, &quot;a[i] = i&quot; is:</p>
+<pre><code>iassign&lt;*i32&gt;(
+  array a32 &lt;* [10] i32&gt; (addrof a32 $a, dread i32 $i),              # &lt;* [10] i32&gt; indicates pointer to an array of 10 ints
+  dread i32 $i)
+</code></pre>
+<p>and &quot;x = a[i,j]&quot; is:</p>
+<pre><code>dassign $x (
+  iread i32 &lt;* i32&gt;(
+   array a32 &lt;* [10] [10] i32&gt; (addrof a32 $a, dread i32 $i, dread i32 $j))) # &lt;* [10] [10] i32 indicates pointer to a 10x10 matrix of ints
+</code></pre>
+<p><strong>Structures</strong></p>
+<p>Fields in a structure can be accessed directly, but use of <strong>dassign</strong> or <strong>dread</strong> on a structure would refer to the entire structure as an aggregate.  Thus, we extend <strong>dassign</strong>, <strong>dread</strong>, <strong>iassign</strong> and <strong>iread</strong> to take an additional parameter called field-ID.<br />
+In general, for a top level structure, unique field-IDs can be assigned to all the fields contained inside the structure.  Field-ID 0 is assigned to the top level structure. (Field-ID is also 0 if it is not a structure.) As each field is visited, the field-ID is incremented by 1.  If a field is a structure, that structure is assigned a unique field-ID, and then field-ID assignments continue with the fields inside the nested structure. If a field is an array, the array is assigned only one field-ID.</p>
+<p>Note that if a structure exists both standalone and nested inside another structure, the same field inside the structure will be assigned different field-IDs because field-ID assignment always starts from the top level structure.</p>
+<p>Three kinds of structures are supported: <strong>struct, class</strong> and<strong>interface</strong>.</p>
+<p>A <strong>struct</strong> corresponds to the struct type in C, and is specified by the <strong>struct</strong> keyword followed by a list of field declarations enclosed by braces, as in:</p>
+<pre><code>struct{
+        @f1 i32,
+        @f2 &lt;structz&gt;}    # structz is the type name of another struct
+</code></pre>
+<p>A <strong>class</strong> corresponds to the class type in Java, to provide single inheritances.  The syntax is the same as <strong>struct</strong> except for an additional type name specified after the <strong>class</strong> keyword that specifies the class it inherits from.  Fields in the parent class are also referred to via field-IDs, as if the first field of the derived class is the parent class.  In other words, the parent class is treated like a sub-structure.</p>
+<pre><code>class &lt;classz&gt;{                      # classz is the parent of this class being defined
+        @f1 i32,
+        @f2 f32 }
+</code></pre>
+<p>Unrelated to storage, structures can contain member function prototypes.  The list of member function prototypes must appear after all the fields have been specified.  Each member function name starts with &amp;, which indicates that it is a function prototype.  The prototype specification follows the same syntax as ordinary function prototypes.</p>
+<p>An <strong>interface</strong>corresponds to the interface type in Java, and has the same form as <strong>class</strong>, except that it cannot be instantiated via a var declaration, and fields declared inside it are always statically allocated.  More details are provided later in this document.</p>
+<h1 id="instruction-specification"><a class="header" href="#instruction-specification">Instruction Specification</a></h1>
+<p>In ASCII MAPLE IR, we use parentheses and braces to distinguish operands from the other fields of an instruction, to facilitate visualization of the nested structure of MAPLE IR.  The expression operands of each instruction are always enclosed by parentheses, using commas to separate the operands.  Statement operands are enclosed by braces, with each statement starting on a new line.  MAPLE IR does not allow the use of semicolon to indicate the end of each statement.  Each statement must start on a new line.</p>
+<h2 id="storage-access-instructions"><a class="header" href="#storage-access-instructions">Storage Access Instructions</a></h2>
+<p>A memory access instruction either loads a memory location to a register for further processing, or store a value from register to memory.  For load instructions, the result type given in the instruction is the type of the loaded value residing in register.  If the memory location is of size smaller than the register size, the value being loaded must be of integer type, and there will be implicit zero- or sign-extension depending on the signedness of the result type. </p>
+<p><strong>dassign</strong></p>
+<p>syntax: <code>dassign &lt;var-name&gt; &lt;field-id&gt; (&lt;rhs-expr&gt;)</code></p>
+<p>&lt;rhs-expr&gt; is computed to return a value, which is then assigned to variable &lt;var-name&gt;.  If &lt;field-id&gt; is not 0, then the variable must be a structure, and the assignment only applies to the specified field.  If &lt;rhs-expr&gt; is of type <em>agg</em>, then the size of the structure must match.  If &lt;rhs-expr&gt; is a primitive integer type, the assigned variable may be smaller, resulting in a truncation.  If&lt;field-id&gt; is not specified, it is assumed to be 0.</p>
+<p><strong>dread</strong></p>
+<p>syntax: <code>dread &lt;prim-type&gt; &lt;var-name&gt; &lt;field-id&gt;</code></p>
+<p>Variable &lt;var-name&gt; is read from its storage location.  If the variable is a structure, then &lt;prim-type&gt; should specify <em>agg</em>.  If &lt;field-id&gt; is not 0, then the variable must be a structure, and instead of reading the entire variable, only the specified field is read.  If the field itself is also a structure, then &lt;prim-type&gt; should also specify <em>agg</em>.  If &lt;field-id&gt; is not specified, it is assumed to be 0.</p>
+<p><strong>iassign</strong></p>
+<p>syntax: <code>iassign &lt;type&gt; &lt;field-id&gt; (&lt;addr-expr&gt;, &lt;rhs-expr&gt;)</code></p>
+<p>&lt;addr-expr&gt; is computed to return an address.  &lt;type&gt; gives the high level type of &lt;addr-expr&gt; and must be a pointer type.  &lt;rhs-expr&gt; is computed to return a value, which is then assigned to the location specified by &lt;addr-expr&gt;.  If &lt;field-id&gt; is not 0, then the computed address must correspond to a structure, and the assignment only applies to the specified field.  If &lt;rhs-expr&gt; is of type <em>agg</em>, then the size of the structure must match. The size of the location affected by the assignment is determined by what &lt;type&gt; points to.  If &lt;rhs-expr&gt; is a primitive integer type, the assigned location (according to what &lt;type&gt; points to) may be smaller, resulting in a truncation.  If &lt;field-id&gt; is not specified, it is assumed to be 0.</p>
+<p><strong>iread</strong></p>
+<p>syntax: <code>iread &lt;prim-type&gt; &lt;type&gt; &lt;field-id&gt; (&lt;addr-expr&gt;)</code></p>
+<p>The content of the location specified by the address computed from the address expression &lt;addr-expr&gt; is read (dereferenced) as the given primitive type. &lt;type&gt; gives the high level type of &lt;addr-expr&gt; and must be a pointer type. If the content dereferenced is a structure (as given by what &lt;type&gt; points to), then &lt;prim-type&gt; should specify <em>agg</em>.   If &lt;field-id&gt; is not 0, then &lt;type&gt; must specify pointer to a structure, and instead of reading the entire structure, only the specified field is read.  If the field itself is also a structure, then &lt;prim-type&gt; should also specify <em>agg</em>. If &lt;field-id&gt; is not specified, it is assumed to be 0. </p>
+<p><strong>iassignoff</strong></p>
+<p>syntax: <code>iassignoff &lt;prim-type&gt; &lt;offset&gt; (&lt;addr-expr&gt;, &lt;rhs-expr&gt;)</code></p>
+<p>&lt;rhs-expr&gt; is computed to return a scalar value, which is then assigned to the memory location formed by the addition of &lt;offset&gt; in bytes to &lt;addr-expr&gt;.  &lt;prim-type&gt; gives the type of the stored-to location, which also specifies the size of the affected memory location.</p>
+<p><strong>iassignfpoff</strong></p>
+<p>syntax: <code>iassignfpoff &lt;prim-types&gt; &lt;offset&gt; (&lt;rhs-expr&gt;)</code></p>
+<p>&lt;rhs-expr&gt; is computed to return a scalar value, which is then assigned to the
+memory location formed by the addition of &lt;offset&gt; in bytes
+to %%FP.  &lt;prim-type&gt; gives the type of the stored-to location, which
+also specifies the size of the affected memory location. This is the same
+as <strong>iassignoff</strong>where its &lt;addr-expr&gt; is %%FP.</p>
+<p><strong>ireadoff</strong></p>
+<p>syntax: <code>ireadoff &lt;prim-type&gt; &lt;offset&gt; (&lt;addr-expr&gt;)</code></p>
+<p>&lt;prim-type&gt; must be of scalar type.  &lt;offset&gt; in bytes is added to &lt;addr-expr&gt; to form the address of the memory location to be read as the specified scalar type. </p>
+<p><strong>ireadfpoff</strong></p>
+<p>syntax: <code>ireadfpoff &lt;prim-type&gt; &lt;offset&gt;</code></p>
+<p>&lt;prim-type&gt; must be of scalar type.  &lt;offset&gt; in bytes is added to %%FP to form the address of the memory location to be read as the specified scalar type. This is the same as <strong>ireadoff</strong> where its &lt;addr-expr&gt; is %%FP.</p>
+<p><strong>regassign</strong></p>
+<p>syntax: <code>regassign &lt;prim-type&gt; &lt;register&gt; (&lt;rhs-expr&gt;)</code></p>
+<p>&lt;rhs-expr&gt; is computed to return a scalar value, which is then assigned to the pseudo or special register given by &lt;register&gt;. &lt;prim-type&gt; gives the type of the register, which also specifies the size of the value being assigned.</p>
+<p><strong>regread</strong></p>
+<p>syntax: <code>regread &lt;prim-type&gt; &lt;register&gt;</code></p>
+<p>The given pseudo or special register is read in the scalar type specified by &lt;prim-type&gt;.  </p>
+<h2 id="leaf-opcodes"><a class="header" href="#leaf-opcodes">Leaf Opcodes</a></h2>
+<p><strong>dread</strong> and <strong>regread</strong> are leaf opcodes for reading the contents of variables.  The following are additional leaf opcodes:</p>
+<p><strong>addrof</strong></p>
+<p>syntax: <code>addrof &lt;prim-type&gt; &lt;var-name&gt; &lt;field-id&gt;</code></p>
+<p>The address of the variable &lt;var-name&gt; is returned.  &lt;prim-type&gt; must be either <em>ptr, a32</em> or <em>a64</em>.  If &lt;field-id&gt; is not 0, then the variable must be a structure, and the address of the specified field is returned instead.</p>
+<p><strong>addroflabel</strong></p>
+<p>syntax: <code>addroflabel &lt;prim-type&gt; &lt;label&gt;</code></p>
+<p>The text address of the label is returned.  &lt;prim-type&gt; must be either a<em>32</em> or a<em>64.</em></p>
+<p><strong>addroffunc</strong></p>
+<p>syntax: <code>addroffunc &lt;prim-type&gt; &lt;function-name&gt;</code></p>
+<p>The text address of the function is returned.  &lt;prim-type&gt; must be either a<em>32</em> or a<em>64.</em></p>
+<p><strong>conststr</strong></p>
+<p>syntax: <code>conststr &lt;prim-type&gt; &lt;string literal&gt;</code></p>
+<p>The address of the string literal is returned.  &lt;prim-type&gt; must be either <em>ptr, a32</em> or <em>a64</em>.   The string must be stored in read-only memory.</p>
+<p><strong>conststr16</strong></p>
+<p>syntax: <code>conststr16 &lt;prim-type&gt; &lt;string literal&gt;</code></p>
+<p>The address of the string literal composed of 16-bit wide characters is returned.  &lt;prim-type&gt; must be either <em>ptr, a32</em> or <em>a64</em>.   The string must be stored in read-only memory.</p>
+<p><strong>constval</strong></p>
+<p>syntax: <code>constval &lt;prim-type&gt; &lt;const-value&gt;</code></p>
+<p>The specified constant value of the given primitive type is returned. Since floating point values cannot be represented in ASCII without loss of accuracy, they can be specified in hexadecimal form, in which case &lt;prim-type&gt; indicates the floating point type.</p>
+<p><strong>sizeoftype</strong></p>
+<p>syntax: <code>sizeoftype &lt;int-prim-type&gt; &lt;type&gt;</code></p>
+<p>The size in bytes of &lt;type&gt; is returned as an integer constant value.  Since type size is in general target-dependent, use of this opcode preserves the target independence of the program code.</p>
+<h2 id="unary-expression-opcodes"><a class="header" href="#unary-expression-opcodes">Unary Expression Opcodes</a></h2>
+<p><strong>abs</strong></p>
+<p>syntax: <code>abs &lt;prim-type&gt; (&lt;opnd0&gt;)</code></p>
+<p>The absolute value of the operand is returned.</p>
+<p><strong>bnot</strong></p>
+<p>syntax: <code>bnot &lt;prim-type&gt; (&lt;opnd0&gt;)</code></p>
+<p>Each bit in the operand is reversed and the resulting value is returned.</p>
+<p><strong>extractbits</strong></p>
+<p>syntax: <code>extractbits &lt;int-type&gt; &lt;boffset&gt; &lt;bsize&gt; (&lt;opnd0&gt;)</code></p>
+<p>The bitfield starting at bit position &lt;boffset&gt; with &lt;bsize&gt; number of bits is extracted and then sign- or zero-extended to form the primitive integer given by &lt;int-type&gt;.  The operand must be of integer type and must be large enough to contain the specified bitfield.</p>
+<p><strong>iaddrof</strong></p>
+<p>syntax: <code>iaddrof &lt;prim-type&gt; &lt;type&gt; &lt;field-id&gt;(&lt;addr-expr&gt;)</code></p>
+<p>&lt;type&gt; gives the high level type of &lt;addr-expr&gt; and must be a pointer type. The address of the pointed-to item is returned.  &lt;prim-type&gt; must be either <em>ptr, a32</em> or <em>a64</em>.   If &lt;field-id&gt; is not 0, then &lt;type&gt; must specify a pointer to a structure, and the address of the specified field in the structure is returned instead.  This operation is of no utility if &lt;fielid_id&gt; is 0, as it will just return the value of &lt;addr-expr&gt;.</p>
+<p><strong>lnot</strong></p>
+<p>syntax: <code>lnot &lt;prim-type&gt; (&lt;opnd0&gt;)</code></p>
+<p>If the operand is not 0, 0 is returned.  If the operand is 0, 1 is returned.</p>
+<p><strong>neg</strong></p>
+<p>syntax: <code>neg &lt;prim-type&gt; (&lt;opnd0&gt;)</code></p>
+<p>The operand value is negated and returned.</p>
+<p><strong>recip</strong></p>
+<p>syntax: <code>recip &lt;prim-type&gt; (&lt;opnd0&gt;)</code></p>
+<p>The reciprocal of the operand is returned. &lt;prim-type&gt; must be a floating-point type.</p>
+<p><strong>sext</strong></p>
+<p>syntax: <code>sext &lt;signed-int-type&gt; &lt;bsize&gt; (&lt;opnd0&gt;)</code></p>
+<p>Sign-extend the integer by treating the integer size as being &lt;bsize&gt; bits. This can be regarded as a special case of <strong>extractbits</strong> where the bitfield is in the lowest bits.  The primitive type &lt;signed-int-type&gt; stays the same.</p>
+<p><strong>sqrt</strong></p>
+<p>syntax: <code>sqrt &lt;prim-type&gt; (&lt;opnd0&gt;)</code></p>
+<p>The square root of the operand is returned.  &lt;prim-type&gt; must be a floating-point type.</p>
+<p><strong>zext</strong></p>
+<p>syntax: <code>zext &lt;unsigned-int-type&gt; &lt;bsize&gt; (&lt;opnd0&gt;)</code></p>
+<p>Zero-extend the integer by treating the integer size as being &lt;bsize&gt; bits. This can be regarded as a special case of <strong>extractbits</strong> where the bitfield is in the lowest bits.  The primitive type &lt;unsigned-int-type&gt; stays the same.</p>
+<h2 id="type-conversion-expression-opcodes"><a class="header" href="#type-conversion-expression-opcodes">Type Conversion Expression Opcodes</a></h2>
+<p>Type conversion opcodes are unary in nature.  With the exception of <strong>retype</strong>, they all require specifying both the <em>from</em> and <em>to</em> types in the instruction. Conversions between integer types of different sizes require the <strong>cvt</strong> opcode.  Conversion between signed and unsigned integers of the same size does not require any operation, not even <strong>retype</strong>.</p>
+<p><strong>ceil</strong></p>
+<p>syntax: <code>ceil &lt;prim-type&gt; &lt;float-type&gt; (&lt;opnd0&gt;)</code></p>
+<p>The floating point value is rounded towards positive infinity.</p>
+<p><strong>cvt</strong></p>
+<p>syntax: <code>cvt &lt;to-type&gt; &lt;from-type&gt; (&lt;opnd0&gt;)</code></p>
+<p>Convert the operand's value from &lt;from-type&gt; to &lt;to-type&gt;.  If the sizes of the two types are the same,  the conversion must involve altering the bits.</p>
+<p><strong>floor</strong></p>
+<p>syntax: <code>floor &lt;prim-type&gt; &lt;float-type&gt; (&lt;opnd0&gt;)</code></p>
+<p>The floating point value is rounded towards negative infinity.</p>
+<p><strong>retype</strong></p>
+<p>syntax: <code>retype &lt;prim-type&gt; &lt;type&gt; (&lt;opnd0&gt;)</code></p>
+<p>&lt;opnd0&gt; is converted to &lt;prim-type&gt; which has derived type &lt;type&gt; without changing any bits.  The size of &lt;opnd0&gt; and &lt;prim-type&gt; must be the same. 
+&lt;opnd0&gt; may be of aggregate type.</p>
+<p><strong>round</strong></p>
+<p>syntax: <code>round &lt;prim-type&gt; &lt;float-type&gt; (&lt;opnd0&gt;)</code></p>
+<p>The floating point value is rounded to the nearest integer.</p>
+<p><strong>trunc</strong></p>
+<p>syntax: trunc &lt;prim-type&gt; &lt;float-type&gt; (&lt;opnd0&gt;)</p>
+<p>The floating point value is rounded towards zero.</p>
+<h2 id="binary-expression-opcodes"><a class="header" href="#binary-expression-opcodes">Binary Expression Opcodes</a></h2>
+<p><strong>add</strong></p>
+<p>syntax: <code>add &lt;prim-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Perform the addition of the two operands.</p>
+<p><strong>ashr</strong></p>
+<p>syntax: <code>ashr &lt;int-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Return &lt;opnd0&gt; with its bits shifted to the right by &lt;opnd1&gt; bits.  The high order bits shifted in are set according to the original sign bit. </p>
+<p><strong>band</strong></p>
+<p>syntax: <code>band &lt;int-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Perform the bitwise AND of the two operands.</p>
+<p><strong>bior</strong></p>
+<p>syntax: <code>bior &lt;int-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Perform the bitwise inclusive OR of the two operands.</p>
+<p><strong>bxor</strong></p>
+<p>syntax: <code>bxor &lt;int-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Perform the bitwise exclusive OR of the two operands.</p>
+<p><strong>cand</strong></p>
+<p>syntax: <code>cand &lt;int-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Perform the logical AND of the two operands via short-circuiting. If &lt;opnd0&gt; yields 0, &lt;opnd1&gt; is not to be evaluated. The result is either 0 or 1.</p>
+<p><strong>cior</strong></p>
+<p>syntax: <code>cior &lt;int-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Perform the logical inclusive OR of the two operands via short-circuiting. If &lt;opnd0&gt; yields 1, &lt;opnd1&gt; is not to be evaluated. The result is either 0 or 1.</p>
+<p><strong>cmp</strong></p>
+<p>syntax: <code>cmp &lt;int-type&gt; &lt;opnd-prim-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Performs a comparison between &lt;opnd0&gt; and &lt;opnd1&gt;.  If the two operands are equal, return 0.  If &lt;opnd0&gt; is less than &lt;opnd1&gt;, return -1.  Otherwise, return +1.</p>
+<p><strong>cmpg</strong></p>
+<p>syntax: <code>cmpg &lt;int-type&gt; &lt;opnd-prim-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Same as <strong>cmp</strong>, except 1 is returned if any operand is NaN.</p>
+<p><strong>cmpl</strong></p>
+<p>syntax: <code>cmpl &lt;int-type&gt; &lt;opnd-prim-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Same as <strong>cmp</strong>, except -1 is returned if any operand is NaN.</p>
+<p><strong>depositbits</strong></p>
+<p>syntax: <code>depositbits &lt;int-type&gt; &lt;boffset&gt; &lt;bsize&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Creates a new integer value by depositing the value of &lt;opnd1&gt; into the range of bits in &lt;opnd0&gt; that starts at bit position &lt;boffset&gt; and runs for &lt;bsize&gt; bits.  &lt;opnd0&gt; must be large enough to contain the specified bitfield.  Depending on the size of &lt;opnd1&gt; relative to the bitfield, there may be truncation.  The rest of the bits in &lt;opnd0&gt; remains unchanged.</p>
+<p><strong>div</strong></p>
+<p>syntax: <code>div &lt;prim-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Perform &lt;opnd0&gt; divided by &lt;opnd1&gt; and return the result.</p>
+<p><strong>eq</strong></p>
+<p>syntax: <code>eq &lt;int-type&gt; &lt;opnd-prim-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>If the two operands are equal, return 1.  Otherwise, return 0.</p>
+<p><strong>ge</strong></p>
+<p>syntax: <code>ge &lt;int-type&gt; &lt;opnd-prim-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>If &lt;opnd0&gt; is greater than or equal to &lt;opnd1&gt;, return 1.  Otherwise, return 0.</p>
+<p><strong>gt</strong></p>
+<p>syntax: <code>ge &lt;int-type&gt; &lt;opnd-prim-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>If &lt;opnd0&gt; is greater than &lt;opnd1&gt;, return 1.  Otherwise, return 0.</p>
+<p><strong>land</strong></p>
+<p>syntax: <code>land &lt;int-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Perform the logical AND of the two operands. The result is either 0 or 1.</p>
+<p><strong>lior</strong></p>
+<p>syntax: <code>lior &lt;int-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Perform the logical inclusive OR of the two operands. The result is either 0 or 1.</p>
+<p><strong>le</strong></p>
+<p>syntax: <code>le &lt;int-type&gt; &lt;opnd-prim-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>If &lt;opnd0&gt; is less than or equal to &lt;opnd1&gt;, return 1.  Otherwise, return 0.</p>
+<p><strong>lshr</strong></p>
+<p>syntax: <code>lshr &lt;int-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Return &lt;opnd0&gt; with its bits shifted to the right by &lt;opnd1&gt; bits.  The high order bits shifted in are set to 0. </p>
+<p><strong>lt</strong></p>
+<p>syntax:<code>lt &lt;int-type&gt; &lt;opnd-prim-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>If &lt;opnd0&gt; is less than &lt;opnd1&gt;, return 1.  Otherwise, return 0.</p>
+<p><strong>max</strong></p>
+<p>syntax: <code>max &lt;prim-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Return the maximum of &lt;opnd0&gt; and &lt;opnd1&gt;.</p>
+<p><strong>min</strong></p>
+<p>syntax: <code>min &lt;prim-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Return the minimum of &lt;opnd0&gt; and &lt;opnd1&gt;.</p>
+<p><strong>mul</strong></p>
+<p>syntax: <code>mul &lt;prim-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Perform the multiplication of the two operands.</p>
+<p><strong>ne</strong></p>
+<p>syntax: <code>ne &lt;int-type&gt; &lt;opnd-prim-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>If the two operands are not equal, return 1.  Otherwise, return 0.</p>
+<p><strong>rem</strong></p>
+<p>syntax: <code>rem &lt;prim-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Return the remainder when &lt;opnd0&gt; is divided by &lt;opnd1&gt;.</p>
+<p><strong>shl</strong></p>
+<p>syntax: <code>shl &lt;int-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Return &lt;opnd0&gt; with its bits shifted to the left by &lt;opnd1&gt; bits.  The low order bits shifted in are set to 0. </p>
+<p><strong>sub</strong></p>
+<p>syntax: <code>sub &lt;prim-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Subtract &lt;opnd1&gt; from &lt;opnd0&gt; and return the result.</p>
+<h2 id="ternary-expression-opcodes"><a class="header" href="#ternary-expression-opcodes">Ternary Expression Opcodes</a></h2>
+<p><strong>select</strong></p>
+<p>syntax: <code>select &lt;prim-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;, &lt;opnd2&gt;)</code></p>
+<p>&lt;opnd0&gt; must be of integer type.  &lt;opnd1&gt; and &lt;opnd2&gt; must be of the type given by &lt;prim-type&gt;.  If &lt;opnd0&gt; is not 0, return &lt;opnd1&gt;.  Otherwise,
+return &lt;opnd2&gt;.</p>
+<h2 id="n-ary-expression-opcodes"><a class="header" href="#n-ary-expression-opcodes">N-ary Expression Opcodes</a></h2>
+<p><strong>array</strong></p>
+<p>syntax: <code>array &lt;check-flag&gt; &lt;addr-type&gt; &lt;array-type&gt; (&lt;opnd0&gt;, &lt;opnd1&gt;, . . . , &lt;opndn&gt;)</code></p>
+<p>&lt;opnd0&gt; is the base address of an array in memory.  &lt;check-flag&gt; is either 0 or 1, indicating bounds-checking needs not be performed or needs to be performed respectively.  &lt;array-type&gt; gives the high-level type of a pointer to the array.  Return the address resulting from row-major order multi-dimentional indexing operation, with the indices represented by &lt;opnd1&gt; onwards.</p>
+<p><strong>intrinsicop</strong></p>
+<p>syntax: <code>intrinsicop &lt;prim-type&gt; &lt;intrinsic&gt; (&lt;opnd0&gt;, ..., &lt;opndn&gt;)</code></p>
+<p>&lt;intrinsic&gt; indicates an intrinsic function that has no side effect whose return value depends only on the arguments (a pure function), and thus can be represented as an expression opcode.</p>
+<p><strong>intrinsicopwithtype</strong></p>
+<p>syntax: <code>intrinsicopwithtype &lt;prim-type&gt; &lt;type&gt; &lt;intrinsic&gt; (&lt;opnd0&gt;, ..., &lt;opndn&gt;)</code></p>
+<p>This is the same as <strong>intrinsicop</strong> except that it takes on an additional high level type argument specified by &lt;type&gt;.</p>
+<h2 id="control-flow-statements"><a class="header" href="#control-flow-statements">Control Flow Statements</a></h2>
+<p>Program control flows can be represented by either hierarchical statement structures or a flat list of statements.  Hierarchical statement structures are mostly derived from constructs in the source language.  Flat control flow statements correspond more closely to processor instructions.  Thus,  hierarchical statements exist only in high level MAPLE IR.  They are lowered to the flat control flow statements in the course of compilation.</p>
+<p>A statement block is indicated by multiple statements enclosed inside the braces '{' and '}'.  Such statement blocks can appear any where that a statement is allowed.  In hierarchical statements, nested statements are specified by such statement blocks.</p>
+<p>In MAPLE IR, each statement must start on a new line.  The use of semicolon is not needed, or even allowed, to indicate the end of statements.</p>
+<h3 id="hierarchical-control-flow-statements"><a class="header" href="#hierarchical-control-flow-statements">Hierarchical control flow statements</a></h3>
+<p><strong>doloop</strong></p>
+<p>syntax: </p>
+<pre><code>doloop &lt;do-var&gt; (&lt;start-expr&gt;, &lt;cont-expr&gt;, &lt;incr-amt&gt;) {
+                    &lt;body-stmts&gt; }
+</code></pre>
+<p>&lt;do-var&gt; specifies a local integer scalar variable with no alias. &lt;incr-amt&gt; must be an integer expression. &lt;do-var&gt; is initialized with &lt;start-expr&gt;. &lt;cont-expr&gt; must be a single comparison operation representing the termination test.   The loop body is represented by &lt;body-stmts&gt;, which specifies the list of statements to be executed as long as &lt;cont-expr&gt; evaluates to true. After each execution of the loop body, &lt;do-var&gt; is incremented by &lt;incr-amt&gt; and the loop is tested again for termination.</p>
+<p><strong>dowhile</strong></p>
+<p>syntax: </p>
+<pre><code>dowhile {
+
+                &lt;body-stmts&gt;} (
+
+                &lt;cond-expr&gt;)
+</code></pre>
+<p>Execute the loop body represented by &lt;body-stmts&gt;, and while &lt;cond-expr&gt; evaluates to non-zero, continue to execute &lt;body-stmts&gt;.  Since &lt;cond-expr&gt; is tested at the end of the loop body, the loop body is executed at least once.</p>
+<p><strong>foreachelem</strong></p>
+<p>syntax: </p>
+<pre><code>foreach &lt;elem-var&gt; &lt;collection-var&gt; {
+                    &lt;body-stmts&gt; }
+</code></pre>
+<p>This is an abstract loop form where &lt;collection-var&gt; is an array-like variable representing a collection of uniform elements, and &lt;elem-var&gt; specifies a variable whose type is the element type of &lt;collection-var&gt;.  The loop body is represented by &lt;body-stmts&gt;, which specifies the list of statements to be repeated for each element of &lt;collection-var&gt; expressed via &lt;elem-var&gt;.  This statement will be lowered to a more concrete loop form based on the type of
+&lt;collection-var&gt;.</p>
+<p><strong>if</strong></p>
+<p>syntax: </p>
+<pre><code>if (&lt;cond-expr&gt;) {
+
+               &lt;then-part&gt; }
+
+            else {
+
+               &lt;else-part&gt;}
+</code></pre>
+<p>If &lt;cond-expr&gt; evaluates to non-zero, control flow passes to the &lt;then-part&gt; statements.  Otherwise, control flow passes to the &lt;else-part&gt; statements.  If there is no else part, &quot;else { &lt;else-part&gt; }&quot; can be omitted.</p>
+<p><strong>while</strong></p>
+<p>syntax: </p>
+<pre><code>while (&lt;cond-expr&gt;) {
+
+                &lt;body-stmts&gt;}
+</code></pre>
+<p>This implements the while loop.  While &lt;cond-expr&gt; evaluates to non-zero, the list of statements represented by &lt;body-stmts&gt; are repeatedly executed.  Since &lt;cond-expr&gt; is tested before the first execution, the loop body may execute zero times.</p>
+<h3 id="flat-control-flow-statements"><a class="header" href="#flat-control-flow-statements">Flat control flow statements</a></h3>
+<p><strong>brfalse</strong></p>
+<p>syntax: <code>brfalse &lt;label&gt; (&lt;opnd0&gt;)</code></p>
+<p>If &lt;opnd0&gt; evaluates to 0, branch  to &lt;label&gt;.  Otherwise, fall through.</p>
+<p><strong>brtrue</strong></p>
+<p>syntax:<code>brtrue &lt;label&gt; (&lt;opnd0&gt;)</code></p>
+<p>If &lt;opnd0&gt; evaluates to non-0, branch  to &lt;label&gt;.  Otherwise, fall through.</p>
+<p><strong>goto</strong></p>
+<p>syntax: <code>goto &lt;label&gt;</code></p>
+<p>Transfer control unconditionally to &lt;label&gt;.</p>
+<p><strong>multiway</strong></p>
+<p>syntax: </p>
+<pre><code>multiway (&lt;opnd0&gt;) &lt;default-label&gt; {
+
+                (&lt;expr0&gt;): goto &lt;label0&gt;
+
+                (&lt;expr1&gt;): goto &lt;label1&gt;
+
+                        . . .
+
+                (&lt;exprn&gt;): goto &lt;labeln&gt; }
+</code></pre>
+<p>&lt;opnd0&gt; must be of type convertible to an integer or a string.  Following &lt;default-label&gt; is a table of pairs of expression tags and labels. When executed, it evaluates &lt;opnd0&gt; and then searches the table for a match of the evaluated value of &lt;opnd0&gt; with the evaluated value of each expression tag &lt;expri&gt; in the listed order.  On a match, control is transferred to the corresponding label.  If no match is found, control is transferred to &lt;default-label&gt;.  The evaluation of the expression tags must not incur side effect.  Depending on the resolved type of &lt;opnd0&gt;, this statement will be lowered to either the <strong>switch</strong> statement or a cascade of <strong>if</strong> statements.</p>
+<p><strong>return</strong></p>
+<p>syntax: <code>return (&lt;opnd0&gt;, . . ., &lt;opndn&gt;)</code></p>
+<p>Return from the current PU with the multiple return values given by the operands.  The list of operands can be empty, which corresponds to no return value.  The types of &lt;opndi&gt; must be compatible with the list of return types according to the declaration or prototype of the PU.</p>
+<p><strong>switch</strong></p>
+<p>syntax: </p>
+<pre><code>switch (&lt;opnd0&gt;) &lt;default-label&gt; {
+
+                &lt;intconst0&gt;: goto &lt;label0&gt;
+
+                &lt;intconst1&gt;: goto &lt;label1&gt;
+
+                        . . .
+
+                &lt;intconstn&gt;: goto &lt;labeln&gt; }
+</code></pre>
+<p>&lt;opnd0&gt; must be of integer type.  After &lt;default-label&gt;, it specifies a table of pairs of constant integer values (tags) and labels. When executed, it searches the table for a match with the evaluated value of &lt;opnd0&gt; and transfers control to the corresponding label.  If no match is found, control is transferred to &lt;default-label&gt;.  There must not be duplicate entries for the constant integer values.  It is up to the compiler backend to decide how to actually generate code for this statement after analyzing the tag distribution in the table.</p>
+<p><strong>rangegoto</strong></p>
+<p>syntax:</p>
+<pre><code>rangegoto (&lt;opnd0&gt; &lt;tag-offset&gt; {
+
+                &lt;intconst0&gt;: goto &lt;label0&gt;
+
+                &lt;intconst1&gt;: goto &lt;label1&gt;
+
+                        . . .
+
+                &lt;intconstn&gt;: goto &lt;labeln&gt; }
+</code></pre>
+<p>This is the lowered form of <strong>switch</strong> that explicitly designates its execution to be handled by the jump table mechanism.  &lt;opnd0&gt; must be of integer type. After &lt;tag-offset&gt; follows a table of pairs of constant integer values and labels. In searching the table for a match during execution, the evaluated value of &lt;opnd0&gt; minus &lt;tag-offset&gt; is used during execution so as to cause transfer of control to the corresponding label.   There must be no gap in the constant integer values specified, and a match is guaranteed within the range of specified constant integer values, which means the code generator can omit generation of out-of-range checks. There must be no duplicated entries for the constant integer values.</p>
+<p><strong>indexgoto</strong></p>
+<p>syntax: <code>indexgoto (&lt;opnd0&gt; &lt;varnamel&gt;</code></p>
+<p>This is only generated by the compiler as a result of lowering the <strong>switch</strong> statement.  &lt;varname&gt; is the name of a compiler-generated symbol designating a static array, or jump table, which is statically initialized to store labels.  Each stored label marks the code corresponding to a switch case.  Execution of this instruction uses the evaluated value of &lt;opnd0&gt; to index into this array and then transfers control to the label stored at that array element.  If the evaluated value of &lt;opnd0&gt; is less than 0 or exceeds the number of entries in the jump table, the behavior is undefined.</p>
+<h2 id="call-statements"><a class="header" href="#call-statements">Call Statements</a></h2>
+<p>There are various flavors of procedure invocation.  They only specify the actual parameters are passed.  Any return value needs to be separately fetched via the special registers %%retval0, %%retval1, %%retval2, etc.</p>
+<p><strong>call</strong></p>
+<p>syntax: <code>call &lt;PU-name&gt; (&lt;opnd0&gt;, ..., &lt;opndn&gt;)</code></p>
+<p>Invoke the PU while passing the parameters given by the operands.   </p>
+<p><strong>callinstant</strong></p>
+<p>syntax: <code>callinstant &lt;generic-PU-name&gt; &lt;instant-vector&gt; (&lt;opnd0&gt;, ..., &lt;opndn&gt;)</code></p>
+<p>Instantiate the given generic function according to instantiation vector &lt;instant-vector&gt; and then invoke the PU while passing the parameters given by the operands.  See section <em>Initializations</em> about instantiation of generic functions.</p>
+<p><strong>icall</strong></p>
+<p>syntax: <code>icall (&lt;PU-ptr&gt;, &lt;opnd0&gt;, ..., &lt;opndn&gt;)</code></p>
+<p>Invoke the PU specified indirectly by &lt;PU-ptr&gt;, passing the parameters given by &lt;opnd0&gt; onwards.</p>
+<p><strong>intrinsiccall</strong></p>
+<p>syntax: <code>intrinsiccall &lt;intrinsic&gt; (&lt;opnd0&gt;, ..., &lt;opndn&gt;)</code></p>
+<p>Invoke the specified intrinsic defined by the compiler while passing the parameters given by the operands. </p>
+<p><strong>xintrinsiccall</strong></p>
+<p>syntax: <code>xintrinsiccall &lt;user-intrinsic-index&gt; (&lt;opnd0&gt;, ..., &lt;opndn&gt;)</code></p>
+<p>Invoke the intrinsic specified as an index into a user-defined intrinsic table while passing the parameters given by the operands. </p>
+<p> </p>
+<p> </p>
+<h2 id="java-call-statements"><a class="header" href="#java-call-statements">Java Call Statements</a></h2>
+<p>The following statements are used to represent Java member function calls that are not yet resolved.</p>
+<p> </p>
+<p><strong>virtualcall</strong></p>
+<p>syntax: <code>virtualcall &lt;method-name&gt; (&lt;object-ptr&gt;, &lt;opnd0&gt;, ..., &lt;opndn&gt;)</code></p>
+<p>&lt;object-ptr&gt; is a pointer to an instance of a class. The class hierarchy is searched using the specified &lt;method-name&gt; to find the appropriate virtual method to invoke.  The invocation will pass the remaining operands as parameters.</p>
+<p> </p>
+<p><strong>superclasscall</strong></p>
+<p>syntax: <code>superclasscall &lt;method-name&gt; (&lt;object-ptr&gt;, &lt;opnd0&gt;, ..., &lt;opndn&gt;)</code></p>
+<p>This is the same as <strong>virtualcall</strong> except it will not use the class's own virtual method, but the one in its closest superclass that defines the virtual method.</p>
+<p> </p>
+<p><strong>interfacecall</strong></p>
+<p>syntax: <code>interfacecall &lt;method-name&gt; (&lt;object-ptr&gt;, &lt;opnd0&gt;, ..., &lt;opndn&gt;)</code></p>
+<p>&lt;method-name&gt; is a method defined in an interface.  &lt;object-ptr&gt; is a pointer to an instance of a class the implements the interface.  The class is searched using the &lt;method-name&gt; to find the corresponding method to invoke. The invocation will pass the remaining operands as parameters.</p>
+<p> </p>
+<p>There are also <strong>virtualcallinstant</strong>, <strong>superclasscallinstant</strong> and <strong>interfacecallinstant</strong> for calling generic versions of the methods after instantiating with the specified instantiation vector.  The instantiation vector is specified after &lt;method-name&gt;, as in the <strong>callinstant</strong>instruction.</p>
+<h2 id="calls-with-return-values-assigned"><a class="header" href="#calls-with-return-values-assigned">Calls with Return Values Assigned</a></h2>
+<p>All the various call operations have a corresponding higher-level abstracted variant such that a single call operation also specify how the multiple function return values are assigned, without relying on separate statements to read the %%retval registers.  Only assignments to scalar variables or fields in aggregates are allowed.  These operations have the same names with the suffix &quot;assigned&quot; added.  They are <strong>callassigned, callinstantassigned</strong>, <strong>icallassigned, intrinsiccallassigned, intrinsiccallwithtypeassigned, xintrinsiccallassigned, virtualcallassigned, virtualcallinstantassigned, superclasscallassigned, superclasscallinstantassigned, interfacecallassigned</strong> and <strong>interfacecallinstantassigned</strong>.  Only <strong>callassigned</strong> is defined here.  The same extension applies to the definitions of the rest of these call operations.</p>
+<p> </p>
+<p><strong>callassigned</strong></p>
+<p>syntax: </p>
+<pre><code>callassigned &lt;PU-name&gt; (&lt;opnd0&gt;, ..., &lt;opndn&gt;) {
+
+                dassign &lt;var-name0&gt; &lt;field-id0&gt;
+
+                dassign &lt;var-name1&gt; &lt;field-id1&gt;
+
+                      . . .
+
+                dassign &lt;var-namen&gt; &lt;field-idn&gt; }
+</code></pre>
+<p>Invoke the PU passing the parameters given by the operands.  After returning from the call, the multiple return values are assigned to the scalar variables listed in order.  If a specified field-id is not 0, then the corresponding variable must be an aggregate, and the assignment is to the field corresponding to the field-id.  If a field-id is absent, 0 is implied.  If &lt;var-name&gt; is absent, it means the corresponding return value is ignored by the caller.  If a call has no return value, no dassign should be listed.</p>
+<p> </p>
+<p>In the course of compilation, these call instructions may be lowered to use the special registers %%retval0, %%retval1, %%retval2, etc. to indicate how their return values are fetched and used.  These special registers are overwritten by each call.  The same special register can assume whatever is the type of the return value.  Each special register can be read only once after each call.</p>
+<h2 id="exceptions-handling"><a class="header" href="#exceptions-handling">Exceptions Handling</a></h2>
+<p>Described in this section are the various exception handling constructs and operations.  The <strong>try</strong> statement marks the entrance to a try block. The <strong>catch</strong> statement marks the entrance to a catch block. The <strong>finally</strong> statement marks the entrance to a finally block.  The <strong>endtry</strong> statement marks the end of the composite exception handling constructs that began with the <strong>try</strong>.  In addition, there are two special types of labels.  Handler labels are placed before <strong>catch</strong> statements, and finally labels are placed before <strong>finally</strong> statements.  Handler labels are distinguished from ordinary labels via the prefix &quot;@h@&quot;, while finally labels use the prefix &quot;@f@&quot;.  These special labels explicitly shows the correspondence of try, catch and finally to each other in each try-catch-finally composite, without relying on block nesting. The special register %%thrownval contains the value being thrown, which is the operand of the throw operation that raised the current exception. </p>
+<p><strong>try</strong></p>
+<p>syntax: <code>try &lt;handler-label&gt; &lt;finally-label&gt;</code></p>
+<p>Executing this statement indicates entry into a try block.  &lt;handler-label&gt; is 0 when there is no catch block associated with the <strong>try</strong>.  &lt;finally-label&gt; is 0 when there is no finally block associated with the <strong>try</strong>.  Any exception thrown inside this try block will transfer control to these labels, unless another nested try block is entered.  A finally block if present must be executed to conclude the execution of the <strong>try</strong> composite constructs regardless of whether exception is thrown or not. </p>
+<p>There are three possible scenarios based on the way the try-catch-finally composite is written:</p>
+<ol>
+<li>
+<p>try-catch</p>
+</li>
+<li>
+<p>try-finally</p>
+</li>
+<li>
+<p>try-catch-finally</p>
+</li>
+</ol>
+<p>For case 1, if an exception is thrown inside the try block, control is transferred to the handler label that marks the catch statement and the exception is regarded as having been handled.  Program flow eventually exits the try block with a <strong>goto</strong> statement to the label that marks the <strong>endtry</strong> statement. If no exception is thrown, the try block is eventually exited via a <strong>goto</strong> statement to the label that marks the <strong>endtry</strong> statement.</p>
+<p>For case 2, if an exception is thrown inside the try block, control is transferred to the finally label that marks the finally statement.  But the exception is regarded as not having been handled yet, and the search for the throw's upper level handler starts.  If no exception is thrown in try block, program flow eventually exits the try block with a <strong>gosub</strong> statement to the finally block. Execution in the finally block ends with a <strong>retsub</strong>, which returns to the try block and the try block is then exited
+via a<strong>goto</strong> statement to the label that marks the <strong>endtry</strong> statement.</p>
+<p>For case 3, if an exception is thrown inside the try block, control is transferred to the handler label that marks the catch statement as in case 1.  Execution in the catch block ends with a <strong>gosub</strong> statement to the finally block.  Execution in the finally block ends with a <strong>retsub</strong>, which returns to the catch block and the catch block is then exited via a <strong>goto</strong> statement to the label that marks the <strong>endtry</strong> statement.    If no exception is thrown in the try block, program flow eventually exits the try block with a <strong>gosub</strong> statement to the finally block, and execution will continue in the finally block until it executes a <strong>retsub</strong>, at which time it returns to the try block and the try block is then exited via a <strong>goto</strong> statement to the label that marks the <strong>endtry</strong> statement.</p>
+<p><strong>throw</strong></p>
+<p>syntax: <code>throw (&lt;opnd0&gt;)</code></p>
+<p>Raise a user-defined exception with the given exception value.  If this statement is nested within a try block, control is then transferred to the label associated with the try, which is either a <strong>catch</strong> statement or a <strong>finally</strong> statement.  If this throw statement is nested within a catch block, control is first transferred to the <strong>finally</strong> associated with the catch if any, in which case the finally block will be executed.  After it finishes executing the finally block, the search for the throw's upper level handler starts.  If this <strong>throw</strong> statement is nested within a finally block, the search for the throw's upper level handler starts right away.  If the throw is not nested inside any try block within a function, the system will look for the first enclosing try block by unwinding the call stack.  If no try block is
+found, the program will terminate.  Inside the catch block, the thrown exception value can be accessed using the special register %%thrownval.</p>
+<p><strong>catch</strong></p>
+<p>syntax: <code>&lt;handler-label&gt; catch</code></p>
+<p>This marks the start of the catch block associated with a try.  The try block associated with this catch block is regarded to have been exited and the exception is regarded as being handled.  If no exception is thrown inside the catch block, exit from the catch block is effected by either a <strong>gosub</strong> statement to a finally label, if there is a finally block, or a <strong>goto</strong> statement to <strong>endtry</strong>.</p>
+<p><strong>finally</strong></p>
+<p>syntax: <code>&lt;finally-label&gt; finally</code></p>
+<p>This marks the start of the finally block.  The finally block can be entered either via the execution of a <strong>gosub</strong> statement, or a<strong>throw</strong> statement the finally's corresponding try block that has no catch block, or a <strong>throw</strong> statement in the finally's corresponding catch block.  The exit from the finally block can be effected by the execution of either a <strong>retsub</strong> or a <strong>throw</strong> statement in the finally block.  If the exit is via a <strong>retsub</strong> and if there is outstanding throw yet to be handled, the search for the throw's upper level handler continues.</p>
+<p><strong>cleanuptry</strong></p>
+<p>syntax: <code>cleanuptry</code><br />
+This statement is generated in situations where the control is going to leave the try-catch-finally composite prematurely via jumps unrelated to exception handling.  This statement effects the cleanup work related to exception handling for the current try-catch-finally composite.</p>
+<p><strong>endtry</strong></p>
+<p>syntax: <code>&lt;label&gt; endtry</code><br />
+This marks either the end of each try-catch-finally composite or the end of each javatry block.</p>
+<p><strong>gosub</strong></p>
+<p>syntax: <code>gosub &lt;finally-label&gt;</code></p>
+<p>Transfer control to the finally block marked by &lt;finally-label&gt;.  This also has the effect of exiting the try block or catch block which this statement belongs.  It is like a <strong>goto</strong>, except that the next instruction is saved.  Execution will transfer back to the next instruction when a <strong>retsub</strong> statement is executed.  This can also be thought of as a <strong>call</strong>, except it uses label name instead of function name, and no passing of parameter or return value is implied. </p>
+<p><strong>retsub</strong></p>
+<p>syntax: <code>retsub</code></p>
+<p>This must only occur as the last instruction inside a finally block.  If there is no outstanding throw, control is transferred back to the instruction following the last <strong>gosub</strong>executed.  Otherwise the search for the upper level exception handler continues.</p>
+<h2 id="memory-allocation-and-deallocation"><a class="header" href="#memory-allocation-and-deallocation">Memory Allocation and Deallocation</a></h2>
+<p>The following instructions are related to the allocation and de-allocation of dynamic memory during program execution.  The instructions with &quot;gc&quot; as prefix are associated with languages with managed runtime environments.</p>
+<p><strong>alloca</strong></p>
+<p>syntax: <code>alloca &lt;prim-type&gt; (&lt;opnd0&gt;)</code></p>
+<p>This returns a pointer to the block of uninitialized memory allocated by adjusting the function stack pointer %%SP, with size in bytes given by &lt;opnd0&gt;.  This instruction must only appear as the right hand side of an assignment operation.</p>
+<p><strong>decref</strong></p>
+<p>syntax: <code>decref (&lt;opnd0&gt;)</code></p>
+<p>&lt;opnd0&gt; must be a <strong>dread</strong> or <strong>iread</strong> of a pointer that refers to an object allocated in the run-time-managed part of the heap.  It decrements the reference count of the pointed-to object by 1.  &lt;opnd0&gt; must be of primitive type <em>ref</em>.</p>
+<p><strong>decrefwithcheck</strong></p>
+<p>syntax: <code>decrefwithcheck (&lt;opnd0&gt;)</code></p>
+<p>&lt;opnd0&gt; must be a <strong>dread</strong> or <strong>iread</strong> of a pointer that refers to an object allocated in the run-time-managed part of the heap.  It checks if &lt;opnd0&gt;'s value is null.  If not null, it is assumed to be a valid pointer and decrements the reference count of the pointed-to object by 1.  &lt;opnd0&gt; must be of primitive type <em>ref</em>.</p>
+<p><strong>free</strong></p>
+<p>syntax: <code>free (&lt;opnd0&gt;)</code></p>
+<p>The block of memory pointed to by &lt;opnd0&gt; is released so it can be re-allocated by the system for other uses.</p>
+<p><strong>gcmalloc</strong></p>
+<p>syntax: <code>gcmalloc &lt;pointer prim-type&gt; &lt;type&gt;</code></p>
+<p>This requests the memory manager to allocate an object of type &lt;type&gt; with associated meta-data according to the requirements of the managed runtime. The size of the object must be fixed at compilation time.  As this returns the pointer to the allocated block, this instruction must only appear as the right hand side of an assignment operation.  The managed runtime is responsible for its eventual deallocation.</p>
+<p><strong>gcmallocjarray</strong></p>
+<p>syntax: <code>gcmallocjarray &lt;pointer prim-type&gt; &lt;java-array-type&gt; (&lt;opnd0&gt;)</code></p>
+<p>This requests the memory manager to allocate a java array object as given by &lt;java-array-type&gt;. The allocated storage must be large enough to store the number of array elements as given by &lt;opnd0&gt;.  As this returns the pointer to the allocated block, this instruction must only appear as the right hand side of an assignment operation.  The managed runtime is responsible for its eventual deallocation, and the block size must remain fixed during its life time.</p>
+<p><strong>incref</strong></p>
+<p>syntax: <code>incref (&lt;opnd0&gt;)</code></p>
+<p>&lt;opnd0&gt; must be a <strong>dread</strong> or <strong>iread</strong> of a pointer that refers to an object allocated in the run-time managed part of the heap.  It increments the reference count of the pointed-to object's by 1.  &lt;opnd0&gt; must be of primitive type <em>ref</em>.</p>
+<p><strong>malloc</strong></p>
+<p>syntax: <code>malloc &lt;pointer prim-type&gt; (&lt;opnd0&gt;)</code></p>
+<p>This requests the system to allocate a block of uninitialized memory with size in bytes given by &lt;opnd0&gt;. As this returns the pointer to the allocated block, this instruction must only appear as the right hand side of an assignment operation.  The block of memory remains unavailable for re-use until it is explicitly freed via the <strong>free</strong> instruction.</p>
+<h2 id="other-statements"><a class="header" href="#other-statements">Other Statements</a></h2>
+<p><strong>assertge</strong></p>
+<p>syntax: <code>assertge (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Raise an exception if &lt;opnd0&gt; is not greater than or equal to &lt;opnd1&gt;. This is used for checking if an array index is within range during execution.  &lt;opnd0&gt; and &lt;opnd1&gt; must be of the same type.</p>
+<p><strong>assertlt</strong></p>
+<p>syntax: <code>assertlt (&lt;opnd0&gt;, &lt;opnd1&gt;)</code></p>
+<p>Raise an exception if &lt;opnd0&gt; is not less than &lt;opnd1&gt;. This is used for checking if an array index is within range during execution.  &lt;opnd0&gt; and &lt;opnd1&gt; must be of the same type.</p>
+<p><strong>assertnonnull</strong></p>
+<p>syntax: <code>assertnonnull (&lt;opnd0&gt;)</code></p>
+<p>Raise an exception if &lt;opnd0&gt; is a null pointer, corresponding to the value 0.</p>
+<p><strong>eval</strong></p>
+<p>syntax: <code>eval (&lt;opnd0&gt;)</code></p>
+<p>&lt;opnd0&gt; is evaluated but the result is thrown away.  If &lt;opnd0&gt; contains volatile references, this statement cannot be optimized away. </p>
+<p><strong>membaracquire</strong></p>
+<p>syntax: <code>membaracquire</code></p>
+<p>This instruction acts as both a Load-to-Load barrier and a Load-to-Store barrier: the order between any load instruction before it and any load instruction after it must be strictly followed, and the order between any load instruction before it and any store instruction after it must be strictly followed.</p>
+<p><strong>membarrelease</strong></p>
+<p>syntax: <code>membarrelease</code></p>
+<p>This instruction acts as both a Load-to-Store barrier and a Store-to-Store barrier: the order between any load instruction before it and any store instruction after it must be strictly followed, and the order between any store instruction before it and any store instruction after it must be strictly followed.</p>
+<p><strong>membarfull</strong></p>
+<p>syntax: <code>membarfull</code></p>
+<p>This instruction acts as a barrier to any load or store instruction before it and any load or store instruction after it.</p>
+<p><strong>syncenter</strong></p>
+<p>syntax: <code>syncenter (&lt;opnd0&gt;)</code></p>
+<p>This instruction indicates entry to a region where the object pointed to by the pointer &lt;opnd0&gt; needs to be synchronized for Java multi-threading.  This means at any time, there cannot be more than one thread executing in a synchronized region of the same object.  Any other thread attempting to enter a synchronized region of the same object will be blocked.  For the compiler, it implies a barrier to the backward movement (against the flow of control) of any operation that accesses the object.</p>
+<p><strong>syncexit</strong></p>
+<p>syntax: <code>syncexit (&lt;opnd0&gt;)</code></p>
+<p>This instruction indicates exit from a region where the object pointed to by the pointer &lt;opnd0&gt; needs to be synchronized for Java multi-threading.  For the compiler, it implies a barrier to the forward movement (along the flow of control) of any operation that accesses the object.</p>
+<h1 id="declaration-specification"><a class="header" href="#declaration-specification">Declaration Specification</a></h1>
+<h2 id="module-declaration"><a class="header" href="#module-declaration">Module Declaration</a></h2>
+<p>Each Maple IR file represents a program module, also called compilation unit, that consists of various declarations at the global scope.  The following directives appear at the start of the Maple IR file and provide information about the module:</p>
+<p><strong>entryfunc</strong></p>
+<p>syntax: <code>entryfunc &lt;func-name&gt;</code></p>
+<p>This gives the name of the function defined in the module that will serve as the single entry point for the module.</p>
+<p><strong>flavor</strong></p>
+<p>syntax: <code>flavor &lt;IR-flavor&gt;</code></p>
+<p>The IR flavor gives information as to how the IR was produced, which in turn indicates the state of the compilation process.</p>
+<p><strong>globalmemmap</strong></p>
+<p>syntax: <code>globalmemmap = [ &lt;initialization-values&gt; ]</code></p>
+<p>This specifies the static initialization values of the global memory block as a list of space-separated 32-bit integer constants.  The amount of initializations should correspond to the memory size given by <strong>globalmemsize</strong>.</p>
+<p><strong>globalmemsize</strong></p>
+<p>syntax: <code>globalmemsize &lt;size-in-bytes&gt;</code></p>
+<p>This gives the size of the global memory block for storing all global static variables.</p>
+<p><strong>globalwordstypetagged</strong></p>
+<p>syntax: <code>globalwordstypetagged = [ &lt;word-values&gt; ]</code></p>
+<p>This specifies a bitvector initialized to the value specified by the list of space-separated 32-bit integer constants.  The Nth bit in this bitvector is set to 1 if the Nth word in <strong>globalmemmap</strong> has a type tag, in which case the type tag is at the (N+1)th word.</p>
+<p><strong>globalwordsrefcounted</strong></p>
+<p>syntax: <code>globalwordsrefcounted = [ &lt;word-values&gt; ]</code></p>
+<p>This specifies a bitvector initialized to the value specified by the list of space-separated 32-bit integer constants.  The Nth bit in this bitvector is set to 1 if the Nth word in <strong>globalmemmap</strong> is a pointer to a reference-counted dynamically allocated memory block.</p>
+<p><strong>id</strong></p>
+<p>syntax: <code>id &lt;id-number&gt;</code></p>
+<p>This gives the unique module id assigned to the module.  This id enables the Maple virtual machine to handle the execution of program code originating from multiple Maple IR modules.</p>
+<p><strong>import</strong></p>
+<p>syntax: <code>import &quot;&lt;filename&gt;&quot;</code></p>
+<p>&lt;filename&gt; is the path name for a MAPLE type file, with suffix .mplt.  The contents of this file are imported.  Only type declarations are allowed in the .mplt file.  This allows the same type declarations to be shared across multiple files, and large volumes of type declarations to be organized by files.  Only one level of import is allowed, as .mplt files are not allowed to have import statements.  This is used only after all types and symbol names have been fully resolved.</p>
+<p><strong>importpath</strong></p>
+<p>syntax: <code>importpath &quot;&lt;path-name&gt;&quot;</code></p>
+<p>This specifies a directory path for the compiler to look for the imported MAPLE IR files required to complete the compilation.  This is used only in the early compilation phases, before all types and symbol names have been fully resolved. Each appearance only specifies one specific path.</p>
+<p><strong>numfuncs</strong></p>
+<p>syntax: <code>numfuncs &lt;integer&gt;</code></p>
+<p>This gives the number of function definitions in the module, excluding function prototypes.</p>
+<p><strong>srclang</strong></p>
+<p>syntax: <code>srclang &lt;language&gt;</code></p>
+<p>This gives the source language that produces the Maple IR module.</p>
+<h2 id="variable-declaration"><a class="header" href="#variable-declaration">Variable Declaration</a></h2>
+<p>syntax: <code>var &lt;id-name&gt; &lt;storage-class&gt; &lt;type&gt; &lt;type-attributes&gt;</code></p>
+<p>The keyword 'var' designates a declaration statement for a variable. &lt;id-name&gt; specifies its name, prefixed by '$' or '%' based on whether its scope is global or local respectively. &lt;storage-class&gt; is optional and can be extern, fstatic or pstatic.  &lt;type&gt; is the type specification.  &lt;type-attributes&gt; is optional and specifies additional attributes like volatile, const, alignment, etc.  Examples:</p>
+<p> var $x extern f32 volatile static</p>
+<h2 id="pseudo-register-declarations"><a class="header" href="#pseudo-register-declarations">Pseudo-register Declarations</a></h2>
+<p>syntax: <code>reg &lt;preg-name&gt; &lt;type&gt;</code></p>
+<p>The keyword 'reg' designates a declaration statement for a pseudo-register. &lt;preg-name&gt; specifies the pseudo-register prefixed by '%'.  &lt;type&gt; is the high level type information.  If a pseudo-register is only of primitive type, its declaration is optional.</p>
+<p> </p>
+<h2 id="type-specification"><a class="header" href="#type-specification">Type Specification</a></h2>
+<p>Types are either primitive or derived.  Derived types are specified using C-like tokens, except that the specification is always right-associative, following a strictly left to right order.  Derived types are distinguished from primitive types by being enclosed in angular brackets.  Derived types can also be thought of as high-level types.   Examples:</p>
+<pre><code>var %p &lt;* i32&gt;              # pointer to a 32-bit integer 
+var %a &lt;[10] i32&gt;            # an array of 10 32-bit integers
+var %foo &lt;func(i32) i32&gt;     # a pointer to a function that takes one i32 parameter and returns an i32 value (func is a keyword)
+</code></pre>
+<p> </p>
+<p>Additional nested angular brackets are not required, as there is no ambiguity due to the right-associative rule.  But the nested angular brackets can be optionally inserted to aid readability.  Thus, the following two examples are equivalent:</p>
+<pre><code>var %q &lt;* &lt;[10] i32&gt;&gt;        # pointer to an array of 10 32-bit integers
+var %q &lt;* [10] i32&gt;          # pointer to an array of 10 32-bit integers
+</code></pre>
+<p> </p>
+<p>Inside a struct declaration, field names are prefixed by @.  Though label names also use @ as prefix, there is no ambiguity due to the usage context between struct field declaration and label usage being distinct.  Example:</p>
+<pre><code>var %s &lt;struct{@f1 i32,               
+         @f2 f64,
+         @f3:3 i32}&gt;          # a bitfield of 3 bits
+</code></pre>
+<p> </p>
+<p>A union declaration has the same syntax as struct.  In a union, all the fields overlap with each other.</p>
+<p> </p>
+<p>The last field of a struct can be a flexible array member along the line of the C99 standard, which is an array with variable number of elements.  It is specified with empty square brackets, as in:</p>
+<pre><code>var %p &lt;* struct{@f1 i32,               
+         @f2 &lt;[] u16&gt;}&gt;          a flexible array member with unsigned 16-bit integers as elements
+</code></pre>
+<p> </p>
+<p>Structs with flexible array member as its last field can only be dynamically allocated.  Its actual size is fixed only at its allocation during execution time, and cannot change during its life time.  A struct with flexible array member cannot be nested inside another aggregate.  During compilation, the flexible array member is regarded as having size zero.  Because its use is usually associated with managed runtime, a language processor may introduce additional meta-data associated with the array.  In particular, there must be some language-dependent scheme to keep track of the size of the array during execution time.</p>
+<p> </p>
+<p>When a type needs to be qualified by additional attributes for const, volatile, restrict and various alignments, they follow the type that they qualify.  These attributes are not regarded as part of the type.  If these attributes are applied to a derived type, they  must follow outside the type angular brackets.  Examples:</p>
+<pre><code>var %x f64 volatile align(16)        # %s is a f64 value that is volatile and aligned on 16 byte boundary
+var %p &lt;* f32&gt; const volatile        # %p is a pointer to a f32 value, and %p itself is const and volatile
+</code></pre>
+<p> </p>
+<p>Alignments are specified in units of bytes and must be power of 2.  Alignment attributes must only be used to increase the natural alignments of the types, to make the alignments more stringent.  For decreasing alignments, the generator of MAPLE IR must use smaller types to achieve the effect of packing instead of relying on the align attribute.</p>
+<p> </p>
+<h2 id="incomplete-type-specification"><a class="header" href="#incomplete-type-specification">Incomplete Type Specification</a></h2>
+<p> </p>
+<p>Languages like Java allow contents of any object to be referenced without full definition of the object being available.  Their full contents are to be resolved from additional input files in later compilation phases.  MAPLE IR allows structs, classes and interfaces to be declared incompletely so their specific contents can be referenced.  Instead of the <em>struct</em>, <em>class</em> and <em>interface</em> keywords, <em>structincomplete</em>, <em>classincomplete</em> and <em>interfaceincomplete</em> should be used instead.</p>
+<h2 id="type-declaration"><a class="header" href="#type-declaration">Type Declaration</a></h2>
+<p>syntax: <code>type &lt;id-name&gt; &lt;derived-type&gt;</code></p>
+<p>Type names are also prefixed with either '$' or '%' based on whether the scope is global or local.  Example:</p>
+<p> </p>
+<pre><code>type $i32ptr &lt;* i32&gt;          # the type $i32ptr is a pointer to i32
+</code></pre>
+<p> </p>
+<p>Primitive types are not allowed to be given a different type name.
+ </p>
+<p>Attributes are not allowed in type declaration. </p>
+<p>Once a type name is defined, specifying the type name is equivalent to specifying the derived type that it stands for.  Thus, the use of a type name should always be enclosed in angular brackets.</p>
+<h2 id="java-class-and-interface-declaration"><a class="header" href="#java-class-and-interface-declaration">Java Class and Interface Declaration</a></h2>
+<p>A Java class designates more than a type, because the class name also carries the attributes declared for the class.  Thus, we support declaration of Java classes via:</p>
+<p> </p>
+<p>syntax: <code>javaclass &lt;id-name&gt; &lt;class-type&gt; &lt;attributes&gt; </code></p>
+<p>&lt;id-name&gt; must have '$' as prefix as class names always have global scope. 
+For example:</p>
+<pre><code>javaclass $Puppy &lt;class [{@color](mailto:%7B@color) i32}&gt; public final         # a java class named &quot;Puppy&quot; with a single field &quot;color&quot; and attributes public and final
+</code></pre>
+<p>A javaclass name should not be regarded as a type name as it contains additional attribute information.  It cannot be enclosed in angular brackets as it cannot be referred to as a type.</p>
+<p> </p>
+<p>A java interface has the same form as the class type, being able to extend another interface, but unlike class, an interface can extend multiple interfaces.  Another difference from class is  that an interface cannot be instantiated.  Without instantiation, the data fields in interfaces are always allocated statically.   For example,</p>
+<pre><code>interface &lt;$interfaceA&gt; {      #this interface extends interfaceA
+  @s1 int32,                   # data fields inside interfaces are always statically allocated
+  &amp;method1(int32) f32 }        # a method declaration
+</code></pre>
+<p> </p>
+<p>MAPLE IR handles an interface declaration as a type declaration.  Thus, the above can be specified after the type keyword to be associated with a type name.  Separately, the javainterface keyword declares the symbol associated with the interface:</p>
+<p> </p>
+<p>syntax: <code>javainterface &lt;id-name&gt; &lt;interface-type&gt; &lt;atteributes&gt;</code></p>
+<p> </p>
+<p>&lt;id-name&gt; must have '$' as prefix as interface names always have global
+scope.  For example:</p>
+<p> </p>
+<pre><code>javainterface $IFA &lt;interface{&amp;amethod(void) int32}&gt; public static  # $IFA is an interface with a single method &amp;amethod
+</code></pre>
+<p> </p>
+<p>Again, a javainterface name should not be regarded as a type name, as it is a symbol name.  When a class implements an interface, it specifies the javainterface name as part of its comma-separated contents, as in:</p>
+<p> </p>
+<pre><code>class &lt;$PP&gt; { &amp;amethod(void) int32,      # this class extends the $PP class, and &amp;amethod is a member function of this class
+
+           $IFA }                          # this class implements the $IFA interface
+</code></pre>
+<h2 id="function-declaration"><a class="header" href="#function-declaration">Function Declaration</a></h2>
+<p>syntax:</p>
+<pre><code> func &lt;func-name&gt; &lt;attributes&gt; (
+
+                          var &lt;parm0&gt; &lt;type&gt;,
+
+                               . . .
+
+                          var &lt;parmn&gt; &lt;type&gt;)  &lt;ret-type0&gt;,  . . .
+&lt;ret_typen&gt; {
+
+                      &lt;stmt0&gt;
+
+                        . . .
+
+                       &lt;stmtn&gt; }
+</code></pre>
+<p>&lt;attributes&gt; provides various attributes about the function, like static,extern, etc. The opening parentheses starts the parameter declarations, which can be empty.  Each &lt;parmi&gt; is of the form of a var or reg declaration declaring each incoming parameter.  If the last parameter is specified as &quot;...&quot;, it indicates the start of the variable part of the arguments as in C.  Following the parameter declarations is a list of the multiple return types separated by commas. If there is no return value, &lt;ret-type0&gt; should specify void.  Each &lt;ret-typei&gt; can be either primitive or derived. If  no statement follows the parentheses, then it is just a prototype declaration.</p>
+<p><strong>funcsize</strong></p>
+<p>syntax: <code>funcsize &lt;size-in-bytes&gt;</code></p>
+<p>This directive appears inside the function block to give the Maple IR code size of the function.</p>
+<p><strong>framesize</strong></p>
+<p>syntax: <code>framesize &lt;size-in-bytes&gt;</code></p>
+<p>This directive appears inside the function block to give the stack frame size of the function.</p>
+<p><strong>moduleid</strong></p>
+<p>syntax: <code>moduleid &lt;id&gt;</code></p>
+<p>This directive appears inside the function to give the unique id of the module which the function belongs to.</p>
+<p><strong>upformalsize</strong></p>
+<p>syntax: <code>upformalsize &lt;size-in-bytes&gt;</code></p>
+<p>This directive appears inside the function block to give the size of upformal segment that stores the formal parameters being passed above the frame pointer %%FP.</p>
+<p><strong>formalwordstypetagged</strong></p>
+<p>syntax: <code>formalwordstypetagged = [ &lt;word-values&gt; ]</code></p>
+<p>This specifies a bitvector initialized to the value specified by the list of space-separated 32-bit integer constants.  The Nth bit in this bitvector is set to 1 if the Nth word in the upformal segment has a type tag, in which case the type tag is at the (N+1)th word.</p>
+<p><strong>formalwordsrefcounted</strong></p>
+<p>syntax: <code>formalwordsrefcounted = [ &lt;word-values&gt; ]</code></p>
+<p>This specifies a bitvector initialized to the value specified by the list of space-separated 32-bit integer constants.  The Nth bit in this bitvector is set to 1 if the Nth word in the upformal segment is a pointer to a reference-counted dynamically allocated memory block.</p>
+<p><strong>localwordstypetagged</strong></p>
+<p>syntax: <code>localwordstypetagged = [ &lt;word-values&gt; ]</code></p>
+<p>This specifies a bitvector initialized to the value specified by the list of space-separated 32-bit integer constants.  The Nth bit in this bitvector is set to 1 if the -Nth word in the local stack frame has a type tag, in which case the type tag is at the (-N+1)th word.</p>
+<p><strong>localwordsrefcounted</strong></p>
+<p>syntax: <code>localwordsrefcounted = [ &lt;word-values&gt; ]</code></p>
+<p>This specifies a bitvector initialized to the value specified by the list of space-separated 32-bit integer constants.  The Nth bit in this bitvector is set to 1 if the -Nth word in the local stack frame is a pointer to a reference-counted dynamically allocated memory block.</p>
+<h2 id="initializations"><a class="header" href="#initializations">Initializations</a></h2>
+<p>When there are initializations associated with a var declaration, there is '=' after the var declaration, followed by the initialization value.  For aggregates, the list of initialization values are enclosed by brackets '[' and ']', with the values separated by commas.  In arrays, the initialization values for the array elements are listed one by one, and nested brackets  must be used to correspond to elements in each lower-order dimension. </p>
+<p>In specifying the initializations for a struct, inside the brackets, field-ID followed by '=' must be used to specify the value for each field explicitly. The fields' initialization values can be listed in arbitrary order.  For nested structs, the usage of nested brackets is optional, because field-IDs at the top level can uniquely specify fields in nested structs.  But if nested brackets are used, then field-ID usage within the nested brackets is relative to that corresponding level of sub-struct.  Example:
+ </p>
+<pre><code>type %SS &lt;struct { @g1 f64, @g2 f64 }&gt;
+var %s [struct{@f1i32,              
+                      @f2 &lt;%SS&gt;,
+                      @f3:4 i32} = [ 1 = 99,
+        2 = [1= 10.0],          # field f2.g1 has field ID 1 in struct %SS and is initialized to 10.0
+        4 = 22.2,           # field f2.g2 has field ID 4 in struct %s and is initialized to 22.2
+        5 = 15 ]               # field f3 (4 bits in size) has field ID 5 in struct %s and is initialized to 15
+</code></pre>
+<h2 id="type-parameters"><a class="header" href="#type-parameters">Type Parameters</a></h2>
+<p>Also called generics, type parameters allow derived types and functions to be written without specifying the exact types in parts of their contents.  The type parameters can be instantiated to different specific types later, thus enabling the code to be more widely applicable, promoting software re-use.</p>
+<p> </p>
+<p>Type parameters and their instantiation can be handled completely by the language front-ends.  MAPLE IR provides representation for generic types and generic functions and their instantiation so as to reduce the amount of work in the language front-ends.  A MAPLE IR file with type parameters requires a front-end lowering phase to de-genericize the IR before the rest of the MAPLE IR components can process the code.</p>
+<p> </p>
+<p>Type parameters are symbol names prefixed with &quot;!&quot;, and can appear anywhere that a type can appear.  Each type or function definition can have multiple type parameters, and each type parameter can appear more than one time.  Since type parameters are also types, they can only appear inside the angular brackets &quot;&lt;&quot; and &quot;&gt;&quot;, e.g. &lt;!T&gt;.  When the definition of a derived type contains any type parameter, the type becomes a generic type.  When the definition of a function contains any type parameter, the function becomes a generic function.  A function prototype cannot contain generic type.</p>
+<p> </p>
+<p>A generic type or generic function is marked with the <em>generic</em> attribute to make them easier to be identified.</p>
+<p> </p>
+<p> A generic type or function is instantiated by assigning specific non-generic types to each of its type parameters.  The instantiation is specified by a list of such assignments separated by commas.  We refer to this as an instantiation vector, which is specified inside braces &quot;{&quot; and &quot;}&quot;.  In the case of the instantiation of a generic type, the type parameter is immediately followed by the instantiation vector.  Example:</p>
+<p> </p>
+<pre><code>type $apair &lt;struct {@f1 &lt;!T&gt;, @f2 &lt;!T&gt;}&gt;    # $apair is a generic type
+
+var $x &lt;$apair{!T=f32}&gt;           # the type of $x is $apair instantiated with f32 being assigned to the type parameter !T
+</code></pre>
+<p> </p>
+<p>A generic function is instantiated by invoking it with an instantiation vector. The instantiation vector immediately follows the name of the generic function.  Since the instantiation vector is regarded as type information, it is further enclosed inside the angular brackets &quot;&lt;&quot; and &quot;&gt;&quot;.  Invocation of generic functions must be via the opcodes <strong>callinstant</strong> and <strong>callinstantassigned</strong>, which correspond to <strong>call</strong> and <strong>callassigned</strong> respectively.  Example:</p>
+<p> </p>
+<pre><code>func &amp;swap (var %x &lt;!UU&gt;, var %y &lt;!UU&gt;) void {         # &amp;swap is a generic
+function to swap the contents of its two parameters
+
+   var %z &lt;!UU&gt;
+
+   dassign %z (dread agg %x)
+
+   dassiign %x (dread agg %y)
+
+   dassign %y (dread agg %z)
+
+   return
+
+}
+
+   . . .
+
+callinstant &amp;swap&lt;{!UU=&lt;$apair{!T=i32}&gt;}&gt; (         # &amp;swap is instantiated with type argument &lt;$apair{!T=i32}&gt;, itself an instantiated type
+
+ dread agg %a,                     # the actual parameters %a and %b must have same type as the same instantiated type
+
+ dread agg %b)
+</code></pre>
+<h1 id="examples"><a class="header" href="#examples">Examples</a></h1>
+<h2 id="example-1"><a class="header" href="#example-1">Example 1</a></h2>
+<p><strong>Function definitions and arithmetic expressions:</strong></p>
+<p>C code:</p>
+<pre><code class="language-cpp">int foo(int i,int j){
+  return (i + j) * -998;
+}
+</code></pre>
+<p>Maple IR:</p>
+<pre><code class="language-cpp">func &amp;foo (var %i i32, var %j i32) i32 {
+  return (
+    mul i32 (
+      add i32 (dread i32 %i, dread i32 %j),
+      constval i32 -998))}
+</code></pre>
+<h2 id="example-2"><a class="header" href="#example-2">Example 2</a></h2>
+<p><strong>Loops and arrays</strong></p>
+<p>C source:</p>
+<pre><code class="language-cpp">float a[10];
+void init(void){
+  int i;
+  for(i=0; i&lt;10; i++)
+    a[i]=i*3;
+}
+</code></pre>
+<p>Maple IR:</p>
+<pre><code class="language-cpp">var $a &lt;[10] f32&gt;
+func &amp;init() void{ 
+  var %i i32
+  dassign %i(constval i32 0)
+  while(
+  lt i32 i32(dread i32 %i, constval i32 10)){
+    iassign&lt;*[10] f32&gt;(
+      array a32&lt;*[10] f32&gt;(addrof a32 $a, dread i32 %i),
+      mul i32(dread i32 %i, constval i32 3))
+    dassign %i(
+      add i32(dread i32 %i, constval i32 1))}}
+</code></pre>
+<h2 id="example-3"><a class="header" href="#example-3">Example 3</a></h2>
+<p><strong>Types and structs</strong></p>
+<p>C source:</p>
+<pre><code class="language-cpp">typedef struct SS{
+  int f1;
+  char f2:6;
+  char f3:2;
+}SS;
+SS foo(SS x){
+  x.f2=33;
+  return x;
+}
+</code></pre>
+<p>Maple IR:</p>
+<pre><code class="language-cpp">type $SS &lt;struct {@f1 i32, @f2:6 i8,@f3:2 i8}&gt;
+func &amp;foo (var %x &lt;$SS&gt;) &lt;$SS&gt; {
+  dassign %x 2 (constval i32 32 )
+  return (dread agg %x) }
+</code></pre>
+<h2 id="example-4"><a class="header" href="#example-4">Example 4</a></h2>
+<p><strong>if-then-else, call and block</strong></p>
+<p>C source:</p>
+<pre><code class="language-cpp">int fact(int n) {
+  if(n!=1)
+    return n*fact(n-1);
+  else return 1;
+}
+</code></pre>
+<p>Maple IR:</p>
+<pre><code class="language-cpp">func &amp;fact (var %n i32) i32 {
+  if (ne i32 (dread i32 %n, constval i32 1)) {
+    call &amp;fact (sub i32 (dread i32 %n, constval i32 1))
+    return (mul i32 (dread i32 %n, regread i32 %%retval))
+  }
+  return(constval i32 1)
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../../Lang/IR/LLVM-IR.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="../../Lang/JS/overview.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../../Lang/IR/LLVM-IR.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="../../Lang/JS/overview.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>

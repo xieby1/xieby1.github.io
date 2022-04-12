@@ -1,0 +1,531 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link class="revealHref" rel="stylesheet" href="css/reset.css">
+		<link class="revealHref" rel="stylesheet" href="css/reveal.css">
+		<link class="revealHref" rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link class="revealHref" rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- The path to reveal.js folder. -->
+		<script>
+			let revealPath = "../../CrossPlatformTools/reveal.js/";
+		</script>
+		<script src="../../CrossPlatformTools/reveal.js/js/reveal.js"></script>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.classList.add("revealHref");
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<script>
+			for(let e of document.getElementsByClassName("revealHref"))
+			{
+				let oldHref = e.getAttribute("href");
+				e.setAttribute("href", revealPath+oldHref);
+			}
+		</script>
+		<style type="text/css">
+			.floatBox {position: absolute; width: 50%; right: 0;
+				/*box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2);*/
+				background-color: rgba(0, 0, 0, 0.1); color: #333; padding: 10px;
+				font-size: 20px; text-align: left;}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>超长指令字处理器</h1>
+					Very Long Instruction Word (<b>VLIW</b>) Processor<br/>
+					<hr/>
+					谢本壹 2019.12.4
+				</section>
+				<section>
+					<h2>Outline</h2>
+					<ol>
+						<li class="fragment">什么是VLIW处理器</li>
+						<li class="fragment">VLIW处理器的编译器</li>
+						<li class="fragment">VLIW处理器的一个实例</li>
+						<li class="fragment">VLIW处理器的现状</li>
+					</ol>
+				</section>
+				<section>
+					<section>
+						<h2>1. 什么是VLIW处理器</h2>
+						<ul>
+							<li>定义VLIW的关键词</li>
+							<li>和微指令处理器比较</li>
+							<li>和多核处理器、向量处理器比较</li>
+							<li>和多发射处理器比较</li>
+							<li>小节</li>
+						</ul>
+						<footer class="floatBox fragment fade-up" style="top: 100%; width: 90%">
+							<b>参考</b>：
+							<ol>
+								<li>Fisher, Joseph A., et al. "Parallel processing: A smart compiler and a dumb machine." ACM Sigplan Notices 19.6 (1984): 37-47.</li>
+								<li>Lam, Monica. "Software pipelining: An effective scheduling technique for VLIW machines." ACM Sigplan Notices. Vol. 23. No. 7. ACM, 1988.</li>
+							</ol>
+						</footer>
+						<div class="floatBox fragment" style="top: 25%; width:20%">
+							本节从理论上研讨VLIW处理器。实际的VLIW处理器由后面的章节介绍。
+						</div>
+					</section>
+					<section>
+						<h3>定义VLIW的关键词</h3>
+						<ul>
+							<li>
+								<span class="fragment highlight-red">多个功能部件</span>
+								（
+								<span class="fragment highlight-red">可以是流水的</span>
+								，也可以不是）
+							</li>
+							<li>
+								<span class="fragment highlight-red">每一个</span>
+								功能部件由超长指令的
+								<span class="fragment highlight-red">某一部分</span>
+								<span class="fragment highlight-red">独立</span>
+								控制
+							</li>
+						</ul>
+						<div>
+							<div style="float: left" class="fragment fade-up">
+								<img style="zoom: 120%; border: #fff;" src="pictures/hypothetical_vliw.svg" alt="">
+								<br/>
+								<small>VLIW处理器概念图</small>
+							</div>
+							<div class="floatBox fragment" style="top:95%; left:0; width:45%">
+								每一个圈代表一个功能部件，连线代表功能部件之间的通讯。寄存器和内存分布没有画出，可能每个功能部件有自己的，也有可能是共享的。
+							</div>
+							<img class="fragment fade-up" style=" float: right; zoom: 200%; border: #fff;" src="pictures/vliw_inspired_by_transmeta.svg" alt="">
+							<div class="floatBox fragment" style="top:92%; width:33%">
+								4类功能部件，共享内存和寄存器。
+							</div>
+						</div>
+
+					</section>
+					<section>
+						<h3>和微指令处理器比较</h3>
+						<table>
+							<tr>
+								<td style="width: 50%; text-align: right;"><h4>VLIW处理器</h4></td>
+								<td style="width: 50%; text-align: left;"><h4>微指令处理器</h4></td>
+							</tr>
+							<tr>
+								<td style="width: 50%; text-align: right;">无需解码硬件</td>
+								<td>将指令解码成微指令</td>
+							</tr>
+							<tr>
+								<td style="width: 50%; text-align: right;">超长指令各个域的功能“正交”</td>
+								<td>微指令间可能会竞争功能部件</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<h3>和多核处理器、向量处理器比较</h3>
+						<table>
+							<tr>
+								<td style="width: 50%; text-align: right;"><h4>VLIW处理器</h4></td>
+								<td style="width: 50%; text-align: left;"><h4>多核、向量处理器</h4></td>
+							</tr>
+							<tr>
+								<td style="width: 50%; text-align: right;">细粒度的并行</td>
+								<td>粗粒度的并行</td>
+							</tr>
+						</table>
+						<hr/>
+						<small>因为多核处理器通讯代价高，向量处理器需要一定量的且集中分布的数据，所以并行粒度较VLIW粗。</small>
+					</section>
+					<section>
+						<h3>和多发射处理器比较</h3>
+						<table>
+							<tr>
+								<td style="width: 50%; text-align: right;"><h4>VLIW处理器</h4></td>
+								<td style="width: 50%; text-align: left;"><h4>多核、向量处理器</h4></td>
+							</tr>
+							<tr>
+								<td style="width: 50%; text-align: right;">硬件简单，需要编译器发掘并行性</td>
+								<td>由硬件发掘程序并行性</td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<h3>小节 - 超长指令字处理器的特征</h3>
+						<ul>
+							<li class="fragment">一条超长指令能够包含很多域，每个域操作某个功能部件；</li>
+							<li class="fragment">一条超长指令能够同时操作多个功能部件；</li>
+							<li class="fragment">各个域的功能“正交”；</li>
+							<li class="fragment">指令级别的平行（细粒度的并行）；</li>
+							<li class="fragment">硬件简单，需要<span style="display: inline-block;" class="fragment highlight-red">编译器</span>发掘并行性。</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>2. VLIW处理器的编译器</h2>
+						<ul>
+							<li>VLIW编译器的框架</li>
+							<div class="floatBox fragment" data-fragment-index="1" style="top: 25%; width: 20%">
+								本页的目录很清晰地反映出VLIW编译器的框架（不再单独用一张幻灯片介绍）
+								<span class="fragment" data-fragment-index="3">，可见，和普通的编译器的框架没区别。</span>
+							</div>
+							<div class="fragment" data-fragment-index="2">
+								<li>由源代码生成中间表示</li>
+								<li>优化中间表示</li>
+								<li>由中间表示生成机器码</li>
+							</div>
+							<li class="fragment">编译器性能</li>
+						</ul>
+						<footer class="floatBox fragment fade-up" data-fragment-index="4" style="top: 100%; width: 90%">
+							<b>参考</b>：
+							<ol>
+								<li>Fisher, Joseph A., et al. "Parallel processing: A smart compiler and a dumb machine." ACM Sigplan Notices 19.6 (1984): 37-47.</li>
+							</ol>
+						</footer>
+						<div class="floatBox fragment" style="top:76%; width: 20%">
+							本节依然是从理论上讨论VLIW的编译器
+						</div>
+					</section>
+					<section data-background-iframe="http://172.17.103.56/pdfViewer/web/viewer.html?file=http://172.17.103.56/Documents-link/Xie BenYi/LLVM_IR设计理念简介.pdf" data-background-interactive>
+						<div style="position: absolute; background-color: #fffe; width: 100%; height: 110%; z-index: -1;"></div>
+						<h3>由源代码生成中间表示</h3>
+						<span class="fragment">VLIW和普通程序在这一步的设计思路并无异，</span>
+						<span class="fragment">所以如何由源代码生产中间表示完全能够借用别的编译系统的经验。</span>
+						<span class="fragment">在这个问题上更深层的是如何设计出一个良好的中间表示，</span>
+						<div class="floatBox fragment" style="top: 100%; width: 50%;">
+							可以参考：报告<a href="http://172.17.103.56/file_manager.php?p=Xie+BenYi&view=LLVM_IR%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5%E7%AE%80%E4%BB%8B.pdf">《LLVM_IR设计理念简介》</a>
+						</div>
+					</section>
+					<section>
+						<h3>优化中间表示</h3>
+						<small>基本块的定义和编译里的通识概念一致。跳转、分支、返回、中断标志基本块的结束。</small>
+						<small class="fragment">但是仅仅是在基本内发掘并行，太过于局限。若能够在块间进行更好。</small>
+						<br/><b class="fragment">新增定义：trace</b><br/>
+						<small>
+							<ul class="fragment">将满足如下条件的基本块的集合称作一个<b>trace</b>：
+								<li>没有或有多个前驱的基本块为一个trace的起点；</li>
+								<li>
+									不断将满足下面条件的基本块加入这个trace：
+									<ul>
+										<li>这些基本块有控制流的联系；</li>
+										<li>这些基本块之间的控制流没有分支且没有环；</li>
+										<li>尽量将可能执行的分支纳入长trace里。</li>
+									</ul>
+								</li>
+							</ul>
+						</small>
+						<img class="fragment" style="position: absolute; top:40%; zoom: 40%;" src="pictures/traces.png" alt="">
+						<div class="floatBox fragment" style="top: 45%; right: 21%; width: 11%;">灰色为trace</div>
+					</section>
+					<section>
+						<h3>优化中间表示</h3>
+						优化手段和普通编译器并无差别（优化范围比同时代的编译器广，在trace内优化）：
+						<ul>
+							<li>循环展开</li>
+							<li>重排序指令，让关键路径上的指令先执行</li>
+							<li>用流分析访存是否是别名，用以辅助其他优化</li>
+							<li>优化数据分布</li>
+						</ul>
+					</section>
+					<section data-markdown>
+						### 由中间表示生成机器码
+						一系列参数描述目标平台：
+						* 寄存器堆
+						  * 每个寄存器堆的数量以及读写端口数量
+						* 功能部件
+						  * 可以完成的功能
+						  * 完成功能所需的时间
+						  * 完成功能所需的寄存器资源
+						  * 流水线的频率
+						* 器件之间的数据通路
+						* ...
+					</section>
+					<section>
+						<h3>由中间表示生成机器码</h3>
+						<img style="border: #fff; zoom: 150%;" src="pictures/code_generator.svg" alt="">
+						<div class="fragment">演变成纯算法问题</div>
+					</section>
+					<section>
+						<h3>由中间表示生成机器码-算法</h3>
+						<div style="text-align: left;">
+							<div class="fragment" data-fragment-index="1"><b>proc</b> generateDAG(trace)
+								<span class="fragment" data-fragment-index="23" style="color: gray;">// 多种遍历顺序</span>
+							</div>
+							<div class="fragment" data-fragment-index="3"><b>for each</b> op <b>in</b> enumerateOperations(DAG):
+								<span class="fragment" data-fragment-index="23" style="color: gray;">// 启发式</span>
+							</div>
+							<div class="fragment" data-fragment-index="4" style="text-indent: 1em;"><b>proc</b> searchForBinding(op)</div>
+							<div class="fragment" data-fragment-index="5" style="text-indent: 2em;"><b>incr</b> cycle <b>from</b> earliestCycle(op) <b>do</b>:
+								<span class="fragment" data-fragment-index="21" style="color: gray;">// 时间贪心</span>
+							</div>
+							<div class="fragment" data-fragment-index="6" style="text-indent: 3em;"><b>for each</b> fu <b>in</b> functionalUnitSearchList(op):</div>
+							<div class="fragment" data-fragment-index="7" style="text-indent: 4em;"><b>proc</b> computeDataPaths(fu, op)
+								<span class="fragment" data-fragment-index="22" style="color: gray;">// 最短路径</span>
+							</div>
+							<div class="fragment" data-fragment-index="6" style="text-indent: 3em;"><b>end for</b></div>
+							<div class="fragment" data-fragment-index="8" style="text-indent: 3em;">scheduleBest(dataPaths, fus, op)</div>
+							<div class="fragment" data-fragment-index="5" style="text-indent: 2em;"><b>end do</b></div>
+							<div class="fragment" data-fragment-index="3"><b>end for</b></div>
+						</div>
+					</section>
+					<section>
+						<h3>编译器性能</h3>
+						<div>
+							<img class="fragment" style="float: left; zoom: 120%; border: #fff;" src="pictures/hypothetical_vliw.svg" alt="">
+							<div class="fragment" style="float: left; width: 20%; margin: 1em;"><small>用于测试的理想模型，一共8个节点，每个节点有4个功能部件（功能没说明），每个节点各自有寄存器堆。</small></div>
+							<small class="fragment">
+								<table style="float: left;">
+									<tr><td><b>Program</b></td><td><b>Speedup</b></td></tr>
+									<tr><td>FFT</td><td>47</td></tr>
+									<tr><td>Tridiagonal solver</td><td>9</td></tr>
+									<tr><td>LU decomposition</td><td>12</td></tr>
+									<tr><td>LINPAK inner loops</td><td>11</td></tr>
+									<tr><td>Prime number generation</td><td>13</td></tr>
+									<tr><td>Matrix multiply</td><td>25</td></tr>
+									<tr><td>Convolution</td><td>25</td></tr>
+								</table>
+							</small>
+							<div class="floatBox fragment" style="top:0%; width: 30%">Ideal machine <b>speedup</b>: sequential instructions / parallel instructions</div>
+						</div>
+					</section>
+				</section>
+				<section>
+					<div class="fragment fade-right" data-fragment-index="1" style="float: left; width: 48%; text-align: right">←理论</div>
+					<div class="fragment fade-left" data-fragment-index="1" style="float: right; width: 48%; text-align: left">工程→</div>
+				</section>
+				<section>
+					<section>
+						<h2>3. VLIW处理器的一个实例：Transmeta Crusoe</h2>
+						<ul>
+							<li>Crusoe功能简介</li>
+							<li>和X86架构比较</li>
+							<li>Crusoe的“编译器”</li>
+							<li>Crusoe的硬件特性</li>
+							<li>Crusoe的耗能</li>
+						</ul>
+						<footer class="floatBox fragment fade-up" style="top: 100%; width: 90%">
+							<b>参考</b>：
+							<ol>
+								<li>Klaiber, Alexander. "The technology behind Crusoe processors." Transmeta Corporation white paper (2000).</li>
+							</ol>
+						</footer>
+					</section>
+					<section data-markdown>
+						### Crusoe功能简介
+						* 面向移动端，兼容x86
+						* 采用低硬件复杂度、低功耗的VLIW处理器
+						* 在处理器和操作系统间添加中间层来模拟x86的ISA
+					</section>
+					<section>
+						<h3>和X86架构比较</h3>
+						Crusoe<br/>
+						<img style="zoom: 200%; border: #fff;" src="pictures/vliw_inspired_by_transmeta.svg" alt="">
+						<br/>x86<br/>
+						<img style="zoom: 170%; border: #fff;" src="pictures/x86.svg" alt="">
+						<div class="floatBox fragment" style="top: 28%; width: 12%">有4类功能部件（ALU有2个），由VLIW的4个域控制。共用寄存器堆。</div>
+						<div class="floatBox fragment" style="top: 60%; width: 33%">在VLIW编译技术的支持下，Crusoe的指令里4个控制域类似4发射</div>
+					</section>
+					<section>
+						<h3>Crusoe的“编译器”</h3>
+						<small class="fragment">为了兼容x86程序，所以没有办法要求用户在执行x86程序前先静态翻译x86到Crusoe。</small>
+						<div class="fragment">Crusoe <span class="fragment fade-up">- 中间层 -</span> x86操作系统</div>
+						<div class="fragment"><hr/>中间层：Code Morphing，采用动态翻译的技术，将x86机器指令翻译成Crusoe机器指令</div>
+						<small class="fragment"><hr/>相当于把ISA虚拟化了，减轻硬件对历史ISA兼容的负担</small>
+					</section>
+					<section data-markdown>
+						### Crusoe的“编译器” - Code Morphong
+						在部分借用VLIW编译器技术的基础上，
+
+						调用动态翻译器的优化技术：
+						* 缓存优化过的代码，
+						* 收集运行信息用于指导优化（profiling），
+						  * 发现频繁执行的代码块，优化这些代码，
+						  * 发现分支跳转倾向，进行预测，
+					</section>
+					<section data-markdown>
+						### Crusose的“编译器” - 例子
+
+						```assembly
+						addl %eax,(%esp) // load data from stack, add to %eax
+						addl %ebx,(%esp)
+						movl %esi,(%ebp) // load %esi from memory
+						subl %ecx,5 // subtract 5 from %ecx register
+						```
+						翻译成Crusoe代码
+						```assembly
+						ld %r30,[%esp] // load from stack, into temporary
+						add.c %eax,%eax,%r30 // add to %eax, set condition codes.
+						ld %r31,[%esp]
+						add.c %ebx,%ebx,%r31
+						ld %esi,[%ebp]
+						sub.c % ecx,%ecx,5
+						```
+					</section>
+					<section data-markdown>
+						### Crusose的“编译器” - 例子续
+						进行优化：符号计算的优化，合并重复变量...
+						```assembly
+						ld %r30,[%esp] // load from stack only once
+						add %eax,%eax,%r30
+						add %ebx,%ebx,%r30 // reuse data loaded earlier
+						ld %esi,[%ebp]
+						sub.c %ecx,%ecx,5 // only this last condition code needed
+						```
+						生成机器码（得到两条超长指令）
+						```assembly
+						1. ld %r30,[%esp]; sub.c %ecx,%ecx,5
+						2. ld %esi,[%ebp]; add %eax,%eax,%r30; add %ebx,%ebx,%r30
+						```
+					</section>
+					<section data-markdown>
+						### Crusoe的硬件特性
+						* 精确异常/中断
+						* 访存别名
+						* 自修改代码
+					</section>
+					<section>
+						<h4>Crusoe的硬件特性-精确异常/中断</h4>
+						<hr/>
+						多发射处理器用reorder buffer实现精确异常/中断<br/>
+						Crusoe没有这些的硬件逻辑，怎么办？<br/><br/>
+						<ul class="fragment">
+							<li>新增硬件：（没有异常/中断时才提交）
+								<ul>
+									<li>两套寄存器堆（working, shadow）</li>
+									<li>gated stored buffer</li>
+								</ul>
+							</li>
+							<li>出现异常/中断回退该条VLIW</li>
+							<li>重新<b>保守地</b>这条VLIW的各个域的操作</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Crusoe的硬件特性-访存别名</h4>
+						<hr/>
+						为了更激进的重排序访存指令，<br/>
+						新增指令：
+						<ul>
+							<li>load-and-protect指令<br/>（load且记录load的地址和数据大小）</li>
+							<li>store-under-alias-mask指令<br/>（检查是否是保护的地址范围，是则会发生异常）</li>
+						</ul>
+					</section>
+					<section data-markdown>
+						#### Crusoe的硬件特性-访存别名续
+						---
+						```
+						ld %r30, [%x] # first load from location x
+						...
+						st %data, [%y] # might overwrite location x
+						ld %r31, [%x] # this accesses location x again
+						use %r31
+						```
+						访存别名优化后
+						```
+						ldp %r30, [%x] # load from x and protect it
+						...
+						stam %data,[%y] # this store traps if it writes x
+						use %r31
+						```
+					</section>
+					<section>
+						<h4>Crusoe的硬件特性-自修改代码</h4><hr/>
+						<div class="fragment">代码修改了内存里的代码，<br/>需要确保翻译好的代码会作出相应的修改。</div>
+						<div class="fragment">所以内存页的表项里添加了`translated`的bit，<br/>表示是否被翻译，</div>
+						<div class="fragment">当被翻译的页被修改时，<br/>就简单的方法是丢弃掉翻译好的代码。</div>
+					</section>
+					<section>
+						<h3>Crusoe的能耗</h3>
+						播放DVD的温度
+						<div>
+							<img style="position:relative; height: 239px; border: #fff;" src="pictures/temperature.png" alt="">
+							<img style="position:relative; border: #fff;" src="pictures/pentiumiii.png" alt="">
+							<img style="position:relative; border: #fff;" src="pictures/crusoe.png" alt="">
+						</div>
+						Pentium III（左） Crusoe TM5400（右）<br/>
+						最高温度分别为105.5°C，48°C
+					</section>
+				</section>
+				<section>
+					<div class="fragment fade-right" data-fragment-index="1" style="float: left; width: 48%; text-align: right">←历史</div>
+					<div class="fragment fade-left" data-fragment-index="1" style="float: right; width: 48%; text-align: left">现状→</div>
+				</section>
+				<section>
+					<section>
+						<h2>4. VLIW处理器的现状-学术界</h2>
+						<div>Web of Science VLIW search result</div>
+						<img style="border: #fff" src="pictures/vliwYears.jpg" alt="">
+					</section>
+					<section>
+						<h2>4. VLIW处理器的现状-产业界</h2>
+						<div>2017年：Intel: Itanium 9700面向高性能服务器</div>
+						<div>Explicitly parallel instruction computing (EPIC)</div>
+					</section>
+				</section>
+				<section>
+					<h2>5. 参考文献</h2>
+					<ol>
+						<li>Fisher, Joseph A., et al. "Parallel processing: A smart compiler and a dumb machine." ACM Sigplan Notices 19.6 (1984): 37-47.</li>
+						<li>Lam, Monica. "Software pipelining: An effective scheduling technique for VLIW machines." ACM Sigplan Notices. Vol. 23. No. 7. ACM, 1988.</li>
+						<li>Klaiber, Alexander. "The technology behind Crusoe processors." Transmeta Corporation white paper (2000).</li>
+					</ol>
+				</section>
+				<section>
+					<h1>超长指令字处理器</h1>
+					Very Long Instruction Word (<b>VLIW</b>) Processor<br/>
+					<hr/>
+					<h2>谢谢！</h2>
+					<hr/>
+					谢本壹 2019.12.4
+				</section>
+			</div>
+		</div>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				slideNumber: true,
+				pdfSeparateFragments: false,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				dependencies: [
+					{ src: revealPath + 'plugin/markdown/marked.js' },
+					{ src: revealPath + 'plugin/markdown/markdown.js' },
+					{ src: revealPath + 'plugin/notes/notes.js', async: true },
+					{ src: revealPath + 'plugin/highlight/highlight.js', async: true },
+					{ src: revealPath + 'plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+
+			// to change themes after certain slides
+			// Reveal.addEventListener('slidechanged', function (event) {
+			// 	if(event.indexh <= 4) {
+			// 		if(document.getElementById('theme').getAttribute('href')!=='../../../CrossPlatformTools/reveal.js/css/theme/white.css')
+			// 			document.getElementById('theme').setAttribute('href','../../../CrossPlatformTools/reveal.js/css/theme/white.css');
+			// 	} else if(event.indexh <=6 ) {
+			// 		if(document.getElementById('theme').getAttribute('href')!=='../../../CrossPlatformTools/reveal.js/css/theme/beige.css')
+			// 			document.getElementById('theme').setAttribute('href','../../../CrossPlatformTools/reveal.js/css/theme/beige.css');
+			// 	} else if(event.indexh >6) {
+			// 		if(document.getElementById('theme').getAttribute('href')!=='../../../CrossPlatformTools/reveal.js/css/theme/black.css')
+			// 			document.getElementById('theme').setAttribute('href','../../../CrossPlatformTools/reveal.js/css/theme/black.css');
+			// 	}
+			// })
+		</script>
+	</body>
+</html>

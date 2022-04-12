@@ -1,0 +1,58 @@
+<mxfile host="Electron" modified="2020-04-28T02:41:27.963Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/12.3.2 Chrome/78.0.3904.113 Electron/7.1.2 Safari/537.36" etag="HV2p4APUgbvcKu3yXXoc" version="12.3.2" type="device" pages="1">
+  <diagram id="WLA-NcyHlWeGNWzduYpU" name="Page-1">
+    <mxGraphModel dx="653" dy="403" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="UYvX5YDcw8MQ0DAXOoVj-12" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;dashed=1;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="380" y="30" width="120" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="UYvX5YDcw8MQ0DAXOoVj-1" value="qemu" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="UYvX5YDcw8MQ0DAXOoVj-2" value="Medium" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="80" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="UYvX5YDcw8MQ0DAXOoVj-3" value="WorkerFunc1" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="40" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="UYvX5YDcw8MQ0DAXOoVj-4" value="..." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="80" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="UYvX5YDcw8MQ0DAXOoVj-5" value="WorkerFuncN" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="120" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="UYvX5YDcw8MQ0DAXOoVj-7" value="TBs" style="endArrow=classic;startArrow=classic;html=1;" edge="1" parent="1" source="UYvX5YDcw8MQ0DAXOoVj-1" target="UYvX5YDcw8MQ0DAXOoVj-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="160" as="sourcePoint"/>
+            <mxPoint x="150" y="110" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UYvX5YDcw8MQ0DAXOoVj-8" value="MipsBin" style="endArrow=classic;startArrow=classic;html=1;" edge="1" parent="1" source="UYvX5YDcw8MQ0DAXOoVj-2" target="UYvX5YDcw8MQ0DAXOoVj-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="300" y="70" as="sourcePoint"/>
+            <mxPoint x="350" y="20" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UYvX5YDcw8MQ0DAXOoVj-9" value="MipsBin" style="endArrow=classic;startArrow=classic;html=1;" edge="1" parent="1" source="UYvX5YDcw8MQ0DAXOoVj-2" target="UYvX5YDcw8MQ0DAXOoVj-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="330" y="90" as="sourcePoint"/>
+            <mxPoint x="410" y="70" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UYvX5YDcw8MQ0DAXOoVj-10" value="MipsBin" style="endArrow=classic;startArrow=classic;html=1;" edge="1" parent="1" source="UYvX5YDcw8MQ0DAXOoVj-2" target="UYvX5YDcw8MQ0DAXOoVj-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="340" y="100" as="sourcePoint"/>
+            <mxPoint x="420" y="80" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UYvX5YDcw8MQ0DAXOoVj-14" value="&lt;font color=&quot;#999999&quot;&gt;/// 完全不用include qemu的头文件&lt;br&gt;/// 用cpp实现，调用LLVM的各种功能&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];;autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="160" width="210" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="UYvX5YDcw8MQ0DAXOoVj-15" value="&lt;font color=&quot;#999999&quot;&gt;/// 和qemu打交道&lt;br&gt;/// 用c实现&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];;autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="120" width="110" height="30" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

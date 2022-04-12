@@ -1,0 +1,119 @@
+<mxfile host="Electron" modified="2020-11-19T10:00:48.346Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/13.3.9 Chrome/83.0.4103.119 Electron/9.0.5 Safari/537.36" etag="qu6tOzfAtjMK3zqDINaJ" compressed="false" version="13.3.9" type="device">
+  <diagram id="bGtaw2NxEkyJs-lQAm6f" name="Page-1">
+    <mxGraphModel dx="692" dy="424" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-1" value="&lt;b&gt;DIALOG_FilePrint&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-2" value="int &lt;b&gt;StartDocW&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="300" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-3" value="programs/notepad/dialog.c: 883~1003" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="60" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-4" value="HDC hdc" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="300" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-5" value="const DOCINFOA *lpdi" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="300" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-6" value="dlls/gdi32/printdrv.c: 71~89" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="280" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-7" value="int &lt;b&gt;EndDoc&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="500" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-8" value="HDC hdc" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="500" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-9" value="dlls/gdi32/printdrv.c: 141~152" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="480" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-10" value="HGDIOBJ &lt;b&gt;SelectObject&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="540" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-11" value="HDC hdc" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="540" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-12" value="HGDIOBJ h" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="540" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-13" value="&lt;b&gt;DeleteDC&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="580" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-14" value="HDC hdc" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="580" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-15" value="dlls/gdi32/dc.c: 800~824" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="560" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-16" value="&lt;b&gt;PrintDlgW&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="120" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-17" value="&lt;b&gt;PRINTDLG_CreateDCW&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="160" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-18" value="dlls/comdlg32/printdlg.c: 2200~2218" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="140" width="210" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-19" value="LPPRINTDLGW lppd" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="300" y="160" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-20" value="LPPRINTDLGW lppd" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="180" y="120" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-21" value="dlls/comdlg32/printdlg.c: 2391~2550" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="100" width="210" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-23" value="&lt;font color=&quot;#999999&quot;&gt;/// 启动打印窗口，lppd返回用户选择的打印机&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="100" width="260" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-25" value="&lt;font color=&quot;#999999&quot;&gt;// initialize DOCINFO&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="200" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-26" value="&lt;font color=&quot;#999999&quot;&gt;// Get the file text&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="240" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-27" value="" style="endArrow=none;html=1;fillColor=#f5f5f5;strokeColor=#666666;" edge="1" parent="1" source="o8JjChPgCHEGIJZuKhaA-7" target="o8JjChPgCHEGIJZuKhaA-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="390" as="sourcePoint" />
+            <mxPoint x="90" y="340" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="110" y="510" />
+              <mxPoint x="110" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-28" value="&lt;font color=&quot;#999999&quot;&gt;/// 启动TinyPDF，若点取消会&amp;lt;0的返回值&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="300" width="230" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-30" value="&lt;b&gt;StartDocDlg&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="340" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-31" value="/winxp/windows/core/ntgdi/client/output.c: 3310~3652" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="280" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-32" value="&lt;b&gt;DocumentEventEx&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="380" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-34" value="..." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="340" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-35" value="..." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="380" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-36" value="/winxp/windows/core/ntgdi/client/umpd.cxx: 757~773" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="360" width="290" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-37" value="&lt;font color=&quot;#999999&quot;&gt;// call the drivers UI portion&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="360" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="o8JjChPgCHEGIJZuKhaA-38" value="&lt;font color=&quot;#999999&quot;&gt;/// 这是明显的RPC。UMPD（User Mode Printer Driver）&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="380" width="320" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

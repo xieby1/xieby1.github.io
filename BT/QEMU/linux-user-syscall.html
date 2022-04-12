@@ -1,0 +1,338 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link class="revealHref" rel="stylesheet" href="css/reset.css">
+	<link class="revealHref" rel="stylesheet" href="css/reveal.css">
+	<link class="revealHref" rel="stylesheet" href="css/theme/white.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link class="revealHref" rel="stylesheet" href="lib/css/monokai.css">
+
+	<!-- The path to reveal.js folder. -->
+	<script>
+		let revealPath = "../../CrossPlatformTools/reveal.js/";
+	</script>
+	<script src="../../CrossPlatformTools/reveal.js/js/reveal.js"></script>
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.classList.add("revealHref");
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<script>
+		for(let e of document.getElementsByClassName("revealHref"))
+		{
+			let oldHref = e.getAttribute("href");
+			e.setAttribute("href", revealPath+oldHref);
+		}
+	</script>
+	<style type="text/css">
+		.floatBox {position: absolute; width: 50%; right: 0;
+			/*box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2);*/
+			background-color: rgba(0, 0, 0, 0.1); color: #333; padding: 10px;
+			font-size: 20px; text-align: left;}
+	</style>
+</head>
+<body>
+
+<div class="reveal">
+	<div class="slides">
+		<section data-markdown>
+			# QEMU系统调用框架
+
+			---
+
+			### The Outline of QEMU System Call
+
+			谢本壹 2019.11.28
+		</section>
+		<section>
+			<h2>前言</h2>
+
+			报告中会用到代码框架图，框架图的约定如下：<br/>
+
+			<img src="../Pictures/drawingStyle/cppStructure.svg" style="zoom: 120%;" alt=""><br/>
+
+			<p  style="text-align: right;"><small>采用draw.io绘制</small></p>
+		</section>
+		<section>
+			<h2>OUTLINE</h2>
+
+			<ol>
+				<li class="fragment">问题出发点</li>
+				<li class="fragment">动态翻译器翻译过程的特点</li>
+				<li class="fragment">X86toMips处理系统调用的方法</li>
+				<li class="fragment">QEMU处理系统调用的方法</li>
+				<li class="fragment">总结</li>
+			</ol>
+		</section>
+		<section data-markdown>
+			## 问题出发点
+
+			用QEMU系统调用还是修补X86toMips系统调用？
+		</section>
+		<section data-markdown>
+			## 动态翻译器翻译过程的特点
+
+			分成两个部分
+
+			1. 指令翻译成本地码
+
+			2. 执行本地码
+		</section>
+		<section>
+			<section data-markdown>
+				## X86toMips处理系统调用的方法
+
+				1. X86toMips指令翻译成本地码
+
+				2. X86toMips执行本地码
+			</section>
+			<section data-markdown>
+				### 1. X86toMips指令翻译成本地码
+
+				```c
+				// translator/tr_misc.cpp
+				translate_int(IR1_INST *pir1)
+				```
+
+				将如下的指令放入TB中，
+
+				* 保存上下文
+
+				* 解释系统调用`interpret_int`
+
+				* 还原上下文
+			</section>
+			<section>
+				<h3>2. X86toMips执行本地码</h3>
+				控制流图（首次执行）<br/>
+				<img src="pictures/x86tomips-syscall.svg" style="zoom: 200%;" alt="">
+				<small>X86toMips是翻译一个TB然后执行一个TB</small>
+				<div class="fragment floatBox" style="top: 20%; width: 20%">
+					<ol>
+						<li>开始执行当前TB</li>
+						<li>保存当前TB上下文然后转到系统调用的helper函数</li>
+						<li>从helper函数返回当前TB且恢复上下文</li>
+						<li>当前TB执行完成，回到exec函数，寻找下一个TB</li>
+						<li>发现没有TB了，生成下一个TB（没有进行反汇编，也没有进行翻译）</li>
+						<li>开始执行下一个TB</li>
+					</ol>
+				</div>
+			</section>
+			<section data-markdown>
+				### `interpret_int`的不足
+
+				只支持x86-32且支持的系统调用不全。
+			</section>
+			<section>
+				用QEMU系统调用还是修补X86toMips系统调用？<br/><br/><br/>
+				所以有必要研究清楚QEMU处理系统调用的方法。
+			</section>
+		</section>
+		<section>
+			<section data-markdown>
+				## QEMU处理系统调用的方法
+
+				1. QEMU执行本地码
+
+				2. QEMU指令翻译成本地码
+			</section>
+			<section data-markdown>
+				### 1. QEMU执行本地码
+
+				* QEMU用户级模拟框架图
+
+				* <code>do_syscall</code>框架图
+
+				* <code>cpu_exec</code>框架图
+			</section>
+			<section>
+				QEMU用户级模拟框架图
+				<img src="pictures/linux-user-cpu_loop.svg" alt=""/>
+				<div class="fragment floatBox" style="top: 45%;">
+					<p>
+						这里可以看出<code>cpu_exec</code>在执行TB，当遇到中断时就会返回中断号<code>trapnr</code>
+						，转到下面的<code>switch</code>语句中处理中断。
+						<span class="fragment"><code>case 0x80</code>为系统调用处理的case。</span>
+						<span class="fragment">接下来就详细看看<code>do_syscall</code>和<code>cpu_exec</code></span>
+					</p>
+				</div>
+			</section>
+			<section>
+				<code>do_syscall</code>框架图
+				<img src="pictures/syscall.svg" style="zoom: 120%" alt="">
+				<small class="fragment">QEMU在这里完成了对x86系统调用的模拟，包括了32/64ABI的转换问题。</small>
+			</section>
+			<section>
+				<code>cpu_exec</code>框架图
+				<img src="pictures/linux-user-cpu-exec.svg" style="zoom: 80%;" alt=""/>
+				<div class="fragment floatBox" style="top: 15%; width: 30%;">
+					这里有调用<code>sigsetjmp</code>函数。
+				</div>
+				<div class="fragment floatBox" style="top: 55%; width: 30%;">
+					这里有调用<code>siglongjmp</code>函数。
+				</div>
+				<div class="fragment floatBox" style="top: 25%; background-color: rgba(255, 255, 255, 0.9); width:35%;">
+					<img src="pictures/setjmp_longjmp.svg" alt="">
+				</div>
+				<div class="fragment floatBox" style="top: 80%; width: 50%;">
+					<code>siglongjmp</code>函数，在进行翻译时被放进了TB里。这个工作由<code>tb_find</code>完成。
+				</div>
+			</section>
+			<section>
+				<h3>2. QEMU指令翻译成本地码</h3>
+				<ol>
+					<li><code>tb_find</code>框架图<br/></li>
+					<li><code>tb_gen_code</code>框架图<br/></li>
+					<li>QEMU翻译过程控制流图</li>
+				</ol>
+
+			</section>
+			<section>
+				<code>tb_find</code>框架图<br/>
+				<img src="pictures/linux-user-tb_find.svg" style="zoom: 80%" alt=""/>
+				<div class="fragment floatBox" style="top:40%; width:30%">和X86toMips相同，也是发现没有TB时再去生成新的TB。</div>
+			</section>
+			<section>
+				<code>tb_gen_code</code>框架图<br/>
+				<img src="pictures/linux-user-tb_gen_code.svg" alt="">
+				<div class="fragment floatBox" style="top:65%; width: 40%;"><code>translate_insn</code>类似于X86toMips里的<code>translate_xxx</code>函数。</div>
+				<div class="fragment floatBox" style="top:75%; width: 40%;"><code>translate_insn</code>是个庞大的<code>switch</code>语句，将x86汇编翻译成TCG。</div>
+			</section>
+			<section data-markdown>
+				举个`translate_insn`里case的例子
+
+				```c
+				// disas_insn (target/i386/translate.c: 4486~8382)
+				...
+				switch(b) // b为x86机器指令的opcode
+				...
+				// 7055行开始如下，为处理x86的中断指令
+				case 0xcd: /* int N */
+				val = x86_ldub_code(env, s);
+				if (s->vm86 && s->iopl != 3) {
+				gen_exception(s, EXCP0D_GPF, pc_start - s->cs_base);
+				} else {
+				gen_interrupt(s, val, pc_start - s->cs_base, s->pc - s->cs_base);
+				}
+				break;
+				...
+				```
+			</section>
+			<section>
+				QEMU翻译过程总结成如下的控制流图（首次执行）
+				<img src="pictures/qemu-syscall.svg" style="zoom: 200%;" alt="">
+				<div class="fragment floatBox" style="top: 20%; width: 20%">
+					<ol>
+						<li>开始执行当前TB</li>
+						<li>转到系统调用的helper函数</li>
+						<li>helper函数通过siglongjmp跳到cpu_exec<bold>处理系统调用</bold>，然后寻找下一个TB</li>
+						<li>发现没有TB了，生成下一个TB（进行反汇编且进行翻译）</li>
+						<li>开始执行下一个TB</li>
+					</ol>
+				</div>
+			</section>
+		</section>
+		<section>
+			<section data-markdown>
+				## 总结
+
+				比较X86toMips和QEMU对系统调用的区别
+
+				1. 首次执行
+
+				2. 非首次执行
+
+			</section>
+			<section>
+				<h3>X86toMips和QEMU对系统调用的区别（首次执行）</h3>
+
+				<img src="pictures/x86tomips-syscall.svg" style="zoom: 150%" alt="">
+				<img src="pictures/qemu-syscall.svg" style="zoom:150%" alt="">
+
+
+				<ol>
+					<li class="fragment">步骤3: X86toMips回TB，QEMU回cpu_exec</li>
+					<div class="fragment floatBox" style="top: 73%; width: 70%">X86toMips在helper里处理系统调用。 QEMU在cpu_exec处理系统调用。</div>
+					<li class="fragment">syscall是否是TB结束的判定标志</li>
+				</ol>
+			</section>
+			<section>
+				<h3>X86toMips和QEMU对系统调用的区别（非首次执行）</h3>
+				TB已经都翻译好了。
+				<ul class="fragment">
+					<li>X86toMips: 每次都只执行一个TB</li>
+					<li>QEMU: 每次执行多个TB（直到遇到异常情况）</li>
+				</ul>
+				<img class="fragment" style="zoom: 150%" src="pictures/QEMU_internals_exec_TB.svg"><br/>
+				<p class="fragment">切换上下文的开销！所以在这个方面QEMU更好。</p>
+			</section>
+			<section>
+				<p>在系统调用是否有必要在cpu_exec里执行<span style="display: inline-block;" class="fragment grow">？</span></p>
+				<p class="fragment">自修改代码，修改之后的TB块对应的内存代码。</p>
+			</section>
+			<section>
+				<p>相比X86toMips处理系统调用的方法，&nbsp;<span style="display: inline-block;" class="fragment grow">QEMU更好。</span></p>
+			</section>
+		</section>
+		<section data-markdown>
+			# QEMU系统调用框架
+
+			---
+
+			谢谢
+
+			2019.11.28
+		</section>
+	</div>
+</div>
+
+<script>
+	// More info about config & dependencies:
+	// - https://github.com/hakimel/reveal.js#configuration
+	// - https://github.com/hakimel/reveal.js#dependencies
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		center: true,
+		hash: true,
+		slideNumber: true,
+		pdfSeparateFragments: false,
+
+		transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+		dependencies: [
+			{ src: revealPath + 'plugin/markdown/marked.js' },
+			{ src: revealPath + 'plugin/markdown/markdown.js' },
+			{ src: revealPath + 'plugin/notes/notes.js', async: true },
+			{ src: revealPath + 'plugin/highlight/highlight.js', async: true },
+			{ src: revealPath + 'plugin/zoom-js/zoom.js', async: true }
+		]
+	});
+
+	// to change themes after certain slides
+	// Reveal.addEventListener('slidechanged', function (event) {
+	// 	if(event.indexh <= 4) {
+	// 		if(document.getElementById('theme').getAttribute('href')!=='../../../CrossPlatformTools/reveal.js/css/theme/white.css')
+	// 			document.getElementById('theme').setAttribute('href','../../../CrossPlatformTools/reveal.js/css/theme/white.css');
+	// 	} else if(event.indexh <=6 ) {
+	// 		if(document.getElementById('theme').getAttribute('href')!=='../../../CrossPlatformTools/reveal.js/css/theme/beige.css')
+	// 			document.getElementById('theme').setAttribute('href','../../../CrossPlatformTools/reveal.js/css/theme/beige.css');
+	// 	} else if(event.indexh >6) {
+	// 		if(document.getElementById('theme').getAttribute('href')!=='../../../CrossPlatformTools/reveal.js/css/theme/black.css')
+	// 			document.getElementById('theme').setAttribute('href','../../../CrossPlatformTools/reveal.js/css/theme/black.css');
+	// 	}
+	// })
+</script>
+</body>
+</html>

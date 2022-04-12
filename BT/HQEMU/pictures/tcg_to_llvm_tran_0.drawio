@@ -1,0 +1,82 @@
+<mxfile host="Electron" modified="2020-04-20T16:16:32.189Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/12.3.2 Chrome/78.0.3904.113 Electron/7.1.2 Safari/537.36" etag="ojMGiPgOzYa235e-u7_V" version="12.3.2" type="device" pages="1">
+  <diagram id="YfxItp0cC2_p-ZkiNddo" name="Page-1">
+    <mxGraphModel dx="653" dy="403" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-1" value="&lt;b&gt;tcg_gen_hotpatch&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="100" width="120" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-2" value="&lt;b&gt;gen_intermediate_code&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="140" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-3" value="CPUX86State *env" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="180" y="40" width="120" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-4" value="TranslationBlock *tb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="300" y="40" width="120" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-5" value="target-i386/translate.c: 8402~8624" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];;autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="200" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-6" value="&lt;font color=&quot;#999999&quot;&gt;/// 在处理tb里的代码之前&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];;autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="80" width="150" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;" edge="1" parent="1" source="kc2LFMdt1Sn8iy__2PLe-7" target="kc2LFMdt1Sn8iy__2PLe-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="240" y="140"/>
+              <mxPoint x="440" y="140"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-7" value="uint32_t arg1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="200" y="100" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#f5f5f5;strokeColor=#666666;" edge="1" parent="1" source="kc2LFMdt1Sn8iy__2PLe-8" target="kc2LFMdt1Sn8iy__2PLe-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="130"/>
+              <mxPoint x="520" y="130"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-8" value="uint32_t arg2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="280" y="100" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-9" value="&lt;b&gt;tcg_gen_op2&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="160" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-10" value="TCGContext *ctx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="200" y="160" width="100" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-11" value="TCGOpcode opc" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="300" y="160" width="100" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-12" value="TCGArg a1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="400" y="160" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-13" value="TCGArg a2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="480" y="160" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;strokeColor=#666600;" edge="1" parent="1" source="kc2LFMdt1Sn8iy__2PLe-17" target="kc2LFMdt1Sn8iy__2PLe-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="150"/>
+              <mxPoint x="350" y="150"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-17" value="&lt;span style=&quot;color: rgb(102 , 102 , 0)&quot;&gt;INDEX_op_hotpatch&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="80" width="120" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-18" value="tcg/tcg-opc.h" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];;autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="60" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="kc2LFMdt1Sn8iy__2PLe-20" value="&lt;font color=&quot;#999999&quot;&gt;/// tcg_ctx全局变量&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];;autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="140" width="110" height="20" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
