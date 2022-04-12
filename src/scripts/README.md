@@ -1,22 +1,22 @@
 # My Scripts
 
 All scripts source code see:
-[github.com/xieby1/xieby1.github.io/tree/main/src/scripts](https://github.com/xieby1/xieby1.github.io/tree/main/src/scripts)
+[https://github.com/xieby1/xieby1.github.io/tree/main/src/scripts](https://github.com/xieby1/xieby1.github.io/tree/main/src/scripts)
 
 ## allfiles.sh
 
 ```bash
-un-hidden files
+TLDR: un-hidden files
 ```
 
 ## asm.sh
 
 ```bash
-asm => bin
-asm.sh [-h] <asm>
-Convert <asm> to machine code, by as
-Escape Note:
-  hash tag (#), simicolon (;), slash (\)
+TLDR: asm => bin
+Usage: asm.sh [-h] <asm>
+  Convert <asm> to machine code, by GNU assembler 'as'.
+Symbol needs to be escaped:
+  dolar (\$), hash tag (\#), simicolon (\;), slash (\\)
 Example:
   asm.sh "int \$0x80"
   asm.sh "add \$12, %eax"
@@ -27,27 +27,26 @@ Example:
 ## ff.sh
 
 ```bash
-fuzzy find
+TLDR: fuzzy find
 ```
 
 ## formatxml.sh
 
 ```bash
-format xml
+TLDR: format xml
 ```
 
 ## grep.sh
 
 ```bash
-my grep
+TLDR: my grep
 ```
 
 ## ldd-grep.sh
 
 ```bash
-gather dep so
+TLDR: gather dep so
 Usage: ldd-grep.sh [-o DEST] [ FILE | DIR ]
-
   List the lib dependencies of FILE or files under DIR
   If FILE or DIR is not specified, '.' will be used
   If -o DEST is specifed, dependencies will be copied to DEST
@@ -56,15 +55,14 @@ Usage: ldd-grep.sh [-o DEST] [ FILE | DIR ]
 ## ls-git.sh
 
 ```bash
-ls files in git
+TLDR: ls files in git
 ```
 
 ## nbd-mount.sh
 
 ```bash
-nbd mount
+TLDR: nbd mount
 Usage: nbd-mount.sh DISK_IMAGE [-o MOUNT_DIR]
-
   export DISK_IMAGE using the NBD protocol
   mount the nbd dev to MOUNT_DIR
   default MOUNT_DIR is c/, not create dir if c/ not exist
@@ -73,51 +71,49 @@ Usage: nbd-mount.sh DISK_IMAGE [-o MOUNT_DIR]
 ## pdbsf.sh
 
 ```bash
-pdb src file
+TLDR: pdb src file
 ```
 
 ## pdfbookmark.sh
 
 ```bash
-md <=> pdf toc
+TLDR: md <=> pdf toc
 Usage:
-  Extract Bookmarks: pdfbookmark.sh FILE.pdf [FILE.md]
-  Update Bookmarks:  pdfbookmark.sh FILE.md FILE.pdf
+  Extract Bookmarks from pdf: pdfbookmark.sh FILE.pdf [FILE.md]
+  Update Bookmarks to pdf:  pdfbookmark.sh FILE.md FILE.pdf
 ```
 
 ## pwrThr.sh
 
 ```bash
-toggle pwrThr
+TLDR: toggle pwrThr
 ```
 
 ## resize_gif.sh
 
 ```bash
-gif<=10M
-Usage:
-  resize_gif.sh <xxx.gif>
-
-Compress <xxx.gif> under and near 10M
-output to <xxx.resized.gif>
+TLDR: gif<=10M
+Usage: resize_gif.sh <xxx.gif>
+  Compress <xxx.gif> under and near 10M,
+  output to <xxx.resized.gif>
 ```
 
 ## tar-repo.sh
 
 ```bash
-tar git files
-tar-repo.sh [-h] <DIR>
-tar git repo <DIR>, exclude patterns from
+TLDR: tar git files
+Usage: tar-repo.sh [-h] <DIR>
+  tar git repo <DIR>, exclude patterns from
   * global gitignore
   * repo's gitignore
   * repo's git/info/exclude
-output to DIR.tar.gz
+  output to <DIR>.tar.gz
 ```
 
 ## ubuntu.sh
 
 ```bash
-ubuntu container
+TLDR: ubuntu container
 Usage: ubuntu.sh [-h] [-c]
   run with no arg: enter a ubuntu container
   -c: reate a ubuntu container image

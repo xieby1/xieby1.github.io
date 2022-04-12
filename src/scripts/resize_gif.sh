@@ -3,11 +3,9 @@
 if [[ $# -eq 0 ||  $1 == "-h" || $1 == "--help" ]]
 then
     echo "gif<=10M"
-    echo "Usage:"
-    echo "  ${0##*/} <xxx.gif>"
-    echo
-    echo "Compress <xxx.gif> under and near 10M"
-    echo "output to <xxx.resized.gif>"
+    echo "Usage: ${0##*/} <xxx.gif>"
+    echo "  Compress <xxx.gif> under and near 10M,"
+    echo "  output to <xxx.resized.gif>"
     exit 0
 fi
 

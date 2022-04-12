@@ -10,7 +10,6 @@
 usage() {
     echo "nbd mount"
     echo "Usage: ${0##*/} DISK_IMAGE [-o MOUNT_DIR]"
-    echo
     echo "  export DISK_IMAGE using the NBD protocol"
     echo "  mount the nbd dev to MOUNT_DIR"
     echo "  default MOUNT_DIR is c/, not create dir if c/ not exist"

@@ -3,12 +3,12 @@
 usage()
 {
     echo "tar git files"
-    echo "${0##*/} [-h] <DIR>"
-    echo "tar git repo <DIR>, exclude patterns from"
+    echo "Usage: ${0##*/} [-h] <DIR>"
+    echo "  tar git repo <DIR>, exclude patterns from"
     echo "  * global gitignore"
     echo "  * repo's gitignore"
     echo "  * repo's git/info/exclude"
-    echo "output to DIR.tar.gz"
+    echo "  output to <DIR>.tar.gz"
     exit 0
 }
 
