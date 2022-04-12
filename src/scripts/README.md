@@ -1,5 +1,8 @@
 # My Scripts
 
+All scripts source code see:
+[github.com/xieby1/xieby1.github.io/tree/main/src/scripts](https://github.com/xieby1/xieby1.github.io/tree/main/src/scripts)
+
 ## allfiles.sh
 
 ```bash
