@@ -13,6 +13,12 @@ then
 fi
 cd "$SRC"
 
+echo "# Summary"
+echo
+echo "* [Welcome](./README.md)"
+echo "* [Essays](./Essays.md)"
+echo "* [abbreviations](./abbreviations.md)"
+echo
 echo "# xieby1's notes"
 echo
 
@@ -25,21 +31,18 @@ solve_an_entry()
         return 0
     fi
 
-    # .
-    if [[ $1 == '.' ]]
+    # ignore ., pictures folder, Essays.md, abbreviations.md
+    if [[ ${1##*/} == "pictures" || \
+          ${1##*/} == "." || \
+          ${1##*/} == "Essays.md" || \
+          ${1##*/} == "abbreviations.md" ]]
     then
-        NAME=Welcome
+        return 0
     fi
 
     # ignore none .md file
     EXT=${1:(-3):3}
     if [[ -f $1 && $EXT != ".md" ]]
-    then
-        return 0
-    fi
-
-    # ignore pictures folder
-    if [[ ${1##*/} == "pictures" ]]
     then
         return 0
     fi

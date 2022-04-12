@@ -1,7 +1,11 @@
-# xieby1's notes
+# Summary
 
 * [Welcome](./README.md)
-* [abbreviations.md](./abbreviations.md)
+* [Essays](./Essays.md)
+* [abbreviations](./abbreviations.md)
+
+# xieby1's notes
+
 * [ABI]()
 * [Algo]()
   * [Graph]()
@@ -216,7 +220,6 @@
   * [JingOS.md](./Distro/JingOS.md)
   * [Nix]()
     * [nixpkgs.md](./Distro/Nix/nixpkgs.md)
-* [Essays.md](./Essays.md)
 * [FPGA]()
   * [iverilog.md](./FPGA/iverilog.md)
 * [hackthon]()
