@@ -53,7 +53,6 @@ solve_an_entry()
     INDENT=${#TMP2}     # INDENT = 2
 
     # output
-    RES=""
     for (( i=0; i<${INDENT}; i++ ))
     do
         echo -n "  "
