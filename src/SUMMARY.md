@@ -386,6 +386,7 @@
     * [Overview.md](./Sandbox/Docker/Overview.md)
     * [QnA.md](./Sandbox/Docker/QnA.md)
   * [proot.md](./Sandbox/proot.md)
+* [scripts](./scripts/README.md)
 * [security]()
 * [SftwStack]()
   * [applications_arch.md](./SftwStack/applications_arch.md)
