@@ -1,0 +1,1092 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>spec2000 - xieby1&#x27;s notes</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="../favicon.svg">
+                        <link rel="shortcut icon" href="../favicon.png">
+                <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+                <link rel="stylesheet" href="../css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+                <link rel="stylesheet" href="../custom.css">
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../index.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li class="chapter-item "><a href="../abbreviations.html"><strong aria-hidden="true">2.</strong> abbreviations</a></li><li class="chapter-item "><div><strong aria-hidden="true">3.</strong> ABI</div></li><li class="chapter-item "><div><strong aria-hidden="true">4.</strong> Algo</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">4.1.</strong> Graph</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Algo/Graph/1998.distance.bunke.prl.775.html"><strong aria-hidden="true">4.1.1.</strong> 1998.distance.bunke.prl.775</a></li><li class="chapter-item "><a href="../Algo/Graph/2002.inexact_match.bengoetxea.doc_thesis.107.html"><strong aria-hidden="true">4.1.2.</strong> 2002.inexact_match.bengoetxea.doc_thesis.107</a></li><li class="chapter-item "><a href="../Algo/Graph/2014.attributed.zhang.cvpr.19.html"><strong aria-hidden="true">4.1.3.</strong> 2014.attributed.zhang.cvpr.19</a></li><li class="chapter-item "><a href="../Algo/Graph/2016.survey.yan.icmr.108.html"><strong aria-hidden="true">4.1.4.</strong> 2016.survey.yan.icmr.108</a></li><li class="chapter-item "><a href="../Algo/Graph/2021.igraphmatch.qiao..0.html"><strong aria-hidden="true">4.1.5.</strong> 2021.igraphmatch.qiao..0</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">5.</strong> analysis</div></li><li class="chapter-item "><div><strong aria-hidden="true">6.</strong> Arch</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">6.1.</strong> HT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Arch/HT/2005.cell.kahle.ibmjrd.1093.html"><strong aria-hidden="true">6.1.1.</strong> 2005.cell.kahle.ibmjrd.1093</a></li><li class="chapter-item "><a href="../Arch/HT/2012.process_migration.devuyst.asplos.83.html"><strong aria-hidden="true">6.1.2.</strong> 2012.process_migration.devuyst.asplos.83</a></li><li class="chapter-item "><a href="../Arch/HT/2015.overview.mitra.jip.15.html"><strong aria-hidden="true">6.1.3.</strong> 2015.overview.mitra.jip.15</a></li><li class="chapter-item "><a href="../Arch/HT/2018.process_migration.venkat.doc_thesis.5.html"><strong aria-hidden="true">6.1.4.</strong> 2018.process_migration.venkat.doc_thesis.5</a></li><li class="chapter-item "><a href="../Arch/HT/2020.byoc_framework.balkind.asplos.3.html"><strong aria-hidden="true">6.1.5.</strong> 2020.byoc_framework.balkind.asplos.3</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">6.2.</strong> reconf</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Arch/reconf/1997.chimaera.hauck.fccm.461.html"><strong aria-hidden="true">6.2.1.</strong> 1997.chimaera.hauck.fccm.461</a></li><li class="chapter-item "><a href="../Arch/reconf/2008.reconf_acc.beck.date.97.html"><strong aria-hidden="true">6.2.2.</strong> 2008.reconf_acc.beck.date.97</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">6.3.</strong> VLIW</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Benchmarks</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Benchmarks/coremark.html"><strong aria-hidden="true">7.1.</strong> coremark</a></li><li class="chapter-item "><div><strong aria-hidden="true">7.2.</strong> herdtools7</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Benchmarks/herdtools7/overview.html"><strong aria-hidden="true">7.2.1.</strong> overview</a></li></ol></li><li class="chapter-item "><a href="../Benchmarks/spec/index.html"><strong aria-hidden="true">7.3.</strong> spec</a></li><li class="chapter-item expanded "><a href="../Benchmarks/spec2000.html" class="active"><strong aria-hidden="true">7.4.</strong> spec2000</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.</strong> BT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">8.1.</strong> algo</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/algo/2006.lib.杨浩.计算机研究与发展.0.html"><strong aria-hidden="true">8.1.1.</strong> 2006.lib.杨浩.计算机研究与发展.0</a></li><li class="chapter-item "><a href="../BT/algo/2016.static_identify_jump_target.federico.cases.9.html"><strong aria-hidden="true">8.1.2.</strong> 2016.static_identify_jump_target.federico.cases.9</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.3.</strong> bt_rules</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/algo/bt_rules/2006.peephole_superopt.bansal.asplos.134.html"><strong aria-hidden="true">8.1.3.1.</strong> 2006.peephole_superopt.bansal.asplos.134</a></li><li class="chapter-item "><a href="../BT/algo/bt_rules/2018.learn.wwwang.asplos.11.html"><strong aria-hidden="true">8.1.3.2.</strong> 2018.learn.wwwang.asplos.11</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.4.</strong> offload</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/algo/offload/2010.distribit.guan.hpdc.5.html"><strong aria-hidden="true">8.1.4.1.</strong> 2010.distribit.guan.hpdc.5</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.5.</strong> reg</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.6.</strong> smc</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/algo/smc/2015.detect.hawkins.cgo.24.html"><strong aria-hidden="true">8.1.6.1.</strong> 2015.detect.hawkins.cgo.24</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.1.7.</strong> trace</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/algo/trace/1994.opt_profiling_tracing.ball.toplas.580.html"><strong aria-hidden="true">8.1.7.1.</strong> 1994.opt_profiling_tracing.ball.toplas.580</a></li><li class="chapter-item "><a href="../BT/algo/trace/2000.net.duesterwald.asplos.141.html"><strong aria-hidden="true">8.1.7.2.</strong> 2000.net.duesterwald.asplos.141</a></li><li class="chapter-item "><a href="../BT/algo/trace/2005.edge_profile.白童心.计算机工程.2.html"><strong aria-hidden="true">8.1.7.3.</strong> 2005.edge_profile.白童心.计算机工程.2</a></li><li class="chapter-item "><a href="../BT/algo/trace/2005.lei_net.hiniker.micro.39.html"><strong aria-hidden="true">8.1.7.4.</strong> 2005.lei_net.hiniker.micro.39</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.2.</strong> analysis</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/analysis/2014.simulators_harm.nowatki..19.html"><strong aria-hidden="true">8.2.1.</strong> 2014.simulators_harm.nowatki..19</a></li><li class="chapter-item "><a href="../BT/analysis/2020.perfdbt.wu.iccd.2.html"><strong aria-hidden="true">8.2.2.</strong> 2020.perfdbt.wu.iccd.2</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.3.</strong> application</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.4.</strong> Box86</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/Box86/logs.html"><strong aria-hidden="true">8.4.1.</strong> logs</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.5.</strong> dynamic</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/dynamic/2017.mambox64.dantras.pldi.18.html"><strong aria-hidden="true">8.5.1.</strong> 2017.mambox64.dantras.pldi.18</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.6.</strong> Emulator</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">8.6.1.</strong> Emulator_Design</div></li></ol></li><li class="chapter-item "><a href="../BT/exagear.html"><strong aria-hidden="true">8.7.</strong> exagear</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.8.</strong> HQEMU</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/HQEMU/codeReading-deprecated.html"><strong aria-hidden="true">8.8.1.</strong> codeReading-deprecated</a></li><li class="chapter-item "><a href="../BT/HQEMU/codeReading.html"><strong aria-hidden="true">8.8.2.</strong> codeReading</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.</strong> HW</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/HW/2008.coprocessor.li.amasbt.3.html"><strong aria-hidden="true">8.9.1.</strong> 2008.coprocessor.li.amasbt.3</a></li><li class="chapter-item "><a href="../BT/HW/2009.godson3_x86_emu.hu.micro.84.html"><strong aria-hidden="true">8.9.2.</strong> 2009.godson3_x86_emu.hu.micro.84</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.3.</strong> codeCache</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.4.</strong> reconf</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/HW/reconf/2013.x86_mips_reconf.junior.jsa.4.html"><strong aria-hidden="true">8.9.4.1.</strong> 2013.x86_mips_reconf.junior.jsa.4</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.5.</strong> VLIW</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/HW/VLIW/2015.denver.nvidia.micro.36.html"><strong aria-hidden="true">8.9.5.1.</strong> 2015.denver.nvidia.micro.36</a></li><li class="chapter-item "><a href="../BT/HW/VLIW/2019.hybrid_dbt.rokicki.cadics.2.html"><strong aria-hidden="true">8.9.5.2.</strong> 2019.hybrid_dbt.rokicki.cadics.2</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.5.3.</strong> crusoe</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/HW/VLIW/crusoe/2000.crusoe.klaiber.transmeta.118.html"><strong aria-hidden="true">8.9.5.3.1.</strong> 2000.crusoe.klaiber.transmeta.118</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.9.5.4.</strong> daisy</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.10.</strong> kernel</div></li><li class="chapter-item "><a href="../BT/libDBT/index.html"><strong aria-hidden="true">8.11.</strong> libDBT</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.</strong> lift</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.</strong> IR</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.1.</strong> LLBT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/lift/IR/LLBT/LLBT调研.html"><strong aria-hidden="true">8.12.1.1.1.</strong> LLBT调研</a></li><li class="chapter-item "><a href="../BT/lift/IR/LLBT/二进制翻译调研报告（LLBT相关）.html"><strong aria-hidden="true">8.12.1.1.2.</strong> 二进制翻译调研报告（LLBT相关）</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.2.</strong> mcsema</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/lift/IR/mcsema/2019.mcsema_dyninst.korencik...html"><strong aria-hidden="true">8.12.1.2.1.</strong> 2019.mcsema_dyninst.korencik..</a></li><li class="chapter-item "><a href="../BT/lift/IR/mcsema/2019.mcsema.researchLogs.html"><strong aria-hidden="true">8.12.1.2.2.</strong> 2019.mcsema.researchLogs</a></li><li class="chapter-item "><a href="../BT/lift/IR/mcsema/remill.html"><strong aria-hidden="true">8.12.1.2.3.</strong> remill</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.3.</strong> mctoll</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/lift/IR/mctoll/2019.mctoll.yadavalli.lctes.5.html"><strong aria-hidden="true">8.12.1.3.1.</strong> 2019.mctoll.yadavalli.lctes.5</a></li><li class="chapter-item "><a href="../BT/lift/IR/mctoll/codesReading.html"><strong aria-hidden="true">8.12.1.3.2.</strong> codesReading</a></li><li class="chapter-item "><a href="../BT/lift/IR/mctoll/run.html"><strong aria-hidden="true">8.12.1.3.3.</strong> run</a></li></ol></li><li class="chapter-item "><a href="../BT/lift/IR/overview.html"><strong aria-hidden="true">8.12.1.4.</strong> overview</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.12.1.5.</strong> REVNG</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.13.</strong> Mem</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/Mem/2008.thread_safe_by_tm.chung.hpca.51.html"><strong aria-hidden="true">8.13.1.</strong> 2008.thread_safe_by_tm.chung.hpca.51</a></li><li class="chapter-item "><a href="../BT/Mem/2016.atomic.rigo.taco.6.html"><strong aria-hidden="true">8.13.2.</strong> 2016.atomic.rigo.taco.6</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.14.</strong> oldProj</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/oldProj/1993.mips2alphaaxp.sites.cacm.267.html"><strong aria-hidden="true">8.14.1.</strong> 1993.mips2alphaaxp.sites.cacm.267</a></li><li class="chapter-item "><a href="../BT/oldProj/1998.fx32.chernoff.micro.217.html"><strong aria-hidden="true">8.14.2.</strong> 1998.fx32.chernoff.micro.217</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.14.3.</strong> dbt4AndStatic</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/oldProj/dbt4AndStatic/DBT4代码阅读笔记.html"><strong aria-hidden="true">8.14.3.1.</strong> DBT4代码阅读笔记</a></li><li class="chapter-item "><a href="../BT/oldProj/dbt4AndStatic/dbt-static.html"><strong aria-hidden="true">8.14.3.2.</strong> dbt-static</a></li><li class="chapter-item "><a href="../BT/oldProj/dbt4AndStatic/去除orc工作量和难度.html"><strong aria-hidden="true">8.14.3.3.</strong> 去除orc工作量和难度</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.15.</strong> others</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.16.</strong> overview</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/overview/2001.bt_opt_challenges.altman.pieee.38.html"><strong aria-hidden="true">8.16.1.</strong> 2001.bt_opt_challenges.altman.pieee.38</a></li><li class="chapter-item "><a href="../BT/overview/2004.bibliography_of_simulators.html"><strong aria-hidden="true">8.16.2.</strong> 2004.bibliography_of_simulators</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.17.</strong> QEMU</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/QEMU/16k.html"><strong aria-hidden="true">8.17.1.</strong> 16k</a></li><li class="chapter-item "><a href="../BT/QEMU/2005.qemu.bellard.usenix.2217.html"><strong aria-hidden="true">8.17.2.</strong> 2005.qemu.bellard.usenix.2217</a></li><li class="chapter-item "><a href="../BT/QEMU/2017.qemu_multi_cores.cota.cgo.8.html"><strong aria-hidden="true">8.17.3.</strong> 2017.qemu_multi_cores.cota.cgo.8</a></li><li class="chapter-item "><a href="../BT/QEMU/LA-backend.html"><strong aria-hidden="true">8.17.4.</strong> LA-backend</a></li><li class="chapter-item "><a href="../BT/QEMU/linux-user-32.html"><strong aria-hidden="true">8.17.5.</strong> linux-user-32</a></li><li class="chapter-item "><a href="../BT/QEMU/linux-user.html"><strong aria-hidden="true">8.17.6.</strong> linux-user</a></li><li class="chapter-item "><a href="../BT/QEMU/linux-user-memory_region.html"><strong aria-hidden="true">8.17.7.</strong> linux-user-memory_region</a></li><li class="chapter-item "><a href="../BT/QEMU/logs.html"><strong aria-hidden="true">8.17.8.</strong> logs</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.17.9.</strong> lx</div></li><li class="chapter-item "><a href="../BT/QEMU/mt-tcg.html"><strong aria-hidden="true">8.17.10.</strong> mt-tcg</a></li><li class="chapter-item "><a href="../BT/QEMU/qemu-wine.html"><strong aria-hidden="true">8.17.11.</strong> qemu-wine</a></li><li class="chapter-item "><a href="../BT/QEMU/QnA.html"><strong aria-hidden="true">8.17.12.</strong> QnA</a></li><li class="chapter-item "><a href="../BT/QEMU/signal.html"><strong aria-hidden="true">8.17.13.</strong> signal</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.17.14.</strong> target</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.18.</strong> rewrite</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/rewrite/2018.superset_disassembly.bauman.ndss.40.html"><strong aria-hidden="true">8.18.1.</strong> 2018.superset_disassembly.bauman.ndss.40</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.18.2.</strong> instru</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/rewrite/instru/2009.mt.hazelwood.ismm.28.html"><strong aria-hidden="true">8.18.2.1.</strong> 2009.mt.hazelwood.ismm.28</a></li><li class="chapter-item "><a href="../BT/rewrite/instru/mem_count.html"><strong aria-hidden="true">8.18.2.2.</strong> mem_count</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.19.</strong> security</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.20.</strong> static</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.21.</strong> sys</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.22.</strong> Tarmac</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.23.</strong> test</div></li><li class="chapter-item "><div><strong aria-hidden="true">8.24.</strong> x86-qemu-mips</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/x86-qemu-mips/check_manual.html"><strong aria-hidden="true">8.24.1.</strong> check_manual</a></li><li class="chapter-item "><a href="../BT/x86-qemu-mips/check.html"><strong aria-hidden="true">8.24.2.</strong> check</a></li><li class="chapter-item "><div><strong aria-hidden="true">8.24.3.</strong> debugs</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/x86-qemu-mips/debugs/OPEN.unknown-loop-in-bios.html"><strong aria-hidden="true">8.24.3.1.</strong> OPEN.unknown-loop-in-bios</a></li></ol></li><li class="chapter-item "><a href="../BT/x86-qemu-mips/linux-user.html"><strong aria-hidden="true">8.24.4.</strong> linux-user</a></li><li class="chapter-item "><a href="../BT/x86-qemu-mips/mips-llvm.html"><strong aria-hidden="true">8.24.5.</strong> mips-llvm</a></li><li class="chapter-item "><a href="../BT/x86-qemu-mips/mt-tcg.html"><strong aria-hidden="true">8.24.6.</strong> mt-tcg</a></li><li class="chapter-item "><a href="../BT/x86-qemu-mips/tr_misc修改记录.html"><strong aria-hidden="true">8.24.7.</strong> tr_misc修改记录</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">8.25.</strong> X86toMips</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../BT/X86toMips/dbt测试结果.html"><strong aria-hidden="true">8.25.1.</strong> dbt测试结果</a></li><li class="chapter-item "><a href="../BT/X86toMips/Pseudo-README.html"><strong aria-hidden="true">8.25.2.</strong> Pseudo-README</a></li><li class="chapter-item "><a href="../BT/X86toMips/X86toMips调研.html"><strong aria-hidden="true">8.25.3.</strong> X86toMips调研</a></li><li class="chapter-item "><a href="../BT/X86toMips/X86toMips调研-续.html"><strong aria-hidden="true">8.25.4.</strong> X86toMips调研-续</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.</strong> Build</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">9.1.</strong> Autotools</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Build/Autotools/2012.autotools_criticism.kamp..html"><strong aria-hidden="true">9.1.1.</strong> 2012.autotools_criticism.kamp.</a></li><li class="chapter-item "><a href="../Build/Autotools/autotools.html"><strong aria-hidden="true">9.1.2.</strong> autotools</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.2.</strong> CMake</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Build/CMake/Notes.html"><strong aria-hidden="true">9.2.1.</strong> Notes</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.</strong> Compiler</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Build/Compiler/1992.hyperblock.mahlke.micro.html"><strong aria-hidden="true">9.3.1.</strong> 1992.hyperblock.mahlke.micro</a></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.2.</strong> llvm</div></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.3.</strong> mingw</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Build/Compiler/mingw/overview.html"><strong aria-hidden="true">9.3.3.1.</strong> overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.4.</strong> ORC</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Build/Compiler/ORC/2004.ORC-LCPC04-Tutorial.html"><strong aria-hidden="true">9.3.4.1.</strong> 2004.ORC-LCPC04-Tutorial</a></li><li class="chapter-item "><a href="../Build/Compiler/ORC/2004.overview_orc.wuchengyong.iwlcpc.html"><strong aria-hidden="true">9.3.4.2.</strong> 2004.overview_orc.wuchengyong.iwlcpc</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.3.5.</strong> trans</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.4.</strong> Disassemble</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Build/Disassemble/2002.disassembly.bschwarz.pieee.html"><strong aria-hidden="true">9.4.1.</strong> 2002.disassembly.bschwarz.pieee</a></li></ol></li><li class="chapter-item "><a href="../Build/ELF/index.html"><strong aria-hidden="true">9.5.</strong> ELF</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Build/ELF/ELF调研.html"><strong aria-hidden="true">9.5.1.</strong> ELF调研</a></li><li class="chapter-item "><a href="../Build/ELF/QnA.html"><strong aria-hidden="true">9.5.2.</strong> QnA</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">9.6.</strong> Linker_Loader</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Build/Linker_Loader/QnA.html"><strong aria-hidden="true">9.6.1.</strong> QnA</a></li></ol></li><li class="chapter-item "><a href="../Build/mingw.html"><strong aria-hidden="true">9.7.</strong> mingw</a></li></ol></li><li class="chapter-item "><a href="../cheatsheet.html"><strong aria-hidden="true">10.</strong> cheatsheet</a></li><li class="chapter-item "><div><strong aria-hidden="true">11.</strong> CLI</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../CLI/term_pty_sh.html"><strong aria-hidden="true">11.1.</strong> term_pty_sh</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">12.</strong> CompatLayer</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../CompatLayer/2006.linuxulator.divacky.freebsd..html"><strong aria-hidden="true">12.1.</strong> 2006.linuxulator.divacky.freebsd.</a></li><li class="chapter-item "><a href="../CompatLayer/Alky.html"><strong aria-hidden="true">12.2.</strong> Alky</a></li><li class="chapter-item "><div><strong aria-hidden="true">12.3.</strong> UML</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../CompatLayer/UML/user_mode_linux.html"><strong aria-hidden="true">12.3.1.</strong> user_mode_linux</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">12.4.</strong> WINE</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../CompatLayer/WINE/2020_6_25.emu_win_syscall.corbet.lwn.html"><strong aria-hidden="true">12.4.1.</strong> 2020_6_25.emu_win_syscall.corbet.lwn</a></li><li class="chapter-item "><a href="../CompatLayer/WINE/Design_of_WINE.html"><strong aria-hidden="true">12.4.2.</strong> Design_of_WINE</a></li><li class="chapter-item "><a href="../CompatLayer/WINE/optimizable.html"><strong aria-hidden="true">12.4.3.</strong> optimizable</a></li><li class="chapter-item "><a href="../CompatLayer/WINE/others.html"><strong aria-hidden="true">12.4.4.</strong> others</a></li><li class="chapter-item "><a href="../CompatLayer/WINE/qemu-wine-logs.html"><strong aria-hidden="true">12.4.5.</strong> qemu-wine-logs</a></li><li class="chapter-item "><a href="../CompatLayer/WINE/qemu-wine.html"><strong aria-hidden="true">12.4.6.</strong> qemu-wine</a></li><li class="chapter-item "><a href="../CompatLayer/WINE/qemu-winetest_debug_logs.html"><strong aria-hidden="true">12.4.7.</strong> qemu-winetest_debug_logs</a></li><li class="chapter-item "><a href="../CompatLayer/WINE/qemu-wine环境搭建.html"><strong aria-hidden="true">12.4.8.</strong> qemu-wine环境搭建</a></li><li class="chapter-item "><a href="../CompatLayer/WINE/QnA.html"><strong aria-hidden="true">12.4.9.</strong> QnA</a></li><li class="chapter-item "><a href="../CompatLayer/WINE/References.html"><strong aria-hidden="true">12.4.10.</strong> References</a></li><li class="chapter-item "><a href="../CompatLayer/WINE/Winegcc调研.html"><strong aria-hidden="true">12.4.11.</strong> Winegcc调研</a></li><li class="chapter-item "><a href="../CompatLayer/WINE/Winelib调研报告.html"><strong aria-hidden="true">12.4.12.</strong> Winelib调研报告</a></li><li class="chapter-item "><a href="../CompatLayer/WINE/WINE设备驱动调研.html"><strong aria-hidden="true">12.4.13.</strong> WINE设备驱动调研</a></li><li class="chapter-item "><a href="../CompatLayer/WINE/WINE调研.html"><strong aria-hidden="true">12.4.14.</strong> WINE调研</a></li><li class="chapter-item "><a href="../CompatLayer/WINE/二进制翻译调研报告_FX32_Wine.html"><strong aria-hidden="true">12.4.15.</strong> 二进制翻译调研报告_FX32_Wine</a></li><li class="chapter-item "><a href="../CompatLayer/WINE/二进制翻译调研报告_Wine.html"><strong aria-hidden="true">12.4.16.</strong> 二进制翻译调研报告_Wine</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.</strong> Connect</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Connect/Bluetooth/index.html"><strong aria-hidden="true">13.1.</strong> Bluetooth</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.1.1.</strong> bluez</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Connect/Bluetooth/bluez/profile_input.html"><strong aria-hidden="true">13.1.1.1.</strong> profile_input</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.2.</strong> btkbdd</div></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.3.</strong> dbus</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Connect/Bluetooth/dbus/Overview.html"><strong aria-hidden="true">13.1.3.1.</strong> Overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.4.</strong> Essays</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.1.4.1.</strong> 2005.bluez_intro</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Connect/Bluetooth/Essays/2005.bluez_intro.albert/An_Introduction_to_Bluetooth_Programming.html"><strong aria-hidden="true">13.1.4.1.1.</strong> An_Introduction_to_Bluetooth_Programming</a></li></ol></li><li class="chapter-item "><a href="../Connect/Bluetooth/Essays/阅读记录.html"><strong aria-hidden="true">13.1.4.2.</strong> 阅读记录</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.1.5.</strong> hidclient</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Connect/Bluetooth/hidclient/logs.html"><strong aria-hidden="true">13.1.5.1.</strong> logs</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.2.</strong> Network</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.2.1.</strong> bittorrent</div></li><li class="chapter-item "><div><strong aria-hidden="true">13.2.2.</strong> nginx</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Connect/Network/nginx/logs.html"><strong aria-hidden="true">13.2.2.1.</strong> logs</a></li></ol></li><li class="chapter-item "><a href="../Connect/Network/p2p.html"><strong aria-hidden="true">13.2.3.</strong> p2p</a></li><li class="chapter-item "><a href="../Connect/Network/streaming_server.html"><strong aria-hidden="true">13.2.4.</strong> streaming_server</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">13.3.</strong> NFC</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">13.3.1.</strong> Essays</div></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">14.</strong> dataViz</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../dataViz/overview.html"><strong aria-hidden="true">14.1.</strong> overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">15.</strong> Distro</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Distro/JingOS.html"><strong aria-hidden="true">15.1.</strong> JingOS</a></li><li class="chapter-item "><div><strong aria-hidden="true">15.2.</strong> Nix</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Distro/Nix/nixpkgs.html"><strong aria-hidden="true">15.2.1.</strong> nixpkgs</a></li></ol></li></ol></li><li class="chapter-item "><a href="../Essays.html"><strong aria-hidden="true">16.</strong> Essays</a></li><li class="chapter-item "><div><strong aria-hidden="true">17.</strong> FPGA</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../FPGA/iverilog.html"><strong aria-hidden="true">17.1.</strong> iverilog</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">18.</strong> hackthon</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../hackthon/Untitled.html"><strong aria-hidden="true">18.1.</strong> Untitled</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">19.</strong> Input</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Input/logs.html"><strong aria-hidden="true">19.1.</strong> logs</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">20.</strong> ISA</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ISA/2013.power_of_risc_cisc.blem.hpca.144.html"><strong aria-hidden="true">20.1.</strong> 2013.power_of_risc_cisc.blem.hpca.144</a></li><li class="chapter-item "><div><strong aria-hidden="true">20.2.</strong> arm</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.3.</strong> enhance</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.4.</strong> mips</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.5.</strong> mips_lx</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.6.</strong> riscv</div></li><li class="chapter-item "><a href="../ISA/Semantics/index.html"><strong aria-hidden="true">20.7.</strong> Semantics</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ISA/Semantics/2013.locate.lakhotia.pprew.75.html"><strong aria-hidden="true">20.7.1.</strong> 2013.locate.lakhotia.pprew.75</a></li><li class="chapter-item "><a href="../ISA/Semantics/2014.lem.mulligan.icfp.79.html"><strong aria-hidden="true">20.7.2.</strong> 2014.lem.mulligan.icfp.79</a></li><li class="chapter-item "><a href="../ISA/Semantics/2015.sail.gray.micro.31.html"><strong aria-hidden="true">20.7.3.</strong> 2015.sail.gray.micro.31</a></li><li class="chapter-item "><a href="../ISA/Semantics/2016.learn.heule.pldi.56.html"><strong aria-hidden="true">20.7.4.</strong> 2016.learn.heule.pldi.56</a></li><li class="chapter-item "><a href="../ISA/Semantics/2018.sail.armstrong..3.html"><strong aria-hidden="true">20.7.5.</strong> 2018.sail.armstrong..3</a></li><li class="chapter-item "><a href="../ISA/Semantics/2019.x64_validation.dasgupta.sigplan.24.html"><strong aria-hidden="true">20.7.6.</strong> 2019.x64_validation.dasgupta.sigplan.24</a></li><li class="chapter-item "><a href="../ISA/Semantics/2021.sail.armstrong.manual.html"><strong aria-hidden="true">20.7.7.</strong> 2021.sail.armstrong.manual</a></li><li class="chapter-item "><div><strong aria-hidden="true">20.7.8.</strong> k</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ISA/Semantics/k/logs.html"><strong aria-hidden="true">20.7.8.1.</strong> logs</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">20.8.</strong> ultrasparc</div></li><li class="chapter-item "><div><strong aria-hidden="true">20.9.</strong> Uop</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ISA/Uop/1990.nec_intel.elkins...html"><strong aria-hidden="true">20.9.1.</strong> 1990.nec_intel.elkins..</a></li><li class="chapter-item "><a href="../ISA/Uop/1996.palcode..manual..html"><strong aria-hidden="true">20.9.2.</strong> 1996.palcode..manual.</a></li><li class="chapter-item "><a href="../ISA/Uop/2003.ucache.solomon.tvlsi.13.html"><strong aria-hidden="true">20.9.3.</strong> 2003.ucache.solomon.tvlsi.13</a></li><li class="chapter-item "><a href="../ISA/Uop/2019.reverse_engineer.koppe.usenix_security.16.html"><strong aria-hidden="true">20.9.4.</strong> 2019.reverse_engineer.koppe.usenix_security.16</a></li><li class="chapter-item "><a href="../ISA/Uop/2020.improve_ucache.kotra.micro.1.html"><strong aria-hidden="true">20.9.5.</strong> 2020.improve_ucache.kotra.micro.1</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">20.10.</strong> x86</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">21.</strong> JIT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../JIT/2008.llvm_sim.brandner..29.html"><strong aria-hidden="true">21.1.</strong> 2008.llvm_sim.brandner..29</a></li><li class="chapter-item "><a href="../JIT/2011.llvm_sim.helmstetter.imecs.6.html"><strong aria-hidden="true">21.2.</strong> 2011.llvm_sim.helmstetter.imecs.6</a></li><li class="chapter-item "><div><strong aria-hidden="true">21.3.</strong> dynarmic</div></li><li class="chapter-item "><div><strong aria-hidden="true">21.4.</strong> opt</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.</strong> Kernel</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Kernel/2020_9_9.prepare_new_feat.edge.lwn-lpc.html"><strong aria-hidden="true">22.1.</strong> 2020_9_9.prepare_new_feat.edge.lwn-lpc</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.2.</strong> Driver</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Kernel/Driver/2019.linux_win_printer.金融通.软件所硕士.html"><strong aria-hidden="true">22.2.1.</strong> 2019.linux_win_printer.金融通.软件所硕士</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.3.</strong> exo</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Kernel/exo/1995.intro.engler.sosp.1259.html"><strong aria-hidden="true">22.3.1.</strong> 1995.intro.engler.sosp.1259</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.</strong> Linux</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Kernel/Linux/2002.rcu.mckenney..216.html"><strong aria-hidden="true">22.4.1.</strong> 2002.rcu.mckenney..216</a></li><li class="chapter-item "><a href="../Kernel/Linux/2016.sched_bug.lozi.eurosys.120.html"><strong aria-hidden="true">22.4.2.</strong> 2016.sched_bug.lozi.eurosys.120</a></li><li class="chapter-item "><a href="../Kernel/Linux/2018.concurrency.alglave.asplos.31.html"><strong aria-hidden="true">22.4.3.</strong> 2018.concurrency.alglave.asplos.31</a></li><li class="chapter-item "><a href="../Kernel/Linux/2020.rcu.mckenney...html"><strong aria-hidden="true">22.4.4.</strong> 2020.rcu.mckenney..</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.5.</strong> Android</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Kernel/Linux/Android/anbox.html"><strong aria-hidden="true">22.4.5.1.</strong> anbox</a></li><li class="chapter-item "><a href="../Kernel/Linux/Android/QnA.html"><strong aria-hidden="true">22.4.5.2.</strong> QnA</a></li><li class="chapter-item "><a href="../Kernel/Linux/Android/to_mainline.html"><strong aria-hidden="true">22.4.5.3.</strong> to_mainline</a></li><li class="chapter-item "><a href="../Kernel/Linux/Android/Waydroid.html"><strong aria-hidden="true">22.4.5.4.</strong> Waydroid</a></li></ol></li><li class="chapter-item "><a href="../Kernel/Linux/cache_alias.html"><strong aria-hidden="true">22.4.6.</strong> cache_alias</a></li><li class="chapter-item "><a href="../Kernel/Linux/cache_alias_page_color.html"><strong aria-hidden="true">22.4.7.</strong> cache_alias_page_color</a></li><li class="chapter-item "><a href="../Kernel/Linux/docsReading.html"><strong aria-hidden="true">22.4.8.</strong> docsReading</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.4.9.</strong> drivers</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Kernel/Linux/drivers/ioctl.html"><strong aria-hidden="true">22.4.9.1.</strong> ioctl</a></li><li class="chapter-item "><a href="../Kernel/Linux/drivers/QnA.html"><strong aria-hidden="true">22.4.9.2.</strong> QnA</a></li></ol></li><li class="chapter-item "><a href="../Kernel/Linux/idle.html"><strong aria-hidden="true">22.4.10.</strong> idle</a></li><li class="chapter-item "><a href="../Kernel/Linux/lx.html"><strong aria-hidden="true">22.4.11.</strong> lx</a></li><li class="chapter-item "><a href="../Kernel/Linux/memory_mapping.html"><strong aria-hidden="true">22.4.12.</strong> memory_mapping</a></li><li class="chapter-item "><a href="../Kernel/Linux/module.logs.html"><strong aria-hidden="true">22.4.13.</strong> module.logs</a></li><li class="chapter-item "><a href="../Kernel/Linux/mtlb.logs.html"><strong aria-hidden="true">22.4.14.</strong> mtlb.logs</a></li><li class="chapter-item "><a href="../Kernel/Linux/page_fault.html"><strong aria-hidden="true">22.4.15.</strong> page_fault</a></li><li class="chapter-item "><a href="../Kernel/Linux/page_size.html"><strong aria-hidden="true">22.4.16.</strong> page_size</a></li><li class="chapter-item "><a href="../Kernel/Linux/QnA-alpine.html"><strong aria-hidden="true">22.4.17.</strong> QnA-alpine</a></li><li class="chapter-item "><a href="../Kernel/Linux/QnA.html"><strong aria-hidden="true">22.4.18.</strong> QnA</a></li><li class="chapter-item "><a href="../Kernel/Linux/startup.html"><strong aria-hidden="true">22.4.19.</strong> startup</a></li><li class="chapter-item "><a href="../Kernel/Linux/syscalls.html"><strong aria-hidden="true">22.4.20.</strong> syscalls</a></li></ol></li><li class="chapter-item "><a href="../Kernel/memory.html"><strong aria-hidden="true">22.5.</strong> memory</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.6.</strong> micro</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Kernel/micro/1995.u_kernel.lietdke.sosp.308.html"><strong aria-hidden="true">22.6.1.</strong> 1995.u_kernel.lietdke.sosp.308</a></li><li class="chapter-item "><a href="../Kernel/micro/2013.l3_sel4.elphinstone.sosp.126.html"><strong aria-hidden="true">22.6.2.</strong> 2013.l3_sel4.elphinstone.sosp.126</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.7.</strong> multi</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Kernel/multi/2009.intro.baumann.sosp.856.html"><strong aria-hidden="true">22.7.1.</strong> 2009.intro.baumann.sosp.856</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.8.</strong> syscall</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Kernel/syscall/2020_9_8.extensible_syscall.corbet.lwn-lpc.html"><strong aria-hidden="true">22.8.1.</strong> 2020_9_8.extensible_syscall.corbet.lwn-lpc</a></li></ol></li><li class="chapter-item "><a href="../Kernel/transkernel.html"><strong aria-hidden="true">22.9.</strong> transkernel</a></li><li class="chapter-item "><div><strong aria-hidden="true">22.10.</strong> unikernel</div></li><li class="chapter-item "><div><strong aria-hidden="true">22.11.</strong> WinCmptbl</div></li><li class="chapter-item "><div><strong aria-hidden="true">22.12.</strong> Windows</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Kernel/Windows/compilation.html"><strong aria-hidden="true">22.12.1.</strong> compilation</a></li><li class="chapter-item "><a href="../Kernel/Windows/driver/index.html"><strong aria-hidden="true">22.12.2.</strong> driver</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Kernel/Windows/driver/ddiwrapper.html"><strong aria-hidden="true">22.12.2.1.</strong> ddiwrapper</a></li><li class="chapter-item "><a href="../Kernel/Windows/driver/logs-1.html"><strong aria-hidden="true">22.12.2.2.</strong> logs-1</a></li><li class="chapter-item "><a href="../Kernel/Windows/driver/logs.html"><strong aria-hidden="true">22.12.2.3.</strong> logs</a></li><li class="chapter-item "><a href="../Kernel/Windows/driver/ndis.html"><strong aria-hidden="true">22.12.2.4.</strong> ndis</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">22.12.2.4.1.</strong> err</div></li></ol></li><li class="chapter-item "><a href="../Kernel/Windows/driver/printer.html"><strong aria-hidden="true">22.12.2.5.</strong> printer</a></li><li class="chapter-item "><a href="../Kernel/Windows/driver/QnA.html"><strong aria-hidden="true">22.12.2.6.</strong> QnA</a></li><li class="chapter-item "><a href="../Kernel/Windows/driver/types.html"><strong aria-hidden="true">22.12.2.7.</strong> types</a></li></ol></li><li class="chapter-item "><a href="../Kernel/Windows/nameConventions.html"><strong aria-hidden="true">22.12.3.</strong> nameConventions</a></li><li class="chapter-item "><a href="../Kernel/Windows/QnA.html"><strong aria-hidden="true">22.12.4.</strong> QnA</a></li><li class="chapter-item "><a href="../Kernel/Windows/ReactOS/index.html"><strong aria-hidden="true">22.12.5.</strong> ReactOS</a></li><li class="chapter-item "><a href="../Kernel/Windows/service.html"><strong aria-hidden="true">22.12.6.</strong> service</a></li><li class="chapter-item "><a href="../Kernel/Windows/subsystem.html"><strong aria-hidden="true">22.12.7.</strong> subsystem</a></li><li class="chapter-item "><a href="../Kernel/Windows/syscall.html"><strong aria-hidden="true">22.12.8.</strong> syscall</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">22.13.</strong> XNU</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">22.13.1.</strong> Darling</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Kernel/XNU/Darling/overview.html"><strong aria-hidden="true">22.13.1.1.</strong> overview</a></li></ol></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.</strong> Lang</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">23.1.</strong> Asm</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Lang/Asm/asm.html"><strong aria-hidden="true">23.1.1.</strong> asm</a></li><li class="chapter-item "><div><strong aria-hidden="true">23.1.2.</strong> riscv</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Lang/Asm/riscv/QnA.html"><strong aria-hidden="true">23.1.2.1.</strong> QnA</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.2.</strong> C</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Lang/C.f/macro.html"><strong aria-hidden="true">23.2.1.</strong> macro</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.3.</strong> Dot</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Lang/Dot/overview.html"><strong aria-hidden="true">23.3.1.</strong> overview</a></li><li class="chapter-item "><a href="../Lang/Dot/QnA.html"><strong aria-hidden="true">23.3.2.</strong> QnA</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.4.</strong> IR</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Lang/IR/1999.JVM_Specification.html"><strong aria-hidden="true">23.4.1.</strong> 1999.JVM_Specification</a></li><li class="chapter-item "><a href="../Lang/IR/2000.llvm.lattner.master_thesis.241.html"><strong aria-hidden="true">23.4.2.</strong> 2000.llvm.lattner.master_thesis.241</a></li><li class="chapter-item "><a href="../Lang/IR/2004.llvm.lattner.cgo.4340.html"><strong aria-hidden="true">23.4.3.</strong> 2004.llvm.lattner.cgo.4340</a></li><li class="chapter-item "><a href="../Lang/IR/2013.importance.chow...html"><strong aria-hidden="true">23.4.4.</strong> 2013.importance.chow..</a></li><li class="chapter-item "><div><strong aria-hidden="true">23.4.5.</strong> Common2</div></li><li class="chapter-item "><a href="../Lang/IR/LLVM-IR.html"><strong aria-hidden="true">23.4.6.</strong> LLVM-IR</a></li><li class="chapter-item "><a href="../Lang/IR/MapleIRDesign.html"><strong aria-hidden="true">23.4.7.</strong> MapleIRDesign</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.5.</strong> JS</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Lang/JS/overview.html"><strong aria-hidden="true">23.5.1.</strong> overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.6.</strong> Latex</div></li><li class="chapter-item "><div><strong aria-hidden="true">23.7.</strong> Lisp</div></li><li class="chapter-item "><div><strong aria-hidden="true">23.8.</strong> Py</div></li><li class="chapter-item "><div><strong aria-hidden="true">23.9.</strong> SMT-LIB</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Lang/SMT-LIB/2012.smt_lib_v2.cok..47.html"><strong aria-hidden="true">23.9.1.</strong> 2012.smt_lib_v2.cok..47</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">23.10.</strong> WebAsm</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Lang/WebAsm/2017.intro.haas.pldi.194.html"><strong aria-hidden="true">23.10.1.</strong> 2017.intro.haas.pldi.194</a></li><li class="chapter-item "><a href="../Lang/WebAsm/overview.html"><strong aria-hidden="true">23.10.2.</strong> overview</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">24.</strong> Lib</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">24.1.</strong> Glibc</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Lib/Glibc/glibc.html"><strong aria-hidden="true">24.1.1.</strong> glibc</a></li><li class="chapter-item "><a href="../Lib/Glibc/mmap.html"><strong aria-hidden="true">24.1.2.</strong> mmap</a></li><li class="chapter-item "><a href="../Lib/Glibc/pthread.html"><strong aria-hidden="true">24.1.3.</strong> pthread</a></li><li class="chapter-item "><a href="../Lib/Glibc/QnA.html"><strong aria-hidden="true">24.1.4.</strong> QnA</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">24.2.</strong> igraph</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Lib/igraph/QnA.html"><strong aria-hidden="true">24.2.1.</strong> QnA</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">24.3.</strong> Libc</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Lib/Libc/Musl/index.html"><strong aria-hidden="true">24.3.1.</strong> Musl</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">25.</strong> Mem</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Mem/cat.html"><strong aria-hidden="true">25.1.</strong> cat</a></li><li class="chapter-item "><div><strong aria-hidden="true">25.2.</strong> model</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Mem/model/2017.memalloy.wickerson.popl.77.html"><strong aria-hidden="true">25.2.1.</strong> 2017.memalloy.wickerson.popl.77</a></li></ol></li><li class="chapter-item "><a href="../Mem/order.html"><strong aria-hidden="true">25.3.</strong> order</a></li><li class="chapter-item "><a href="../Mem/test.html"><strong aria-hidden="true">25.4.</strong> test</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">26.</strong> other_read_list</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../other_read_list/cambridge.html"><strong aria-hidden="true">26.1.</strong> cambridge</a></li><li class="chapter-item "><a href="../other_read_list/stanford/index.html"><strong aria-hidden="true">26.2.</strong> stanford</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../other_read_list/stanford/1999.codesigned_vm.smith.iwia.html"><strong aria-hidden="true">26.2.1.</strong> 1999.codesigned_vm.smith.iwia</a></li><li class="chapter-item "><a href="../other_read_list/stanford/2001.vm_intro.smith.html"><strong aria-hidden="true">26.2.2.</strong> 2001.vm_intro.smith</a></li><li class="chapter-item "><a href="../other_read_list/stanford/2002.vector_vs_ss.kozyrakis.micro.html"><strong aria-hidden="true">26.2.3.</strong> 2002.vector_vs_ss.kozyrakis.micro</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">27.</strong> Perf</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Perf/flamegraph.html"><strong aria-hidden="true">27.1.</strong> flamegraph</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">28.</strong> PoSh</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../PoSh/QnA.html"><strong aria-hidden="true">28.1.</strong> QnA</a></li></ol></li><li class="chapter-item "><a href="../Proj/index.html"><strong aria-hidden="true">29.</strong> Proj</a></li><li class="chapter-item "><div><strong aria-hidden="true">30.</strong> Pwr</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Pwr/2009.mcpat.li.micro.2319.html"><strong aria-hidden="true">30.1.</strong> 2009.mcpat.li.micro.2319</a></li></ol></li><li class="chapter-item "><a href="../QnA-Daliy.html"><strong aria-hidden="true">31.</strong> QnA-Daliy</a></li><li class="chapter-item "><div><strong aria-hidden="true">32.</strong> Repos</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Repos/llvm-tutor.html"><strong aria-hidden="true">32.1.</strong> llvm-tutor</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">33.</strong> Sandbox</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Sandbox/chroot.html"><strong aria-hidden="true">33.1.</strong> chroot</a></li><li class="chapter-item "><div><strong aria-hidden="true">33.2.</strong> Docker</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Sandbox/Docker/Overview.html"><strong aria-hidden="true">33.2.1.</strong> Overview</a></li><li class="chapter-item "><a href="../Sandbox/Docker/QnA.html"><strong aria-hidden="true">33.2.2.</strong> QnA</a></li></ol></li><li class="chapter-item "><a href="../Sandbox/proot.html"><strong aria-hidden="true">33.3.</strong> proot</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">34.</strong> security</div></li><li class="chapter-item "><div><strong aria-hidden="true">35.</strong> SftwStack</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../SftwStack/applications_arch.html"><strong aria-hidden="true">35.1.</strong> applications_arch</a></li><li class="chapter-item "><a href="../SftwStack/linux_desktop.html"><strong aria-hidden="true">35.2.</strong> linux_desktop</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">36.</strong> Sim</div></li><li class="chapter-item "><div><strong aria-hidden="true">37.</strong> Softwares</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Softwares/ocrmypdf.html"><strong aria-hidden="true">37.1.</strong> ocrmypdf</a></li><li class="chapter-item "><a href="../Softwares/tree_timeline_note.html"><strong aria-hidden="true">37.2.</strong> tree_timeline_note</a></li><li class="chapter-item "><div><strong aria-hidden="true">37.3.</strong> Vim</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Softwares/Vim/QnA.html"><strong aria-hidden="true">37.3.1.</strong> QnA</a></li></ol></li></ol></li><li class="chapter-item "><a href="../SPIN.html"><strong aria-hidden="true">38.</strong> SPIN</a></li><li class="chapter-item "><div><strong aria-hidden="true">39.</strong> SQL</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../SQL/overview.html"><strong aria-hidden="true">39.1.</strong> overview</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">40.</strong> SymExec</div></li><li class="chapter-item "><div><strong aria-hidden="true">41.</strong> Temp</div></li><li class="chapter-item "><div><strong aria-hidden="true">42.</strong> uArch</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">42.1.</strong> TLB</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../uArch/TLB/QnA.html"><strong aria-hidden="true">42.1.1.</strong> QnA</a></li></ol></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">43.</strong> Virt</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Virt/1988.386.smith.programmers_journal..html"><strong aria-hidden="true">43.1.</strong> 1988.386.smith.programmers_journal.</a></li><li class="chapter-item "><a href="../Virt/2002.esx.waldspurger.opsr.1402.html"><strong aria-hidden="true">43.2.</strong> 2002.esx.waldspurger.opsr.1402</a></li><li class="chapter-item "><a href="../Virt/2003.xen.barham.opsr.6475.html"><strong aria-hidden="true">43.3.</strong> 2003.xen.barham.opsr.6475</a></li><li class="chapter-item "><a href="../Virt/2003.xen.barham.opsr.6475.sync-conflict-20211220-085833-2SHHM4X.html"><strong aria-hidden="true">43.4.</strong> 2003.xen.barham.opsr.6475.sync-conflict-20211220-085833-2SHHM4X</a></li><li class="chapter-item "><a href="../Virt/2006.cmp_soft_hard_x86.adams.asplos.700.html"><strong aria-hidden="true">43.5.</strong> 2006.cmp_soft_hard_x86.adams.asplos.700</a></li><li class="chapter-item "><a href="../Virt/2012.dune.belay.osdi.215.html"><strong aria-hidden="true">43.6.</strong> 2012.dune.belay.osdi.215</a></li><li class="chapter-item "><div><strong aria-hidden="true">43.7.</strong> addr_trans</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Virt/addr_trans/2018.1_qemu_dune_2_lkm.faravelon.doc_thesis.1.html"><strong aria-hidden="true">43.7.1.</strong> 2018.1_qemu_dune_2_lkm.faravelon.doc_thesis.1</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">43.8.</strong> BT</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Virt/BT/2016.cross_arch_captive.spink.taco.3.html"><strong aria-hidden="true">43.8.1.</strong> 2016.cross_arch_captive.spink.taco.3</a></li><li class="chapter-item "><a href="../Virt/BT/2019.cross_arch_captive.spink.usenix.1.html"><strong aria-hidden="true">43.8.2.</strong> 2019.cross_arch_captive.spink.usenix.1</a></li></ol></li><li class="chapter-item "><a href="../Virt/overview.html"><strong aria-hidden="true">43.9.</strong> overview</a></li><li class="chapter-item "><div><strong aria-hidden="true">43.10.</strong> virtualBox</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../Virt/virtualBox/install.html"><strong aria-hidden="true">43.10.1.</strong> install</a></li></ol></li></ol></li><li class="chapter-item "><a href="../X11/index.html"><strong aria-hidden="true">44.</strong> X11</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../X11/windowManage.html"><strong aria-hidden="true">44.1.</strong> windowManage</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">45.</strong> 行业报告</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">45.1.</strong> LF</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../行业报告/LF/2020-Linux-Foundation-Annual-Report_120520.html"><strong aria-hidden="true">45.1.1.</strong> 2020-Linux-Foundation-Annual-Report_120520</a></li><li class="chapter-item "><a href="../行业报告/LF/FINOS-business-value-of-open-source.html"><strong aria-hidden="true">45.1.2.</strong> FINOS-business-value-of-open-source</a></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">45.2.</strong> 企业年报</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><div><strong aria-hidden="true">45.2.1.</strong> apple</div></li><li class="chapter-item "><div><strong aria-hidden="true">45.2.2.</strong> 华为</div></li><li class="chapter-item "><div><strong aria-hidden="true">45.2.3.</strong> 海信</div></li><li class="chapter-item "><div><strong aria-hidden="true">45.2.4.</strong> 联想</div></li></ol></li><li class="chapter-item "><div><strong aria-hidden="true">45.3.</strong> 网信自主创新</div><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../行业报告/网信自主创新/2020.html"><strong aria-hidden="true">45.3.1.</strong> 2020</a></li></ol></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">xieby1&#x27;s notes</h1>
+
+                    <div class="right-buttons">
+                                                <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title></title>
+<meta name="generator" content="LibreOffice 7.1.8.1 (Linux)"/>
+<meta name="author" content="xieby1"/>
+<meta name="created" content="2021-07-17T01:16:00"/>
+<meta name="changedby" content="谢本壹"/>
+<meta name="changed" content="2021-07-16T11:35:58"/>
+<meta name="AppVersion" content="16.0300"/>
+<meta name="KSOProductBuildVer" content="1033-11.1.0.9662"/>
+</head>
+<body>
+<table cellspacing="0" border="0">
+<colgroup span="26" width="124"></colgroup>
+<colgroup width="20"></colgroup>
+<colgroup span="14" width="124"></colgroup>
+<tr>
+<td height="24" align="left" valign=middle><b><font face="Calibri" color="#000000">Hardware</font></b></td>
+<td align="left" valign=middle><b><font face="Calibri" color="#000000">OS</font></b></td>
+<td align="left" valign=middle><b><font face="Calibri" color="#000000">Software</font></b></td>
+<td align="left" valign=middle><b><font face="Calibri" color="#000000">Date</font></b></td>
+<td align="left" valign=middle bgcolor="#BDD7EE" sdnum="1033;0;# ??/??"><b><font face="Calibri" color="#000000">Int. pass</font></b></td>
+<td align="left" valign=middle bgcolor="#BDD7EE" sdnum="1033;0;0.00_ "><b><font face="Calibri" color="#000000">Int. avg.</font></b></td>
+<td align="left" valign=middle bgcolor="#BDD7EE" sdnum="1033;0;0.00%"><b><font face="Calibri" color="#000000">Int. perf.</font></b></td>
+<td align="left" valign=middle bgcolor="#BDD7EE" sdnum="1033;0;H:MM:SS;@"><b><font face="Calibri" color="#000000">Int. time</font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD" sdnum="1033;0;# ??/??"><b><font face="Calibri" color="#000000">Flt. pass</font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD" sdnum="1033;0;0.00_ "><b><font face="Calibri" color="#000000">Flt. avg.</font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD" sdnum="1033;0;0.00%"><b><font face="Calibri" color="#000000">Flt. perf.</font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD" sdnum="1033;0;H:MM:SS;@"><b><font face="Calibri" color="#000000">Flt. time</font></b></td>
+<td align="left" valign=middle sdnum="1033;0;@"><b><font face="Calibri" color="#000000">Compile argument</font></b></td>
+<td align="left" valign=middle sdnum="1033;0;@"><b><font face="Calibri" color="#000000">Config File</font></b></td>
+<td align="left" valign=middle bgcolor="#BDD7EE"><b><font face="Calibri" color="#000000">164.gzip</font></b></td>
+<td align="left" valign=middle bgcolor="#BDD7EE"><b><font face="Calibri" color="#000000">175.vpr</font></b></td>
+<td align="left" valign=middle bgcolor="#BDD7EE"><b><font face="Calibri" color="#000000">176.gcc</font></b></td>
+<td align="left" valign=middle bgcolor="#BDD7EE"><b><font face="Calibri" color="#000000">181.mcf</font></b></td>
+<td align="left" valign=middle bgcolor="#BDD7EE"><b><font face="Calibri" color="#000000">186.crafty</font></b></td>
+<td align="left" valign=middle bgcolor="#BDD7EE"><b><font face="Calibri" color="#000000">197.parser</font></b></td>
+<td align="left" valign=middle bgcolor="#BDD7EE"><b><font face="Calibri" color="#000000">252.eon</font></b></td>
+<td align="left" valign=middle bgcolor="#BDD7EE"><b><font face="Calibri" color="#000000">253.perlbmk</font></b></td>
+<td align="left" valign=middle bgcolor="#BDD7EE"><b><font face="Calibri" color="#000000">254.gap</font></b></td>
+<td align="left" valign=middle bgcolor="#BDD7EE"><b><font face="Calibri" color="#000000">255.vortex</font></b></td>
+<td align="left" valign=middle bgcolor="#BDD7EE"><b><font face="Calibri" color="#000000">256.bzip2</font></b></td>
+<td align="left" valign=middle bgcolor="#BDD7EE"><b><font face="Calibri" color="#000000">300.twolf</font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><b><font color="#000000"><br></font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD"><b><font color="#000000">168.wupwise</font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD"><b><font color="#000000">171.swim</font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD"><b><font color="#000000">172.mgrid</font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD"><b><font color="#000000">173.applu</font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD"><b><font color="#000000">177.mesa</font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD"><b><font color="#000000">178.galgel</font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD"><b><font color="#000000">179.art</font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD"><b><font color="#000000">183.equake</font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD"><b><font color="#000000">187.facerec</font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD"><b><font color="#000000">188.ammp</font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD"><b><font color="#000000">189.lucas</font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD"><b><font color="#000000">191.fma3d</font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD"><b><font color="#000000">200.sixtrack</font></b></td>
+<td align="left" valign=middle bgcolor="#F8CBAD"><b><font color="#000000">301.apsi</font></b></td>
+</tr>
+<tr>
+<td height="24" align="left" valign=middle bgcolor="#D9D9D9"><b><font face="Calibri" color="#000000">ref time unit: second</font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><b><font face="Calibri" color="#000000"><br></font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><b><font face="Calibri" color="#000000"><br></font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><b><font face="Calibri" color="#000000"><br></font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;# ??/??"><b><font face="Calibri" color="#000000"><br></font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;0.00%"><b><font face="Calibri" color="#000000"><br></font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;H:MM:SS;@"><b><font face="Calibri" color="#000000"><br></font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;@"><b><font face="Calibri" color="#000000"><br></font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;@"><b><font face="Calibri" color="#000000"><br></font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+</tr>
+<tr>
+<td height="24" align="left" valign=middle><font face="Calibri" color="#BFBFBF">test</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="right" valign=middle sdval="12" sdnum="1033;0;# ??/??"><font face="Calibri" color="#BFBFBF">12      </font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00_ "><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00%"><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="right" valign=middle sdval="0.00153634259259259" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#BFBFBF">0:02:12</font></td>
+<td align="right" valign=middle sdval="13" sdnum="1033;0;# ??/??"><font face="Calibri" color="#BFBFBF">13      </font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00_ "><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00%"><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="right" valign=middle sdval="0.00633796296296296" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#BFBFBF">0:09:07</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="right" valign=middle sdval="8.87" sdnum="1033;"><font face="Calibri" color="#BFBFBF">8.87</font></td>
+<td align="right" valign=middle sdval="10.4" sdnum="1033;"><font face="Calibri" color="#BFBFBF">10.4</font></td>
+<td align="right" valign=middle sdval="11.2" sdnum="1033;"><font face="Calibri" color="#BFBFBF">11.2</font></td>
+<td align="right" valign=middle sdval="2.7" sdnum="1033;"><font face="Calibri" color="#BFBFBF">2.7</font></td>
+<td align="right" valign=middle sdval="24.1" sdnum="1033;"><font face="Calibri" color="#BFBFBF">24.1</font></td>
+<td align="right" valign=middle sdval="16.5" sdnum="1033;"><font face="Calibri" color="#BFBFBF">16.5</font></td>
+<td align="right" valign=middle sdval="5.22" sdnum="1033;"><font face="Calibri" color="#BFBFBF">5.22</font></td>
+<td align="right" valign=middle sdval="10.2" sdnum="1033;"><font face="Calibri" color="#BFBFBF">10.2</font></td>
+<td align="right" valign=middle sdval="7.89" sdnum="1033;"><font face="Calibri" color="#BFBFBF">7.89</font></td>
+<td align="right" valign=middle sdval="1" sdnum="1033;"><font face="Calibri" color="#BFBFBF">1</font></td>
+<td align="right" valign=middle sdval="32" sdnum="1033;"><font face="Calibri" color="#BFBFBF">32</font></td>
+<td align="right" valign=middle sdval="2.66" sdnum="1033;"><font face="Calibri" color="#BFBFBF">2.66</font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#BFBFBF"><br></font></td>
+<td align="right" valign=middle sdval="55.9" sdnum="1033;"><font color="#BFBFBF">55.9</font></td>
+<td align="right" valign=middle sdval="5.9" sdnum="1033;"><font color="#BFBFBF">5.9</font></td>
+<td align="left" valign=middle><font color="#BFBFBF"><br></font></td>
+<td align="right" valign=middle sdval="1.7" sdnum="1033;"><font color="#BFBFBF">1.7</font></td>
+<td align="right" valign=middle sdval="10.9" sdnum="1033;"><font color="#BFBFBF">10.9</font></td>
+<td align="right" valign=middle sdval="61.3" sdnum="1033;"><font color="#BFBFBF">61.3</font></td>
+<td align="right" valign=middle sdval="50" sdnum="1033;"><font color="#BFBFBF">50</font></td>
+<td align="right" valign=middle sdval="6.82" sdnum="1033;"><font color="#BFBFBF">6.82</font></td>
+<td align="right" valign=middle sdval="51.3" sdnum="1033;"><font color="#BFBFBF">51.3</font></td>
+<td align="right" valign=middle sdval="47.8" sdnum="1033;"><font color="#BFBFBF">47.8</font></td>
+<td align="right" valign=middle sdval="39.5" sdnum="1033;"><font color="#BFBFBF">39.5</font></td>
+<td align="right" valign=middle sdval="0.58" sdnum="1033;"><font color="#BFBFBF">0.58</font></td>
+<td align="right" valign=middle sdval="176" sdnum="1033;"><font color="#BFBFBF">176</font></td>
+<td align="right" valign=middle sdval="39.9" sdnum="1033;"><font color="#BFBFBF">39.9</font></td>
+</tr>
+<tr>
+<td height="24" align="left" valign=middle><font face="Calibri" color="#BFBFBF">train</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="right" valign=middle sdval="12" sdnum="1033;0;# ??/??"><font face="Calibri" color="#BFBFBF">12      </font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00_ "><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00%"><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="right" valign=middle sdval="0.0197731481481481" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#BFBFBF">0:28:28</font></td>
+<td align="right" valign=middle sdval="14" sdnum="1033;0;# ??/??"><font face="Calibri" color="#BFBFBF">14      </font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00_ "><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00%"><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="right" valign=middle sdval="0.0594479166666666" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#BFBFBF">1:25:36</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#BFBFBF"><br></font></td>
+<td align="right" valign=middle sdval="166" sdnum="1033;"><font face="Calibri" color="#BFBFBF">166</font></td>
+<td align="right" valign=middle sdval="130" sdnum="1033;"><font face="Calibri" color="#BFBFBF">130</font></td>
+<td align="right" valign=middle sdval="25.9" sdnum="1033;"><font face="Calibri" color="#BFBFBF">25.9</font></td>
+<td align="right" valign=middle sdval="172" sdnum="1033;"><font face="Calibri" color="#BFBFBF">172</font></td>
+<td align="right" valign=middle sdval="161" sdnum="1033;"><font face="Calibri" color="#BFBFBF">161</font></td>
+<td align="right" valign=middle sdval="47.5" sdnum="1033;"><font face="Calibri" color="#BFBFBF">47.5</font></td>
+<td align="right" valign=middle sdval="75.9" sdnum="1033;"><font face="Calibri" color="#BFBFBF">75.9</font></td>
+<td align="right" valign=middle sdval="586" sdnum="1033;"><font face="Calibri" color="#BFBFBF">586</font></td>
+<td align="right" valign=middle sdval="43.7" sdnum="1033;"><font face="Calibri" color="#BFBFBF">43.7</font></td>
+<td align="right" valign=middle sdval="1" sdnum="1033;"><font face="Calibri" color="#BFBFBF">1</font></td>
+<td align="right" valign=middle sdval="215" sdnum="1033;"><font face="Calibri" color="#BFBFBF">215</font></td>
+<td align="right" valign=middle sdval="84.4" sdnum="1033;"><font face="Calibri" color="#BFBFBF">84.4</font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#BFBFBF"><br></font></td>
+<td align="right" valign=middle sdval="246" sdnum="1033;"><font color="#BFBFBF">246</font></td>
+<td align="right" valign=middle sdval="106" sdnum="1033;"><font color="#BFBFBF">106</font></td>
+<td align="right" valign=middle sdval="90.6" sdnum="1033;"><font color="#BFBFBF">90.6</font></td>
+<td align="right" valign=middle sdval="78.3" sdnum="1033;"><font color="#BFBFBF">78.3</font></td>
+<td align="right" valign=middle sdval="326" sdnum="1033;"><font color="#BFBFBF">326</font></td>
+<td align="right" valign=middle sdval="567" sdnum="1033;"><font color="#BFBFBF">567</font></td>
+<td align="right" valign=middle sdval="133" sdnum="1033;"><font color="#BFBFBF">133</font></td>
+<td align="right" valign=middle sdval="234" sdnum="1033;"><font color="#BFBFBF">234</font></td>
+<td align="right" valign=middle sdval="388" sdnum="1033;"><font color="#BFBFBF">388</font></td>
+<td align="right" valign=middle sdval="290" sdnum="1033;"><font color="#BFBFBF">290</font></td>
+<td align="right" valign=middle sdval="774" sdnum="1033;"><font color="#BFBFBF">774</font></td>
+<td align="right" valign=middle sdval="1448" sdnum="1033;"><font color="#BFBFBF">1448</font></td>
+<td align="right" valign=middle sdval="376" sdnum="1033;"><font color="#BFBFBF">376</font></td>
+<td align="right" valign=middle sdval="79.4" sdnum="1033;"><font color="#BFBFBF">79.4</font></td>
+</tr>
+<tr>
+<td height="24" align="left" valign=middle><font face="Calibri" color="#000000">ref</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="12" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">12      </font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="0.221064814814815" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">5:18:20</font></td>
+<td align="right" valign=middle sdval="14" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">14      </font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="0.332175925925926" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">7:58:20</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="1400" sdnum="1033;"><font face="Calibri" color="#000000">1400</font></td>
+<td align="right" valign=middle sdval="1400" sdnum="1033;"><font face="Calibri" color="#000000">1400</font></td>
+<td align="right" valign=middle sdval="1100" sdnum="1033;"><font face="Calibri" color="#000000">1100</font></td>
+<td align="right" valign=middle sdval="1800" sdnum="1033;"><font face="Calibri" color="#000000">1800</font></td>
+<td align="right" valign=middle sdval="1000" sdnum="1033;"><font face="Calibri" color="#000000">1000</font></td>
+<td align="right" valign=middle sdval="1800" sdnum="1033;"><font face="Calibri" color="#000000">1800</font></td>
+<td align="right" valign=middle sdval="1300" sdnum="1033;"><font face="Calibri" color="#000000">1300</font></td>
+<td align="right" valign=middle sdval="1800" sdnum="1033;"><font face="Calibri" color="#000000">1800</font></td>
+<td align="right" valign=middle sdval="1100" sdnum="1033;"><font face="Calibri" color="#000000">1100</font></td>
+<td align="right" valign=middle sdval="1900" sdnum="1033;"><font face="Calibri" color="#000000">1900</font></td>
+<td align="right" valign=middle sdval="1500" sdnum="1033;"><font face="Calibri" color="#000000">1500</font></td>
+<td align="right" valign=middle sdval="3000" sdnum="1033;"><font face="Calibri" color="#000000">3000</font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="1600" sdnum="1033;"><font color="#000000">1600</font></td>
+<td align="right" valign=middle sdval="3100" sdnum="1033;"><font color="#000000">3100</font></td>
+<td align="right" valign=middle sdval="1800" sdnum="1033;"><font color="#000000">1800</font></td>
+<td align="right" valign=middle sdval="2100" sdnum="1033;"><font color="#000000">2100</font></td>
+<td align="right" valign=middle sdval="1400" sdnum="1033;"><font color="#000000">1400</font></td>
+<td align="right" valign=middle sdval="2900" sdnum="1033;"><font color="#000000">2900</font></td>
+<td align="right" valign=middle sdval="2600" sdnum="1033;"><font color="#000000">2600</font></td>
+<td align="right" valign=middle sdval="1300" sdnum="1033;"><font color="#000000">1300</font></td>
+<td align="right" valign=middle sdval="1900" sdnum="1033;"><font color="#000000">1900</font></td>
+<td align="right" valign=middle sdval="2200" sdnum="1033;"><font color="#000000">2200</font></td>
+<td align="right" valign=middle sdval="2000" sdnum="1033;"><font color="#000000">2000</font></td>
+<td align="right" valign=middle sdval="2100" sdnum="1033;"><font color="#000000">2100</font></td>
+<td align="right" valign=middle sdval="1100" sdnum="1033;"><font color="#000000">1100</font></td>
+<td align="right" valign=middle sdval="2600" sdnum="1033;"><font color="#000000">2600</font></td>
+</tr>
+<tr>
+<td height="24" align="left" valign=middle bgcolor="#D9D9D9"><b><font face="Calibri" color="#000000">test unit: %</font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><b><font face="Calibri" color="#000000"><br></font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><b><font face="Calibri" color="#000000"><br></font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><b><font face="Calibri" color="#000000"><br></font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;# ??/??"><b><font face="Calibri" color="#000000"><br></font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;0.00%"><b><font face="Calibri" color="#000000"><br></font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;@"><b><font face="Calibri" color="#000000"><br></font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9" sdnum="1033;0;@"><b><font face="Calibri" color="#000000"><br></font></b></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+</tr>
+<tr>
+<td height="24" align="left" valign=middle><font face="Unifont" color="#000000">龙芯-巧克力，X86绿，ARM蓝</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;# ??/??"><font face="Unifont" color="#000000">颜色只做分组区分</font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+</tr>
+<tr>
+<td height="24" align="left" valign=middle><font face="Calibri" color="#000000">yoga-14s</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000">Window10</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="44393" sdnum="1033;0;M/D/YYYY"><font face="Calibri" color="#000000">7/16/2021</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="11" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">11      </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="4238.36363636364" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">4238.36 </font></td>
+<td align="left" valign=middle bgcolor="#FFF2CC" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="0.00536986603325937" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:07:43</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="14" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">14      </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="5105.35714285714" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">5105.36 </font></td>
+<td align="left" valign=middle bgcolor="#FFF2CC" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="0.00900605616849169" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:12:58</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000">cl -Zi -Ox</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000">intel_nt_visual_studio.cfg</font></td>
+<td align="right" valign=middle sdval="2283" sdnum="1033;"><font face="Calibri" color="#000000">2283</font></td>
+<td align="right" valign=middle sdval="3153" sdnum="1033;"><font face="Calibri" color="#000000">3153</font></td>
+<td align="right" valign=middle sdval="6156" sdnum="1033;"><font face="Calibri" color="#000000">6156</font></td>
+<td align="right" valign=middle sdval="7394" sdnum="1033;"><font face="Calibri" color="#000000">7394</font></td>
+<td align="right" valign=middle sdval="3985" sdnum="1033;"><font face="Calibri" color="#000000">3985</font></td>
+<td align="right" valign=middle sdval="3563" sdnum="1033;"><font face="Calibri" color="#000000">3563</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="4748" sdnum="1033;"><font face="Calibri" color="#000000">4748</font></td>
+<td align="right" valign=middle sdval="4685" sdnum="1033;"><font face="Calibri" color="#000000">4685</font></td>
+<td align="right" valign=middle sdval="2988" sdnum="1033;"><font face="Calibri" color="#000000">2988</font></td>
+<td align="right" valign=middle sdval="2768" sdnum="1033;"><font face="Calibri" color="#000000">2768</font></td>
+<td align="right" valign=middle sdval="4899" sdnum="1033;"><font face="Calibri" color="#000000">4899</font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="2833" sdnum="1033;"><font color="#000000">2833</font></td>
+<td align="right" valign=middle sdval="11313" sdnum="1033;"><font color="#000000">11313</font></td>
+<td align="right" valign=middle sdval="2980" sdnum="1033;"><font color="#000000">2980</font></td>
+<td align="right" valign=middle sdval="4608" sdnum="1033;"><font color="#000000">4608</font></td>
+<td align="right" valign=middle sdval="847" sdnum="1033;"><font color="#000000">847</font></td>
+<td align="right" valign=middle sdval="9513" sdnum="1033;"><font color="#000000">9513</font></td>
+<td align="right" valign=middle sdval="11143" sdnum="1033;"><font color="#000000">11143</font></td>
+<td align="right" valign=middle sdval="5170" sdnum="1033;"><font color="#000000">5170</font></td>
+<td align="right" valign=middle sdval="5288" sdnum="1033;"><font color="#000000">5288</font></td>
+<td align="right" valign=middle sdval="3783" sdnum="1033;"><font color="#000000">3783</font></td>
+<td align="right" valign=middle sdval="3375" sdnum="1033;"><font color="#000000">3375</font></td>
+<td align="right" valign=middle sdval="4357" sdnum="1033;"><font color="#000000">4357</font></td>
+<td align="right" valign=middle sdval="1208" sdnum="1033;"><font color="#000000">1208</font></td>
+<td align="right" valign=middle sdval="5057" sdnum="1033;"><font color="#000000">5057</font></td>
+</tr>
+<tr>
+<td height="24" align="left" valign=middle bgcolor="#E2F0D9"><font face="Calibri" color="#000000">yoga-14s</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000">Ubuntu20</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="44392" sdnum="1033;0;M/D/YYYY"><font face="Calibri" color="#000000">7/15/2021</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="12" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">12      </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="5306.58333333333" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">5306.58 </font></td>
+<td align="left" valign=middle bgcolor="#FFF2CC" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="0.00453892838250121" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:06:32</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="14" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">14      </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="10099.0714285714" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">10099.07 </font></td>
+<td align="left" valign=middle bgcolor="#FFF2CC" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="0.0038175196465696" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:05:29</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000">gcc9.3 -O3</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000">x64.linux.cfg</font></td>
+<td align="right" valign=middle sdval="2635" sdnum="1033;"><font face="Calibri" color="#000000">2635</font></td>
+<td align="right" valign=middle sdval="3778" sdnum="1033;"><font face="Calibri" color="#000000">3778</font></td>
+<td align="right" valign=middle sdval="7177" sdnum="1033;"><font face="Calibri" color="#000000">7177</font></td>
+<td align="right" valign=middle sdval="4568" sdnum="1033;"><font face="Calibri" color="#000000">4568</font></td>
+<td align="right" valign=middle sdval="5656" sdnum="1033;"><font face="Calibri" color="#000000">5656</font></td>
+<td align="right" valign=middle sdval="3772" sdnum="1033;"><font face="Calibri" color="#000000">3772</font></td>
+<td align="right" valign=middle sdval="7727" sdnum="1033;"><font face="Calibri" color="#000000">7727</font></td>
+<td align="right" valign=middle sdval="6135" sdnum="1033;"><font face="Calibri" color="#000000">6135</font></td>
+<td align="right" valign=middle sdval="5697" sdnum="1033;"><font face="Calibri" color="#000000">5697</font></td>
+<td align="right" valign=middle sdval="6463" sdnum="1033;"><font face="Calibri" color="#000000">6463</font></td>
+<td align="right" valign=middle sdval="3958" sdnum="1033;"><font face="Calibri" color="#000000">3958</font></td>
+<td align="right" valign=middle sdval="6113" sdnum="1033;"><font face="Calibri" color="#000000">6113</font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="6035" sdnum="1033;"><font color="#000000">6035</font></td>
+<td align="right" valign=middle sdval="11685" sdnum="1033;"><font color="#000000">11685</font></td>
+<td align="right" valign=middle sdval="7119" sdnum="1033;"><font color="#000000">7119</font></td>
+<td align="right" valign=middle sdval="8326" sdnum="1033;"><font color="#000000">8326</font></td>
+<td align="right" valign=middle sdval="6650" sdnum="1033;"><font color="#000000">6650</font></td>
+<td align="right" valign=middle sdval="20008" sdnum="1033;"><font color="#000000">20008</font></td>
+<td align="right" valign=middle sdval="24047" sdnum="1033;"><font color="#000000">24047</font></td>
+<td align="right" valign=middle sdval="10826" sdnum="1033;"><font color="#000000">10826</font></td>
+<td align="right" valign=middle sdval="13644" sdnum="1033;"><font color="#000000">13644</font></td>
+<td align="right" valign=middle sdval="6637" sdnum="1033;"><font color="#000000">6637</font></td>
+<td align="right" valign=middle sdval="7908" sdnum="1033;"><font color="#000000">7908</font></td>
+<td align="right" valign=middle sdval="7406" sdnum="1033;"><font color="#000000">7406</font></td>
+<td align="right" valign=middle sdval="3216" sdnum="1033;"><font color="#000000">3216</font></td>
+<td align="right" valign=middle sdval="7880" sdnum="1033;"><font color="#000000">7880</font></td>
+</tr>
+<tr>
+<td height="24" align="left" valign=middle bgcolor="#E2F0D9"><font face="Calibri" color="#000000">y50-70</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000">Ubuntu20</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="44392" sdnum="1033;0;M/D/YYYY"><font face="Calibri" color="#000000">7/15/2021</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="12" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">12      </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="3470.66666666667" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">3470.67 </font></td>
+<td align="left" valign=middle bgcolor="#FFF2CC" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="0.00708356826153028" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:10:12</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="14" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">14      </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="5323.21428571429" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">5323.21 </font></td>
+<td align="left" valign=middle bgcolor="#FFF2CC" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="0.00705490347242733" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:10:09</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000">gcc9.3 -O3</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000">x64.linux.cfg</font></td>
+<td align="right" valign=middle sdval="2135" sdnum="1033;"><font face="Calibri" color="#000000">2135</font></td>
+<td align="right" valign=middle sdval="2610" sdnum="1033;"><font face="Calibri" color="#000000">2610</font></td>
+<td align="right" valign=middle sdval="4513" sdnum="1033;"><font face="Calibri" color="#000000">4513</font></td>
+<td align="right" valign=middle sdval="2224" sdnum="1033;"><font face="Calibri" color="#000000">2224</font></td>
+<td align="right" valign=middle sdval="3848" sdnum="1033;"><font face="Calibri" color="#000000">3848</font></td>
+<td align="right" valign=middle sdval="2216" sdnum="1033;"><font face="Calibri" color="#000000">2216</font></td>
+<td align="right" valign=middle sdval="5585" sdnum="1033;"><font face="Calibri" color="#000000">5585</font></td>
+<td align="right" valign=middle sdval="4168" sdnum="1033;"><font face="Calibri" color="#000000">4168</font></td>
+<td align="right" valign=middle sdval="3943" sdnum="1033;"><font face="Calibri" color="#000000">3943</font></td>
+<td align="right" valign=middle sdval="4169" sdnum="1033;"><font face="Calibri" color="#000000">4169</font></td>
+<td align="right" valign=middle sdval="2476" sdnum="1033;"><font face="Calibri" color="#000000">2476</font></td>
+<td align="right" valign=middle sdval="3761" sdnum="1033;"><font face="Calibri" color="#000000">3761</font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="4461" sdnum="1033;"><font color="#000000">4461</font></td>
+<td align="right" valign=middle sdval="4096" sdnum="1033;"><font color="#000000">4096</font></td>
+<td align="right" valign=middle sdval="4322" sdnum="1033;"><font color="#000000">4322</font></td>
+<td align="right" valign=middle sdval="4644" sdnum="1033;"><font color="#000000">4644</font></td>
+<td align="right" valign=middle sdval="4204" sdnum="1033;"><font color="#000000">4204</font></td>
+<td align="right" valign=middle sdval="11808" sdnum="1033;"><font color="#000000">11808</font></td>
+<td align="right" valign=middle sdval="7753" sdnum="1033;"><font color="#000000">7753</font></td>
+<td align="right" valign=middle sdval="5408" sdnum="1033;"><font color="#000000">5408</font></td>
+<td align="right" valign=middle sdval="7604" sdnum="1033;"><font color="#000000">7604</font></td>
+<td align="right" valign=middle sdval="3300" sdnum="1033;"><font color="#000000">3300</font></td>
+<td align="right" valign=middle sdval="6480" sdnum="1033;"><font color="#000000">6480</font></td>
+<td align="right" valign=middle sdval="4377" sdnum="1033;"><font color="#000000">4377</font></td>
+<td align="right" valign=middle sdval="1662" sdnum="1033;"><font color="#000000">1662</font></td>
+<td align="right" valign=middle sdval="4406" sdnum="1033;"><font color="#000000">4406</font></td>
+</tr>
+<tr>
+<td height="24" align="left" valign=middle bgcolor="#E2F0D9"><font face="Calibri" color="#000000">y50-70</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000">Ubuntu20</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="44120" sdnum="1033;0;M/D/YYYY"><font face="Calibri" color="#000000">10/16/2020</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="12" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">12      </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="2829.25" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">2829.25 </font></td>
+<td align="left" valign=middle bgcolor="#FFF2CC" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="0.00872409288891957" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:12:33</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="4" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">4      </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="3194" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">3194.00 </font></td>
+<td align="left" valign=middle bgcolor="#FFF2CC" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="0.00312955597414177" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:04:30</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000">gcc4.8 -O3</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="1579" sdnum="1033;"><font face="Calibri" color="#000000">1579</font></td>
+<td align="right" valign=middle sdval="2289" sdnum="1033;"><font face="Calibri" color="#000000">2289</font></td>
+<td align="right" valign=middle sdval="4569" sdnum="1033;"><font face="Calibri" color="#000000">4569</font></td>
+<td align="right" valign=middle sdval="4985" sdnum="1033;"><font face="Calibri" color="#000000">4985</font></td>
+<td align="right" valign=middle sdval="2448" sdnum="1033;"><font face="Calibri" color="#000000">2448</font></td>
+<td align="right" valign=middle sdval="2131" sdnum="1033;"><font face="Calibri" color="#000000">2131</font></td>
+<td align="right" valign=middle sdval="2935" sdnum="1033;"><font face="Calibri" color="#000000">2935</font></td>
+<td align="right" valign=middle sdval="1840" sdnum="1033;"><font face="Calibri" color="#000000">1840</font></td>
+<td align="right" valign=middle sdval="3277" sdnum="1033;"><font face="Calibri" color="#000000">3277</font></td>
+<td align="right" valign=middle sdval="3017" sdnum="1033;"><font face="Calibri" color="#000000">3017</font></td>
+<td align="right" valign=middle sdval="1878" sdnum="1033;"><font face="Calibri" color="#000000">1878</font></td>
+<td align="right" valign=middle sdval="3003" sdnum="1033;"><font face="Calibri" color="#000000">3003</font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="1723" sdnum="1033;"><font color="#000000">1723</font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="3646" sdnum="1033;"><font color="#000000">3646</font></td>
+<td align="right" valign=middle sdval="5013" sdnum="1033;"><font color="#000000">5013</font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="2394" sdnum="1033;"><font color="#000000">2394</font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+<td align="left" valign=middle><font color="#000000"><br></font></td>
+</tr>
+<tr>
+<td rowspan=3 height="71" align="left" valign=middle bgcolor="#E2F0D9"><font face="Calibri" color="#000000">y50-70</font></td>
+<td rowspan=3 align="left" valign=middle><font face="Calibri" color="#000000">Ubuntu20</font></td>
+<td rowspan=3 align="left" valign=middle><font face="Calibri" color="#000000">wine5.x</font></td>
+<td rowspan=3 align="center" valign=middle sdval="44120" sdnum="1033;0;M/D/YYYY"><font face="Calibri" color="#000000">10/16/2020</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="11" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">11      </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="2621.09636363636" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">2621.10 </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="0.926427980431692" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000">92.64%</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="0.00855849868420028" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:12:19</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="14" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">14      </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="3656.51857142857" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">3656.52 </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="1.1448085696395" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000">114.48%</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="0.0109910746817769" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:15:49</font></td>
+<td rowspan=3 align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000">-Zi-Ox</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="1629.38" sdnum="1033;"><font face="Calibri" color="#000000">1629.38</font></td>
+<td align="right" valign=middle sdval="1517.14" sdnum="1033;"><font face="Calibri" color="#000000">1517.14</font></td>
+<td align="right" valign=middle sdval="4010.06" sdnum="1033;"><font face="Calibri" color="#000000">4010.06</font></td>
+<td align="right" valign=middle sdval="3336.3" sdnum="1033;"><font face="Calibri" color="#000000">3336.3</font></td>
+<td align="right" valign=middle sdval="2460.02" sdnum="1033;"><font face="Calibri" color="#000000">2460.02</font></td>
+<td align="right" valign=middle sdval="2093.78" sdnum="1033;"><font face="Calibri" color="#000000">2093.78</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="3200.06" sdnum="1033;"><font face="Calibri" color="#000000">3200.06</font></td>
+<td align="right" valign=middle sdval="3326.88" sdnum="1033;"><font face="Calibri" color="#000000">3326.88</font></td>
+<td align="right" valign=middle sdval="2794.49" sdnum="1033;"><font face="Calibri" color="#000000">2794.49</font></td>
+<td align="right" valign=middle sdval="1800.2" sdnum="1033;"><font face="Calibri" color="#000000">1800.2</font></td>
+<td align="right" valign=middle sdval="2663.75" sdnum="1033;"><font face="Calibri" color="#000000">2663.75</font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="2105.32" sdnum="1033;"><font color="#000000">2105.32</font></td>
+<td align="right" valign=middle sdval="8557.39" sdnum="1033;"><font color="#000000">8557.39</font></td>
+<td align="right" valign=middle sdval="2222.55" sdnum="1033;"><font color="#000000">2222.55</font></td>
+<td align="right" valign=middle sdval="3704.42" sdnum="1033;"><font color="#000000">3704.42</font></td>
+<td align="right" valign=middle sdval="1574.59" sdnum="1033;"><font color="#000000">1574.59</font></td>
+<td align="right" valign=middle sdval="7263.8" sdnum="1033;"><font color="#000000">7263.8</font></td>
+<td align="right" valign=middle sdval="6902.23" sdnum="1033;"><font color="#000000">6902.23</font></td>
+<td align="right" valign=middle sdval="3428.36" sdnum="1033;"><font color="#000000">3428.36</font></td>
+<td align="right" valign=middle sdval="2164.21" sdnum="1033;"><font color="#000000">2164.21</font></td>
+<td align="right" valign=middle sdval="2760.73" sdnum="1033;"><font color="#000000">2760.73</font></td>
+<td align="right" valign=middle sdval="3388.28" sdnum="1033;"><font color="#000000">3388.28</font></td>
+<td align="right" valign=middle sdval="2617.15" sdnum="1033;"><font color="#000000">2617.15</font></td>
+<td align="right" valign=middle sdval="954.24" sdnum="1033;"><font color="#000000">954.24</font></td>
+<td align="right" valign=middle sdval="3547.99" sdnum="1033;"><font color="#000000">3547.99</font></td>
+</tr>
+<tr>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="11" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">11      </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="2689.15" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">2689.15 </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="0.950481576389502" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000">95.05%</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="0.00822015599839293" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:11:50</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="14" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">14      </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="3568.57142857143" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">3568.57 </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="1.11727345916451" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000">111.73%</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="0.011100526562048" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:15:59</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="1605.76" sdnum="1033;"><font face="Calibri" color="#000000">1605.76</font></td>
+<td align="right" valign=middle sdval="2067.79" sdnum="1033;"><font face="Calibri" color="#000000">2067.79</font></td>
+<td align="right" valign=middle sdval="3917.38" sdnum="1033;"><font face="Calibri" color="#000000">3917.38</font></td>
+<td align="right" valign=middle sdval="3583.37" sdnum="1033;"><font face="Calibri" color="#000000">3583.37</font></td>
+<td align="right" valign=middle sdval="2618.01" sdnum="1033;"><font face="Calibri" color="#000000">2618.01</font></td>
+<td align="right" valign=middle sdval="2179.33" sdnum="1033;"><font face="Calibri" color="#000000">2179.33</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="3113" sdnum="1033;"><font face="Calibri" color="#000000">3113</font></td>
+<td align="right" valign=middle sdval="3217.03" sdnum="1033;"><font face="Calibri" color="#000000">3217.03</font></td>
+<td align="right" valign=middle sdval="2846.87" sdnum="1033;"><font face="Calibri" color="#000000">2846.87</font></td>
+<td align="right" valign=middle sdval="1764.19" sdnum="1033;"><font face="Calibri" color="#000000">1764.19</font></td>
+<td align="right" valign=middle sdval="2667.92" sdnum="1033;"><font face="Calibri" color="#000000">2667.92</font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="2282.23" sdnum="1033;"><font color="#000000">2282.23</font></td>
+<td align="right" valign=middle sdval="8721.58" sdnum="1033;"><font color="#000000">8721.58</font></td>
+<td align="right" valign=middle sdval="2271.49" sdnum="1033;"><font color="#000000">2271.49</font></td>
+<td align="right" valign=middle sdval="3353.72" sdnum="1033;"><font color="#000000">3353.72</font></td>
+<td align="right" valign=middle sdval="1537.36" sdnum="1033;"><font color="#000000">1537.36</font></td>
+<td align="right" valign=middle sdval="6190.1" sdnum="1033;"><font color="#000000">6190.1</font></td>
+<td align="right" valign=middle sdval="6994.32" sdnum="1033;"><font color="#000000">6994.32</font></td>
+<td align="right" valign=middle sdval="3111.98" sdnum="1033;"><font color="#000000">3111.98</font></td>
+<td align="right" valign=middle sdval="2164.55" sdnum="1033;"><font color="#000000">2164.55</font></td>
+<td align="right" valign=middle sdval="2761.18" sdnum="1033;"><font color="#000000">2761.18</font></td>
+<td align="right" valign=middle sdval="3485.72" sdnum="1033;"><font color="#000000">3485.72</font></td>
+<td align="right" valign=middle sdval="2586.78" sdnum="1033;"><font color="#000000">2586.78</font></td>
+<td align="right" valign=middle sdval="953.47" sdnum="1033;"><font color="#000000">953.47</font></td>
+<td align="right" valign=middle sdval="3545.52" sdnum="1033;"><font color="#000000">3545.52</font></td>
+</tr>
+<tr>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="11" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">11      </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="2656.20818181818" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">2656.21 </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="0.938838272269394" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000">93.88%</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="0.00854963751643359" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:12:18</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="14" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">14      </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="3583.71142857143" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">3583.71 </font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="1.1220135969228" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000">112.20%</font></td>
+<td align="right" valign=middle bgcolor="#FFF2CC" sdval="0.0111045186175486" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:15:59</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="1632.54" sdnum="1033;"><font face="Calibri" color="#000000">1632.54</font></td>
+<td align="right" valign=middle sdval="1419.88" sdnum="1033;"><font face="Calibri" color="#000000">1419.88</font></td>
+<td align="right" valign=middle sdval="4097.14" sdnum="1033;"><font face="Calibri" color="#000000">4097.14</font></td>
+<td align="right" valign=middle sdval="3879.56" sdnum="1033;"><font face="Calibri" color="#000000">3879.56</font></td>
+<td align="right" valign=middle sdval="2508.78" sdnum="1033;"><font face="Calibri" color="#000000">2508.78</font></td>
+<td align="right" valign=middle sdval="2165.91" sdnum="1033;"><font face="Calibri" color="#000000">2165.91</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="3125.38" sdnum="1033;"><font face="Calibri" color="#000000">3125.38</font></td>
+<td align="right" valign=middle sdval="3235.2" sdnum="1033;"><font face="Calibri" color="#000000">3235.2</font></td>
+<td align="right" valign=middle sdval="2667.15" sdnum="1033;"><font face="Calibri" color="#000000">2667.15</font></td>
+<td align="right" valign=middle sdval="1754.88" sdnum="1033;"><font face="Calibri" color="#000000">1754.88</font></td>
+<td align="right" valign=middle sdval="2731.87" sdnum="1033;"><font face="Calibri" color="#000000">2731.87</font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="2217.39" sdnum="1033;"><font color="#000000">2217.39</font></td>
+<td align="right" valign=middle sdval="8447.79" sdnum="1033;"><font color="#000000">8447.79</font></td>
+<td align="right" valign=middle sdval="2246.77" sdnum="1033;"><font color="#000000">2246.77</font></td>
+<td align="right" valign=middle sdval="3036.53" sdnum="1033;"><font color="#000000">3036.53</font></td>
+<td align="right" valign=middle sdval="1594.26" sdnum="1033;"><font color="#000000">1594.26</font></td>
+<td align="right" valign=middle sdval="7231.38" sdnum="1033;"><font color="#000000">7231.38</font></td>
+<td align="right" valign=middle sdval="6593.96" sdnum="1033;"><font color="#000000">6593.96</font></td>
+<td align="right" valign=middle sdval="3316.5" sdnum="1033;"><font color="#000000">3316.5</font></td>
+<td align="right" valign=middle sdval="2191.36" sdnum="1033;"><font color="#000000">2191.36</font></td>
+<td align="right" valign=middle sdval="2722.84" sdnum="1033;"><font color="#000000">2722.84</font></td>
+<td align="right" valign=middle sdval="3498.22" sdnum="1033;"><font color="#000000">3498.22</font></td>
+<td align="right" valign=middle sdval="2595.41" sdnum="1033;"><font color="#000000">2595.41</font></td>
+<td align="right" valign=middle sdval="952.79" sdnum="1033;"><font color="#000000">952.79</font></td>
+<td align="right" valign=middle sdval="3526.76" sdnum="1033;"><font color="#000000">3526.76</font></td>
+</tr>
+<tr>
+<td rowspan=3 height="71" align="left" valign=middle bgcolor="#FBE5D6"><font face="Calibri" color="#000000">3a4000</font></td>
+<td rowspan=3 align="left" valign=middle><font face="Calibri" color="#000000">Loongnix</font></td>
+<td rowspan=3 align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td rowspan=3 align="center" valign=middle sdval="44120" sdnum="1033;0;M/D/YYYY"><font face="Calibri" color="#000000">10/16/2020</font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="12" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">12      </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="2209.5425" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">2209.54 </font></td>
+<td align="left" valign=middle bgcolor="#DEEBF7" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="0.0110349861880746" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:15:53</font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="14" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">14      </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="2789.28" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">2789.28 </font></td>
+<td align="left" valign=middle bgcolor="#DEEBF7" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="0.0133353874474431" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:19:12</font></td>
+<td rowspan=3 align="left" valign=middle><font face="Calibri" color="#000000">-fprefetch-loop-arrays-floop-interchange-floop-block-freorder-blocks-finline-functions</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="1023.43" sdnum="1033;"><font face="Calibri" color="#000000">1023.43</font></td>
+<td align="right" valign=middle sdval="1595.4" sdnum="1033;"><font face="Calibri" color="#000000">1595.4</font></td>
+<td align="right" valign=middle sdval="2457.18" sdnum="1033;"><font face="Calibri" color="#000000">2457.18</font></td>
+<td align="right" valign=middle sdval="3075.62" sdnum="1033;"><font face="Calibri" color="#000000">3075.62</font></td>
+<td align="right" valign=middle sdval="2142.92" sdnum="1033;"><font face="Calibri" color="#000000">2142.92</font></td>
+<td align="right" valign=middle sdval="1705.51" sdnum="1033;"><font face="Calibri" color="#000000">1705.51</font></td>
+<td align="right" valign=middle sdval="2689.02" sdnum="1033;"><font face="Calibri" color="#000000">2689.02</font></td>
+<td align="right" valign=middle sdval="1753.38" sdnum="1033;"><font face="Calibri" color="#000000">1753.38</font></td>
+<td align="right" valign=middle sdval="2128.3" sdnum="1033;"><font face="Calibri" color="#000000">2128.3</font></td>
+<td align="right" valign=middle sdval="4032.31" sdnum="1033;"><font face="Calibri" color="#000000">4032.31</font></td>
+<td align="right" valign=middle sdval="1589.65" sdnum="1033;"><font face="Calibri" color="#000000">1589.65</font></td>
+<td align="right" valign=middle sdval="2321.79" sdnum="1033;"><font face="Calibri" color="#000000">2321.79</font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="2389.3" sdnum="1033;"><font color="#000000">2389.3</font></td>
+<td align="right" valign=middle sdval="3655.44" sdnum="1033;"><font color="#000000">3655.44</font></td>
+<td align="right" valign=middle sdval="2123.39" sdnum="1033;"><font color="#000000">2123.39</font></td>
+<td align="right" valign=middle sdval="1898.34" sdnum="1033;"><font color="#000000">1898.34</font></td>
+<td align="right" valign=middle sdval="2559.66" sdnum="1033;"><font color="#000000">2559.66</font></td>
+<td align="right" valign=middle sdval="4434.05" sdnum="1033;"><font color="#000000">4434.05</font></td>
+<td align="right" valign=middle sdval="7253.57" sdnum="1033;"><font color="#000000">7253.57</font></td>
+<td align="right" valign=middle sdval="2217.27" sdnum="1033;"><font color="#000000">2217.27</font></td>
+<td align="right" valign=middle sdval="2929.61" sdnum="1033;"><font color="#000000">2929.61</font></td>
+<td align="right" valign=middle sdval="1874.38" sdnum="1033;"><font color="#000000">1874.38</font></td>
+<td align="right" valign=middle sdval="2410.63" sdnum="1033;"><font color="#000000">2410.63</font></td>
+<td align="right" valign=middle sdval="1974.05" sdnum="1033;"><font color="#000000">1974.05</font></td>
+<td align="right" valign=middle sdval="1048.35" sdnum="1033;"><font color="#000000">1048.35</font></td>
+<td align="right" valign=middle sdval="2281.88" sdnum="1033;"><font color="#000000">2281.88</font></td>
+</tr>
+<tr>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="12" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">12      </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="2209.43666666667" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">2209.44 </font></td>
+<td align="left" valign=middle bgcolor="#DEEBF7" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="0.0110351675225306" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:15:53</font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="14" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">14      </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="2788.13285714286" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">2788.13 </font></td>
+<td align="left" valign=middle bgcolor="#DEEBF7" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="0.0133540238493753" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:19:13</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="1023.77" sdnum="1033;"><font face="Calibri" color="#000000">1023.77</font></td>
+<td align="right" valign=middle sdval="1596.78" sdnum="1033;"><font face="Calibri" color="#000000">1596.78</font></td>
+<td align="right" valign=middle sdval="2455.1" sdnum="1033;"><font face="Calibri" color="#000000">2455.1</font></td>
+<td align="right" valign=middle sdval="3075.28" sdnum="1033;"><font face="Calibri" color="#000000">3075.28</font></td>
+<td align="right" valign=middle sdval="2142.97" sdnum="1033;"><font face="Calibri" color="#000000">2142.97</font></td>
+<td align="right" valign=middle sdval="1708.15" sdnum="1033;"><font face="Calibri" color="#000000">1708.15</font></td>
+<td align="right" valign=middle sdval="2687.76" sdnum="1033;"><font face="Calibri" color="#000000">2687.76</font></td>
+<td align="right" valign=middle sdval="1753.05" sdnum="1033;"><font face="Calibri" color="#000000">1753.05</font></td>
+<td align="right" valign=middle sdval="2126.47" sdnum="1033;"><font face="Calibri" color="#000000">2126.47</font></td>
+<td align="right" valign=middle sdval="4036.68" sdnum="1033;"><font face="Calibri" color="#000000">4036.68</font></td>
+<td align="right" valign=middle sdval="1593.78" sdnum="1033;"><font face="Calibri" color="#000000">1593.78</font></td>
+<td align="right" valign=middle sdval="2313.45" sdnum="1033;"><font face="Calibri" color="#000000">2313.45</font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="2388.59" sdnum="1033;"><font color="#000000">2388.59</font></td>
+<td align="right" valign=middle sdval="3660.06" sdnum="1033;"><font color="#000000">3660.06</font></td>
+<td align="right" valign=middle sdval="2125.75" sdnum="1033;"><font color="#000000">2125.75</font></td>
+<td align="right" valign=middle sdval="1894.63" sdnum="1033;"><font color="#000000">1894.63</font></td>
+<td align="right" valign=middle sdval="2563.53" sdnum="1033;"><font color="#000000">2563.53</font></td>
+<td align="right" valign=middle sdval="4435.19" sdnum="1033;"><font color="#000000">4435.19</font></td>
+<td align="right" valign=middle sdval="7260.16" sdnum="1033;"><font color="#000000">7260.16</font></td>
+<td align="right" valign=middle sdval="2199.43" sdnum="1033;"><font color="#000000">2199.43</font></td>
+<td align="right" valign=middle sdval="2943.28" sdnum="1033;"><font color="#000000">2943.28</font></td>
+<td align="right" valign=middle sdval="1857.82" sdnum="1033;"><font color="#000000">1857.82</font></td>
+<td align="right" valign=middle sdval="2410.96" sdnum="1033;"><font color="#000000">2410.96</font></td>
+<td align="right" valign=middle sdval="1972.1" sdnum="1033;"><font color="#000000">1972.1</font></td>
+<td align="right" valign=middle sdval="1048.39" sdnum="1033;"><font color="#000000">1048.39</font></td>
+<td align="right" valign=middle sdval="2273.97" sdnum="1033;"><font color="#000000">2273.97</font></td>
+</tr>
+<tr>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="12" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">12      </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="2211.23333333333" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">2211.23 </font></td>
+<td align="left" valign=middle bgcolor="#DEEBF7" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="0.0110328008513459" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:15:53</font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="14" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">14      </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="2787.45857142857" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">2787.46 </font></td>
+<td align="left" valign=middle bgcolor="#DEEBF7" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="0.0133477892040524" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:19:13</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="1022.53" sdnum="1033;"><font face="Calibri" color="#000000">1022.53</font></td>
+<td align="right" valign=middle sdval="1599.31" sdnum="1033;"><font face="Calibri" color="#000000">1599.31</font></td>
+<td align="right" valign=middle sdval="2460.3" sdnum="1033;"><font face="Calibri" color="#000000">2460.3</font></td>
+<td align="right" valign=middle sdval="3080.41" sdnum="1033;"><font face="Calibri" color="#000000">3080.41</font></td>
+<td align="right" valign=middle sdval="2144.62" sdnum="1033;"><font face="Calibri" color="#000000">2144.62</font></td>
+<td align="right" valign=middle sdval="1705.65" sdnum="1033;"><font face="Calibri" color="#000000">1705.65</font></td>
+<td align="right" valign=middle sdval="2691.62" sdnum="1033;"><font face="Calibri" color="#000000">2691.62</font></td>
+<td align="right" valign=middle sdval="1747.91" sdnum="1033;"><font face="Calibri" color="#000000">1747.91</font></td>
+<td align="right" valign=middle sdval="2136.85" sdnum="1033;"><font face="Calibri" color="#000000">2136.85</font></td>
+<td align="right" valign=middle sdval="4035.45" sdnum="1033;"><font face="Calibri" color="#000000">4035.45</font></td>
+<td align="right" valign=middle sdval="1590.82" sdnum="1033;"><font face="Calibri" color="#000000">1590.82</font></td>
+<td align="right" valign=middle sdval="2319.33" sdnum="1033;"><font face="Calibri" color="#000000">2319.33</font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="2387.85" sdnum="1033;"><font color="#000000">2387.85</font></td>
+<td align="right" valign=middle sdval="3658.48" sdnum="1033;"><font color="#000000">3658.48</font></td>
+<td align="right" valign=middle sdval="2123.67" sdnum="1033;"><font color="#000000">2123.67</font></td>
+<td align="right" valign=middle sdval="1902.56" sdnum="1033;"><font color="#000000">1902.56</font></td>
+<td align="right" valign=middle sdval="2564.12" sdnum="1033;"><font color="#000000">2564.12</font></td>
+<td align="right" valign=middle sdval="4433.97" sdnum="1033;"><font color="#000000">4433.97</font></td>
+<td align="right" valign=middle sdval="7254.61" sdnum="1033;"><font color="#000000">7254.61</font></td>
+<td align="right" valign=middle sdval="2196.18" sdnum="1033;"><font color="#000000">2196.18</font></td>
+<td align="right" valign=middle sdval="2942.44" sdnum="1033;"><font color="#000000">2942.44</font></td>
+<td align="right" valign=middle sdval="1866.27" sdnum="1033;"><font color="#000000">1866.27</font></td>
+<td align="right" valign=middle sdval="2387.68" sdnum="1033;"><font color="#000000">2387.68</font></td>
+<td align="right" valign=middle sdval="1976.87" sdnum="1033;"><font color="#000000">1976.87</font></td>
+<td align="right" valign=middle sdval="1048.44" sdnum="1033;"><font color="#000000">1048.44</font></td>
+<td align="right" valign=middle sdval="2281.28" sdnum="1033;"><font color="#000000">2281.28</font></td>
+</tr>
+<tr>
+<td rowspan=3 height="71" align="left" valign=middle bgcolor="#FBE5D6"><font face="Calibri" color="#000000">3a4000</font></td>
+<td rowspan=3 align="left" valign=middle><font face="Calibri" color="#000000">Loongnix</font></td>
+<td rowspan=3 align="left" valign=middle><font face="Calibri" color="#000000">qemu-i386-5.0 wine5.x</font></td>
+<td rowspan=3 align="center" valign=middle sdval="44120" sdnum="1033;0;M/D/YYYY"><font face="Calibri" color="#000000">10/16/2020</font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="11" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">11      </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="214.39" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">214.39 </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="0.0970291361220705" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000">9.70%</font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="0.110233774558115" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">2:38:44</font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="14" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">14      </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="24.805" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">24.81 </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="0.00889297596512362" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000">0.89%</font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="2.10804683387608" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">2:35:35</font></td>
+<td rowspan=3 align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000">-Zi-Ox</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="167.77" sdnum="1033;"><font face="Calibri" color="#000000">167.77</font></td>
+<td align="right" valign=middle sdval="91.56" sdnum="1033;"><font face="Calibri" color="#000000">91.56</font></td>
+<td align="right" valign=middle sdval="166.83" sdnum="1033;"><font face="Calibri" color="#000000">166.83</font></td>
+<td align="right" valign=middle sdval="577.31" sdnum="1033;"><font face="Calibri" color="#000000">577.31</font></td>
+<td align="right" valign=middle sdval="181.24" sdnum="1033;"><font face="Calibri" color="#000000">181.24</font></td>
+<td align="right" valign=middle sdval="180.32" sdnum="1033;"><font face="Calibri" color="#000000">180.32</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="152.49" sdnum="1033;"><font face="Calibri" color="#000000">152.49</font></td>
+<td align="right" valign=middle sdval="181.32" sdnum="1033;"><font face="Calibri" color="#000000">181.32</font></td>
+<td align="right" valign=middle sdval="214.22" sdnum="1033;"><font face="Calibri" color="#000000">214.22</font></td>
+<td align="right" valign=middle sdval="177.61" sdnum="1033;"><font face="Calibri" color="#000000">177.61</font></td>
+<td align="right" valign=middle sdval="267.62" sdnum="1033;"><font face="Calibri" color="#000000">267.62</font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="10.53" sdnum="1033;"><font color="#000000">10.53</font></td>
+<td align="right" valign=middle sdval="27.17" sdnum="1033;"><font color="#000000">27.17</font></td>
+<td align="right" valign=middle sdval="7.86" sdnum="1033;"><font color="#000000">7.86</font></td>
+<td align="right" valign=middle sdval="14.33" sdnum="1033;"><font color="#000000">14.33</font></td>
+<td align="right" valign=middle sdval="27.84" sdnum="1033;"><font color="#000000">27.84</font></td>
+<td align="right" valign=middle sdval="23.1" sdnum="1033;"><font color="#000000">23.1</font></td>
+<td align="right" valign=middle sdval="108.21" sdnum="1033;"><font color="#000000">108.21</font></td>
+<td align="right" valign=middle sdval="28.87" sdnum="1033;"><font color="#000000">28.87</font></td>
+<td align="right" valign=middle sdval="27.51" sdnum="1033;"><font color="#000000">27.51</font></td>
+<td align="right" valign=middle sdval="15.42" sdnum="1033;"><font color="#000000">15.42</font></td>
+<td align="right" valign=middle sdval="17.88" sdnum="1033;"><font color="#000000">17.88</font></td>
+<td align="right" valign=middle sdval="17.39" sdnum="1033;"><font color="#000000">17.39</font></td>
+<td align="right" valign=middle sdval="3.18" sdnum="1033;"><font color="#000000">3.18</font></td>
+<td align="right" valign=middle sdval="17.98" sdnum="1033;"><font color="#000000">17.98</font></td>
+</tr>
+<tr>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="11" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">11      </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="214.028181818182" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">214.03 </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="0.0968700234983797" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000">9.69%</font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="0.110435811779574" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">2:39:01</font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="14" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">14      </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="24.8192857142857" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">24.82 </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="0.00890175862699718" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000">0.89%</font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="2.1081777491602" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">2:35:46</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="167.57" sdnum="1033;"><font face="Calibri" color="#000000">167.57</font></td>
+<td align="right" valign=middle sdval="91.33" sdnum="1033;"><font face="Calibri" color="#000000">91.33</font></td>
+<td align="right" valign=middle sdval="166.99" sdnum="1033;"><font face="Calibri" color="#000000">166.99</font></td>
+<td align="right" valign=middle sdval="577.07" sdnum="1033;"><font face="Calibri" color="#000000">577.07</font></td>
+<td align="right" valign=middle sdval="179.18" sdnum="1033;"><font face="Calibri" color="#000000">179.18</font></td>
+<td align="right" valign=middle sdval="180.86" sdnum="1033;"><font face="Calibri" color="#000000">180.86</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="152.11" sdnum="1033;"><font face="Calibri" color="#000000">152.11</font></td>
+<td align="right" valign=middle sdval="181.62" sdnum="1033;"><font face="Calibri" color="#000000">181.62</font></td>
+<td align="right" valign=middle sdval="213.12" sdnum="1033;"><font face="Calibri" color="#000000">213.12</font></td>
+<td align="right" valign=middle sdval="177.63" sdnum="1033;"><font face="Calibri" color="#000000">177.63</font></td>
+<td align="right" valign=middle sdval="266.83" sdnum="1033;"><font face="Calibri" color="#000000">266.83</font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="10.52" sdnum="1033;"><font color="#000000">10.52</font></td>
+<td align="right" valign=middle sdval="27.17" sdnum="1033;"><font color="#000000">27.17</font></td>
+<td align="right" valign=middle sdval="7.85" sdnum="1033;"><font color="#000000">7.85</font></td>
+<td align="right" valign=middle sdval="14.35" sdnum="1033;"><font color="#000000">14.35</font></td>
+<td align="right" valign=middle sdval="27.92" sdnum="1033;"><font color="#000000">27.92</font></td>
+<td align="right" valign=middle sdval="23.11" sdnum="1033;"><font color="#000000">23.11</font></td>
+<td align="right" valign=middle sdval="108.32" sdnum="1033;"><font color="#000000">108.32</font></td>
+<td align="right" valign=middle sdval="28.87" sdnum="1033;"><font color="#000000">28.87</font></td>
+<td align="right" valign=middle sdval="27.53" sdnum="1033;"><font color="#000000">27.53</font></td>
+<td align="right" valign=middle sdval="15.4" sdnum="1033;"><font color="#000000">15.4</font></td>
+<td align="right" valign=middle sdval="17.85" sdnum="1033;"><font color="#000000">17.85</font></td>
+<td align="right" valign=middle sdval="17.41" sdnum="1033;"><font color="#000000">17.41</font></td>
+<td align="right" valign=middle sdval="3.18" sdnum="1033;"><font color="#000000">3.18</font></td>
+<td align="right" valign=middle sdval="17.99" sdnum="1033;"><font color="#000000">17.99</font></td>
+</tr>
+<tr>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="11" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">11      </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="214.206363636364" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">214.21 </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="0.0968718951579196" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000">9.69%</font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="0.110293593727364" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">2:38:49</font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="14" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">14      </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="24.8021428571429" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">24.80 </font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="0.0088977619654565" sdnum="1033;0;0.00%"><font face="Calibri" color="#000000">0.89%</font></td>
+<td align="right" valign=middle bgcolor="#DEEBF7" sdval="2.1085272517463" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">2:36:16</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="167.48" sdnum="1033;"><font face="Calibri" color="#000000">167.48</font></td>
+<td align="right" valign=middle sdval="91.33" sdnum="1033;"><font face="Calibri" color="#000000">91.33</font></td>
+<td align="right" valign=middle sdval="166.44" sdnum="1033;"><font face="Calibri" color="#000000">166.44</font></td>
+<td align="right" valign=middle sdval="575.87" sdnum="1033;"><font face="Calibri" color="#000000">575.87</font></td>
+<td align="right" valign=middle sdval="181.05" sdnum="1033;"><font face="Calibri" color="#000000">181.05</font></td>
+<td align="right" valign=middle sdval="180.7" sdnum="1033;"><font face="Calibri" color="#000000">180.7</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="152.66" sdnum="1033;"><font face="Calibri" color="#000000">152.66</font></td>
+<td align="right" valign=middle sdval="181.71" sdnum="1033;"><font face="Calibri" color="#000000">181.71</font></td>
+<td align="right" valign=middle sdval="213.53" sdnum="1033;"><font face="Calibri" color="#000000">213.53</font></td>
+<td align="right" valign=middle sdval="177.7" sdnum="1033;"><font face="Calibri" color="#000000">177.7</font></td>
+<td align="right" valign=middle sdval="267.8" sdnum="1033;"><font face="Calibri" color="#000000">267.8</font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="10.52" sdnum="1033;"><font color="#000000">10.52</font></td>
+<td align="right" valign=middle sdval="27.15" sdnum="1033;"><font color="#000000">27.15</font></td>
+<td align="right" valign=middle sdval="7.85" sdnum="1033;"><font color="#000000">7.85</font></td>
+<td align="right" valign=middle sdval="14.32" sdnum="1033;"><font color="#000000">14.32</font></td>
+<td align="right" valign=middle sdval="27.86" sdnum="1033;"><font color="#000000">27.86</font></td>
+<td align="right" valign=middle sdval="23.1" sdnum="1033;"><font color="#000000">23.1</font></td>
+<td align="right" valign=middle sdval="108.18" sdnum="1033;"><font color="#000000">108.18</font></td>
+<td align="right" valign=middle sdval="28.87" sdnum="1033;"><font color="#000000">28.87</font></td>
+<td align="right" valign=middle sdval="27.5" sdnum="1033;"><font color="#000000">27.5</font></td>
+<td align="right" valign=middle sdval="15.42" sdnum="1033;"><font color="#000000">15.42</font></td>
+<td align="right" valign=middle sdval="17.87" sdnum="1033;"><font color="#000000">17.87</font></td>
+<td align="right" valign=middle sdval="17.44" sdnum="1033;"><font color="#000000">17.44</font></td>
+<td align="right" valign=middle sdval="3.18" sdnum="1033;"><font color="#000000">3.18</font></td>
+<td align="right" valign=middle sdval="17.97" sdnum="1033;"><font color="#000000">17.97</font></td>
+</tr>
+<tr>
+<td height="24" align="left" valign=middle bgcolor="#DAE3F3"><font face="Unifont" color="#000000">鲲鹏920</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000">UOS</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000">exagear32 wine5.x</font></td>
+<td align="right" valign=middle sdval="44161" sdnum="1033;0;M/D/YYYY"><font face="Calibri" color="#000000">11/26/2020</font></td>
+<td align="right" valign=middle sdval="11" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">11      </font></td>
+<td align="right" valign=middle sdval="1457" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">1457.00 </font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="0.0188969802993112" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">0:27:12</font></td>
+<td align="right" valign=middle sdval="14" sdnum="1033;0;# ??/??"><font face="Calibri" color="#000000">14      </font></td>
+<td align="right" valign=middle sdval="546.285714285714" sdnum="1033;0;0.00_ "><font face="Calibri" color="#000000">546.29 </font></td>
+<td align="left" valign=middle sdnum="1033;0;0.00%"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="0.0749941707219048" sdnum="1033;0;H:MM:SS;@"><font face="Calibri" color="#000000">1:47:59</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000">-Zi-Ox</font></td>
+<td align="left" valign=middle sdnum="1033;0;@"><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="1142" sdnum="1033;"><font face="Calibri" color="#000000">1142</font></td>
+<td align="right" valign=middle sdval="319" sdnum="1033;"><font face="Calibri" color="#000000">319</font></td>
+<td align="right" valign=middle sdval="2103" sdnum="1033;"><font face="Calibri" color="#000000">2103</font></td>
+<td align="right" valign=middle sdval="3541" sdnum="1033;"><font face="Calibri" color="#000000">3541</font></td>
+<td align="right" valign=middle sdval="1097" sdnum="1033;"><font face="Calibri" color="#000000">1097</font></td>
+<td align="right" valign=middle sdval="1253" sdnum="1033;"><font face="Calibri" color="#000000">1253</font></td>
+<td align="left" valign=middle><font face="Calibri" color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="1143" sdnum="1033;"><font face="Calibri" color="#000000">1143</font></td>
+<td align="right" valign=middle sdval="1478" sdnum="1033;"><font face="Calibri" color="#000000">1478</font></td>
+<td align="right" valign=middle sdval="1371" sdnum="1033;"><font face="Calibri" color="#000000">1371</font></td>
+<td align="right" valign=middle sdval="1410" sdnum="1033;"><font face="Calibri" color="#000000">1410</font></td>
+<td align="right" valign=middle sdval="1170" sdnum="1033;"><font face="Calibri" color="#000000">1170</font></td>
+<td align="left" valign=middle bgcolor="#D9D9D9"><font color="#000000"><br></font></td>
+<td align="right" valign=middle sdval="223" sdnum="1033;"><font color="#000000">223</font></td>
+<td align="right" valign=middle sdval="1213" sdnum="1033;"><font color="#000000">1213</font></td>
+<td align="right" valign=middle sdval="428" sdnum="1033;"><font color="#000000">428</font></td>
+<td align="right" valign=middle sdval="767" sdnum="1033;"><font color="#000000">767</font></td>
+<td align="right" valign=middle sdval="140" sdnum="1033;"><font color="#000000">140</font></td>
+<td align="right" valign=middle sdval="786" sdnum="1033;"><font color="#000000">786</font></td>
+<td align="right" valign=middle sdval="710" sdnum="1033;"><font color="#000000">710</font></td>
+<td align="right" valign=middle sdval="485" sdnum="1033;"><font color="#000000">485</font></td>
+<td align="right" valign=middle sdval="646" sdnum="1033;"><font color="#000000">646</font></td>
+<td align="right" valign=middle sdval="631" sdnum="1033;"><font color="#000000">631</font></td>
+<td align="right" valign=middle sdval="309" sdnum="1033;"><font color="#000000">309</font></td>
+<td align="right" valign=middle sdval="571" sdnum="1033;"><font color="#000000">571</font></td>
+<td align="right" valign=middle sdval="156" sdnum="1033;"><font color="#000000">156</font></td>
+<td align="right" valign=middle sdval="583" sdnum="1033;"><font color="#000000">583</font></td>
+</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+</html>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../Benchmarks/spec/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="../BT/algo/2006.lib.杨浩.计算机研究与发展.0.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../Benchmarks/spec/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="../BT/algo/2006.lib.杨浩.计算机研究与发展.0.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>
