@@ -56,7 +56,7 @@ solve_an_entry()
         echo -n "  "
     done
     echo -n "* ["
-    echo -n ${NAME%.*}
+    echo -n ${NAME}
     echo -n "]("
     if [[ -f $1 ]]
     then
