@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link class="revealHref" rel="stylesheet" href="css/reset.css">
+		<link class="revealHref" rel="stylesheet" href="css/reveal.css">
+		<link class="revealHref" rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link class="revealHref" rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- The path to reveal.js folder. -->
+		<script>
+			let revealPath = "../../CrossPlatformTools/reveal.js/";
+		</script>
+		<script src="../../CrossPlatformTools/reveal.js/js/reveal.js"></script>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.classList.add("revealHref");
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<script>
+			for(let e of document.getElementsByClassName("revealHref"))
+			{
+				let oldHref = e.getAttribute("href");
+				e.setAttribute("href", revealPath+oldHref);
+			}
+		</script>
+		<style type="text/css">
+			.floatBox {position: absolute; width: 50%; right: 0;
+				/*box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2);*/
+				background-color: rgba(0, 0, 0, 0.1); color: #333; padding: 10px;
+				font-size: 20px; text-align: left;}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1><small>the</small> design <small>of</small> Check</h1>
+					<p>x86-qemu-mips -> <b>check</b> <- qemu</p>
+					<p>谢本壹 2020.1.9</p>
+				</section>
+				<section>
+					<h2>Outline</h2>
+					<ol>
+						<li>使用的逻辑</li>
+						<li>新增代码&编译的逻辑</li>
+						<li>运行的逻辑</li>
+					</ol>
+				</section>
+				<section>
+					<section>
+						<h3>1. 使用的逻辑</h3>
+						<hr/>
+						<h4>目前版本实装的功能：</h4>
+						<ul>
+							<li>比较通用寄存器</li>
+						</ul>
+						<hr/>
+						<h4>后续将实装的功能：</h4>
+						<ul>
+							<li>比较其他需要的寄存器（很容易，10^1分钟的量级）</li>
+							<li>比较写内存操作（还需要添加记录QEMU写内存操作的代码，10^0天的量级）</li>
+						</ul>
+					</section>
+					<section data-markdown>
+						### 1. 使用的逻辑
+
+						check会将接收到的**参数**、**环境变量**原封不动地传给qemu和x86-qemu-mips。qemu和x86-qemu-mips照常输出。
+
+						一个例子 check检查结果一致
+
+						```shell
+						$ ./check ~/Codes/hellox86
+						Hello World
+						Hello World
+						check end
+						```
+					</section>
+					<section data-markdown>
+						### 1. 使用的逻辑
+
+						一个例子 check发现不同
+
+						(目前的版本会打印出不同的TB的所有寄存器信息)
+
+						```shell
+						./check ~/Codes/helloworldx86
+						eax: 0, 0
+						ecx: 7fffb3c4, ffffb3c4
+						edx: 0, 0
+						ebx: 0, 0
+						esp: 7fffb3b0, ffffb3b0
+						ebp: 0, 0
+						esi: 1, 1
+						edi: 0, 0
+						eip: 8048763, 8048763
+						```
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>2. 新增代码&编译的逻辑</h3>
+						<img src="pictures/checkCodeDesign-formatted.svg" style="border: white; zoom: 120%;">
+						<div class="fragment floatBox" style="top: 68%; width: 42%; left: 0;">
+							编译check功能的x86-qemu-mips:<br/>
+							<span style="font-size: 11px;">configure --enable-x86tomips --enable-loongson-check --target-list="i386-linux-user"</span>
+						</div>
+						<div class="fragment floatBox" style="top: 85%; width: 35%; left: 0;">
+							编译check功能的qemu:<br/>
+							<span style="font-size: 11px;">configure --enable-loongson-check --target-list="i386-linux-user"</span>
+						</div>
+					</section>
+					<section>
+						<h3>2. 新增代码&编译的逻辑</h3>
+						<ul>
+							<li>比较寄存器</li>
+							<li>比较内存</li>
+						</ul>
+					</section>
+					<section>
+						<h4>比较寄存器</h4>
+						<hr/>
+						<p>比较env即可！</p>
+					</section>
+					<section>
+						<h4>比较内存</h4>
+						<hr/>
+						<table>
+							<tr>
+								<td><b>x86-qemu-mips</b></td>
+								<td>x86 -> mips</td>
+							</tr>
+							<tr>
+								<td><b>qemu</b></td>
+								<td>x86 -> tcg</td>
+							</tr>
+						</table>
+						<hr/>
+						<span>共同点：<span class="fragment">mips和tcg都是</span><span class="fragment">RISC</span></span>
+						<p class="fragment">合理的猜测：所有的x86访存指令在翻译时都将“収束”在某一个管理写内存的函数里</p>
+					</section>
+					<section>
+						<h5>x86tomips翻译写内存相关指令的“収束”情况</h5>
+						<img src="pictures/x86tomips-tr-writeMem-structure-formatted.svg" style="border: white; zoom: 170%;">
+						<code style="zoom: 60%">IR2_OPND value_opnd, IR1_OPND *opnd1, bool is_xmm_hi</code>
+					</section>
+				</section>
+				<section>
+					<h3>3. 运行的逻辑</h3>
+					<img src="pictures/checkTimeline-formatted.svg" style="border: white; zoom: 120%">
+					<div class="fragment floatBox" style="top: 40%; width: 16%;">进程间通讯采用message queue（系统调用mq_xxx）</div>
+					<div class="fragment floatBox" style="top: 60%; width: 16%;">类似网络里的“握手协议”</div>
+					<div class="fragment floatBox" style="top: 75%; width: 16%;">一个灰色背景部分表示一个TB块</div>
+				</section>
+				<section>
+					<h3>待完善的内容</h3>
+					<ul>
+						<li>esp，栈的不同步</li>
+						<li>qemu的写内存操作的记录</li>
+						<li>一键编译</li>
+					</ul>
+					<hr/>
+					<h3>待解决的问题</h3>
+					<ul>
+						<li>TB的大小不一样，TB链不一样</li>
+					</ul>
+<!--					<div class="fragment floatBox" style="width: 30%; top: 43%; font-size: 48px">不过这些都不在下周计划里</div>-->
+					<div class="fragment floatBox" style="width: 15%; top: 75%;">准备在空闲时间完成这些内容，下周主要想去做新指令集的工作</div>
+				</section>
+				<section>
+					<h1>谢谢</h1>
+					<hr/>
+					谢本壹 2020.1.9
+				</section>
+			</div>
+		</div>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				slideNumber: true,
+				pdfSeparateFragments: false,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				dependencies: [
+					{ src: revealPath + 'plugin/markdown/marked.js' },
+					{ src: revealPath + 'plugin/markdown/markdown.js' },
+					{ src: revealPath + 'plugin/notes/notes.js', async: true },
+					{ src: revealPath + 'plugin/highlight/highlight.js', async: true },
+					{ src: revealPath + 'plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

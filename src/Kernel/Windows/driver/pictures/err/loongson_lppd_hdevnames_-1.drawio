@@ -1,0 +1,158 @@
+<mxfile host="Electron" modified="2021-02-01T06:53:37.205Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/13.3.9 Chrome/83.0.4103.119 Electron/9.0.5 Safari/537.36" etag="hBrvHvwZCml9Z_2Nsk3S" compressed="false" version="13.3.9" type="device">
+  <diagram id="2mSJxrwBcZirriuZDP77" name="Page-1">
+    <mxGraphModel dx="488" dy="296" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ESOSU04UlMjSlMdxmBD_-4" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="470" y="360" as="sourcePoint" />
+            <mxPoint x="600" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-1" value="&lt;b&gt;PRINTDLG_WMInitDialog&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="400" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-2" value="HWND hDlg" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="400" y="400" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" source="89sTT5VhspBQtVYe5Niw-3" target="89sTT5VhspBQtVYe5Niw-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="430" />
+              <mxPoint x="480" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-3" value="PRINT_PTRA* PrintStructures" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="440" y="400" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-5" value="&lt;b&gt;GlobalLock&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="500" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-6" value="HGLOBAL hmem" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="360" y="500" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" source="89sTT5VhspBQtVYe5Niw-8" target="89sTT5VhspBQtVYe5Niw-6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="480" />
+              <mxPoint x="410" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-8" value="-&amp;gt;lpPrintDlg-&amp;gt;hDevNames" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
+          <mxGeometry x="400" y="450" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-11" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shape=mxgraph.basic.8_point_star;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="470" y="500" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-12" value="&lt;font color=&quot;#999999&quot;&gt;/// 值为-1&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="430" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-14" value="&lt;font color=&quot;#999999&quot;&gt;///&amp;nbsp;地址为&lt;/font&gt;&lt;font color=&quot;#990000&quot;&gt;&lt;b&gt;0x7b02e586&lt;/b&gt;&lt;/font&gt;&lt;font color=&quot;#999999&quot;&gt;的指令访问hDevNames&lt;/font&gt;&lt;br&gt;wine\dlls\kernelbase\memory.c:696" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="470" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-15" value="&lt;font color=&quot;#999999&quot;&gt;/// 注：龙芯电脑上在点击打印时提示0x7b02e586访存-1，&lt;br&gt;/// 龙芯上winedbg还没法使用，&lt;br&gt;/// 遂在x86上通过b *0x7b02e586尝试找错误&lt;br&gt;///&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;color: rgb(153 , 153 , 153)&quot;&gt;在龙芯上&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;notepad点击打印能够正常弹出打印窗口&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="80" width="320" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-16" value="&lt;b&gt;PrintDlgProcA/W&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="280" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="89sTT5VhspBQtVYe5Niw-17" target="89sTT5VhspBQtVYe5Niw-23" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-17" value="HWND hDlg" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="300" y="280" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-18" value="UINT uMsg" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="340" y="280" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-19" value="WPARAM wParam" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="380" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-20" value="LPARAM lParam" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="440" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-21" value="wine/dlls/comdlg32/printdlg.c: 2007~2052" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="260" width="240" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-22" value="&lt;b&gt;SetPropW&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="350" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-23" value="HWND hwnd" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="300" y="350" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="Tnlenz-YrEGCsKe4aS3G-1" target="89sTT5VhspBQtVYe5Niw-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="390" />
+              <mxPoint x="480" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-24" value="LPCWSTR str" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="340" y="350" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-27" value="&quot;__WINE_PRINTDLGDATA&quot;" style="endArrow=classic;html=1;strokeWidth=2;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" target="89sTT5VhspBQtVYe5Niw-24" edge="1">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="330" as="sourcePoint" />
+            <mxPoint x="400" y="370" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-4" value="2023: wine/dlls/comdlg32/printdlg.c: 1466~1570" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="380" width="270" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-30" value="&lt;b&gt;GetPrinterDC&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="160" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-31" value="HWND Hwnd" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="160" y="160" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-32" value="164: bitmapPrint/main.cpp: 251~266" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="140" width="210" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-33" value="&lt;b&gt;PrintDlgA/W&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="200" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-34" value="LPPRINTDLGA lppd" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="200" y="200" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-35" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="200" y="200" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-36" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="200" y="220" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="89sTT5VhspBQtVYe5Niw-38" value="263: dlls/comdlg32/printdlg.c: 2240~2383" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="180" width="230" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ai_S9ebSl6N7mFLSwqkh-3" value="&lt;b&gt;...&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="240" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ESOSU04UlMjSlMdxmBD_-1" value="" style="endArrow=none;html=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="520" as="sourcePoint" />
+            <mxPoint x="570" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ESOSU04UlMjSlMdxmBD_-2" value="bitmapPrint" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="490" y="140" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ESOSU04UlMjSlMdxmBD_-3" value="wineserver" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="570" y="140" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Tnlenz-YrEGCsKe4aS3G-1" value="HANDLE handle" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="400" y="350" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Tnlenz-YrEGCsKe4aS3G-2" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="400" y="370" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="Tnlenz-YrEGCsKe4aS3G-3" value="&lt;font color=&quot;#999999&quot;&gt;/// 启动新的进程/线程？，执行PrintDlgProcA/W&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="240" width="270" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

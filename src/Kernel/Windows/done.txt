@@ -1,0 +1,2 @@
+x 2020-12-14 figure out those dlls and their relationship
+x 2020-12-14 find and read manual `display and print: windows ddk`

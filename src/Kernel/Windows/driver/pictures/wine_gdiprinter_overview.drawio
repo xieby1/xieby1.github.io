@@ -1,0 +1,107 @@
+<mxfile host="Electron" modified="2021-03-05T08:10:51.752Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/13.3.9 Chrome/83.0.4103.119 Electron/9.0.5 Safari/537.36" etag="BTHiSjNVUv9rCNwl5SoM" compressed="false" version="13.3.9" type="device">
+  <diagram id="KC3V0pbK0u7srIkBsnDu" name="Page-1">
+    <mxGraphModel dx="853" dy="518" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="0oa0NgyIpc5mB97ulTpb-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="0oa0NgyIpc5mB97ulTpb-2" target="0oa0NgyIpc5mB97ulTpb-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="480" y="120" />
+              <mxPoint x="480" y="80" />
+              <mxPoint x="530" y="80" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0oa0NgyIpc5mB97ulTpb-2" value=".bmp" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=10;" parent="1" vertex="1">
+          <mxGeometry x="440" y="100" width="30" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0oa0NgyIpc5mB97ulTpb-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="0oa0NgyIpc5mB97ulTpb-4" target="fFh3nOGs_2QmeGrrnL3s-1" edge="1">
+          <mxGeometry x="-0.3102" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="160" />
+              <mxPoint x="580" y="160" />
+              <mxPoint x="580" y="120" />
+            </Array>
+            <mxPoint as="offset" />
+            <mxPoint x="550" y="170" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0oa0NgyIpc5mB97ulTpb-4" value="WINE+" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="490" y="130" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="0oa0NgyIpc5mB97ulTpb-5" value="wingdi.drv" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="490" y="110" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="0oa0NgyIpc5mB97ulTpb-8" value="位图打印程序" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="490" y="90" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="0oa0NgyIpc5mB97ulTpb-11" value="打印机" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;size=10;" parent="1" vertex="1">
+          <mxGeometry x="670" y="110" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fFh3nOGs_2QmeGrrnL3s-1" value="raw" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=10;" parent="1" vertex="1">
+          <mxGeometry x="590" y="100" width="30" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fFh3nOGs_2QmeGrrnL3s-2" value="USB&lt;br&gt;发送" style="endArrow=classic;html=1;entryX=0;entryY=0;entryDx=0;entryDy=10;entryPerimeter=0;" parent="1" source="fFh3nOGs_2QmeGrrnL3s-1" target="0oa0NgyIpc5mB97ulTpb-11" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="590" y="210" as="sourcePoint" />
+            <mxPoint x="670" y="123" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fFh3nOGs_2QmeGrrnL3s-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="fFh3nOGs_2QmeGrrnL3s-15" target="fFh3nOGs_2QmeGrrnL3s-19" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="130" y="120" />
+              <mxPoint x="130" y="80" />
+              <mxPoint x="180" y="80" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fFh3nOGs_2QmeGrrnL3s-15" value=".xxx" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=10;" parent="1" vertex="1">
+          <mxGeometry x="90" y="100" width="30" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fFh3nOGs_2QmeGrrnL3s-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="fFh3nOGs_2QmeGrrnL3s-17" target="fFh3nOGs_2QmeGrrnL3s-21" edge="1">
+          <mxGeometry x="-0.3102" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="180" y="160" />
+              <mxPoint x="230" y="160" />
+              <mxPoint x="230" y="120" />
+            </Array>
+            <mxPoint as="offset" />
+            <mxPoint x="200" y="170" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fFh3nOGs_2QmeGrrnL3s-17" value="WINE" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="140" y="130" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="fFh3nOGs_2QmeGrrnL3s-18" value="wineps.drv" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="140" y="110" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="fFh3nOGs_2QmeGrrnL3s-19" value="用户程序" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="140" y="90" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="fFh3nOGs_2QmeGrrnL3s-20" value="打印机" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;size=10;" parent="1" vertex="1">
+          <mxGeometry x="320" y="110" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fFh3nOGs_2QmeGrrnL3s-21" value=".ps" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;size=10;" parent="1" vertex="1">
+          <mxGeometry x="240" y="100" width="30" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fFh3nOGs_2QmeGrrnL3s-22" value="CUPS" style="endArrow=classic;html=1;entryX=0;entryY=0;entryDx=0;entryDy=10;entryPerimeter=0;" parent="1" source="fFh3nOGs_2QmeGrrnL3s-21" target="fFh3nOGs_2QmeGrrnL3s-20" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="210" as="sourcePoint" />
+            <mxPoint x="320" y="123" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fFh3nOGs_2QmeGrrnL3s-23" value="官方打印方案" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="170" y="180" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="fFh3nOGs_2QmeGrrnL3s-24" value="扩展打印方案" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="520" y="180" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BBXzcSWdKJX2sVGiS3r7-1" value="注：“WINE+”表示对WINE有所修改" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="160" width="200" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

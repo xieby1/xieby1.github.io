@@ -1,0 +1,165 @@
+<mxfile host="Electron" modified="2020-12-17T11:05:13.565Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/13.3.9 Chrome/83.0.4103.119 Electron/9.0.5 Safari/537.36" etag="XHogBxjtXcUIbvLqxBlC" compressed="false" version="13.3.9" type="device">
+  <diagram id="hP1wBeXGSr3fZBKDG_cj" name="Page-1">
+    <mxGraphModel dx="1038" dy="636" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-1" value="&lt;b&gt;NtGdiOpenDCW&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="80" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-2" value="&lt;font color=&quot;#999999&quot;&gt;/// syscall&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="60" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-3" value="&lt;b&gt;hdcOpenDCW&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="120" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-4" value="windows/core/ntgdi/gre/opendc.cxx" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="100" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-5" value="&lt;b&gt;UMPD_ldevLoadDrver&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="160" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-6" value="780: windows/core/ntgdi/gre/umpd.cxx" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="140" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-7" value="&lt;font color=&quot;#999999&quot;&gt;/// 注释里有只小老鼠&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="370" y="140" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-8" value="&lt;b&gt;UMPDrvEnableDriver&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="200" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-9" value="163: windows/core/ntgdi/gre/umpddrv.cxx" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="200" y="180" width="240" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-10" value="&lt;b&gt;ClientPrinterThunk&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="260" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-11" value="&lt;b&gt;thunk&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="240" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-12" value="235:" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="220" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-13" value="121:&amp;nbsp;windows/core/ntuser/inc/ntcb.h: 6430~6461" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="240" width="270" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-14" value="&lt;font color=&quot;#999999&quot;&gt;//&amp;nbsp;Callback used as the kernel-to-user transport layer.&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="220" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-16" value="&lt;b&gt;pppUserModeCallback&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="320" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-17" value="6458: windows/core/ntuser/inc/ntcb.h: 6369~6409" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="300" width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-19" value="&lt;font color=&quot;#999999&quot;&gt;//&amp;nbsp;Same as xxxUserModeCallback except not leaving/re-entering critical section&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="280" width="440" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-20" value="&lt;b&gt;KeUserModeCallback&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="320" y="400" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-21" value="&lt;font color=&quot;#999999&quot;&gt;/// 和指令集相关，除了i386，还有amd64、ia64、alpha的版本&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="320" y="360" width="340" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-22" value="base/ntos/ke/i386/callback.c: 70~172" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="320" y="380" width="210" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-23" value="&lt;font color=&quot;#999999&quot;&gt;//&amp;nbsp;This function call out from kernel mode to a user mode function.&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="320" y="340" width="360" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-24" value="&lt;b&gt;KiCallUserMode&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="500" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-25" value="128:&amp;nbsp;base/ntos/ke/i386/callout.asm: 91~208" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="480" width="250" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-26" value="&lt;b&gt;_KiCallUserMode&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="520" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-28" value="&lt;font color=&quot;#999999&quot;&gt;//&amp;nbsp;This function calls a user mode function from kernel mode.&lt;br&gt;&lt;/font&gt;&lt;font color=&quot;#999999&quot;&gt;//&amp;nbsp;&lt;/font&gt;&lt;font color=&quot;#999999&quot;&gt;N.B. This function calls out to user mode and the NtCallbackReturn&lt;/font&gt;&lt;div&gt;&lt;font color=&quot;#999999&quot;&gt;//&amp;nbsp; &amp;nbsp; function returns back to the caller of this function. Therefore,&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#999999&quot;&gt;//&amp;nbsp; &amp;nbsp; the stack layout must be consistent between the two routines.&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="420" width="380" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-30" value="&lt;b&gt;_KiServiceExit&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="560" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-31" value="189:&amp;nbsp;base/ntos/ke/i386/trap.asm: 1349" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="540" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-32" value="&lt;b&gt;_KeUserCallbackDispatcher&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="660" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-33" value="179:" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="640" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-34" value="base/ntos/ke/kernldat.c:&lt;br&gt;&lt;div&gt;&lt;font color=&quot;#999999&quot;&gt;// KeUserCallbackDispatcher - This is the address of the user mode callback&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#999999&quot;&gt;//&amp;nbsp; &amp;nbsp; &amp;nbsp; dispatch code. This address is looked up in NTDLL.DLL during&lt;/font&gt;&lt;/div&gt;&lt;font color=&quot;#999999&quot;&gt;&lt;span&gt;//&amp;nbsp; &amp;nbsp; &amp;nbsp; initialization of the system.&lt;/span&gt;&amp;nbsp;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="580" width="420" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-35" value="&lt;b&gt;KiUserCallbackDispatcher&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="700" width="160" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-36" value="&lt;font color=&quot;#999999&quot;&gt;/// ntdll.dll暴露出来的函数只有这个，我怀疑是&lt;/font&gt;&lt;span style=&quot;color: rgb(153 , 153 , 153)&quot;&gt;debugger&lt;/span&gt;&lt;font color=&quot;#999999&quot;&gt;有包装&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="400" y="680" width="350" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-38" value="&lt;font color=&quot;#999999&quot;&gt;/// 从PebKernelCallbackTable读取需要的回调函数&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="720" width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-40" value="" style="endArrow=none;html=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="680" as="sourcePoint" />
+            <mxPoint x="360" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-41" value="内核" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="300" y="660" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-42" value="用户" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="300" y="680" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-43" value="ULONG uApi" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="360" y="260" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-44" value="..." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="260" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-45" value="FI_CLIENTPRINTERTHUNK" style="endArrow=classic;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" target="_OjIHHOgdhCnVdExRgCX-43" edge="1">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="220" as="sourcePoint" />
+            <mxPoint x="220" y="360" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-46" value="%edx" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="560" y="700" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-47" value="&lt;b&gt;__ClientPrinterThunk&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="760" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-48" value="SENDSIDE" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="260" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-49" value="RECVSIDE" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="760" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-50" value="" style="endArrow=none;html=1;strokeWidth=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="_OjIHHOgdhCnVdExRgCX-49" target="_OjIHHOgdhCnVdExRgCX-48" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="60" y="460" as="sourcePoint" />
+            <mxPoint x="110" y="410" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="140" y="770" />
+              <mxPoint x="140" y="270" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-51" value="windows/core/ntuser/inc/ntcb.h: 6466~6499" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="740" width="250" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="_OjIHHOgdhCnVdExRgCX-52" value="&lt;b&gt;GdiPrinterThunk&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="480" y="800" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="v2p_BTAFGD9-i7_D-Wua-1" value="srv03rtm/windows/core/ntgdi/client/umpddrv.c: 286~1475" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="480" y="780" width="320" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

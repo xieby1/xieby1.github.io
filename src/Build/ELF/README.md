@@ -1,0 +1,3 @@
+1995.Tool_Interface_Standard_TIS_Executable_and_Linking_Format_ELF_Specification.Version_1.2.pdf和1997.SYSTEM_V_APPLICATION_BINARY_INTERFACE_Edition_4.1.pdf是2019.9.5在调研ELF文件格式时从wikipedia的reference里找到的。这两个都算是定义ELF的规范文件。
+
+调研历史很简略，见`/龙芯实验室/ELF/`

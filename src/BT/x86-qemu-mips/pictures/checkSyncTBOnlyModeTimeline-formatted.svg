@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="304px" height="67px" viewBox="-0.5 -0.5 304 67" content="&lt;mxfile host=&quot;Electron&quot; modified=&quot;2020-02-16T04:49:25.610Z&quot; agent=&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/12.3.2 Chrome/78.0.3904.113 Electron/7.1.2 Safari/537.36&quot; etag=&quot;TTzLVDcLkClLVS8yGsUq&quot; version=&quot;12.3.2&quot; type=&quot;device&quot; pages=&quot;1&quot;&gt;&lt;diagram id=&quot;gw_svaKqENJ2GJc-qRN2&quot; name=&quot;Page-1&quot;&gt;5VnbcpswEP0aP6YDwib4MbFzmWk6TZPp9JGRQRgagYiQbZyvr2QkzNWmNnadaR4ycFasYHXO7koeGJMwfaAw9r8RF+EB0Nx0YEwHgP9Z/L8A1hmgD/UMmNPAldAWeA0+kAQ1iS4CFyWlgYwQzIK4DDokipDDShiklKzKwzyCy7PGcI5qwKsDcR39FbjMz1ALXG/xRxTMfTWzbo4zSwjVYPkliQ9dsipAxt3AmFBCWHYVphOERexUXLLn7lus+YtRFLEuD9g/P36EIZx/WNPEw8tZ+vLdvtLl8iwhXsgvlm/L1ioEKHJvRCT5XUQiDt76LMT8TueXCaPkDU0IJnQz2phZo+FIyy0qaEOOeAHGhZGe5SDH4bgLEx+50qG4eYaMIRptEKAJtP6xigyQzpGE4qeXx2c7nppT3V5M6dfg6eF3/oXILS20jNEDIiFidM0HrLbLO5JL5hdWVmEUYciCZZkeULJsnrvLZ3gmAX9loElBGJb0o/RgaGUXCVlQB8mnistZdQSM3Y6yyNQc8YvCZ2+hDVuamdMYV9BAHBPzYN3O+MVcXDg+ct4ElxBdIqrMfLZ8RI1rlCwid8MFQaGVHzD0GkNHWFc8vzRxTzEM7GBYO0tbicXfmKF0J2OktbqiSvAFQlkNhAJaO3dKi/W3KzPuRdJF4dbCZzoWmnn1gLsQWd6xks4UsEvSXaVvXpb0QZkoNQZ0lT4YVhxp3aTPlxyuC8NiMSA5RXJQkd/JQYx5EUf7ZQ6TOKvsXpAKTu3XfU7DduL2oPs87OuyyAtsAufUfadafrqgnyfZguv92fasUVdluKEQJjGMSuE33xei27v1SMSukk2ve8MHjON0a1OlkSLorm1GbFgonJlHVTt7mAVj4ths1jpFe91wMEySwNnTDeZ6667ZI+qC2bUwXFZPCMwypw390J5QrxQG88w94bCX1uO43QSf4D4Q771pIU/aiIDPybe+6KYfSLfz9SHgf+hDjOFl9SGg9zOFlirSkAV6qCKgcxW5sO1FpR01RodWkVHFUcftRW+bh9aGKj83SC3z6h2Fi6tQnAMqK1VmzgagCXvd9A9OIc6TBSqnENejWhLQtQbyVU+NDskCzSeL/RxDHJcFTnqyCC5M/xUGjHuSvzX+Mjqr/o32BCC2NAfvdUiE13ZIXFTIAZnDvnY7Ld3qrs3y4XVKNZWfjafVHfywWl66n4DvKXgH85Tfbn+XyYZvf9wy7v4A&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <defs/>
+  <g>
+    <path d="M 301 56 L 211 56" fill="none" stroke="#b85450" stroke-width="4" stroke-miterlimit="10" stroke-dasharray="4 4" pointer-events="stroke"/>
+    <rect x="1" y="46" width="80" height="20" fill="#f8cecc" stroke="#b85450" stroke-width="2" pointer-events="all"/>
+    <g transform="translate(3.5,49.5)">
+      <switch>
+        <foreignObject style="overflow:visible;" pointer-events="all" width="74" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 74px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">
+              <b>check server</b>
+            </div>
+          </div>
+        </foreignObject>
+        <text x="37" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">&lt;b&gt;check server&lt;/b&gt;</text>
+      </switch>
+    </g>
+    <path d="M 101 16 L 121 16" fill="none" stroke="#6c8ebf" stroke-width="4" stroke-miterlimit="10" stroke-dasharray="4 4" pointer-events="stroke"/>
+    <ellipse cx="131" cy="16" rx="10" ry="10" fill="#dae8fc" stroke="#6c8ebf" stroke-width="2" pointer-events="all"/>
+    <ellipse cx="201" cy="56" rx="10" ry="10" fill="#f8cecc" stroke="#b85450" stroke-width="2" pointer-events="all"/>
+    <path d="M 139.69 20.95 L 185.17 46.95" fill="none" stroke="#6c8ebf" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 190.38 49.93 L 181.45 49.43 L 185.17 46.95 L 185.42 42.49 Z" fill="#6c8ebf" stroke="#6c8ebf" stroke-width="2" stroke-miterlimit="10" pointer-events="all"/>
+    <g transform="translate(129.5,29.5)">
+      <switch>
+        <foreignObject style="overflow:visible;" pointer-events="all" width="71" height="11" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;background-color:#ffffff;">
+              <span style="font-size: 9px">ready_to_a</span>
+              <span style="font-size: 9px">lloc_tb</span>
+            </div>
+          </div>
+        </foreignObject>
+        <text x="36" y="11" fill="#000000" text-anchor="middle" font-size="11px" font-family="Helvetica">[Not supported by viewer]</text>
+      </switch>
+    </g>
+    <path d="M 81 56 L 191 56" fill="none" stroke="#b85450" stroke-width="4" stroke-miterlimit="10" stroke-dasharray="4 4" pointer-events="stroke"/>
+    <ellipse cx="271" cy="16" rx="10" ry="10" fill="#dae8fc" stroke="#6c8ebf" stroke-width="2" pointer-events="all"/>
+    <path d="M 261 16 L 141 16" fill="none" stroke="#6c8ebf" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+    <rect x="1" y="1" width="100" height="30" fill="#dae8fc" stroke="#6c8ebf" stroke-width="2" pointer-events="all"/>
+    <g transform="translate(6.5,2.5)">
+      <switch>
+        <foreignObject style="overflow:visible;" pointer-events="all" width="88" height="26" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 89px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">
+              <b>x86-qemu-mips<br/>or qemu<br/></b>
+            </div>
+          </div>
+        </foreignObject>
+        <text x="44" y="19" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">&lt;b&gt;x86-qemu-mips&lt;br&gt;or qemu&lt;br&gt;&lt;/b&gt;</text>
+      </switch>
+    </g>
+    <path d="M 301 16 L 281 16" fill="none" stroke="#6c8ebf" stroke-width="4" stroke-miterlimit="10" stroke-dasharray="4 4" pointer-events="stroke"/>
+    <path d="M 209.69 51.05 L 255.17 25.05" fill="none" stroke="#b85450" stroke-width="2" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 260.38 22.07 L 255.42 29.51 L 255.17 25.05 L 251.45 22.57 Z" fill="#b85450" stroke="#b85450" stroke-width="2" stroke-miterlimit="10" pointer-events="all"/>
+    <g transform="translate(213.5,30.5)">
+      <switch>
+        <foreignObject style="overflow:visible;" pointer-events="all" width="44" height="11" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;background-color:#ffffff;">
+              <font style="font-size: 9px">only_mode</font>
+            </div>
+          </div>
+        </foreignObject>
+        <text x="22" y="11" fill="#000000" text-anchor="middle" font-size="11px" font-family="Helvetica">[Not supported by viewer]</text>
+      </switch>
+    </g>
+  </g>
+</svg>

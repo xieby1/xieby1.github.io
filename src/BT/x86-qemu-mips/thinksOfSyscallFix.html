@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link class="revealHref" rel="stylesheet" href="css/reset.css">
+		<link class="revealHref" rel="stylesheet" href="css/reveal.css">
+		<link class="revealHref" rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link class="revealHref" rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- The path to reveal.js folder. -->
+		<script>
+			let revealPath = "../../CrossPlatformTools/reveal.js/";
+		</script>
+		<script src="../../CrossPlatformTools/reveal.js/js/reveal.js"></script>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.classList.add("revealHref");
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<script>
+			for(let e of document.getElementsByClassName("revealHref"))
+			{
+				let oldHref = e.getAttribute("href");
+				e.setAttribute("href", revealPath+oldHref);
+			}
+		</script>
+		<style type="text/css">
+			.floatBox {position: absolute; width: 50%; right: 0;
+				/*box-shadow: 0 1px 4px rgba(0,0,0,0.5), 0 5px 25px rgba(0,0,0,0.2);*/
+				background-color: rgba(0, 0, 0, 0.1); color: #333; padding: 10px;
+				font-size: 20px; text-align: left;}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>重用QEMU的系统调用helper的思考</h1>
+					<hr/>
+					<small>-未完成，也不打算做玩这个幻灯片了-</small><br/>
+					<b>The thinks of Reusing QEMU's System Call Helper</b>
+					<div><br/>谢本壹 2019.12.12</div>
+				</section>
+				<section>
+					<h2>Outline</h2>
+					<ol>
+						<li>QEMU处理系统调用的代码</li>
+					</ol>
+				</section>
+				<section>
+					<section>
+						<h3>QEMU处理系统调用的代码</h3>
+						<img src="../QEMU/pictures/gen_exception.svg" style="border: white;" alt=""/>
+						<div class="fragment floatBox" style="top: 12%; width: 30%;">
+							这条指令<b>运行</b>时的情形：
+						</div>
+						<div class="fragment floatBox" style="top: 28%; width: 30%;">
+							1. 更新Condition Code
+						</div>
+						<div class="fragment floatBox" style="top: 46%; width: 25%; left: 0">
+							2. 修改pc，为了精确中断
+						</div>
+						<div class="fragment floatBox" style="top: 58%; width: 18%; left: 0">
+							3. 调用helper函数
+						</div>
+						<div class="fragment floatBox" style="top: 85%; width: 30%;">
+							4. 设置条指令的跳转类型
+						</div>
+						<div class="fragment floatBox" style="top: 73%; width: 20%; left: 0">
+							<b>最大的问题</b>：<code>tcg_gen_callN</code>实现了在native环境调用QEMU的函数的功能
+						</div>
+					</section>
+					<section>
+						<h3>QEMU和X86toMips切换环境的不同</h3>
+						<div style="zoom: 70%">
+							<div style="float: left; width: 48%; text-align: center;">
+								<h4>QEMU</h4>
+								无寄存器映射
+							</div>
+							<div style="float: right; width: 48%; text-align: center;">
+								<h4>X86toMips</h4>
+								有寄存器映射
+							</div>
+						</div>
+						<table class="fragment" style="zoom: 70%">
+							<tr>
+								<th></th>
+								<th>0</th>
+								<th>1</th>
+								<th>2</th>
+								<th>3</th>
+							</tr>
+							<tr>
+								<td>0</td>
+								<td>zero <span style="font-weight:bold">ZERO</span></td>
+								<td>at <span style="font-weight:bold;color:rgb(203, 0, 0)">EDX</span></td>
+								<td>v0 <span style="font-weight:bold;color:rgb(203, 0, 0)">EAX</span></td>
+								<td>v1 <span style="font-weight:bold;color:rgb(203, 0, 0)">ECX</span></td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>a0 <span style="font-weight:bold;color:rgb(49, 102, 255)">TMP</span></td>
+								<td>a1 <span style="font-weight:bold;color:rgb(49, 102, 255)">TMP</span></td>
+								<td>a2 <span style="font-weight:bold;color:rgb(49, 102, 255)">TMP</span></td>
+								<td>a3 <span style="font-weight:bold;color:rgb(49, 102, 255)">TMP</span></td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>a4 <span style="font-weight:bold;color:rgb(49, 102, 255)">TMP</span></td>
+								<td>a5 <span style="font-weight:bold;color:rgb(49, 102, 255)">TMP</span></td>
+								<td>a6 <span style="font-weight:bold;color:rgb(49, 102, 255)">TMP</span></td>
+								<td>a7 <span style="font-weight:bold;color:rgb(49, 102, 255)">TMP</span></td>
+							</tr>
+							<tr>
+								<td>12</td>
+								<td>t0 <span style="font-weight:bold;color:rgb(49, 102, 255)">TMP</span></td>
+								<td>t1 <span style="font-weight:bold;color:rgb(49, 102, 255)">TMP</span></td>
+								<td>t2 <span style="font-weight:bold">GuestBase</span></td>
+								<td>t3 <span style="font-weight:bold;color:rgb(192, 192, 192)">ForFutureUse</span></td>
+							</tr>
+							<tr>
+								<td>16</td>
+								<td><span style="color:white;background:black;">s0</span> <span style="font-weight:bold;color:rgb(101, 101, 101)">n1</span></td>
+								<td><span style="color:white;background:black;">s1</span> <span style="font-weight:bold;color:rgb(203, 0, 0)">SS</span></td>
+								<td><span style="color:white;background:black;">s2</span> <span style="font-weight:bold;color:rgb(255, 199, 2)">ENV</span></td>
+								<td><span style="color:white;background:black;">s3</span> <span style="font-weight:bold;color:rgb(203, 0, 0)">EBX</span></td>
+							</tr>
+							<tr>
+								<td>20</td>
+								<td><span style="color:white;background:black;">s4</span> <span style="font-weight:bold;color:rgb(203, 0, 0)">ESP</span></td>
+								<td><span style="color:white;background:black;">s5</span> <span style="font-weight:bold;color:rgb(203, 0, 0)">EBP</span></td>
+								<td><span style="color:white;background:black;">s6</span> <span style="font-weight:bold;color:rgb(203, 0, 0)">ESI</span></td>
+								<td><span style="color:white;background:black;">s7</span> <span style="font-weight:bold;color:rgb(203, 0, 0)">EDI</span></td>
+							</tr>
+							<tr>
+								<td>24</td>
+								<td>t8 <span style="font-weight:bold;color:rgb(0, 153, 1)">DBT</span></td>
+								<td>t9 <span style="font-weight:bold;color:rgb(0, 153, 1)">DBT</span></td>
+								<td>k0</td>
+								<td>k1</td>
+							</tr>
+							<tr>
+								<td>28</td>
+								<td><span style="color:white;background:black;">gp</span> <span style="font-weight:bold;color:rgb(0, 210, 203)">TOP</span></td>
+								<td>sp <span style="font-weight:bold">SP</span></td>
+								<td><span style="color:white;background:black;">fp</span> <span style="font-weight:bold;color:rgb(203, 0, 0)">EFLAGS</span></td>
+								<td><span style="color:white;background:black;">ra</span> <span style="font-weight:bold;color:rgb(0, 210, 203)">MDA</span>?</td>
+							</tr>
+						</table>
+						<div class="fragment" style="zoom: 50%">
+							<span style="color:white;background:black;">mips-reg</span>,
+							<span style="font-weight:bold;color:rgb(49, 102, 255)">TMP</span>,
+							<span style="font-weight:bold;color:rgb(203, 0, 0)">x86-reg</span>,
+							<span style="font-weight:bold;color:rgb(255, 199, 2)">ENV</span>,
+							<span style="font-weight:bold;color:rgb(0, 153, 1)">DBT内部使用</span>,
+							<span style="font-weight:bold;color:rgb(0, 210, 203)">浮点使用</span>
+						</div>
+						<div class="fragment floatBox" style="top: 40%; width: 20%;">
+							<b>难题:</b>
+							<ul>
+								<li class="fragment">MIPS N64系统调用ABI：调用号放在v0，和x86映射寄存器冲突</li>
+								<li class="fragment">MIPS N64系统调用ABI：参数放在a0~a3，和X86toMips的临时寄存冲突</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>解决方法</h3>
+						将helper函数的参数去掉！
+					</section>
+					<section data-markdown>
+						* 保存中断处理代码需要的变量（跟踪helper代码，便可得下面这些变量）
+						  * 🔧中断号`intno`，
+						  * `error_code=0`，
+						  * 是中断还是异常`is_int=1`，🤔**有必要调研一下在QEMU里（不是X86里）的中断和异常分别是什么意思**，
+						  * 🔧中断指令的下一条指令地址`exception_next_eip`，
+						  * CPU可以执行IO`can_do_io=1`，
+						* `siglongjmp`，
+
+						只有两个变量需要修改🔧
+					</section>
+					<section data-markdown>
+						```
+						bool translate_int(IR1_INST *pir1) {
+						// * store registers to env, or if context_switch_native_to_bt is better?
+						tr_save_registers_to_env(0xff, 0xff, 0xff, 0xff);
+
+						// * store intno to CPUState
+						IR2_OPND intno = ra_alloc_itemp();
+						load_ireg_from_addrx(intno, pir1->_opnd[0]._ubyte);
+						append_ir2_opnd2i(mips_sw, intno, env_ir2_opnd, lsenv_offset_exception_index(lsenv));
+
+						// * store next pc to CPUX86State
+						IR2_OPND next_pc = ra_alloc_itemp();
+						load_ireg_from_addrx(next_pc, pir1->_inst_length + pir1->_addr);
+						append_ir2_opnd2i(mips_sw, next_pc, env_ir2_opnd, lsenv_offset_exception_next_eip(lsenv));
+						```
+						```
+						// * call helper function
+						IR2_OPND helper_addr_opnd = ra_alloc_dbt_arg2();
+						load_ireg_from_addr(helper_addr_opnd, (ADDR)helper_raise_int);
+						append_ir2_opnd1(mips_jalr, helper_addr_opnd);
+
+						return true;
+						}
+						```
+					</section>
+				</section>
+				<section>
+					下周的计划
+				</section>
+			</div>
+		</div>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+				slideNumber: true,
+				pdfSeparateFragments: false,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				dependencies: [
+					{ src: revealPath + 'plugin/markdown/marked.js' },
+					{ src: revealPath + 'plugin/markdown/markdown.js' },
+					{ src: revealPath + 'plugin/notes/notes.js', async: true },
+					{ src: revealPath + 'plugin/highlight/highlight.js', async: true },
+					{ src: revealPath + 'plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>

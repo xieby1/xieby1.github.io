@@ -1,0 +1,46 @@
+<mxfile host="Electron" modified="2020-04-28T02:53:33.931Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/12.3.2 Chrome/78.0.3904.113 Electron/7.1.2 Safari/537.36" etag="8aUgl4VS9fiGp8QjKU8J" version="12.3.2" type="device" pages="1">
+  <diagram id="6nsspeBuYBJkozRq4oAr" name="Page-1">
+    <mxGraphModel dx="392" dy="242" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="8qEJxbJx_UsHml9B5YVg-12" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;fontColor=#333333;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="220" y="30" width="120" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="8qEJxbJx_UsHml9B5YVg-1" value="qemu" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="80" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="8qEJxbJx_UsHml9B5YVg-2" value="WorkerFunc1" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="40" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="8qEJxbJx_UsHml9B5YVg-3" value="..." style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="80" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="8qEJxbJx_UsHml9B5YVg-4" value="WorkerFuncN" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="120" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="8qEJxbJx_UsHml9B5YVg-9" value="TBs" style="endArrow=classic;startArrow=classic;html=1;" parent="1" source="8qEJxbJx_UsHml9B5YVg-1" target="8qEJxbJx_UsHml9B5YVg-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="170" as="sourcePoint"/>
+            <mxPoint x="190" y="120" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8qEJxbJx_UsHml9B5YVg-10" value="TBs" style="endArrow=classic;startArrow=classic;html=1;" parent="1" source="8qEJxbJx_UsHml9B5YVg-1" target="8qEJxbJx_UsHml9B5YVg-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="80" y="190" as="sourcePoint"/>
+            <mxPoint x="130" y="140" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8qEJxbJx_UsHml9B5YVg-11" value="TBs" style="endArrow=classic;startArrow=classic;html=1;" parent="1" source="8qEJxbJx_UsHml9B5YVg-1" target="8qEJxbJx_UsHml9B5YVg-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="140" y="190" as="sourcePoint"/>
+            <mxPoint x="190" y="140" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8qEJxbJx_UsHml9B5YVg-13" value="&lt;font color=&quot;#999999&quot;&gt;/// 因为需要TB，所以include了许多qemu的头文件&lt;br&gt;/// 但是因为调用了LLVM所以是用cpp实现的&lt;br&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];;autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="160" width="280" height="30" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,99 @@
+<mxfile host="Electron" modified="2020-05-06T08:19:58.447Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/12.3.2 Chrome/78.0.3904.113 Electron/7.1.2 Safari/537.36" etag="IHjqSHQ59ttSF82tXVRQ" version="12.3.2" type="device" pages="1">
+  <diagram id="ttY4_-UHXuUdhql1RHqY" name="Page-1">
+    <mxGraphModel dx="653" dy="403" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="ul332wx1s-ZCGZDJi3tj-1" value="IRFactory::&lt;b&gt;CreateJIT&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="80" width="120" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ul332wx1s-ZCGZDJi3tj-2" value="llvm/llvm-opc.cpp: 204~252" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];;autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="60" width="160" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ul332wx1s-ZCGZDJi3tj-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;" parent="1" source="ul332wx1s-ZCGZDJi3tj-3" target="ul332wx1s-ZCGZDJi3tj-6" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="340" y="110"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ul332wx1s-ZCGZDJi3tj-3" value="&lt;font color=&quot;#999999&quot;&gt;/// 206~214: 暂时没去研究在做啥&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];;autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="100" width="190" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ul332wx1s-ZCGZDJi3tj-4" value="&lt;font color=&quot;#999999&quot;&gt;/// 223~230: 配置builder&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];;autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="140" width="140" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ul332wx1s-ZCGZDJi3tj-5" value="&lt;b&gt;EngineBuilder&lt;/b&gt; builder" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="120" y="120" width="140" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ul332wx1s-ZCGZDJi3tj-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" source="ul332wx1s-ZCGZDJi3tj-6" target="ul332wx1s-ZCGZDJi3tj-8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="440" y="130"/>
+              <mxPoint x="440" y="150"/>
+              <mxPoint x="100" y="150"/>
+              <mxPoint x="100" y="170"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ul332wx1s-ZCGZDJi3tj-6" value="std::unique_ptr&amp;lt;Module&amp;gt; M" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+          <mxGeometry x="260" y="120" width="160" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ul332wx1s-ZCGZDJi3tj-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" source="ul332wx1s-ZCGZDJi3tj-8" target="ul332wx1s-ZCGZDJi3tj-10" edge="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ul332wx1s-ZCGZDJi3tj-8" value="ExecutionEngine*&amp;nbsp;&lt;b&gt;create&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="160" width="140" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ul332wx1s-ZCGZDJi3tj-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" source="ul332wx1s-ZCGZDJi3tj-10" target="ul332wx1s-ZCGZDJi3tj-12" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="440" y="170"/>
+              <mxPoint x="440" y="250"/>
+              <mxPoint x="100" y="250"/>
+              <mxPoint x="100" y="270"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ul332wx1s-ZCGZDJi3tj-10" value="ExecutionEngine* EE" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="300" y="160" width="120" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ul332wx1s-ZCGZDJi3tj-12" value="&lt;b&gt;RegisterJITEventListener&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="120" y="260" width="160" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="ul332wx1s-ZCGZDJi3tj-13" value="JITEventListener *" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
+          <mxGeometry x="280" y="260" width="120" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="BVlD8j2pyNVAEI26ncra-1" value="&lt;b&gt;EventListner&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="220" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="BVlD8j2pyNVAEI26ncra-2" value="&lt;b&gt;&lt;font color=&quot;#b85450&quot;&gt;new&lt;/font&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="220" width="40" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="BVlD8j2pyNVAEI26ncra-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" edge="1" parent="1" source="BVlD8j2pyNVAEI26ncra-3" target="ul332wx1s-ZCGZDJi3tj-13">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="340" y="230"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BVlD8j2pyNVAEI26ncra-3" value="NotifyInfo &amp;amp;NI" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="240" y="220" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="BVlD8j2pyNVAEI26ncra-4" value="NI" style="endArrow=classic;html=1;strokeWidth=2;fillColor=#f5f5f5;strokeColor=#666666;" edge="1" parent="1" target="BVlD8j2pyNVAEI26ncra-3">
+          <mxGeometry x="-1" width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="200" as="sourcePoint"/>
+            <mxPoint x="70" y="200" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BVlD8j2pyNVAEI26ncra-6" value="&lt;font color=&quot;#999999&quot;&gt;//&amp;nbsp;Info to pass among translator and JIT&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];;autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="190" width="220" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="BVlD8j2pyNVAEI26ncra-8" value="&lt;font color=&quot;#999999&quot;&gt;//&amp;nbsp;Ask LLVM to reserve basereg.&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];;autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="300" width="190" height="20" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
