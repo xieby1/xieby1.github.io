@@ -7,6 +7,12 @@ title = "xieby1's notes"
 
 [output.html]
 additional-css = ["custom.css"]
+no-section-label = true
+git-repository-url = "https://github.com/xieby1/xieby1.github.io"
+
 [output.html.fold]
 enable = true
 level = 0
+
+[output.html.search]
+enable = false
