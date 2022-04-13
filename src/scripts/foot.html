@@ -1,0 +1,49 @@
+<style>
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  width: 100%;
+  height: 2em;
+  border: none;
+  text-align: left;
+  outline: none;
+}
+
+.coll_active,
+.collapsible:hover {
+  background-color: #ccc;
+}
+
+.collapsible:after {
+  content: "\25b6  Unfold"; /* > */
+  float: left;
+}
+
+.coll_active:after {
+  content: "\25bc  Fold"; /* V */
+}
+</style>
+<script type="text/javascript">
+let codes = document.getElementsByTagName("code");
+console.log(codes.length);
+for (let i = 0; i < codes.length; i++) {
+    console.log("miao");
+    let code = codes[i];
+    // folded by default
+    code.style.height = "10em";
+    let foldButton = document.createElement("button");
+    foldButton.setAttribute("type", "button");
+    foldButton.setAttribute("class", "collapsible");
+    foldButton.addEventListener("click", function() {
+        this.classList.toggle("coll_active");
+        let code = this.nextElementSibling;
+        if (code.style.height === "10em") {
+            code.style.height = "100%";
+        } else {
+            code.style.height = "10em";
+        }
+    });
+    code.parentNode.insertBefore(foldButton, code);
+}
+</script>
