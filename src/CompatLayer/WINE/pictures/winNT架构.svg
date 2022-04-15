@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="115.84869mm" height="100.41438mm" viewBox="0 0 115.84869 100.41438" version="1.1" id="svg7728" inkscape:version="0.92.3 (2405546, 2018-03-11)" sodipodi:docname="winNT架构.svg">
+  <defs id="defs7722">
+    <clipPath id="clipPath7762" clipPathUnits="userSpaceOnUse">
+      <path inkscape:connector-curvature="0" id="path7760" d="M 0,0 H 2384 V 3370 H 0 Z"/>
+    </clipPath>
+    <clipPath id="clipPath7772" clipPathUnits="userSpaceOnUse">
+      <path inkscape:connector-curvature="0" id="path7770" d="M 235.066,1355.12 H 1745.6 V 2594.2 H 235.066 Z"/>
+    </clipPath>
+  </defs>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.4" inkscape:cx="82.870178" inkscape:cy="111.35698" inkscape:document-units="mm" inkscape:current-layer="layer1" showgrid="false" inkscape:window-width="1920" inkscape:window-height="1046" inkscape:window-x="1920" inkscape:window-y="260" inkscape:window-maximized="1"/>
+  <metadata id="metadata7725">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-298.18483,-292.06518)">
+    <path inkscape:connector-curvature="0" id="path7774" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 338.82806,392.26871 h 74.99347 v -10.01199 h -74.99347 z"/>
+    <path inkscape:connector-curvature="0" id="path7776" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 338.82806,392.2679 h 74.99379 v -10.01166 h -74.99379 z"/>
+    <g transform="matrix(0.35277885,0,0,-0.35277885,278.82044,502.29977)" id="g7778">
+      <text id="text7782" style="font-variant:normal;font-weight:normal;font-size:12px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,211.08,322.52)">
+        <tspan id="tspan7780" sodipodi:role="line" y="0" x="0 11.327425 14.663425 20.661028 26.658615 32.656231 41.31583 45.979595 48.979595 52.315594 58.313183 66.972778 70.966202 74.3022 79.629639 85.627258 90.954697 94.290695 97.290695 103.28831 107.28173 110.61773 116.61535 121.94279 125.93618">Windows low-level drivers</tspan>
+      </text>
+    </g>
+    <path inkscape:connector-curvature="0" id="path7784" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 338.82806,377.26082 h 74.99347 v -9.99042 h -74.99347 z"/>
+    <path inkscape:connector-curvature="0" id="path7786" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 338.82806,377.26082 h 74.99379 v -9.99075 h -74.99379 z"/>
+    <g transform="matrix(0.35277885,0,0,-0.35277885,278.82044,502.29977)" id="g7788">
+      <text id="text7792" style="font-variant:normal;font-weight:normal;font-size:12px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,250.555,365.06)">
+        <tspan id="tspan7790" sodipodi:role="line" y="0" x="0 8.6678696 16.001692 19.001692 27.663673 32.993523 36.989525 42.989525 48.319374">NT Kernel</tspan>
+      </text>
+    </g>
+    <path inkscape:connector-curvature="0" id="path7794" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 338.82806,362.27482 h 74.99347 v -10.01198 h -74.99347 z"/>
+    <path inkscape:connector-curvature="0" id="path7796" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 338.82806,362.27482 h 74.99379 v -10.01166 h -74.99379 z"/>
+    <g transform="matrix(0.35277885,0,0,-0.35277885,278.82044,502.29977)" id="g7798">
+      <text id="text7802" style="font-variant:normal;font-weight:normal;font-size:12px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,243.534,407.54)">
+        <tspan id="tspan7800" sodipodi:role="line" y="0" x="0 8.6678696 16.001692 24.663673 31.997524 39.331348 42.331348 50.993328 58.327179">NTDLL.DLL</tspan>
+      </text>
+    </g>
+    <path inkscape:connector-curvature="0" id="path7804" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 338.82806,347.26775 h 49.99565 v -10.01166 h -49.99565 z"/>
+    <path inkscape:connector-curvature="0" id="path7806" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 338.82806,347.26775 h 49.99597 v -10.01198 h -49.99597 z"/>
+    <g transform="matrix(0.35277885,0,0,-0.35277885,278.82044,502.29977)" id="g7808">
+      <text id="text7814" style="font-variant:normal;font-weight:normal;font-size:12px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,205.44,457.28)">
+        <tspan id="tspan7810" sodipodi:role="line" y="0" x="0 8.6727772 14.013411 17.973236 23.973236 29.313869 32.618267 38.629089 44.639885 47.639885 56.312691 63.65731">Kernel32 DLL</tspan>
+        <tspan id="tspan7812" sodipodi:role="line" y="14.4006" x="-11.3398 -7.3403788 3.9930472 7.3346558 13.338259 19.341848 25.345451 28.345451 33.015217 39.012974 45.022453 49.692219 55.695808 60.365578 63.707214 69.040649 78.382263">(Win32 subsystem)</tspan>
+      </text>
+    </g>
+    <path inkscape:connector-curvature="0" id="path7816" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 338.82806,332.26068 h 24.99783 v -9.99075 h -24.99783 z"/>
+    <path inkscape:connector-curvature="0" id="path7818" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 338.82806,332.26068 h 24.99783 v -9.99043 h -24.99783 z"/>
+    <g transform="matrix(0.35277885,0,0,-0.35277885,278.82044,502.29977)" id="g7820">
+      <text id="text7826" style="font-variant:normal;font-weight:normal;font-size:12px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,188.82,499.76)">
+        <tspan id="tspan7822" sodipodi:role="line" y="0" x="0 8.6703796 17.340759 21.34499 27.353374">GDI32</tspan>
+        <tspan id="tspan7824" sodipodi:role="line" y="14.3997" x="5.0394902 13.683468 20.999302">DLL</tspan>
+      </text>
+    </g>
+    <path inkscape:connector-curvature="0" id="path7828" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 363.82621,332.26068 h 24.99782 v -9.99075 h -24.99782 z"/>
+    <path inkscape:connector-curvature="0" id="path7830" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 363.82621,332.26068 h 24.99815 v -9.99043 h -24.99815 z"/>
+    <g transform="matrix(0.35277885,0,0,-0.35277885,278.82044,502.29977)" id="g7832">
+      <text id="text7838" style="font-variant:normal;font-weight:normal;font-size:12px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,255,499.76)">
+        <tspan id="tspan7834" sodipodi:role="line" y="0" x="0 8.6691875 15.346544 22.687572 30.698977 36.706184">USER32</tspan>
+        <tspan id="tspan7836" sodipodi:role="line" y="14.3997" x="9.7200499 18.364056 25.679876">DLL</tspan>
+      </text>
+    </g>
+    <path inkscape:connector-curvature="0" id="path7840" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 338.82806,317.27467 h 24.99783 v -10.01165 h -24.99783 z"/>
+    <path inkscape:connector-curvature="0" id="path7842" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 338.82806,317.27467 h 24.99783 v -10.01198 h -24.99783 z"/>
+    <g transform="matrix(0.35277885,0,0,-0.35277885,278.82044,502.29977)" id="g7844">
+      <text id="text7850" style="font-variant:normal;font-weight:normal;font-size:12px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,182.52,542.3)">
+        <tspan id="tspan7846" sodipodi:role="line" y="0" x="0 11.32263 14.653442 20.646235 26.639029 32.631821 41.28661">Windows</tspan>
+        <tspan id="tspan7848" sodipodi:role="line" y="14.3997" x="11.3398 19.983778 27.299612">DLL</tspan>
+      </text>
+    </g>
+    <path inkscape:connector-curvature="0" id="path7852" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 338.82806,302.2676 h 49.99565 v -9.99075 h -49.99565 z"/>
+    <path inkscape:connector-curvature="0" id="path7854" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 338.82806,302.2676 h 49.99597 v -9.99075 h -49.99597 z"/>
+    <g transform="matrix(0.35277885,0,0,-0.35277885,278.82044,502.29977)" id="g7856">
+      <text id="text7860" style="font-variant:normal;font-weight:normal;font-size:12px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,204.78,577.64)">
+        <tspan id="tspan7858" sodipodi:role="line" y="0" x="0 11.329823 14.667842 20.667841 26.667841 32.667843 41.329823 45.995998 48.995998 56.329823 64.991829">Windows EXE</tspan>
+      </text>
+    </g>
+    <path inkscape:connector-curvature="0" id="path7862" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 390.83456,347.26775 h 22.98697 v -24.99782 h -22.98697 z"/>
+    <path inkscape:connector-curvature="0" id="path7864" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 390.83456,347.26775 h 22.98697 v -24.99782 h -22.98697 z"/>
+    <g transform="matrix(0.35277885,0,0,-0.35277885,278.82044,502.29977)" id="g7866">
+      <text id="text7874" style="font-variant:normal;font-weight:normal;font-size:12px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(1,0,0,-1,324.06,485.72)">
+        <tspan id="tspan7868" sodipodi:role="line" y="0" x="0 6.6677656 12.659521 18.66297 23.326736 29.324352 33.988117 37.32412 42.651558">Subsystem</tspan>
+        <tspan id="tspan7870" sodipodi:role="line" y="14.3997" x="5.15974 9.1603394 15.835311 24.502087 31.177059 35.177658 43.844463">(POSIX,</tspan>
+        <tspan id="tspan7872" sodipodi:role="line" y="28.7994" x="11.6996 20.357992 27.024551 30.35898 36.355392">OS/2)</tspan>
+      </text>
+    </g>
+    <path inkscape:connector-curvature="0" id="path7876" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 363.82621,317.27467 h 24.99782 v -10.01165 h -24.99782 z"/>
+    <path inkscape:connector-curvature="0" id="path7878" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 363.82621,317.27467 h 24.99815 v -10.01198 h -24.99815 z"/>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text7886" x="368.20755" y="310.98779">
+      <tspan x="368.20755 372.20532 373.38376 375.50128 377.6188 379.73633 382.79279" y="310.98779" sodipodi:role="line" id="tspan7882" style="stroke-width:0.35277885">Windows</tspan>
+      <tspan x="372.20798 375.25742 377.83829" y="316.06772" sodipodi:role="line" id="tspan7884" style="stroke-width:0.35277885">DLL</tspan>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text7892" x="318.55032" y="298.64749">
+      <tspan x="318.55032" y="298.64749" sodipodi:role="line" id="tspan7888" style="stroke-width:0.35277885">应用程序</tspan>
+      <tspan x="318.55032" sodipodi:role="line" style="stroke-width:0.35277885" y="303.93918" id="tspan9486"/>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text7892-3" x="298.01126" y="313.57932">
+      <tspan x="298.01126" y="313.57932" sodipodi:role="line" id="tspan7888-6" style="stroke-width:0.35277885">应用程序和系统DLL</tspan>
+      <tspan x="298.01126" sodipodi:role="line" style="stroke-width:0.35277885" y="318.871" id="tspan9486-7"/>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text7892-5" x="319.36691" y="334.97281">
+      <tspan x="319.36691" sodipodi:role="line" style="stroke-width:0.35277885" y="334.97281" id="tspan9486-5">核心DLL</tspan>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text7892-6" x="301.98001" y="373.67752">
+      <tspan x="301.98001" y="373.67752" sodipodi:role="line" id="tspan7888-2" style="stroke-width:0.35277885">NT内核(内核空间)</tspan>
+      <tspan x="301.98001" sodipodi:role="line" style="stroke-width:0.35277885" y="378.96921" id="tspan9486-9"/>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text7892-1" x="307.46066" y="388.2674">
+      <tspan x="307.46066" y="388.2674" sodipodi:role="line" id="tspan7888-27" style="stroke-width:0.35277885">驱动(内核空间)</tspan>
+      <tspan x="307.46066" sodipodi:role="line" style="stroke-width:0.35277885" y="393.55908" id="tspan9486-0"/>
+    </text>
+  </g>
+</svg>

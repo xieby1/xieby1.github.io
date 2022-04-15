@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="98.188568mm" height="149.32777mm" viewBox="0 0 98.188568 149.32777" version="1.1" id="svg8" inkscape:version="0.92.3 (2405546, 2018-03-11)" sodipodi:docname="week14.define_ISA_ABI.svg">
+  <defs id="defs2"/>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.98994949" inkscape:cx="305.37002" inkscape:cy="326.29685" inkscape:document-units="mm" inkscape:current-layer="layer1" showgrid="false" inkscape:window-width="1920" inkscape:window-height="1043" inkscape:window-x="0" inkscape:window-y="0" inkscape:window-maximized="1"/>
+  <metadata id="metadata5">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-298.26799,-323.36158)">
+    <path d="m 302.80429,371.74858 h 64.34666 v -48.34467 h -64.34666 z" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.08466666;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path845" inkscape:connector-curvature="0"/>
+    <path d="m 302.80429,339.57524 h 42.92599 m -42.92599,16.08667 h 21.42066 m 5.334,0 h 37.592" style="fill:none;stroke:#000000;stroke-width:0.25400001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path847" inkscape:connector-curvature="0"/>
+    <path d="m 298.74029,357.01658 h 73.74466" style="fill:none;stroke:#000000;stroke-width:0.93133336;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path849" inkscape:connector-curvature="0"/>
+    <path d="m 345.73028,339.57524 v 3.38667 m 0,1.94733 v 3.47134 m 0,1.94733 v 3.38667" style="fill:none;stroke:#000000;stroke-width:0.25400001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path851" inkscape:connector-curvature="0"/>
+    <text transform="scale(0.91287092,1.0954451)" style="font-variant:normal;font-weight:normal;font-size:3.24616885px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.32204056" id="text855" x="343.76266" y="306.04724">
+      <tspan x="343.76266 346.35962 348.30731 350.255 351.36844 353.59531 356.65646 357.7699 360.646 362.77875 363.70712 364.72644" y="306.04724" sodipodi:role="line" id="tspan853" style="stroke-width:0.32204056">System Calls</tspan>
+    </text>
+    <text transform="scale(0.92582011,1.0801234)" style="font-variant:normal;font-weight:bold;font-size:3.2922163px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.32660875" id="text859" x="378.36969" y="327.47739">
+      <tspan x="378.36969 381.11212 383.30801 385.50394 386.96567 388.06198 389.0694 391.53857 329.44376 332.0051 334.10883 336.21255 337.58209 339.68582 343.07022 344.16653 345.17395 347.73529" y="327.47739" sodipodi:role="line" id="tspan857" style="stroke-width:0.32660875">User ISASystem ISA</tspan>
+    </text>
+    <text transform="scale(0.93677693,1.06749)" style="font-variant:normal;font-weight:bold;font-size:3.88637519px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.33047408" id="text863" x="398.52777" y="334.48621">
+      <tspan x="398.52777 399.79474 402.68619" y="334.48621" sodipodi:role="line" id="tspan861" style="stroke-width:0.33047408">ISA</tspan>
+    </text>
+    <text transform="matrix(0.91287092,0,-0.19398506,1.0954451,0,0)" style="font-variant:normal;font-weight:normal;font-size:3.24616885px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.32204056" id="text871" x="413.96454" y="298.93658">
+      <tspan x="413.96454 416.56146 418.78833 420.92108 421.75534 422.5896 424.53729 426.76416 427.78348 428.61774 430.8446 432.97733 434.09079 436.68771 438.91458 439.93063 441.04407 443.92017 446.05292 447.44553" y="298.93658" sodipodi:role="line" id="tspan865" style="stroke-width:0.32204056">Application Software</tspan>
+      <tspan x="401.98065 405.04178 407.26865 409.39813 410.80374 412.93323 414.04666 414.88092 417.01364 419.24054 420.35397 422.9509 424.89859 426.84631 427.95975 430.08923" y="315.86307" sodipodi:role="line" id="tspan867" style="stroke-width:0.32204056">Operating System</tspan>
+      <tspan x="429.11993 431.89539 434.13199 435.43048 437.65735 440.43283 442.66943 443.9679" y="332.71231" sodipodi:role="line" id="tspan869" style="stroke-width:0.32204056">Hardware</tspan>
+    </text>
+    <path d="m 314.91162,336.86591 v 3.89467" style="fill:none;stroke:#000000;stroke-width:0.25400001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path873" inkscape:connector-curvature="0"/>
+    <path d="m 314.91162,342.28458 -1.016,-1.94734 0.59266,0.16934 h 0.67734 l 0.59266,-0.16934 -0.84666,1.94734" style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.35277778" id="path875" inkscape:connector-curvature="0"/>
+    <path d="m 324.22495,336.86591 v 3.89467" style="fill:none;stroke:#000000;stroke-width:0.25400001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path877" inkscape:connector-curvature="0"/>
+    <path d="m 324.22495,342.28458 -0.93133,-1.94734 0.59266,0.16934 h 0.67734 l 0.67733,-0.16934 -1.016,1.94734" style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.35277778" id="path879" inkscape:connector-curvature="0"/>
+    <path d="m 332.35295,336.86591 v 3.89467" style="fill:none;stroke:#000000;stroke-width:0.25400001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path881" inkscape:connector-curvature="0"/>
+    <path d="m 332.35295,342.28458 -1.016,-1.94734 0.59267,0.16934 h 0.67733 l 0.67733,-0.16934 -0.93133,1.94734" style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.35277778" id="path883" inkscape:connector-curvature="0"/>
+    <text style="font-variant:normal;font-weight:bold;font-size:3.55599999px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277778" id="text887" x="330.99811" y="379.28555">
+      <tspan x="330.99811 332.18228 334.13095 335.31509" y="379.28555" sodipodi:role="line" id="tspan885" style="stroke-width:0.35277778">(a)</tspan>
+    </text>
+    <path d="m 302.88895,440.58258 h 64.262 v -48.34467 h -64.262 z" style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.08466666;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path889" inkscape:connector-curvature="0"/>
+    <path d="m 302.88895,408.40924 h 42.84133 m -42.84133,16.08667 h 21.42067 m 5.334,0 h 37.50733" style="fill:none;stroke:#000000;stroke-width:0.25400001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path891" inkscape:connector-curvature="0"/>
+    <text transform="scale(0.92582011,1.0801234)" style="font-variant:normal;font-weight:bold;font-size:3.2922163px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.32660875" id="text897" x="331.18127" y="374.1171">
+      <tspan x="331.18127 333.74261 335.84634 337.95007 339.31964 341.42337 344.80777 345.90408 348.73868 350.84241 351.93872 353.035" y="374.1171" sodipodi:role="line" id="tspan893" style="stroke-width:0.32660875">System Calls</tspan>
+      <tspan x="378.3696 381.11203 383.30792 385.50385 386.96558 387.97299 388.98041 391.54175" y="391.20535" sodipodi:role="line" id="tspan895" style="stroke-width:0.32660875">User ISA</tspan>
+    </text>
+    <text transform="scale(0.91287092,1.0954451)" style="font-variant:normal;font-weight:normal;font-size:3.24616885px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.32204056" id="text901" x="334.6734" y="385.73294">
+      <tspan x="334.6734 337.27036 339.21805 341.16574 342.27917 344.40866 347.56393 348.67737 349.7908 352.38776" y="385.73294" sodipodi:role="line" id="tspan899" style="stroke-width:0.32204056">System ISA</tspan>
+    </text>
+    <text transform="scale(0.93677693,1.06749)" style="font-variant:normal;font-weight:bold;font-size:3.88637519px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.33047408" id="text905" x="398.34702" y="398.96829">
+      <tspan x="398.34702 401.5105 404.67401" y="398.96829" sodipodi:role="line" id="tspan903" style="stroke-width:0.33047408">ABI</tspan>
+    </text>
+    <text transform="matrix(0.91287092,0,-0.19398506,1.0954451,0,0)" style="font-variant:normal;font-weight:normal;font-size:3.24616885px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.32204056" id="text909" x="420.06268" y="378.69958">
+      <tspan x="420.06268 423.12381 425.35071 427.48343 428.87604 431.00876 432.12219 432.86557 435.09244 437.31934 438.33862 440.92581 442.8735 444.91861 445.9379 448.16476" y="378.69958" sodipodi:role="line" id="tspan907" style="stroke-width:0.32204056">Operating System</tspan>
+    </text>
+    <path d="M 369.86028,424.49591 H 347.08495 V 408.40924 H 300.17962" style="fill:none;stroke:#000000;stroke-width:0.93133336;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path911" inkscape:connector-curvature="0"/>
+    <path d="m 308.22295,405.69991 v 3.89467" style="fill:none;stroke:#000000;stroke-width:0.25400001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path913" inkscape:connector-curvature="0"/>
+    <path d="m 308.22295,411.11858 -0.93133,-1.94734 0.59266,0.16934 h 0.67734 l 0.67733,-0.16934 -1.016,1.94734" style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.35277778" id="path915" inkscape:connector-curvature="0"/>
+    <path d="m 316.26628,405.69991 v 3.89467" style="fill:none;stroke:#000000;stroke-width:0.25400001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path917" inkscape:connector-curvature="0"/>
+    <path d="m 316.26628,411.11858 -0.93133,-1.94734 0.59267,0.16934 h 0.67733 l 0.59267,-0.16934 -0.93134,1.94734" style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.35277778" id="path919" inkscape:connector-curvature="0"/>
+    <path d="m 324.30962,405.69991 v 3.89467" style="fill:none;stroke:#000000;stroke-width:0.25400001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" id="path921" inkscape:connector-curvature="0"/>
+    <path d="m 324.30962,411.11858 -0.93134,-1.94734 0.59267,0.16934 h 0.67733 l 0.67734,-0.16934 -1.016,1.94734" style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.35277778" id="path923" inkscape:connector-curvature="0"/>
+    <text transform="matrix(0.91287092,0,-0.19398506,1.0954451,0,0)" style="font-variant:normal;font-weight:normal;font-size:3.24616885px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.32204056" id="text929" x="441.85648" y="398.33118">
+      <tspan x="441.85648 444.63193 446.86856 448.16702 450.39389 453.16937 455.40598 456.70444" y="398.33118" sodipodi:role="line" id="tspan925" style="stroke-width:0.32204056">Hardware</tspan>
+      <tspan x="426.10962 428.70007 430.83279 433.06293 433.89719 434.73145 436.67914 438.90927 439.92856 440.76282 442.89557 445.12567 446.23911 448.82956 450.96228 452.07574 453.18918 455.97113 458.20126 459.49973" y="361.77316" sodipodi:role="line" id="tspan927" style="stroke-width:0.32204056">Application Software</tspan>
+    </text>
+    <text style="font-variant:normal;font-weight:bold;font-size:3.55599999px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277778" id="text933" x="330.99811" y="446.00262">
+      <tspan x="330.99811 332.18228 334.38342 335.56757" y="446.00262" sodipodi:role="line" id="tspan931" style="stroke-width:0.35277778">(b)</tspan>
+    </text>
+    <text style="font-variant:normal;font-weight:bold;font-size:3.55599999px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277778" id="text941" x="305.5983" y="459.29532">
+      <tspan x="305.5983 307.79947 308.81647 311.01764 312.03464 313.05167 315.00037 318.30386 319.32089 322.45374 324.65491 326.85605 328.21091 329.39505 331.34372 333.54489 334.72903 335.74606 338.11792 340.06659 342.01529 343.19943 345.14813 348.28094 349.29797 350.315 352.51614 353.70029 355.64899 357.00381 358.17624 360.12494 362.07361 364.02231 365.97098" y="459.29532" sodipodi:role="line" id="tspan935" style="stroke-width:0.35277778">Fig. 5 Important System Interfaces</tspan>
+      <tspan x="318.29855 320.24722 321.43137 324.64957 325.66656 327.86774 329.81644 331.00058 332.35541 334.55658 336.50525 337.68942 338.70642 340.90759 343.10876 344.12576 346.49762 348.44632 349.63046 350.64108 353.18005 354.53488 356.48358 358.68475 359.70175 360.88589 362.83459 364.78329 365.96744 368.16861 369.52344 371.47211 372.48914 373.67328 374.69031 377.06216 379.60114 380.78528 381.80231 382.81931 385.02048 386.20462 388.15332 389.50815 390.69229 392.64099 394.58966 396.53836" y="465.64526" sodipodi:role="line" id="tspan937" style="stroke-width:0.35277778">a) Instruction Set Architecture (ISA) interface</tspan>
+      <tspan x="318.29855 320.49969 321.60208 324.64957 327.18854 329.38971 331.59088 332.60788 333.62491 335.57358 337.52228 338.70642 339.72345 341.92459 344.12576 345.14279 347.68176 348.69879 350.89499 352.84366 354.19849 356.14719 357.16418 358.18121 360.38239 361.56653 363.51523 364.87006 366.0542 368.0029 369.95157 371.90027 372.91727 374.10144 376.64041 379.17938 380.19641 381.38055" y="471.91058" sodipodi:role="line" id="tspan939" style="stroke-width:0.35277778">b) Application Binary Interface (ABI)</tspan>
+    </text>
+  </g>
+</svg>
