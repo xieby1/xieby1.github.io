@@ -4,11 +4,11 @@ cli: src/SUMMARY.md src/scripts/README.md
 
 src/SUMMARY.md: miao
 	rsync -r --exclude-from ~/Documents/Tech/rsync_exclude ~/Documents/Tech/ src/
-	genSummary.sh > $@
+	./scripts/genSummary.sh > $@
 
 src/scripts/README.md: miao
 	rsync -r --exclude-from ~/Gist/script/bash/rsync_exclude ~/Gist/script/bash/ src/scripts/
-	./genScripts.sh > $@
+	./scripts/genScripts.sh > $@
 
 gui: src/my_cheatsheet.html \
 	 src/my_Essays.html \
@@ -17,19 +17,19 @@ gui: src/my_cheatsheet.html \
 	 src/Benchmarks/my_spec2000.html
 
 src/my_cheatsheet.html: ~/Documents/Manuals-Sheets/my_cheatsheet.md
-	cheatsheet.sh $<
+	./scripts/cheatsheet.sh $<
 	cp $(patsubst %.md, %.html, $<) $@
 
 src/my_Essays.html: ~/Documents/Tech/Essays.xlsx
-	./genExcel.sh $< $@
+	./scripts/genExcel.sh $< $@
 
 src/my_abbreviations.html: ~/Documents/Tech/abbreviations.xlsx
-	./genExcel.sh $< $@
+	./scripts/genExcel.sh $< $@
 
 src/Benchmarks/my_coremark.html: ~/Documents/Tech/Benchmarks/coremark.xlsx
-	./genExcel.sh $< $@
+	./scripts/genExcel.sh $< $@
 
 src/Benchmarks/my_spec2000.html: ~/Documents/Tech/Benchmarks/spec2000.xlsx
-	./genExcel.sh $< $@
+	./scripts/genExcel.sh $< $@
 
 miao:
