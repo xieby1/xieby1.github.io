@@ -239,6 +239,13 @@
 <p>接下来就是看直接使用<code>helper_atomic_fetch_or</code>函数的可行性了。这里虽然用到了TCG相关的类型<code>TCGMemOpIdx</code>，不过这个就是两个包装过的立即数<code>TCGMemOp</code>和<code>Idx</code>。<code>TCGMemOp</code>自己写个简单的解码即可，<code>Idx</code>我看到牛根写的<code>helper_softmmu_load/store</code>函数里已经用到了。不过问题就是牛根为啥要重写一个<code>helper_softmmu_load/store</code>而不是直接复用qemu的呢，莫非有坑？大概是mmu的操作都是后缀<code>_mmu</code>的函数，而这样的函数太多了，用一个函数集中起来更方便？</p>
 
                     </main>
+                    <script src="https://utteranc.es/client.js"
+                        repo="xieby1/xieby1.github.io"
+                        issue-term="pathname"
+                        theme="github-light"
+                        crossorigin="anonymous"
+                        async>
+                    </script>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
