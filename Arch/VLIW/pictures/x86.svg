@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="538px" height="81px" viewBox="-0.5 -0.5 538 81">
+  <defs/>
+  <g>
+    <rect x="57" y="20" width="80" height="40" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+    <g transform="translate(58.5,26.5)">
+      <switch>
+        <foreignObject style="overflow:visible;" pointer-events="all" width="77" height="26" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 77px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">Superscalar Decode Units</div>
+          </div>
+        </foreignObject>
+        <text x="39" y="19" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">Superscalar Decode Units</text>
+      </switch>
+    </g>
+    <path d="M 197 40 L 230.63 40" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 235.88 40 L 228.88 43.5 L 230.63 40 L 228.88 36.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+    <g transform="translate(202.5,24.5)">
+      <switch>
+        <foreignObject style="overflow:visible;" pointer-events="all" width="28" height="11" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;background-color:#ffffff;">u-ops</div>
+          </div>
+        </foreignObject>
+        <text x="14" y="11" fill="#000000" text-anchor="middle" font-size="11px" font-family="Helvetica">u-ops</text>
+      </switch>
+    </g>
+    <rect x="137" y="20" width="60" height="40" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+    <g transform="translate(138.5,26.5)">
+      <switch>
+        <foreignObject style="overflow:visible;" pointer-events="all" width="57" height="26" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 57px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">Translate Units</div>
+          </div>
+        </foreignObject>
+        <text x="29" y="19" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">Translate Units</text>
+      </switch>
+    </g>
+    <path d="M 297 40 L 330.63 40" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 335.88 40 L 328.88 43.5 L 330.63 40 L 328.88 36.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+    <rect x="237" y="20" width="60" height="40" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+    <g transform="translate(238.5,26.5)">
+      <switch>
+        <foreignObject style="overflow:visible;" pointer-events="all" width="57" height="26" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 57px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">Dispatch Unit</div>
+          </div>
+        </foreignObject>
+        <text x="29" y="19" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">Dispatch Unit</text>
+      </switch>
+    </g>
+    <path d="M 417 40 L 450.63 40" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 455.88 40 L 448.88 43.5 L 450.63 40 L 448.88 36.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+    <rect x="337" y="0" width="80" height="80" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+    <g transform="translate(338.5,26.5)">
+      <switch>
+        <foreignObject style="overflow:visible;" pointer-events="all" width="77" height="26" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 77px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">Functional Units</div>
+          </div>
+        </foreignObject>
+        <text x="39" y="19" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">Functional Units</text>
+      </switch>
+    </g>
+    <rect x="457" y="20" width="80" height="40" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+    <g transform="translate(458.5,26.5)">
+      <switch>
+        <foreignObject style="overflow:visible;" pointer-events="all" width="77" height="26" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 77px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">In-Order Retire Unit</div>
+          </div>
+        </foreignObject>
+        <text x="39" y="19" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">In-Order Retire Unit</text>
+      </switch>
+    </g>
+    <path d="M 297 31.43 L 330.88 21.75" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 335.93 20.31 L 330.16 25.6 L 330.88 21.75 L 328.23 18.86 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+    <path d="M 297 48.57 L 330.88 58.25" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 335.93 59.69 L 328.23 61.14 L 330.88 58.25 L 330.16 54.4 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+    <path d="M 417 20 L 450.82 28.46" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 455.92 29.73 L 448.28 31.43 L 450.82 28.46 L 449.97 24.64 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+    <path d="M 417 60 L 450.82 51.54" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 455.92 50.27 L 449.97 55.36 L 450.82 51.54 L 448.28 48.57 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+    <path d="M 7 40 L 50.63 40" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 55.88 40 L 48.88 43.5 L 50.63 40 L 48.88 36.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+    <g transform="translate(7.5,24.5)">
+      <switch>
+        <foreignObject style="overflow:visible;" pointer-events="all" width="38" height="11" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: center;">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;background-color:#ffffff;">x86 inst</div>
+          </div>
+        </foreignObject>
+        <text x="19" y="11" fill="#000000" text-anchor="middle" font-size="11px" font-family="Helvetica">x86 inst</text>
+      </switch>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="88.089516mm" height="57.047302mm" viewBox="0 0 88.089516 57.047302" version="1.1" id="svg8" inkscape:version="0.92.3 (2405546, 2018-03-11)" sodipodi:docname="1_1_object_file_format.svg">
+  <defs id="defs2">
+    <clipPath id="clipPath128" clipPathUnits="userSpaceOnUse">
+      <path inkscape:connector-curvature="0" id="path126" d="m 72,390.96 h 468 v -13.2 H 72 Z"/>
+    </clipPath>
+    <clipPath id="clipPath144" clipPathUnits="userSpaceOnUse">
+      <path inkscape:connector-curvature="0" id="path142" d="M 72,139.8 H 540 V 126.6 H 72 Z"/>
+    </clipPath>
+  </defs>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.98994949" inkscape:cx="-35.057081" inkscape:cy="285.97693" inkscape:document-units="mm" inkscape:current-layer="layer1" showgrid="false" inkscape:window-width="1920" inkscape:window-height="1046" inkscape:window-x="1920" inkscape:window-y="260" inkscape:window-maximized="1"/>
+  <metadata id="metadata5">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-327.80519,-418.47438)">
+    <path d="m 328.02789,422.40393 h 38.93185 v 53.0225 h -38.93185 z" style="fill:none;stroke:#000000;stroke-width:0.19050001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-opacity:1" id="path154" inkscape:connector-curvature="0"/>
+    <path d="m 328.09139,437.51693 h 38.99535" style="fill:none;stroke:#000000;stroke-width:0.0635;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-opacity:1" id="path160" inkscape:connector-curvature="0"/>
+    <path d="m 328.02789,427.99193 h 38.99535" style="fill:none;stroke:#000000;stroke-width:0.0635;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-opacity:1" id="path162" inkscape:connector-curvature="0"/>
+    <path d="m 328.02789,443.29543 h 38.99535" style="fill:none;stroke:#000000;stroke-width:0.0635;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-opacity:1" id="path164" inkscape:connector-curvature="0"/>
+    <path d="m 328.02789,454.47143 h 38.99535" style="fill:none;stroke:#000000;stroke-width:0.0635;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-opacity:1" id="path166" inkscape:connector-curvature="0"/>
+    <path d="m 328.28189,465.77443 h 38.99535" style="fill:none;stroke:#000000;stroke-width:0.0635;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-opacity:1" id="path168" inkscape:connector-curvature="0"/>
+    <text transform="scale(1.0225365,0.97796024)" style="font-variant:normal;font-weight:normal;font-size:2.85696697px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.34500262" id="text182" x="332.47485" y="435.94916">
+      <tspan x="332.47485 334.37189 335.95178 337.68881 338.47449 340.52866 342.10855 343.68845 345.26834 346.84827" y="435.94916" sodipodi:role="line" id="tspan170" style="stroke-width:0.34500262">ELF Header</tspan>
+      <tspan x="326.07809 327.978 328.92365 330.50641 332.08917 333.03482 334.61758 336.99173 337.78024 339.83725 341.42001 343.00278 344.58554 346.1683 347.11395 347.90247 349.64236 351.22513 352.80789 353.43643" y="441.98877" sodipodi:role="line" id="tspan172" style="stroke-width:0.34500262">Program Header Table</tspan>
+      <tspan x="334.15189 336.04034 337.61169 339.02301 339.80011 340.41724 341.98856 343.55988 344.33698" y="451.59961" sodipodi:role="line" id="tspan174" style="stroke-width:0.34500262">Section 1</tspan>
+      <tspan x="326.69806 328.59222 330.16928 331.58633 332.36914 332.99197 334.569 336.14606 336.92886 338.98016 340.55722 342.13425 343.7113 345.28836 346.2283 347.01111 348.74527 350.32233 351.89938 352.52219" y="480.75494" sodipodi:role="line" id="tspan176" style="stroke-width:0.34500262">Section Header Table</tspan>
+      <tspan x="332.22629 337.68597 338.46591 339.24588 340.02582 340.80579" y="457.11926" sodipodi:role="line" id="tspan178" style="stroke-width:0.34500262">. . .</tspan>
+      <tspan x="334.15189 336.04034 337.61169 339.02301 339.80011 340.41724 341.98856 343.55988" y="462.8989" sodipodi:role="line" id="tspan180" style="stroke-width:0.34500262">Section</tspan>
+    </text>
+    <text transform="matrix(1.0225365,0,-0.2173245,0.97796024,0,0)" style="font-variant:normal;font-weight:normal;font-size:2.85696697px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.33746499" id="text186" x="442.28479" y="462.89554">
+      <tspan x="442.28479" y="462.89554" id="tspan184" style="stroke-width:0.33746499">n</tspan>
+    </text>
+    <text transform="scale(1.0225365,0.97796024)" style="font-variant:normal;font-weight:normal;font-size:2.85696697px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.34500262" id="text190" x="337.43771" y="474.25848">
+      <tspan x="337.43771 338.21765 338.99762 339.77756 340.55753" y="474.25848" sodipodi:role="line" id="tspan188" style="stroke-width:0.34500262">. . .</tspan>
+    </text>
+    <text transform="scale(1.0000631,0.99993687)" style="font-variant:normal;font-weight:bold;font-size:2.79417634px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35275549" id="text194" x="338.93027" y="420.52548">
+      <tspan x="338.93027 340.63193 341.40311 343.10477 344.65274 345.42392 347.12558 348.82724 349.59842 351.45654 352.22775 353.77573" y="420.52548" sodipodi:role="line" id="tspan192" style="stroke-width:0.35275549">Linking View</tspan>
+    </text>
+    <path d="m 328.02789,460.18643 h 38.99535" style="fill:none;stroke:#000000;stroke-width:0.0635;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-opacity:1" id="path196" inkscape:connector-curvature="0"/>
+    <text transform="scale(1.0225365,0.97796024)" style="font-variant:normal;font-weight:normal;font-size:2.85696697px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.34500262" id="text200" x="337.43771" y="469.064">
+      <tspan x="337.43771 338.21765 338.99762 339.77756 340.55753" y="469.064" sodipodi:role="line" id="tspan198" style="stroke-width:0.34500262">. . .</tspan>
+    </text>
+    <text transform="matrix(1.0225365,0,-0.2173245,0.97796024,0,0)" style="font-variant:normal;font-weight:normal;font-size:2.85696697px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.33746499" id="text204" x="429.80811" y="445.68881">
+      <tspan x="429.80811 431.38229 432.95648 433.73642 434.35638 435.93057 437.50476 439.07895" y="445.68881" sodipodi:role="line" id="tspan202" style="stroke-width:0.33746499">optional</tspan>
+    </text>
+    <path d="m 327.83739,448.81993 h 38.99535" style="fill:none;stroke:#000000;stroke-width:0.0635;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-opacity:1" id="path206" inkscape:connector-curvature="0"/>
+    <path d="m 376.61315,422.40393 h 38.99535 v 53.0225 h -38.99535 z" style="fill:none;stroke:#000000;stroke-width:0.19050001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-opacity:1" id="path208" inkscape:connector-curvature="0"/>
+    <path d="M 376.86715,437.51693 H 415.8625" style="fill:none;stroke:#000000;stroke-width:0.0635;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-opacity:1" id="path210" inkscape:connector-curvature="0"/>
+    <path d="M 376.67665,427.99193 H 415.672" style="fill:none;stroke:#000000;stroke-width:0.0635;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-opacity:1" id="path212" inkscape:connector-curvature="0"/>
+    <path d="M 376.48615,465.77443 H 415.4815" style="fill:none;stroke:#000000;stroke-width:0.0635;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-opacity:1" id="path214" inkscape:connector-curvature="0"/>
+    <text transform="scale(1.0225365,0.97796024)" style="font-variant:normal;font-weight:normal;font-size:2.85696697px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.34500262" id="text226" x="380.05142" y="435.94916">
+      <tspan x="380.05142 381.94843 383.52835 385.26538 386.05103 388.10519 389.68509 391.26501 392.84491 394.4248" y="435.94916" sodipodi:role="line" id="tspan216" style="stroke-width:0.34500262">ELF Header</tspan>
+      <tspan x="373.5918 375.4917 376.43735 378.02011 379.60287 380.54852 382.13129 384.50543 385.29395 387.35095 388.93372 390.51648 392.09924 393.68201 394.62766 395.41617 397.15607 398.73883 400.32159 400.95013" y="441.98877" sodipodi:role="line" id="tspan218" style="stroke-width:0.34500262">Program Header Table</tspan>
+      <tspan x="380.79709 382.68268 384.25116 385.81961 388.17947 389.74796 391.31644 392.09067 392.8649" y="453.5452" sodipodi:role="line" id="tspan220" style="stroke-width:0.34500262">Segment 1</tspan>
+      <tspan x="374.27463 376.16879 377.74585 379.1629 379.94571 380.56851 382.14557 383.72263 384.50543 386.55673 388.13376 389.71082 391.28787 392.8649 393.80484 394.58765 396.32184 397.8989 399.47592 400.09875" y="480.75211" sodipodi:role="line" id="tspan222" style="stroke-width:0.34500262">Section Header Table</tspan>
+      <tspan x="380.91992 386.37958 387.15955 387.93948 388.71945 389.49939" y="474.25821" sodipodi:role="line" id="tspan224" style="stroke-width:0.34500262">. . .</tspan>
+    </text>
+    <text transform="scale(1.0000631,0.99993687)" style="font-variant:normal;font-weight:bold;font-size:2.79417634px;font-family:Helvetica;-inkscape-font-specification:Helvetica-Bold;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35275549" id="text230" x="386.68701" y="420.52548">
+      <tspan x="386.68701 388.54233 390.08752 391.63269 393.17789 394.87674 395.79883 396.5672 398.26608 399.96494 400.73334 402.58865 403.35706 404.90225" y="420.52548" sodipodi:role="line" id="tspan228" style="stroke-width:0.35275549">Execution View</tspan>
+    </text>
+    <path d="M 376.67665,460.18643 H 415.672" style="fill:none;stroke:#000000;stroke-width:0.0635;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-opacity:1" id="path232" inkscape:connector-curvature="0"/>
+    <path d="M 376.48615,448.81993 H 415.4815" style="fill:none;stroke:#000000;stroke-width:0.0635;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-opacity:1" id="path234" inkscape:connector-curvature="0"/>
+    <text transform="scale(1.0225365,0.97796024)" style="font-variant:normal;font-weight:normal;font-size:2.85696697px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.34500262" id="text238" x="380.79697" y="464.97333">
+      <tspan x="380.79697 382.68256 384.25104 385.81952 388.17935 389.74783 391.31631 392.09055 392.86478" y="464.97333" sodipodi:role="line" id="tspan236" style="stroke-width:0.34500262">Segment 2</tspan>
+    </text>
+    <text transform="matrix(1.0225365,0,-0.2173245,0.97796024,0,0)" style="font-variant:normal;font-weight:normal;font-size:2.85696697px;font-family:Helvetica;-inkscape-font-specification:Helvetica;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.33746499" id="text242" x="485.56812" y="484.19293">
+      <tspan x="485.56812 487.14517 488.7222 489.505 490.12784 491.7049 493.28192 494.85898" y="484.19293" sodipodi:role="line" id="tspan240" style="stroke-width:0.33746499">optional</tspan>
+    </text>
+  </g>
+</svg>

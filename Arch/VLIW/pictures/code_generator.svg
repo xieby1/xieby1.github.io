@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="321px" height="111px" viewBox="-0.5 -0.5 321 111">
+  <defs/>
+  <g>
+    <path d="M 60 85 L 93.63 85" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 98.88 85 L 91.88 88.5 L 93.63 85 L 91.88 81.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+    <rect x="0" y="70" width="60" height="30" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+    <g transform="translate(9.5,78.5)">
+      <switch>
+        <foreignObject style="overflow:visible;" pointer-events="all" width="41" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 42px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">A Trace</div>
+          </div>
+        </foreignObject>
+        <text x="21" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">A Trace</text>
+      </switch>
+    </g>
+    <path d="M 180 85 L 213.63 85" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 218.88 85 L 211.88 88.5 L 213.63 85 L 211.88 81.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+    <rect x="100" y="60" width="80" height="50" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+    <g transform="translate(101.5,71.5)">
+      <switch>
+        <foreignObject style="overflow:visible;" pointer-events="all" width="77" height="26" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 77px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">Code Generator</div>
+          </div>
+        </foreignObject>
+        <text x="39" y="19" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">Code Generator</text>
+      </switch>
+    </g>
+    <path d="M 140.33 30 L 140.33 40.33 L 140.33 53.63" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 140.33 58.88 L 136.83 51.88 L 140.33 53.63 L 143.83 51.88 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+    <rect x="110" y="0" width="60" height="30" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+    <g transform="translate(111.5,1.5)">
+      <switch>
+        <foreignObject style="overflow:visible;" pointer-events="all" width="57" height="26" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 57px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">Machine Model</div>
+          </div>
+        </foreignObject>
+        <text x="29" y="19" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">Machine Model</text>
+      </switch>
+    </g>
+    <rect x="220" y="70" width="100" height="30" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+    <g transform="translate(230.5,78.5)">
+      <switch>
+        <foreignObject style="overflow:visible;" pointer-events="all" width="78" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 79px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">Machine Code</div>
+          </div>
+        </foreignObject>
+        <text x="39" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">Machine Code</text>
+      </switch>
+    </g>
+  </g>
+</svg>

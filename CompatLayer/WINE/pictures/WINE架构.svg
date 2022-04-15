@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="141.38541mm" height="145.41518mm" viewBox="0 0 141.38541 145.41518" version="1.1" id="svg9645" inkscape:version="0.92.3 (2405546, 2018-03-11)" sodipodi:docname="WINE架构.svg">
+  <defs id="defs9639">
+    <clipPath id="clipPath9679" clipPathUnits="userSpaceOnUse">
+      <path inkscape:connector-curvature="0" id="path9677" d="M 0,0 H 2384 V 3370 H 0 Z"/>
+    </clipPath>
+    <clipPath id="clipPath9689" clipPathUnits="userSpaceOnUse">
+      <path inkscape:connector-curvature="0" id="path9687" d="M 444.02,676.562 H 2307.15 V 2470.91 H 444.02 Z"/>
+    </clipPath>
+  </defs>
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.4" inkscape:cx="160.29305" inkscape:cy="192.41502" inkscape:document-units="mm" inkscape:current-layer="layer1" showgrid="false" inkscape:window-width="1920" inkscape:window-height="1046" inkscape:window-x="1920" inkscape:window-y="260" inkscape:window-maximized="1"/>
+  <metadata id="metadata9642">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title/>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1" transform="translate(-286.39894,-292.12301)">
+    <path inkscape:connector-curvature="0" id="path9691" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 327.58091,392.32653 h 99.99177 v -9.99074 h -99.99177 z"/>
+    <path inkscape:connector-curvature="0" id="path9693" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 327.58091,392.32572 h 99.99177 v -9.99075 h -99.99177 z"/>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9699" x="368.7504" y="388.70639">
+      <tspan x="368.7504 372.74564 373.92154 376.0365" y="388.70639" sodipodi:role="line" id="tspan9697" style="stroke-width:0.35277885">Wine</tspan>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9703" x="378.44479" y="388.70639">
+      <tspan sodipodi:role="line" id="tspan9701" style="stroke-width:0.35277885" x="378.44479" y="388.70639">驱动</tspan>
+    </text>
+    <path inkscape:connector-curvature="0" id="path9705" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 327.58091,377.33972 h 99.99177 v -10.01198 h -99.99177 z"/>
+    <path inkscape:connector-curvature="0" id="path9707" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 327.58091,377.33972 h 99.99177 v -10.01166 h -99.99177 z"/>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9713" x="362.40039" y="373.72034">
+      <tspan x="362.40039 366.39563 367.57153 369.68649" y="373.72034" sodipodi:role="line" id="tspan9711" style="stroke-width:0.35277885">Wine</tspan>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9717" x="372.09509" y="373.72034">
+      <tspan x="372.09509" y="373.72034" sodipodi:role="line" id="tspan9715" style="stroke-width:0.35277885">可执行程序</tspan>
+    </text>
+    <path inkscape:connector-curvature="0" id="path9719" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 327.58091,362.33265 h 74.99379 v -9.99043 h -74.99379 z"/>
+    <path inkscape:connector-curvature="0" id="path9721" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="M 327.58091,362.33265 H 402.5747 V 352.3419 H 327.58091 Z"/>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9727" x="353.48709" y="358.58612">
+      <tspan x="353.48709 356.54153 359.14655 362.19891 364.78275 367.36658 368.42154 371.47394 374.05777" y="358.58612" sodipodi:role="line" id="tspan9725" style="stroke-width:0.35277885">NTDLL.DLL</tspan>
+    </text>
+    <path inkscape:connector-curvature="0" id="path9729" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 327.58091,347.32558 h 49.99564 v -9.99075 h -49.99564 z"/>
+    <path inkscape:connector-curvature="0" id="path9731" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 327.58091,347.32558 h 49.99597 v -9.99043 h -49.99597 z"/>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9739" x="340.04834" y="341.06009">
+      <tspan x="340.04834 343.10876 344.97293 346.38721 348.50854 350.39346 351.55917 353.68051 355.80185 356.8602 359.92062 362.51248" y="341.06009" sodipodi:role="line" id="tspan9735" style="stroke-width:0.35277885">Kernel32 DLL</tspan>
+      <tspan x="336.04788 337.4588 341.457 342.63583 344.75378 346.87173 348.98969 350.048 351.6954 353.81128 355.9313 357.5787 359.69662 361.34402 362.52289 364.40442 367.69995" y="346.13998" sodipodi:role="line" id="tspan9737" style="stroke-width:0.35277885">(Win32 subsystem)</tspan>
+    </text>
+    <path inkscape:connector-curvature="0" id="path9741" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 327.58091,332.33958 h 24.99782 v -10.01166 h -24.99782 z"/>
+    <path inkscape:connector-curvature="0" id="path9743" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 327.58091,332.33958 h 24.99815 v -10.01199 h -24.99815 z"/>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9751" x="334.18515" y="326.05286">
+      <tspan x="334.18515 337.24387 340.30261 341.71521 343.83484" y="326.05286" sodipodi:role="line" id="tspan9747" style="stroke-width:0.35277885">GDI32</tspan>
+      <tspan x="335.94208 339.00208 341.59354" y="331.13309" sodipodi:role="line" id="tspan9749" style="stroke-width:0.35277885">DLL</tspan>
+    </text>
+    <path inkscape:connector-curvature="0" id="path9753" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 352.57906,332.33958 h 24.99782 v -10.01166 h -24.99782 z"/>
+    <path inkscape:connector-curvature="0" id="path9755" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 352.57906,332.33958 h 24.99782 v -10.01199 h -24.99782 z"/>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9763" x="357.53204" y="326.05286">
+      <tspan x="357.53204 360.59036 362.94598 365.53574 368.362 370.4812" y="326.05286" sodipodi:role="line" id="tspan9759" style="stroke-width:0.35277885">USER32</tspan>
+      <tspan x="360.96109 364.0105 366.59137" y="331.13309" sodipodi:role="line" id="tspan9761" style="stroke-width:0.35277885">DLL</tspan>
+    </text>
+    <path inkscape:connector-curvature="0" id="path9765" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 327.58091,317.3325 h 24.99782 v -9.99075 h -24.99782 z"/>
+    <path inkscape:connector-curvature="0" id="path9767" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 327.58091,317.3325 h 24.99815 v -9.99042 h -24.99815 z"/>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9775" x="331.96265" y="311.04565">
+      <tspan x="331.96265 335.95703 337.13205 339.24619 341.36035 343.47446 346.52771" y="311.04565" sodipodi:role="line" id="tspan9771" style="stroke-width:0.35277885">Windows</tspan>
+      <tspan x="335.94217 339.00217 341.59363" y="316.12558" sodipodi:role="line" id="tspan9773" style="stroke-width:0.35277885">DLL</tspan>
+    </text>
+    <path inkscape:connector-curvature="0" id="path9777" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 327.58091,302.32543 h 49.99564 v -9.99042 h -49.99564 z"/>
+    <path inkscape:connector-curvature="0" id="path9779" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 327.58091,302.32543 h 49.99597 v -9.99075 h -49.99597 z"/>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9785" x="339.81549" y="298.59961">
+      <tspan x="339.81549 343.81241 344.98999 347.10666 349.22333 351.34003 354.39578 356.04193 357.10025 359.68747 362.74326" y="298.59961" sodipodi:role="line" id="tspan9783" style="stroke-width:0.35277885">Windows EXE</tspan>
+    </text>
+    <path inkscape:connector-curvature="0" id="path9787" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="M 379.58741,347.32558 H 402.5747 V 322.32776 H 379.58741 Z"/>
+    <path inkscape:connector-curvature="0" id="path9789" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 379.58741,347.32558 h 22.98696 v -24.99782 h -22.98696 z"/>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9799" x="381.89496" y="331.00589">
+      <tspan x="381.89496 384.24719 386.36096 388.47885 390.12411 392.23996 393.88525 395.0621 396.94153" y="331.00589" sodipodi:role="line" id="tspan9793" style="stroke-width:0.35277885">Subsystem</tspan>
+      <tspan x="383.71521 385.12653 387.48132 390.53876 392.89355 394.30487 397.36234" y="336.08612" sodipodi:role="line" id="tspan9795" style="stroke-width:0.35277885">(POSIX,</tspan>
+      <tspan x="386.00143 389.06143 391.41876 392.60059 394.72147" y="341.16602" sodipodi:role="line" id="tspan9797" style="stroke-width:0.35277885">OS/2)</tspan>
+    </text>
+    <path inkscape:connector-curvature="0" id="path9801" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 352.57906,317.3325 h 24.99782 v -9.99075 h -24.99782 z"/>
+    <path inkscape:connector-curvature="0" id="path9803" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 352.57906,317.3325 h 24.99782 v -9.99042 h -24.99782 z"/>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9811" x="356.96054" y="311.04565">
+      <tspan x="356.96054 360.95493 362.12997 364.24411 366.35825 368.47238 371.5256" y="311.04565" sodipodi:role="line" id="tspan9807" style="stroke-width:0.35277885">Windows</tspan>
+      <tspan x="360.9613 364.01074 366.59158" y="316.12558" sodipodi:role="line" id="tspan9809" style="stroke-width:0.35277885">DLL</tspan>
+    </text>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9831" x="316.68048" y="335.19699">
+      <tspan x="295.74637 298.80804 300.93066 302.09637" y="373.72046" sodipodi:role="line" id="tspan9829" style="stroke-width:0.35277885">Unix</tspan>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9835" x="304.21304" y="373.72046">
+      <tspan x="304.21304" sodipodi:role="line" id="tspan9833" style="stroke-width:0.35277885" y="373.72046">可执行程序</tspan>
+    </text>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9839" x="298.83652" y="388.7063">
+      <tspan x="298.83652 302.82541 304.0123 306.12094" y="388.7063" sodipodi:role="line" id="tspan9837" style="stroke-width:0.35277885">Wine</tspan>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9843" x="308.53088" y="388.7063">
+      <tspan x="308.53088" sodipodi:role="line" id="tspan9841" style="stroke-width:0.35277885" y="388.7063">专用</tspan>
+    </text>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9847" x="316.46841" y="388.7063">
+      <tspan x="316.46841 319.51782 322.09869" y="388.7063" sodipodi:role="line" id="tspan9845" style="stroke-width:0.35277885">DLL</tspan>
+    </text>
+    <path inkscape:connector-curvature="0" id="path9849" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 405.58033,362.33265 h 21.99235 v -40.00489 h -21.99235 z"/>
+    <path inkscape:connector-curvature="0" id="path9851" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 405.58033,362.33265 h 21.99203 v -40.00522 h -21.99203 z"/>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9857" x="411.97287" y="335.23923">
+      <tspan x="411.97287 415.9736 417.155 419.27548" y="335.23923" sodipodi:role="line" id="tspan9855" style="stroke-width:0.35277885">Wine</tspan>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9861" x="410.21594" y="340.67908">
+      <tspan x="410.21594" sodipodi:role="line" id="tspan9859" style="stroke-width:0.35277885" y="340.67908">服务器</tspan>
+    </text>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9865" x="407.2738" y="346.24585">
+      <tspan x="407.2738" y="346.24585" id="tspan9863" style="stroke-width:0.35277885">(</tspan>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9869" x="408.69199" y="346.24585">
+      <tspan x="408.69199" y="346.24585" id="tspan9867" style="stroke-width:0.35277885">类</tspan>
+    </text>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9873" x="412.92535" y="346.24585">
+      <tspan x="412.92535 416.92355 418.10239 420.21829 423.27737" y="346.24585" sodipodi:role="line" id="tspan9871" style="stroke-width:0.35277885">WinNT</tspan>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9877" x="411.63409" y="351.83417">
+      <tspan x="411.63409" y="351.83417" sodipodi:role="line" id="tspan9875" style="stroke-width:0.35277885">内核</tspan>
+    </text>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9881" x="420.10077" y="351.83417">
+      <tspan x="420.10077" y="351.83417" id="tspan9879" style="stroke-width:0.35277885">)</tspan>
+    </text>
+    <path inkscape:connector-curvature="0" id="path9883" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 327.58091,407.33361 h 29.99324 v -10.01199 h -29.99324 z"/>
+    <path inkscape:connector-curvature="0" id="path9885" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 327.58091,407.33361 h 29.99324 v -10.01199 h -29.99324 z"/>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9891" x="339.39215" y="403.58661">
+      <tspan x="339.39215 340.56903 341.74384 343.86172" y="403.58661" sodipodi:role="line" id="tspan9889" style="stroke-width:0.35277885">libc</tspan>
+    </text>
+    <path inkscape:connector-curvature="0" id="path9893" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 357.57439,407.33361 h 29.99324 v -10.01199 h -29.99324 z"/>
+    <path inkscape:connector-curvature="0" id="path9895" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 357.57439,407.33361 h 29.99324 v -10.01199 h -29.99324 z"/>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9901" x="366.69724" y="403.58661">
+      <tspan x="366.69724 367.87271 369.04611 371.16278 374.21643 376.33099" y="403.58661" sodipodi:role="line" id="tspan9899" style="stroke-width:0.35277885">libX11</tspan>
+    </text>
+    <path inkscape:connector-curvature="0" id="path9903" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 387.56746,407.33361 h 40.00522 v -10.01199 h -40.00522 z"/>
+    <path inkscape:connector-curvature="0" id="path9905" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 387.56746,407.33361 h 40.0049 v -10.01199 h -40.0049 z"/>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9911" x="401.22018" y="403.71359">
+      <tspan x="401.22018" sodipodi:role="line" id="tspan9909" style="stroke-width:0.35277885" y="403.71359">其他库</tspan>
+    </text>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9915" x="301.99054" y="403.71359">
+      <tspan x="301.99054 305.04886 307.16806 308.34818" y="403.71359" sodipodi:role="line" id="tspan9913" style="stroke-width:0.35277885">Unix</tspan>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9919" x="310.45724" y="403.71359">
+      <tspan x="310.45724" sodipodi:role="line" id="tspan9917" style="stroke-width:0.35277885" y="403.71359">共享库</tspan>
+    </text>
+    <path inkscape:connector-curvature="0" id="path9921" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 327.58091,422.31945 h 99.99177 v -9.99075 h -99.99177 z"/>
+    <path inkscape:connector-curvature="0" id="path9923" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 327.58091,422.3192 h 99.99177 v -9.99075 h -99.99177 z"/>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9929" x="341.46649" y="418.72083">
+      <tspan x="341.46649 344.52481 346.64401 347.82416" y="418.72083" sodipodi:role="line" id="tspan9927" style="stroke-width:0.35277885">Unix</tspan>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9933" x="349.9332" y="418.72083">
+      <tspan x="349.9332" y="418.72083" sodipodi:role="line" id="tspan9931" style="stroke-width:0.35277885">内核</tspan>
+    </text>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9937" x="358.39987" y="418.72083">
+      <tspan x="358.39987 359.80957 362.39679 363.57437 365.69107 367.80774 369.92441 370.98273 372.04108 374.15775 376.98138 379.33447 382.39026 383.44858 384.50693 386.86002 388.97668 390.15427 392.03452 393.44424 394.62183 396.26794 397.32626 398.38461 401.44037 403.79346 404.97107" y="418.72083" sodipodi:role="line" id="tspan9935" style="stroke-width:0.35277885">(Linux, *BSD, Solaris, OS/X</tspan>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9941" x="408.01471" y="418.72083">
+      <tspan x="408.01471" y="418.72083" id="tspan9939" style="stroke-width:0.35277885">等</tspan>
+    </text>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9945" x="412.24805" y="418.72083">
+      <tspan x="412.24805" y="418.72083" id="tspan9943" style="stroke-width:0.35277885">)</tspan>
+    </text>
+    <path inkscape:connector-curvature="0" id="path9947" style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.08104046" d="m 327.58091,437.32652 h 99.99177 v -9.99075 h -99.99177 z"/>
+    <path inkscape:connector-curvature="0" id="path9949" style="fill:none;stroke:#000000;stroke-width:0.4233343;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" d="m 327.58091,437.32652 h 99.99177 v -9.99075 h -99.99177 z"/>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9955" x="369.08908" y="433.70685">
+      <tspan x="369.08908 372.15079 374.27338 375.43912" y="433.70685" sodipodi:role="line" id="tspan9953" style="stroke-width:0.35277885">Unix</tspan>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9959" x="377.55579" y="433.70685">
+      <tspan sodipodi:role="line" id="tspan9957" style="stroke-width:0.35277885" x="377.55579" y="433.70685">驱动</tspan>
+    </text>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9963" x="294.64569" y="418.7207">
+      <tspan x="294.64569 297.70737 299.82999 300.9957 303.11237" y="418.7207" sodipodi:role="line" id="tspan9961" style="stroke-width:0.35277885">Unix(</tspan>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9967" x="304.53073" y="418.7207">
+      <tspan x="304.53073" y="418.7207" sodipodi:role="line" id="tspan9965" style="stroke-width:0.35277885">内核空间</tspan>
+    </text>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9973" x="321.46411" y="418.7207">
+      <tspan x="321.46411" y="418.7207" id="tspan9969" style="stroke-width:0.35277885">)</tspan>
+      <tspan x="286.03101 289.09268 291.2153 292.38101" y="433.24124" sodipodi:role="line" id="tspan9971" style="stroke-width:0.35277885">Unix</tspan>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9977" x="294.49771" y="433.24124">
+      <tspan sodipodi:role="line" id="tspan9975" style="stroke-width:0.35277885" x="294.49771" y="433.24124">驱动</tspan>
+    </text>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9981" x="302.96439" y="433.24124">
+      <tspan x="302.96439" y="433.24124" id="tspan9979" style="stroke-width:0.35277885">(</tspan>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9985" x="304.3826" y="433.24124">
+      <tspan x="304.3826" y="433.24124" sodipodi:role="line" id="tspan9983" style="stroke-width:0.35277885">内核空间</tspan>
+    </text>
+    <text style="font-variant:normal;font-weight:normal;font-size:4.23334599px;font-family:TimesNewRomanPSMT;-inkscape-font-specification:TimesNewRomanPSMT;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text9989" x="321.31598" y="433.24124">
+      <tspan x="321.31598" y="433.24124" id="tspan9987" style="stroke-width:0.35277885">)</tspan>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text7892" x="305.84378" y="298.79767">
+      <tspan x="305.84378" y="298.79767" sodipodi:role="line" id="tspan7888" style="stroke-width:0.35277885">应用程序</tspan>
+      <tspan x="305.84378" sodipodi:role="line" style="stroke-width:0.35277885" y="304.08936" id="tspan9486"/>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text7892-3" x="286.52631" y="313.53873">
+      <tspan x="286.52631" y="313.53873" sodipodi:role="line" id="tspan7888-6" style="stroke-width:0.35277885">应用程序和系统DLL</tspan>
+      <tspan x="286.52631" sodipodi:role="line" style="stroke-width:0.35277885" y="318.83041" id="tspan9486-7"/>
+    </text>
+    <text style="font-variant:normal;font-size:4.23334599px;font-family:SimSun-Identity;-inkscape-font-specification:SimSun-Identity-H;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277885" id="text7892-5" x="308.08157" y="333.6806">
+      <tspan x="308.08157" sodipodi:role="line" style="stroke-width:0.35277885" y="333.6806" id="tspan9486-5">核心DLL</tspan>
+    </text>
+  </g>
+</svg>
