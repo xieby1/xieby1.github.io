@@ -17,7 +17,7 @@ gui: src/my_cheatsheet.html \
 	 src/Benchmarks/my_spec2000.html
 
 src/my_cheatsheet.html: ~/Documents/Manuals-Sheets/my_cheatsheet.md
-	./scripts/cheatsheet.sh $<
+	cheatsheet.sh $<
 	cp $(patsubst %.md, %.html, $<) $@
 
 src/my_Essays.html: ~/Documents/Tech/Essays.xlsx
