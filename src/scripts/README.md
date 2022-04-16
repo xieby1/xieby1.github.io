@@ -66,6 +66,12 @@
 {{ #include pwrThr.sh }}
 ```
 
+## quteapp.sh
+
+```bash
+{{ #include quteapp.sh }}
+```
+
 ## resize_gif.sh
 
 ```bash
