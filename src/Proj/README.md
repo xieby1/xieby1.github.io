@@ -96,7 +96,7 @@ Windows的打印bmp图片命令行工具。用来测试Windows打印机驱动。
 
 [DaPuJi](https://github.com/xieby1/DaPuJi)
 
-为了联系最终幻想14手柄演奏，一个寒假学了学electron，摸出一个打谱机。
+为了练习最终幻想14手柄演奏，一个寒假学了学electron，摸出一个打谱机。
 
 * 支持手柄、键盘
 
