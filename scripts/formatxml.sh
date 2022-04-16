@@ -6,7 +6,8 @@ then
     exit
 fi
 
-NAME=$1
-ORIGINAL="$1.svg"
-FORMATTED="$1-formatted.svg"
-xmllint --format $ORIGINAL > $FORMATTED
+IN=$1
+BAK=${1%.*}.bak.${1##*.}
+mv "$IN" "$BAK"
+xmllint --format "$BAK" > "$IN"
+mv "$BAK" "/tmp/${IN##*/}"
