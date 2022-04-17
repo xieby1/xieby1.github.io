@@ -16,3 +16,6 @@ level = 0
 
 [output.html.search]
 enable = false
+
+[output.html.print]
+enable = false
