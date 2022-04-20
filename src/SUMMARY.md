@@ -222,6 +222,7 @@
 * [Distro]()
   * [JingOS.md](./Distro/JingOS.md)
   * [Nix]()
+    * [android.md](./Distro/Nix/android.md)
     * [nixpkgs.md](./Distro/Nix/nixpkgs.md)
 * [FPGA]()
   * [iverilog.md](./FPGA/iverilog.md)
