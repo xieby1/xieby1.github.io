@@ -399,6 +399,7 @@
 * [Sim]()
 * [Softwares]()
   * [ocrmypdf.md](./Softwares/ocrmypdf.md)
+  * [pandoc.md](./Softwares/pandoc.md)
   * [tree_timeline_note.md](./Softwares/tree_timeline_note.md)
   * [Vim]()
     * [QnA.md](./Softwares/Vim/QnA.md)
