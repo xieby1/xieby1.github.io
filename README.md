@@ -1,5 +1,7 @@
 # xieby1's notes
 
+通过左侧目录浏览
+
 ## 最近的研究
 
 * 二进制翻译
@@ -7,8 +9,7 @@
 
 ## 最近折腾的事
 
-* NixOS
-  * [我的NixOS和home-manager的配置](https://github.com/xieby1/nix_config)
+* [我的NixOS和home-manager的配置](https://github.com/xieby1/nix_config)
 
 ## 同领域的朋友们
 
