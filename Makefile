@@ -19,6 +19,7 @@ gui: src/my_cheatsheet.html \
 
 src/my_cheatsheet.html: ~/Documents/Manuals-Sheets/my_cheatsheet.md
 	cheatsheet.sh $<
+	cp $< src/my_cheatsheet.mkd
 	cp $(patsubst %.md, %.html, $<) $@
 
 src/my_Essays.html: ~/Documents/Tech/Essays.xlsx

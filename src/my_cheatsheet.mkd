@@ -1,0 +1,903 @@
+# xieby1's cheatsheet
+
+符号
+
+* '🐁'仅在我的配置下可用，并不通用
+
+## bash
+
+### 可注释字符串
+
+```bash
+CMD=(
+    "args"
+    "${OTHER_ARGS[@]}"
+)
+eval "${CMD[@]}" # "${CMD[*]}"
+```
+
+### cd上次的目录
+
+参考bash手册关于cd的说明
+
+```bash
+# 等价于cd $OLDPATH
+cd -
+```
+
+## binfmt
+
+### i386
+
+```bash
+echo ':i386:M::\x7fELF\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x03:\xff\xff\xff\xff\xff\xfe\xfe\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfa\xff\xff:/usr/local/bin/qemu-i386:' >/proc/sys/fs/binfmt_misc/register
+```
+
+### qemu
+
+```bash
+sudo ./scripts/qemu-binfmt-conf.sh  --qemu-path /usr/local/bin/qemu-x86_64 --systemd x86_64
+```
+
+### x64
+
+```bash
+echo ':x64:M::\x7fELF\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x3e\x00:\xff\xff\xff\xff\xff\xfe\xfe\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/local/bin/qemu-x86_64:' >/proc/sys/fs/binfmt_misc/register
+```
+
+## container
+
+### ls containers
+
+```bash
+sudo docker ps -as
+```
+
+### ls imgs
+
+```bash
+sudo docker images -a
+```
+
+### prune
+
+```bash
+sudo docker system prune
+```
+
+### rm all-containers
+
+```bash
+sudo docker ps -aq | sudo xargs docker rm
+```
+
+### rm all-imgs
+
+```bash
+sudo docker images -aq | xargs sudo docker rmi
+```
+
+### rm container
+
+```bash
+sudo docker rm <containers>
+```
+
+### rm img
+
+```bash
+sudo docker rmi <images>
+```
+
+### rm untagged-img
+
+```
+podman images | grep "^<none>" | awk '{print $3}' | xargs podman rmi
+```
+
+### stop containers
+
+```bash
+sudo docker stop <containers>
+```
+
+### build
+
+```bash
+podman build --network=host -t <tag>
+```
+
+### image mount
+
+```bash
+podman unshare
+podman image mount <image>
+```
+
+### run
+
+```bash
+podman run --rm --network=host -it <image>
+```
+
+### debugger
+
+[SO: gdb in docker](https://stackoverflow.com/questions/42029834)
+
+```bash
+--cap-add=SYS_PTRACE
+```
+
+## disk
+
+### dd
+
+```bash
+dd if=<INPUT/PATH> of=/dev/<OUTPUT> status=progress
+```
+
+### disk usage
+
+```bash
+df -h
+```
+
+### file folder-size
+
+```bash
+du -sBM * | sort -n
+```
+
+## file
+
+### 查看meta info，例如pdf，详细见man
+
+```bash
+exiftool -Title=<title> <file>
+exiftool -Author=<author> <file>
+```
+
+## font
+
+### grub
+
+[SE: customize GRUB font size](https://unix.stackexchange.com/questions/31672/can-grub-font-size-be-customised)
+
+```bash
+sudo grub-mkfont -s 36 -o /boot/grub/fonts/DejaVuSansMono.pf2 /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf
+fc-list
+vim /boot/grub/grub.cfg
+```
+
+### tty
+
+[SE: otf to psf](https://unix.stackexchange.com/questions/161890/how-can-i-make-a-psf-font-for-the-console-from-a-otf-one)
+
+[reddit: ttf to psf](https://www.reddit.com/r/linuxquestions/comments/7st7hz/any_way_to_convert_ttf_files_to_psf_files/)
+
+[dpi cal](https://www.sven.de/dpi/)
+
+```bash
+otf2bdf -r 242 -p 36 /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf -o ~/Desktop/DejaVuSansMono.bdf
+```
+
+## git
+
+### remote branches
+
+列举remote的分支
+
+```bash
+# 无需联网
+git branch -r [-l <patthern>]
+# 需要联网
+git remote show <remote>
+git ls-remote <remote>
+```
+
+### 查找删除某行的commit
+
+[SO: find removed line](https://stackoverflow.com/questions/12591247/how-to-find-commit-when-line-was-deleted-removed)
+
+```bash
+# 面对merge节点似乎有问题
+git log -c -S'<string>' <file>
+git log -c -G'<regex>' <file>
+# 然后搜索
+/<string>
+```
+
+### clone server-Codes
+
+```bash
+git clone git://10.90.50.99/<REPO>
+```
+
+### clone specific-tag
+
+```bash
+git clone -b <tag> --depth=1 <repo>
+```
+
+### list remote-tags
+
+```bash
+git ls-remote --tags <repo>
+```
+
+### server Codes
+
+```bash
+git daemon --base-path=/home/xieby1/Codes/ --export-all
+```
+
+## html
+
+### span color
+
+```html
+<span style="background: red; color: white; font-weight: bold;">
+```
+
+### time stamp
+
+```html
+<div style="text-align:right; font-size:3em;">2022.04.12</div>
+```
+
+## Inkscape
+
+### extract pdf
+
+```
+Poppler/Cairo import (Huge size)
+<Ctrl><Shift>G # ungroup
+! # invert selection
+<Ctrl><Shift>R # resize canvas
+Extensions->Text->Replace Font
+```
+
+## Licenses
+
+### MIT
+
+* 随意使用
+* 保留该MIT许可
+* 作者不负责
+
+## linux
+
+### 编译
+
+```bash
+make defconfig && make
+```
+
+### 版本号
+
+```bash
+include/config/kernel.release
+make menuconfig: General setup -> Local version
+```
+
+### 安装
+
+```bash
+make INSTALL_PATH=<path> install
+make INSTALL_MOD_PATH=<path> modules_install
+```
+
+### 生成源码跳转文件
+
+```bash
+# 需要先编译
+./scripts/clang-tools/gen_compile_commands.py
+make ARCH=x86 COMPILED_SOURCE=1 cscope
+```
+
+### 内部结构
+
+符号表[WP: System.map](https://en.wikipedia.org/wiki/System.map)
+
+由`nm`生成，符号类型见`man nm`
+
+* 内核暴露的符号`/proc/kallsyms`
+* 或是由源码生成`System.map`
+
+系统调用表`sys_call_table`
+
+### 内核信息重定向
+
+ref: [dmesg output to tty](https://www.linuxquestions.org/questions/linux-newbie-8/dmesg-output-to-tty-707524/)
+
+x86上不可靠：输出不全，几次就关闭了
+
+```bash
+tty # `who am i` may not output
+cat /proc/kmsg > <stdio dev file>
+```
+
+## make
+
+### target依赖树
+
+[SO: makefile dependency tree](https://unix.stackexchange.com/questions/283478/how-to-display-dependencies-given-in-a-makefile-as-a-tree)
+
+``` bash
+make -nd <target> | make2graph
+# makefile2graph <target>
+```
+
+### 列出所有targets
+
+```bash
+remake --targets
+```
+
+### 语法
+
+```makefile
+# 隐式
+%:%.c
+	$(CC) $< -o $@
+```
+
+## network
+
+### dns resolve
+
+```bash
+host <domain name>
+```
+
+### scan local
+
+```bash
+nmap 192.168.1.0/24
+```
+
+## nix
+
+### build pkg
+
+```bash
+nix-build '<nixpkgs>' -A <pkg>
+```
+
+### eval
+
+```bash
+nix eval "()"
+```
+
+### list build-generations
+
+```bash
+sudo nix-env -p /nix/var/nix/profiles/system --list-generations
+```
+
+### nix shell-buildinput
+
+```bash
+nix-shell '<nixpkgs>' -A
+```
+
+### pkg build-env
+
+```bash
+nix-shell '<nixpkgs>' -A <pkg>
+```
+
+### pretetch url
+
+```bash
+nix-prefetch-url
+```
+
+### sha256
+
+```bash
+nix-hash --type sha256 --flat --base32 <file>
+```
+
+### show drv
+
+```bash
+nix show-derivation <.drv>
+```
+
+### sys garbage
+
+```bash
+sudo nix-collect-garbage -d
+```
+
+### usr garbage
+
+```bash
+nix-collect-garbage -d
+```
+
+### repl
+
+```nix
+pkgs = import <nixpkgs> {}
+```
+
+### old generations
+
+[Nix Wiki: Storage Opt](https://nixos.wiki/wiki/Storage_optimization)
+
+```bash
+sudo nix-env -p /nix/var/nix/profiles/system --list-generations
+sudo nix-collect-garbage -d
+# User Generations (Home-Manager)
+nix-collect-garbage -d
+```
+### sha256
+
+[GH](https://github.com/NixOS/nix/issues/1880)
+
+```bash
+nix-prefetch-url --unpack
+```
+
+### path
+
+[Nix Pills: search Paths](https://nixos.org/guides/nix-pills/nix-search-paths.html)
+
+```bash
+nix-instantiate --eval -E "<path>"
+```
+
+## ocr
+
+### tesseract
+
+```bash
+# 列支持的语言
+tesseract --list-langs
+```
+
+### ocrmypdf
+
+详细见`ocrmypdf.md`
+
+ocr会将原pdf栅格化，
+
+所以需要分离文本和图片
+
+```bash
+# 去除文本
+gs -o notext.pdf -dFILTERTEXT \
+-sDEVICE=pdfwrite <input.pdf>
+# 运行ocr
+ocrmypdf --force-ocr --output-type pdf \
+-l $lang notext.pdf ocr.pdf
+# 去除图片仅保留文本
+gs -o textonly.pdf -dFILTERIMAGE \
+-dFILTERVECTOR -sDEVICE=pdfwrite ocr.pdf
+# 叠加文本
+qpdf notext.pdf --overlay \
+textonly.pdf -- <output.pdf>
+```
+
+## pandoc
+
+### 可用代码高亮
+
+[pandoc: syntax highlighting](https://pandoc.org/MANUAL.html#syntax-highlighting)
+
+```bash
+pandoc --list-highlight-languages
+```
+
+### 打印默认模板
+
+```bash
+pandoc -D <FORMAT>
+```
+
+## pic
+
+### jpgs2pdf
+
+```bash
+convert input1.jpg input2.jpg input3.jpg output.pdf
+```
+
+### resize
+
+```bash
+convert input.xxx -resize 100x200\! output.xxx
+```
+
+## pkg
+
+### deb
+
+```bash
+dpkg-deb -c <package_name.deb>
+```
+
+### installed
+
+```bash
+dpkg-query -L <package_name>
+```
+
+### not installed
+
+```bash
+apt-file list <package_name>
+```
+
+## qemu
+
+### smb
+
+```bash
+mount -t cifs -o user=miao%miao //10.0.2.4/qemu Host/
+```
+
+### system file disk
+
+```bash
+[qemu-sys] -m 16 -nographic -fda [file]
+```
+
+## revealjs
+
+### chalkboard
+
+```
+del: clear current
+backspace: clear all
+c: note canva
+b: chalkboard
+d: download drawings
+x: previous color
+y: next color
+right click: eraser
+```
+
+## rust
+
+### installed targets
+
+```bash
+rustup show
+```
+
+### 交叉编译
+
+```bash
+rustc --print target-list
+rustup target add <TARGET>
+cargo build --target=<TARGET> --release
+```
+
+## sixu
+
+### all
+
+```dot
+// command line:
+//   dot -Tsvg -O sixu.dot
+
+
+digraph {
+// attributes
+/// graph
+rankdir=BT;
+/// subgraph
+newrank=true;
+style=filled;
+//// color name: https://graphviz.org/doc/info/colors.html
+color=whitesmoke;
+/// node
+node[
+shape=box,
+style="filled, solid",
+color=black,
+fillcolor=white,
+];
+/// edge
+edge[
+minlen=1,
+//weight=1,
+// If false, the edge is not used in ranking the nodes.
+//constraint=true,
+];
+
+
+
+}
+```
+
+### today
+
+```dot
+"22Apr12+" -> "22Apr12-" -> "22Apr12+";
+subgraph cluster_22Apr12
+{
+x22Apr12_
+}
+{rank=same;
+"22Apr12-";
+x22Apr12_
+}
+{rank=same;
+"22Apr12+";
+}
+```
+
+## systemd unit
+
+### After/Before说明
+
+```bash
+man systemd.unit
+```
+
+### user目录
+
+`man systemd.unit`
+
+`~/.config/systemd/`
+
+### service状态
+
+```bash
+systemctl --user status <service>
+journalctl --user -u <service>
+```
+
+### 列举unit类
+
+```bash
+# 例如列出list
+systemctl list-units --type target
+```
+
+## vim
+
+### list syntaxs
+
+```bash
+ls /usr/share/vim/vim81/syntax/
+```
+
+### set syntax
+
+```vim
+:set syntax=
+```
+
+### Explore
+
+```vim
+; open current file's dir
+:E[xplore]
+```
+
+### syntax
+
+```vim
+; set
+:set syntax=html
+; get
+:set syntax
+```
+
+### markdown toc
+
+```vim
+:GenTocGFM
+```
+
+### split调整
+
+```vim
+c-w _ ;当前窗口最高
+c-w = ;所有窗口等高
+:on ;关闭所有其他窗口
+c-w o ;同上
+```
+
+### mapped keys
+
+[SO](Is there any way to view the currently mapped keys in Vim?)
+
+```vim
+":n/v/imap
+:map
+:h inex
+```
+
+### status line
+
+```vim
+set laststatus=2
+```
+
+### popup window
+
+```vim
+🐁 <leader>[
+```
+
+### jumplist
+
+```vim
+:ju " 列出jumplist
+<C-o> " 退
+<C-i> " 进
+```
+
+### git blame [# fugitive]
+
+和git相同的略。fugitive的特性：
+
+```vim
+:Git blame " blame整个文件
+:Gedit " 跳转光标下到对应的object（某个版本的某个文件）
+```
+
+### git historic file [# fugitive]
+
+```vim
+Gedit <refname>
+enter " opon
+o " horizon open
+O " new tab open
+<num>gt " switch tag
+```
+
+### 显示commit信息 [git-messenger]
+
+```vim
+<leader>gm " 在popup窗口显示commit信息
+```
+
+### cscope
+
+```vim
+; cs querytype
+🐁 <C-\>[sgdcteFia]
+```
+
+重新加载
+
+```vim
+:!cscope -R
+:cs reset
+```
+
+### mark
+
+```vim
+<leader>m " 标记/取消标记
+{N}<leader>m " 给第N组添加标记词
+{N}<leader>n " 取消第N组的标记
+<leader>M " 显示标记颜色和标记词
+🐁 <leader><F3> " 取消所有标记
+```
+
+### ale-fix
+
+ale支持的fix位于
+
+`autoload/ale/fix/registry.vim`
+
+所有fixer的调用脚本位于
+
+`autoload/ale/fixers/`
+
+### diff
+
+diff两个竖分buffers
+
+```vim
+; 分别在两个buffer里
+:difft[his]
+; 关闭，分别
+:diffoff
+```
+
+### gitgutter-diff
+
+```vim
+let g:gitgutter_diff_base = ''
+```
+
+### wrap line
+
+```vim
+; 🐁toggle
+<F9>
+```
+
+## x11
+
+### restart server
+
+```
+Alt-F2
+r
+```
+
+## xdg
+
+### xdg-mime
+
+```bash
+xdg-mime query filetype <file>
+xdg-mime query default <type>
+```
+
+## 单个、分散的操作
+
+### crypt
+
+```bash
+perl -e "print crypt('wjxby','xb');"
+```
+
+### pkg-config
+
+```bash
+# 获取package的名字
+pkg-config --list-all | grep <xxx>
+# 获取c编译、链接参数
+pkg-config --cflags --libs <pkg>
+```
+
+### 进程树
+
+```bash
+ps -jHg <pid> # 进程子树
+pstree -psal <pid> # 完整树
+```
+
+### python object属性
+
+```python
+dir()
+vars()
+```
+
+### new user
+
+```bash
+adduser xieby1
+usermod -aG sudo xieby1
+```
+
+### gcc预定义宏
+
+[2012.SO: preprocessor defined macros](https://stackoverflow.com/questions/10904873/anyway-to-see-list-of-preprocessor-defined-macros)
+
+```bash
+gcc -dM -E - < /dev/null
+touch bla.c && gcc -dM -E bla.c
+```
+
+### drawio no snapping
+
+[SE: no arrows snapping](https://webapps.stackexchange.com/questions/124103/how-do-i-prevent-arrows-from-snapping-when-moving-them-on-draw-io)
+
+hold `ctrl` + `shift`
+
+### iconv
+
+```
+# 文本编码转换
+iconv -f gb18030 -t utf-8 <output>
+```
+
+### pipe clipboard
+
+```
+ | xclip -selection clipboard
+```
