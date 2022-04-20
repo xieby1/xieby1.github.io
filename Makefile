@@ -7,7 +7,8 @@ src/SUMMARY.md: miao
 	./scripts/genSummary.sh > $@
 
 src/scripts/README.md: miao
-	rsync -r --exclude-from ~/Gist/script/bash/rsync_exclude ~/Gist/script/bash/ src/scripts/
+	rsync -r --exclude-from ~/Gist/script/bash/rsync_exclude ~/Gist/script/bash/ src/scripts/bash/
+	rsync -r ~/Gist/script/nix/ src/scripts/nix/
 	./scripts/genScripts.sh > $@
 
 gui: src/my_cheatsheet.html \

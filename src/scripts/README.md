@@ -1,92 +1,114 @@
 # My Scripts
 
-## allfiles.sh
+## Bash Scripts
+
+### allfiles.sh
 
 ```bash
-{{ #include allfiles.sh }}
+{{ #include bash/allfiles.sh }}
 ```
 
-## asm.sh
+### asm.sh
 
 ```bash
-{{ #include asm.sh }}
+{{ #include bash/asm.sh }}
 ```
 
-## ff.sh
+### ff.sh
 
 ```bash
-{{ #include ff.sh }}
+{{ #include bash/ff.sh }}
 ```
 
-## formatxml.sh
+### formatxml.sh
 
 ```bash
-{{ #include formatxml.sh }}
+{{ #include bash/formatxml.sh }}
 ```
 
-## grep.sh
+### grep.sh
 
 ```bash
-{{ #include grep.sh }}
+{{ #include bash/grep.sh }}
 ```
 
-## ldd-grep.sh
+### ldd-grep.sh
 
 ```bash
-{{ #include ldd-grep.sh }}
+{{ #include bash/ldd-grep.sh }}
 ```
 
-## ls-git.sh
+### ls-git.sh
 
 ```bash
-{{ #include ls-git.sh }}
+{{ #include bash/ls-git.sh }}
 ```
 
-## nbd-mount.sh
+### nbd-mount.sh
 
 ```bash
-{{ #include nbd-mount.sh }}
+{{ #include bash/nbd-mount.sh }}
 ```
 
-## pdbsf.sh
+### pdbsf.sh
 
 ```bash
-{{ #include pdbsf.sh }}
+{{ #include bash/pdbsf.sh }}
 ```
 
-## pdfbookmark.sh
+### pdfbookmark.sh
 
 ```bash
-{{ #include pdfbookmark.sh }}
+{{ #include bash/pdfbookmark.sh }}
 ```
 
-## pwrThr.sh
+### pwrThr.sh
 
 ```bash
-{{ #include pwrThr.sh }}
+{{ #include bash/pwrThr.sh }}
 ```
 
-## quteapp.sh
+### quteapp.sh
 
 ```bash
-{{ #include quteapp.sh }}
+{{ #include bash/quteapp.sh }}
 ```
 
-## resize_gif.sh
+### resize_gif.sh
 
 ```bash
-{{ #include resize_gif.sh }}
+{{ #include bash/resize_gif.sh }}
 ```
 
-## tar-repo.sh
+### tar-repo.sh
 
 ```bash
-{{ #include tar-repo.sh }}
+{{ #include bash/tar-repo.sh }}
 ```
 
-## ubuntu.sh
+### ubuntu.sh
 
 ```bash
-{{ #include ubuntu.sh }}
+{{ #include bash/ubuntu.sh }}
+```
+
+## Nix Scripts
+
+### android.nix
+
+```nix
+{{ #include nix/android.nix }}
+```
+
+### libllvm13_debug.nix
+
+```nix
+{{ #include nix/libllvm13_debug.nix }}
+```
+
+### shell.nix
+
+```nix
+{{ #include nix/shell.nix }}
 ```
 {{ #include foot.html }}
