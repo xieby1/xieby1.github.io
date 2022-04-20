@@ -428,6 +428,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#smb">smb</a></li>
 <li><a href="#system-file-disk">system file disk</a></li>
 </ul></li>
+<li><a href="#revealjs">revealjs</a>
+<ul>
+<li><a href="#chalkboard">chalkboard</a></li>
+</ul></li>
 <li><a href="#rust">rust</a>
 <ul>
 <li><a href="#installed-targets">installed targets</a></li>
@@ -677,7 +681,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 id="inkscape"><a class="header" href="#inkscape">Inkscape</a></h2>
 <section id="extract-pdf" class="level3">
 <h3 id="extract-pdf"><a class="header" href="#extract-pdf">extract pdf</a></h3>
-<pre><code>&lt;Ctrl&gt;&lt;Shift&gt;G # ungroup
+<pre><code>Poppler/Cairo import (Huge size)
+&lt;Ctrl&gt;&lt;Shift&gt;G # ungroup
 ! # invert selection
 &lt;Ctrl&gt;&lt;Shift&gt;R # resize canvas
 Extensions-&gt;Text-&gt;Replace Font</code></pre>
@@ -904,76 +909,90 @@ Extensions-&gt;Text-&gt;Replace Font</code></pre>
 <div class="sourceCode" id="cb68"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[qemu-sys]</span> <span class="at">-m</span> 16 <span class="at">-nographic</span> <span class="at">-fda</span> [file]</span></code></pre></div>
 </section>
 </section>
+<section id="revealjs" class="level2">
+<h2 id="revealjs"><a class="header" href="#revealjs">revealjs</a></h2>
+<section id="chalkboard" class="level3">
+<h3 id="chalkboard"><a class="header" href="#chalkboard">chalkboard</a></h3>
+<pre><code>del: clear current
+backspace: clear all
+c: note canva
+b: chalkboard
+d: download drawings
+x: previous color
+y: next color
+right click: eraser</code></pre>
+</section>
+</section>
 <section id="rust" class="level2">
 <h2 id="rust"><a class="header" href="#rust">rust</a></h2>
 <section id="installed-targets" class="level3">
 <h3 id="installed-targets"><a class="header" href="#installed-targets">installed targets</a></h3>
-<div class="sourceCode" id="cb69"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rustup</span> show</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rustup</span> show</span></code></pre></div>
 </section>
 <section id="交叉编译" class="level3">
 <h3 id="交叉编译"><a class="header" href="#交叉编译">交叉编译</a></h3>
-<div class="sourceCode" id="cb70"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rustc</span> <span class="at">--print</span> target-list</span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rustup</span> target add <span class="op">&lt;</span>TARGET<span class="op">&gt;</span></span>
-<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build <span class="at">--target</span><span class="op">=&lt;</span>TARGET<span class="op">&gt;</span> --release</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rustc</span> <span class="at">--print</span> target-list</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rustup</span> target add <span class="op">&lt;</span>TARGET<span class="op">&gt;</span></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build <span class="at">--target</span><span class="op">=&lt;</span>TARGET<span class="op">&gt;</span> --release</span></code></pre></div>
 </section>
 </section>
 <section id="sixu" class="level2">
 <h2 id="sixu"><a class="header" href="#sixu">sixu</a></h2>
 <section id="all" class="level3">
 <h3 id="all"><a class="header" href="#all">all</a></h3>
-<div class="sourceCode" id="cb71"><pre class="sourceCode dot"><code class="sourceCode dot"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co">// command line:</span></span>
-<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="co">//   dot -Tsvg -O sixu.dot</span></span>
-<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="kw">digraph</span> <span class="ot">{</span></span>
-<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a><span class="co">// attributes</span></span>
-<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a><span class="co">/// graph</span></span>
-<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a><span class="at">rankdir</span><span class="ot">=</span><span class="va">BT</span><span class="ot">;</span></span>
-<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a><span class="co">/// subgraph</span></span>
-<span id="cb71-10"><a href="#cb71-10" aria-hidden="true" tabindex="-1"></a><span class="va">newrank</span><span class="ot">=</span><span class="va">true</span><span class="ot">;</span></span>
-<span id="cb71-11"><a href="#cb71-11" aria-hidden="true" tabindex="-1"></a><span class="at">style</span><span class="ot">=</span><span class="va">filled</span><span class="ot">;</span></span>
-<span id="cb71-12"><a href="#cb71-12" aria-hidden="true" tabindex="-1"></a><span class="co">//// color name: https://graphviz.org/doc/info/colors.html</span></span>
-<span id="cb71-13"><a href="#cb71-13" aria-hidden="true" tabindex="-1"></a><span class="at">color</span><span class="ot">=</span><span class="va">whitesmoke</span><span class="ot">;</span></span>
-<span id="cb71-14"><a href="#cb71-14" aria-hidden="true" tabindex="-1"></a><span class="co">/// node</span></span>
-<span id="cb71-15"><a href="#cb71-15" aria-hidden="true" tabindex="-1"></a><span class="kw">node</span><span class="ot">[</span></span>
-<span id="cb71-16"><a href="#cb71-16" aria-hidden="true" tabindex="-1"></a><span class="at">shape</span><span class="ot">=</span><span class="va">box</span><span class="co">,</span></span>
-<span id="cb71-17"><a href="#cb71-17" aria-hidden="true" tabindex="-1"></a><span class="at">style</span><span class="ot">=</span><span class="st">&quot;filled, solid&quot;</span><span class="co">,</span></span>
-<span id="cb71-18"><a href="#cb71-18" aria-hidden="true" tabindex="-1"></a><span class="at">color</span><span class="ot">=</span><span class="va">black</span><span class="co">,</span></span>
-<span id="cb71-19"><a href="#cb71-19" aria-hidden="true" tabindex="-1"></a><span class="at">fillcolor</span><span class="ot">=</span><span class="va">white</span><span class="co">,</span></span>
-<span id="cb71-20"><a href="#cb71-20" aria-hidden="true" tabindex="-1"></a><span class="ot">];</span></span>
-<span id="cb71-21"><a href="#cb71-21" aria-hidden="true" tabindex="-1"></a><span class="co">/// edge</span></span>
-<span id="cb71-22"><a href="#cb71-22" aria-hidden="true" tabindex="-1"></a><span class="kw">edge</span><span class="ot">[</span></span>
-<span id="cb71-23"><a href="#cb71-23" aria-hidden="true" tabindex="-1"></a><span class="at">minlen</span><span class="ot">=</span><span class="dv">1</span><span class="co">,</span></span>
-<span id="cb71-24"><a href="#cb71-24" aria-hidden="true" tabindex="-1"></a><span class="co">//weight=1,</span></span>
-<span id="cb71-25"><a href="#cb71-25" aria-hidden="true" tabindex="-1"></a><span class="co">// If false, the edge is not used in ranking the nodes.</span></span>
-<span id="cb71-26"><a href="#cb71-26" aria-hidden="true" tabindex="-1"></a><span class="co">//constraint=true,</span></span>
-<span id="cb71-27"><a href="#cb71-27" aria-hidden="true" tabindex="-1"></a><span class="ot">];</span></span>
-<span id="cb71-28"><a href="#cb71-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-29"><a href="#cb71-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-30"><a href="#cb71-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb71-31"><a href="#cb71-31" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode dot"><code class="sourceCode dot"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co">// command line:</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="co">//   dot -Tsvg -O sixu.dot</span></span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a><span class="kw">digraph</span> <span class="ot">{</span></span>
+<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a><span class="co">// attributes</span></span>
+<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a><span class="co">/// graph</span></span>
+<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a><span class="at">rankdir</span><span class="ot">=</span><span class="va">BT</span><span class="ot">;</span></span>
+<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a><span class="co">/// subgraph</span></span>
+<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a><span class="va">newrank</span><span class="ot">=</span><span class="va">true</span><span class="ot">;</span></span>
+<span id="cb72-11"><a href="#cb72-11" aria-hidden="true" tabindex="-1"></a><span class="at">style</span><span class="ot">=</span><span class="va">filled</span><span class="ot">;</span></span>
+<span id="cb72-12"><a href="#cb72-12" aria-hidden="true" tabindex="-1"></a><span class="co">//// color name: https://graphviz.org/doc/info/colors.html</span></span>
+<span id="cb72-13"><a href="#cb72-13" aria-hidden="true" tabindex="-1"></a><span class="at">color</span><span class="ot">=</span><span class="va">whitesmoke</span><span class="ot">;</span></span>
+<span id="cb72-14"><a href="#cb72-14" aria-hidden="true" tabindex="-1"></a><span class="co">/// node</span></span>
+<span id="cb72-15"><a href="#cb72-15" aria-hidden="true" tabindex="-1"></a><span class="kw">node</span><span class="ot">[</span></span>
+<span id="cb72-16"><a href="#cb72-16" aria-hidden="true" tabindex="-1"></a><span class="at">shape</span><span class="ot">=</span><span class="va">box</span><span class="co">,</span></span>
+<span id="cb72-17"><a href="#cb72-17" aria-hidden="true" tabindex="-1"></a><span class="at">style</span><span class="ot">=</span><span class="st">&quot;filled, solid&quot;</span><span class="co">,</span></span>
+<span id="cb72-18"><a href="#cb72-18" aria-hidden="true" tabindex="-1"></a><span class="at">color</span><span class="ot">=</span><span class="va">black</span><span class="co">,</span></span>
+<span id="cb72-19"><a href="#cb72-19" aria-hidden="true" tabindex="-1"></a><span class="at">fillcolor</span><span class="ot">=</span><span class="va">white</span><span class="co">,</span></span>
+<span id="cb72-20"><a href="#cb72-20" aria-hidden="true" tabindex="-1"></a><span class="ot">];</span></span>
+<span id="cb72-21"><a href="#cb72-21" aria-hidden="true" tabindex="-1"></a><span class="co">/// edge</span></span>
+<span id="cb72-22"><a href="#cb72-22" aria-hidden="true" tabindex="-1"></a><span class="kw">edge</span><span class="ot">[</span></span>
+<span id="cb72-23"><a href="#cb72-23" aria-hidden="true" tabindex="-1"></a><span class="at">minlen</span><span class="ot">=</span><span class="dv">1</span><span class="co">,</span></span>
+<span id="cb72-24"><a href="#cb72-24" aria-hidden="true" tabindex="-1"></a><span class="co">//weight=1,</span></span>
+<span id="cb72-25"><a href="#cb72-25" aria-hidden="true" tabindex="-1"></a><span class="co">// If false, the edge is not used in ranking the nodes.</span></span>
+<span id="cb72-26"><a href="#cb72-26" aria-hidden="true" tabindex="-1"></a><span class="co">//constraint=true,</span></span>
+<span id="cb72-27"><a href="#cb72-27" aria-hidden="true" tabindex="-1"></a><span class="ot">];</span></span>
+<span id="cb72-28"><a href="#cb72-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-29"><a href="#cb72-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-30"><a href="#cb72-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-31"><a href="#cb72-31" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code></pre></div>
 </section>
 <section id="today" class="level3">
 <h3 id="today"><a class="header" href="#today">today</a></h3>
-<div class="sourceCode" id="cb72"><pre class="sourceCode dot"><code class="sourceCode dot"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;22Apr12+&quot;</span> <span class="ot">-&gt;</span> <span class="st">&quot;22Apr12-&quot;</span> <span class="ot">-&gt;</span> <span class="st">&quot;22Apr12+&quot;</span><span class="ot">;</span></span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="kw">subgraph</span> <span class="va">cluster_22Apr12</span></span>
-<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="ot">{</span></span>
-<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a><span class="va">x22Apr12_</span></span>
-<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span>
-<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a><span class="ot">{</span><span class="at">rank</span><span class="ot">=</span><span class="va">same</span><span class="ot">;</span></span>
-<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;22Apr12-&quot;</span><span class="ot">;</span></span>
-<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a><span class="va">x22Apr12_</span></span>
-<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span>
-<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a><span class="ot">{</span><span class="at">rank</span><span class="ot">=</span><span class="va">same</span><span class="ot">;</span></span>
-<span id="cb72-11"><a href="#cb72-11" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;22Apr12+&quot;</span><span class="ot">;</span></span>
-<span id="cb72-12"><a href="#cb72-12" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode dot"><code class="sourceCode dot"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;22Apr12+&quot;</span> <span class="ot">-&gt;</span> <span class="st">&quot;22Apr12-&quot;</span> <span class="ot">-&gt;</span> <span class="st">&quot;22Apr12+&quot;</span><span class="ot">;</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="kw">subgraph</span> <span class="va">cluster_22Apr12</span></span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="ot">{</span></span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="va">x22Apr12_</span></span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a><span class="ot">{</span><span class="at">rank</span><span class="ot">=</span><span class="va">same</span><span class="ot">;</span></span>
+<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;22Apr12-&quot;</span><span class="ot">;</span></span>
+<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a><span class="va">x22Apr12_</span></span>
+<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span>
+<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a><span class="ot">{</span><span class="at">rank</span><span class="ot">=</span><span class="va">same</span><span class="ot">;</span></span>
+<span id="cb73-11"><a href="#cb73-11" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;22Apr12+&quot;</span><span class="ot">;</span></span>
+<span id="cb73-12"><a href="#cb73-12" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code></pre></div>
 </section>
 </section>
 <section id="systemd-unit" class="level2">
 <h2 id="systemd-unit"><a class="header" href="#systemd-unit">systemd unit</a></h2>
 <section id="afterbefore说明" class="level3">
 <h3 id="afterbefore说明"><a class="header" href="#afterbefore说明">After/Before说明</a></h3>
-<div class="sourceCode" id="cb73"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> systemd.unit</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> systemd.unit</span></code></pre></div>
 </section>
 <section id="user目录" class="level3">
 <h3 id="user目录"><a class="header" href="#user目录">user目录</a></h3>
@@ -982,20 +1001,20 @@ Extensions-&gt;Text-&gt;Replace Font</code></pre>
 </section>
 <section id="service状态" class="level3">
 <h3 id="service状态"><a class="header" href="#service状态">service状态</a></h3>
-<div class="sourceCode" id="cb74"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="ex">systemctl</span> <span class="at">--user</span> status <span class="op">&lt;</span>service<span class="op">&gt;</span></span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="ex">journalctl</span> <span class="at">--user</span> <span class="at">-u</span> <span class="op">&lt;</span>service<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="ex">systemctl</span> <span class="at">--user</span> status <span class="op">&lt;</span>service<span class="op">&gt;</span></span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="ex">journalctl</span> <span class="at">--user</span> <span class="at">-u</span> <span class="op">&lt;</span>service<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="列举unit类" class="level3">
 <h3 id="列举unit类"><a class="header" href="#列举unit类">列举unit类</a></h3>
-<div class="sourceCode" id="cb75"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 例如列出list</span></span>
-<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="ex">systemctl</span> list-units <span class="at">--type</span> target</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 例如列出list</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="ex">systemctl</span> list-units <span class="at">--type</span> target</span></code></pre></div>
 </section>
 </section>
 <section id="vim" class="level2">
 <h2 id="vim"><a class="header" href="#vim">vim</a></h2>
 <section id="list-syntaxs" class="level3">
 <h3 id="list-syntaxs"><a class="header" href="#list-syntaxs">list syntaxs</a></h3>
-<div class="sourceCode" id="cb76"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> /usr/share/vim/vim81/syntax/</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> /usr/share/vim/vim81/syntax/</span></code></pre></div>
 </section>
 <section id="set-syntax" class="level3">
 <h3 id="set-syntax"><a class="header" href="#set-syntax">set syntax</a></h3>
@@ -1116,43 +1135,43 @@ r</code></pre>
 <h2 id="xdg"><a class="header" href="#xdg">xdg</a></h2>
 <section id="xdg-mime" class="level3">
 <h3 id="xdg-mime"><a class="header" href="#xdg-mime">xdg-mime</a></h3>
-<div class="sourceCode" id="cb96"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xdg-mime</span> query filetype <span class="op">&lt;</span>file<span class="op">&gt;</span></span>
-<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="ex">xdg-mime</span> query default <span class="op">&lt;</span>type<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xdg-mime</span> query filetype <span class="op">&lt;</span>file<span class="op">&gt;</span></span>
+<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="ex">xdg-mime</span> query default <span class="op">&lt;</span>type<span class="op">&gt;</span></span></code></pre></div>
 </section>
 </section>
 <section id="单个分散的操作" class="level2">
 <h2 id="单个分散的操作"><a class="header" href="#单个分散的操作">单个、分散的操作</a></h2>
 <section id="crypt" class="level3">
 <h3 id="crypt"><a class="header" href="#crypt">crypt</a></h3>
-<div class="sourceCode" id="cb97"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">perl</span> <span class="at">-e</span> <span class="st">&quot;print crypt(&#39;wjxby&#39;,&#39;xb&#39;);&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">perl</span> <span class="at">-e</span> <span class="st">&quot;print crypt(&#39;wjxby&#39;,&#39;xb&#39;);&quot;</span></span></code></pre></div>
 </section>
 <section id="pkg-config" class="level3">
 <h3 id="pkg-config"><a class="header" href="#pkg-config">pkg-config</a></h3>
-<div class="sourceCode" id="cb98"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取package的名字</span></span>
-<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pkg-config</span> <span class="at">--list-all</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="op">&lt;</span>xxx<span class="op">&gt;</span></span>
-<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取c编译、链接参数</span></span>
-<span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pkg-config</span> <span class="at">--cflags</span> <span class="at">--libs</span> <span class="op">&lt;</span>pkg<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取package的名字</span></span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pkg-config</span> <span class="at">--list-all</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="op">&lt;</span>xxx<span class="op">&gt;</span></span>
+<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取c编译、链接参数</span></span>
+<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pkg-config</span> <span class="at">--cflags</span> <span class="at">--libs</span> <span class="op">&lt;</span>pkg<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="进程树" class="level3">
 <h3 id="进程树"><a class="header" href="#进程树">进程树</a></h3>
-<div class="sourceCode" id="cb99"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-jHg</span> <span class="op">&lt;</span>pid<span class="op">&gt;</span> # 进程子树</span>
-<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pstree</span> <span class="at">-psal</span> <span class="op">&lt;</span>pid<span class="op">&gt;</span> # 完整树</span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-jHg</span> <span class="op">&lt;</span>pid<span class="op">&gt;</span> # 进程子树</span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pstree</span> <span class="at">-psal</span> <span class="op">&lt;</span>pid<span class="op">&gt;</span> # 完整树</span></code></pre></div>
 </section>
 <section id="python-object属性" class="level3">
 <h3 id="python-object属性"><a class="header" href="#python-object属性">python object属性</a></h3>
-<div class="sourceCode" id="cb100"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>()</span>
-<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="bu">vars</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>()</span>
+<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="bu">vars</span>()</span></code></pre></div>
 </section>
 <section id="new-user" class="level3">
 <h3 id="new-user"><a class="header" href="#new-user">new user</a></h3>
-<div class="sourceCode" id="cb101"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="ex">adduser</span> xieby1</span>
-<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="ex">usermod</span> <span class="at">-aG</span> sudo xieby1</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="ex">adduser</span> xieby1</span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="ex">usermod</span> <span class="at">-aG</span> sudo xieby1</span></code></pre></div>
 </section>
 <section id="gcc预定义宏" class="level3">
 <h3 id="gcc预定义宏"><a class="header" href="#gcc预定义宏">gcc预定义宏</a></h3>
 <p><a href="https://stackoverflow.com/questions/10904873/anyway-to-see-list-of-preprocessor-defined-macros">2012.SO: preprocessor defined macros</a></p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="at">-dM</span> <span class="at">-E</span> <span class="at">-</span> <span class="op">&lt;</span> /dev/null</span>
-<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> bla.c <span class="kw">&amp;&amp;</span> <span class="fu">gcc</span> <span class="at">-dM</span> <span class="at">-E</span> bla.c</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="at">-dM</span> <span class="at">-E</span> <span class="at">-</span> <span class="op">&lt;</span> /dev/null</span>
+<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> bla.c <span class="kw">&amp;&amp;</span> <span class="fu">gcc</span> <span class="at">-dM</span> <span class="at">-E</span> bla.c</span></code></pre></div>
 </section>
 <section id="drawio-no-snapping" class="level3">
 <h3 id="drawio-no-snapping"><a class="header" href="#drawio-no-snapping">drawio no snapping</a></h3>
