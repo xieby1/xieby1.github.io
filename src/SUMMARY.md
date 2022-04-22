@@ -224,6 +224,8 @@
   * [Nix]()
     * [android.md](./Distro/Nix/android.md)
     * [nixpkgs.md](./Distro/Nix/nixpkgs.md)
+* [EPaper]()
+  * [laptop.md](./EPaper/laptop.md)
 * [FPGA]()
   * [iverilog.md](./FPGA/iverilog.md)
 * [hackthon]()
