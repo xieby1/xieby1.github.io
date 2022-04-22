@@ -368,6 +368,8 @@
     * [2017.memalloy.wickerson.popl.77.md](./Mem/model/2017.memalloy.wickerson.popl.77.md)
   * [order.md](./Mem/order.md)
   * [test.md](./Mem/test.md)
+* [Opinions]()
+  * [notes.md](./Opinions/notes.md)
 * [other_read_list]()
   * [cambridge.md](./other_read_list/cambridge.md)
   * [stanford](./other_read_list/stanford/README.md)
