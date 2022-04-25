@@ -437,6 +437,8 @@
   * [LF]()
     * [2020-Linux-Foundation-Annual-Report_120520.md](./行业报告/LF/2020-Linux-Foundation-Annual-Report_120520.md)
     * [FINOS-business-value-of-open-source.md](./行业报告/LF/FINOS-business-value-of-open-source.md)
+  * [Nix]()
+    * [2021.summur.md](./行业报告/Nix/2021.summur.md)
   * [企业年报]()
     * [apple]()
     * [华为]()
