@@ -372,6 +372,7 @@
   * [test.md](./Mem/test.md)
 * [Opinions]()
   * [notes.md](./Opinions/notes.md)
+  * [openEcoSys.md](./Opinions/openEcoSys.md)
 * [other_read_list]()
   * [cambridge.md](./other_read_list/cambridge.md)
   * [stanford](./other_read_list/stanford/README.md)
