@@ -45,6 +45,14 @@ sudo ./scripts/qemu-binfmt-conf.sh  --qemu-path /usr/local/bin/qemu-x86_64 --sys
 echo ':x64:M::\x7fELF\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x3e\x00:\xff\xff\xff\xff\xff\xfe\xfe\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/local/bin/qemu-x86_64:' >/proc/sys/fs/binfmt_misc/register
 ```
 
+## cmake
+
+### compile_command.json
+
+```bash
+-DCMAKE_EXPORT_COMPILE_COMMANDS=1
+```
+
 ## container
 
 ### ls containers
@@ -257,6 +265,14 @@ Poppler/Cairo import (Huge size)
 Extensions->Text->Replace Font
 ```
 
+## libreoffice
+
+### edit/view mode
+
+```
+ctrl+shift+m
+```
+
 ## Licenses
 
 ### MIT
@@ -342,6 +358,13 @@ remake --targets
 	$(CC) $< -o $@
 ```
 
+## mdbook
+
+### build
+
+同名md和html
+html优先
+
 ## network
 
 ### dns resolve
@@ -388,16 +411,25 @@ nix-shell '<nixpkgs>' -A
 nix-shell '<nixpkgs>' -A <pkg>
 ```
 
-### pretetch url
+### prefetch url
 
 ```bash
 nix-prefetch-url
 ```
 
+### prefetch github
+
+```bash
+nix-prefetch-url --unpack \
+https://github.com/<owner>/
+<repo>/archive/<rev>.tar.gz
+```
+
 ### sha256
 
 ```bash
-nix-hash --type sha256 --flat --base32 <file>
+nix-hash --type sha256 \
+--flat --base32 <file>
 ```
 
 ### show drv
