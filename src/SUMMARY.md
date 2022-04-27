@@ -247,6 +247,7 @@
     * [2018.sail.armstrong..3.md](./ISA/Semantics/2018.sail.armstrong..3.md)
     * [2019.x64_validation.dasgupta.sigplan.24.md](./ISA/Semantics/2019.x64_validation.dasgupta.sigplan.24.md)
     * [2021.sail.armstrong.manual.md](./ISA/Semantics/2021.sail.armstrong.manual.md)
+    * [asmjit.md](./ISA/Semantics/asmjit.md)
     * [k]()
       * [logs.md](./ISA/Semantics/k/logs.md)
   * [ultrasparc]()
