@@ -332,6 +332,7 @@
     * [asm.md](./Lang/Asm/asm.md)
     * [riscv]()
       * [QnA.md](./Lang/Asm/riscv/QnA.md)
+  * [awk.md](./Lang/awk.md)
   * [C.f]()
     * [macro.md](./Lang/C.f/macro.md)
   * [Dot]()
