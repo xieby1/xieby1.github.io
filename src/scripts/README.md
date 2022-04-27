@@ -106,9 +106,33 @@
 {{ #include nix/libllvm13_debug.nix }}
 ```
 
+### shell_cross_platform.nix
+
+```nix
+{{ #include nix/shell_cross_platform.nix }}
+```
+
+### shell_fhs_x11.nix
+
+```nix
+{{ #include nix/shell_fhs_x11.nix }}
+```
+
 ### shell.nix
 
 ```nix
 {{ #include nix/shell.nix }}
+```
+
+### shell_qemu_tests_tcg.nix
+
+```nix
+{{ #include nix/shell_qemu_tests_tcg.nix }}
+```
+
+### shell_texlive.nix
+
+```nix
+{{ #include nix/shell_texlive.nix }}
 ```
 {{ #include foot.html }}
