@@ -7,9 +7,10 @@
 * 二进制翻译
 * ISA语义分析
 
-## 最近折腾的事
+## 最近的乐趣
 
-* [我的NixOS和home-manager的配置](https://github.com/xieby1/nix_config)
+* [我的Nix/NixOS的配置](https://github.com/xieby1/nix_config)
+* [Linux日常操作的cheatsheet](./cheatsheet.md)
 
 ## 同领域的朋友们
 
