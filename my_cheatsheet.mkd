@@ -25,6 +25,15 @@ eval "${CMD[@]}" # "${CMD[*]}"
 cd -
 ```
 
+### read file lines
+
+```bash
+while read line
+do
+    echo "$line"
+done < file
+```
+
 ## binfmt
 
 ### i386
@@ -335,6 +344,18 @@ cat /proc/kmsg > <stdio dev file>
 
 ## make
 
+### exec each in list
+
+[SO: How do I execute each command in a list?](https://stackoverflow.com/questions/12528637/)
+
+```makefile
+define \n
+
+
+endef
+$(foreach x,${list},rm ${x}${\n})
+```
+
 ### target依赖树
 
 [SO: makefile dependency tree](https://unix.stackexchange.com/questions/283478/how-to-display-dependencies-given-in-a-makefile-as-a-tree)
@@ -350,10 +371,9 @@ make -nd <target> | make2graph
 remake --targets
 ```
 
-### 语法
+### 隐式
 
 ```makefile
-# 隐式
 %:%.c
 	$(CC) $< -o $@
 ```
@@ -380,6 +400,25 @@ nmap 192.168.1.0/24
 ```
 
 ## nix
+
+### binary cache paths
+
+`<nix channel url>/store-path.xz`
+
+e.g. https://mirror.tuna.tsinghua.edu.cn/nix-channels/nixos-21.11/store-paths.xz
+
+### binary cache query
+
+refers to [Discourse: Is it possible to query the binary cache?](https://discourse.nixos.org/t/is-it-possible-to-query-the-binary-cache/7893)
+
+```bash
+nix path-info \
+--store https://cache.nixos.org/ \
+-f '<nixpkgs>' \
+--argstr system x86_64-linux \
+<pkgs-name>
+```
+
 
 ### build pkg
 
@@ -694,18 +733,6 @@ systemctl list-units --type target
 
 ## vim
 
-### list syntaxs
-
-```bash
-ls /usr/share/vim/vim81/syntax/
-```
-
-### set syntax
-
-```vim
-:set syntax=
-```
-
 ### Explore
 
 ```vim
@@ -713,28 +740,16 @@ ls /usr/share/vim/vim81/syntax/
 :E[xplore]
 ```
 
-### syntax
+### list syntaxs
 
-```vim
-; set
-:set syntax=html
-; get
-:set syntax
+```bash
+ls <$VIMRUNTIME>/syntax/
 ```
 
 ### markdown toc
 
 ```vim
 :GenTocGFM
-```
-
-### split调整
-
-```vim
-c-w _ ;当前窗口最高
-c-w = ;所有窗口等高
-:on ;关闭所有其他窗口
-c-w o ;同上
 ```
 
 ### mapped keys
@@ -747,16 +762,46 @@ c-w o ;同上
 :h inex
 ```
 
-### status line
-
-```vim
-set laststatus=2
-```
-
 ### popup window
 
 ```vim
 🐁 <leader>[
+```
+
+### runtime folder
+
+```vim
+:echo $VIMRUNTIME
+```
+
+### split调整
+
+```vim
+c-w _ ;当前窗口最高
+c-w = ;所有窗口等高
+:on ;关闭所有其他窗口
+c-w o ;同上
+```
+
+### set syntax
+
+```vim
+:set syntax=
+```
+
+### syntax
+
+```vim
+; set
+:set syntax=html
+; get
+:set syntax
+```
+
+### status line
+
+```vim
+set laststatus=2
 ```
 
 ### jumplist
@@ -850,6 +895,19 @@ let g:gitgutter_diff_base = ''
 <F9>
 ```
 
+## WSL
+
+### shrink vdisk
+
+```powershell
+diskpart
+select vdisk \
+file="C:\Users\<User>\AppData\Local\ \
+Packages\CanonicalGroupLimited.UbuntuonWindows... \
+\LocalState\ext4.vhdx"
+compact vdisk
+```
+
 ## x11
 
 ### restart server
@@ -883,6 +941,18 @@ perl -e "print crypt('wjxby','xb');"
 pkg-config --list-all | grep <xxx>
 # 获取c编译、链接参数
 pkg-config --cflags --libs <pkg>
+```
+
+### pdftohtml
+
+```bash
+pdftotext -noframes -i -q -p -c <pdf>
+```
+
+### pdftotext
+
+```bash
+pdftotext -q <pdf>
 ```
 
 ### 进程树

@@ -230,6 +230,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       background-color: #f8f8f8;
       border-radius: 3px;
   }
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  div.sourceCode::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  div.sourceCode {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
   code.sourceCode {
       white-space: pre-wrap;
   }
@@ -305,6 +314,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="#可注释字符串">可注释字符串</a></li>
 <li><a href="#cd上次的目录">cd上次的目录</a></li>
+<li><a href="#read-file-lines">read file lines</a></li>
 </ul></li>
 <li><a href="#binfmt">binfmt</a>
 <ul>
@@ -384,9 +394,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><a href="#make">make</a>
 <ul>
+<li><a href="#exec-each-in-list">exec each in list</a></li>
 <li><a href="#target依赖树">target依赖树</a></li>
 <li><a href="#列出所有targets">列出所有targets</a></li>
-<li><a href="#语法">语法</a></li>
+<li><a href="#隐式">隐式</a></li>
 </ul></li>
 <li><a href="#mdbook">mdbook</a>
 <ul>
@@ -399,6 +410,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><a href="#nix">nix</a>
 <ul>
+<li><a href="#binary-cache-paths">binary cache paths</a></li>
+<li><a href="#binary-cache-query">binary cache query</a></li>
 <li><a href="#build-pkg">build pkg</a></li>
 <li><a href="#eval">eval</a></li>
 <li><a href="#list-build-generations">list build-generations</a></li>
@@ -464,15 +477,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li><a href="#vim">vim</a>
 <ul>
-<li><a href="#list-syntaxs">list syntaxs</a></li>
-<li><a href="#set-syntax">set syntax</a></li>
 <li><a href="#explore">Explore</a></li>
-<li><a href="#syntax">syntax</a></li>
+<li><a href="#list-syntaxs">list syntaxs</a></li>
 <li><a href="#markdown-toc">markdown toc</a></li>
-<li><a href="#split调整">split调整</a></li>
 <li><a href="#mapped-keys">mapped keys</a></li>
-<li><a href="#status-line">status line</a></li>
 <li><a href="#popup-window">popup window</a></li>
+<li><a href="#runtime-folder">runtime folder</a></li>
+<li><a href="#split调整">split调整</a></li>
+<li><a href="#set-syntax">set syntax</a></li>
+<li><a href="#syntax">syntax</a></li>
+<li><a href="#status-line">status line</a></li>
 <li><a href="#jumplist">jumplist</a></li>
 <li><a href="#git-blame-fugitive">git blame [# fugitive]</a></li>
 <li><a href="#git-historic-file-fugitive">git historic file [# fugitive]</a></li>
@@ -483,6 +497,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#diff">diff</a></li>
 <li><a href="#gitgutter-diff">gitgutter-diff</a></li>
 <li><a href="#wrap-line">wrap line</a></li>
+</ul></li>
+<li><a href="#wsl">WSL</a>
+<ul>
+<li><a href="#shrink-vdisk">shrink vdisk</a></li>
 </ul></li>
 <li><a href="#x11">x11</a>
 <ul>
@@ -496,6 +514,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="#crypt">crypt</a></li>
 <li><a href="#pkg-config">pkg-config</a></li>
+<li><a href="#pdftohtml">pdftohtml</a></li>
+<li><a href="#pdftotext">pdftotext</a></li>
 <li><a href="#进程树">进程树</a></li>
 <li><a href="#python-object属性">python object属性</a></li>
 <li><a href="#new-user">new user</a></li>
@@ -529,58 +549,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 等价于cd $OLDPATH</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="at">-</span></span></code></pre></div>
 </section>
+<section id="read-file-lines" class="level3">
+<h3 id="read-file-lines"><a class="header" href="#read-file-lines">read file lines</a></h3>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="bu">read</span> <span class="va">line</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">echo</span> <span class="st">&quot;</span><span class="va">$line</span><span class="st">&quot;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span> <span class="op">&lt;</span> file</span></code></pre></div>
+</section>
 </section>
 <section id="binfmt" class="level2">
 <h2 id="binfmt"><a class="header" href="#binfmt">binfmt</a></h2>
 <section id="i386" class="level3">
 <h3 id="i386"><a class="header" href="#i386">i386</a></h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&#39;:i386:M::\x7fELF\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x03:\xff\xff\xff\xff\xff\xfe\xfe\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfa\xff\xff:/usr/local/bin/qemu-i386:&#39;</span> <span class="op">&gt;</span>/proc/sys/fs/binfmt_misc/register</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&#39;:i386:M::\x7fELF\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x03:\xff\xff\xff\xff\xff\xfe\xfe\xff\xff\xff\xff\xff\xff\xff\xff\xff\xfa\xff\xff:/usr/local/bin/qemu-i386:&#39;</span> <span class="op">&gt;</span>/proc/sys/fs/binfmt_misc/register</span></code></pre></div>
 </section>
 <section id="qemu" class="level3">
 <h3 id="qemu"><a class="header" href="#qemu">qemu</a></h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ./scripts/qemu-binfmt-conf.sh  <span class="at">--qemu-path</span> /usr/local/bin/qemu-x86_64 <span class="at">--systemd</span> x86_64</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ./scripts/qemu-binfmt-conf.sh  <span class="at">--qemu-path</span> /usr/local/bin/qemu-x86_64 <span class="at">--systemd</span> x86_64</span></code></pre></div>
 </section>
 <section id="x64" class="level3">
 <h3 id="x64"><a class="header" href="#x64">x64</a></h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&#39;:x64:M::\x7fELF\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x3e\x00:\xff\xff\xff\xff\xff\xfe\xfe\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/local/bin/qemu-x86_64:&#39;</span> <span class="op">&gt;</span>/proc/sys/fs/binfmt_misc/register</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&#39;:x64:M::\x7fELF\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x3e\x00:\xff\xff\xff\xff\xff\xfe\xfe\x00\xff\xff\xff\xff\xff\xff\xff\xff\xfe\xff\xff\xff:/usr/local/bin/qemu-x86_64:&#39;</span> <span class="op">&gt;</span>/proc/sys/fs/binfmt_misc/register</span></code></pre></div>
 </section>
 </section>
 <section id="cmake" class="level2">
 <h2 id="cmake"><a class="header" href="#cmake">cmake</a></h2>
 <section id="compile_command.json" class="level3">
 <h3 id="compile_commandjson"><a class="header" href="#compile_commandjson">compile_command.json</a></h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-DCMAKE_EXPORT_COMPILE_COMMANDS=1</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">-DCMAKE_EXPORT_COMPILE_COMMANDS=1</span></span></code></pre></div>
 </section>
 </section>
 <section id="container" class="level2">
 <h2 id="container"><a class="header" href="#container">container</a></h2>
 <section id="ls-containers" class="level3">
 <h3 id="ls-containers"><a class="header" href="#ls-containers">ls containers</a></h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker ps <span class="at">-as</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker ps <span class="at">-as</span></span></code></pre></div>
 </section>
 <section id="ls-imgs" class="level3">
 <h3 id="ls-imgs"><a class="header" href="#ls-imgs">ls imgs</a></h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker images <span class="at">-a</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker images <span class="at">-a</span></span></code></pre></div>
 </section>
 <section id="prune" class="level3">
 <h3 id="prune"><a class="header" href="#prune">prune</a></h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker system prune</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker system prune</span></code></pre></div>
 </section>
 <section id="rm-all-containers" class="level3">
 <h3 id="rm-all-containers"><a class="header" href="#rm-all-containers">rm all-containers</a></h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker ps <span class="at">-aq</span> <span class="kw">|</span> <span class="fu">sudo</span> xargs docker rm</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker ps <span class="at">-aq</span> <span class="kw">|</span> <span class="fu">sudo</span> xargs docker rm</span></code></pre></div>
 </section>
 <section id="rm-all-imgs" class="level3">
 <h3 id="rm-all-imgs"><a class="header" href="#rm-all-imgs">rm all-imgs</a></h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker images <span class="at">-aq</span> <span class="kw">|</span> <span class="fu">xargs</span> sudo docker rmi</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker images <span class="at">-aq</span> <span class="kw">|</span> <span class="fu">xargs</span> sudo docker rmi</span></code></pre></div>
 </section>
 <section id="rm-container" class="level3">
 <h3 id="rm-container"><a class="header" href="#rm-container">rm container</a></h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker rm <span class="op">&lt;</span>containers<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker rm <span class="op">&lt;</span>containers<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="rm-img" class="level3">
 <h3 id="rm-img"><a class="header" href="#rm-img">rm img</a></h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker rmi <span class="op">&lt;</span>images<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker rmi <span class="op">&lt;</span>images<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="rm-untagged-img" class="level3">
 <h3 id="rm-untagged-img"><a class="header" href="#rm-untagged-img">rm untagged-img</a></h3>
@@ -588,48 +615,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="stop-containers" class="level3">
 <h3 id="stop-containers"><a class="header" href="#stop-containers">stop containers</a></h3>
-<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker stop <span class="op">&lt;</span>containers<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> docker stop <span class="op">&lt;</span>containers<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="build" class="level3">
 <h3 id="build"><a class="header" href="#build">build</a></h3>
-<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">podman</span> build <span class="at">--network</span><span class="op">=</span>host <span class="at">-t</span> <span class="op">&lt;</span>tag<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">podman</span> build <span class="at">--network</span><span class="op">=</span>host <span class="at">-t</span> <span class="op">&lt;</span>tag<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="image-mount" class="level3">
 <h3 id="image-mount"><a class="header" href="#image-mount">image mount</a></h3>
-<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">podman</span> unshare</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">podman</span> image mount <span class="op">&lt;</span>image<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">podman</span> unshare</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">podman</span> image mount <span class="op">&lt;</span>image<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="run" class="level3">
 <h3 id="run"><a class="header" href="#run">run</a></h3>
-<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">podman</span> run <span class="at">--rm</span> <span class="at">--network</span><span class="op">=</span>host <span class="at">-it</span> <span class="op">&lt;</span>image<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">podman</span> run <span class="at">--rm</span> <span class="at">--network</span><span class="op">=</span>host <span class="at">-it</span> <span class="op">&lt;</span>image<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="debugger" class="level3">
 <h3 id="debugger"><a class="header" href="#debugger">debugger</a></h3>
 <p><a href="https://stackoverflow.com/questions/42029834">SO: gdb in docker</a></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">--cap-add=SYS_PTRACE</span></span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">--cap-add=SYS_PTRACE</span></span></code></pre></div>
 </section>
 </section>
 <section id="disk" class="level2">
 <h2 id="disk"><a class="header" href="#disk">disk</a></h2>
 <section id="dd" class="level3">
 <h3 id="dd"><a class="header" href="#dd">dd</a></h3>
-<div class="sourceCode" id="cb20"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dd</span> if=<span class="op">&lt;</span>INPUT/PATH<span class="op">&gt;</span> of=/dev/<span class="op">&lt;</span>OUTPUT<span class="op">&gt;</span> status=progress</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dd</span> if=<span class="op">&lt;</span>INPUT/PATH<span class="op">&gt;</span> of=/dev/<span class="op">&lt;</span>OUTPUT<span class="op">&gt;</span> status=progress</span></code></pre></div>
 </section>
 <section id="disk-usage" class="level3">
 <h3 id="disk-usage"><a class="header" href="#disk-usage">disk usage</a></h3>
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span> <span class="at">-h</span></span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">df</span> <span class="at">-h</span></span></code></pre></div>
 </section>
 <section id="file-folder-size" class="level3">
 <h3 id="file-folder-size"><a class="header" href="#file-folder-size">file folder-size</a></h3>
-<div class="sourceCode" id="cb22"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">du</span> <span class="at">-sBM</span> <span class="pp">*</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">du</span> <span class="at">-sBM</span> <span class="pp">*</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-n</span></span></code></pre></div>
 </section>
 </section>
 <section id="file" class="level2">
 <h2 id="file"><a class="header" href="#file">file</a></h2>
 <section id="查看meta-info例如pdf详细见man" class="level3">
 <h3 id="查看meta-info例如pdf详细见man"><a class="header" href="#查看meta-info例如pdf详细见man">查看meta info，例如pdf，详细见man</a></h3>
-<div class="sourceCode" id="cb23"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">exiftool</span> <span class="at">-Title</span><span class="op">=&lt;</span>title<span class="op">&gt;</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="ex">exiftool</span> <span class="at">-Author</span><span class="op">=&lt;</span>author<span class="op">&gt;</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">exiftool</span> <span class="at">-Title</span><span class="op">=&lt;</span>title<span class="op">&gt;</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ex">exiftool</span> <span class="at">-Author</span><span class="op">=&lt;</span>author<span class="op">&gt;</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code></pre></div>
 </section>
 </section>
 <section id="font" class="level2">
@@ -637,16 +664,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="grub" class="level3">
 <h3 id="grub"><a class="header" href="#grub">grub</a></h3>
 <p><a href="https://unix.stackexchange.com/questions/31672/can-grub-font-size-be-customised">SE: customize GRUB font size</a></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> grub-mkfont <span class="at">-s</span> 36 <span class="at">-o</span> /boot/grub/fonts/DejaVuSansMono.pf2 /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fc-list</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="ex">vim</span> /boot/grub/grub.cfg</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> grub-mkfont <span class="at">-s</span> 36 <span class="at">-o</span> /boot/grub/fonts/DejaVuSansMono.pf2 /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="ex">fc-list</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="ex">vim</span> /boot/grub/grub.cfg</span></code></pre></div>
 </section>
 <section id="tty" class="level3">
 <h3 id="tty"><a class="header" href="#tty">tty</a></h3>
 <p><a href="https://unix.stackexchange.com/questions/161890/how-can-i-make-a-psf-font-for-the-console-from-a-otf-one">SE: otf to psf</a></p>
 <p><a href="https://www.reddit.com/r/linuxquestions/comments/7st7hz/any_way_to_convert_ttf_files_to_psf_files/">reddit: ttf to psf</a></p>
 <p><a href="https://www.sven.de/dpi/">dpi cal</a></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">otf2bdf</span> <span class="at">-r</span> 242 <span class="at">-p</span> 36 /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf <span class="at">-o</span> ~/Desktop/DejaVuSansMono.bdf</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">otf2bdf</span> <span class="at">-r</span> 242 <span class="at">-p</span> 36 /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf <span class="at">-o</span> ~/Desktop/DejaVuSansMono.bdf</span></code></pre></div>
 </section>
 </section>
 <section id="git" class="level2">
@@ -654,47 +681,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="remote-branches" class="level3">
 <h3 id="remote-branches"><a class="header" href="#remote-branches">remote branches</a></h3>
 <p>列举remote的分支</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 无需联网</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-r</span> [-l <span class="op">&lt;</span>patthern<span class="op">&gt;</span>]</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 需要联网</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote show <span class="op">&lt;</span>remote<span class="op">&gt;</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> ls-remote <span class="op">&lt;</span>remote<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 无需联网</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-r</span> [-l <span class="op">&lt;</span>patthern<span class="op">&gt;</span>]</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 需要联网</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote show <span class="op">&lt;</span>remote<span class="op">&gt;</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> ls-remote <span class="op">&lt;</span>remote<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="查找删除某行的commit" class="level3">
 <h3 id="查找删除某行的commit"><a class="header" href="#查找删除某行的commit">查找删除某行的commit</a></h3>
 <p><a href="https://stackoverflow.com/questions/12591247/how-to-find-commit-when-line-was-deleted-removed">SO: find removed line</a></p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 面对merge节点似乎有问题</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">-c</span> <span class="at">-S</span><span class="st">&#39;&lt;string&gt;&#39;</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">-c</span> <span class="at">-G</span><span class="st">&#39;&lt;regex&gt;&#39;</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 然后搜索</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="ex">/</span><span class="op">&lt;</span>string<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 面对merge节点似乎有问题</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">-c</span> <span class="at">-S</span><span class="st">&#39;&lt;string&gt;&#39;</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> log <span class="at">-c</span> <span class="at">-G</span><span class="st">&#39;&lt;regex&gt;&#39;</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 然后搜索</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="ex">/</span><span class="op">&lt;</span>string<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="clone-server-codes" class="level3">
 <h3 id="clone-server-codes"><a class="header" href="#clone-server-codes">clone server-Codes</a></h3>
-<div class="sourceCode" id="cb28"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git://10.90.50.99/<span class="op">&lt;</span>REPO<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone git://10.90.50.99/<span class="op">&lt;</span>REPO<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="clone-specific-tag" class="level3">
 <h3 id="clone-specific-tag"><a class="header" href="#clone-specific-tag">clone specific-tag</a></h3>
-<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">-b</span> <span class="op">&lt;</span>tag<span class="op">&gt;</span> --depth=1 <span class="op">&lt;</span>repo<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="at">-b</span> <span class="op">&lt;</span>tag<span class="op">&gt;</span> --depth=1 <span class="op">&lt;</span>repo<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="list-remote-tags" class="level3">
 <h3 id="list-remote-tags"><a class="header" href="#list-remote-tags">list remote-tags</a></h3>
-<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> ls-remote <span class="at">--tags</span> <span class="op">&lt;</span>repo<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> ls-remote <span class="at">--tags</span> <span class="op">&lt;</span>repo<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="server-codes" class="level3">
 <h3 id="server-codes"><a class="header" href="#server-codes">server Codes</a></h3>
-<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> daemon <span class="at">--base-path</span><span class="op">=</span>/home/xieby1/Codes/ <span class="at">--export-all</span></span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> daemon <span class="at">--base-path</span><span class="op">=</span>/home/xieby1/Codes/ <span class="at">--export-all</span></span></code></pre></div>
 </section>
 </section>
 <section id="html" class="level2">
 <h2 id="html"><a class="header" href="#html">html</a></h2>
 <section id="span-color" class="level3">
 <h3 id="span-color"><a class="header" href="#span-color">span color</a></h3>
-<div class="sourceCode" id="cb32"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;span</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;background: red; color: white; font-weight: bold;&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;span</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;background: red; color: white; font-weight: bold;&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
 </section>
 <section id="time-stamp" class="level3">
 <h3 id="time-stamp"><a class="header" href="#time-stamp">time stamp</a></h3>
-<div class="sourceCode" id="cb33"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;text-align:right; font-size:3em;&quot;</span><span class="kw">&gt;</span>2022.04.12<span class="kw">&lt;/div&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;text-align:right; font-size:3em;&quot;</span><span class="kw">&gt;</span>2022.04.12<span class="kw">&lt;/div&gt;</span></span></code></pre></div>
 </section>
 </section>
 <section id="inkscape" class="level2">
@@ -730,23 +757,23 @@ Extensions-&gt;Text-&gt;Replace Font</code></pre>
 <h2 id="linux"><a class="header" href="#linux">linux</a></h2>
 <section id="编译" class="level3">
 <h3 id="编译"><a class="header" href="#编译">编译</a></h3>
-<div class="sourceCode" id="cb36"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> defconfig <span class="kw">&amp;&amp;</span> <span class="fu">make</span></span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> defconfig <span class="kw">&amp;&amp;</span> <span class="fu">make</span></span></code></pre></div>
 </section>
 <section id="版本号" class="level3">
 <h3 id="版本号"><a class="header" href="#版本号">版本号</a></h3>
-<div class="sourceCode" id="cb37"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="ex">include/config/kernel.release</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> menuconfig: General setup <span class="at">-</span><span class="op">&gt;</span> Local version</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="ex">include/config/kernel.release</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> menuconfig: General setup <span class="at">-</span><span class="op">&gt;</span> Local version</span></code></pre></div>
 </section>
 <section id="安装" class="level3">
 <h3 id="安装"><a class="header" href="#安装">安装</a></h3>
-<div class="sourceCode" id="cb38"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> INSTALL_PATH=<span class="op">&lt;</span>path<span class="op">&gt;</span> install</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> INSTALL_MOD_PATH=<span class="op">&lt;</span>path<span class="op">&gt;</span> modules_install</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> INSTALL_PATH=<span class="op">&lt;</span>path<span class="op">&gt;</span> install</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> INSTALL_MOD_PATH=<span class="op">&lt;</span>path<span class="op">&gt;</span> modules_install</span></code></pre></div>
 </section>
 <section id="生成源码跳转文件" class="level3">
 <h3 id="生成源码跳转文件"><a class="header" href="#生成源码跳转文件">生成源码跳转文件</a></h3>
-<div class="sourceCode" id="cb39"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 需要先编译</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./scripts/clang-tools/gen_compile_commands.py</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> ARCH=x86 COMPILED_SOURCE=1 cscope</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 需要先编译</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./scripts/clang-tools/gen_compile_commands.py</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> ARCH=x86 COMPILED_SOURCE=1 cscope</span></code></pre></div>
 </section>
 <section id="内部结构" class="level3">
 <h3 id="内部结构"><a class="header" href="#内部结构">内部结构</a></h3>
@@ -762,27 +789,35 @@ Extensions-&gt;Text-&gt;Replace Font</code></pre>
 <h3 id="内核信息重定向"><a class="header" href="#内核信息重定向">内核信息重定向</a></h3>
 <p>ref: <a href="https://www.linuxquestions.org/questions/linux-newbie-8/dmesg-output-to-tty-707524/">dmesg output to tty</a></p>
 <p>x86上不可靠：输出不全，几次就关闭了</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tty</span> <span class="co"># `who am i` may not output</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /proc/kmsg <span class="op">&gt;</span> <span class="op">&lt;</span>stdio dev file<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="ex">tty</span> <span class="co"># `who am i` may not output</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span> /proc/kmsg <span class="op">&gt;</span> <span class="op">&lt;</span>stdio dev file<span class="op">&gt;</span></span></code></pre></div>
 </section>
 </section>
 <section id="make" class="level2">
 <h2 id="make"><a class="header" href="#make">make</a></h2>
+<section id="exec-each-in-list" class="level3">
+<h3 id="exec-each-in-list"><a class="header" href="#exec-each-in-list">exec each in list</a></h3>
+<p><a href="https://stackoverflow.com/questions/12528637/">SO: How do I execute each command in a list?</a></p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode makefile"><code class="sourceCode makefile"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">define</span> \n</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="kw">endef</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="ch">$(</span><span class="kw">foreach</span><span class="st"> x</span><span class="kw">,</span><span class="ch">${</span><span class="dt">list</span><span class="ch">}</span><span class="kw">,</span><span class="st">rm </span><span class="ch">${</span><span class="dt">x</span><span class="ch">}${</span><span class="dt">\n</span><span class="ch">})</span></span></code></pre></div>
+</section>
 <section id="target依赖树" class="level3">
 <h3 id="target依赖树"><a class="header" href="#target依赖树">target依赖树</a></h3>
 <p><a href="https://unix.stackexchange.com/questions/283478/how-to-display-dependencies-given-in-a-makefile-as-a-tree">SO: makefile dependency tree</a></p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-nd</span> <span class="op">&lt;</span>target<span class="op">&gt;</span> <span class="kw">|</span> <span class="ex">make2graph</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co"># makefile2graph &lt;target&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-nd</span> <span class="op">&lt;</span>target<span class="op">&gt;</span> <span class="kw">|</span> <span class="ex">make2graph</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co"># makefile2graph &lt;target&gt;</span></span></code></pre></div>
 </section>
 <section id="列出所有targets" class="level3">
 <h3 id="列出所有targets"><a class="header" href="#列出所有targets">列出所有targets</a></h3>
-<div class="sourceCode" id="cb42"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="ex">remake</span> <span class="at">--targets</span></span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">remake</span> <span class="at">--targets</span></span></code></pre></div>
 </section>
-<section id="语法" class="level3">
-<h3 id="语法"><a class="header" href="#语法">语法</a></h3>
-<div class="sourceCode" id="cb43"><pre class="sourceCode makefile"><code class="sourceCode makefile"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 隐式</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="dv">%:</span><span class="dt">%.c</span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> <span class="ch">$&lt;</span> -o <span class="ch">$@</span></span></code></pre></div>
+<section id="隐式" class="level3">
+<h3 id="隐式"><a class="header" href="#隐式">隐式</a></h3>
+<div class="sourceCode" id="cb45"><pre class="sourceCode makefile"><code class="sourceCode makefile"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="dv">%:</span><span class="dt">%.c</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    <span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> <span class="ch">$&lt;</span> -o <span class="ch">$@</span></span></code></pre></div>
 </section>
 </section>
 <section id="mdbook" class="level2">
@@ -796,109 +831,123 @@ Extensions-&gt;Text-&gt;Replace Font</code></pre>
 <h2 id="network"><a class="header" href="#network">network</a></h2>
 <section id="dns-resolve" class="level3">
 <h3 id="dns-resolve"><a class="header" href="#dns-resolve">dns resolve</a></h3>
-<div class="sourceCode" id="cb44"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="ex">host</span> <span class="op">&lt;</span>domain name<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">host</span> <span class="op">&lt;</span>domain name<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="scan-local" class="level3">
 <h3 id="scan-local"><a class="header" href="#scan-local">scan local</a></h3>
-<div class="sourceCode" id="cb45"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> 192.168.1.0/24</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nmap</span> 192.168.1.0/24</span></code></pre></div>
 </section>
 </section>
 <section id="nix" class="level2">
 <h2 id="nix"><a class="header" href="#nix">nix</a></h2>
+<section id="binary-cache-paths" class="level3">
+<h3 id="binary-cache-paths"><a class="header" href="#binary-cache-paths">binary cache paths</a></h3>
+<p><code>&lt;nix channel url&gt;/store-path.xz</code></p>
+<p>e.g. https://mirror.tuna.tsinghua.edu.cn/nix-channels/nixos-21.11/store-paths.xz</p>
+</section>
+<section id="binary-cache-query" class="level3">
+<h3 id="binary-cache-query"><a class="header" href="#binary-cache-query">binary cache query</a></h3>
+<p>refers to <a href="https://discourse.nixos.org/t/is-it-possible-to-query-the-binary-cache/7893">Discourse: Is it possible to query the binary cache?</a></p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix</span> path-info <span class="dt">\</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>--store https://cache.nixos.org/ <span class="dt">\</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>-f <span class="st">&#39;&lt;nixpkgs&gt;&#39;</span> <span class="dt">\</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>--argstr system x86_64-linux <span class="dt">\</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>pkgs-name<span class="op">&gt;</span></span></code></pre></div>
+</section>
 <section id="build-pkg" class="level3">
 <h3 id="build-pkg"><a class="header" href="#build-pkg">build pkg</a></h3>
-<div class="sourceCode" id="cb46"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-build</span> <span class="st">&#39;&lt;nixpkgs&gt;&#39;</span> <span class="at">-A</span> <span class="op">&lt;</span>pkg<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-build</span> <span class="st">&#39;&lt;nixpkgs&gt;&#39;</span> <span class="at">-A</span> <span class="op">&lt;</span>pkg<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="eval" class="level3">
 <h3 id="eval"><a class="header" href="#eval">eval</a></h3>
-<div class="sourceCode" id="cb47"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix</span> eval <span class="st">&quot;()&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix</span> eval <span class="st">&quot;()&quot;</span></span></code></pre></div>
 </section>
 <section id="list-build-generations" class="level3">
 <h3 id="list-build-generations"><a class="header" href="#list-build-generations">list build-generations</a></h3>
-<div class="sourceCode" id="cb48"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nix-env <span class="at">-p</span> /nix/var/nix/profiles/system <span class="at">--list-generations</span></span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nix-env <span class="at">-p</span> /nix/var/nix/profiles/system <span class="at">--list-generations</span></span></code></pre></div>
 </section>
 <section id="nix-shell-buildinput" class="level3">
 <h3 id="nix-shell-buildinput"><a class="header" href="#nix-shell-buildinput">nix shell-buildinput</a></h3>
-<div class="sourceCode" id="cb49"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-shell</span> <span class="st">&#39;&lt;nixpkgs&gt;&#39;</span> <span class="at">-A</span></span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-shell</span> <span class="st">&#39;&lt;nixpkgs&gt;&#39;</span> <span class="at">-A</span></span></code></pre></div>
 </section>
 <section id="pkg-build-env" class="level3">
 <h3 id="pkg-build-env"><a class="header" href="#pkg-build-env">pkg build-env</a></h3>
-<div class="sourceCode" id="cb50"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-shell</span> <span class="st">&#39;&lt;nixpkgs&gt;&#39;</span> <span class="at">-A</span> <span class="op">&lt;</span>pkg<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-shell</span> <span class="st">&#39;&lt;nixpkgs&gt;&#39;</span> <span class="at">-A</span> <span class="op">&lt;</span>pkg<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="prefetch-url" class="level3">
 <h3 id="prefetch-url"><a class="header" href="#prefetch-url">prefetch url</a></h3>
-<div class="sourceCode" id="cb51"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-prefetch-url</span></span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-prefetch-url</span></span></code></pre></div>
 </section>
 <section id="prefetch-github" class="level3">
 <h3 id="prefetch-github"><a class="header" href="#prefetch-github">prefetch github</a></h3>
-<div class="sourceCode" id="cb52"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-prefetch-url</span> <span class="at">--unpack</span> <span class="dt">\</span></span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>https://github.com/<span class="op">&lt;</span>owner<span class="op">&gt;</span>/</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>repo<span class="op">&gt;</span>/archive/<span class="op">&lt;</span>rev<span class="op">&gt;</span>.tar.gz</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-prefetch-url</span> <span class="at">--unpack</span> <span class="dt">\</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>https://github.com/<span class="op">&lt;</span>owner<span class="op">&gt;</span>/</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>repo<span class="op">&gt;</span>/archive/<span class="op">&lt;</span>rev<span class="op">&gt;</span>.tar.gz</span></code></pre></div>
 </section>
 <section id="sha256" class="level3">
 <h3 id="sha256"><a class="header" href="#sha256">sha256</a></h3>
-<div class="sourceCode" id="cb53"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-hash</span> <span class="at">--type</span> sha256 <span class="dt">\</span></span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>--flat <span class="at">--base32</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-hash</span> <span class="at">--type</span> sha256 <span class="dt">\</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>--flat <span class="at">--base32</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="show-drv" class="level3">
 <h3 id="show-drv"><a class="header" href="#show-drv">show drv</a></h3>
-<div class="sourceCode" id="cb54"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix</span> show-derivation <span class="op">&lt;</span>.drv<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix</span> show-derivation <span class="op">&lt;</span>.drv<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="sys-garbage" class="level3">
 <h3 id="sys-garbage"><a class="header" href="#sys-garbage">sys garbage</a></h3>
-<div class="sourceCode" id="cb55"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nix-collect-garbage <span class="at">-d</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nix-collect-garbage <span class="at">-d</span></span></code></pre></div>
 </section>
 <section id="usr-garbage" class="level3">
 <h3 id="usr-garbage"><a class="header" href="#usr-garbage">usr garbage</a></h3>
-<div class="sourceCode" id="cb56"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-collect-garbage</span> <span class="at">-d</span></span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-collect-garbage</span> <span class="at">-d</span></span></code></pre></div>
 </section>
 <section id="repl" class="level3">
 <h3 id="repl"><a class="header" href="#repl">repl</a></h3>
-<div class="sourceCode" id="cb57"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pkgs</span> = import <span class="op">&lt;</span>nixpkgs<span class="op">&gt;</span> {}</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pkgs</span> = import <span class="op">&lt;</span>nixpkgs<span class="op">&gt;</span> {}</span></code></pre></div>
 </section>
 <section id="old-generations" class="level3">
 <h3 id="old-generations"><a class="header" href="#old-generations">old generations</a></h3>
 <p><a href="https://nixos.wiki/wiki/Storage_optimization">Nix Wiki: Storage Opt</a></p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nix-env <span class="at">-p</span> /nix/var/nix/profiles/system <span class="at">--list-generations</span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nix-collect-garbage <span class="at">-d</span></span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="co"># User Generations (Home-Manager)</span></span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-collect-garbage</span> <span class="at">-d</span></span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nix-env <span class="at">-p</span> /nix/var/nix/profiles/system <span class="at">--list-generations</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nix-collect-garbage <span class="at">-d</span></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="co"># User Generations (Home-Manager)</span></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-collect-garbage</span> <span class="at">-d</span></span></code></pre></div>
 </section>
 <section id="sha256-1" class="level3">
 <h3 id="sha256-1"><a class="header" href="#sha256-1">sha256</a></h3>
 <p><a href="https://github.com/NixOS/nix/issues/1880">GH</a></p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-prefetch-url</span> <span class="at">--unpack</span></span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-prefetch-url</span> <span class="at">--unpack</span></span></code></pre></div>
 </section>
 <section id="path" class="level3">
 <h3 id="path"><a class="header" href="#path">path</a></h3>
 <p><a href="https://nixos.org/guides/nix-pills/nix-search-paths.html">Nix Pills: search Paths</a></p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-instantiate</span> <span class="at">--eval</span> <span class="at">-E</span> <span class="st">&quot;&lt;path&gt;&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-instantiate</span> <span class="at">--eval</span> <span class="at">-E</span> <span class="st">&quot;&lt;path&gt;&quot;</span></span></code></pre></div>
 </section>
 </section>
 <section id="ocr" class="level2">
 <h2 id="ocr"><a class="header" href="#ocr">ocr</a></h2>
 <section id="tesseract" class="level3">
 <h3 id="tesseract"><a class="header" href="#tesseract">tesseract</a></h3>
-<div class="sourceCode" id="cb61"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 列支持的语言</span></span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="ex">tesseract</span> <span class="at">--list-langs</span></span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 列支持的语言</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="ex">tesseract</span> <span class="at">--list-langs</span></span></code></pre></div>
 </section>
 <section id="ocrmypdf" class="level3">
 <h3 id="ocrmypdf"><a class="header" href="#ocrmypdf">ocrmypdf</a></h3>
 <p>详细见<code>ocrmypdf.md</code></p>
 <p>ocr会将原pdf栅格化，</p>
 <p>所以需要分离文本和图片</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 去除文本</span></span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gs</span> <span class="at">-o</span> notext.pdf <span class="at">-dFILTERTEXT</span> <span class="dt">\</span></span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>-sDEVICE=pdfwrite <span class="op">&lt;</span>input.pdf<span class="op">&gt;</span></span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 运行ocr</span></span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="ex">ocrmypdf</span> <span class="at">--force-ocr</span> <span class="at">--output-type</span> pdf <span class="dt">\</span></span>
-<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a>-l <span class="va">$lang</span> notext.pdf ocr.pdf</span>
-<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 去除图片仅保留文本</span></span>
-<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a><span class="fu">gs</span> <span class="at">-o</span> textonly.pdf <span class="at">-dFILTERIMAGE</span> <span class="dt">\</span></span>
-<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>-dFILTERVECTOR <span class="at">-sDEVICE</span><span class="op">=</span>pdfwrite ocr.pdf</span>
-<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 叠加文本</span></span>
-<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a><span class="ex">qpdf</span> notext.pdf <span class="at">--overlay</span> <span class="dt">\</span></span>
-<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a>textonly.pdf <span class="at">--</span> <span class="op">&lt;</span>output.pdf<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 去除文本</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gs</span> <span class="at">-o</span> notext.pdf <span class="at">-dFILTERTEXT</span> <span class="dt">\</span></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a>-sDEVICE=pdfwrite <span class="op">&lt;</span>input.pdf<span class="op">&gt;</span></span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 运行ocr</span></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="ex">ocrmypdf</span> <span class="at">--force-ocr</span> <span class="at">--output-type</span> pdf <span class="dt">\</span></span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>-l <span class="va">$lang</span> notext.pdf ocr.pdf</span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 去除图片仅保留文本</span></span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a><span class="fu">gs</span> <span class="at">-o</span> textonly.pdf <span class="at">-dFILTERIMAGE</span> <span class="dt">\</span></span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a>-dFILTERVECTOR <span class="at">-sDEVICE</span><span class="op">=</span>pdfwrite ocr.pdf</span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 叠加文本</span></span>
+<span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a><span class="ex">qpdf</span> notext.pdf <span class="at">--overlay</span> <span class="dt">\</span></span>
+<span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a>textonly.pdf <span class="at">--</span> <span class="op">&lt;</span>output.pdf<span class="op">&gt;</span></span></code></pre></div>
 </section>
 </section>
 <section id="pandoc" class="level2">
@@ -906,48 +955,48 @@ Extensions-&gt;Text-&gt;Replace Font</code></pre>
 <section id="可用代码高亮" class="level3">
 <h3 id="可用代码高亮"><a class="header" href="#可用代码高亮">可用代码高亮</a></h3>
 <p><a href="https://pandoc.org/MANUAL.html#syntax-highlighting">pandoc: syntax highlighting</a></p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">--list-highlight-languages</span></span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">--list-highlight-languages</span></span></code></pre></div>
 </section>
 <section id="打印默认模板" class="level3">
 <h3 id="打印默认模板"><a class="header" href="#打印默认模板">打印默认模板</a></h3>
-<div class="sourceCode" id="cb64"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-D</span> <span class="op">&lt;</span>FORMAT<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-D</span> <span class="op">&lt;</span>FORMAT<span class="op">&gt;</span></span></code></pre></div>
 </section>
 </section>
 <section id="pic" class="level2">
 <h2 id="pic"><a class="header" href="#pic">pic</a></h2>
 <section id="jpgs2pdf" class="level3">
 <h3 id="jpgs2pdf"><a class="header" href="#jpgs2pdf">jpgs2pdf</a></h3>
-<div class="sourceCode" id="cb65"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="ex">convert</span> input1.jpg input2.jpg input3.jpg output.pdf</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="ex">convert</span> input1.jpg input2.jpg input3.jpg output.pdf</span></code></pre></div>
 </section>
 <section id="resize" class="level3">
 <h3 id="resize"><a class="header" href="#resize">resize</a></h3>
-<div class="sourceCode" id="cb66"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="ex">convert</span> input.xxx <span class="at">-resize</span> 100x200<span class="dt">\!</span> output.xxx</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="ex">convert</span> input.xxx <span class="at">-resize</span> 100x200<span class="dt">\!</span> output.xxx</span></code></pre></div>
 </section>
 </section>
 <section id="pkg" class="level2">
 <h2 id="pkg"><a class="header" href="#pkg">pkg</a></h2>
 <section id="deb" class="level3">
 <h3 id="deb"><a class="header" href="#deb">deb</a></h3>
-<div class="sourceCode" id="cb67"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dpkg-deb</span> <span class="at">-c</span> <span class="op">&lt;</span>package_name.deb<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dpkg-deb</span> <span class="at">-c</span> <span class="op">&lt;</span>package_name.deb<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="installed" class="level3">
 <h3 id="installed"><a class="header" href="#installed">installed</a></h3>
-<div class="sourceCode" id="cb68"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dpkg-query</span> <span class="at">-L</span> <span class="op">&lt;</span>package_name<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="ex">dpkg-query</span> <span class="at">-L</span> <span class="op">&lt;</span>package_name<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="not-installed" class="level3">
 <h3 id="not-installed"><a class="header" href="#not-installed">not installed</a></h3>
-<div class="sourceCode" id="cb69"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-file</span> list <span class="op">&lt;</span>package_name<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="ex">apt-file</span> list <span class="op">&lt;</span>package_name<span class="op">&gt;</span></span></code></pre></div>
 </section>
 </section>
 <section id="qemu-1" class="level2">
 <h2 id="qemu-1"><a class="header" href="#qemu-1">qemu</a></h2>
 <section id="smb" class="level3">
 <h3 id="smb"><a class="header" href="#smb">smb</a></h3>
-<div class="sourceCode" id="cb70"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mount</span> <span class="at">-t</span> cifs <span class="at">-o</span> user=miao%miao //10.0.2.4/qemu Host/</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mount</span> <span class="at">-t</span> cifs <span class="at">-o</span> user=miao%miao //10.0.2.4/qemu Host/</span></code></pre></div>
 </section>
 <section id="system-file-disk" class="level3">
 <h3 id="system-file-disk"><a class="header" href="#system-file-disk">system file disk</a></h3>
-<div class="sourceCode" id="cb71"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[qemu-sys]</span> <span class="at">-m</span> 16 <span class="at">-nographic</span> <span class="at">-fda</span> [file]</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[qemu-sys]</span> <span class="at">-m</span> 16 <span class="at">-nographic</span> <span class="at">-fda</span> [file]</span></code></pre></div>
 </section>
 </section>
 <section id="revealjs" class="level2">
@@ -968,72 +1017,72 @@ right click: eraser</code></pre>
 <h2 id="rust"><a class="header" href="#rust">rust</a></h2>
 <section id="installed-targets" class="level3">
 <h3 id="installed-targets"><a class="header" href="#installed-targets">installed targets</a></h3>
-<div class="sourceCode" id="cb73"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rustup</span> show</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rustup</span> show</span></code></pre></div>
 </section>
 <section id="交叉编译" class="level3">
 <h3 id="交叉编译"><a class="header" href="#交叉编译">交叉编译</a></h3>
-<div class="sourceCode" id="cb74"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rustc</span> <span class="at">--print</span> target-list</span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rustup</span> target add <span class="op">&lt;</span>TARGET<span class="op">&gt;</span></span>
-<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build <span class="at">--target</span><span class="op">=&lt;</span>TARGET<span class="op">&gt;</span> --release</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="ex">rustc</span> <span class="at">--print</span> target-list</span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="ex">rustup</span> target add <span class="op">&lt;</span>TARGET<span class="op">&gt;</span></span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="ex">cargo</span> build <span class="at">--target</span><span class="op">=&lt;</span>TARGET<span class="op">&gt;</span> --release</span></code></pre></div>
 </section>
 </section>
 <section id="sixu" class="level2">
 <h2 id="sixu"><a class="header" href="#sixu">sixu</a></h2>
 <section id="all" class="level3">
 <h3 id="all"><a class="header" href="#all">all</a></h3>
-<div class="sourceCode" id="cb75"><pre class="sourceCode dot"><code class="sourceCode dot"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co">// command line:</span></span>
-<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a><span class="co">//   dot -Tsvg -O sixu.dot</span></span>
-<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a><span class="kw">digraph</span> <span class="ot">{</span></span>
-<span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a><span class="co">// attributes</span></span>
-<span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a><span class="co">/// graph</span></span>
-<span id="cb75-8"><a href="#cb75-8" aria-hidden="true" tabindex="-1"></a><span class="at">rankdir</span><span class="ot">=</span><span class="va">BT</span><span class="ot">;</span></span>
-<span id="cb75-9"><a href="#cb75-9" aria-hidden="true" tabindex="-1"></a><span class="co">/// subgraph</span></span>
-<span id="cb75-10"><a href="#cb75-10" aria-hidden="true" tabindex="-1"></a><span class="va">newrank</span><span class="ot">=</span><span class="va">true</span><span class="ot">;</span></span>
-<span id="cb75-11"><a href="#cb75-11" aria-hidden="true" tabindex="-1"></a><span class="at">style</span><span class="ot">=</span><span class="va">filled</span><span class="ot">;</span></span>
-<span id="cb75-12"><a href="#cb75-12" aria-hidden="true" tabindex="-1"></a><span class="co">//// color name: https://graphviz.org/doc/info/colors.html</span></span>
-<span id="cb75-13"><a href="#cb75-13" aria-hidden="true" tabindex="-1"></a><span class="at">color</span><span class="ot">=</span><span class="va">whitesmoke</span><span class="ot">;</span></span>
-<span id="cb75-14"><a href="#cb75-14" aria-hidden="true" tabindex="-1"></a><span class="co">/// node</span></span>
-<span id="cb75-15"><a href="#cb75-15" aria-hidden="true" tabindex="-1"></a><span class="kw">node</span><span class="ot">[</span></span>
-<span id="cb75-16"><a href="#cb75-16" aria-hidden="true" tabindex="-1"></a><span class="at">shape</span><span class="ot">=</span><span class="va">box</span><span class="co">,</span></span>
-<span id="cb75-17"><a href="#cb75-17" aria-hidden="true" tabindex="-1"></a><span class="at">style</span><span class="ot">=</span><span class="st">&quot;filled, solid&quot;</span><span class="co">,</span></span>
-<span id="cb75-18"><a href="#cb75-18" aria-hidden="true" tabindex="-1"></a><span class="at">color</span><span class="ot">=</span><span class="va">black</span><span class="co">,</span></span>
-<span id="cb75-19"><a href="#cb75-19" aria-hidden="true" tabindex="-1"></a><span class="at">fillcolor</span><span class="ot">=</span><span class="va">white</span><span class="co">,</span></span>
-<span id="cb75-20"><a href="#cb75-20" aria-hidden="true" tabindex="-1"></a><span class="ot">];</span></span>
-<span id="cb75-21"><a href="#cb75-21" aria-hidden="true" tabindex="-1"></a><span class="co">/// edge</span></span>
-<span id="cb75-22"><a href="#cb75-22" aria-hidden="true" tabindex="-1"></a><span class="kw">edge</span><span class="ot">[</span></span>
-<span id="cb75-23"><a href="#cb75-23" aria-hidden="true" tabindex="-1"></a><span class="at">minlen</span><span class="ot">=</span><span class="dv">1</span><span class="co">,</span></span>
-<span id="cb75-24"><a href="#cb75-24" aria-hidden="true" tabindex="-1"></a><span class="co">//weight=1,</span></span>
-<span id="cb75-25"><a href="#cb75-25" aria-hidden="true" tabindex="-1"></a><span class="co">// If false, the edge is not used in ranking the nodes.</span></span>
-<span id="cb75-26"><a href="#cb75-26" aria-hidden="true" tabindex="-1"></a><span class="co">//constraint=true,</span></span>
-<span id="cb75-27"><a href="#cb75-27" aria-hidden="true" tabindex="-1"></a><span class="ot">];</span></span>
-<span id="cb75-28"><a href="#cb75-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-29"><a href="#cb75-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-30"><a href="#cb75-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb75-31"><a href="#cb75-31" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode dot"><code class="sourceCode dot"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co">// command line:</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a><span class="co">//   dot -Tsvg -O sixu.dot</span></span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a><span class="kw">digraph</span> <span class="ot">{</span></span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a><span class="co">// attributes</span></span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a><span class="co">/// graph</span></span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a><span class="at">rankdir</span><span class="ot">=</span><span class="va">BT</span><span class="ot">;</span></span>
+<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a><span class="co">/// subgraph</span></span>
+<span id="cb78-10"><a href="#cb78-10" aria-hidden="true" tabindex="-1"></a><span class="va">newrank</span><span class="ot">=</span><span class="va">true</span><span class="ot">;</span></span>
+<span id="cb78-11"><a href="#cb78-11" aria-hidden="true" tabindex="-1"></a><span class="at">style</span><span class="ot">=</span><span class="va">filled</span><span class="ot">;</span></span>
+<span id="cb78-12"><a href="#cb78-12" aria-hidden="true" tabindex="-1"></a><span class="co">//// color name: https://graphviz.org/doc/info/colors.html</span></span>
+<span id="cb78-13"><a href="#cb78-13" aria-hidden="true" tabindex="-1"></a><span class="at">color</span><span class="ot">=</span><span class="va">whitesmoke</span><span class="ot">;</span></span>
+<span id="cb78-14"><a href="#cb78-14" aria-hidden="true" tabindex="-1"></a><span class="co">/// node</span></span>
+<span id="cb78-15"><a href="#cb78-15" aria-hidden="true" tabindex="-1"></a><span class="kw">node</span><span class="ot">[</span></span>
+<span id="cb78-16"><a href="#cb78-16" aria-hidden="true" tabindex="-1"></a><span class="at">shape</span><span class="ot">=</span><span class="va">box</span><span class="co">,</span></span>
+<span id="cb78-17"><a href="#cb78-17" aria-hidden="true" tabindex="-1"></a><span class="at">style</span><span class="ot">=</span><span class="st">&quot;filled, solid&quot;</span><span class="co">,</span></span>
+<span id="cb78-18"><a href="#cb78-18" aria-hidden="true" tabindex="-1"></a><span class="at">color</span><span class="ot">=</span><span class="va">black</span><span class="co">,</span></span>
+<span id="cb78-19"><a href="#cb78-19" aria-hidden="true" tabindex="-1"></a><span class="at">fillcolor</span><span class="ot">=</span><span class="va">white</span><span class="co">,</span></span>
+<span id="cb78-20"><a href="#cb78-20" aria-hidden="true" tabindex="-1"></a><span class="ot">];</span></span>
+<span id="cb78-21"><a href="#cb78-21" aria-hidden="true" tabindex="-1"></a><span class="co">/// edge</span></span>
+<span id="cb78-22"><a href="#cb78-22" aria-hidden="true" tabindex="-1"></a><span class="kw">edge</span><span class="ot">[</span></span>
+<span id="cb78-23"><a href="#cb78-23" aria-hidden="true" tabindex="-1"></a><span class="at">minlen</span><span class="ot">=</span><span class="dv">1</span><span class="co">,</span></span>
+<span id="cb78-24"><a href="#cb78-24" aria-hidden="true" tabindex="-1"></a><span class="co">//weight=1,</span></span>
+<span id="cb78-25"><a href="#cb78-25" aria-hidden="true" tabindex="-1"></a><span class="co">// If false, the edge is not used in ranking the nodes.</span></span>
+<span id="cb78-26"><a href="#cb78-26" aria-hidden="true" tabindex="-1"></a><span class="co">//constraint=true,</span></span>
+<span id="cb78-27"><a href="#cb78-27" aria-hidden="true" tabindex="-1"></a><span class="ot">];</span></span>
+<span id="cb78-28"><a href="#cb78-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-29"><a href="#cb78-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-30"><a href="#cb78-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-31"><a href="#cb78-31" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code></pre></div>
 </section>
 <section id="today" class="level3">
 <h3 id="today"><a class="header" href="#today">today</a></h3>
-<div class="sourceCode" id="cb76"><pre class="sourceCode dot"><code class="sourceCode dot"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;22Apr12+&quot;</span> <span class="ot">-&gt;</span> <span class="st">&quot;22Apr12-&quot;</span> <span class="ot">-&gt;</span> <span class="st">&quot;22Apr12+&quot;</span><span class="ot">;</span></span>
-<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="kw">subgraph</span> <span class="va">cluster_22Apr12</span></span>
-<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="ot">{</span></span>
-<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a><span class="va">x22Apr12_</span></span>
-<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span>
-<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a><span class="ot">{</span><span class="at">rank</span><span class="ot">=</span><span class="va">same</span><span class="ot">;</span></span>
-<span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;22Apr12-&quot;</span><span class="ot">;</span></span>
-<span id="cb76-8"><a href="#cb76-8" aria-hidden="true" tabindex="-1"></a><span class="va">x22Apr12_</span></span>
-<span id="cb76-9"><a href="#cb76-9" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span>
-<span id="cb76-10"><a href="#cb76-10" aria-hidden="true" tabindex="-1"></a><span class="ot">{</span><span class="at">rank</span><span class="ot">=</span><span class="va">same</span><span class="ot">;</span></span>
-<span id="cb76-11"><a href="#cb76-11" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;22Apr12+&quot;</span><span class="ot">;</span></span>
-<span id="cb76-12"><a href="#cb76-12" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode dot"><code class="sourceCode dot"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;22Apr12+&quot;</span> <span class="ot">-&gt;</span> <span class="st">&quot;22Apr12-&quot;</span> <span class="ot">-&gt;</span> <span class="st">&quot;22Apr12+&quot;</span><span class="ot">;</span></span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="kw">subgraph</span> <span class="va">cluster_22Apr12</span></span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a><span class="ot">{</span></span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a><span class="va">x22Apr12_</span></span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span>
+<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a><span class="ot">{</span><span class="at">rank</span><span class="ot">=</span><span class="va">same</span><span class="ot">;</span></span>
+<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;22Apr12-&quot;</span><span class="ot">;</span></span>
+<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a><span class="va">x22Apr12_</span></span>
+<span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span>
+<span id="cb79-10"><a href="#cb79-10" aria-hidden="true" tabindex="-1"></a><span class="ot">{</span><span class="at">rank</span><span class="ot">=</span><span class="va">same</span><span class="ot">;</span></span>
+<span id="cb79-11"><a href="#cb79-11" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;22Apr12+&quot;</span><span class="ot">;</span></span>
+<span id="cb79-12"><a href="#cb79-12" aria-hidden="true" tabindex="-1"></a><span class="ot">}</span></span></code></pre></div>
 </section>
 </section>
 <section id="systemd-unit" class="level2">
 <h2 id="systemd-unit"><a class="header" href="#systemd-unit">systemd unit</a></h2>
 <section id="afterbefore说明" class="level3">
 <h3 id="afterbefore说明"><a class="header" href="#afterbefore说明">After/Before说明</a></h3>
-<div class="sourceCode" id="cb77"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> systemd.unit</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">man</span> systemd.unit</span></code></pre></div>
 </section>
 <section id="user目录" class="level3">
 <h3 id="user目录"><a class="header" href="#user目录">user目录</a></h3>
@@ -1042,47 +1091,29 @@ right click: eraser</code></pre>
 </section>
 <section id="service状态" class="level3">
 <h3 id="service状态"><a class="header" href="#service状态">service状态</a></h3>
-<div class="sourceCode" id="cb78"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="ex">systemctl</span> <span class="at">--user</span> status <span class="op">&lt;</span>service<span class="op">&gt;</span></span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a><span class="ex">journalctl</span> <span class="at">--user</span> <span class="at">-u</span> <span class="op">&lt;</span>service<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="ex">systemctl</span> <span class="at">--user</span> status <span class="op">&lt;</span>service<span class="op">&gt;</span></span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="ex">journalctl</span> <span class="at">--user</span> <span class="at">-u</span> <span class="op">&lt;</span>service<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="列举unit类" class="level3">
 <h3 id="列举unit类"><a class="header" href="#列举unit类">列举unit类</a></h3>
-<div class="sourceCode" id="cb79"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 例如列出list</span></span>
-<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="ex">systemctl</span> list-units <span class="at">--type</span> target</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 例如列出list</span></span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a><span class="ex">systemctl</span> list-units <span class="at">--type</span> target</span></code></pre></div>
 </section>
 </section>
 <section id="vim" class="level2">
 <h2 id="vim"><a class="header" href="#vim">vim</a></h2>
-<section id="list-syntaxs" class="level3">
-<h3 id="list-syntaxs"><a class="header" href="#list-syntaxs">list syntaxs</a></h3>
-<div class="sourceCode" id="cb80"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> /usr/share/vim/vim81/syntax/</span></code></pre></div>
-</section>
-<section id="set-syntax" class="level3">
-<h3 id="set-syntax"><a class="header" href="#set-syntax">set syntax</a></h3>
-<pre class="vim"><code>:set syntax=</code></pre>
-</section>
 <section id="explore" class="level3">
 <h3 id="explore"><a class="header" href="#explore">Explore</a></h3>
 <pre class="vim"><code>; open current file&#39;s dir
 :E[xplore]</code></pre>
 </section>
-<section id="syntax" class="level3">
-<h3 id="syntax"><a class="header" href="#syntax">syntax</a></h3>
-<pre class="vim"><code>; set
-:set syntax=html
-; get
-:set syntax</code></pre>
+<section id="list-syntaxs" class="level3">
+<h3 id="list-syntaxs"><a class="header" href="#list-syntaxs">list syntaxs</a></h3>
+<div class="sourceCode" id="cb84"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="op">&lt;</span><span class="va">$VIMRUNTIME</span><span class="op">&gt;</span>/syntax/</span></code></pre></div>
 </section>
 <section id="markdown-toc" class="level3">
 <h3 id="markdown-toc"><a class="header" href="#markdown-toc">markdown toc</a></h3>
 <pre class="vim"><code>:GenTocGFM</code></pre>
-</section>
-<section id="split调整" class="level3">
-<h3 id="split调整"><a class="header" href="#split调整">split调整</a></h3>
-<pre class="vim"><code>c-w _ ;当前窗口最高
-c-w = ;所有窗口等高
-:on ;关闭所有其他窗口
-c-w o ;同上</code></pre>
 </section>
 <section id="mapped-keys" class="level3">
 <h3 id="mapped-keys"><a class="header" href="#mapped-keys">mapped keys</a></h3>
@@ -1091,13 +1122,35 @@ c-w o ;同上</code></pre>
 :map
 :h inex</code></pre>
 </section>
-<section id="status-line" class="level3">
-<h3 id="status-line"><a class="header" href="#status-line">status line</a></h3>
-<pre class="vim"><code>set laststatus=2</code></pre>
-</section>
 <section id="popup-window" class="level3">
 <h3 id="popup-window"><a class="header" href="#popup-window">popup window</a></h3>
 <pre class="vim"><code>🐁 &lt;leader&gt;[</code></pre>
+</section>
+<section id="runtime-folder" class="level3">
+<h3 id="runtime-folder"><a class="header" href="#runtime-folder">runtime folder</a></h3>
+<pre class="vim"><code>:echo $VIMRUNTIME</code></pre>
+</section>
+<section id="split调整" class="level3">
+<h3 id="split调整"><a class="header" href="#split调整">split调整</a></h3>
+<pre class="vim"><code>c-w _ ;当前窗口最高
+c-w = ;所有窗口等高
+:on ;关闭所有其他窗口
+c-w o ;同上</code></pre>
+</section>
+<section id="set-syntax" class="level3">
+<h3 id="set-syntax"><a class="header" href="#set-syntax">set syntax</a></h3>
+<pre class="vim"><code>:set syntax=</code></pre>
+</section>
+<section id="syntax" class="level3">
+<h3 id="syntax"><a class="header" href="#syntax">syntax</a></h3>
+<pre class="vim"><code>; set
+:set syntax=html
+; get
+:set syntax</code></pre>
+</section>
+<section id="status-line" class="level3">
+<h3 id="status-line"><a class="header" href="#status-line">status line</a></h3>
+<pre class="vim"><code>set laststatus=2</code></pre>
 </section>
 <section id="jumplist" class="level3">
 <h3 id="jumplist"><a class="header" href="#jumplist">jumplist</a></h3>
@@ -1164,6 +1217,18 @@ O &quot; new tab open
 &lt;F9&gt;</code></pre>
 </section>
 </section>
+<section id="wsl" class="level2">
+<h2 id="wsl"><a class="header" href="#wsl">WSL</a></h2>
+<section id="shrink-vdisk" class="level3">
+<h3 id="shrink-vdisk"><a class="header" href="#shrink-vdisk">shrink vdisk</a></h3>
+<div class="sourceCode" id="cb103"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a>diskpart</span>
+<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span> vdisk \</span>
+<span id="cb103-3"><a href="#cb103-3" aria-hidden="true" tabindex="-1"></a>file<span class="op">=</span><span class="st">&quot;C:\Users\&lt;User&gt;\AppData\Local\ \</span></span>
+<span id="cb103-4"><a href="#cb103-4" aria-hidden="true" tabindex="-1"></a>Packages\CanonicalGroupLimited<span class="op">.</span><span class="fu">UbuntuonWindows</span><span class="op">...</span> \</span>
+<span id="cb103-5"><a href="#cb103-5" aria-hidden="true" tabindex="-1"></a>\LocalState\ext4<span class="op">.</span><span class="fu">vhdx</span><span class="st">&quot;</span></span>
+<span id="cb103-6"><a href="#cb103-6" aria-hidden="true" tabindex="-1"></a>compact vdisk</span></code></pre></div>
+</section>
+</section>
 <section id="x11" class="level2">
 <h2 id="x11"><a class="header" href="#x11">x11</a></h2>
 <section id="restart-server" class="level3">
@@ -1176,43 +1241,51 @@ r</code></pre>
 <h2 id="xdg"><a class="header" href="#xdg">xdg</a></h2>
 <section id="xdg-mime" class="level3">
 <h3 id="xdg-mime"><a class="header" href="#xdg-mime">xdg-mime</a></h3>
-<div class="sourceCode" id="cb100"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xdg-mime</span> query filetype <span class="op">&lt;</span>file<span class="op">&gt;</span></span>
-<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="ex">xdg-mime</span> query default <span class="op">&lt;</span>type<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xdg-mime</span> query filetype <span class="op">&lt;</span>file<span class="op">&gt;</span></span>
+<span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="ex">xdg-mime</span> query default <span class="op">&lt;</span>type<span class="op">&gt;</span></span></code></pre></div>
 </section>
 </section>
 <section id="单个分散的操作" class="level2">
 <h2 id="单个分散的操作"><a class="header" href="#单个分散的操作">单个、分散的操作</a></h2>
 <section id="crypt" class="level3">
 <h3 id="crypt"><a class="header" href="#crypt">crypt</a></h3>
-<div class="sourceCode" id="cb101"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">perl</span> <span class="at">-e</span> <span class="st">&quot;print crypt(&#39;wjxby&#39;,&#39;xb&#39;);&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">perl</span> <span class="at">-e</span> <span class="st">&quot;print crypt(&#39;wjxby&#39;,&#39;xb&#39;);&quot;</span></span></code></pre></div>
 </section>
 <section id="pkg-config" class="level3">
 <h3 id="pkg-config"><a class="header" href="#pkg-config">pkg-config</a></h3>
-<div class="sourceCode" id="cb102"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取package的名字</span></span>
-<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pkg-config</span> <span class="at">--list-all</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="op">&lt;</span>xxx<span class="op">&gt;</span></span>
-<span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取c编译、链接参数</span></span>
-<span id="cb102-4"><a href="#cb102-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pkg-config</span> <span class="at">--cflags</span> <span class="at">--libs</span> <span class="op">&lt;</span>pkg<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取package的名字</span></span>
+<span id="cb107-2"><a href="#cb107-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pkg-config</span> <span class="at">--list-all</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="op">&lt;</span>xxx<span class="op">&gt;</span></span>
+<span id="cb107-3"><a href="#cb107-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取c编译、链接参数</span></span>
+<span id="cb107-4"><a href="#cb107-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pkg-config</span> <span class="at">--cflags</span> <span class="at">--libs</span> <span class="op">&lt;</span>pkg<span class="op">&gt;</span></span></code></pre></div>
+</section>
+<section id="pdftohtml" class="level3">
+<h3 id="pdftohtml"><a class="header" href="#pdftohtml">pdftohtml</a></h3>
+<div class="sourceCode" id="cb108"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pdftotext</span> <span class="at">-noframes</span> <span class="at">-i</span> <span class="at">-q</span> <span class="at">-p</span> <span class="at">-c</span> <span class="op">&lt;</span>pdf<span class="op">&gt;</span></span></code></pre></div>
+</section>
+<section id="pdftotext" class="level3">
+<h3 id="pdftotext"><a class="header" href="#pdftotext">pdftotext</a></h3>
+<div class="sourceCode" id="cb109"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pdftotext</span> <span class="at">-q</span> <span class="op">&lt;</span>pdf<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="进程树" class="level3">
 <h3 id="进程树"><a class="header" href="#进程树">进程树</a></h3>
-<div class="sourceCode" id="cb103"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-jHg</span> <span class="op">&lt;</span>pid<span class="op">&gt;</span> # 进程子树</span>
-<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pstree</span> <span class="at">-psal</span> <span class="op">&lt;</span>pid<span class="op">&gt;</span> # 完整树</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-jHg</span> <span class="op">&lt;</span>pid<span class="op">&gt;</span> # 进程子树</span>
+<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pstree</span> <span class="at">-psal</span> <span class="op">&lt;</span>pid<span class="op">&gt;</span> # 完整树</span></code></pre></div>
 </section>
 <section id="python-object属性" class="level3">
 <h3 id="python-object属性"><a class="header" href="#python-object属性">python object属性</a></h3>
-<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>()</span>
-<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="bu">vars</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>()</span>
+<span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a><span class="bu">vars</span>()</span></code></pre></div>
 </section>
 <section id="new-user" class="level3">
 <h3 id="new-user"><a class="header" href="#new-user">new user</a></h3>
-<div class="sourceCode" id="cb105"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="ex">adduser</span> xieby1</span>
-<span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="ex">usermod</span> <span class="at">-aG</span> sudo xieby1</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="ex">adduser</span> xieby1</span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="ex">usermod</span> <span class="at">-aG</span> sudo xieby1</span></code></pre></div>
 </section>
 <section id="gcc预定义宏" class="level3">
 <h3 id="gcc预定义宏"><a class="header" href="#gcc预定义宏">gcc预定义宏</a></h3>
 <p><a href="https://stackoverflow.com/questions/10904873/anyway-to-see-list-of-preprocessor-defined-macros">2012.SO: preprocessor defined macros</a></p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="at">-dM</span> <span class="at">-E</span> <span class="at">-</span> <span class="op">&lt;</span> /dev/null</span>
-<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> bla.c <span class="kw">&amp;&amp;</span> <span class="fu">gcc</span> <span class="at">-dM</span> <span class="at">-E</span> bla.c</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="at">-dM</span> <span class="at">-E</span> <span class="at">-</span> <span class="op">&lt;</span> /dev/null</span>
+<span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> bla.c <span class="kw">&amp;&amp;</span> <span class="fu">gcc</span> <span class="at">-dM</span> <span class="at">-E</span> bla.c</span></code></pre></div>
 </section>
 <section id="drawio-no-snapping" class="level3">
 <h3 id="drawio-no-snapping"><a class="header" href="#drawio-no-snapping">drawio no snapping</a></h3>
