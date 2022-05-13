@@ -1,8 +1,8 @@
 % Doc Thoughts
 % 🤓xieby1
-% 2022.4.?
+% 2022.5.?
 
-# HT
+# Motivation
 
 <!-- Number of slides is huge, so toc is huge -->
 <style>
@@ -531,8 +531,442 @@ Composite ISA
 [112] Intel R 64 and IA-32 Architectures Optimization Reference Manual.
 :::
 
-# My works
+# ISA HT Summary
 
-* kernel
+<h2>Pros</h2>
+
+* a new arch design: ISA HT
+* higher perfermance, less energy
+
+<h2>Cons</h2>
+
+* (intrinsic) need re-compilation
+* not implement in OS
+
+# My Ideas
+
+<h2>Pros</h2>
+
+* a new arch design: ISA HT
+* higher perfermance, less energy
+
+::: {.container}
+:::: {.col}
+<h2>Cons</h2>
+
+* (intrinsic) need re-compilation
+* not implement in OS (kernel)
+::::
+:::: {.col}
+<h2>Improvements</h2>
+
+* no re-compilation: focus on BT
+* implement in OS (kernel)
+::::
+:::
+
+## More Specific
+
+::: {.container}
+:::: {.col}
+**Venkat's idea**
+
+* re-compiled apps
+* *kernel*
 * compiler
-* uArch
+* ISA HT
+::::
+:::: {.col}
+**My idea**
+
+* original apps
+* kernel
+* BT
+* ISA HT
+::::
+:::: {.col}
+<img src="./pictures/isa_ht_for_bt.svg" style="zoom: 200%;">
+::::
+:::
+
+## guest ISA core
+
+::: {.container}
+:::: {.col}
+<img src="./pictures/guest_isa_core.svg" style="zoom: 200%;">
+::::
+:::: {.col}
+* SW BT: no legit problem
+* KBT: inspired by KVM
+  * Host/Guest seperate VA space
+* uops: no PC mismatch problem
+  * no indirect jump problem
+* uops: designed for Host/Guest
+  * e.g. Host/ARM uops
+  * e.g. Host/x86 uops
+::::
+:::
+
+## My plan
+
+* uops: IR + graph algorithm
+  * BT IR
+  * ISA Semantics IR
+* uArch: Gem5 + McPat
+  * prove performance improvement
+  * prove energy saving
+* kernel: ISA-HT QEMU-sys
+  * ISA-HT QEMU-sys replace Gem5
+
+# My Works
+
+Goal: A Methodology to generate uops
+
+<h2>An analogue</h2>
+
+| Linear Algebra          | Computer Science            |
+|-------------------------|-----------------------------|
+| Vector A vs Vector B    | Host ISA vs Guest ISA       |
+| Common Base Vector      | Intermediate Representation |
+| Distance                | Distance?                   |
+| Linear Independent Base | minimal Cover?              |
+
+## Choose IR
+
+* BT IR
+  * QEMU tcg
+  * LLVM IR
+* Semantics ISA IR
+
+## Semantics ISA IR
+
+* cakeml[1], ACL2, K[2], FuzzBall[3], sail\[4\][5], ...
+
+<h3>Goal</h3>
+
+* Model ISA in math rigorous language.
+* Auto generate test-orcale tool.
+* Compute allowed behaviours in test cases.
+* Provide reference for HW/SW dev.
+
+:::{style="zoom:40%;"}
+* \[1\]: Kumar, Ramana et al. “CakeML: a verified implementation of ML.” Proceedings of the 41st ACM SIGPLAN-SIGACT (2014).
+* \[2\]: Dasgupta, Sandeep et al. “A complete formal semantics of x86-64 user-level instruction set architecture.” Proceedings of the 40th ACM SIGPLAN (2019).
+* \[3\]: https://github.com/bitblaze-fuzzball/fuzzball
+* \[4\]: Gray, Kathryn E. et al. “An integrated concurrency and core-ISA architectural envelope definition, and test oracle, for IBM POWER multiprocessors.” 48th MICRO (2015): 635-646.
+* \[5\]: Armstrong, Alasdair et al. “Detailed Models of Instruction Set Architectures : From Pseudocode to Formal Semantics.” (2018).
+:::
+
+## FuzzBall
+
+Compilation
+
+<img src="./pictures/multi2multi.svg" style="zoom: 150%;">
+
+Parameterization
+
+<img src="./pictures/para.svg" style="zoom: 150%;">
+
+:::{style="zoom: 40%;"}
+Wang, Wenwen et al. “Enhancing Cross-ISA DBT Through Automatically Learned Translation Rules.” 23rd ASPLOS (2018).
+:::
+
+## FuzzBall
+
+<img src="./pictures/para.svg" style="zoom: 150%;">
+
+FuzBall Symbolic Execution (Simplified Ver.)
+
+```
+r1_output  = r0 + r1 - 1
+edx_output = eax + edx + (-1)
+```
+
+SMT Solver
+
+```
+∀ x,y ∈ int32
+┌─r0 = eax = x
+├─r1 = edx = y
+└─r0 + r1 -1 = eax + edx + (-1)
+```
+
+## Sail
+
+Focus on ISA concurrecny model
+
+<img src="./pictures/2015.power_mp_sync_ctrl.svg" style="zoom:200%;">
+
+## Summary
+
+* Goal: A Methodology to generate uops
+* Tool: IR
+* Algorithm: Distance? Cover?
+
+# Distance
+
+| Linear Algebra          | Computer Science            |
+|-------------------------|-----------------------------|
+| Vector A vs Vector B    | Host ISA vs Guest ISA       |
+| Common Base Vector      | Intermediate Representation |
+| Distance                | Distance?                   |
+
+:::{.fragment}
+An Inst => several IRs => A Graph
+:::
+
+:::{.fragment}
+Graph Distance[1]
+:::
+
+:::{.fragment style="zoom: 50%;"}
+\[1\]: **Algo Intro**: Bengoetxea, Endika. “Inexact Graph Matching Using Estimation of Distribution Algorithms.” Doc Thesis (2002).
+:::
+
+## Extract Pattern from Graphs
+
+* Once we have Distance,
+  * Divide Graphs into groups.
+* Once we have Distance,
+  * Gradient descent.
+
+```
+get_a_uop_from_group:
+    while (true)
+        g = Gradient(uop, group)
+        if (g < τ)
+            yield uop
+            break
+        uop += ε * g
+```
+
+Unsupervised Learning: extract
+
+:::{style="zoom: 45%;"}
+\[1\]: Zhang, Quanshi et al. “Attributed Graph Mining and Matching: An Attempt to Define and Extract Soft Attributed Patterns.” CVPR (2014).
+:::
+
+## My Implementation
+
+* ISA: aarch64 & x86-64
+* IR: LLVM IR
+
+::: {.container}
+:::: {.col}
+1. Remill[1]: an Inst => several LLVM IRs
+2. LLVM Pass: several LLVM IRs => a Graph
+3. networkx (python): graph algorithm
+  * graph edit distance
+  * aarch64:33 * x86-64:351 = 11582 pairs
+::::
+:::: {.col}
+x64: ADD_GPR8_MEMb
+
+<img src="./pictures/ISEL_ADD_GPR8_MEMb-gai.dot.svg" style="zoom:200%;">
+::::
+:::
+
+:::{style="zoom: 50%;"}
+\[1]: https://github.com/lifting-bits/remill
+:::
+
+## Graph Edit Distance
+
+::: {.container}
+:::: {.col}
+aarch64: ADD_64_ADDSUB_EXT
+
+<img src="./pictures/ISEL_ADD_64_ADDSUB_EXT-gai.dot.svg" style="zoom:100%;">
+::::
+:::: {.col}
+x64: ADD_GPR8_MEMb
+
+<img src="./pictures/ISEL_ADD_GPR8_MEMb-gai.dot.svg" style="zoom:100%;">
+::::
+:::
+
+Add 2 nodes, 2 edges.
+
+Naive_GED = 2 + 2 = 4
+
+## Result
+
+[S…L…O…W…]{.fragment style="zoom:200%;"}
+[…]{.fragment style="zoom:200%;"}
+[…]{.fragment style="zoom:200%;"}
+[…🐢]{.fragment style="zoom:200%;"}
+
+:::{.fragment}
+* graph edit distance
+* aarch64:33 * x86-64:351 = 11582 pairs
+:::
+
+:::{.fragment style="zoom:200%;"}
+It takes a whole night!
+:::
+
+## Why
+
+<h3>Definitely</h3>
+
+* LLVM generate too much info
+  * e.g. PUNPCKHBW MMXq MEMq: ~50 nodes
+  <img src="./pictures/ISEL_PUNPCKHBW_MMXq_MEMq.O3.dot.svg" style="zoom:50%;">
+* Graph Edit Distance too complex
+  * N-node graph * N-node graph: time ~O(N!)
+
+<h3>Maybe</h3>
+
+* python is slow
+
+# Cover
+
+| Linear Algebra          | Computer Science            |
+|-------------------------|-----------------------------|
+| Vector A vs Vector B    | Host ISA vs Guest ISA       |
+| Common Base Vector      | <span class="fragment strike" data-fragment-index="3">Intermediate Representation</span> <span class="fragment" data-fragment-index="3">Sub-Graphs</span> |
+| Distance                | ~~Distance?~~               |
+| Linear Independent Base | minimal Cover?              |
+
+:::{.fragment data-fragment-index="1"}
+An Inst => several IRs => A Graph
+:::
+
+:::{.fragment data-fragment-index="2"}
+A Graph => All its Sub-Graphs
+:::
+
+:::{.fragment data-fragment-index="4"}
+For all Insts, counting their Sub-Graphs freq.
+:::
+
+## More Specific
+
+* Get all Sub-graphs of a Inst
+* Count Sub-Graphs freq. for all Insts
+* Use weighted (freq.) Sub-Graphs, to minial cover Insts
+
+## My Implementation - 123
+
+* ISA: aarch64 & x86-64
+* IR: QEMU TCG
+* Lang: CPP
+
+1. asmjit[1]: enumerate Insts
+2. QEMU-user single-step: an Inst => several TCGs
+3. these TCGs => a Graph
+
+:::{style="zoom: 50%;"}
+\[1]: https://github.com/asmjit/asmjit.git
+:::
+
+## preprocess TCGs
+
+::: {.container}
+:::: {.col}
+aarch64 Inst
+
+```
+2D48003A : setf16 w1
+```
+
+TCGs
+
+```
+mov_i32 tmp0,reg0
+shl_i32 NF,tmp0,0x10
+shl_i32 VF,tmp0,0xf
+mov_i32 ZF,NF
+xor_i32 VF,VF,NF
+```
+::::
+:::: {.col}
+Parameterization
+
+* w1 => reg0
+
+Not SSA
+
+* tmp0: multiple values
+::::
+:::
+
+## TCGs to a Graph
+
+::: {.container}
+:::: {.col}
+aarch64 Inst
+
+```
+2D48003A : setf16 reg0
+```
+
+TCGs
+
+```
+mov_i32 tmp0,reg0
+shl_i32 NF,tmp0,0x10
+shl_i32 VF,tmp0,0xf
+mov_i32 ZF,NF
+xor_i32 VF,VF,NF
+```
+::::
+:::: {.col}
+<img src="./pictures/2D48003A.dot.svg" style="zoom:60%;">
+::::
+:::
+
+## My Implementation - 456
+
+4. this Graph => all Induced-Connected Sub-Graphs
+  Induced: all edges connecting pairs of nodes are in Sub-Graph
+5. count the freq. of these Sub-Graphs => map {freq, Sub-Graphs}
+6. cover Insts with minial **weight** by using these Sub-Graphs
+  naive_weight = freq
+
+## Induced-Connected Sub-Graphs
+
+::: {.container}
+:::: {.col}
+<img src="./pictures/2D48003A.dot.svg" style="zoom:60%;">
+::::
+:::: {.col}
+enumerate Induced Connected Sub-Graphs by recursive algo. Time: ~O(2^n)
+
+* nodes: 11
+* compute_nodes: 5 (num of TCGs)
+* Induced Sub-Graphs: 32 = 2^5
+* Induced Connected Sub-Graphs: 22
+::::
+:::
+
+## Count freq of Sub-Graphs
+
+* Sub-Graphs => string => hash => hash table
+* Num of Sub-Graphs
+  * Inst ~ 5 nodes
+  * Graph ~ 2^5 ~ 30 Sub-Graphs
+  * ~700 aarch64 Insts
+  * ~10^4 Sub-Graphs
+
+## Result so far
+
+:::{style="zoom:70%;"}
+1. ☑ asmjit[1]: enumerate Insts
+2. ☑ QEMU-user single-step: an Inst => several TCGs
+3. ☑ these TCGs => a Graph
+4. ☑ this Graph => all Induced-Connected Sub-Graphs
+5. ☑ count the freq. of these Sub-Graphs => map {freq, Sub-Graphs}
+6. ☐ cover Insts with minial **weight** by using these Sub-Graphs
+:::
+
+<h3>Insteresting Info</h3>
+
+* Program run in several seconds
+* 797 aarch64 basic Insts => 29315 Sub-Graphs
+* most weighted Sub-Graph
+```
+shl_i64 =tmp1,tmp0,0x8
+sar_i64 =tmp2,tmp1,0x8
+and_i64 =tmp4,@01b4e86a93660d9f,tmp3;
+```

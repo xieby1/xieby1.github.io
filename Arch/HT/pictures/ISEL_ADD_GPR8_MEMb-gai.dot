@@ -1,0 +1,15 @@
+digraph{
+dst_coerce[label="dst"];
+src1_coerce[label="src1"];
+src2_coerce[label="src2"];
+conv_i[label="trunc"];
+src1_coerce -> conv_i;
+call_i[label="read_memory_8"];
+src2_coerce -> call_i;
+add_i[label="add"];
+call_i -> add_i;
+conv_i -> add_i;
+inst0[label="store"];
+add_i -> inst0;
+dst_coerce -> inst0;
+}

@@ -344,7 +344,23 @@ cat /proc/kmsg > <stdio dev file>
 
 ## make
 
-### exec each in list
+### terminology
+
+```makefile
+# a rule
+target … : prerequisites …
+	recipe
+	…
+```
+
+### all executables
+
+```makefile
+EXECUTABLES=$(patsubst %.cpp, %, $(wildcard *.cpp))
+all: ${EXECUTABLES}
+```
+
+### clean executables
 
 [SO: How do I execute each command in a list?](https://stackoverflow.com/questions/12528637/)
 
@@ -353,7 +369,14 @@ define \n
 
 
 endef
-$(foreach x,${list},rm ${x}${\n})
+$(foreach x,${EXECUTABLES},rm ${x}${\n})
+```
+
+### implicit rule
+
+```makefile
+%:%.c
+	$(CC) $< -o $@
 ```
 
 ### target依赖树
@@ -369,13 +392,6 @@ make -nd <target> | make2graph
 
 ```bash
 remake --targets
-```
-
-### 隐式
-
-```makefile
-%:%.c
-	$(CC) $< -o $@
 ```
 
 ## mdbook
@@ -426,6 +442,14 @@ nix path-info \
 nix-build '<nixpkgs>' -A <pkg>
 ```
 
+### escape indented str
+
+```bash
+''
+    ''${bash_var}
+''
+```
+
 ### eval
 
 ```bash
@@ -442,6 +466,12 @@ sudo nix-env -p /nix/var/nix/profiles/system --list-generations
 
 ```bash
 nix-shell '<nixpkgs>' -A
+```
+
+### pkg not in nixpkgs
+
+```bash
+nix-shell -E "with import <nixpkgs> {}; callPackage ./default.nix {}"
 ```
 
 ### pkg build-env
@@ -1002,4 +1032,10 @@ iconv -f gb18030 -t utf-8 <output>
 
 ```
  | xclip -selection clipboard
+```
+
+### sort first column
+
+```bash
+sort -s -n -k 1,1
 ```

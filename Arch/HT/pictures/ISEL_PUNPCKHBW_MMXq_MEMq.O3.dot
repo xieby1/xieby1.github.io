@@ -1,0 +1,135 @@
+digraph{
+memory[label="memory"];
+state[label="state"];
+dst_coerce[label="dst_coerce"];
+src1_coerce[label="src1_coerce"];
+src2_coerce[label="src2_coerce"];
+src1_vec_sroa_3_0_extract_shift[label="lshr"];
+src1_coerce -> src1_vec_sroa_3_0_extract_shift;
+Imm0[label="20"]
+Imm0 -> src1_vec_sroa_3_0_extract_shift;
+add_4_i[label="add"];
+src2_coerce -> add_4_i;
+Imm1[label="4"]
+Imm1 -> add_4_i;
+call_4_i[label="call"];
+memory -> call_4_i;
+add_4_i -> call_4_i;
+__remill_read_memory_8 -> call_4_i;
+add_5_i[label="add"];
+src2_coerce -> add_5_i;
+Imm2[label="5"]
+Imm2 -> add_5_i;
+call_5_i[label="call"];
+memory -> call_5_i;
+add_5_i -> call_5_i;
+__remill_read_memory_8 -> call_5_i;
+add_6_i[label="add"];
+src2_coerce -> add_6_i;
+Imm3[label="6"]
+Imm3 -> add_6_i;
+call_6_i[label="call"];
+memory -> call_6_i;
+add_6_i -> call_6_i;
+__remill_read_memory_8 -> call_6_i;
+add_7_i[label="add"];
+src2_coerce -> add_7_i;
+Imm4[label="7"]
+Imm4 -> add_7_i;
+call_7_i[label="call"];
+memory -> call_7_i;
+add_7_i -> call_7_i;
+__remill_read_memory_8 -> call_7_i;
+inst5[label="lshr"];
+src1_coerce -> inst5;
+Imm6[label="38"]
+Imm6 -> inst5;
+inst7[label="lshr"];
+src1_coerce -> inst7;
+Imm8[label="30"]
+Imm8 -> inst7;
+inst9[label="lshr"];
+src1_coerce -> inst9;
+Imm10[label="28"]
+Imm10 -> inst9;
+dst_vec_sroa_0_0_extract_trunc56_le[label="trunc"];
+src1_vec_sroa_3_0_extract_shift -> dst_vec_sroa_0_0_extract_trunc56_le;
+dst_vec_sroa_8_0_extract_trunc60_le[label="trunc"];
+inst9 -> dst_vec_sroa_8_0_extract_trunc60_le;
+dst_vec_sroa_10_0_extract_trunc64_le[label="trunc"];
+inst7 -> dst_vec_sroa_10_0_extract_trunc64_le;
+dst_vec_sroa_12_0_extract_trunc68_le[label="trunc"];
+inst5 -> dst_vec_sroa_12_0_extract_trunc68_le;
+elems1_i[label="bitcast"];
+dst_coerce -> elems1_i;
+arrayidx2_i[label="bitcast"];
+dst_coerce -> arrayidx2_i;
+inst11[label="store"];
+dst_vec_sroa_0_0_extract_trunc56_le -> inst11;
+arrayidx2_i -> inst11;
+arrayidx2_1_i[label="getelementptr"];
+elems1_i -> arrayidx2_1_i;
+Imm12[label="0"]
+Imm12 -> arrayidx2_1_i;
+Imm13[label="1"]
+Imm13 -> arrayidx2_1_i;
+inst14[label="store"];
+call_4_i -> inst14;
+arrayidx2_1_i -> inst14;
+arrayidx2_2_i[label="getelementptr"];
+elems1_i -> arrayidx2_2_i;
+Imm15[label="0"]
+Imm15 -> arrayidx2_2_i;
+Imm16[label="2"]
+Imm16 -> arrayidx2_2_i;
+inst17[label="store"];
+dst_vec_sroa_8_0_extract_trunc60_le -> inst17;
+arrayidx2_2_i -> inst17;
+arrayidx2_3_i[label="getelementptr"];
+elems1_i -> arrayidx2_3_i;
+Imm18[label="0"]
+Imm18 -> arrayidx2_3_i;
+Imm19[label="3"]
+Imm19 -> arrayidx2_3_i;
+inst20[label="store"];
+call_5_i -> inst20;
+arrayidx2_3_i -> inst20;
+arrayidx2_4_i[label="getelementptr"];
+elems1_i -> arrayidx2_4_i;
+Imm21[label="0"]
+Imm21 -> arrayidx2_4_i;
+Imm22[label="4"]
+Imm22 -> arrayidx2_4_i;
+inst23[label="store"];
+dst_vec_sroa_10_0_extract_trunc64_le -> inst23;
+arrayidx2_4_i -> inst23;
+arrayidx2_5_i[label="getelementptr"];
+elems1_i -> arrayidx2_5_i;
+Imm24[label="0"]
+Imm24 -> arrayidx2_5_i;
+Imm25[label="5"]
+Imm25 -> arrayidx2_5_i;
+inst26[label="store"];
+call_6_i -> inst26;
+arrayidx2_5_i -> inst26;
+arrayidx2_6_i[label="getelementptr"];
+elems1_i -> arrayidx2_6_i;
+Imm27[label="0"]
+Imm27 -> arrayidx2_6_i;
+Imm28[label="6"]
+Imm28 -> arrayidx2_6_i;
+inst29[label="store"];
+dst_vec_sroa_12_0_extract_trunc68_le -> inst29;
+arrayidx2_6_i -> inst29;
+arrayidx2_7_i[label="getelementptr"];
+elems1_i -> arrayidx2_7_i;
+Imm30[label="0"]
+Imm30 -> arrayidx2_7_i;
+Imm31[label="7"]
+Imm31 -> arrayidx2_7_i;
+inst32[label="store"];
+call_7_i -> inst32;
+arrayidx2_7_i -> inst32;
+inst33[label="ret"];
+memory -> inst33;
+}
