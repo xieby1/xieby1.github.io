@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<mxfile host="Electron" modified="2022-05-11T15:44:42.496Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/15.7.3 Chrome/91.0.4472.164 Electron/13.6.1 Safari/537.36" etag="6PqSeIijJdAYnD45IuSe" version="15.7.3" type="device">
+  <diagram id="PuQBIiHJGGjWXFLN1AKw" name="Page-1">
+    <mxGraphModel dx="2" dy="1" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="gW2qjSdH-BU49Pkqxa6X-1" value="SW&lt;br&gt;BT" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="300" y="120" width="60" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="gW2qjSdH-BU49Pkqxa6X-2" value="uops" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="160" width="120" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="gW2qjSdH-BU49Pkqxa6X-3" value="Host&lt;br&gt;User ISA" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="80" width="60" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="gW2qjSdH-BU49Pkqxa6X-4" value="HW&lt;br&gt;Decoder" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="240" y="120" width="60" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="gW2qjSdH-BU49Pkqxa6X-5" value="Guest&lt;br&gt;User ISA" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="300" y="80" width="60" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="gW2qjSdH-BU49Pkqxa6X-6" value="Host&lt;br&gt;Sys ISA" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="80" width="80" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="gW2qjSdH-BU49Pkqxa6X-8" value="..." style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="145" y="140" width="30" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="gW2qjSdH-BU49Pkqxa6X-9" value="KBT&lt;br&gt;Ext Sys ISA" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="80" width="80" height="30" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

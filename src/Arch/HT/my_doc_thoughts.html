@@ -107,18 +107,18 @@
 <section id="title-slide">
   <h1 class="title">Doc Thoughts</h1>
   <p class="author">🤓xieby1</p>
-  <p class="date">2022.4.?</p>
+  <p class="date">2022.5.?</p>
 </section>
 <section id="TOC">
 <nav role="doc-toc"> 
 <ul>
-<li><a href="#/ht"><span class="toc-section-number">1</span> HT</a>
+<li><a href="#/motivation"><span class="toc-section-number">1</span> Motivation</a>
 <ul>
 <li><a href="#/multi-isa-ht"><span class="toc-section-number">1.1</span> Multi-ISA HT</a></li>
 </ul></li>
 <li><a href="#/process-migration"><span class="toc-section-number">2</span> Process Migration</a>
 <ul>
-<li><a href="#/motivation"><span class="toc-section-number">2.1</span> Motivation</a></li>
+<li><a href="#/motivation-1"><span class="toc-section-number">2.1</span> Motivation</a></li>
 <li><a href="#/overview"><span class="toc-section-number">2.2</span> Overview</a></li>
 <li><a href="#/state-transformation"><span class="toc-section-number">2.3</span> State Transformation</a></li>
 <li><a href="#/result-analysis"><span class="toc-section-number">2.4</span> Result &amp; Analysis</a></li>
@@ -141,7 +141,7 @@
 <li><a href="#/mitigate-rop-attack"><span class="toc-section-number">4</span> Mitigate ROP Attack</a></li>
 <li><a href="#/composite-isa"><span class="toc-section-number">5</span> Composite ISA</a>
 <ul>
-<li><a href="#/motivation-1"><span class="toc-section-number">5.1</span> Motivation</a></li>
+<li><a href="#/motivation-2"><span class="toc-section-number">5.1</span> Motivation</a></li>
 <li><a href="#/isa-design-space"><span class="toc-section-number">5.2</span> ISA Design Space</a></li>
 <li><a href="#/uarch-design-space-1"><span class="toc-section-number">5.3</span> uArch Design Space</a></li>
 <li><a href="#/results-analysis"><span class="toc-section-number">5.4</span> Results &amp; Analysis</a></li>
@@ -151,14 +151,48 @@
 <li><a href="#/summary-2"><span class="toc-section-number">5.8</span> Summary</a></li>
 <li><a href="#/doubt"><span class="toc-section-number">5.9</span> Doubt</a></li>
 </ul></li>
-<li><a href="#/my-works"><span class="toc-section-number">6</span> My works</a></li>
+<li><a href="#/isa-ht-summary"><span class="toc-section-number">6</span> ISA HT Summary</a></li>
+<li><a href="#/my-ideas"><span class="toc-section-number">7</span> My Ideas</a>
+<ul>
+<li><a href="#/more-specific"><span class="toc-section-number">7.1</span> More Specific</a></li>
+<li><a href="#/guest-isa-core"><span class="toc-section-number">7.2</span> guest ISA core</a></li>
+<li><a href="#/my-plan"><span class="toc-section-number">7.3</span> My plan</a></li>
+</ul></li>
+<li><a href="#/my-works"><span class="toc-section-number">8</span> My Works</a>
+<ul>
+<li><a href="#/choose-ir"><span class="toc-section-number">8.1</span> Choose IR</a></li>
+<li><a href="#/semantics-isa-ir"><span class="toc-section-number">8.2</span> Semantics ISA IR</a></li>
+<li><a href="#/fuzzball"><span class="toc-section-number">8.3</span> FuzzBall</a></li>
+<li><a href="#/fuzzball-1"><span class="toc-section-number">8.4</span> FuzzBall</a></li>
+<li><a href="#/sail"><span class="toc-section-number">8.5</span> Sail</a></li>
+<li><a href="#/summary-3"><span class="toc-section-number">8.6</span> Summary</a></li>
+</ul></li>
+<li><a href="#/distance"><span class="toc-section-number">9</span> Distance</a>
+<ul>
+<li><a href="#/extract-pattern-from-graphs"><span class="toc-section-number">9.1</span> Extract Pattern from Graphs</a></li>
+<li><a href="#/my-implementation"><span class="toc-section-number">9.2</span> My Implementation</a></li>
+<li><a href="#/graph-edit-distance"><span class="toc-section-number">9.3</span> Graph Edit Distance</a></li>
+<li><a href="#/result"><span class="toc-section-number">9.4</span> Result</a></li>
+<li><a href="#/why"><span class="toc-section-number">9.5</span> Why</a></li>
+</ul></li>
+<li><a href="#/cover"><span class="toc-section-number">10</span> Cover</a>
+<ul>
+<li><a href="#/more-specific-1"><span class="toc-section-number">10.1</span> More Specific</a></li>
+<li><a href="#/my-implementation---123"><span class="toc-section-number">10.2</span> My Implementation - 123</a></li>
+<li><a href="#/preprocess-tcgs"><span class="toc-section-number">10.3</span> preprocess TCGs</a></li>
+<li><a href="#/tcgs-to-a-graph"><span class="toc-section-number">10.4</span> TCGs to a Graph</a></li>
+<li><a href="#/my-implementation---456"><span class="toc-section-number">10.5</span> My Implementation - 456</a></li>
+<li><a href="#/induced-connected-sub-graphs"><span class="toc-section-number">10.6</span> Induced-Connected Sub-Graphs</a></li>
+<li><a href="#/count-freq-of-sub-graphs"><span class="toc-section-number">10.7</span> Count freq of Sub-Graphs</a></li>
+<li><a href="#/result-so-far"><span class="toc-section-number">10.8</span> Result so far</a></li>
+</ul></li>
 </ul>
 </nav>
 </section>
 
 <section>
-<section id="ht" class="title-slide slide level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> HT</h1>
+<section id="motivation" class="title-slide slide level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Motivation</h1>
 <!-- Number of slides is huge, so toc is huge -->
 <style>
 [role="doc-toc"] {zoom: 60%;}
@@ -237,7 +271,7 @@ Execution Migration in a Heterogeneous-ISA Chip Multiprocessor
 <p>University of California, San Diego</p>
 <p>2012 asplos 95</p>
 </section>
-<section id="motivation" class="slide level2" data-number="2.1">
+<section id="motivation-1" class="slide level2" data-number="2.1">
 <h2 data-number="2.1"><span class="header-section-number">2.1</span> Motivation</h2>
 <p>Single-ISA HT v.s. Single-ISA HM (Homogeneous)</p>
 <ul>
@@ -720,7 +754,7 @@ Composite-ISA Cores: Enabling Multi-ISA Heterogeneity Using a Single ISA
 </div>
 <p>2019 hpca 17</p>
 </section>
-<section id="motivation-1" class="slide level2" data-number="5.1">
+<section id="motivation-2" class="slide level2" data-number="5.1">
 <h2 data-number="5.1"><span class="header-section-number">5.1</span> Motivation</h2>
 <h3>
 HT ISA problems
@@ -1027,14 +1061,535 @@ Overall feature downgradation
 <p>[112] Intel R 64 and IA-32 Architectures Optimization Reference Manual.</p>
 </div>
 </section></section>
-<section id="my-works" class="title-slide slide level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> My works</h1>
+<section id="isa-ht-summary" class="title-slide slide level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> ISA HT Summary</h1>
+<h2>
+Pros
+</h2>
 <ul>
-<li>kernel</li>
-<li>compiler</li>
-<li>uArch</li>
+<li>a new arch design: ISA HT</li>
+<li>higher perfermance, less energy</li>
+</ul>
+<h2>
+Cons
+</h2>
+<ul>
+<li>(intrinsic) need re-compilation</li>
+<li>not implement in OS</li>
 </ul>
 </section>
+
+<section>
+<section id="my-ideas" class="title-slide slide level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> My Ideas</h1>
+<h2>
+Pros
+</h2>
+<ul>
+<li>a new arch design: ISA HT</li>
+<li>higher perfermance, less energy</li>
+</ul>
+<div class="container">
+<div class="col">
+<h2>
+Cons
+</h2>
+<ul>
+<li>(intrinsic) need re-compilation</li>
+<li>not implement in OS (kernel)</li>
+</ul>
+</div>
+<div class="col">
+<h2>
+Improvements
+</h2>
+<ul>
+<li>no re-compilation: focus on BT</li>
+<li>implement in OS (kernel)</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="more-specific" class="slide level2" data-number="7.1">
+<h2 data-number="7.1"><span class="header-section-number">7.1</span> More Specific</h2>
+<div class="container">
+<div class="col">
+<p><strong>Venkat’s idea</strong></p>
+<ul>
+<li>re-compiled apps</li>
+<li><em>kernel</em></li>
+<li>compiler</li>
+<li>ISA HT</li>
+</ul>
+</div>
+<div class="col">
+<p><strong>My idea</strong></p>
+<ul>
+<li>original apps</li>
+<li>kernel</li>
+<li>BT</li>
+<li>ISA HT</li>
+</ul>
+</div>
+<div class="col">
+<p><img src="./pictures/isa_ht_for_bt.svg" style="zoom: 200%;"></p>
+</div>
+</div>
+</section>
+<section id="guest-isa-core" class="slide level2" data-number="7.2">
+<h2 data-number="7.2"><span class="header-section-number">7.2</span> guest ISA core</h2>
+<div class="container">
+<div class="col">
+<p><img src="./pictures/guest_isa_core.svg" style="zoom: 200%;"></p>
+</div>
+<div class="col">
+<ul>
+<li>SW BT: no legit problem</li>
+<li>KBT: inspired by KVM
+<ul>
+<li>Host/Guest seperate VA space</li>
+</ul></li>
+<li>uops: no PC mismatch problem
+<ul>
+<li>no indirect jump problem</li>
+</ul></li>
+<li>uops: designed for Host/Guest
+<ul>
+<li>e.g. Host/ARM uops</li>
+<li>e.g. Host/x86 uops</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="my-plan" class="slide level2" data-number="7.3">
+<h2 data-number="7.3"><span class="header-section-number">7.3</span> My plan</h2>
+<ul>
+<li>uops: IR + graph algorithm
+<ul>
+<li>BT IR</li>
+<li>ISA Semantics IR</li>
+</ul></li>
+<li>uArch: Gem5 + McPat
+<ul>
+<li>prove performance improvement</li>
+<li>prove energy saving</li>
+</ul></li>
+<li>kernel: ISA-HT QEMU-sys
+<ul>
+<li>ISA-HT QEMU-sys replace Gem5</li>
+</ul></li>
+</ul>
+</section></section>
+<section>
+<section id="my-works" class="title-slide slide level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> My Works</h1>
+<p>Goal: A Methodology to generate uops</p>
+<h2>
+An analogue
+</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Linear Algebra</th>
+<th>Computer Science</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Vector A vs Vector B</td>
+<td>Host ISA vs Guest ISA</td>
+</tr>
+<tr class="even">
+<td>Common Base Vector</td>
+<td>Intermediate Representation</td>
+</tr>
+<tr class="odd">
+<td>Distance</td>
+<td>Distance?</td>
+</tr>
+<tr class="even">
+<td>Linear Independent Base</td>
+<td>minimal Cover?</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="choose-ir" class="slide level2" data-number="8.1">
+<h2 data-number="8.1"><span class="header-section-number">8.1</span> Choose IR</h2>
+<ul>
+<li>BT IR
+<ul>
+<li>QEMU tcg</li>
+<li>LLVM IR</li>
+</ul></li>
+<li>Semantics ISA IR</li>
+</ul>
+</section>
+<section id="semantics-isa-ir" class="slide level2" data-number="8.2">
+<h2 data-number="8.2"><span class="header-section-number">8.2</span> Semantics ISA IR</h2>
+<ul>
+<li>cakeml[1], ACL2, K[2], FuzzBall[3], sail[4][5], …</li>
+</ul>
+<h3>
+Goal
+</h3>
+<ul>
+<li>Model ISA in math rigorous language.</li>
+<li>Auto generate test-orcale tool.</li>
+<li>Compute allowed behaviours in test cases.</li>
+<li>Provide reference for HW/SW dev.</li>
+</ul>
+<div style="zoom:40%;">
+<ul>
+<li>[1]: Kumar, Ramana et al. “CakeML: a verified implementation of ML.” Proceedings of the 41st ACM SIGPLAN-SIGACT (2014).</li>
+<li>[2]: Dasgupta, Sandeep et al. “A complete formal semantics of x86-64 user-level instruction set architecture.” Proceedings of the 40th ACM SIGPLAN (2019).</li>
+<li>[3]: https://github.com/bitblaze-fuzzball/fuzzball</li>
+<li>[4]: Gray, Kathryn E. et al. “An integrated concurrency and core-ISA architectural envelope definition, and test oracle, for IBM POWER multiprocessors.” 48th MICRO (2015): 635-646.</li>
+<li>[5]: Armstrong, Alasdair et al. “Detailed Models of Instruction Set Architectures : From Pseudocode to Formal Semantics.” (2018).</li>
+</ul>
+</div>
+</section>
+<section id="fuzzball" class="slide level2" data-number="8.3">
+<h2 data-number="8.3"><span class="header-section-number">8.3</span> FuzzBall</h2>
+<p>Compilation</p>
+<p><img src="./pictures/multi2multi.svg" style="zoom: 150%;"></p>
+<p>Parameterization</p>
+<p><img src="./pictures/para.svg" style="zoom: 150%;"></p>
+<div style="zoom: 40%;">
+<p>Wang, Wenwen et al. “Enhancing Cross-ISA DBT Through Automatically Learned Translation Rules.” 23rd ASPLOS (2018).</p>
+</div>
+</section>
+<section id="fuzzball-1" class="slide level2" data-number="8.4">
+<h2 data-number="8.4"><span class="header-section-number">8.4</span> FuzzBall</h2>
+<p><img src="./pictures/para.svg" style="zoom: 150%;"></p>
+<p>FuzBall Symbolic Execution (Simplified Ver.)</p>
+<pre><code>r1_output  = r0 + r1 - 1
+edx_output = eax + edx + (-1)</code></pre>
+<p>SMT Solver</p>
+<pre><code>∀ x,y ∈ int32
+┌─r0 = eax = x
+├─r1 = edx = y
+└─r0 + r1 -1 = eax + edx + (-1)</code></pre>
+</section>
+<section id="sail" class="slide level2" data-number="8.5">
+<h2 data-number="8.5"><span class="header-section-number">8.5</span> Sail</h2>
+<p>Focus on ISA concurrecny model</p>
+<p><img src="./pictures/2015.power_mp_sync_ctrl.svg" style="zoom:200%;"></p>
+</section>
+<section id="summary-3" class="slide level2" data-number="8.6">
+<h2 data-number="8.6"><span class="header-section-number">8.6</span> Summary</h2>
+<ul>
+<li>Goal: A Methodology to generate uops</li>
+<li>Tool: IR</li>
+<li>Algorithm: Distance? Cover?</li>
+</ul>
+</section></section>
+<section>
+<section id="distance" class="title-slide slide level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Distance</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Linear Algebra</th>
+<th>Computer Science</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Vector A vs Vector B</td>
+<td>Host ISA vs Guest ISA</td>
+</tr>
+<tr class="even">
+<td>Common Base Vector</td>
+<td>Intermediate Representation</td>
+</tr>
+<tr class="odd">
+<td>Distance</td>
+<td>Distance?</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>An Inst =&gt; several IRs =&gt; A Graph</p>
+</div>
+<div class="fragment">
+<p>Graph Distance[1]</p>
+</div>
+<div class="fragment" style="zoom: 50%;">
+<p>[1]: <strong>Algo Intro</strong>: Bengoetxea, Endika. “Inexact Graph Matching Using Estimation of Distribution Algorithms.” Doc Thesis (2002).</p>
+</div>
+</section>
+<section id="extract-pattern-from-graphs" class="slide level2" data-number="9.1">
+<h2 data-number="9.1"><span class="header-section-number">9.1</span> Extract Pattern from Graphs</h2>
+<ul>
+<li>Once we have Distance,
+<ul>
+<li>Divide Graphs into groups.</li>
+</ul></li>
+<li>Once we have Distance,
+<ul>
+<li>Gradient descent.</li>
+</ul></li>
+</ul>
+<pre><code>get_a_uop_from_group:
+    while (true)
+        g = Gradient(uop, group)
+        if (g &lt; τ)
+            yield uop
+            break
+        uop += ε * g</code></pre>
+<p>Unsupervised Learning: extract</p>
+<div style="zoom: 45%;">
+<p>[1]: Zhang, Quanshi et al. “Attributed Graph Mining and Matching: An Attempt to Define and Extract Soft Attributed Patterns.” CVPR (2014).</p>
+</div>
+</section>
+<section id="my-implementation" class="slide level2" data-number="9.2">
+<h2 data-number="9.2"><span class="header-section-number">9.2</span> My Implementation</h2>
+<ul>
+<li>ISA: aarch64 &amp; x86-64</li>
+<li>IR: LLVM IR</li>
+</ul>
+<div class="container">
+<div class="col">
+<ol type="1">
+<li>Remill[1]: an Inst =&gt; several LLVM IRs</li>
+<li>LLVM Pass: several LLVM IRs =&gt; a Graph</li>
+<li>networkx (python): graph algorithm</li>
+</ol>
+<ul>
+<li>graph edit distance</li>
+<li>aarch64:33 * x86-64:351 = 11582 pairs</li>
+</ul>
+</div>
+<div class="col">
+<p>x64: ADD_GPR8_MEMb</p>
+<p><img src="./pictures/ISEL_ADD_GPR8_MEMb-gai.dot.svg" style="zoom:200%;"></p>
+</div>
+</div>
+<div style="zoom: 50%;">
+<p>[1]: https://github.com/lifting-bits/remill</p>
+</div>
+</section>
+<section id="graph-edit-distance" class="slide level2" data-number="9.3">
+<h2 data-number="9.3"><span class="header-section-number">9.3</span> Graph Edit Distance</h2>
+<div class="container">
+<div class="col">
+<p>aarch64: ADD_64_ADDSUB_EXT</p>
+<p><img src="./pictures/ISEL_ADD_64_ADDSUB_EXT-gai.dot.svg" style="zoom:100%;"></p>
+</div>
+<div class="col">
+<p>x64: ADD_GPR8_MEMb</p>
+<p><img src="./pictures/ISEL_ADD_GPR8_MEMb-gai.dot.svg" style="zoom:100%;"></p>
+</div>
+</div>
+<p>Add 2 nodes, 2 edges.</p>
+<p>Naive_GED = 2 + 2 = 4</p>
+</section>
+<section id="result" class="slide level2" data-number="9.4">
+<h2 data-number="9.4"><span class="header-section-number">9.4</span> Result</h2>
+<p><span class="fragment" style="zoom:200%;">S…L…O…W…</span> <span class="fragment" style="zoom:200%;">…</span> <span class="fragment" style="zoom:200%;">…</span> <span class="fragment" style="zoom:200%;">…🐢</span></p>
+<div class="fragment">
+<ul>
+<li>graph edit distance</li>
+<li>aarch64:33 * x86-64:351 = 11582 pairs</li>
+</ul>
+</div>
+<div class="fragment" style="zoom:200%;">
+<p>It takes a whole night!</p>
+</div>
+</section>
+<section id="why" class="slide level2" data-number="9.5">
+<h2 data-number="9.5"><span class="header-section-number">9.5</span> Why</h2>
+<h3>
+Definitely
+</h3>
+<ul>
+<li>LLVM generate too much info
+<ul>
+<li>e.g. PUNPCKHBW MMXq MEMq: ~50 nodes <img src="./pictures/ISEL_PUNPCKHBW_MMXq_MEMq.O3.dot.svg" style="zoom:50%;"></li>
+</ul></li>
+<li>Graph Edit Distance too complex
+<ul>
+<li>N-node graph * N-node graph: time ~O(N!)</li>
+</ul></li>
+</ul>
+<h3>
+Maybe
+</h3>
+<ul>
+<li>python is slow</li>
+</ul>
+</section></section>
+<section>
+<section id="cover" class="title-slide slide level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Cover</h1>
+<table>
+<thead>
+<tr class="header">
+<th>Linear Algebra</th>
+<th>Computer Science</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Vector A vs Vector B</td>
+<td>Host ISA vs Guest ISA</td>
+</tr>
+<tr class="even">
+<td>Common Base Vector</td>
+<td><span class="fragment strike" data-fragment-index="3">Intermediate Representation</span> <span class="fragment" data-fragment-index="3">Sub-Graphs</span></td>
+</tr>
+<tr class="odd">
+<td>Distance</td>
+<td><del>Distance?</del></td>
+</tr>
+<tr class="even">
+<td>Linear Independent Base</td>
+<td>minimal Cover?</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment" data-fragment-index="1">
+<p>An Inst =&gt; several IRs =&gt; A Graph</p>
+</div>
+<div class="fragment" data-fragment-index="2">
+<p>A Graph =&gt; All its Sub-Graphs</p>
+</div>
+<div class="fragment" data-fragment-index="4">
+<p>For all Insts, counting their Sub-Graphs freq.</p>
+</div>
+</section>
+<section id="more-specific-1" class="slide level2" data-number="10.1">
+<h2 data-number="10.1"><span class="header-section-number">10.1</span> More Specific</h2>
+<ul>
+<li>Get all Sub-graphs of a Inst</li>
+<li>Count Sub-Graphs freq. for all Insts</li>
+<li>Use weighted (freq.) Sub-Graphs, to minial cover Insts</li>
+</ul>
+</section>
+<section id="my-implementation---123" class="slide level2" data-number="10.2">
+<h2 data-number="10.2"><span class="header-section-number">10.2</span> My Implementation - 123</h2>
+<ul>
+<li>ISA: aarch64 &amp; x86-64</li>
+<li>IR: QEMU TCG</li>
+<li>Lang: CPP</li>
+</ul>
+<ol type="1">
+<li>asmjit[1]: enumerate Insts</li>
+<li>QEMU-user single-step: an Inst =&gt; several TCGs</li>
+<li>these TCGs =&gt; a Graph</li>
+</ol>
+<div style="zoom: 50%;">
+<p>[1]: https://github.com/asmjit/asmjit.git</p>
+</div>
+</section>
+<section id="preprocess-tcgs" class="slide level2" data-number="10.3">
+<h2 data-number="10.3"><span class="header-section-number">10.3</span> preprocess TCGs</h2>
+<div class="container">
+<div class="col">
+<p>aarch64 Inst</p>
+<pre><code>2D48003A : setf16 w1</code></pre>
+<p>TCGs</p>
+<pre><code>mov_i32 tmp0,reg0
+shl_i32 NF,tmp0,0x10
+shl_i32 VF,tmp0,0xf
+mov_i32 ZF,NF
+xor_i32 VF,VF,NF</code></pre>
+</div>
+<div class="col">
+<p>Parameterization</p>
+<ul>
+<li>w1 =&gt; reg0</li>
+</ul>
+<p>Not SSA</p>
+<ul>
+<li>tmp0: multiple values</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="tcgs-to-a-graph" class="slide level2" data-number="10.4">
+<h2 data-number="10.4"><span class="header-section-number">10.4</span> TCGs to a Graph</h2>
+<div class="container">
+<div class="col">
+<p>aarch64 Inst</p>
+<pre><code>2D48003A : setf16 reg0</code></pre>
+<p>TCGs</p>
+<pre><code>mov_i32 tmp0,reg0
+shl_i32 NF,tmp0,0x10
+shl_i32 VF,tmp0,0xf
+mov_i32 ZF,NF
+xor_i32 VF,VF,NF</code></pre>
+</div>
+<div class="col">
+<p><img src="./pictures/2D48003A.dot.svg" style="zoom:60%;"></p>
+</div>
+</div>
+</section>
+<section id="my-implementation---456" class="slide level2" data-number="10.5">
+<h2 data-number="10.5"><span class="header-section-number">10.5</span> My Implementation - 456</h2>
+<ol start="4" type="1">
+<li>this Graph =&gt; all Induced-Connected Sub-Graphs Induced: all edges connecting pairs of nodes are in Sub-Graph</li>
+<li>count the freq. of these Sub-Graphs =&gt; map {freq, Sub-Graphs}</li>
+<li>cover Insts with minial <strong>weight</strong> by using these Sub-Graphs naive_weight = freq</li>
+</ol>
+</section>
+<section id="induced-connected-sub-graphs" class="slide level2" data-number="10.6">
+<h2 data-number="10.6"><span class="header-section-number">10.6</span> Induced-Connected Sub-Graphs</h2>
+<div class="container">
+<div class="col">
+<p><img src="./pictures/2D48003A.dot.svg" style="zoom:60%;"></p>
+</div>
+<div class="col">
+<p>enumerate Induced Connected Sub-Graphs by recursive algo. Time: ~O(2^n)</p>
+<ul>
+<li>nodes: 11</li>
+<li>compute_nodes: 5 (num of TCGs)</li>
+<li>Induced Sub-Graphs: 32 = 2^5</li>
+<li>Induced Connected Sub-Graphs: 22</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="count-freq-of-sub-graphs" class="slide level2" data-number="10.7">
+<h2 data-number="10.7"><span class="header-section-number">10.7</span> Count freq of Sub-Graphs</h2>
+<ul>
+<li>Sub-Graphs =&gt; string =&gt; hash =&gt; hash table</li>
+<li>Num of Sub-Graphs
+<ul>
+<li>Inst ~ 5 nodes</li>
+<li>Graph ~ 2^5 ~ 30 Sub-Graphs</li>
+<li>~700 aarch64 Insts</li>
+<li>~10^4 Sub-Graphs</li>
+</ul></li>
+</ul>
+</section>
+<section id="result-so-far" class="slide level2" data-number="10.8">
+<h2 data-number="10.8"><span class="header-section-number">10.8</span> Result so far</h2>
+<div style="zoom:70%;">
+<ol type="1">
+<li>☑ asmjit[1]: enumerate Insts</li>
+<li>☑ QEMU-user single-step: an Inst =&gt; several TCGs</li>
+<li>☑ these TCGs =&gt; a Graph</li>
+<li>☑ this Graph =&gt; all Induced-Connected Sub-Graphs</li>
+<li>☑ count the freq. of these Sub-Graphs =&gt; map {freq, Sub-Graphs}</li>
+<li><input type="checkbox" disabled="" />
+cover Insts with minial <strong>weight</strong> by using these Sub-Graphs</li>
+</ol>
+</div>
+<h3>
+Insteresting Info
+</h3>
+<ul>
+<li>Program run in several seconds</li>
+<li>797 aarch64 basic Insts =&gt; 29315 Sub-Graphs</li>
+<li>most weighted Sub-Graph</li>
+</ul>
+<pre><code>shl_i64 =tmp1,tmp0,0x8
+sar_i64 =tmp2,tmp1,0x8
+and_i64 =tmp4,@01b4e86a93660d9f,tmp3;</code></pre>
+</section></section>
     </div>
   </div>
 
@@ -1204,10 +1759,10 @@ Overall feature downgradation
         },
         customcontrols: {
           controls: [
-            { icon: '<i class="fa fa-pen-square"></i>',
-              title: 'Toggle chalkboard (B)',
-              action: 'RevealChalkboard.toggleChalkboard();'
-            },
+            // { icon: '<i class="fa fa-pen-square"></i>',
+            //   title: 'Toggle chalkboard (B)',
+            //   action: 'RevealChalkboard.toggleChalkboard();'
+            // },
             { icon: '<i class="fa fa-pen"></i>',
               title: 'Toggle notes canvas (C)',
               action: 'RevealChalkboard.toggleNotesCanvas();'
