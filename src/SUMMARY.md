@@ -224,6 +224,7 @@
   * [JingOS.md](./Distro/JingOS.md)
   * [Nix]()
     * [android.md](./Distro/Nix/android.md)
+    * [feishu.md](./Distro/Nix/feishu.md)
     * [nixpkgs.md](./Distro/Nix/nixpkgs.md)
     * [productivity.md](./Distro/Nix/productivity.md)
 * [EPaper]()
