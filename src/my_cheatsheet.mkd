@@ -770,6 +770,12 @@ systemctl list-units --type target
 :E[xplore]
 ```
 
+### highlight current line
+
+```vim
+:set cursorline
+```
+
 ### list syntaxs
 
 ```bash
