@@ -22,20 +22,21 @@ nixpkgs原生支持x86和arm指令集。
 
 <!-- vim-markdown-toc GFM -->
 
-* [`localSystem`和`crossSystem`语法](#localsystem和crosssystem语法)
-* [cpu-vendor-kernel-abi](#cpu-vendor-kernel-abi)
-    * [cpu](#cpu)
-        * [cpuTypes](#cputypes)
-    * [vendor](#vendor)
-    * [kernel](#kernel)
-    * [abi](#abi)
-* [`localSystem`和`crossSystem`效果](#localsystem和crosssystem效果)
+* [简介](#简介)
+* [`localSystem`和`crossSystem`的语法](#localsystem和crosssystem的语法)
+    * [cpu-vendor-kernel-abi](#cpu-vendor-kernel-abi)
+        * [cpu](#cpu)
+            * [cpuTypes](#cputypes)
+        * [vendor](#vendor)
+        * [kernel](#kernel)
+        * [abi](#abi)
+* [`localSystem`和`crossSystem`的应用](#localsystem和crosssystem的应用)
 * [引用](#引用)
 
 <!-- vim-markdown-toc -->
 
 
-## `localSystem`和`crossSystem`语法
+## 简介
 
 nixpkgs[^version]众多输入参数中，包含`localSystem`和`crossSystem`[^localSystem_crossSystem]。
 
@@ -48,6 +49,15 @@ nixpkgs[^version]众多输入参数中，包含`localSystem`和`crossSystem`[^lo
 
   程序运行的平台。
 
+通过`localSystem`和`crossSystem`不同值的组合，
+可以实现交叉编译、安装其他架构的原生应用。
+下面从`localSystem`和`crossSystem`的语法和应用两方面进行介绍。
+语法章节从nixpkgs源码的角度出发，介绍其语法的组成。
+应用章节围绕一个nix-shell脚本的实际例子，
+介绍x86_64平台的交叉编译和安装aarch64架构的原生应用的方法。
+
+## `localSystem`和`crossSystem`的语法
+
 `localSystem`和`crossSystem`由4个维度去刻画一个系统：cpu, vendor, kernel, abi。
 `localSystem`和`crossSystem`的值为字符串或者`{system=字符串;}`[^localSystem_crossSystem_type]。
 system字符串为可以包含前述4个维度的1~4个维度。
@@ -57,7 +67,7 @@ nix在解析时会将省略的维度按以某些默认值补充完整。
 字符串不同数量的维度及其可用的值，
 按匹配优先级由高到低列举如下[^skeleton]，
 
-## cpu-vendor-kernel-abi
+### cpu-vendor-kernel-abi
 
 | system字符串                     | cpu   | vendor   | kernel   | abi     |
 |:--------------------------------:|:-----:|:--------:|:--------:|:-------:|
@@ -80,7 +90,7 @@ nix在解析时会将省略的维度按以某些默认值补充完整。
 | "{cpu}-{vendor}-genode"          | {cpu} | {vendor} | genode   |         |
 | "{cpu}-{vendor}-{kernel}-{abi} " | {cpu} | {vendor} | {kernel} | {abi}   |
 
-### cpu
+#### cpu
 
 cpu字符串可取的值列举如下[^cpuTypes],
 
@@ -129,17 +139,17 @@ cpu字符串可取的值列举如下[^cpuTypes],
 | "or1k"        | 32   | bigEndian       | "or1k"   |         |           |
 | "js"          | 32   | littleEndian    | "js"     |         |           |
 
-#### cpuTypes
+##### cpuTypes
 
 cpu之间的兼容性（具有传递性和自反性）如下[^isCompatible]，
 
 ![](./pictures/cpu_isCompatible.dot.svg)
 
-### vendor
+#### vendor
 
 vendor字符串可取值`"apple"`, `"pc"`(windows), `"w64"`(MinGW-w64), `"none"`, `"unknown"`(default)。
 
-### kernel
+#### kernel
 
 kernel字符串可取值如下表[^kernels]，
 
@@ -164,7 +174,7 @@ kernel字符串可取值如下表[^kernels]，
 | "genode"     | elf        |          |
 | "mmixware"   | unknown    |          |
 
-### abi
+#### abi
 
 abi字符串可取的值列举如下[^abis]，
 
@@ -189,7 +199,7 @@ abi字符串可取的值列举如下[^abis]，
 | "uclibc"       |       |     |                  |
 | "unknown"      |       |     |                  |
 
-## `localSystem`和`crossSystem`效果
+## `localSystem`和`crossSystem`的应用
 
 以x86为本地指令集，`localSystem`和`crossSystem`的组合有以下效果
 
