@@ -152,7 +152,9 @@
 <h2 id="目录"><a class="header" href="#目录">目录</a></h2>
 <!-- vim-markdown-toc GFM -->
 <ul>
-<li><a href="#localsystem%E5%92%8Ccrosssystem%E8%AF%AD%E6%B3%95"><code>localSystem</code>和<code>crossSystem</code>语法</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#localsystem%E5%92%8Ccrosssystem%E7%9A%84%E8%AF%AD%E6%B3%95"><code>localSystem</code>和<code>crossSystem</code>的语法</a>
+<ul>
 <li><a href="#cpu-vendor-kernel-abi">cpu-vendor-kernel-abi</a>
 <ul>
 <li><a href="#cpu">cpu</a>
@@ -165,11 +167,13 @@
 <li><a href="#abi">abi</a></li>
 </ul>
 </li>
-<li><a href="#localsystem%E5%92%8Ccrosssystem%E6%95%88%E6%9E%9C"><code>localSystem</code>和<code>crossSystem</code>效果</a></li>
+</ul>
+</li>
+<li><a href="#localsystem%E5%92%8Ccrosssystem%E7%9A%84%E5%BA%94%E7%94%A8"><code>localSystem</code>和<code>crossSystem</code>的应用</a></li>
 <li><a href="#%E5%BC%95%E7%94%A8">引用</a></li>
 </ul>
 <!-- vim-markdown-toc -->
-<h2 id="localsystem和crosssystem语法"><a class="header" href="#localsystem和crosssystem语法"><code>localSystem</code>和<code>crossSystem</code>语法</a></h2>
+<h2 id="简介"><a class="header" href="#简介">简介</a></h2>
 <p>nixpkgs<sup class="footnote-reference"><a href="#version">1</a></sup>众多输入参数中，包含<code>localSystem</code>和<code>crossSystem</code><sup class="footnote-reference"><a href="#localSystem_crossSystem">2</a></sup>。</p>
 <ul>
 <li>
@@ -187,6 +191,13 @@
 <p>程序运行的平台。</p>
 </li>
 </ul>
+<p>通过<code>localSystem</code>和<code>crossSystem</code>不同值的组合，
+可以实现交叉编译、安装其他架构的原生应用。
+下面从<code>localSystem</code>和<code>crossSystem</code>的语法和应用两方面进行介绍。
+语法章节从nixpkgs源码的角度出发，介绍其语法的组成。
+应用章节围绕一个nix-shell脚本的实际例子，
+介绍x86_64平台的交叉编译和安装aarch64架构的原生应用的方法。</p>
+<h2 id="localsystem和crosssystem的语法"><a class="header" href="#localsystem和crosssystem的语法"><code>localSystem</code>和<code>crossSystem</code>的语法</a></h2>
 <p><code>localSystem</code>和<code>crossSystem</code>由4个维度去刻画一个系统：cpu, vendor, kernel, abi。
 <code>localSystem</code>和<code>crossSystem</code>的值为字符串或者<code>{system=字符串;}</code><sup class="footnote-reference"><a href="#localSystem_crossSystem_type">3</a></sup>。
 system字符串为可以包含前述4个维度的1~4个维度。
@@ -195,7 +206,7 @@ nix在解析时会将省略的维度按以某些默认值补充完整。
 因此system字符串形式上为<code>&quot;cpu-vendor-kernel-abi&quot;</code>。
 字符串不同数量的维度及其可用的值，
 按匹配优先级由高到低列举如下<sup class="footnote-reference"><a href="#skeleton">4</a></sup>，</p>
-<h2 id="cpu-vendor-kernel-abi"><a class="header" href="#cpu-vendor-kernel-abi">cpu-vendor-kernel-abi</a></h2>
+<h3 id="cpu-vendor-kernel-abi"><a class="header" href="#cpu-vendor-kernel-abi">cpu-vendor-kernel-abi</a></h3>
 <table><thead><tr><th align="center">system字符串</th><th align="center">cpu</th><th align="center">vendor</th><th align="center">kernel</th><th align="center">abi</th></tr></thead><tbody>
 <tr><td align="center">&quot;avr&quot;</td><td align="center">avr</td><td align="center"></td><td align="center">none</td><td align="center">unknown</td></tr>
 <tr><td align="center">&quot;{cpu}-cygwin&quot;</td><td align="center">{cpu}</td><td align="center"></td><td align="center">windows</td><td align="center">cygnus</td></tr>
@@ -216,7 +227,7 @@ nix在解析时会将省略的维度按以某些默认值补充完整。
 <tr><td align="center">&quot;{cpu}-{vendor}-genode&quot;</td><td align="center">{cpu}</td><td align="center">{vendor}</td><td align="center">genode</td><td align="center"></td></tr>
 <tr><td align="center">&quot;{cpu}-{vendor}-{kernel}-{abi} &quot;</td><td align="center">{cpu}</td><td align="center">{vendor}</td><td align="center">{kernel}</td><td align="center">{abi}</td></tr>
 </tbody></table>
-<h3 id="cpu"><a class="header" href="#cpu">cpu</a></h3>
+<h4 id="cpu"><a class="header" href="#cpu">cpu</a></h4>
 <p>cpu字符串可取的值列举如下<sup class="footnote-reference"><a href="#cpuTypes">5</a></sup>,</p>
 <table><thead><tr><th align="center">cpu字符串</th><th align="center">bits</th><th align="center">significantByte</th><th align="center">family</th><th align="center">version</th><th align="center">arch</th></tr></thead><tbody>
 <tr><td align="center">&quot;arm&quot;</td><td align="center">32</td><td align="center">littleEndian</td><td align="center">&quot;arm&quot;</td><td align="center"></td><td align="center"></td></tr>
@@ -262,12 +273,12 @@ nix在解析时会将省略的维度按以某些默认值补充完整。
 <tr><td align="center">&quot;or1k&quot;</td><td align="center">32</td><td align="center">bigEndian</td><td align="center">&quot;or1k&quot;</td><td align="center"></td><td align="center"></td></tr>
 <tr><td align="center">&quot;js&quot;</td><td align="center">32</td><td align="center">littleEndian</td><td align="center">&quot;js&quot;</td><td align="center"></td><td align="center"></td></tr>
 </tbody></table>
-<h4 id="cputypes"><a class="header" href="#cputypes">cpuTypes</a></h4>
+<h5 id="cputypes"><a class="header" href="#cputypes">cpuTypes</a></h5>
 <p>cpu之间的兼容性（具有传递性和自反性）如下<sup class="footnote-reference"><a href="#isCompatible">6</a></sup>，</p>
 <p><img src="./pictures/cpu_isCompatible.dot.svg" alt="" /></p>
-<h3 id="vendor"><a class="header" href="#vendor">vendor</a></h3>
+<h4 id="vendor"><a class="header" href="#vendor">vendor</a></h4>
 <p>vendor字符串可取值<code>&quot;apple&quot;</code>, <code>&quot;pc&quot;</code>(windows), <code>&quot;w64&quot;</code>(MinGW-w64), <code>&quot;none&quot;</code>, <code>&quot;unknown&quot;</code>(default)。</p>
-<h3 id="kernel"><a class="header" href="#kernel">kernel</a></h3>
+<h4 id="kernel"><a class="header" href="#kernel">kernel</a></h4>
 <p>kernel字符串可取值如下表<sup class="footnote-reference"><a href="#kernels">7</a></sup>，</p>
 <table><thead><tr><th align="center">kernel字符串</th><th align="center">execFormat</th><th align="center">families</th></tr></thead><tbody>
 <tr><td align="center">&quot;macos&quot;</td><td align="center">macho</td><td align="center">darwin</td></tr>
@@ -289,7 +300,7 @@ nix在解析时会将省略的维度按以某些默认值补充完整。
 <tr><td align="center">&quot;genode&quot;</td><td align="center">elf</td><td align="center"></td></tr>
 <tr><td align="center">&quot;mmixware&quot;</td><td align="center">unknown</td><td align="center"></td></tr>
 </tbody></table>
-<h3 id="abi"><a class="header" href="#abi">abi</a></h3>
+<h4 id="abi"><a class="header" href="#abi">abi</a></h4>
 <p>abi字符串可取的值列举如下<sup class="footnote-reference"><a href="#abis">8</a></sup>，</p>
 <table><thead><tr><th align="center">abi字符串</th><th align="center">float</th><th align="center">abi</th><th align="center">Note</th></tr></thead><tbody>
 <tr><td align="center">&quot;cygnus&quot;</td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
@@ -311,7 +322,7 @@ nix在解析时会将省略的维度按以某些默认值补充完整。
 <tr><td align="center">&quot;uclibc&quot;</td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
 <tr><td align="center">&quot;unknown&quot;</td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
 </tbody></table>
-<h2 id="localsystem和crosssystem效果"><a class="header" href="#localsystem和crosssystem效果"><code>localSystem</code>和<code>crossSystem</code>效果</a></h2>
+<h2 id="localsystem和crosssystem的应用"><a class="header" href="#localsystem和crosssystem的应用"><code>localSystem</code>和<code>crossSystem</code>的应用</a></h2>
 <p>以x86为本地指令集，<code>localSystem</code>和<code>crossSystem</code>的组合有以下效果</p>
 <table><thead><tr><th align="center">↓<code>crossSystem</code>↓ →<code>localSystem</code>→</th><th align="center">&quot;x86_64-linux&quot;</th><th align="center">&quot;aarch64-linux&quot;</th></tr></thead><tbody>
 <tr><td align="center">&quot;x86_64-linux&quot;</td><td align="center">通常情况</td><td align="center"></td></tr>
