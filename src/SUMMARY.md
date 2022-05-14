@@ -413,6 +413,7 @@
   * [linux_desktop.md](./SftwStack/linux_desktop.md)
 * [Sim]()
 * [Softwares]()
+  * [gnome.md](./Softwares/gnome.md)
   * [ocrmypdf.md](./Softwares/ocrmypdf.md)
   * [pandoc.md](./Softwares/pandoc.md)
   * [tree_timeline_note.md](./Softwares/tree_timeline_note.md)
