@@ -5,11 +5,11 @@ let
     # get this config on my android
     #   nix repl
     #   builtins.currentSystem
-    crossSystem.system = "aarch64-linux";
+    crossSystem = "aarch64-linux";
   };
   pkgs_arm_native = import <nixpkgs> {
-    localSystem.system = "aarch64-linux";
-    crossSystem.system = "aarch64-linux";
+    localSystem = "aarch64-linux";
+    crossSystem = "aarch64-linux";
   };
   pkgs = import <nixpkgs> {};
 in
