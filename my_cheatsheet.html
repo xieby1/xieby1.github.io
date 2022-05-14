@@ -351,6 +351,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#vim">vim</a>
 <ul>
 <li><a href="#explore">Explore</a></li>
+<li><a href="#highlight-current-line">highlight current line</a></li>
 <li><a href="#list-syntaxs">list syntaxs</a></li>
 <li><a href="#markdown-toc">markdown toc</a></li>
 <li><a href="#mapped-keys">mapped keys</a></li>
@@ -1003,9 +1004,13 @@ right click: eraser</code></pre>
 <pre class="vim"><code>; open current file&#39;s dir
 :E[xplore]</code></pre>
 </section>
+<section id="highlight-current-line" class="level3">
+<h3>highlight current line</h3>
+<pre class="vim"><code>:set cursorline</code></pre>
+</section>
 <section id="list-syntaxs" class="level3">
 <h3>list syntaxs</h3>
-<div class="sourceCode" id="cb88"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="op">&lt;</span><span class="va">$VIMRUNTIME</span><span class="op">&gt;</span>/syntax/</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="op">&lt;</span><span class="va">$VIMRUNTIME</span><span class="op">&gt;</span>/syntax/</span></code></pre></div>
 </section>
 <section id="markdown-toc" class="level3">
 <h3>markdown toc</h3>
@@ -1117,12 +1122,12 @@ O &quot; new tab open
 <h2>WSL</h2>
 <section id="shrink-vdisk" class="level3">
 <h3>shrink vdisk</h3>
-<div class="sourceCode" id="cb107"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a>diskpart</span>
-<span id="cb107-2"><a href="#cb107-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span> vdisk \</span>
-<span id="cb107-3"><a href="#cb107-3" aria-hidden="true" tabindex="-1"></a>file<span class="op">=</span><span class="st">&quot;C:\Users\&lt;User&gt;\AppData\Local\ \</span></span>
-<span id="cb107-4"><a href="#cb107-4" aria-hidden="true" tabindex="-1"></a>Packages\CanonicalGroupLimited<span class="op">.</span><span class="fu">UbuntuonWindows</span><span class="op">...</span> \</span>
-<span id="cb107-5"><a href="#cb107-5" aria-hidden="true" tabindex="-1"></a>\LocalState\ext4<span class="op">.</span><span class="fu">vhdx</span><span class="st">&quot;</span></span>
-<span id="cb107-6"><a href="#cb107-6" aria-hidden="true" tabindex="-1"></a>compact vdisk</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a>diskpart</span>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span> vdisk \</span>
+<span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a>file<span class="op">=</span><span class="st">&quot;C:\Users\&lt;User&gt;\AppData\Local\ \</span></span>
+<span id="cb108-4"><a href="#cb108-4" aria-hidden="true" tabindex="-1"></a>Packages\CanonicalGroupLimited<span class="op">.</span><span class="fu">UbuntuonWindows</span><span class="op">...</span> \</span>
+<span id="cb108-5"><a href="#cb108-5" aria-hidden="true" tabindex="-1"></a>\LocalState\ext4<span class="op">.</span><span class="fu">vhdx</span><span class="st">&quot;</span></span>
+<span id="cb108-6"><a href="#cb108-6" aria-hidden="true" tabindex="-1"></a>compact vdisk</span></code></pre></div>
 </section>
 </section>
 <section id="x11" class="level2">
@@ -1137,51 +1142,51 @@ r</code></pre>
 <h2>xdg</h2>
 <section id="xdg-mime" class="level3">
 <h3>xdg-mime</h3>
-<div class="sourceCode" id="cb109"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xdg-mime</span> query filetype <span class="op">&lt;</span>file<span class="op">&gt;</span></span>
-<span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a><span class="ex">xdg-mime</span> query default <span class="op">&lt;</span>type<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="ex">xdg-mime</span> query filetype <span class="op">&lt;</span>file<span class="op">&gt;</span></span>
+<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="ex">xdg-mime</span> query default <span class="op">&lt;</span>type<span class="op">&gt;</span></span></code></pre></div>
 </section>
 </section>
 <section id="单个分散的操作" class="level2">
 <h2>单个、分散的操作</h2>
 <section id="crypt" class="level3">
 <h3>crypt</h3>
-<div class="sourceCode" id="cb110"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">perl</span> <span class="at">-e</span> <span class="st">&quot;print crypt(&#39;wjxby&#39;,&#39;xb&#39;);&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="fu">perl</span> <span class="at">-e</span> <span class="st">&quot;print crypt(&#39;wjxby&#39;,&#39;xb&#39;);&quot;</span></span></code></pre></div>
 </section>
 <section id="pkg-config" class="level3">
 <h3>pkg-config</h3>
-<div class="sourceCode" id="cb111"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取package的名字</span></span>
-<span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pkg-config</span> <span class="at">--list-all</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="op">&lt;</span>xxx<span class="op">&gt;</span></span>
-<span id="cb111-3"><a href="#cb111-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取c编译、链接参数</span></span>
-<span id="cb111-4"><a href="#cb111-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pkg-config</span> <span class="at">--cflags</span> <span class="at">--libs</span> <span class="op">&lt;</span>pkg<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取package的名字</span></span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pkg-config</span> <span class="at">--list-all</span> <span class="kw">|</span> <span class="fu">grep</span> <span class="op">&lt;</span>xxx<span class="op">&gt;</span></span>
+<span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取c编译、链接参数</span></span>
+<span id="cb112-4"><a href="#cb112-4" aria-hidden="true" tabindex="-1"></a><span class="ex">pkg-config</span> <span class="at">--cflags</span> <span class="at">--libs</span> <span class="op">&lt;</span>pkg<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="pdftohtml" class="level3">
 <h3>pdftohtml</h3>
-<div class="sourceCode" id="cb112"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pdftotext</span> <span class="at">-noframes</span> <span class="at">-i</span> <span class="at">-q</span> <span class="at">-p</span> <span class="at">-c</span> <span class="op">&lt;</span>pdf<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pdftotext</span> <span class="at">-noframes</span> <span class="at">-i</span> <span class="at">-q</span> <span class="at">-p</span> <span class="at">-c</span> <span class="op">&lt;</span>pdf<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="pdftotext" class="level3">
 <h3>pdftotext</h3>
-<div class="sourceCode" id="cb113"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pdftotext</span> <span class="at">-q</span> <span class="op">&lt;</span>pdf<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pdftotext</span> <span class="at">-q</span> <span class="op">&lt;</span>pdf<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="进程树" class="level3">
 <h3>进程树</h3>
-<div class="sourceCode" id="cb114"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-jHg</span> <span class="op">&lt;</span>pid<span class="op">&gt;</span> # 进程子树</span>
-<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pstree</span> <span class="at">-psal</span> <span class="op">&lt;</span>pid<span class="op">&gt;</span> # 完整树</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ps</span> <span class="at">-jHg</span> <span class="op">&lt;</span>pid<span class="op">&gt;</span> # 进程子树</span>
+<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pstree</span> <span class="at">-psal</span> <span class="op">&lt;</span>pid<span class="op">&gt;</span> # 完整树</span></code></pre></div>
 </section>
 <section id="python-object属性" class="level3">
 <h3>python object属性</h3>
-<div class="sourceCode" id="cb115"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>()</span>
-<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="bu">vars</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span>()</span>
+<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a><span class="bu">vars</span>()</span></code></pre></div>
 </section>
 <section id="new-user" class="level3">
 <h3>new user</h3>
-<div class="sourceCode" id="cb116"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="ex">adduser</span> xieby1</span>
-<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a><span class="ex">usermod</span> <span class="at">-aG</span> sudo xieby1</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="ex">adduser</span> xieby1</span>
+<span id="cb117-2"><a href="#cb117-2" aria-hidden="true" tabindex="-1"></a><span class="ex">usermod</span> <span class="at">-aG</span> sudo xieby1</span></code></pre></div>
 </section>
 <section id="gcc预定义宏" class="level3">
 <h3>gcc预定义宏</h3>
 <p><a href="https://stackoverflow.com/questions/10904873/anyway-to-see-list-of-preprocessor-defined-macros">2012.SO: preprocessor defined macros</a></p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="at">-dM</span> <span class="at">-E</span> <span class="at">-</span> <span class="op">&lt;</span> /dev/null</span>
-<span id="cb117-2"><a href="#cb117-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> bla.c <span class="kw">&amp;&amp;</span> <span class="fu">gcc</span> <span class="at">-dM</span> <span class="at">-E</span> bla.c</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="at">-dM</span> <span class="at">-E</span> <span class="at">-</span> <span class="op">&lt;</span> /dev/null</span>
+<span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> bla.c <span class="kw">&amp;&amp;</span> <span class="fu">gcc</span> <span class="at">-dM</span> <span class="at">-E</span> bla.c</span></code></pre></div>
 </section>
 <section id="drawio-no-snapping" class="level3">
 <h3>drawio no snapping</h3>
@@ -1199,7 +1204,7 @@ iconv -f gb18030 -t utf-8 &lt;output&gt;</code></pre>
 </section>
 <section id="sort-first-column" class="level3">
 <h3>sort first column</h3>
-<div class="sourceCode" id="cb120"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span> <span class="at">-s</span> <span class="at">-n</span> <span class="at">-k</span> 1,1</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span> <span class="at">-s</span> <span class="at">-n</span> <span class="at">-k</span> 1,1</span></code></pre></div>
 </section>
 </section>
 </section>
