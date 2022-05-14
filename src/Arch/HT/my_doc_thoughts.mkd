@@ -966,7 +966,7 @@ enumerate Induced Connected Sub-Graphs by recursive algo. Time: ~O(2^n)
 * 797 aarch64 basic Insts => 29315 Sub-Graphs
 * most weighted Sub-Graph
 ```
-shl_i64 =tmp1,tmp0,0x8
-sar_i64 =tmp2,tmp1,0x8
-and_i64 =tmp4,@01b4e86a93660d9f,tmp3;
+shl_i64 =tmp,reg,0x8
+sar_i64 =tmp,tmp,0x8
+and_i64 =tmp,tmp,reg;
 ```
