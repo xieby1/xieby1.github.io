@@ -4,7 +4,7 @@ nixpkgs原生支持x86和arm指令集。
 通过对nixpkgs配置可以轻松实现交叉编译，
 跨平台程序的安装等功能。
 
-太长不看:
+## 太长不看
 
 * x86_64上的aarch64交叉编译器
 
@@ -17,6 +17,23 @@ nixpkgs原生支持x86和arm指令集。
 * 应用于nix-shell的例子
 
   [shell_cross_platform.nix](https://xieby1.github.io/scripts/index.html#shell_cross_platformnix)
+
+## 目录
+
+<!-- vim-markdown-toc GFM -->
+
+* [`localSystem`和`crossSystem`语法](#localsystem和crosssystem语法)
+* [cpu-vendor-kernel-abi](#cpu-vendor-kernel-abi)
+    * [cpu](#cpu)
+        * [cpuTypes](#cputypes)
+    * [vendor](#vendor)
+    * [kernel](#kernel)
+    * [abi](#abi)
+* [`localSystem`和`crossSystem`效果](#localsystem和crosssystem效果)
+* [引用](#引用)
+
+<!-- vim-markdown-toc -->
+
 
 ## `localSystem`和`crossSystem`语法
 
