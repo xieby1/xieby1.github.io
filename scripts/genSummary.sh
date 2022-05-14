@@ -57,22 +57,32 @@ solve_an_entry()
     do
         echo -n "  "
     done
-    echo -n "* ["
-    echo -n ${NAME}
-    echo -n "]("
     if [[ -f $1 ]]
     then
-    echo -n $1
-    fi
-    if [[ -f ${1}/index.md ]]
+        FILE_NAME=${1##*/}
+        re='^[0-9][0-9][0-9][0-9]\.'
+        # dont change papers.md name e.g. 2015.overview.mitra.jip.15.md
+        if [[ "${FILE_NAME}" =~ $re ]]
+        then
+            TITLE=""
+        else
+            TITLE=$(awk '/^# / {$1=""; print substr($0,2); exit;}' "${1}")
+        fi
+        if [[ -n ${TITLE} ]]
+        then
+            echo "* [${TITLE}](${1})"
+        else
+            echo "* [${NAME}](${1})"
+        fi
+    elif [[ -f ${1}/index.md ]]
     then
-        echo -n ${1}/index.md
-    fi
-    if [[ -f ${1}/README.md ]]
+        echo "* [${NAME}](${1}/index.md)"
+    elif [[ -f ${1}/README.md ]]
     then
-        echo -n ${1}/README.md
+        echo "* [${NAME}](${1}/README.md)"
+    else
+        echo "* [${NAME}]()"
     fi
-    echo ")"
 }
 
 FIND_OUT=$(find . | sort -n)
