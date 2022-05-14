@@ -1,0 +1,190 @@
+nixpkgs原生支持x86和arm指令集。
+通过对nixpkgs配置可以轻松实现交叉编译，
+跨平台程序的安装等功能。
+
+太长不看:
+
+* 交叉编译器
+  `(with import <nixpkgs> {crossSystem="aarch64-linux";}; stdenv.cc)`
+* aarch64的应用程序
+  `(with import <nixpkgs> {localSystem.system="aarch64-linux";crossSystem="aarch64-linux";}; hello)`
+* 应用于nix-shell的例子: https://xieby1.github.io/scripts/index.html#shell_cross_platformnix
+
+## `localSystem`和`crossSystem`语法
+
+nixpkgs[^version]众多输入参数中，包含`localSystem`和`crossSystem`。[^localSystem_crossSystem]
+
+[^version]: nixpkgs版本2022.01.20, commit hash: 7e149abe9db1509fa974bb2286f862a761ca0a07
+
+[^localSystem_crossSystem]: nixpkgs/pkgs/top-level/default.nix
+
+* `localSystem`
+  > The system packages will be built on.
+  本地系统，即工具链运行的平台。
+* `crossSystem`
+  > The system packages will ultimately be run on.
+  程序运行的平台。
+
+`localSystem`和`crossSystem`由4个维度去刻画一个系统：cpu, vendor, kernel, abi。
+`localSystem`和`crossSystem`的值为字符串或者`{system=字符串;}`。[^localSystem_crossSystem_type]
+`字符串`为可以包含前述4个维度的1~4个维度。
+nix在解析时会将省略的维度按以某些默认值补充完整。
+维度之间之间用`-`分割。
+因此system字符串形式上为`"cpu-vendor-kernel-abi"`。
+字符串不同数量的维度及其可用的值，
+按匹配优先级由高到低列举如下，[^skeleton]
+
+## cpu-vendor-kernel-abi
+
+| system字符串                     | cpu   | vendor   | kernel   | abi     |
+|----------------------------------|-------|----------|----------|---------|
+| "avr"                            | avr   |          | none     | unknown |
+| "{cpu}-cygwin"                   | {cpu} |          | windows  | cygnus  |
+| "{cpu}-windows"                  | {cpu} |          | windows  | msvc    |
+| "{cpu}-elf"                      | {cpu} | unknown  | none     | elf     |
+| "{cpu}-{kernel}"                 | {cpu} |          | {kernel} |         |
+| "{cpu}-apple-{kernel}"           | {cpu} | apple    | {kernel} |         |
+| "{cpu}-linux-gnu"                | {cpu} |          | linux    | gnu     |
+| "{cpu}-{vendor}-mingw32"         | {cpu} | {vendor} | windows  |         |
+| "{cpu}-{vendor}-wasi"            | {cpu} | {vendor} | wasi     |         |
+| "{cpu}-{vendor}-redox"           | {cpu} | {vendor} | redox    |         |
+| "{cpu}-{vendor}-mmixware"        | {cpu} | {vendor} | mmixware |         |
+| "{cpu}-{vendor}-netbsd*"         | {cpu} | {vendor} | netbsd*  |         |
+| "{cpu}-{vendor}-eabi"            | {cpu} | unknown  | {kernel} | eabi    |
+| "{cpu}-{vendor}-eabihf"          | {cpu} | unknown  | {kernel} | eabihf  |
+| "{cpu}-{kernel}-elf"             | {cpu} | unknown  | {kernel} | elf     |
+| "{cpu}-*-{ghcjs}"                | {cpu} | unknown  | ghcjs    |         |
+| "{cpu}-{vendor}-genode"          | {cpu} | {vendor} | genode   |         |
+| "{cpu}-{vendor}-{kernel}-{abi} " | {cpu} | {vendor} | {kernel} | {abi}   |
+
+[^localSystem_crossSystem_type]: nixpkgs/lib/systems/default.nix: `elaborate`
+
+[^skeleton]: nixpkgs/lib/systems/parse.nix: `mkSkeletonFromList`
+
+### cpu
+
+cpu字符串可取的值列举如下[^cpuTypes],
+
+[^cpuTypes]: nixpkgs/lib/systems/parse.nix: `cpuTypes`
+
+| cpu字符串     | bits | significantByte | family   | version | arch      |
+|---------------|------|-----------------|----------|---------|-----------|
+| "arm"         | 32   | littleEndian    | "arm"    |         |           |
+| "armv5tel"    | 32   | littleEndian    | "arm"    | "5"     | "armv5t"  |
+| "armv6m"      | 32   | littleEndian    | "arm"    | "6"     | "armv6-m" |
+| "armv6l"      | 32   | littleEndian    | "arm"    | "6"     | "armv6"   |
+| "armv7a"      | 32   | littleEndian    | "arm"    | "7"     | "armv7-a" |
+| "armv7r"      | 32   | littleEndian    | "arm"    | "7"     | "armv7-r" |
+| "armv7m"      | 32   | littleEndian    | "arm"    | "7"     | "armv7-m" |
+| "armv7l"      | 32   | littleEndian    | "arm"    | "7"     | "armv7"   |
+| "armv8a"      | 32   | littleEndian    | "arm"    | "8"     | "armv8-a" |
+| "armv8r"      | 32   | littleEndian    | "arm"    | "8"     | "armv8-a" |
+| "armv8m"      | 32   | littleEndian    | "arm"    | "8"     | "armv8-m" |
+| "aarch64"     | 64   | littleEndian    | "arm"    | "8"     | "armv8-a" |
+| "aarch64_be"  | 64   | bigEndian       | "arm"    | "8"     | "armv8-a" |
+| "i386"        | 32   | littleEndian    | "x86"    |         | "i386"    |
+| "i486"        | 32   | littleEndian    | "x86"    |         | "i486"    |
+| "i586"        | 32   | littleEndian    | "x86"    |         | "i586"    |
+| "i686"        | 32   | littleEndian    | "x86"    |         | "i686"    |
+| "x86_64"      | 64   | littleEndian    | "x86"    |         | "x86-64"  |
+| "mips"        | 32   | bigEndian       | "mips"   |         |           |
+| "mipsel"      | 32   | littleEndian    | "mips"   |         |           |
+| "mips64"      | 64   | bigEndian       | "mips"   |         |           |
+| "mips64el"    | 64   | littleEndian    | "mips"   |         |           |
+| "mmix"        | 64   | bigEndian       | "mmix"   |         |           |
+| "m68k"        | 32   | bigEndian       | "m68k"   |         |           |
+| "powerpc"     | 32   | bigEndian       | "power"  |         |           |
+| "powerpc64"   | 64   | bigEndian       | "power"  |         |           |
+| "powerpc64le" | 64   | littleEndian    | "power"  |         |           |
+| "powerpcle"   | 32   | littleEndian    | "power"  |         |           |
+| "riscv32"     | 32   | littleEndian    | "riscv"  |         |           |
+| "riscv64"     | 64   | littleEndian    | "riscv"  |         |           |
+| "s390"        | 32   | bigEndian       | "s390"   |         |           |
+| "s390x"       | 64   | bigEndian       | "s390"   |         |           |
+| "sparc"       | 32   | bigEndian       | "sparc"  |         |           |
+| "sparc64"     | 64   | bigEndian       | "sparc"  |         |           |
+| "wasm32"      | 32   | littleEndian    | "wasm"   |         |           |
+| "wasm64"      | 64   | littleEndian    | "wasm"   |         |           |
+| "alpha"       | 64   | littleEndian    | "alpha"  |         |           |
+| "msp430"      | 16   | littleEndian    | "msp430" |         |           |
+| "avr"         | 8    |                 | "avr"    |         |           |
+| "vc4"         | 32   | littleEndian    | "vc4"    |         |           |
+| "or1k"        | 32   | bigEndian       | "or1k"   |         |           |
+| "js"          | 32   | littleEndian    | "js"     |         |           |
+
+#### cpuTypes
+
+cpu之间的兼容性（具有传递性和自反性）如下[^isCompatible]，
+
+[^isCompatible]: nixpkgs/lib/systems/parse.nix: `isCompatible`
+
+![](./pictures/cpu_isCompatible.dot.svg)
+
+### vendor
+
+vendor字符串可取值`"apple"`, `"pc"`(windows), `"w64"`(MinGW-w64), `"none"`, `"unknown"`(default)。
+
+### kernel
+
+kernel字符串可取值如下表[^kernels]，
+
+[^kernels]: nixpkgs/lib/systems/parse.nix: `kernels`
+
+| kernel字符串 | execFormat | families |
+|--------------|------------|----------|
+| "macos"      | macho      | darwin   |
+| "darwin"     | ↑          | ↑        |
+| "ios"        | macho      | darwin   |
+| "watchos"    | ↑          | ↑        |
+| "tvos"       | ↑          | ↑        |
+| "freebsd"    | elf        | bsd      |
+| "linux"      | elf        |          |
+| "netbsd"     | elf        | bsd      |
+| "none"       | unknown    |          |
+| "openbsd"    | elf        | bsd      |
+| "solaris"    | elf        |          |
+| "wasi"       | wasm       |          |
+| "redox"      | elf        |          |
+| "windows"    | pe         |          |
+| "win32"      | ↑          | ↑        |
+| "ghcjs"      | unknown    |          |
+| "genode"     | elf        |          |
+| "mmixware"   | unknown    |          |
+
+### abi
+
+abi字符串可取的值列举如下[^abis]:
+
+[^abis]: nixpkgs/lib/systems/parse.nix: `abis`
+
+| abi字符串      | float | abi | Note             |
+|----------------|-------|-----|------------------|
+| "cygnus"       |       |     |                  |
+| "msvc"         |       |     |                  |
+| "eabi"         | soft  |     | for ARM, PowerPC |
+| "eabihf"       | hard  |     | for ARM, PowerPC |
+| "elf"          |       |     |                  |
+| "androideabi"  |       |     |                  |
+| "android"      |       |     | not 32-bit       |
+| "gnueabi"      | soft  |     |                  |
+| "gnueabihf"    | hard  |     |                  |
+| "gnu"          |       |     | not 32-bit       |
+| "gnuabi64"     |       | 64  |                  |
+| "musleabi"     | soft  |     |                  |
+| "musleabihf"   | hard  |     |                  |
+| "musl"         |       |     |                  |
+| "uclibceabihf" | soft  |     |                  |
+| "uclibceabi"   | hard  |     |                  |
+| "uclibc"       |       |     |                  |
+| "unknown"      |       |     |                  |
+
+## `localSystem`和`crossSystem`效果
+
+以x86为本地指令集，`localSystem`和`crossSystem`的组合有以下效果
+
+| ↓`crossSystem`↓ →`localSystem`→ | "x86_64-linux"  | "aarch64-linux" |
+|---------------------------------|-----------------|-----------------|
+| "x86_64-linux"                  | 通常情况        |                 |
+| "aarch64-linux"                 | 交叉编译aarch64 | 原生aarch64应用 |
+
+
