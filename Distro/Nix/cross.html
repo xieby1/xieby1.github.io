@@ -134,7 +134,7 @@
 <p>nixpkgs原生支持x86和arm指令集。
 通过对nixpkgs配置可以轻松实现交叉编译，
 跨平台程序的安装等功能。</p>
-<p>太长不看:</p>
+<h2 id="太长不看"><a class="header" href="#太长不看">太长不看</a></h2>
 <ul>
 <li>
 <p>x86_64上的aarch64交叉编译器</p>
@@ -149,6 +149,26 @@
 <p><a href="https://xieby1.github.io/scripts/index.html#shell_cross_platformnix">shell_cross_platform.nix</a></p>
 </li>
 </ul>
+<h2 id="目录"><a class="header" href="#目录">目录</a></h2>
+<!-- vim-markdown-toc GFM -->
+<ul>
+<li><a href="#localsystem%E5%92%8Ccrosssystem%E8%AF%AD%E6%B3%95"><code>localSystem</code>和<code>crossSystem</code>语法</a></li>
+<li><a href="#cpu-vendor-kernel-abi">cpu-vendor-kernel-abi</a>
+<ul>
+<li><a href="#cpu">cpu</a>
+<ul>
+<li><a href="#cputypes">cpuTypes</a></li>
+</ul>
+</li>
+<li><a href="#vendor">vendor</a></li>
+<li><a href="#kernel">kernel</a></li>
+<li><a href="#abi">abi</a></li>
+</ul>
+</li>
+<li><a href="#localsystem%E5%92%8Ccrosssystem%E6%95%88%E6%9E%9C"><code>localSystem</code>和<code>crossSystem</code>效果</a></li>
+<li><a href="#%E5%BC%95%E7%94%A8">引用</a></li>
+</ul>
+<!-- vim-markdown-toc -->
 <h2 id="localsystem和crosssystem语法"><a class="header" href="#localsystem和crosssystem语法"><code>localSystem</code>和<code>crossSystem</code>语法</a></h2>
 <p>nixpkgs<sup class="footnote-reference"><a href="#version">1</a></sup>众多输入参数中，包含<code>localSystem</code>和<code>crossSystem</code><sup class="footnote-reference"><a href="#localSystem_crossSystem">2</a></sup>。</p>
 <ul>
