@@ -66,7 +66,7 @@ solve_an_entry()
         then
             TITLE=""
         else
-            TITLE=$(awk '/^# / {$1=""; print substr($0,2); exit;}' "${1}")
+            TITLE=$(head -n 3 "${1}" | awk '/^# / {$1=""; print substr($0,2); exit;}')
         fi
         if [[ -n ${TITLE} ]]
         then
