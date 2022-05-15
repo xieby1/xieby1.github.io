@@ -4,10 +4,10 @@
 #       https://www.redhat.com/sysadmin/sudo-rootless-podman
 #   tldr: not recommend use su/sudo in rootless container
 
-VER=20
-
 # create image
-CREATE_IMAGE_FUNC() {
+CREATE_IMAGE() {
+    VER=$1
+
     mkdir -p /tmp/u${VER}
     echo "FROM ubuntu:${VER}.04" > /tmp/u${VER}/Dockerfile
 
@@ -24,7 +24,11 @@ CREATE_IMAGE_FUNC() {
 
 # podman volumes always owned by root:
 #   https://github.com/containers/podman/issues/2898
-CREATE_CONTAINER=(
+CREATE_CONTAINER()
+{
+    VER=$1
+
+    CMD=(
     "sudo"
     "podman" "run"
 
@@ -50,23 +54,30 @@ CREATE_CONTAINER=(
     "-it"
     "u${VER}"
 #    "/usr/bin/tmux"
-)
+    )
+
+    eval "${CMD[@]}"
+}
 
 
 OPTIONS=(
     "-h"
     "-c"
+    "-v"
 )
 
 # Input variables
 if [[ $# -lt 1 ]]
 then
-    eval "${CREATE_CONTAINER[@]}"
+    CREATE_CONTAINER
     exit
 fi
+
+CREATE="no"
+VER=20
 while [[ ${OPTIND} -le $# ]]
 do
-    getopts "lhc" opt
+    getopts "lhcv:" opt
     case "${opt}" in
     l)
         echo "${OPTIONS[@]}"
@@ -74,16 +85,28 @@ do
     ;;
     h)
         echo "ubuntu container"
-        echo "Usage: ${0##*/} [-h] [-c]"
+        echo "Usage: ${0##*/} [-h] [-c] [-v <VER>]"
         echo "  run with no arg: enter a ubuntu container"
         echo "  -c: reate a ubuntu container image"
         echo "  -h: show this help"
+        echo "  -v <VER>: set ubuntu version, default is 20"
         exit 0;
     ;;
     c)
-        CREATE_IMAGE_FUNC
+        CREATE="yes"
+    ;;
+    v)
+        VER=${OPTARG}
+        echo ${OPTARG}
     ;;
     *)
         shift
     esac
 done
+
+if [[ "${CREATE}" == "yes" ]]
+then
+    CREATE_IMAGE ${VER}
+else
+    CREATE_CONTAINER ${VER}
+fi
