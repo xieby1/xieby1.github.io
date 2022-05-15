@@ -124,6 +124,12 @@
 {{ #include nix/shell.nix }}
 ```
 
+### shell_python_mach.nix
+
+```nix
+{{ #include nix/shell_python_mach.nix }}
+```
+
 ### shell_qemu_tests_tcg.nix
 
 ```nix
