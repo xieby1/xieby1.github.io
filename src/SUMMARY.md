@@ -231,6 +231,7 @@
     * [productivity.md](./Distro/Nix/productivity.md)
     * [Python in Nix/NixOS](./Distro/Nix/python.md)
     * [Nix/NixOS](./Distro/Nix/README-en.md)
+    * [Vim in Nix/NixOS](./Distro/Nix/vim.md)
 * [EPaper]()
   * [laptop.md](./EPaper/laptop.md)
 * [FPGA]()
