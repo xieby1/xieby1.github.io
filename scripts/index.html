@@ -867,6 +867,23 @@ with (import &lt;nixpkgs&gt; {});
   debugVersion = true;
 })
 </code></pre>
+<h3 id="shell_cross_mipsnix"><a class="header" href="#shell_cross_mipsnix">shell_cross_mips.nix</a></h3>
+<pre><code class="language-nix"># xieby1: 2022.05.16
+let
+  pkgs_mips_cross = import &lt;nixpkgs&gt; {
+    crossSystem = &quot;mips-linux&quot;;
+  };
+  pkgs = import &lt;nixpkgs&gt; {};
+in
+pkgs.mkShell {
+  buildInputs = (with pkgs_mips_cross; [
+    buildPackages.gdb
+    buildPackages.gcc
+  ]) ++ (with pkgs; [
+    qemu
+  ]);
+}
+</code></pre>
 <h3 id="shell_cross_platformnix"><a class="header" href="#shell_cross_platformnix">shell_cross_platform.nix</a></h3>
 <pre><code class="language-nix"># xieby1: 2022.04.26
 
@@ -887,6 +904,7 @@ pkgs.mkShell {
   buildInputs = with pkgs_arm_cross; [
     # packages for cross compiling, run on local system (x86_64)
     stdenv.cc
+    # here stdenv.cc is the same with buildPackages.gcc
   ] ++ (with pkgs_arm_native; [
     # packages run on aarch64
     figlet

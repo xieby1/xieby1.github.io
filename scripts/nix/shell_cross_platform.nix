@@ -17,6 +17,7 @@ pkgs.mkShell {
   buildInputs = with pkgs_arm_cross; [
     # packages for cross compiling, run on local system (x86_64)
     stdenv.cc
+    # here stdenv.cc is the same with buildPackages.gcc
   ] ++ (with pkgs_arm_native; [
     # packages run on aarch64
     figlet

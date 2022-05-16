@@ -132,12 +132,19 @@
                     <main>
                         <h1 id="vim-in-nixnixos"><a class="header" href="#vim-in-nixnixos">Vim in Nix/NixOS</a></h1>
 <h2 id="highlight-color-code"><a class="header" href="#highlight-color-code">highlight color code</a></h2>
+<p>TLDR: vim-hexokinase isn't perfect but works.
+It need works in <code>termguicolors</code> mode,
+but this mode color is different from <code>notermguicolors</code>,
+the color scheme I am familiar with.
+And it is very tricky to setting colors in these two mode the same, which is insane.</p>
 <p>It would be convenient, if color code can be visualised in editor, especially in web programming.
 I found two candidates plugins to achieve this goal,
 <a href="https://github.com/ap/vim-css-color">vim-css-color</a>,
 <a href="https://github.com/RRethy/vim-hexokinase">vim-hexokinase</a>.</p>
 <p>Vim-css-color is not compatible with tree-sitter, due to regex based highlight.
-See <a href="https://github.com/ap/vim-css-color/issues/164">Github Issue: Neovim tree sitter support</a> for details.</p>
+See <a href="https://github.com/ap/vim-css-color/issues/164">Github Issue: Neovim tree sitter support</a> for details.
+Vim-css-color sometimes cannot render same text color.
+I need to scroll my vim viewport, then it <strong>may</strong> render color correctly.</p>
 <p>Vim-hexokinase is good, but must depends on <code>termguicolors</code> is turned on.
 <code>termguicolors</code> will enable 24-bit RGB color,
 while originally vim uses Base16 color.
@@ -181,7 +188,26 @@ I copy these text as html from my vim.</p>
 <p>Vim-css-color with out <code>termguicolors</code> cannot display color correctly (or say precisely),
 if you dont believe your eye, see the source code of this page.</p>
 <p>I think vim-hexokinase with a <code>termguicolors</code> toggle is a acceptable compromise.
-Toggle <code>termguicolors</code> by <code>:set termguicolors!</code>.</p>
+Toggle <code>termguicolors</code> by <code>:set termguicolors!</code>.
+I personally prefer to assign <code>&lt;leader&gt;c</code> to toggle <code>termguicolors</code>.</p>
+<h3 id="cterm--gui"><a class="header" href="#cterm--gui">cterm &amp; gui</a></h3>
+<p>TLDR: I still haven't find a elegant solution to keep <code>termguicolors</code> and <code>notermguicolors</code> visually same.</p>
+<p>neovim has 2 color schemes cterm &amp; gui,
+see <code>:h cterm-colors</code> &amp; <code>:h gui-colors</code>.
+Default sntax colors are different in these two schemes.
+For example, <code>:verbose highlight Comment</code> returns</p>
+<pre><code class="language-vim">Comment        xxx ctermfg=14 guifg=#80a0ff
+        Last set from /nix/store/pr1pwjjsm3k45rwi3w0xh2296rpymjlz-neovim-unwrapped-0.5.1/share/nvim/runtime/syntax/syncolor.vim
+</code></pre>
+<p>which means ctermfg uses the 14th color in ANSI colors,
+while guifg use a hex color code.
+The detailed setting is located in <code>${VIMRUNTIME}/syntax/syncolor.vim</code>.</p>
+<p>I create a new syncolor.vim based the default one,
+and modify the all ctermfg and guifg to same color name.
+The colors in two schemes are still different.</p>
+<p>Refers to <a href="https://github.com/vim/vim/issues/2353">Change Vim's terminal colors when termguicolors is set #2353</a>,
+<a href="http://neovim.io/doc/user/nvim_terminal_emulator.html#nvim-terminal-emulator-configuration">nvim-terminal-emulator-configuration</a>,</p>
+<p><code>let g:terminal_color_13 = '#AD7FA8' &quot; Magenta</code> doesn't work.</p>
 
                     </main>
                     <script src="https://utteranc.es/client.js"
