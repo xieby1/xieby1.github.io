@@ -2,6 +2,12 @@
 
 ## highlight color code
 
+TLDR: vim-hexokinase isn't perfect but works.
+It need works in `termguicolors` mode,
+but this mode color is different from `notermguicolors`,
+the color scheme I am familiar with.
+And it is very tricky to setting colors in these two mode the same, which is insane.
+
 It would be convenient, if color code can be visualised in editor, especially in web programming.
 I found two candidates plugins to achieve this goal,
 [vim-css-color](https://github.com/ap/vim-css-color),
@@ -9,6 +15,8 @@ I found two candidates plugins to achieve this goal,
 
 Vim-css-color is not compatible with tree-sitter, due to regex based highlight.
 See [Github Issue: Neovim tree sitter support](https://github.com/ap/vim-css-color/issues/164) for details.
+Vim-css-color sometimes cannot render same text color.
+I need to scroll my vim viewport, then it **may** render color correctly.
 
 Vim-hexokinase is good, but must depends on `termguicolors` is turned on.
 `termguicolors` will enable 24-bit RGB color,
@@ -58,3 +66,31 @@ if you dont believe your eye, see the source code of this page.
 
 I think vim-hexokinase with a `termguicolors` toggle is a acceptable compromise.
 Toggle `termguicolors` by `:set termguicolors!`.
+I personally prefer to assign `<leader>c` to toggle `termguicolors`.
+
+### cterm & gui
+
+TLDR: I still haven't find a elegant solution to keep `termguicolors` and `notermguicolors` visually same.
+
+neovim has 2 color schemes cterm & gui,
+see `:h cterm-colors` & `:h gui-colors`.
+Default sntax colors are different in these two schemes.
+For example, `:verbose highlight Comment` returns
+
+```vim
+Comment        xxx ctermfg=14 guifg=#80a0ff
+        Last set from /nix/store/pr1pwjjsm3k45rwi3w0xh2296rpymjlz-neovim-unwrapped-0.5.1/share/nvim/runtime/syntax/syncolor.vim
+```
+
+which means ctermfg uses the 14th color in ANSI colors,
+while guifg use a hex color code.
+The detailed setting is located in `${VIMRUNTIME}/syntax/syncolor.vim`.
+
+I create a new syncolor.vim based the default one,
+and modify the all ctermfg and guifg to same color name.
+The colors in two schemes are still different.
+
+Refers to [Change Vim's terminal colors when termguicolors is set #2353](https://github.com/vim/vim/issues/2353),
+[nvim-terminal-emulator-configuration](http://neovim.io/doc/user/nvim_terminal_emulator.html#nvim-terminal-emulator-configuration),
+
+`let g:terminal_color_13 = '#AD7FA8' " Magenta` doesn't work.
