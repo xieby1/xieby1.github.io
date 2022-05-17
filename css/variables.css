@@ -11,6 +11,8 @@
 /* Themes */
 
 .ayu {
+    --font: "Open Sans";
+    --font-mono: "Source Code Pro";
     --bg: hsl(210, 25%, 8%);
     --fg: #c5c5c5;
 
@@ -51,6 +53,8 @@
 }
 
 .coal {
+    --font: "Open Sans";
+    --font-mono: "Source Code Pro";
     --bg: hsl(200, 7%, 8%);
     --fg: #98a3ad;
 
@@ -91,6 +95,8 @@
 }
 
 .light {
+    --font: "Open Sans";
+    --font-mono: "Source Code Pro";
     --bg: hsl(0, 0%, 100%);
     --fg: hsl(0, 0%, 0%);
 
@@ -131,6 +137,8 @@
 }
 
 .navy {
+    --font: "Open Sans";
+    --font-mono: "Source Code Pro";
     --bg: hsl(226, 23%, 11%);
     --fg: #bcbdd0;
 
@@ -171,6 +179,8 @@
 }
 
 .rust {
+    --font: "Open Sans";
+    --font-mono: "Source Code Pro";
     --bg: hsl(60, 9%, 87%);
     --fg: #262625;
 
@@ -253,6 +263,8 @@
 }
 
 .shuimitao {
+    --font: "LXGWWenkai";
+    --font-mono: "LXGWWenkaiMono";
     --bg: #FFDAB9;
     --fg: #000000;
 
