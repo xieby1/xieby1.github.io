@@ -31,6 +31,8 @@ nixpkgs原生支持x86和arm指令集。
         * [kernel](#kernel)
         * [abi](#abi)
 * [`localSystem`和`crossSystem`的应用](#localsystem和crosssystem的应用)
+    * [aarch64交叉工具链和程序的详细例子](#aarch64交叉工具链和程序的详细例子)
+    * [mips交叉工具链的例子](#mips交叉工具链的例子)
 * [引用](#引用)
 
 <!-- vim-markdown-toc -->
@@ -201,6 +203,8 @@ abi字符串可取的值列举如下[^abis]，
 
 ## `localSystem`和`crossSystem`的应用
 
+### aarch64交叉工具链和程序的详细例子
+
 以x86为本地指令集，`localSystem`和`crossSystem`的组合有以下效果
 
 | ↓`crossSystem`↓ →`localSystem`→ | "x86_64-linux"  | "aarch64-linux" |
@@ -256,6 +260,13 @@ $ qemu-aarch64 `command -v figlet` miao!
 | | | | | | | (_| | (_) |_|
 |_| |_| |_|_|\__,_|\___/(_)
 ```
+
+### mips交叉工具链的例子
+
+```nix
+{{##include ../../scripts/nix/shell_cross_mips.nix}}
+```
+
 
 ## 引用
 
