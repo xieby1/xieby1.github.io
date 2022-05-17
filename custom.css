@@ -3,15 +3,3 @@
 table td {padding: 0 0;}
 h2, h3 { margin-top: 0; }
 h4, h5 { margin-top: 0; }
-
-@font-face {
-  font-family: 'LXGWWenkai';
-  font-style: normal;
-  src: url('./fonts/LXGWWenKai-Regular.ttf');
-}
-
-@font-face {
-  font-family: 'LXGWWenkaiMono';
-  font-style: normal;
-  src: url('./fonts/LXGWWenKaiMono-Regular.ttf');
-}
