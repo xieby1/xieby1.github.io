@@ -133,10 +133,9 @@
                         <h1 id="vim-in-nixnixos"><a class="header" href="#vim-in-nixnixos">Vim in Nix/NixOS</a></h1>
 <h2 id="highlight-color-code"><a class="header" href="#highlight-color-code">highlight color code</a></h2>
 <p>TLDR: vim-hexokinase isn't perfect but works.
-It need works in <code>termguicolors</code> mode,
-but this mode color is different from <code>notermguicolors</code>,
-the color scheme I am familiar with.
-And it is very tricky to setting colors in these two mode the same, which is insane.</p>
+It need works in <code>termguicolors</code> mode.
+It is better to choose a color scheme which is visualized in gui mode.
+And it is very tricky to setting colors in <code>termguicolors</code> &amp; <code>notermguicolors</code> the same, which is insane.</p>
 <p>It would be convenient, if color code can be visualised in editor, especially in web programming.
 I found two candidates plugins to achieve this goal,
 <a href="https://github.com/ap/vim-css-color">vim-css-color</a>,
@@ -203,11 +202,63 @@ For example, <code>:verbose highlight Comment</code> returns</p>
 while guifg use a hex color code.
 The detailed setting is located in <code>${VIMRUNTIME}/syntax/syncolor.vim</code>.</p>
 <p>I create a new syncolor.vim based the default one,
-and modify the all ctermfg and guifg to same color name.
+and modify the all ctermfg and guifg to same color name, like below.
 The colors in two schemes are still different.</p>
+<pre><code class="language-vim">if !exists(&quot;syntax_cmd&quot;) || syntax_cmd == &quot;on&quot;
+  &quot; &quot;:syntax on&quot; works like in Vim 5.7: set colors but keep links
+  command -nargs=* SynColor hi &lt;args&gt;
+  command -nargs=* SynLink hi link &lt;args&gt;
+else
+  if syntax_cmd == &quot;enable&quot;
+    &quot; &quot;:syntax enable&quot; keeps any existing colors
+    command -nargs=* SynColor hi def &lt;args&gt;
+    command -nargs=* SynLink hi def link &lt;args&gt;
+  elseif syntax_cmd == &quot;reset&quot;
+    &quot; &quot;:syntax reset&quot; resets all colors to the default
+    command -nargs=* SynColor hi &lt;args&gt;
+    command -nargs=* SynLink hi! link &lt;args&gt;
+  else
+    &quot; User defined syncolor file has already set the colors.
+    finish
+  endif
+endif
+
+&quot; Many terminals can only use six different colors (plus black and white).
+&quot; Therefore the number of colors used is kept low. It doesn't look nice with
+&quot; too many colors anyway.
+&quot; Careful with &quot;cterm=bold&quot;, it changes the color to bright for some terminals.
+&quot; There are two sets of defaults: for a dark and a light background.
+if &amp;background == &quot;dark&quot;
+  SynColor Comment	term=bold cterm=NONE ctermfg=Cyan ctermbg=NONE gui=NONE guifg=Cyan guibg=NONE
+  SynColor Constant	term=underline cterm=NONE ctermfg=Magenta ctermbg=NONE gui=NONE guifg=Magenta guibg=NONE
+  SynColor Special	term=bold cterm=NONE ctermfg=LightRed ctermbg=NONE gui=NONE guifg=LightRed guibg=NONE
+  SynColor Identifier	term=underline cterm=bold ctermfg=Cyan ctermbg=NONE gui=bold guifg=Cyan guibg=NONE
+  SynColor Statement	term=bold cterm=NONE ctermfg=Yellow ctermbg=NONE gui=NONE guifg=Yellow guibg=NONE
+  SynColor PreProc	term=underline cterm=NONE ctermfg=LightBlue ctermbg=NONE gui=NONE guifg=LightBlue guibg=NONE
+  SynColor Type		term=underline cterm=NONE ctermfg=LightGreen ctermbg=NONE gui=NONE guifg=LightGreen guibg=NONE
+  SynColor Underlined	term=underline cterm=underline ctermfg=LightBlue gui=underline guifg=LightBlue
+  SynColor Ignore	term=NONE cterm=NONE ctermfg=black ctermbg=NONE gui=NONE guifg=black guibg=NONE
+else
+  SynColor Comment	term=bold cterm=NONE ctermfg=DarkBlue ctermbg=NONE gui=NONE guifg=DarkBlue guibg=NONE
+  SynColor Constant	term=underline cterm=NONE ctermfg=DarkRed ctermbg=NONE gui=NONE guifg=DarkBlue guibg=NONE
+  SynColor Special	term=bold cterm=NONE ctermfg=DarkMagenta ctermbg=NONE gui=NONE guifg=DarkMagenta guibg=NONE
+  SynColor Identifier	term=underline cterm=NONE ctermfg=DarkCyan ctermbg=NONE gui=NONE guifg=DarkCyan guibg=NONE
+  SynColor Statement	term=bold cterm=NONE ctermfg=Brown ctermbg=NONE gui=bold guifg=Brown guibg=NONE
+  SynColor PreProc	term=underline cterm=NONE ctermfg=DarkMagenta ctermbg=NONE gui=NONE guifg=DarkMagenta guibg=NONE
+  SynColor Type		term=underline cterm=NONE ctermfg=DarkGreen ctermbg=NONE gui=NONE guifg=DarkGreen guibg=NONE
+  SynColor Underlined	term=underline cterm=underline ctermfg=DarkMagenta gui=underline guifg=DarkMagenta
+  SynColor Ignore	term=NONE cterm=NONE ctermfg=white ctermbg=NONE gui=NONE guifg=white guibg=NONE
+endif
+SynColor Error		term=reverse cterm=NONE ctermfg=White ctermbg=Red gui=NONE guifg=White guibg=Red
+SynColor Todo		term=standout cterm=NONE ctermfg=Black ctermbg=Yellow gui=NONE guifg=Black guibg=Yellow
+</code></pre>
+<p>The Magenta is especially dazzling,
+and cannot change it by below tries.</p>
 <p>Refers to <a href="https://github.com/vim/vim/issues/2353">Change Vim's terminal colors when termguicolors is set #2353</a>,
 <a href="http://neovim.io/doc/user/nvim_terminal_emulator.html#nvim-terminal-emulator-configuration">nvim-terminal-emulator-configuration</a>,</p>
 <p><code>let g:terminal_color_13 = '#AD7FA8' &quot; Magenta</code> doesn't work.</p>
+<p>Finally I choose to add a color-scheme manager,
+and choose a theme which has both cterm &amp; gui color scheme.</p>
 
                     </main>
                     <script src="https://utteranc.es/client.js"
