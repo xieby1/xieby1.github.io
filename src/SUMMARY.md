@@ -234,6 +234,8 @@
     * [Vim in Nix/NixOS](./Distro/Nix/vim.md)
 * [EPaper]()
   * [laptop.md](./EPaper/laptop.md)
+* [fonts]()
+  * [files]()
 * [FPGA]()
   * [iverilog.md](./FPGA/iverilog.md)
 * [hackthon]()
