@@ -52,7 +52,7 @@ Demo👇
 
 ## 2021.7 🎡wheelOfFortune
 
-[wheelOfFortune](https://github.com/xieby1/wheelOfFortune)
+[wheelOfFortune](https://xieby1.github.io/wheelOfFortune/)
 
 写给女朋友玩的幸运大转盘
 
