@@ -4,6 +4,19 @@
 
 * '🐁'仅在我的配置下可用，并不通用
 
+## awk
+
+### print nth to last
+
+[Using awk to print all columns from the nth to the last](https://stackoverflow.com/questions/2961635/)
+
+```bash
+# Print all but the first column
+awk '{$1=""; print substr($0,2)}' somefile
+# Print all but the fisrt two columns
+awk '{$1=$2=""; print substr($0,2)}' somefile
+```
+
 ## bash
 
 ### 可注释字符串
@@ -32,6 +45,18 @@ while read line
 do
     echo "$line"
 done < file
+```
+
+### test a var is num
+
+[How do I test if a variable is a number in Bash?](https://stackoverflow.com/questions/806906/)
+
+```bash
+re='^[0-9]+$'
+if [[ $yournumber =~ $re ]]
+then
+   echo "is a num!"
+fi
 ```
 
 ## binfmt
@@ -442,6 +467,20 @@ nix path-info \
 nix-build '<nixpkgs>' -A <pkg>
 ```
 
+### cheatsheet
+
+[NixOS Wiki Cheatsheet](https://nixos.wiki/wiki/Cheatsheet)
+
+### copy
+
+[How to use a local directory as a nix binary cache?](https://discourse.nixos.org/t/how-to-use-a-local-directory-as-a-nix-binary-cache/655)
+
+```nix
+nix copy --no-check-sigs \
+--to <output/path> </nixstore/path>
+nix-env -i <output/path>
+```
+
 ### escape indented str
 
 ```bash
@@ -466,6 +505,19 @@ sudo nix-env -p /nix/var/nix/profiles/system --list-generations
 
 ```bash
 nix-shell '<nixpkgs>' -A
+```
+
+### pkg dependency
+
+```
+# all dependencies
+nix-store --query --requisites </nix/store/path>
+## or
+nix-store --query -R </nix/store/path>
+# nested tree
+nix-store --query --tree </nix/store/path>
+# only immediate dependencies
+nix-store --query --references </nix/store/path>
 ```
 
 ### pkg not in nixpkgs
