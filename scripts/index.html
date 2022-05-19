@@ -735,8 +735,7 @@ CREATE_IMAGE() {
 
 # podman volumes always owned by root:
 #   https://github.com/containers/podman/issues/2898
-CREATE_CONTAINER()
-{
+CREATE_CONTAINER() {
     VER=$1
 
     CMD=(
@@ -776,13 +775,6 @@ OPTIONS=(
     &quot;-c&quot;
     &quot;-v&quot;
 )
-
-# Input variables
-if [[ $# -lt 1 ]]
-then
-    CREATE_CONTAINER
-    exit
-fi
 
 CREATE=&quot;no&quot;
 VER=20
@@ -931,6 +923,28 @@ pkgs.mkShell {
 }).env
 </code></pre>
 <h3 id="shellnix"><a class="header" href="#shellnix">shell.nix</a></h3>
+<pre><code class="language-nix">with import &lt;nixpkgs&gt; {};
+mkShell {
+  name = &quot;test-env&quot;;
+  miao = &quot;miao!&quot;;
+}
+</code></pre>
+<h3 id="shell_python_machnix"><a class="header" href="#shell_python_machnix">shell_python_mach.nix</a></h3>
+<pre><code class="language-nix">let
+  mach-nix = import (builtins.fetchGit {
+    url = &quot;https://github.com/DavHau/mach-nix&quot;;
+    ref = &quot;refs/tags/3.4.0&quot;;
+  }) {
+    pkgs = import &lt;nixpkgs&gt; {};
+  };
+in
+mach-nix.mkPythonShell {
+  requirements = ''
+    expmcc
+  '';
+}
+</code></pre>
+<h3 id="shell_pythonnix"><a class="header" href="#shell_pythonnix">shell_python.nix</a></h3>
 <pre><code class="language-nix"># --pure: start a pure reproducible shell
 { pkgs ? import &lt;nixpkgs&gt; {} }:
 let
@@ -964,19 +978,24 @@ pkgs.mkShell {
   '';
 }
 </code></pre>
-<h3 id="shell_python_machnix"><a class="header" href="#shell_python_machnix">shell_python_mach.nix</a></h3>
-<pre><code class="language-nix">let
-  mach-nix = import (builtins.fetchGit {
-    url = &quot;https://github.com/DavHau/mach-nix&quot;;
-    ref = &quot;refs/tags/3.4.0&quot;;
-  }) {
-    pkgs = import &lt;nixpkgs&gt; {};
-  };
+<h3 id="shell_python_venvnix"><a class="header" href="#shell_python_venvnix">shell_python_venv.nix</a></h3>
+<pre><code class="language-nix">#2022.05.18
+# pip install is usable in venv
+# e.g.
+# $ nix-shell &lt;this_file&gt;
+# $ pip install graphviz2drawio
+let
+  pkgs = import &lt;nixpkgs&gt; {};
 in
-mach-nix.mkPythonShell {
-  requirements = ''
-    expmcc
-  '';
+pkgs.mkShell {
+  propagatedBuildInputs = with pkgs.python3Packages; [
+    pip
+    pygraphviz
+    venvShellHook
+  ] ++ (with pkgs; [
+    graphviz
+  ]);
+  venvDir = &quot;venv&quot;;
 }
 </code></pre>
 <h3 id="shell_qemu_tests_tcgnix"><a class="header" href="#shell_qemu_tests_tcgnix">shell_qemu_tests_tcg.nix</a></h3>

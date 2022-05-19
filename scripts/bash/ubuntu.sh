@@ -24,8 +24,7 @@ CREATE_IMAGE() {
 
 # podman volumes always owned by root:
 #   https://github.com/containers/podman/issues/2898
-CREATE_CONTAINER()
-{
+CREATE_CONTAINER() {
     VER=$1
 
     CMD=(
@@ -65,13 +64,6 @@ OPTIONS=(
     "-c"
     "-v"
 )
-
-# Input variables
-if [[ $# -lt 1 ]]
-then
-    CREATE_CONTAINER
-    exit
-fi
 
 CREATE="no"
 VER=20

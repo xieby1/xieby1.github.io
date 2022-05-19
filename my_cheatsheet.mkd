@@ -481,6 +481,12 @@ nix copy --no-check-sigs \
 nix-env -i <output/path>
 ```
 
+### copy closure
+
+```bash
+sudo nix-copy-closure --from <user@ssh> <path>
+```
+
 ### escape indented str
 
 ```bash
@@ -530,6 +536,12 @@ nix-shell -E "with import <nixpkgs> {}; callPackage ./default.nix {}"
 
 ```bash
 nix-shell '<nixpkgs>' -A <pkg>
+```
+
+### pkg size
+
+```bash
+nix path-info -Sh <path>
 ```
 
 ### prefetch url
@@ -820,6 +832,17 @@ systemctl list-units --type target
 ```vim
 ; open current file's dir
 :E[xplore]
+```
+
+### fold
+
+```vim
+" set
+zf{motion} " :h motion.txt
+" toggle
+za
+" range
+:{range}fo[ld]
 ```
 
 ### highlight current line
