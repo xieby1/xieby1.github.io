@@ -136,6 +136,18 @@
 {{ #include nix/shell_python_mach.nix }}
 ```
 
+### shell_python.nix
+
+```nix
+{{ #include nix/shell_python.nix }}
+```
+
+### shell_python_venv.nix
+
+```nix
+{{ #include nix/shell_python_venv.nix }}
+```
+
 ### shell_qemu_tests_tcg.nix
 
 ```nix
