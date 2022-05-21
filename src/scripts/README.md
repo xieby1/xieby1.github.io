@@ -106,6 +106,12 @@
 {{ #include nix/libllvm13_debug.nix }}
 ```
 
+### pkgs_cross_mips.nix
+
+```nix
+{{ #include nix/pkgs_cross_mips.nix }}
+```
+
 ### shell_cross_mips.nix
 
 ```nix
