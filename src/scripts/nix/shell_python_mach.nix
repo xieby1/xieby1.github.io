@@ -1,3 +1,5 @@
+#!/usr/bin/env nix-shell
+
 let
   mach-nix = import (builtins.fetchGit {
     url = "https://github.com/DavHau/mach-nix";

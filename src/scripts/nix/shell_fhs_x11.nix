@@ -1,3 +1,4 @@
+#!/usr/bin/env nix-shell
 # https://ryantm.github.io/nixpkgs/builders/special/fhs-environments/
 
 { pkgs ? import <nixpkgs> {} }:

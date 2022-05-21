@@ -1,3 +1,4 @@
+#!/usr/bin/env nix-shell
 # xieby1: 2022.04.26
 
 let

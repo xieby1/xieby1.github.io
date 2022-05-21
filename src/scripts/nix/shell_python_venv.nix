@@ -1,3 +1,5 @@
+#!/usr/bin/env nix-shell
+
 #2022.05.18
 # pip install is usable in venv
 # e.g.
