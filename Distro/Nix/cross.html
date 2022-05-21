@@ -331,7 +331,8 @@ nix在解析时会将省略的维度按以某些默认值补充完整。
 <p>因此基于这3种组合，可以在同一个shell环境中配置出3种软件，
 <a href="https://xieby1.github.io/scripts/index.html#shell_cross_platformnix">shell_cross_platform.nix</a>
 的代码如下。</p>
-<pre><code class="language-nix"># xieby1: 2022.04.26
+<pre><code class="language-nix">#!/usr/bin/env nix-shell
+# xieby1: 2022.04.26
 
 let
   pkgs_arm_cross = import &lt;nixpkgs&gt; {

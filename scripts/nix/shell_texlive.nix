@@ -1,3 +1,4 @@
+#!/usr/bin/env nix-shell
 # --pure: start a pure reproducible shell
 { pkgs ? import <nixpkgs> {}
 }:

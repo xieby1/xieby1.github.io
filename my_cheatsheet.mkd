@@ -538,6 +538,12 @@ nix-shell -E "with import <nixpkgs> {}; callPackage ./default.nix {}"
 nix-shell '<nixpkgs>' -A <pkg>
 ```
 
+### pkg priority
+
+```nix
+lib.lowPrio <pkg>
+```
+
 ### pkg size
 
 ```bash
@@ -740,6 +746,14 @@ rustup show
 rustc --print target-list
 rustup target add <TARGET>
 cargo build --target=<TARGET> --release
+```
+
+## sed
+
+### refer to match
+
+```bash
+sed 's/\(.*\)miao/\1wang/g'
 ```
 
 ## sixu
@@ -999,6 +1013,21 @@ diff两个竖分buffers
 let g:gitgutter_diff_base = ''
 ```
 
+### gitgutter-diff
+
+```vim
+:GitGutterDiffOrig
+```
+
+### diff obtain/put
+
+```vim
+" obtain
+do
+" put
+dp
+```
+
 ### wrap line
 
 ```vim
@@ -1037,7 +1066,7 @@ xdg-mime query filetype <file>
 xdg-mime query default <type>
 ```
 
-## 单个、分散的操作
+## others
 
 ### crypt
 
@@ -1113,6 +1142,14 @@ iconv -f gb18030 -t utf-8 <output>
 
 ```
  | xclip -selection clipboard
+```
+
+### shebang with arguments
+
+[SE: Multiple arguments in shebang](https://unix.stackexchange.com/questions/399690/)
+
+```
+#!/usr/bin/env -S cmd arg1 arg2 ...
 ```
 
 ### sort first column

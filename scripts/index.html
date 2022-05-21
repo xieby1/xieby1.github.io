@@ -853,8 +853,17 @@ with (import &lt;nixpkgs&gt; {});
   debugVersion = true;
 })
 </code></pre>
+<h3 id="pkgs_cross_mipsnix"><a class="header" href="#pkgs_cross_mipsnix">pkgs_cross_mips.nix</a></h3>
+<pre><code class="language-nix">#!/usr/bin/env -S nix-env -i -f
+# xieby1: 2022.05.16
+with (import &lt;nixpkgs&gt; {crossSystem = &quot;mips-linux&quot;;}); {
+  gdb = lib.lowPrio buildPackages.gdb;
+  gcc = lib.lowPrio buildPackages.gcc;
+}
+</code></pre>
 <h3 id="shell_cross_mipsnix"><a class="header" href="#shell_cross_mipsnix">shell_cross_mips.nix</a></h3>
-<pre><code class="language-nix"># xieby1: 2022.05.16
+<pre><code class="language-nix">#!/usr/bin/env nix-shell
+# xieby1: 2022.05.16
 let
   pkgs_mips_cross = import &lt;nixpkgs&gt; {
     crossSystem = &quot;mips-linux&quot;;
@@ -871,7 +880,8 @@ pkgs.mkShell {
 }
 </code></pre>
 <h3 id="shell_cross_platformnix"><a class="header" href="#shell_cross_platformnix">shell_cross_platform.nix</a></h3>
-<pre><code class="language-nix"># xieby1: 2022.04.26
+<pre><code class="language-nix">#!/usr/bin/env nix-shell
+# xieby1: 2022.04.26
 
 let
   pkgs_arm_cross = import &lt;nixpkgs&gt; {
@@ -901,7 +911,8 @@ pkgs.mkShell {
 }
 </code></pre>
 <h3 id="shell_fhs_x11nix"><a class="header" href="#shell_fhs_x11nix">shell_fhs_x11.nix</a></h3>
-<pre><code class="language-nix"># https://ryantm.github.io/nixpkgs/builders/special/fhs-environments/
+<pre><code class="language-nix">#!/usr/bin/env nix-shell
+# https://ryantm.github.io/nixpkgs/builders/special/fhs-environments/
 
 { pkgs ? import &lt;nixpkgs&gt; {} }:
 
@@ -923,14 +934,22 @@ pkgs.mkShell {
 }).env
 </code></pre>
 <h3 id="shellnix"><a class="header" href="#shellnix">shell.nix</a></h3>
-<pre><code class="language-nix">with import &lt;nixpkgs&gt; {};
+<pre><code class="language-nix">#!/usr/bin/env nix-shell
+with import &lt;nixpkgs&gt; {};
+# You will get a shell with hello executable,
+# and environment variable $name, $miao.
 mkShell {
+  packages = [
+    hello
+  ];
   name = &quot;test-env&quot;;
   miao = &quot;miao!&quot;;
 }
 </code></pre>
 <h3 id="shell_python_machnix"><a class="header" href="#shell_python_machnix">shell_python_mach.nix</a></h3>
-<pre><code class="language-nix">let
+<pre><code class="language-nix">#!/usr/bin/env nix-shell
+
+let
   mach-nix = import (builtins.fetchGit {
     url = &quot;https://github.com/DavHau/mach-nix&quot;;
     ref = &quot;refs/tags/3.4.0&quot;;
@@ -945,7 +964,9 @@ mach-nix.mkPythonShell {
 }
 </code></pre>
 <h3 id="shell_pythonnix"><a class="header" href="#shell_pythonnix">shell_python.nix</a></h3>
-<pre><code class="language-nix"># --pure: start a pure reproducible shell
+<pre><code class="language-nix">#!/usr/bin/env nix-shell
+
+# --pure: start a pure reproducible shell
 { pkgs ? import &lt;nixpkgs&gt; {} }:
 let
   name = &quot;nix&quot;;
@@ -979,7 +1000,9 @@ pkgs.mkShell {
 }
 </code></pre>
 <h3 id="shell_python_venvnix"><a class="header" href="#shell_python_venvnix">shell_python_venv.nix</a></h3>
-<pre><code class="language-nix">#2022.05.18
+<pre><code class="language-nix">#!/usr/bin/env nix-shell
+
+#2022.05.18
 # pip install is usable in venv
 # e.g.
 # $ nix-shell &lt;this_file&gt;
@@ -999,7 +1022,9 @@ pkgs.mkShell {
 }
 </code></pre>
 <h3 id="shell_qemu_tests_tcgnix"><a class="header" href="#shell_qemu_tests_tcgnix">shell_qemu_tests_tcg.nix</a></h3>
-<pre><code class="language-nix"># --pure: start a pure reproducible shell
+<pre><code class="language-nix">#!/usr/bin/env nix-shell
+
+# --pure: start a pure reproducible shell
 # 2022.04.24
 # Compile qemu/tests/tcg/x86_64/
 # env CFLAGS=-O make -e build-tcg-tests-x86_64-linux-user
@@ -1018,7 +1043,8 @@ pkgs.mkShell {
 }
 </code></pre>
 <h3 id="shell_texlivenix"><a class="header" href="#shell_texlivenix">shell_texlive.nix</a></h3>
-<pre><code class="language-nix"># --pure: start a pure reproducible shell
+<pre><code class="language-nix">#!/usr/bin/env nix-shell
+# --pure: start a pure reproducible shell
 { pkgs ? import &lt;nixpkgs&gt; {}
 }:
 pkgs.mkShell {

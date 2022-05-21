@@ -1,3 +1,5 @@
+#!/usr/bin/env nix-shell
+
 # --pure: start a pure reproducible shell
 # 2022.04.24
 # Compile qemu/tests/tcg/x86_64/
