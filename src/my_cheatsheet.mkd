@@ -460,6 +460,28 @@ nix path-info \
 <pkgs-name>
 ```
 
+### binary cache im/export
+
+```
+# import may need sudo
+nix-store --import/--export
+```
+
+### binary cache copy
+
+[How to use a local directory as a nix binary cache?](https://discourse.nixos.org/t/how-to-use-a-local-directory-as-a-nix-binary-cache/655)
+
+```nix
+nix copy --no-check-sigs \
+--to <output/path> </nixstore/path>
+nix-env -i <output/path>
+```
+
+### binary cache copy closure
+
+```bash
+sudo nix-copy-closure --from <user@ssh> <path>
+```
 
 ### build pkg
 
@@ -470,22 +492,6 @@ nix-build '<nixpkgs>' -A <pkg>
 ### cheatsheet
 
 [NixOS Wiki Cheatsheet](https://nixos.wiki/wiki/Cheatsheet)
-
-### copy
-
-[How to use a local directory as a nix binary cache?](https://discourse.nixos.org/t/how-to-use-a-local-directory-as-a-nix-binary-cache/655)
-
-```nix
-nix copy --no-check-sigs \
---to <output/path> </nixstore/path>
-nix-env -i <output/path>
-```
-
-### copy closure
-
-```bash
-sudo nix-copy-closure --from <user@ssh> <path>
-```
 
 ### escape indented str
 
