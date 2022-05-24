@@ -627,6 +627,12 @@ nix-prefetch-url --unpack
 nix-instantiate --eval -E "<path>"
 ```
 
+### version
+
+```bash
+nix-version --hash
+```
+
 ## ocr
 
 ### tesseract
