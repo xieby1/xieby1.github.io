@@ -112,6 +112,12 @@
 {{ #include nix/pkgs_cross_mips.nix }}
 ```
 
+### pkgs_qemu_static.nix
+
+```nix
+{{ #include nix/pkgs_qemu_static.nix }}
+```
+
 ### shell_cross_mips.nix
 
 ```nix
