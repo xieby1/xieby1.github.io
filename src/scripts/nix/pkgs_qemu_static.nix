@@ -5,13 +5,20 @@
 # build and install static qemu
 # $ nix-env -i -f <this-file>
 let
-  pinnedPkgs = builtins.fetchTarball {
+  # https://lazamar.co.uk/nix-versions
+  pinnedPkgsForQemu31Src = builtins.fetchTarball {
+    name = "nixos-20.03-with-qemu-3.1.0";
+    url = "https://github.com/NixOS/nixpkgs/archive/81d4e65891f92e8e72c244da663c83c1e40dc919.tar.gz";
+    sha256 = "0dk1k1zqy2bnp9gsy9mdxk0idkazyvnmqrj2jpbwzfnhjzpmzq1w";
+  };
+  pinnedPkgsSrc = builtins.fetchTarball {
     name = "nixos-static-qemu";
     url = "https://github.com/nixos/nixpkgs/archive/e7d63bd0d50df412f5a1d8acfa3caae75522e347.tar.gz";
     sha256 = "132pc4f9ixisyv4117p2jirmlyl6sd76bfaz33rhlcwakg7bhjm7";
   };
-  pkgs = import pinnedPkgs {};
-  mypkgs = import pinnedPkgs {
+  pkgsForQemu31 = import pinnedPkgsForQemu31Src {};
+  pkgs = import pinnedPkgsSrc {};
+  mypkgs = import pinnedPkgsSrc {
     overlays = [(self: super: {
 
       cdparanoiaIII = super.pkgsStatic.cdparanoiaIII.overrideAttrs (old: {
@@ -78,6 +85,10 @@ let
         postInstall = pkgs.glib.postInstall;
       });
 
+      # gtk3 = super.pkgsStatic.gtk3.override {
+      #   withGtkDoc = false;
+      # };
+
       qemu = ((super.pkgsStatic.qemu.override {
         alsaSupport = false;
         spiceSupport = false;
@@ -119,7 +130,70 @@ let
           "--target-list=x86_64-softmmu"
         ];
       });
+
+      qemu31 = (((super.callPackage (
+        pinnedPkgsForQemu31Src + "/pkgs/applications/virtualization/qemu/default.nix"
+      ) {
+        inherit (super.darwin.apple_sdk.frameworks) CoreServices Cocoa Hypervisor;
+        inherit (super.darwin.stubs) rez setfile;
+      }).override {
+        # In nixpkgs 20.03, stdenv contains lib attr.
+        stdenv = pkgs.pkgsStatic.stdenv // {lib = super.lib;};
+        alsaLib = null;
+        spiceSupport = false;
+        sdlSupport = false;
+        smartcardSupport = false;
+        gtkSupport = false;
+        pulseSupport = false;
+
+        # nativeBuildInputs
+        makeWrapper = pkgs.makeWrapper;
+        python2 = pkgs.python2;
+        pkgconfig = pkgs.pkgconfig;
+        flex = pkgs.flex;
+        bison = pkgs.bison;
+        perl = pkgs.perl;
+      }).overrideAttrs (old: {
+        nativeBuildInputs = old.nativeBuildInputs ++ [
+          # Several issues report ld version >= 2.34 will failed due to
+          # PHDR segment not covered by LOAD segment.
+          # https://github.com/OpenOrbis/OpenOrbis-PS4-Toolchain/issues/122
+          # https://github.com/genodelabs/genode/issues/4003
+          # So I downgrade ld version < 2.34.
+          # I still do not figure out why the same version ld in
+          # qemu 6.1.1 static works correctly?
+          pkgsForQemu31.binutils
+        ];
+      })).overrideDerivation (old: let
+        # drop audio configure flag
+        configureFlags_no_audio = builtins.filter (
+          x: ! super.lib.hasPrefix "--audio-drv-list" x
+        ) old.configureFlags;
+        # qemu configure uses "--static" instead of standard "--disable-shared" and "--enable-static"
+        configureFlags_no_DS = super.lib.lists.remove "--disable-shared" configureFlags_no_audio;
+        configureFlags_no_DS_no_ES = super.lib.lists.remove "--enable-static" configureFlags_no_DS;
+      in {
+        configureFlags = configureFlags_no_DS_no_ES ++ [
+          # "--static"
+          # "--target-list-exclude="
+          "--target-list=x86_64-softmmu"
+          "--disable-gnutls"
+          "--disable-tools"
+        ];
+        makeFlags = [
+          # "V=1" # qemu Makefile verbose
+          # It is neccessary to use ld in binutils, otherwise pc-bios build will fail.
+          # In qemu 6.1.1 static, it is using ld in binutils, instead of ld from musl-gcc
+          "AR=${pkgs.binutils-unwrapped}/bin/ar"
+          "AS=${pkgs.binutils}/bin/as"
+          "LD=${pkgs.binutils}/bin/ld"
+          "NIX_BINTOOLS=${pkgs.binutils}"
+        ];
+      });
     })];
+
   };
 in
-mypkgs.pkgsStatic.qemu
+{
+  inherit (mypkgs.pkgsStatic) qemu qemu31;
+}
