@@ -864,10 +864,14 @@ with (import &lt;nixpkgs&gt; {crossSystem = &quot;mips-linux&quot;;}); {
 <h3 id="pkgs_qemu_staticnix"><a class="header" href="#pkgs_qemu_staticnix">pkgs_qemu_static.nix</a></h3>
 <pre><code class="language-nix">#!/usr/bin/env nix-build
 # xieby1: 2022.05.24
-# build static qemu into ./result/
-# $ nix-build &lt;this-file&gt;
+# build static qemu (current version 6.1.1) into ./result/
+# $ nix-build &lt;this-file&gt; -A qemu
+# build static qemu-3.1.0 into ./result/
+# $ nix-build &lt;this-file&gt; -A qemu31
 # build and install static qemu
-# $ nix-env -i -f &lt;this-file&gt;
+# $ nix-env -i -f &lt;this-file&gt; -A qemu
+# build and install static qemu-3.1.0
+# $ nix-env -i -f &lt;this-file&gt; -A qemu31
 let
   # https://lazamar.co.uk/nix-versions
   pinnedPkgsForQemu31Src = builtins.fetchTarball {

@@ -1,9 +1,13 @@
 #!/usr/bin/env nix-build
 # xieby1: 2022.05.24
-# build static qemu into ./result/
-# $ nix-build <this-file>
+# build static qemu (current version 6.1.1) into ./result/
+# $ nix-build <this-file> -A qemu
+# build static qemu-3.1.0 into ./result/
+# $ nix-build <this-file> -A qemu31
 # build and install static qemu
-# $ nix-env -i -f <this-file>
+# $ nix-env -i -f <this-file> -A qemu
+# build and install static qemu-3.1.0
+# $ nix-env -i -f <this-file> -A qemu31
 let
   # https://lazamar.co.uk/nix-versions
   pinnedPkgsForQemu31Src = builtins.fetchTarball {
