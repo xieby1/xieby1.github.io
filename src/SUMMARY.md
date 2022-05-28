@@ -229,6 +229,7 @@
     * [打包飞书](./Distro/Nix/feishu.md)
     * [Gnome in NixOS](./Distro/Nix/gnome.md)
     * [nixpkgs.md](./Distro/Nix/nixpkgs.md)
+    * [node.md](./Distro/Nix/node.md)
     * [productivity.md](./Distro/Nix/productivity.md)
     * [Python in Nix/NixOS](./Distro/Nix/python.md)
     * [Nix/NixOS](./Distro/Nix/README-en.md)
