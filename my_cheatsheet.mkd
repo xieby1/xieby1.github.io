@@ -223,6 +223,59 @@ vim /boot/grub/grub.cfg
 otf2bdf -r 242 -p 36 /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf -o ~/Desktop/DejaVuSansMono.bdf
 ```
 
+## gcc
+
+### inline asm
+
+No clobber, may segment fault!
+Just an example.
+
+```c
+#include <stdio.h>
+int a = 10;
+int b = 20;
+int result;
+int main(void)
+{
+   asm( "mov a, %eax\n\t"
+        "mov b, %ebx\n\t"
+        "add %ebx, %eax\n\t"
+        "mov %eax, result");
+   printf("the result is %d\n", result);
+   return 0;
+}
+```
+
+### extended inline asm
+
+```c
+#include <stdio.h>
+int a = 10;
+int b = 20;
+int result;
+int main(void)
+{
+   asm( "mov a, %%eax\n\t"
+        "mov b, %%ebx\n\t"
+        "add %%ebx, %%eax\n\t"
+        "mov %%eax, result"
+        : /* no outputs*/
+        : /* no inputs */
+        : "eax", "ebx");
+   printf("the result is %d\n", result);
+   return 0;
+}
+```
+
+### predefined macros
+
+[2012.SO: preprocessor defined macros](https://stackoverflow.com/questions/10904873/anyway-to-see-list-of-preprocessor-defined-macros)
+
+```bash
+gcc -dM -E - < /dev/null
+touch bla.c && gcc -dM -E bla.c
+```
+
 ## git
 
 ### remote branches
@@ -762,6 +815,14 @@ cargo build --target=<TARGET> --release
 
 ## sed
 
+### new line
+
+[SO: How replace a newline](https://stackoverflow.com/questions/1251999/)
+
+```bash
+sed -z 's/\nwang\nmiao\n//g'
+```
+
 ### refer to match
 
 ```bash
@@ -1126,15 +1187,6 @@ vars()
 ```bash
 adduser xieby1
 usermod -aG sudo xieby1
-```
-
-### gcc预定义宏
-
-[2012.SO: preprocessor defined macros](https://stackoverflow.com/questions/10904873/anyway-to-see-list-of-preprocessor-defined-macros)
-
-```bash
-gcc -dM -E - < /dev/null
-touch bla.c && gcc -dM -E bla.c
 ```
 
 ### drawio no snapping
