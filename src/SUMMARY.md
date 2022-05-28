@@ -223,6 +223,7 @@
 * [Distro]()
   * [JingOS.md](./Distro/JingOS.md)
   * [Nix](./Distro/Nix/README.md)
+    * [打包/编译32位程序](./Distro/Nix/32bit.md)
     * [在NixOS上使用Android程序](./Distro/Nix/android.md)
     * [Nix交叉编译和跨平台程序](./Distro/Nix/cross.md)
     * [打包飞书](./Distro/Nix/feishu.md)
