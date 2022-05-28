@@ -2,6 +2,16 @@
 
 # 打包飞书
 
+**太长不看**
+
+* nix文件: https://github.com/xieby1/nix_config/blob/main/usr/gui/feishu.nix
+* 使用方法:
+  ```nix
+  home.packages = with pkgs; [
+    (callPackage ./feishu.nix {})
+  ];
+  ```
+
 参考nixpkgs/pkgs/applications/networking/instant-messengers/skypeforlinux/default.nix
 
 ## 测试环境
