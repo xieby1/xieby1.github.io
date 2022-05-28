@@ -232,6 +232,7 @@
     * [Python in Nix/NixOS](./Distro/Nix/python.md)
     * [Nix/NixOS](./Distro/Nix/README-en.md)
     * [Vim in Nix/NixOS](./Distro/Nix/vim.md)
+    * [Weird Things in Nix/NixOS](./Distro/Nix/weird.md)
 * [EPaper]()
   * [laptop.md](./EPaper/laptop.md)
 * [fonts]()
