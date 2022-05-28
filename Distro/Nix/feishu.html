@@ -126,6 +126,16 @@
                     <main>
                         <div style="text-align:right; font-size:3em;">2022.05.11</div>
 <h1 id="打包飞书"><a class="header" href="#打包飞书">打包飞书</a></h1>
+<p><strong>太长不看</strong></p>
+<ul>
+<li>nix文件: https://github.com/xieby1/nix_config/blob/main/usr/gui/feishu.nix</li>
+<li>使用方法:
+<pre><code class="language-nix">home.packages = with pkgs; [
+  (callPackage ./feishu.nix {})
+];
+</code></pre>
+</li>
+</ul>
 <p>参考nixpkgs/pkgs/applications/networking/instant-messengers/skypeforlinux/default.nix</p>
 <h2 id="测试环境"><a class="header" href="#测试环境">测试环境</a></h2>
 <p>nix-build -E &quot;with import <nixpkgs> {}; callPackage ./default.nix {}&quot;</p>
