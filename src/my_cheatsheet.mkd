@@ -815,6 +815,14 @@ cargo build --target=<TARGET> --release
 
 ## sed
 
+### new line
+
+[SO: How replace a newline](https://stackoverflow.com/questions/1251999/)
+
+```bash
+sed -z 's/\nwang\nmiao\n//g'
+```
+
 ### refer to match
 
 ```bash
