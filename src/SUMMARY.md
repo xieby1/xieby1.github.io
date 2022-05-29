@@ -233,6 +233,7 @@
     * [productivity.md](./Distro/Nix/productivity.md)
     * [Python in Nix/NixOS](./Distro/Nix/python.md)
     * [Nix/NixOS](./Distro/Nix/README-en.md)
+    * [静态链接，以qemu为例](./Distro/Nix/static_qemu.md)
     * [Vim in Nix/NixOS](./Distro/Nix/vim.md)
     * [Weird Things in Nix/NixOS](./Distro/Nix/weird.md)
 * [EPaper]()
