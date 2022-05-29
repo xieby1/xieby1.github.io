@@ -226,7 +226,7 @@
     * [打包/编译32位程序](./Distro/Nix/32bit.md)
     * [在NixOS上使用Android程序](./Distro/Nix/android.md)
     * [Nix交叉编译和跨平台程序](./Distro/Nix/cross.md)
-    * [打包飞书](./Distro/Nix/feishu.md)
+    * [安装deb包，以飞书为例](./Distro/Nix/deb_feishu.md)
     * [Gnome in NixOS](./Distro/Nix/gnome.md)
     * [nixpkgs.md](./Distro/Nix/nixpkgs.md)
     * [node.md](./Distro/Nix/node.md)

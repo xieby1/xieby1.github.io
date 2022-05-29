@@ -1,6 +1,6 @@
 <div style="text-align:right; font-size:3em;">2022.05.11</div>
 
-# 打包飞书
+# 安装deb包，以飞书为例
 
 **太长不看**
 
