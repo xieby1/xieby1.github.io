@@ -1,4 +1,6 @@
-# xieby1's cheatsheet
+<h1>xieby1's cheatsheet</h1>
+
+# General
 
 符号
 
@@ -1221,3 +1223,54 @@ iconv -f gb18030 -t utf-8 <output>
 ```bash
 sort -s -n -k 1,1
 ```
+
+# ISA
+
+## Arm
+
+### Exception levels
+
+| EL  | Description                               | Typical  |
+|-----|-------------------------------------------|----------------|
+| EL0 | unprivileged execution                    | Applications   |
+| EL1 | privileged execution                      | OS kernel      |
+| EL2 | virtualization                            | Hypervisor     |
+| EL3 | switching between Secure/Non-secure state | Secure monitor |
+
+## Arm-Insts
+
+### References
+
+📑 Arm Architecture Reference Manual Armv8
+
+### Addressing
+
+* normal: `[x1]`
+* offset: `[x1, #12]`
+* pre-index: `[x1, #12]!` // x1+=12, addr=x1
+* post-index: `[x1], #12` // addr=x1, x1+=12
+
+### Pointer Authentication
+
+* [2017: LWN](https://lwn.net/Articles/718888/)
+* § Pointer authentication in AArch64 state
+
+arm linux only use bottom 40 bits of a pointer
+
+```
+pointer[63:40] = PAC(pointer[39:40], key, modifier)
+AUT(pointer[63:40], pointer[39:40], key, modifier)
+```
+
+### ldtr, sttr
+
+[SO: Load/Store unprivileged](https://stackoverflow.com/questions/59287799/)
+
+### ldnp, stnp
+
+ARMv8
+
+[Non-temporal load and store pair](https://developer.arm.com/documentation/den0024/a/Memory-Ordering/Barriers/Non-temporal-load-and-store-pair)
+
+Hint mem system no cache, typically in streaming data.
+

@@ -112,7 +112,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       white-space: pre-wrap;
   }
 
-  #TOC,
+  #TOC > ul > li,
   section.level2 {
       margin: .5em 0 .5em 0;
       border: 1px solid #adb3b9;
@@ -152,7 +152,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       border-collapse: collapse;
   }
 
-  #TOC > ul {
+  #TOC > ul > li > ul {
       /* multiple column in first level TOC */
       column-width: 6em;
       width: 100%;
@@ -172,12 +172,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       /* no bullet */
       list-style-type: none;
   }
+
+  #TOC > ul > li > a {
+      font-weight: bold;
+      zoom: 120%;
+  }
   </style>
 </head>
 <body>
 <nav id="TOC">
 <ul>
-<li><a href="#xieby1s-cheatsheet">xieby1’s cheatsheet</a>
+<li><a href="#general">General</a>
 <ul>
 <li><a href="#awk">awk</a>
 <ul>
@@ -427,10 +432,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="#sort-first-column">sort first column</a></li>
 </ul></li>
 </ul></li>
+<li><a href="#isa">ISA</a>
+<ul>
+<li><a href="#arm">Arm</a>
+<ul>
+<li><a href="#exception-levels">Exception levels</a></li>
+</ul></li>
+<li><a href="#arm-insts">Arm-Insts</a>
+<ul>
+<li><a href="#references">References</a></li>
+<li><a href="#addressing">Addressing</a></li>
+<li><a href="#pointer-authentication">Pointer Authentication</a></li>
+<li><a href="#ldtr-sttr">ldtr, sttr</a></li>
+<li><a href="#ldnp-stnp">ldnp, stnp</a></li>
+</ul></li>
+</ul></li>
 </ul>
 </nav>
-<section id="xieby1s-cheatsheet" class="level1">
-<h1>xieby1’s cheatsheet</h1>
+<h1>
+xieby1’s cheatsheet
+</h1>
+<section id="general" class="level1">
+<h1>General</h1>
 <p>符号</p>
 <ul>
 <li>’🐁’仅在我的配置下可用，并不通用</li>
@@ -1371,6 +1394,82 @@ iconv -f gb18030 -t utf-8 &lt;output&gt;</code></pre>
 <section id="sort-first-column" class="level3">
 <h3>sort first column</h3>
 <div class="sourceCode" id="cb138"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span> <span class="at">-s</span> <span class="at">-n</span> <span class="at">-k</span> 1,1</span></code></pre></div>
+</section>
+</section>
+</section>
+<section id="isa" class="level1">
+<h1>ISA</h1>
+<section id="arm" class="level2">
+<h2>Arm</h2>
+<section id="exception-levels" class="level3">
+<h3>Exception levels</h3>
+<table>
+<thead>
+<tr class="header">
+<th>EL</th>
+<th>Description</th>
+<th>Typical</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>EL0</td>
+<td>unprivileged execution</td>
+<td>Applications</td>
+</tr>
+<tr class="even">
+<td>EL1</td>
+<td>privileged execution</td>
+<td>OS kernel</td>
+</tr>
+<tr class="odd">
+<td>EL2</td>
+<td>virtualization</td>
+<td>Hypervisor</td>
+</tr>
+<tr class="even">
+<td>EL3</td>
+<td>switching between Secure/Non-secure state</td>
+<td>Secure monitor</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="arm-insts" class="level2">
+<h2>Arm-Insts</h2>
+<section id="references" class="level3">
+<h3>References</h3>
+<p>📑 Arm Architecture Reference Manual Armv8</p>
+</section>
+<section id="addressing" class="level3">
+<h3>Addressing</h3>
+<ul>
+<li>normal: <code>[x1]</code></li>
+<li>offset: <code>[x1, #12]</code></li>
+<li>pre-index: <code>[x1, #12]!</code> // x1+=12, addr=x1</li>
+<li>post-index: <code>[x1], #12</code> // addr=x1, x1+=12</li>
+</ul>
+</section>
+<section id="pointer-authentication" class="level3">
+<h3>Pointer Authentication</h3>
+<ul>
+<li><a href="https://lwn.net/Articles/718888/">2017: LWN</a></li>
+<li>§ Pointer authentication in AArch64 state</li>
+</ul>
+<p>arm linux only use bottom 40 bits of a pointer</p>
+<pre><code>pointer[63:40] = PAC(pointer[39:40], key, modifier)
+AUT(pointer[63:40], pointer[39:40], key, modifier)</code></pre>
+</section>
+<section id="ldtr-sttr" class="level3">
+<h3>ldtr, sttr</h3>
+<p><a href="https://stackoverflow.com/questions/59287799/">SO: Load/Store unprivileged</a></p>
+</section>
+<section id="ldnp-stnp" class="level3">
+<h3>ldnp, stnp</h3>
+<p>ARMv8</p>
+<p><a href="https://developer.arm.com/documentation/den0024/a/Memory-Ordering/Barriers/Non-temporal-load-and-store-pair">Non-temporal load and store pair</a></p>
+<p>Hint mem system no cache, typically in streaming data.</p>
 </section>
 </section>
 </section>
