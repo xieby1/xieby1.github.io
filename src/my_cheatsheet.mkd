@@ -495,199 +495,6 @@ host <domain name>
 nmap 192.168.1.0/24
 ```
 
-## nix
-
-### binary cache paths
-
-`<nix channel url>/store-path.xz`
-
-e.g. https://mirror.tuna.tsinghua.edu.cn/nix-channels/nixos-21.11/store-paths.xz
-
-### binary cache query
-
-refers to [Discourse: Is it possible to query the binary cache?](https://discourse.nixos.org/t/is-it-possible-to-query-the-binary-cache/7893)
-
-```bash
-nix path-info \
---store https://cache.nixos.org/ \
--f '<nixpkgs>' \
---argstr system x86_64-linux \
-<pkgs-name>
-```
-
-### binary cache im/export
-
-```
-# import may need sudo
-nix-store --import/--export
-```
-
-### binary cache copy
-
-[How to use a local directory as a nix binary cache?](https://discourse.nixos.org/t/how-to-use-a-local-directory-as-a-nix-binary-cache/655)
-
-```nix
-nix copy --no-check-sigs \
---to <output/path> </nixstore/path>
-nix-env -i <output/path>
-```
-
-### binary cache copy closure
-
-```bash
-sudo nix-copy-closure --from <user@ssh> <path>
-```
-
-### build pkg
-
-```bash
-nix-build '<nixpkgs>' -A <pkg>
-```
-
-### cheatsheet
-
-[NixOS Wiki Cheatsheet](https://nixos.wiki/wiki/Cheatsheet)
-
-### escape indented str
-
-```bash
-''
-    ''${bash_var}
-''
-```
-
-### eval
-
-```bash
-nix eval "()"
-```
-
-### list build-generations
-
-```bash
-sudo nix-env -p /nix/var/nix/profiles/system --list-generations
-```
-
-### nix shell-buildinput
-
-```bash
-nix-shell '<nixpkgs>' -A
-```
-
-### pkg dependency
-
-```
-# all dependencies
-nix-store --query --requisites </nix/store/path>
-## or
-nix-store --query -R </nix/store/path>
-# nested tree
-nix-store --query --tree </nix/store/path>
-# only immediate dependencies
-nix-store --query --references </nix/store/path>
-```
-
-### pkg not in nixpkgs
-
-```bash
-nix-shell -E "with import <nixpkgs> {}; callPackage ./default.nix {}"
-```
-
-### pkg build-env
-
-```bash
-nix-shell '<nixpkgs>' -A <pkg>
-```
-
-### pkg priority
-
-```nix
-lib.lowPrio <pkg>
-```
-
-### pkg size
-
-```bash
-nix path-info -Sh <path>
-```
-
-### prefetch url
-
-```bash
-nix-prefetch-url
-```
-
-### prefetch github
-
-```bash
-nix-prefetch-url --unpack \
-https://github.com/<owner>/
-<repo>/archive/<rev>.tar.gz
-```
-
-### sha256
-
-```bash
-nix-hash --type sha256 \
---flat --base32 <file>
-```
-
-### show drv
-
-```bash
-nix show-derivation <.drv>
-```
-
-### sys garbage
-
-```bash
-sudo nix-collect-garbage -d
-```
-
-### usr garbage
-
-```bash
-nix-collect-garbage -d
-```
-
-### repl
-
-```nix
-pkgs = import <nixpkgs> {}
-```
-
-### old generations
-
-[Nix Wiki: Storage Opt](https://nixos.wiki/wiki/Storage_optimization)
-
-```bash
-sudo nix-env -p /nix/var/nix/profiles/system --list-generations
-sudo nix-collect-garbage -d
-# User Generations (Home-Manager)
-nix-collect-garbage -d
-```
-### sha256
-
-[GH](https://github.com/NixOS/nix/issues/1880)
-
-```bash
-nix-prefetch-url --unpack
-```
-
-### path
-
-[Nix Pills: search Paths](https://nixos.org/guides/nix-pills/nix-search-paths.html)
-
-```bash
-nix-instantiate --eval -E "<path>"
-```
-
-### version
-
-```bash
-nix-version --hash
-```
-
 ## ocr
 
 ### tesseract
@@ -1222,6 +1029,212 @@ iconv -f gb18030 -t utf-8 <output>
 
 ```bash
 sort -s -n -k 1,1
+```
+
+# nix
+
+## binary cache
+
+### paths
+
+`<nix channel url>/store-path.xz`
+
+e.g. https://mirror.tuna.tsinghua.edu.cn/nix-channels/nixos-21.11/store-paths.xz
+
+### query
+
+refers to [Discourse: Is it possible to query the binary cache?](https://discourse.nixos.org/t/is-it-possible-to-query-the-binary-cache/7893)
+
+```bash
+nix path-info \
+--store https://cache.nixos.org/ \
+-f '<nixpkgs>' \
+--argstr system x86_64-linux \
+<pkgs-name>
+```
+
+### import/export
+
+```
+# import may need sudo
+nix-store --import/--export
+```
+
+### copy
+
+[How to use a local directory as a nix binary cache?](https://discourse.nixos.org/t/how-to-use-a-local-directory-as-a-nix-binary-cache/655)
+
+```nix
+nix copy --no-check-sigs \
+--to <output/path> </nixstore/path>
+nix-env -i <output/path>
+```
+
+### copy closure
+
+```bash
+sudo nix-copy-closure --from <user@ssh> <path>
+```
+
+## misc
+
+### build pkg
+
+```bash
+nix-build '<nixpkgs>' -A <pkg>
+```
+
+### cheatsheet
+
+[NixOS Wiki Cheatsheet](https://nixos.wiki/wiki/Cheatsheet)
+
+### eval
+
+```bash
+nix eval "()"
+```
+
+### prefetch url
+
+```bash
+nix-prefetch-url
+```
+
+### prefetch github
+
+```bash
+nix-prefetch-url --unpack \
+https://github.com/<owner>/
+<repo>/archive/<rev>.tar.gz
+```
+
+### prefetch sha256
+
+[GH](https://github.com/NixOS/nix/issues/1880)
+
+```bash
+nix-prefetch-url --unpack
+```
+
+### sha256
+
+```bash
+nix-hash --type sha256 \
+--flat --base32 <file>
+```
+
+### size
+
+```bash
+nix path-info -Sh <path>
+```
+
+### show drv
+
+```bash
+nix show-derivation <.drv>
+```
+
+### sys garbage
+
+```bash
+sudo nix-collect-garbage -d
+```
+
+### usr garbage
+
+```bash
+nix-collect-garbage -d
+```
+
+### repl
+
+```nix
+pkgs = import <nixpkgs> {}
+```
+
+### old generations
+
+[Nix Wiki: Storage Opt](https://nixos.wiki/wiki/Storage_optimization)
+
+```bash
+sudo nix-env -p /nix/var/nix/profiles/system --list-generations
+sudo nix-collect-garbage -d
+# User Generations (Home-Manager)
+nix-collect-garbage -d
+```
+
+### path
+
+[Nix Pills: search Paths](https://nixos.org/guides/nix-pills/nix-search-paths.html)
+
+```bash
+nix-instantiate --eval -E "<path>"
+```
+
+### version
+
+```bash
+nix-version --hash
+```
+
+## lang
+
+### escape indented str
+
+```bash
+''
+    ''${bash_var}
+''
+```
+
+## nixos
+
+### list build-generations
+
+```bash
+sudo nix-env -p /nix/var/nix/profiles/system --list-generations
+```
+
+## nix-shell
+
+### build input
+
+```bash
+nix-shell '<nixpkgs>' -A
+```
+
+### build env
+
+```bash
+nix-shell '<nixpkgs>' -A <pkg>
+```
+
+## pkg
+
+### dependency
+
+```
+# all dependencies
+nix-store --query --requisites </nix/store/path>
+## or
+nix-store --query -R </nix/store/path>
+# nested tree
+nix-store --query --tree </nix/store/path>
+# only immediate dependencies
+nix-store --query --references </nix/store/path>
+```
+
+### not in nixpkgs
+
+```bash
+nix-shell -E "with import <nixpkgs> {}; callPackage ./default.nix {}"
+```
+
+### priority
+
+```nix
+lib.lowPrio <pkg>
 ```
 
 # ISA
