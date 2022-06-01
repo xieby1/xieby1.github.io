@@ -721,202 +721,6 @@ journalctl --user -u <service>
 systemctl list-units --type target
 ```
 
-## vim
-
-### Explore
-
-```vim
-; open current file's dir
-:E[xplore]
-```
-
-### fold
-
-```vim
-" set
-zf{motion} " :h motion.txt
-" toggle
-za
-" range
-:{range}fo[ld]
-```
-
-### highlight current line
-
-```vim
-:set cursorline
-```
-
-### list syntaxs
-
-```bash
-ls <$VIMRUNTIME>/syntax/
-```
-
-### markdown toc
-
-```vim
-:GenTocGFM
-```
-
-### mapped keys
-
-[SO](Is there any way to view the currently mapped keys in Vim?)
-
-```vim
-":n/v/imap
-:map
-:h inex
-```
-
-### popup window
-
-```vim
-🐁 <leader>[
-```
-
-### runtime folder
-
-```vim
-:echo $VIMRUNTIME
-```
-
-### split调整
-
-```vim
-c-w _ ;当前窗口最高
-c-w = ;所有窗口等高
-:on ;关闭所有其他窗口
-c-w o ;同上
-```
-
-### set syntax
-
-```vim
-:set syntax=
-```
-
-### syntax
-
-```vim
-; set
-:set syntax=html
-; get
-:set syntax
-```
-
-### status line
-
-```vim
-set laststatus=2
-```
-
-### jumplist
-
-```vim
-:ju " 列出jumplist
-<C-o> " 退
-<C-i> " 进
-```
-
-### git blame [# fugitive]
-
-和git相同的略。fugitive的特性：
-
-```vim
-:Git blame " blame整个文件
-:Gedit " 跳转光标下到对应的object（某个版本的某个文件）
-```
-
-### git historic file [# fugitive]
-
-```vim
-Gedit <refname>
-enter " opon
-o " horizon open
-O " new tab open
-<num>gt " switch tag
-```
-
-### 显示commit信息 [git-messenger]
-
-```vim
-<leader>gm " 在popup窗口显示commit信息
-```
-
-### cscope
-
-```vim
-; cs querytype
-🐁 <C-\>[sgdcteFia]
-```
-
-重新加载
-
-```vim
-:!cscope -R
-:cs reset
-```
-
-### mark
-
-```vim
-<leader>m " 标记/取消标记
-{N}<leader>m " 给第N组添加标记词
-{N}<leader>n " 取消第N组的标记
-<leader>M " 显示标记颜色和标记词
-🐁 <leader><F3> " 取消所有标记
-```
-
-### ale-fix
-
-ale支持的fix位于
-
-`autoload/ale/fix/registry.vim`
-
-所有fixer的调用脚本位于
-
-`autoload/ale/fixers/`
-
-### diff
-
-diff两个竖分buffers
-
-```vim
-; 分别在两个buffer里
-:difft[his]
-; 关闭，分别
-:diffoff
-```
-
-### gitgutter-diff
-
-```vim
-let g:gitgutter_diff_base = ''
-```
-
-### gitgutter-diff
-
-```vim
-:GitGutterDiffOrig
-```
-
-### diff obtain/put
-
-```vim
-" obtain
-do
-" put
-dp
-```
-
-### wrap line
-
-```vim
-; 🐁toggle
-<F9>
-```
-
 ## WSL
 
 ### shrink vdisk
@@ -1029,6 +833,209 @@ iconv -f gb18030 -t utf-8 <output>
 
 ```bash
 sort -s -n -k 1,1
+```
+
+# vim
+
+## Misc
+
+### Explore
+
+```vim
+; open current file's dir
+:E[xplore]
+```
+
+### fold
+
+```vim
+" set
+zf{motion} " :h motion.txt
+" toggle
+za
+" range
+:{range}fo[ld]
+```
+
+### highlight current line
+
+```vim
+:set cursorline
+```
+
+### list syntaxs
+
+```bash
+ls <$VIMRUNTIME>/syntax/
+```
+
+### markdown toc
+
+```vim
+:GenTocGFM
+```
+
+### mapped keys
+
+[SO](Is there any way to view the currently mapped keys in Vim?)
+
+```vim
+":n/v/imap
+:map
+:h inex
+```
+
+### popup window
+
+```vim
+🐁 <leader>[
+```
+
+### runtime folder
+
+```vim
+:echo $VIMRUNTIME
+```
+
+### split调整
+
+```vim
+c-w _ ;当前窗口最高
+c-w = ;所有窗口等高
+:on ;关闭所有其他窗口
+c-w o ;同上
+```
+
+### set syntax
+
+```vim
+:set syntax=
+```
+
+### syntax
+
+```vim
+; set
+:set syntax=html
+; get
+:set syntax
+```
+
+### status line
+
+```vim
+set laststatus=2
+```
+
+### jumplist
+
+```vim
+:ju " 列出jumplist
+<C-o> " 退
+<C-i> " 进
+```
+
+### cscope
+
+```vim
+; cs querytype
+🐁 <C-\>[sgdcteFia]
+```
+
+重新加载
+
+```vim
+:!cscope -R
+:cs reset
+```
+
+### mark
+
+```vim
+<leader>m " 标记/取消标记
+{N}<leader>m " 给第N组添加标记词
+{N}<leader>n " 取消第N组的标记
+<leader>M " 显示标记颜色和标记词
+🐁 <leader><F3> " 取消所有标记
+```
+
+### ale-fix
+
+ale支持的fix位于
+
+`autoload/ale/fix/registry.vim`
+
+所有fixer的调用脚本位于
+
+`autoload/ale/fixers/`
+
+### wrap line
+
+```vim
+; 🐁toggle
+<F9>
+```
+
+## diff
+
+### diffthis
+
+diff两个竖分buffers
+
+```vim
+; 分别在两个buffer里
+:difft[his]
+; 关闭，分别
+:diffoff
+```
+
+### gitgutter-diff
+
+```vim
+let g:gitgutter_diff_base = ''
+```
+
+### gitgutter-diff
+
+```vim
+:GitGutterDiffOrig
+```
+
+### diff obtain/put
+
+```vim
+" obtain
+do
+" put
+dp
+```
+
+
+## git
+
+### blame [# fugitive]
+
+和git相同的略。fugitive的特性：
+
+```vim
+:Git blame " blame整个文件
+:Gedit " 跳转光标下到对应的object（某个版本的某个文件）
+```
+
+### historic file [# fugitive]
+
+```vim
+Gedit <refname>
+enter " opon
+o " horizon open
+O " new tab open
+<num>gt " switch tag
+```
+
+### 显示commit信息 [git-messenger]
+
+```vim
+<leader>gm " 在popup窗口显示commit信息
 ```
 
 # nix
