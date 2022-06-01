@@ -1282,6 +1282,12 @@ pointer[63:40] = PAC(pointer[39:40], key, modifier)
 AUT(pointer[63:40], pointer[39:40], key, modifier)
 ```
 
+five separate keys:
+
+* two for executable (instruction) pointers
+* two for data pointers
+* one generic pointers
+
 ### ldtr, sttr
 
 [SO: Load/Store unprivileged](https://stackoverflow.com/questions/59287799/)
@@ -1294,3 +1300,60 @@ ARMv8
 
 Hint mem system no cache, typically in streaming data.
 
+### ldaxr, stxr
+
+[DynamoRIO: Exclusive Monitor](https://dynamorio.org/page_ldstex.html)
+
+E.g. an atomic subtract
+
+```
+1f404:   ldaxr   w1, [x0]
+1f408:   sub     w2, w1, #0x1
+1f40c:   stxr    w3, w2, [x0]
+1f410:   cbnz    w3, 1f404
+```
+
+> Fortunately they cannot be nested, as each hardware thread supports only one monitor.
+
+## x86
+
+## Inst Encoding
+
+
+
+### Mem Operand
+
+* Seg Selector: 16
+* Offset (or Linear Addr): 32/64
+
+### Mem Operand: Seg
+
+2018.intel64.pdf: Table 3-5
+
+Default Segment Selection
+
+| Ref Type            | Reg | Default Rule                                             |
+|---------------------|-----|----------------------------------------------------------|
+| Inst                | CS  | All inst fetches                                         |
+| Stack               | SS  | All pushes & pops                                        |
+| Local Data          | DS  | All data, except relative to stack or string destination |
+| Destination Strings | ES  | Destination string inst                                  |
+
+### Mem Operand: Offset
+
+2018.intel64.pdf: Table 3-5
+
+```
+Offset =
+  Base  + (Index * Scale) + Displacement
+  +- -+   +- -+     +-+      +------+
+  |eax|   |eax|     |1|      |None  |
+  |ebx|   |ebx|     |2|      |8-bit |
+  |ecx|   |ecx|     |4|      |16-bit|
+  |edx| + |edx|  *  |8|   +  |32-bit|
+  |esp|   |ebp|     | |      |      |
+  |ebp|   |esi|     | |      |      |
+  |esi|   |edi|     | |      |      |
+  |edi|   |   |     | |      |      |
+  +- -+   +---+     +-+      +------+
+```
