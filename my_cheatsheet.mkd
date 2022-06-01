@@ -1,4 +1,6 @@
-# xieby1's cheatsheet
+<h1>xieby1's cheatsheet</h1>
+
+# General
 
 符号
 
@@ -493,199 +495,6 @@ host <domain name>
 nmap 192.168.1.0/24
 ```
 
-## nix
-
-### binary cache paths
-
-`<nix channel url>/store-path.xz`
-
-e.g. https://mirror.tuna.tsinghua.edu.cn/nix-channels/nixos-21.11/store-paths.xz
-
-### binary cache query
-
-refers to [Discourse: Is it possible to query the binary cache?](https://discourse.nixos.org/t/is-it-possible-to-query-the-binary-cache/7893)
-
-```bash
-nix path-info \
---store https://cache.nixos.org/ \
--f '<nixpkgs>' \
---argstr system x86_64-linux \
-<pkgs-name>
-```
-
-### binary cache im/export
-
-```
-# import may need sudo
-nix-store --import/--export
-```
-
-### binary cache copy
-
-[How to use a local directory as a nix binary cache?](https://discourse.nixos.org/t/how-to-use-a-local-directory-as-a-nix-binary-cache/655)
-
-```nix
-nix copy --no-check-sigs \
---to <output/path> </nixstore/path>
-nix-env -i <output/path>
-```
-
-### binary cache copy closure
-
-```bash
-sudo nix-copy-closure --from <user@ssh> <path>
-```
-
-### build pkg
-
-```bash
-nix-build '<nixpkgs>' -A <pkg>
-```
-
-### cheatsheet
-
-[NixOS Wiki Cheatsheet](https://nixos.wiki/wiki/Cheatsheet)
-
-### escape indented str
-
-```bash
-''
-    ''${bash_var}
-''
-```
-
-### eval
-
-```bash
-nix eval "()"
-```
-
-### list build-generations
-
-```bash
-sudo nix-env -p /nix/var/nix/profiles/system --list-generations
-```
-
-### nix shell-buildinput
-
-```bash
-nix-shell '<nixpkgs>' -A
-```
-
-### pkg dependency
-
-```
-# all dependencies
-nix-store --query --requisites </nix/store/path>
-## or
-nix-store --query -R </nix/store/path>
-# nested tree
-nix-store --query --tree </nix/store/path>
-# only immediate dependencies
-nix-store --query --references </nix/store/path>
-```
-
-### pkg not in nixpkgs
-
-```bash
-nix-shell -E "with import <nixpkgs> {}; callPackage ./default.nix {}"
-```
-
-### pkg build-env
-
-```bash
-nix-shell '<nixpkgs>' -A <pkg>
-```
-
-### pkg priority
-
-```nix
-lib.lowPrio <pkg>
-```
-
-### pkg size
-
-```bash
-nix path-info -Sh <path>
-```
-
-### prefetch url
-
-```bash
-nix-prefetch-url
-```
-
-### prefetch github
-
-```bash
-nix-prefetch-url --unpack \
-https://github.com/<owner>/
-<repo>/archive/<rev>.tar.gz
-```
-
-### sha256
-
-```bash
-nix-hash --type sha256 \
---flat --base32 <file>
-```
-
-### show drv
-
-```bash
-nix show-derivation <.drv>
-```
-
-### sys garbage
-
-```bash
-sudo nix-collect-garbage -d
-```
-
-### usr garbage
-
-```bash
-nix-collect-garbage -d
-```
-
-### repl
-
-```nix
-pkgs = import <nixpkgs> {}
-```
-
-### old generations
-
-[Nix Wiki: Storage Opt](https://nixos.wiki/wiki/Storage_optimization)
-
-```bash
-sudo nix-env -p /nix/var/nix/profiles/system --list-generations
-sudo nix-collect-garbage -d
-# User Generations (Home-Manager)
-nix-collect-garbage -d
-```
-### sha256
-
-[GH](https://github.com/NixOS/nix/issues/1880)
-
-```bash
-nix-prefetch-url --unpack
-```
-
-### path
-
-[Nix Pills: search Paths](https://nixos.org/guides/nix-pills/nix-search-paths.html)
-
-```bash
-nix-instantiate --eval -E "<path>"
-```
-
-### version
-
-```bash
-nix-version --hash
-```
-
 ## ocr
 
 ### tesseract
@@ -912,202 +721,6 @@ journalctl --user -u <service>
 systemctl list-units --type target
 ```
 
-## vim
-
-### Explore
-
-```vim
-; open current file's dir
-:E[xplore]
-```
-
-### fold
-
-```vim
-" set
-zf{motion} " :h motion.txt
-" toggle
-za
-" range
-:{range}fo[ld]
-```
-
-### highlight current line
-
-```vim
-:set cursorline
-```
-
-### list syntaxs
-
-```bash
-ls <$VIMRUNTIME>/syntax/
-```
-
-### markdown toc
-
-```vim
-:GenTocGFM
-```
-
-### mapped keys
-
-[SO](Is there any way to view the currently mapped keys in Vim?)
-
-```vim
-":n/v/imap
-:map
-:h inex
-```
-
-### popup window
-
-```vim
-🐁 <leader>[
-```
-
-### runtime folder
-
-```vim
-:echo $VIMRUNTIME
-```
-
-### split调整
-
-```vim
-c-w _ ;当前窗口最高
-c-w = ;所有窗口等高
-:on ;关闭所有其他窗口
-c-w o ;同上
-```
-
-### set syntax
-
-```vim
-:set syntax=
-```
-
-### syntax
-
-```vim
-; set
-:set syntax=html
-; get
-:set syntax
-```
-
-### status line
-
-```vim
-set laststatus=2
-```
-
-### jumplist
-
-```vim
-:ju " 列出jumplist
-<C-o> " 退
-<C-i> " 进
-```
-
-### git blame [# fugitive]
-
-和git相同的略。fugitive的特性：
-
-```vim
-:Git blame " blame整个文件
-:Gedit " 跳转光标下到对应的object（某个版本的某个文件）
-```
-
-### git historic file [# fugitive]
-
-```vim
-Gedit <refname>
-enter " opon
-o " horizon open
-O " new tab open
-<num>gt " switch tag
-```
-
-### 显示commit信息 [git-messenger]
-
-```vim
-<leader>gm " 在popup窗口显示commit信息
-```
-
-### cscope
-
-```vim
-; cs querytype
-🐁 <C-\>[sgdcteFia]
-```
-
-重新加载
-
-```vim
-:!cscope -R
-:cs reset
-```
-
-### mark
-
-```vim
-<leader>m " 标记/取消标记
-{N}<leader>m " 给第N组添加标记词
-{N}<leader>n " 取消第N组的标记
-<leader>M " 显示标记颜色和标记词
-🐁 <leader><F3> " 取消所有标记
-```
-
-### ale-fix
-
-ale支持的fix位于
-
-`autoload/ale/fix/registry.vim`
-
-所有fixer的调用脚本位于
-
-`autoload/ale/fixers/`
-
-### diff
-
-diff两个竖分buffers
-
-```vim
-; 分别在两个buffer里
-:difft[his]
-; 关闭，分别
-:diffoff
-```
-
-### gitgutter-diff
-
-```vim
-let g:gitgutter_diff_base = ''
-```
-
-### gitgutter-diff
-
-```vim
-:GitGutterDiffOrig
-```
-
-### diff obtain/put
-
-```vim
-" obtain
-do
-" put
-dp
-```
-
-### wrap line
-
-```vim
-; 🐁toggle
-<F9>
-```
-
 ## WSL
 
 ### shrink vdisk
@@ -1220,4 +833,527 @@ iconv -f gb18030 -t utf-8 <output>
 
 ```bash
 sort -s -n -k 1,1
+```
+
+# vim
+
+## Misc
+
+### Explore
+
+```vim
+; open current file's dir
+:E[xplore]
+```
+
+### fold
+
+```vim
+" set
+zf{motion} " :h motion.txt
+" toggle
+za
+" range
+:{range}fo[ld]
+```
+
+### highlight current line
+
+```vim
+:set cursorline
+```
+
+### list syntaxs
+
+```bash
+ls <$VIMRUNTIME>/syntax/
+```
+
+### markdown toc
+
+```vim
+:GenTocGFM
+```
+
+### mapped keys
+
+[SO](Is there any way to view the currently mapped keys in Vim?)
+
+```vim
+":n/v/imap
+:map
+:h inex
+```
+
+### popup window
+
+```vim
+🐁 <leader>[
+```
+
+### runtime folder
+
+```vim
+:echo $VIMRUNTIME
+```
+
+### split调整
+
+```vim
+c-w _ ;当前窗口最高
+c-w = ;所有窗口等高
+:on ;关闭所有其他窗口
+c-w o ;同上
+```
+
+### set syntax
+
+```vim
+:set syntax=
+```
+
+### syntax
+
+```vim
+; set
+:set syntax=html
+; get
+:set syntax
+```
+
+### status line
+
+```vim
+set laststatus=2
+```
+
+### jumplist
+
+```vim
+:ju " 列出jumplist
+<C-o> " 退
+<C-i> " 进
+```
+
+### cscope
+
+```vim
+; cs querytype
+🐁 <C-\>[sgdcteFia]
+```
+
+重新加载
+
+```vim
+:!cscope -R
+:cs reset
+```
+
+### mark
+
+```vim
+<leader>m " 标记/取消标记
+{N}<leader>m " 给第N组添加标记词
+{N}<leader>n " 取消第N组的标记
+<leader>M " 显示标记颜色和标记词
+🐁 <leader><F3> " 取消所有标记
+```
+
+### ale-fix
+
+ale支持的fix位于
+
+`autoload/ale/fix/registry.vim`
+
+所有fixer的调用脚本位于
+
+`autoload/ale/fixers/`
+
+### wrap line
+
+```vim
+; 🐁toggle
+<F9>
+```
+
+## diff
+
+### diffthis
+
+diff两个竖分buffers
+
+```vim
+; 分别在两个buffer里
+:difft[his]
+; 关闭，分别
+:diffoff
+```
+
+### gitgutter-diff
+
+```vim
+let g:gitgutter_diff_base = ''
+```
+
+### gitgutter-diff
+
+```vim
+:GitGutterDiffOrig
+```
+
+### diff obtain/put
+
+```vim
+" obtain
+do
+" put
+dp
+```
+
+
+## git
+
+### blame [# fugitive]
+
+和git相同的略。fugitive的特性：
+
+```vim
+:Git blame " blame整个文件
+:Gedit " 跳转光标下到对应的object（某个版本的某个文件）
+```
+
+### historic file [# fugitive]
+
+```vim
+Gedit <refname>
+enter " opon
+o " horizon open
+O " new tab open
+<num>gt " switch tag
+```
+
+### 显示commit信息 [git-messenger]
+
+```vim
+<leader>gm " 在popup窗口显示commit信息
+```
+
+# nix
+
+## binary cache
+
+### paths
+
+`<nix channel url>/store-path.xz`
+
+e.g. https://mirror.tuna.tsinghua.edu.cn/nix-channels/nixos-21.11/store-paths.xz
+
+### query
+
+refers to [Discourse: Is it possible to query the binary cache?](https://discourse.nixos.org/t/is-it-possible-to-query-the-binary-cache/7893)
+
+```bash
+nix path-info \
+--store https://cache.nixos.org/ \
+-f '<nixpkgs>' \
+--argstr system x86_64-linux \
+<pkgs-name>
+```
+
+### import/export
+
+```
+# import may need sudo
+nix-store --import/--export
+```
+
+### copy
+
+[How to use a local directory as a nix binary cache?](https://discourse.nixos.org/t/how-to-use-a-local-directory-as-a-nix-binary-cache/655)
+
+```nix
+nix copy --no-check-sigs \
+--to <output/path> </nixstore/path>
+nix-env -i <output/path>
+```
+
+### copy closure
+
+```bash
+sudo nix-copy-closure --from <user@ssh> <path>
+```
+
+## misc
+
+### build pkg
+
+```bash
+nix-build '<nixpkgs>' -A <pkg>
+```
+
+### cheatsheet
+
+[NixOS Wiki Cheatsheet](https://nixos.wiki/wiki/Cheatsheet)
+
+### eval
+
+```bash
+nix eval "()"
+```
+
+### prefetch url
+
+```bash
+nix-prefetch-url
+```
+
+### prefetch github
+
+```bash
+nix-prefetch-url --unpack \
+https://github.com/<owner>/
+<repo>/archive/<rev>.tar.gz
+```
+
+### prefetch sha256
+
+[GH](https://github.com/NixOS/nix/issues/1880)
+
+```bash
+nix-prefetch-url --unpack
+```
+
+### sha256
+
+```bash
+nix-hash --type sha256 \
+--flat --base32 <file>
+```
+
+### size
+
+```bash
+nix path-info -Sh <path>
+```
+
+### show drv
+
+```bash
+nix show-derivation <.drv>
+```
+
+### sys garbage
+
+```bash
+sudo nix-collect-garbage -d
+```
+
+### usr garbage
+
+```bash
+nix-collect-garbage -d
+```
+
+### repl
+
+```nix
+pkgs = import <nixpkgs> {}
+```
+
+### old generations
+
+[Nix Wiki: Storage Opt](https://nixos.wiki/wiki/Storage_optimization)
+
+```bash
+sudo nix-env -p /nix/var/nix/profiles/system --list-generations
+sudo nix-collect-garbage -d
+# User Generations (Home-Manager)
+nix-collect-garbage -d
+```
+
+### path
+
+[Nix Pills: search Paths](https://nixos.org/guides/nix-pills/nix-search-paths.html)
+
+```bash
+nix-instantiate --eval -E "<path>"
+```
+
+### version
+
+```bash
+nix-version --hash
+```
+
+## lang
+
+### escape indented str
+
+```bash
+''
+    ''${bash_var}
+''
+```
+
+## nixos
+
+### list build-generations
+
+```bash
+sudo nix-env -p /nix/var/nix/profiles/system --list-generations
+```
+
+## nix-shell
+
+### build input
+
+```bash
+nix-shell '<nixpkgs>' -A
+```
+
+### build env
+
+```bash
+nix-shell '<nixpkgs>' -A <pkg>
+```
+
+## pkg
+
+### dependency
+
+```
+# all dependencies
+nix-store --query --requisites </nix/store/path>
+## or
+nix-store --query -R </nix/store/path>
+# nested tree
+nix-store --query --tree </nix/store/path>
+# only immediate dependencies
+nix-store --query --references </nix/store/path>
+```
+
+### not in nixpkgs
+
+```bash
+nix-shell -E "with import <nixpkgs> {}; callPackage ./default.nix {}"
+```
+
+### priority
+
+```nix
+lib.lowPrio <pkg>
+```
+
+# ISA
+
+## Arm
+
+### Exception levels
+
+| EL  | Description                               | Typical  |
+|-----|-------------------------------------------|----------------|
+| EL0 | unprivileged execution                    | Applications   |
+| EL1 | privileged execution                      | OS kernel      |
+| EL2 | virtualization                            | Hypervisor     |
+| EL3 | switching between Secure/Non-secure state | Secure monitor |
+
+## Arm-Insts
+
+### References
+
+📑 Arm Architecture Reference Manual Armv8
+
+### Addressing
+
+* normal: `[x1]`
+* offset: `[x1, #12]`
+* pre-index: `[x1, #12]!` // x1+=12, addr=x1
+* post-index: `[x1], #12` // addr=x1, x1+=12
+
+### Pointer Authentication
+
+* [2017: LWN](https://lwn.net/Articles/718888/)
+* § Pointer authentication in AArch64 state
+
+arm linux only use bottom 40 bits of a pointer
+
+```
+pointer[63:40] = PAC(pointer[39:40], key, modifier)
+AUT(pointer[63:40], pointer[39:40], key, modifier)
+```
+
+five separate keys:
+
+* two for executable (instruction) pointers
+* two for data pointers
+* one generic pointers
+
+### ldtr, sttr
+
+[SO: Load/Store unprivileged](https://stackoverflow.com/questions/59287799/)
+
+### ldnp, stnp
+
+ARMv8
+
+[Non-temporal load and store pair](https://developer.arm.com/documentation/den0024/a/Memory-Ordering/Barriers/Non-temporal-load-and-store-pair)
+
+Hint mem system no cache, typically in streaming data.
+
+### ldaxr, stxr
+
+[DynamoRIO: Exclusive Monitor](https://dynamorio.org/page_ldstex.html)
+
+E.g. an atomic subtract
+
+```
+1f404:   ldaxr   w1, [x0]
+1f408:   sub     w2, w1, #0x1
+1f40c:   stxr    w3, w2, [x0]
+1f410:   cbnz    w3, 1f404
+```
+
+> Fortunately they cannot be nested, as each hardware thread supports only one monitor.
+
+## x86
+
+## Inst Encoding
+
+
+
+### Mem Operand
+
+* Seg Selector: 16
+* Offset (or Linear Addr): 32/64
+
+### Mem Operand: Seg
+
+2018.intel64.pdf: Table 3-5
+
+Default Segment Selection
+
+| Ref Type            | Reg | Default Rule                                             |
+|---------------------|-----|----------------------------------------------------------|
+| Inst                | CS  | All inst fetches                                         |
+| Stack               | SS  | All pushes & pops                                        |
+| Local Data          | DS  | All data, except relative to stack or string destination |
+| Destination Strings | ES  | Destination string inst                                  |
+
+### Mem Operand: Offset
+
+2018.intel64.pdf: Table 3-5
+
+```
+Offset =
+  Base  + (Index * Scale) + Displacement
+  +- -+   +- -+     +-+      +------+
+  |eax|   |eax|     |1|      |None  |
+  |ebx|   |ebx|     |2|      |8-bit |
+  |ecx|   |ecx|     |4|      |16-bit|
+  |edx| + |edx|  *  |8|   +  |32-bit|
+  |esp|   |ebp|     | |      |      |
+  |ebp|   |esi|     | |      |      |
+  |esi|   |edi|     | |      |      |
+  |edi|   |   |     | |      |      |
+  +- -+   +---+     +-+      +------+
 ```
