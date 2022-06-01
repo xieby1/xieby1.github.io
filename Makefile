@@ -17,11 +17,6 @@ gui: src/my_cheatsheet.html \
 	 src/Benchmarks/my_coremark.html \
 	 src/Benchmarks/my_spec2000.html
 
-src/my_cheatsheet.html: ~/Documents/Manuals-Sheets/my_cheatsheet.md
-	cheatsheet.sh $<
-	cp $< src/my_cheatsheet.mkd
-	cp $(patsubst %.md, %.html, $<) $@
-
 src/my_Essays.html: ~/Documents/Tech/Essays.xlsx
 	./scripts/genExcel.sh $< $@
 
