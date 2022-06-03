@@ -1244,6 +1244,20 @@ nix-shell -E "with import <nixpkgs> {}; callPackage ./default.nix {}"
 lib.lowPrio <pkg>
 ```
 
+## repl
+
+### help
+
+```nix
+:?
+```
+
+### open editor
+
+```nix
+:e <expr>
+```
+
 # ISA
 
 ## Arm
@@ -1317,9 +1331,84 @@ E.g. an atomic subtract
 
 ## x86
 
-## Inst Encoding
+### Legacy Encoding
 
+2020.amd64.pdf: Figure 1-2
 
+2018.intel64.pdf: Figure 2-1
+
+| Name          | B  | Description      |
+|---------------|----|------------------|
+| Legacy Prefix | ≤5 | optional         |
+| REX           | 1  | 64-bit mode only |
+| Escape        | 2  | optional         |
+| Opcode        | 1  |                  |
+| ModRM         | 1  | optional         |
+| SIB           | 1  | optional         |
+| Displacement  |    |                  |
+| Immediate     |    |                  |
+
+### Extended Encoding
+
+2020.amd64.pdf: Figure 1-2
+
+| Name           | B       | Description                       |
+|----------------|---------|-----------------------------------|
+| Legacy Prefix  | ≤4      | optional                          |
+| VEX/XOP        | 1       |                                   |
+| RXB.map+Select | 1       | not for VEX C5                    |
+| W.vvvv.L.pp    | 1       | not for VEX C5                    |
+| R.vvvv.L.pp    | 1       | for VEX C5                        |
+| Opcode         | 1       |                                   |
+| ModRM          | 1       | optional                          |
+| SIB            | 1       | optional                          |
+| Displacement   | 1,2,4,8 | 8B Disp & 8B Imm mutual exclusive |
+| Immediate      | 1,2,4,8 | 8B Disp & 8B Imm mutual exclusive |
+
+### ModRM
+
+2020.amd64.pdf: Table 1-10
+
+ModRM = mod[2] : reg[3] : r/m[3]
+
+M: MMX, X: XMM, Y: YMM
+
+| b   | reg             | r/m (mod=11b)   | r/m (mod!=11b) |
+|-----|-----------------|-----------------|----------------|
+| 000 | rAX,M0,X0,Y0    | rAX,M0,X0,Y0    | [rAX]          |
+| 001 | rCX,M1,X1,Y1    | rCX,M1,X1,Y1    | [rCX]          |
+| 010 | rDX,M2,X2,Y2    | rDX,M2,X2,Y2    | [rDX]          |
+| 011 | rBX,M3,X3,Y3    | rBX,M3,X3,Y3    | [rBX]          |
+| 100 | AH,rSP,M4,X4,Y4 | AH,rSP,M4,X4,Y4 | SIB            |
+| 101 | CH,rBP,M5,X5,Y5 | CH,rBP,M5,X5,Y5 | [rBP]*         |
+| 110 | DH,rSI,M6,X6,Y6 | DH,rSI,M6,X6,Y6 | [rSI]          |
+| 111 | BH,rDI,M7,X7,Y7 | BH,rDI,M7,X7,Y7 | [rDI]          |
+
+* For mod = 00b , r/m = 101b signifies absolute
+  (displacement-only) addressing in 32-bit mode
+  or RIP-relative addressing in 64-bit mode,
+  where the rBP register is not used.
+* For mod = [01b, 10b], r/m = 101b specifies
+  the base + offset addressing mode with [rBP] as the base.
+
+### SIB
+
+2020.amd64.pdf: Table 1-12
+
+SIB = scale[2] : index[3] : base[3]
+
+scale = 2^(SIB.scale)
+
+| b   | index   | base           |
+|-----|---------|----------------|
+| 000 | [rAX]   | [rAX]          |
+| 001 | [rCX]   | [rCX]          |
+| 010 | [rDX]   | [rDX]          |
+| 011 | [rBX]   | [rBX]          |
+| 100 | (none)1 | [rSP]          |
+| 101 | [rBP]   | [rBP], (none)2 |
+| 110 | [rSI]   | DH, [rSI]      |
+| 111 | [rDI]   | BH, [rDI]      |
 
 ### Mem Operand
 
