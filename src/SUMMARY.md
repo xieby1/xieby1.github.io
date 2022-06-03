@@ -235,6 +235,7 @@
     * [Nix/NixOS](./Distro/Nix/README-en.md)
     * [静态链接，以qemu为例](./Distro/Nix/static_qemu.md)
     * [Vim in Nix/NixOS](./Distro/Nix/vim.md)
+    * [Currently, Not Wayland, But X11](./Distro/Nix/wayland.md)
     * [Weird Things in Nix/NixOS](./Distro/Nix/weird.md)
 * [EPaper]()
   * [laptop.md](./EPaper/laptop.md)
