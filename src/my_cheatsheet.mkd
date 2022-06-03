@@ -1244,6 +1244,20 @@ nix-shell -E "with import <nixpkgs> {}; callPackage ./default.nix {}"
 lib.lowPrio <pkg>
 ```
 
+## repl
+
+### help
+
+```nix
+:?
+```
+
+### open editor
+
+```nix
+:e <expr>
+```
+
 # ISA
 
 ## Arm
