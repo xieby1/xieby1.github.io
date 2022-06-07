@@ -89,9 +89,15 @@ let
         postInstall = pkgs.glib.postInstall;
       });
 
-      # gtk3 = super.pkgsStatic.gtk3.override {
-      #   withGtkDoc = false;
-      # };
+      gtk3 = super.pkgsStatic.gtk3.override {
+        trackerSupport = false;
+        cupsSupport = false;
+        withGtkDoc = false;
+
+        # nativeBuildInputs
+        inherit (pkgs) gettext gobject-introspection makeWrapper meson ninja
+        pkg-config python3 sassc docbook_xml_dtd_43 docbook-xsl-nons gtk-doc libxml2;
+      };
 
       qemu = ((super.pkgsStatic.qemu.override {
         alsaSupport = false;
