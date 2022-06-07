@@ -104,6 +104,8 @@ nix-store --query --tree <xxx.drv>
 目前仅需要命令行的qemu，因此为了省事，
 我去掉了声音和图像支持。
 
+注：在NixOS 21.11上和在ubuntu 22配合nix上编译出来的qemu二进制文件一模一样。
+
 <pre><font color="#4E9A06"><b>xieby1@yoga14s</b></font>:<font color="#3465A4"><b>~</b></font>
 <font color="#4E9A06"><b>$</b></font> pkgs_qemu_static.nix 
 /nix/store/gs6plgyc0jr9i5qams0ifksijnq9hkq2-qemu-static-x86_64-unknown-linux-musl-6.1.1
