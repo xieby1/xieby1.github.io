@@ -136,6 +136,12 @@
 {{ #include nix/shell_fhs_x11.nix }}
 ```
 
+### shell_gem5.nix
+
+```nix
+{{ #include nix/shell_gem5.nix }}
+```
+
 ### shell.nix
 
 ```nix
