@@ -1,4 +1,3 @@
-#!/usr/bin/env nix-shell
 # xieby1: 2022.05.16
 let
   pkgs_mips_cross = import <nixpkgs> {
