@@ -19,6 +19,14 @@ awk '{$1=""; print substr($0,2)}' somefile
 awk '{$1=$2=""; print substr($0,2)}' somefile
 ```
 
+### delimiter
+
+[SO: awk delimiter](https://stackoverflow.com/questions/12204192)
+
+```bash
+awk -F'[, ]' '{print $1 " " $2}'
+```
+
 ## bash
 
 ### 可注释字符串
@@ -591,6 +599,15 @@ mount -t cifs -o user=miao%miao //10.0.2.4/qemu Host/
 [qemu-sys] -m 16 -nographic -fda [file]
 ```
 
+## qemu-src
+
+### tcg/
+
+* tcg.c, tcg-op.c: generate tcg
+* <arch>/: tcg => <arch>
+* tci.c: tcg => interpreting
+* README: tcg syntax intro
+
 ## revealjs
 
 ### chalkboard
@@ -620,6 +637,14 @@ rustup show
 rustc --print target-list
 rustup target add <TARGET>
 cargo build --target=<TARGET> --release
+```
+
+## scons
+
+### clean
+
+```bash
+scons -c
 ```
 
 ## sed
@@ -1038,6 +1063,22 @@ O " new tab open
 <leader>gm " 在popup窗口显示commit信息
 ```
 
+## plugins
+
+### vim-plugin-AnsiEsc
+
+```vim
+:AnsiEsc
+```
+
+### tree-sitter update
+
+[GH Issue: query.lua query: error at position #759](https://github.com/nvim-treesitter/nvim-treesitter/issues/759)
+
+```vim
+:TSUpdate
+```
+
 # nix
 
 ## binary cache
@@ -1100,6 +1141,10 @@ nix-build '<nixpkgs>' -A <pkg>
 ```bash
 nix eval "()"
 ```
+
+### gnome extension
+
+`pkgs/desktops/gnome/extensions/extensions.json`
 
 ### prefetch url
 
@@ -1185,6 +1230,12 @@ nix-instantiate --eval -E "<path>"
 nix-version --hash
 ```
 
+### nix-on-droid sshd
+
+```bash
+sshd-start
+```
+
 ## lang
 
 ### escape indented str
@@ -1244,6 +1295,12 @@ nix-shell -E "with import <nixpkgs> {}; callPackage ./default.nix {}"
 lib.lowPrio <pkg>
 ```
 
+### search file
+
+```bash
+nix-locate 'bin/hello'
+```
+
 ## repl
 
 ### help
@@ -1258,13 +1315,63 @@ lib.lowPrio <pkg>
 :e <expr>
 ```
 
+## Usage
+
+### static compile
+
+Nix currently use musl-gcc
+
+```bash
+nix-shell -p pkgsStatic.stdenv.cc
+x86_64-unknown-linux-musl-gcc -static hello.c
+```
+
+### aarch64 cross
+
+```bash
+nix-shell -p pkgsCross.aarch64-multiplatform.stdenv.cc
+aarch64-unknown-linux-gnu-gcc
+```
+
 # ISA
 
 ## Arm
 
+### Condition flags
+
+2021.armv8.pdf: B1.2.2
+
+* N: Negative
+* Z: Zero
+* C: Carry (unsigned)
+* V: Overflow (signed)
+
+### Access NZCV
+
+2021.armv8.pdf: C5.2.9
+
+```
+// 6     333222
+// 3 ... 210987 ... 0
+//  RES0  NZCV  RES0
+//
+mrs x1, NZCV // get NZCV
+msr NZCV, x1 // set NZCV
+```
+
+### data access alignment
+
+2021.armv8.pdf
+
+B2.5.2
+
+* Load or Store of Single or Multiple regs
+* Load/Store-Exclusive and Atomic insts
+* Non-atomic Load-Acquire/Store-Release insts
+
 ### Exception levels
 
-| EL  | Description                               | Typical  |
+| EL  | Description                               | Typical        |
 |-----|-------------------------------------------|----------------|
 | EL0 | unprivileged execution                    | Applications   |
 | EL1 | privileged execution                      | OS kernel      |
@@ -1283,6 +1390,10 @@ lib.lowPrio <pkg>
 * offset: `[x1, #12]`
 * pre-index: `[x1, #12]!` // x1+=12, addr=x1
 * post-index: `[x1], #12` // addr=x1, x1+=12
+
+### conditional execution
+
+[2014: SO: arm no conditinal execution](https://stackoverflow.com/questions/22168992)
 
 ### Pointer Authentication
 
@@ -1327,9 +1438,31 @@ E.g. an atomic subtract
 1f410:   cbnz    w3, 1f404
 ```
 
-> Fortunately they cannot be nested, as each hardware thread supports only one monitor.
+cannot be nested,
+
+as each hardware thread supports only one monitor.
 
 ## x86
+
+### rflags/eflags
+
+2020.amd64.pdf: 3.1.4
+
+```
+// 11           | Overflow  Direction
+// 10..76.4.2.0 | Sign      Zero
+// OD  SZ A P C | Auxiliary Parity
+//              | Carry
+pushf // get
+popf  // set
+```
+
+### regs extensions
+
+2020.amd64.pdf: 3.1.2
+
+* byte(8) & word(16) oprs not modify high 56 or 48 bits
+* dword(32) oprs zero-extended to 64 bits.
 
 ### Legacy Encoding
 
@@ -1383,13 +1516,6 @@ M: MMX, X: XMM, Y: YMM
 | 101 | CH,rBP,M5,X5,Y5 | CH,rBP,M5,X5,Y5 | [rBP]*         |
 | 110 | DH,rSI,M6,X6,Y6 | DH,rSI,M6,X6,Y6 | [rSI]          |
 | 111 | BH,rDI,M7,X7,Y7 | BH,rDI,M7,X7,Y7 | [rDI]          |
-
-* For mod = 00b , r/m = 101b signifies absolute
-  (displacement-only) addressing in 32-bit mode
-  or RIP-relative addressing in 64-bit mode,
-  where the rBP register is not used.
-* For mod = [01b, 10b], r/m = 101b specifies
-  the base + offset addressing mode with [rBP] as the base.
 
 ### SIB
 
