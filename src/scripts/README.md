@@ -80,6 +80,12 @@
 {{ #include bash/resize_gif.sh }}
 ```
 
+### singleton.sh
+
+```bash
+{{ #include bash/singleton.sh }}
+```
+
 ### tar-repo.sh
 
 ```bash
