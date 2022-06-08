@@ -672,6 +672,31 @@ done
 mv $PIC_TEMP $PIC_RESZ
 rm -rf ${TEMP_DIR}
 </code></pre>
+<h3 id="singletonsh"><a class="header" href="#singletonsh">singleton.sh</a></h3>
+<pre><code class="language-bash">#!/usr/bin/env bash
+# based on quteapp.sh
+usage()
+{
+    echo &quot;Usage: ${0##*/} &lt;window&gt; &lt;command and its args&gt;&quot;
+    echo &quot;  Only start a app once, if the app is running&quot;
+    echo &quot;  then bring it to foreground&quot;
+    exit 0
+}
+
+if [[ $# -lt 2 || $1 == &quot;-h&quot; ]]
+then
+    usage
+fi
+
+WID=$(xdotool search --onlyvisible --name &quot;$1&quot;)
+
+if [[ -z ${WID} ]]
+then
+    eval &quot;${@:2}&quot;
+else
+    xdotool windowactivate ${WID}
+fi
+</code></pre>
 <h3 id="tar-reposh"><a class="header" href="#tar-reposh">tar-repo.sh</a></h3>
 <pre><code class="language-bash">#!/usr/bin/env bash
 
