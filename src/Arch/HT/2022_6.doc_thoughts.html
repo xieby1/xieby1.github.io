@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<!-- Export by pandoc -D revealjs, pandoc version 2.14.03 -->
+<!-- pandoc-types 1.22.1, texmath 0.12.3.2, skylighting 0.10.5.2, -->
+<!-- citeproc 0.4.0.1, ipynb 0.1.0.2 -->
+<!-- delete /dist after revealjs-url -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="🤓xieby1">
+  <title>Doc Thoughts</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/theme/white.css" id="theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.6.0/lxgwwenkai-regular.css" />
+  <style>
+    .reveal,
+    .reveal h1,
+    .reveal h2,
+    .reveal h3,
+    .reveal h4,
+    .reveal h5,
+    .reveal h6 {
+      font-family: "LXGW WenKai", sans-serif;
+    }
+  </style>
+  <style>
+  .reveal section img {
+      margin: 0 0;
+      /* override default border color */
+      border: transparent;
+  }
+
+  .reveal p {
+      margin: 0 0;
+  }
+
+  /* no margin in styled code div, the same to unstyled code */
+  div.sourceCode {
+      margin: 0;
+  }
+  .reveal pre {
+      display: flex;
+      justify-content: center;
+  }
+
+  .reveal pre code {
+      max-height: none;
+  }
+
+  a.sourceLine {
+      /* styled code line is higher than unstyled, make them the same */
+      line-height: 0;
+  }
+
+  [role="doc-toc"] > ul {
+      /* multiple column in first level TOC */
+      column-width: 290px;
+      width: 100%;
+      column-rule-style: solid;
+      /* no margin in first level TOC */
+      margin: 0 0 0 0;
+  }
+
+  #TOC ul {
+      /* no bullet */
+      list-style-type: none;
+      /* no margin, no padding in TOC ul */
+      margin-block-start: 0;
+      margin-block-end: 0;
+      padding-inline-start: 0;
+  }
+
+  /* change first level toc background */
+  nav > ul > li > a {
+      background: lightgrey;
+  }
+
+  table {
+      /* 42px / sprt 2 */
+      font-size: 30px;
+  }
+
+  /* enable multiple columns */
+  /* https://stackoverflow.com/questions/30861845 */
+  .container {
+    display: flex;
+    align-items: center;
+  }
+  .col {
+    flex: auto;
+  }
+
+  /* not to capitalise my titles */
+  /* https://stackoverflow.com/questions/47057398 */
+  .reveal h1,
+  .reveal h2,
+  .reveal h3,
+  .reveal h4,
+  .reveal h5 {
+      text-transform: none;
+  }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/style.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Doc Thoughts</h1>
+  <p class="author">🤓xieby1</p>
+  <p class="date">🎂2022.6.10</p>
+</section>
+<section id="TOC">
+<nav role="doc-toc"> 
+<ul>
+<li><a href="#/动机"><span class="toc-section-number">1</span> 动机</a>
+<ul>
+<li><a href="#/二进制翻译"><span class="toc-section-number">1.1</span>
+二进制翻译</a></li>
+<li><a href="#/间接跳转指令"><span class="toc-section-number">1.2</span>
+间接跳转指令</a></li>
+<li><a href="#/访存指令"><span class="toc-section-number">1.3</span>
+访存指令</a></li>
+<li><a href="#/启发"><span class="toc-section-number">1.4</span>
+启发</a></li>
+<li><a href="#/借鉴"><span class="toc-section-number">1.5</span>
+借鉴</a></li>
+<li><a href="#/总结"><span class="toc-section-number">1.6</span>
+总结</a></li>
+</ul></li>
+<li><a href="#/设计构想"><span class="toc-section-number">2</span>
+设计构想</a>
+<ul>
+<li><a href="#/执行流程"><span class="toc-section-number">2.1</span>
+执行流程</a></li>
+<li><a href="#/指令集"><span class="toc-section-number">2.2</span>
+指令集</a></li>
+<li><a href="#/复用拓展"><span class="toc-section-number">2.3</span>
+复用&amp;拓展</a></li>
+<li><a href="#/翻译微码"><span class="toc-section-number">2.4</span>
+翻译🆚微码</a></li>
+<li><a href="#/弥补宿主"><span class="toc-section-number">2.5</span>
+弥补宿主</a></li>
+<li><a href="#/总结-1"><span class="toc-section-number">2.6</span>
+总结</a></li>
+</ul></li>
+<li><a href="#/微码设计"><span class="toc-section-number">3</span>
+微码设计</a>
+<ul>
+<li><a href="#/类比"><span class="toc-section-number">3.1</span>
+类比</a></li>
+<li><a href="#/中间表示"><span class="toc-section-number">3.2</span>
+中间表示</a></li>
+<li><a href="#/数据流图"><span class="toc-section-number">3.3</span>
+数据流图</a></li>
+<li><a href="#/子图覆盖"><span class="toc-section-number">3.4</span>
+子图覆盖</a></li>
+<li><a href="#/覆盖算法"><span class="toc-section-number">3.5</span>
+覆盖算法</a></li>
+<li><a href="#/总结-2"><span class="toc-section-number">3.6</span>
+总结</a></li>
+</ul></li>
+<li><a href="#/实验和数据"><span class="toc-section-number">4</span>
+实验和数据</a>
+<ul>
+<li><a href="#/a64指令"><span class="toc-section-number">4.1</span>
+a64指令</a></li>
+<li><a href="#/x64指令"><span class="toc-section-number">4.2</span>
+x64指令</a></li>
+<li><a href="#/中间表示-1"><span class="toc-section-number">4.3</span>
+中间表示</a></li>
+<li><a href="#/图覆盖"><span class="toc-section-number">4.4</span>
+图覆盖</a></li>
+<li><a href="#/人工复核"><span class="toc-section-number">4.5</span>
+人工复核</a></li>
+</ul></li>
+<li><a href="#/谢谢"><span class="toc-section-number">5</span>
+谢谢</a></li>
+</ul>
+</nav>
+</section>
+
+<section>
+<section id="动机" class="title-slide slide level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span>
+动机</h1>
+<!-- Number of slides is huge, so toc is huge -->
+<style>
+[role="doc-toc"] {zoom: 60%;}
+[role="doc-toc"] > ul {column-width: 400px;}
+</style>
+</section>
+<section id="二进制翻译" class="slide level2" data-number="1.1">
+<h2 data-number="1.1"><span class="header-section-number">1.1</span>
+二进制翻译</h2>
+<div class="container">
+<div class="col">
+<p><img src="./pictures/2022_6.bt.svg" style="zoom: 200%;"></p>
+</div>
+<div class="col">
+<p>二进制翻译可以分为</p>
+<p>用户级和系统级（左图）</p>
+<hr />
+<p>在二进制翻译中</p>
+<p>有两类客户指令</p>
+<p>翻译难度高</p>
+<ol type="1">
+<li>间接跳转指令</li>
+<li>访存指令</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="间接跳转指令" class="slide level2" data-number="1.2">
+<h2 data-number="1.2"><span class="header-section-number">1.2</span>
+间接跳转指令</h2>
+<p><img src="./pictures/2022_6.indirect_jump.svg" style="zoom: 150%;"></p>
+<p>间接跳转的目标*GReg</p>
+<p>无法在翻译时得到，在运行时才能得到</p>
+<p>因此</p>
+<p>需要进行上下文切换（上图蓝线）</p>
+<p>需要在运行时进行地址查询</p>
+<div style="zoom: 50%; text-align:left;">
+<p>Refs:</p>
+<ul>
+<li>Federico, Alessandro Di and Giovanni Agosta. “A jump-target
+identification method for multi-architecture static binary translation.”
+2016 International Conference on Compliers, Architectures, and Sythesis
+of Embedded Systems (CASES) (2016): 1-10.</li>
+</ul>
+</div>
+</section>
+<section id="访存指令" class="slide level2" data-number="1.3">
+<h2 data-number="1.3"><span class="header-section-number">1.3</span>
+访存指令</h2>
+<div class="container">
+<div class="col">
+<h4>
+系统级
+</h4>
+<p>指令膨胀10x~100x[1]</p>
+<p><img src="./pictures/2022_6.sys_mem.svg" style="zoom: 150%;"></p>
+</div>
+<div class="col">
+<h4>
+用户级
+</h4>
+<p>内存空间挤占</p>
+<p><img src="./pictures/2022_6.usr_mem.svg" style="zoom: 150%;"></p>
+</div>
+</div>
+<div style="zoom: 50%; text-align:left;">
+<p>Refs:</p>
+<ol type="1">
+<li>2014.espt, 2015.dual_tlb, 2015.hspt, 2021.btmmu</li>
+</ol>
+</div>
+</section>
+<section id="启发" class="slide level2" data-number="1.4">
+<h2 data-number="1.4"><span class="header-section-number">1.4</span>
+启发</h2>
+<h3>
+硬件虚拟化（Hardware Virtualization）
+</h3>
+<div class="container">
+<div class="col">
+<p>操作系统状态：</p>
+<ul>
+<li>用户状态</li>
+<li>特权状态</li>
+<li>🆕虚拟化状态
+<ul>
+<li>CPU虚拟化</li>
+<li>内存虚拟化</li>
+<li>设备虚拟化</li>
+</ul></li>
+</ul>
+</div>
+<div class="col">
+<p><img src="./pictures/2022_6.kvm_exec_loop.svg" style="zoom: 100%;"></p>
+</div>
+</div>
+<div style="zoom: 50%; text-align:left;">
+<p>Refs:</p>
+<ul>
+<li>Kivity, Avi. “kvm : the Linux Virtual Machine Monitor.” (2007).</li>
+</ul>
+</div>
+</section>
+<section id="借鉴" class="slide level2" data-number="1.5">
+<h2 data-number="1.5"><span class="header-section-number">1.5</span>
+借鉴</h2>
+<div class="container">
+<div class="col">
+<ul>
+<li>CPU虚拟化
+<ul>
+<li>指令直接执行的假象
+<ul>
+<li><p>直接执行</p></li>
+<li><p>退出虚拟化模式</p>
+<p>处理完成后</p>
+<p>返回虚拟化模式</p></li>
+</ul></li>
+</ul></li>
+<li>内存虚拟化
+<ul>
+<li>独占物理内存的假象</li>
+</ul></li>
+</ul>
+</div>
+<div class="col fragment">
+<ul>
+<li><p>CPU虚拟化→间接跳转指令</p>
+<p>可以直接执行指令</p>
+<ul>
+<li>🈚缓存翻译出的宿主代码</li>
+<li>🈚所有跳转目标查表</li>
+<li>🈚翻译器的上下文切换</li>
+</ul></li>
+<li><p>内存虚拟化→访存指令</p>
+<p>拥有独立的物理/虚拟地址空间</p>
+<ul>
+<li>🉑（系统级）指令膨胀小</li>
+<li>🈚（用户级）空间挤占的问题</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="总结" class="slide level2" data-number="1.6">
+<h2 data-number="1.6"><span class="header-section-number">1.6</span>
+总结</h2>
+<div class="container">
+<div class="col">
+<h3>
+二进制翻译中的难题
+</h3>
+<ul>
+<li><p>间接跳转指令</p>
+<p>上下文切换开销</p>
+<p>跳转目标查表开销</p></li>
+<li><p>访存指令</p>
+<p>指令膨胀</p>
+<p>内存空间挤占</p></li>
+</ul>
+</div>
+<div class="col">
+<h3>
+硬件虚拟化的启发
+</h3>
+<p>让客户（guest）</p>
+<ul>
+<li>能够直接执行指令</li>
+<li>拥有独立的物理/虚拟地址空间</li>
+</ul>
+</div>
+</div>
+</section></section>
+<section>
+<section id="设计构想" class="title-slide slide level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span>
+设计构想</h1>
+<div class="container">
+<div class="col">
+<p>操作系统状态：</p>
+<ul>
+<li><p>用户状态</p></li>
+<li><p>特权状态</p></li>
+<li><p>虚拟化状态</p></li>
+<li><p>🆕翻译状态</p>
+<p>(Translation Mode)</p></li>
+</ul>
+</div>
+<div class="col">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">翻译</th>
+<th style="text-align: center;">虚拟化</th>
+<th style="text-align: left;">影响</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">系统级<strong>&amp;用户级</strong></td>
+<td style="text-align: center;">系统级</td>
+<td style="text-align: left;">执行流程存在区别</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">直接执行<strong>客户</strong>指令</td>
+<td style="text-align: center;">直接执行指令</td>
+<td style="text-align: left;">指令集存在区别</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="执行流程" class="slide level2" data-number="2.1">
+<h2 data-number="2.1"><span class="header-section-number">2.1</span>
+执行流程</h2>
+<p><img src="./pictures/2022_6.btmode_exec_loop.svg" style="zoom:150%;"></p>
+</section>
+<section id="指令集" class="slide level2" data-number="2.2">
+<h2 data-number="2.2"><span class="header-section-number">2.2</span>
+指令集</h2>
+<p>直接执行<span
+style="font-size: 1.5em; font-weight: bold;">客户</span>指令的假象</p>
+<div class="fragment">
+<p>复用&amp;拓展</p>
+<p>宿主指令集(Host ISA)</p>
+<p>以支持客户指令集(Guest ISA)</p>
+</div>
+</section>
+<section id="复用拓展" class="slide level2" data-number="2.3">
+<h2 data-number="2.3"><span class="header-section-number">2.3</span>
+复用&amp;拓展</h2>
+<div class="container">
+<div class="col">
+<p>宿主指令集+客户指令集</p>
+<p><img src="./pictures/2022_6.add_isa.svg" style="zoom: 120%;"></p>
+<p>法律问题</p>
+<p>不优雅</p>
+</div>
+<div class="col">
+<p>设计一套微码</p>
+<p><img src="./pictures/2022_6.union_isa.svg" style="zoom: 120%;"></p>
+<p><span class="fragment highlight-red">复用</span>&amp;拓展</p>
+<p>尽可能挖掘公共部分</p>
+</div>
+</div>
+</section>
+<section id="翻译微码" class="slide level2" data-number="2.4">
+<h2 data-number="2.4"><span class="header-section-number">2.4</span>
+翻译🆚微码</h2>
+<p>二进制翻译（左） 微码+翻译状态（右）</p>
+<div class="container">
+<div class="col">
+<p><img src="./pictures/2022_6.bt_arch.svg" style="zoom: 150%;"></p>
+</div>
+<div class="col">
+<p><img src="./pictures/2022_6.uop_arch.svg" style="zoom: 150%;"></p>
+</div>
+<div class="col">
+<ul>
+<li>“1”型变为“Y”型</li>
+<li>📈客户指令效率</li>
+<li>📉宿主指令效率</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="弥补宿主" class="slide level2" data-number="2.5">
+<h2 data-number="2.5"><span class="header-section-number">2.5</span>
+弥补宿主</h2>
+<div class="container">
+<div class="col">
+<p>多核[1]</p>
+<ul>
+<li>同指令集多核</li>
+<li>同指令集异构多核[2]</li>
+<li>多指令集异构多核[3]</li>
+</ul>
+</div>
+<div class="col">
+<p><img src="./pictures/2022_6.ht_cores.svg" style="zoom: 150%;"></p>
+</div>
+</div>
+<div style="zoom:50%; text-align:left;">
+<p>Refs:</p>
+<ol type="1">
+<li>Mitra, Tulika. “Heterogeneous Multi-core Architectures.” IPSJ Trans.
+Syst. LSI Des. Methodol. 8 (2015): 51-62.</li>
+<li>Peter Greenhalgh. big.LITTLE Processing with ARM Cortex-A15 &amp;
+Cortex-A7. Technical report, ARM, 2011</li>
+<li>Venkat, Ashish. “Breaking the ISA Barrier in Modern Computing.”
+(2018).</li>
+</ol>
+</div>
+</section>
+<section id="总结-1" class="slide level2" data-number="2.6">
+<h2 data-number="2.6"><span class="header-section-number">2.6</span>
+总结</h2>
+<ul>
+<li>操作系统状态：🆕翻译状态(Translation Mode)</li>
+<li>使用微码(uops)复用&amp;拓展宿主指令集以支持客户指令集</li>
+<li>原生多核弥补翻译增强核(Translation Enchanged Core)</li>
+</ul>
+</section></section>
+<section>
+<section id="微码设计" class="title-slide slide level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span>
+微码设计</h1>
+<p><img src="./pictures/2022_6.union_isa.svg" style="zoom: 200%;"></p>
+<p><span style="color: red;">复用</span>&amp;拓展</p>
+</section>
+<section id="类比" class="slide level2" data-number="3.1">
+<h2 data-number="3.1"><span class="header-section-number">3.1</span>
+类比</h2>
+<table>
+<thead>
+<tr class="header">
+<th>线性代数</th>
+<th>微码设计</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>向量集甲和向量集乙</td>
+<td>宿主指令集和客户指令集</td>
+</tr>
+<tr class="even">
+<td>向量空间</td>
+<td>指令空间</td>
+</tr>
+<tr class="odd">
+<td>基底</td>
+<td>中间表示</td>
+</tr>
+<tr class="even">
+<td>求标准正交基底</td>
+<td><span class="fragment">进行重组or精简</span></td>
+</tr>
+</tbody>
+</table>
+<!-- | 线性代数                  | 微码设计                 | -->
+<!-- |---------------------------|--------------------------| -->
+<!-- | 向量集V和向量集W          | 宿主指令集H和客户指令集G | -->
+<!-- | 向量空间Space(.)          | 指令空间                 | -->
+<!-- | 基底B                     | 中间表示IR               | -->
+<!-- | 标准正交基底OrthoBasis(.) | 需要进行重组or精简       | -->
+<!-- Space(V∪W) ⊋ Space(B) -->
+<!-- Space(H∪G) ⊋ Space(IR) -->
+</section>
+<section id="中间表示" class="slide level2" data-number="3.2">
+<h2 data-number="3.2"><span class="header-section-number">3.2</span>
+中间表示</h2>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 63%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>翻译/编译器</th>
+<th>语义分析</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>LLVM[6], TCG</td>
+<td>cakeml[1], ACL2, K[2], FuzzBall[3], sail[4][5]</td>
+<td>常见项目</td>
+</tr>
+<tr class="even">
+<td>byte</td>
+<td>bit</td>
+<td>精度高低</td>
+</tr>
+<tr class="odd">
+<td>客户&amp;宿主</td>
+<td>客户</td>
+<td>客户/宿主访存</td>
+</tr>
+<tr class="even">
+<td>模拟语义</td>
+<td>验证语义</td>
+<td>偏向软件/硬件</td>
+</tr>
+</tbody>
+</table>
+<div style="zoom: 50%; text-align:left;">
+<p>Refs:</p>
+<ol type="1">
+<li>Kumar, Ramana et al. “CakeML: a verified implementation of ML.”
+Proceedings of the 41st ACM SIGPLAN-SIGACT (2014).</li>
+<li>Dasgupta, Sandeep et al. “A complete formal semantics of x86-64
+user-level instruction set architecture.” Proceedings of the 40th ACM
+SIGPLAN (2019).</li>
+<li>https://github.com/bitblaze-fuzzball/fuzzball</li>
+<li>Gray, Kathryn E. et al. “An integrated concurrency and core-ISA
+architectural envelope definition, and test oracle, for IBM POWER
+multiprocessors.” 48th MICRO (2015): 635-646.</li>
+<li>Armstrong, Alasdair et al. “Detailed Models of Instruction Set
+Architectures : From Pseudocode to Formal Semantics.” (2018).</li>
+<li>Lattner, Chris and Vikram S. Adve. “LLVM: a compilation framework
+for lifelong program analysis &amp; transformation.” International
+Symposium on Code Generation and Optimization, 2004. CGO 2004. (2004):
+75-86.</li>
+</ol>
+</div>
+</section>
+<section id="数据流图" class="slide level2" data-number="3.3">
+<h2 data-number="3.3"><span class="header-section-number">3.3</span>
+数据流图</h2>
+<div class="container">
+<div class="col fragment">
+<p>arm64借位减法</p>
+<p>客户指令</p>
+<pre><code>sbc x1, x2, x3</code></pre>
+<p>中间表示</p>
+<pre><code>not tmp,x3
+add x1,x2,tmp
+add x1,x1,CF</code></pre>
+</div>
+<div class="col fragment" style="zoom: 200%;">
+<p>⬌</p>
+</div>
+<div class="col fragment">
+<p><img src="./pictures/2022_6.sbc.svg" style="zoom: 200%;"></p>
+</div>
+<div class="col fragment" style="zoom: 200%;">
+<p>⬌</p>
+</div>
+<div class="col fragment">
+<p><img src="./pictures/2022_6.sbc_subgraphs.svg" style="zoom: 200%;"></p>
+</div>
+</div>
+<div style="zoom: 50%; text-align:left;">
+<p>注：准确称呼是“连通导出子图”（Connected Induced Subgraph）
+https://en.wikipedia.org/wiki/Induced_subgraph</p>
+</div>
+</section>
+<section id="子图覆盖" class="slide level2" data-number="3.4">
+<h2 data-number="3.4"><span class="header-section-number">3.4</span>
+子图覆盖</h2>
+<table>
+<thead>
+<tr class="header">
+<th>线性代数</th>
+<th>微码设计</th>
+<th>图</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>向量集甲和向量集乙</td>
+<td>宿主指令集和客户指令集</td>
+<td>图集甲和图集乙</td>
+</tr>
+<tr class="even">
+<td>向量空间</td>
+<td>指令空间</td>
+<td>子图集</td>
+</tr>
+<tr class="odd">
+<td>基底</td>
+<td>中间表示</td>
+<td>子图</td>
+</tr>
+<tr class="even">
+<td>求标准正交基底</td>
+<td>进行重组or精简</td>
+<td>子图覆盖</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="覆盖算法" class="slide level2" data-number="3.5">
+<h2 data-number="3.5"><span class="header-section-number">3.5</span>
+覆盖算法</h2>
+<!-- https://stackoverflow.com/questions/13091433/center-child-divs-inside-parent-div -->
+<div style="display:inline-block; text-align:left;">
+<div class="fragment" data-fragment-index="1">
+<p><code>for</code> 每一条指令 <code>in</code> 指令集</p>
+<p>{</p>
+</div>
+<p>一条指令➡一幅图集➡一个子图集</p>
+<p><span class="fragment" data-fragment-index="1">}</span><span
+class="fragment" data-fragment-index="2">➡</span></p>
+<p><span class="fragment"
+data-fragment-index="2">带权重（比如频率）的子图集</span></p>
+<div class="fragment" data-fragment-index="3">
+<p>➡</p>
+<p>根据权重选出最小覆盖图集</p>
+</div>
+<div class="fragment" data-fragment-index="4">
+<p>➡</p>
+<p>微码集</p>
+</div>
+</div>
+</section>
+<section id="总结-2" class="slide level2" data-number="3.6">
+<h2 data-number="3.6"><span class="header-section-number">3.6</span>
+总结</h2>
+<ul>
+<li>使用中间表示将指令转换为图</li>
+<li>用图覆盖算法筛选出最小覆盖集</li>
+<li>最小覆盖集即是微码集</li>
+</ul>
+</section></section>
+<section>
+<section id="实验和数据" class="title-slide slide level1"
+data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span>
+实验和数据</h1>
+
+</section>
+<section id="a64指令" class="slide level2" data-number="4.1">
+<h2 data-number="4.1"><span class="header-section-number">4.1</span>
+a64指令</h2>
+<div class="container" style="zoom:50%;">
+<div class="col">
+<h3>
+参与覆盖的指令
+</h3>
+<p>250种859条</p>
+<p>adc adcs add adds adr adrp and ands asr autda autdb autdza autdzb
+autia autia1716 autiasp autiaz autib autib1716 autibsp autibz autiza
+autizb bfc bfi bfxil bic bics cas casa casab casah casal casalb casalh
+casb cash casl caslb caslh casp caspa caspal caspl cfinv clrex cls clz
+cmn cmp crc32b crc32cb crc32ch crc32cw crc32cx crc32h crc32w crc32x eon
+eor extr ldadd ldadda ldaddab ldaddah ldaddal ldaddalb ldaddalh ldaddb
+ldaddh ldaddl ldaddlb ldaddlh ldclr ldclra ldclrab ldclrah ldclral
+ldclralb ldclralh ldclrb ldclrh ldclrl ldclrlb ldclrlh ldeor ldeora
+ldeorab ldeorah ldeoral ldeoralb ldeoralh ldeorb ldeorh ldeorl ldeorlb
+ldeorlh ldlar ldlarb ldlarh ldnp ldp ldpsw ldr ldraa ldrab ldrb ldrh
+ldrsb ldrsw ldset ldseta ldsetab ldsetah ldsetal ldsetalb ldsetalh
+ldsetb ldseth ldsetl ldsetlb ldsetlh ldsmax ldsmaxa ldsmaxab ldsmaxah
+ldsmaxal ldsmaxalb ldsmaxalh ldsmaxb ldsmaxh ldsmaxl ldsmaxlb ldsmaxlh
+ldsmin ldsmina ldsminab ldsminah ldsminal ldsminalb ldsminalh ldsminb
+ldsminh ldsminl ldsminlb ldsminlh ldtr ldtrb ldtrh ldtrsb ldtrsh ldtrsw
+ldumax ldumaxa ldumaxab ldumaxah ldumaxal ldumaxalb ldumaxalh ldumaxb
+ldumaxh ldumaxl ldumaxlb ldumaxlh ldumin ldumina lduminab lduminah
+lduminal lduminalb lduminalh lduminb lduminh lduminl lduminlb lduminlh
+ldur ldurb ldurh ldursb ldursh ldursw ldxp ldxr ldxrb ldxrh lsl lsr madd
+mneg mov msub mul mvn neg negs ngc ngcs orn orr pacda pacdb pacdza
+pacdzb pacga rbit rev rev16 rev32 ror sbc sbcs sbfiz sbfx sdiv setf16
+setf8 smaddl smnegl smsubl smulh smull stp str strb sttr sttrb sttrh
+stur sturb sturh sub subs sxtb sxth sxtw tst ubfiz ubfx udiv umaddl
+umnegl umsubl umulh umull uxtb uxth xpacd xpaci xpaclri</p>
+</div>
+<div class="col">
+<h3>
+被过滤掉的指令
+</h3>
+<p>39种207条</p>
+<p>at br brk ccmn ccmp cinc cinv csdb csel cset csetm csinc csinv csneg
+dc dcps1 dcps2 dcps3 dmb drps dsb eret esb hint hlt hvc ic isb mrs msr
+smc stxp stxr stxrb stxrh svc sys tlbi</p>
+</div>
+</div>
+</section>
+<section id="x64指令" class="slide level2" data-number="4.2">
+<h2 data-number="4.2"><span class="header-section-number">4.2</span>
+x64指令</h2>
+<div class="container" style="zoom:40%;">
+<div class="col">
+<h3>
+参与覆盖的指令
+</h3>
+<p>285种（操作数大小不同视为不同）861条</p>
+<p>adcb adcl adcq adcw addb addl addq addw andb andl andq andw blcfillq
+blcicq blciq blcmskq blcsq blsfillq blsicq bsfl bsfq bsfw bsrl bsrq bsrw
+bswapl bswapq bswapw btcl btcq btcw btl btq btrl btrq btrw btsl btsq
+btsw btw cbtw clc cld cltd cltq cmc cmovael cmovaeq cmovaew cmoval
+cmovaq cmovaw cmovbel cmovbeq cmovbew cmovbl cmovbq cmovbw cmovel cmoveq
+cmovew cmovgel cmovgeq cmovgew cmovgl cmovgq cmovgw cmovlel cmovleq
+cmovlew cmovll cmovlq cmovlw cmovnel cmovneq cmovnew cmovnol cmovnoq
+cmovnow cmovnpl cmovnpq cmovnpw cmovnsl cmovnsq cmovnsw cmovol cmovoq
+cmovow cmovpl cmovpq cmovpw cmovsl cmovsq cmovsw cmpb cmpl cmpq cmpsb
+cmpsl cmpsq cmpsw cmpw cmpxchgb cmpxchgl cmpxchgq cmpxchgw cqto cwtd
+cwtl decb decl decq decw enter imulb imull imulq imulw incb incl incq
+incw lahf leal leaq leave leaw llwpcb lodsb lodsl lodsq lodsw lsll
+lzcntl lzcntq lzcntw movabsq movb movl movntil movntiq movq movsb movsbl
+movsbq movsbw movsl movslq movsq movsw movswl movswq movw movzbl movzbq
+movzbw movzwl movzwq mulb mull mulq mulw negb negl negq negw notb notl
+notq notw orb orl orq orw popq popw pushfq pushfw pushq pushw rclb rcll
+rclq rclw rcrb rcrl rcrq rcrw rdpkru rolb roll rolq rolw rorb rorl rorq
+rorw sahf sarb sarl sarq sarw sbbb sbbl sbbq sbbw scasb scasl scasq
+scasw seta setae setb setbe sete setg setge setl setle setne setno setnp
+setns seto setp sets sgdtq shlb shldl shldq shldw shll shlq shlw shrb
+shrdl shrdq shrdw shrl shrq shrw sidtq sldtl sldtq sldtw slwpcb smswl
+smswq smsww stc std stosb stosl stosq stosw strl strq strw subb subl
+subq subw t1mskcq testb testl testq testw tzcntl tzcntq tzcntw tzmskq
+xabort xaddb xaddl xaddq xaddw xchgb xchgl xchgq xchgw xlatb xorb xorl
+xorq xorw</p>
+</div>
+<div class="col">
+<h3>
+被过滤掉的指令
+</h3>
+<p>189种（操作数大小不同视为不同）234条</p>
+<p>adcxl adcxq adoxl adoxq andnl andnq bextrl bextrq blsil blsiq blsmskl
+blsmskq blsrl blsrq bzhil bzhiq clac cldemote clflush clgi cli clts
+clzero cmpxchg16b cmpxchg8b cpuid crc32b crc32l crc32q crc32w divb divl
+divq divw endbr32 endbr64 fxrstor fxrstor64 fxsave fxsave64 fxtract
+getsec hlt idivb idivl idivq idivw inb incsspd incsspq inl insb insl
+insw int int3 invd invlpga inw iretl iretq iretw larl larw lcalll lcallq
+lcallw ldmxcsr lfence lfsl lfsq lfsw lgs lgsl lgsw ljmpl ljmpq ljmpw
+lldtw lmsww lretl lslq lslw lssl lssq lssw ltrw mfence monitor monitorx
+mulxl mulxq mwait mwaitx nop nopl nopq nopw outb outl outsb outsl outsw
+outw pause pconfig pdepl pdepq pextl pextq popfq popfw prefetch
+prefetchnta prefetcht0 prefetcht1 prefetcht2 prefetchw prefetchwt1
+ptwritel ptwriteq rdfsbasel rdfsbaseq rdgsbasel rdgsbaseq rdmsr rdpid
+rdpmc rdrandl rdrandq rdrandw rdseedl rdseedq rdseedw rdsspd rdsspq
+rdtsc rdtscp retq sarxl sarxq saveprevssp setssbsy sfence shlxl shlxq
+shrxl shrxq skinit stac stgi sti stmxcsr swapgs syscall sysenter
+sysexitl sysexitq sysretl sysretq tpause ud0 ud1 ud2 umonitor umwait
+verr verw vmcall vmfunc vmlaunch vmload vmmcall vmresume vmrun vmsave
+wbinvd wbnoinvd wrfsbasel wrfsbaseq wrgsbasel wrgsbaseq wrmsr wrpkru
+xend xgetbv xsetbv xtest</p>
+</div>
+</div>
+</section>
+<section id="中间表示-1" class="slide level2" data-number="4.3">
+<h2 data-number="4.3"><span class="header-section-number">4.3</span>
+中间表示</h2>
+<p>（过滤前）指令翻译到TCG的膨胀率</p>
+<div class="container" style="zoom:70%;">
+<div class="col">
+<p>a64</p>
+<table>
+<thead>
+<tr class="header">
+<th>频次</th>
+<th>TCG</th>
+<th></th>
+<th>频次</th>
+<th>TCG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>37</td>
+<td>0</td>
+<td></td>
+<td>13</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>209</td>
+<td>1</td>
+<td></td>
+<td>12</td>
+<td>11</td>
+</tr>
+<tr class="odd">
+<td>168</td>
+<td>2</td>
+<td></td>
+<td>14</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td>93</td>
+<td>3</td>
+<td></td>
+<td>9</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td>150</td>
+<td>4</td>
+<td></td>
+<td>11</td>
+<td>14</td>
+</tr>
+<tr class="even">
+<td>167</td>
+<td>5</td>
+<td></td>
+<td>6</td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td>86</td>
+<td>6</td>
+<td></td>
+<td>11</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>7</td>
+<td></td>
+<td>7</td>
+<td>17</td>
+</tr>
+<tr class="odd">
+<td>23</td>
+<td>8</td>
+<td></td>
+<td>2</td>
+<td>18</td>
+</tr>
+<tr class="even">
+<td>40</td>
+<td>9</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="col">
+<p>x64</p>
+<table>
+<thead>
+<tr class="header">
+<th>频次</th>
+<th>TCG</th>
+<th></th>
+<th>频次</th>
+<th>TCG</th>
+<th></th>
+<th>频次</th>
+<th>TCG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>47</td>
+<td>0</td>
+<td></td>
+<td>98</td>
+<td>10</td>
+<td></td>
+<td>4</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td>27</td>
+<td>1</td>
+<td></td>
+<td>69</td>
+<td>11</td>
+<td></td>
+<td>1</td>
+<td>21</td>
+</tr>
+<tr class="odd">
+<td>48</td>
+<td>2</td>
+<td></td>
+<td>55</td>
+<td>12</td>
+<td></td>
+<td>1</td>
+<td>22</td>
+</tr>
+<tr class="even">
+<td>46</td>
+<td>3</td>
+<td></td>
+<td>17</td>
+<td>13</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>349</td>
+<td>4</td>
+<td></td>
+<td>10</td>
+<td>14</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>30</td>
+<td>5</td>
+<td></td>
+<td>8</td>
+<td>15</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>84</td>
+<td>6</td>
+<td></td>
+<td>8</td>
+<td>16</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>153</td>
+<td>7</td>
+<td></td>
+<td>6</td>
+<td>17</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>81</td>
+<td>8</td>
+<td></td>
+<td>13</td>
+<td>18</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>161</td>
+<td>9</td>
+<td></td>
+<td>3</td>
+<td>19</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="图覆盖" class="slide level2" data-number="4.4">
+<h2 data-number="4.4"><span class="header-section-number">4.4</span>
+图覆盖</h2>
+<ul>
+<li>共27356个子图</li>
+<li>最小覆盖集包含的子图数量
+<ul>
+<li>仅用于覆盖a64：130</li>
+<li>用于覆盖a64和x64：97</li>
+<li>仅用于覆盖x64：129</li>
+</ul></li>
+<li>平均覆盖所需子图数（平均膨胀率）
+<ul>
+<li>a64：2.86</li>
+<li>x64：3.66</li>
+</ul></li>
+</ul>
+</section>
+<section id="人工复核" class="slide level2" data-number="4.5">
+<h2 data-number="4.5"><span class="header-section-number">4.5</span>
+人工复核</h2>
+<div class="container">
+<div class="col">
+<p>a64膨胀率[1]</p>
+<table>
+<thead>
+<tr class="header">
+<th>频次</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>9</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>153</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>55</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="col">
+<p>x64膨胀率[2]</p>
+<table>
+<thead>
+<tr class="header">
+<th>频次</th>
+<th>数量</th>
+<th></th>
+<th>频次</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>37</td>
+<td>1</td>
+<td></td>
+<td>8</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>15</td>
+<td>2</td>
+<td></td>
+<td>1</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td>3</td>
+<td></td>
+<td>1</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>4</td>
+<td></td>
+<td>1</td>
+<td>9</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="col">
+<ul>
+<li>最小覆盖集的子图数量[3]
+<ul>
+<li>仅用于覆盖a64：55</li>
+<li>用于覆盖a64和x64：29</li>
+<li>仅用于覆盖x64：20</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div style="zoom: 50%; text-align:left;">
+<p>注：</p>
+<ol type="1">
+<li>复核a64时跳过了部分操作数重载类型的指令</li>
+<li>复核x64时跳过了大多操作数重载类型的指令</li>
+<li>去除了立即数、位宽、扩展、符号计算，这些暂时由人工比对</li>
+</ol>
+</div>
+</section></section>
+<section id="谢谢" class="title-slide slide level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span>
+谢谢</h1>
+<p><span style="zoom:400%;">🐱</span></p>
+</section>
+    </div>
+  </div>
+
+  <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/plugin/search/search.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/plugin/zoom/zoom.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/plugin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/plugin.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: false,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1200,
+
+        height: 700,
+
+        chalkboard: {
+          theme: "whiteboard",
+        },
+        customcontrols: {
+          controls: [
+            {
+              icon: '<i class="fa fa-th"></i>',
+              title: 'Toggle overview (O,Esc)',
+              action: 'Reveal.toggleOverview();'
+            },
+            // { icon: '<i class="fa fa-pen-square"></i>',
+            //   title: 'Toggle chalkboard (B)',
+            //   action: 'RevealChalkboard.toggleChalkboard();'
+            // },
+            { icon: '<i class="fa fa-pen"></i>',
+              title: 'Toggle notes canvas (C)',
+              action: 'RevealChalkboard.toggleNotesCanvas();'
+            },
+          ]
+        },
+        // reveal.js plugins
+        plugins: [
+          RevealChalkboard,
+          RevealCustomControls,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>

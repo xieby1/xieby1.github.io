@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<mxfile host="Electron" modified="2022-06-09T17:40:59.440Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/18.1.3 Chrome/100.0.4896.143 Electron/18.2.3 Safari/537.36" etag="z0phUvvFDKqfF18e2Tvv" version="18.1.3">
+  <diagram id="mk0ydC56dFugVSi9HBEQ" name="Page-1">
+    <mxGraphModel dx="2" dy="1" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="IpMaGB05_iVVTx60pJf--1" value="&#x5BA2;&#x6237;&#x865A;&#x62DF;&#x5730;&#x5740;&lt;br&gt;Guest Virtual Address (GVA)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="80" width="180" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="IpMaGB05_iVVTx60pJf--2" value="&#x5BA2;&#x6237;&#x7269;&#x7406;&#x5730;&#x5740;&lt;br&gt;Guest Physical Address (GPA)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="180" width="180" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="IpMaGB05_iVVTx60pJf--3" value="&#x5BBF;&#x4E3B;&#x865A;&#x62DF;&#x5730;&#x5740;&lt;br&gt;Host Virtual Address (HVA)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="80" y="230" width="180" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="IpMaGB05_iVVTx60pJf--6" value="" style="endArrow=classic;html=1;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;sketch=1;" parent="1" source="IpMaGB05_iVVTx60pJf--1" target="IpMaGB05_iVVTx60pJf--9" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="50" y="210" as="sourcePoint"/>
+            <mxPoint x="170" y="130" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IpMaGB05_iVVTx60pJf--7" value="" style="endArrow=classic;html=1;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;sketch=1;" parent="1" source="IpMaGB05_iVVTx60pJf--9" target="IpMaGB05_iVVTx60pJf--2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="170" y="160" as="sourcePoint"/>
+            <mxPoint x="180" y="160" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IpMaGB05_iVVTx60pJf--8" value="" style="endArrow=classic;html=1;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;sketch=1;" parent="1" source="IpMaGB05_iVVTx60pJf--2" target="IpMaGB05_iVVTx60pJf--3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="180" y="190" as="sourcePoint"/>
+            <mxPoint x="180" y="230" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IpMaGB05_iVVTx60pJf--9" value="&lt;span style=&quot;&quot;&gt;&#x5BA2;&#x6237;&#x9875;&#x8868;&lt;/span&gt;&lt;br style=&quot;&quot;&gt;&lt;span style=&quot;&quot;&gt;Guest Page Table&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="110" y="130" width="120" height="30" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
