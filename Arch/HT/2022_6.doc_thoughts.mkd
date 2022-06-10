@@ -346,7 +346,7 @@ add x1,x1,CF
 <img src="./pictures/2022_6.sbc.svg" style="zoom: 200%;">
 ::::
 :::: {.col .fragment style="zoom: 200%;"}
-⬌
+➡
 ::::
 :::: {.col .fragment}
 <img src="./pictures/2022_6.sbc_subgraphs.svg" style="zoom: 200%;">
