@@ -211,6 +211,23 @@ exiftool -Author=<author> <file>
 
 ## font
 
+### list
+
+[SE: get name of font](https://unix.stackexchange.com/questions/305931)
+
+[SO: get name of fonf](https://stackoverflow.com/questions/68033662)
+
+```bash
+fc-list
+fc-scan
+```
+
+### google-fonts
+
+repo: [GH: google/fonts](https://github.com/google/fonts)/ofl/
+
+search: [fonts.google.com](https://fonts.google.com/)
+
 ### grub
 
 [SE: customize GRUB font size](https://unix.stackexchange.com/questions/31672/can-grub-font-size-be-customised)
@@ -460,6 +477,17 @@ endef
 $(foreach x,${EXECUTABLES},rm ${x}${\n})
 ```
 
+### hash dep
+
+[GH: hashdeps](https://github.com/olipratt/hashdeps)
+
+```makefile
+include hashdeps.mk
+combined.txt: $(call hash_deps,a.txt b.txt)
+	echo "Concatenating files"
+	cat $(call unhash_deps,$^) > $@
+```
+
 ### implicit rule
 
 ```makefile
@@ -621,6 +649,50 @@ d: download drawings
 x: previous color
 y: next color
 right click: eraser
+```
+
+### fragments fade
+
+[revealjs fragments](https://revealjs.com/fragments/)
+
+| Name                    | Effect                                              |
+|-------------------------|-----------------------------------------------------|
+| fade-out                | Start visible, fade out                             |
+| fade-up                 | Slide up while fading in                            |
+| fade-down               | Slide down while fading in                          |
+| fade-left               | Slide left while fading in                          |
+| fade-right              | Slide right while fading in                         |
+| fade-in-then-out        | Fades in, then out on the next step                 |
+| fade-in-then-semi-out   | Fades in, then to 50% on the next step              |
+| semi-fade-out           | Fade out to 50%                                     |
+
+### fragments highlight
+
+| Name                    | Effect                                              |
+|-------------------------|-----------------------------------------------------|
+| highlight-red           | Turn text red                                       |
+| highlight-green         | Turn text green                                     |
+| highlight-blue          | Turn text blue                                      |
+| highlight-current-red   | Turn text red, then back to original on next step   |
+| highlight-current-green | Turn text green, then back to original on next step |
+| highlight-current-blue  | Turn text blue, then back to original on next step  |
+
+### fragments others
+
+| Name                    | Effect                                              |
+|-------------------------|-----------------------------------------------------|
+| grow                    | Scale up                                            |
+| shrink                  | Scale down                                          |
+| strike                  | Strike through                                      |
+
+
+
+### fragments order
+
+```html
+<p class="fragment" data-fragment-index="3">Appears last</p>
+<p class="fragment" data-fragment-index="1">Appears first</p>
+<p class="fragment" data-fragment-index="2">Appears second</p>
 ```
 
 ## rust
