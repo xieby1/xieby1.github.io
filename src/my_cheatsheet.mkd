@@ -29,7 +29,23 @@ awk -F'[, ]' '{print $1 " " $2}'
 
 ## bash
 
-### 可注释字符串
+### args length
+
+```bash
+$# # not include command
+$ miao.sh wang # $# is 1
+```
+
+### args range
+
+same to array
+
+```bash
+${@:3:2} # from position 3, length 2
+${@:3} # from position 3, to last
+```
+
+### commentable string concat
 
 ```bash
 CMD=(
@@ -39,7 +55,7 @@ CMD=(
 eval "${CMD[@]}" # "${CMD[*]}"
 ```
 
-### cd上次的目录
+### cd last dir
 
 参考bash手册关于cd的说明
 
@@ -638,6 +654,20 @@ mount -t cifs -o user=miao%miao //10.0.2.4/qemu Host/
 
 ## revealjs
 
+### align
+
+[SO: center child divs inside parent div](https://stackoverflow.com/questions/13091433/center-child-divs-inside-parent-div)
+
+```markdown
+:::{style="display:inline-block; text-align:left;"}
+things here are all
+
+left aligned
+
+!
+:::
+```
+
 ### chalkboard
 
 ```
@@ -684,8 +714,6 @@ right click: eraser
 | grow                    | Scale up                                            |
 | shrink                  | Scale down                                          |
 | strike                  | Strike through                                      |
-
-
 
 ### fragments order
 
@@ -798,6 +826,13 @@ x22Apr12_
 man systemd.unit
 ```
 
+### man pages
+
+* systemd
+* systemd.unit
+* systemd.syntax
+* systemd.service
+
 ### user目录
 
 `man systemd.unit`
@@ -856,6 +891,14 @@ xdg-mime query default <type>
 ```bash
 perl -e "print crypt('wjxby','xb');"
 ```
+
+### gnome autostart
+
+[gnome autostart programs](https://www.addictivetips.com/ubuntu-linux-tips/autostart-programs-on-gnome-shell/)
+
+mov desktop file to
+
+`~/.config/autostart/`
 
 ### pkg-config
 
