@@ -60,6 +60,8 @@
     * [logs.md](./BT/Box86/logs.md)
   * [dynamic]()
     * [2017.mambox64.dantras.pldi.18.md](./BT/dynamic/2017.mambox64.dantras.pldi.18.md)
+  * [Emulator]()
+    * [Emulator_Design]()
   * [exagear.md](./BT/exagear.md)
   * [HQEMU]()
     * [codeReading-deprecated.md](./BT/HQEMU/codeReading-deprecated.md)

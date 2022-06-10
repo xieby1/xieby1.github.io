@@ -2,7 +2,7 @@
 # pip install is usable in venv
 # e.g.
 # $ nix-shell <this_file>
-# $ pip install graphviz2drawio
+# $ pip install [--user] graphviz2drawio
 let
   pkgs = import <nixpkgs> {};
 in
