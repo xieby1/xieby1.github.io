@@ -2,7 +2,7 @@
 % 汪
 % ！
 
-# 奖状 {data-background-image="./jz.svg" data-background-size="95% 95%"}
+# 奖状 {data-background-image="./jz.svg" data-background-size="95% 95%" .unnumbered}
 
 <i class="fas fa-holly-berry"></i>
 <i class="fas fa-holly-berry"></i>
