@@ -35,7 +35,8 @@ solve_an_entry()
     if [[ ${1##*/} == "pictures" || \
           ${1##*/} == "." || \
           ${1##*/} == "Essays.md" || \
-          ${1##*/} == "abbreviations.md" ]]
+          ${1##*/} == "abbreviations.md" || \
+          ${1##*/} == "miao" ]]
     then
         return 0
     fi
