@@ -1,0 +1,29 @@
+% 喵
+% 汪
+% ！
+
+# 奖状 {data-background-image="./jz.svg" data-background-size="95% 95%"}
+
+<i class="fas fa-holly-berry"></i>
+<i class="fas fa-holly-berry"></i>
+<i class="fas fa-holly-berry"></i>
+<i class="fas fa-holly-berry"></i>
+<i class="fas fa-holly-berry"></i>
+<i class="fas fa-holly-berry"></i>
+
+::: {style="display: inline-flex; flex-direction: column; justify-content: space-between; width: 800px; height: 450px; color=DimGrey;"}
+:::: {style="align-self: flex-start; text-align:left;"}
+祝贺木子喵🐱
+
+在其职场成长过程中，荣获：
+::::
+
+<h2>职场成熟新人奖</h2>
+
+:::: {style="align-self: flex-end;"}
+木一🐾
+
+2022年6月12日
+::::
+:::
+
