@@ -64,6 +64,14 @@ eval "${CMD[@]}" # "${CMD[*]}"
 cd -
 ```
 
+### print command
+
+```bash
+# see `help set`
+set -x # turn on
+set +x # turn off
+```
+
 ### read file lines
 
 ```bash
@@ -317,6 +325,33 @@ int main(void)
 ```bash
 gcc -dM -E - < /dev/null
 touch bla.c && gcc -dM -E bla.c
+```
+
+## gem5
+
+### terminology
+
+Simulation Mode
+
+* Full System (FS)
+* Syscall Emulation (SE)
+
+### cache
+
+* mshr: Miss Status Handle Register
+* tgt: ?[TODO]
+
+### generate hh from py
+
+```bash
+# generate header from MyMemObject.py
+scons build/ARM/params/MyMemObject.hh
+```
+
+### SE (syscall emu)
+
+```bash
+gem5.opt configs/example/se.py --cmd <CMD>
 ```
 
 ## git
@@ -629,6 +664,22 @@ dpkg-query -L <package_name>
 apt-file list <package_name>
 ```
 
+## python
+
+### debug script
+
+```python
+import pdb
+pdb.set_trace()
+```
+
+### object attr
+
+```python
+dir()
+vars()
+```
+
 ## qemu
 
 ### smb
@@ -721,6 +772,31 @@ right click: eraser
 <p class="fragment" data-fragment-index="3">Appears last</p>
 <p class="fragment" data-fragment-index="1">Appears first</p>
 <p class="fragment" data-fragment-index="2">Appears second</p>
+```
+
+### print pdf
+
+Append `?print-pdf` to URL.
+
+## route
+
+### add
+
+```bash
+sudo route add -net 172.17.103.0 \
+gw 10.90.50.254 \
+netmask 255.255.255.0 \
+metric 1000 \
+dev enp9s0
+```
+
+### del
+
+```bash
+sudo route del -net 172.17.103.0 \
+gw 10.90.50.254
+netmask 255.255.255.0 \
+dev enp9s0
 ```
 
 ## rust
@@ -853,6 +929,27 @@ journalctl --user -u <service>
 systemctl list-units --type target
 ```
 
+## tmux
+
+### terminology
+
+`man tmux`: Description
+
+* session
+  * window
+    * pane = pseudo terminal (pty)
+
+Any number of tmux instances can
+
+cnnect to the same session.
+
+### split
+
+```
+<C-b> " // vertical
+<C-b> % // horizontal
+```
+
 ## WSL
 
 ### shrink vdisk
@@ -928,13 +1025,6 @@ ps -jHg <pid> # 进程子树
 pstree -psal <pid> # 完整树
 ```
 
-### python object属性
-
-```python
-dir()
-vars()
-```
-
 ### new user
 
 ```bash
@@ -979,11 +1069,32 @@ sort -s -n -k 1,1
 
 ## Misc
 
-### Explore
+### debug log
+
+[SO: runtime log](https://stackoverflow.com/questions/3025615)
+
+```bash
+vim -V9myVim.log
+```
+
+### Explore (netrw)
 
 ```vim
 ; open current file's dir
 :E[xplore]
+```
+
+### Explore crash (netrw)
+
+```bash
+rm ~/.local/share/nvim/.netrwhist
+```
+
+### netrw new file
+
+```vim
+# in netrw mode
+%
 ```
 
 ### fold
@@ -1044,6 +1155,14 @@ c-w _ ;当前窗口最高
 c-w = ;所有窗口等高
 :on ;关闭所有其他窗口
 c-w o ;同上
+```
+
+### set filetype (nvim)
+
+it can control syntax and coc
+
+```vim
+set filetype=python
 ```
 
 ### set syntax
@@ -1180,10 +1299,21 @@ O " new tab open
 
 ## plugins
 
-### vim-plugin-AnsiEsc
+### AnsiEsc
 
 ```vim
 :AnsiEsc
+```
+
+### config-local
+
+`~/.local/share/nvim/config-local`
+
+```vim
+:ConfigSource
+:ConfigEdit
+:ConfigTrust
+:ConfigIgnore
 ```
 
 ### tree-sitter update
@@ -1192,6 +1322,22 @@ O " new tab open
 
 ```vim
 :TSUpdate
+```
+
+### coc disable
+
+```vim
+:CocDisable
+:CocEnable
+```
+
+### coc disable diagnostic
+
+`:e` reload file is neccessary
+
+```vim
+:let b:coc_diagnostic_disable=1
+:e
 ```
 
 # nix
