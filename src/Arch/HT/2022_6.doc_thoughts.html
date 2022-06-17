@@ -11,7 +11,7 @@
   <title>Doc Thoughts</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimal-ui">
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/reset.css">
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/reveal.css">
   <style>
@@ -24,32 +24,6 @@
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/theme/white.css" id="theme">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.6.0/lxgwwenkai-regular.css"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.6.0/lxgwwenkaimono-regular.css"/>
-<style>
-  /* copy from reset.css */
-  html, body, div, span, applet, object, iframe,
-  h1, h2, h3, h4, h5, h6,
-  p, blockquote, pre, a, abbr, acronym, address,
-  big, cite, code, del, dfn, em, img, ins, kbd,
-  q, s, samp, small, strike, strong, sub, sup,
-  tt, var, b, u, i, center, dl, dt, dd,
-  ol, ul, li, fieldset, form, label, legend,
-  table, caption, tbody, tfoot, thead,
-  tr, th, td, article, aside, canvas, details,
-  embed, figure, figcaption, footer, header,
-  hgroup, main, menu, nav, output, ruby,
-  section, summary, time, mark, audio, video,
-  /* copy from white.css */
-  .reveal h1, .reveal h2, .reveal h3,
-  .reveal h4, .reveal h5, .reveal h6
-  {
-    font-family: "LXGW WenKai"
-  }
-  code {
-    font-family: "LXGW WenKai Mono"
-  }
-</style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/style.css">
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/style.css">
@@ -139,7 +113,7 @@ table {
 <section id="title-slide">
   <h1 class="title">Doc Thoughts</h1>
   <p class="author">🤓xieby1</p>
-  <p class="date">🎂2022.6.10</p>
+  <p class="date">⏳2022.6.17</p>
 </section>
 <section id="TOC">
 <nav role="doc-toc"> 
@@ -1338,6 +1312,11 @@ xend xgetbv xsetbv xtest</p>
         },
         customcontrols: {
           controls: [
+            {
+              icon: '<i class="fas fa-expand"></i>',
+              title: 'Toggle fullscreen',
+              action: 'document.documentElement.requestFullscreen()'
+            },
             {
               icon: '<i class="fa fa-th"></i>',
               title: 'Toggle overview (O,Esc)',
