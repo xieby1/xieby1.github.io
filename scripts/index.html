@@ -1167,9 +1167,15 @@ pkgs.mkShell {
 }).env
 </code></pre>
 <h3 id="shell_gem5nix"><a class="header" href="#shell_gem5nix">shell_gem5.nix</a></h3>
-<pre><code class="language-nix">with import &lt;nixpkgs&gt; {};
-mkShell {
-  packages = [
+<pre><code class="language-nix"># xieby1 2022.06.10
+# place this file in gem5 src dir root
+let
+  pkgs = import &lt;nixpkgs&gt; {};
+in
+pkgs.mkShell {
+  name = &quot;gem5-dev&quot;;
+  packages = with pkgs; [
+    # for compilation
     scons
     zlib
     m4
@@ -1177,8 +1183,57 @@ mkShell {
     protobuf
     libpng
     hdf5-cpp
+
+    # for execution
+    python3Packages.pydot
+
+    # for commit
+    python3Packages.pyyaml
   ];
-  name = &quot;gem5&quot;;
+
+  _VIMRC = builtins.toString ./shell_gem5/vimrc;
+  _CCLS = builtins.toString ./shell_gem5/ccls;
+  _PYRIGHT = builtins.toString ./shell_gem5/pyrightconfig.json;
+  _PSEDOIMPORT = builtins.toString ./shell_gem5/psedoImport.py;
+  shellHook = ''
+    # add nvim local config
+    if [[ ! -f ./.vimrc ]]
+    then
+      echo &quot;set .vimrc&quot;
+      ln -fs ''${_VIMRC} ./.vimrc
+    fi
+
+    # add ccls config
+    if [[ ! -f ./.ccls ]]
+    then
+      echo &quot;set .ccls&quot;
+      ln -fs ''${_CCLS} ./.ccls
+    fi
+
+    # add pyright config
+    if [[ ! -f ./pyrightconfig.json ]]
+    then
+      echo &quot;set pyrightconfig.json&quot;
+      ln -fs ''${_PYRIGHT} ./
+    fi
+
+    # add psedoImport
+    if [[ ! -f ./psedoImport.py ]]
+    then
+      echo &quot;set psedoImport&quot;
+      ln -fs ''${_PSEDOIMPORT} ./
+    fi
+
+    # set python path for gem5
+    echo &quot;set PYTHONPATH&quot;
+    PYTHONPATH+=&quot;:''$(realpath src/python)&quot;
+    PYTHONPATH+=&quot;:''$(realpath site_scons)&quot;
+    export PYTHONPATH
+
+    # for FS binaries
+    echo &quot;set IMG_ROOT&quot;
+    export IMG_ROOT=/home/xiebenyi/Img/aarch-system-20210904
+  '';
 }
 </code></pre>
 <h3 id="shellnix"><a class="header" href="#shellnix">shell.nix</a></h3>
