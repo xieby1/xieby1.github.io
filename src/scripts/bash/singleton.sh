@@ -13,11 +13,21 @@ then
     usage
 fi
 
-WID=$(xdotool search --onlyvisible --name "$1")
+
+if [[ "$1" == "kdeconnect.app" ]]
+then
+    WID=$(xdotool search --classname "$1")
+else
+    WID=$(xdotool search --onlyvisible --name "$1")
+fi
 
 if [[ -z ${WID} ]]
 then
     eval "${@:2}"
 else
-    xdotool windowactivate ${WID}
+    for WIN in $WID
+    do
+        xdotool set_desktop_for_window ${WIN} $(xdotool get_desktop)
+        xdotool windowactivate ${WIN}
+    done
 fi
