@@ -610,7 +610,7 @@ if [[ -z ${WID} ]]
 then
     qutebrowser &quot;$URL&quot;
 else
-    xdotool windowactivate ${WID}
+    xdotool set_desktop_for_window ${WID} $(xdotool get_desktop)
 fi
 </code></pre>
 <h3 id="resize_gifsh"><a class="header" href="#resize_gifsh">resize_gif.sh</a></h3>
@@ -688,13 +688,23 @@ then
     usage
 fi
 
-WID=$(xdotool search --onlyvisible --name &quot;$1&quot;)
+
+if [[ &quot;$1&quot; == &quot;kdeconnect.app&quot; ]]
+then
+    WID=$(xdotool search --classname &quot;$1&quot;)
+else
+    WID=$(xdotool search --onlyvisible --name &quot;$1&quot;)
+fi
 
 if [[ -z ${WID} ]]
 then
     eval &quot;${@:2}&quot;
 else
-    xdotool windowactivate ${WID}
+    for WIN in $WID
+    do
+        xdotool set_desktop_for_window ${WIN} $(xdotool get_desktop)
+        xdotool windowactivate ${WIN}
+    done
 fi
 </code></pre>
 <h3 id="tar-reposh"><a class="header" href="#tar-reposh">tar-repo.sh</a></h3>

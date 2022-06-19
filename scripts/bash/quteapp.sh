@@ -18,5 +18,5 @@ if [[ -z ${WID} ]]
 then
     qutebrowser "$URL"
 else
-    xdotool windowactivate ${WID}
+    xdotool set_desktop_for_window ${WID} $(xdotool get_desktop)
 fi
