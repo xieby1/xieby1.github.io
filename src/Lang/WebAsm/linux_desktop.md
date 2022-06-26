@@ -1,8 +1,8 @@
-
+# Web Assembly and Linux GUI (GUI Shell)
 
 <div style="text-align:right; font-size:3em;">2021.06.11</div>
 
-昨天听说王佃涛准备去做高级语言虚拟机的实习，就在生日聚会上聊起了webAssembly。
+昨天听说wdt准备去做高级语言虚拟机的实习，就在生日聚会上聊起了webAssembly。
 
 今天在装整理窗口的gnome插件时，突然想到，gnome的图形界面是javascript驱动的，那么webAssembly相比javascript性能更高，在若能在桌面环境替换javascript，那么似乎可以大有可为。就像“Android-JVM-Linux”，之后会有“桌面-WasmVM-Linux”吗？
 
@@ -38,7 +38,7 @@
 
 <div style="text-align:right; font-size:3em;">2020.11.25</div>
 
-**前言**：龙芯平台，libmozjs.so替换为4k页版本的，4k页内核启动图形界面时会变快。
+**前言**：lx平台，libmozjs.so替换为4k页版本的，4k页内核启动图形界面时会变快。
 
 mozjs是mozilla的javascript引擎。为什么图形界面需要js？突然想起之前看gnome extension里边用的全是js！
 
