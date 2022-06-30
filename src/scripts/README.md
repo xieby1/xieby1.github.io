@@ -112,10 +112,34 @@
 {{ #include nix/libllvm13_debug.nix }}
 ```
 
+### pkgs2105_cross_static_hello.nix
+
+```nix
+{{ #include nix/pkgs2105_cross_static_hello.nix }}
+```
+
+### pkgs_coremark.nix
+
+```nix
+{{ #include nix/pkgs_coremark.nix }}
+```
+
 ### pkgs_cross_mips.nix
 
 ```nix
 {{ #include nix/pkgs_cross_mips.nix }}
+```
+
+### pkgs_docker_tailscale.nix
+
+```nix
+{{ #include nix/pkgs_docker_tailscale.nix }}
+```
+
+### pkgs_qemu_riscv64_static.nix
+
+```nix
+{{ #include nix/pkgs_qemu_riscv64_static.nix }}
 ```
 
 ### pkgs_qemu_static.nix

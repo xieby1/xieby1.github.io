@@ -19,4 +19,5 @@ then
     qutebrowser "$URL"
 else
     xdotool set_desktop_for_window ${WID} $(xdotool get_desktop)
+    xdotool windowactivate ${WID}
 fi
