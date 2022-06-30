@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<mxfile host="Electron" modified="2022-06-30T09:14:55.160Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/18.1.3 Chrome/100.0.4896.143 Electron/18.2.3 Safari/537.36" etag="HCVb3h_2LRzABZ09mkoa" version="18.1.3">
+  <diagram id="wZOuH1d09qBgQ-vxUuTx" name="Page-1">
+    <mxGraphModel dx="2" dy="1" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-31" value="" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#f5f5f5;strokeColor=#666666;endFill=1;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-21" target="Y1SQiho-c_f4feoZnBCQ-30" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="302.72727272727275" y="460" as="sourcePoint"/>
+            <mxPoint x="410" y="477.10144927536226" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-7" value="&lt;font face=&quot;mono&quot;&gt;&lt;span style=&quot;&quot;&gt;src/arch/x86/isa/insts/general_purpose/data_transfer&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/move.py&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="110" y="880" width="450" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-8" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;def macroop MOV_R_I {&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; limm reg, imm&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;};&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="610" y="870" width="170" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-9" value="&lt;font face=&quot;mono&quot;&gt;src/arch/x86/isa/microasm.isa&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="70" y="490" width="230" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-10" value="&lt;span style=&quot;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;src/arch/micro_asm.py&lt;/font&gt;&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;fontFamily=mono;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="110" y="790" width="170" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-12" value="" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#f5f5f5;strokeColor=#666666;endFill=1;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-7" target="Y1SQiho-c_f4feoZnBCQ-8" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="920" as="sourcePoint"/>
+            <mxPoint x="510" y="870" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-13" value="&lt;font face=&quot;mono&quot;&gt;src/arch/micro_asm.py&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="110" y="980" width="170" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-14" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font style=&quot;background-color: rgb(216, 0, 115);&quot; face=&quot;mono&quot;&gt;uasm (a DSL, I name it uasm)&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#A50040;fillColor=#d80073;sketch=1;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="420" y="980" width="220" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-15" value="MicroAssember&lt;br&gt;defines uasm" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#f5f5f5;strokeColor=#666666;endFill=1;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-13" target="Y1SQiho-c_f4feoZnBCQ-14" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="460" y="980" as="sourcePoint"/>
+            <mxPoint x="510" y="930" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-16" value="&lt;font face=&quot;mono&quot;&gt;ply(Python Lex Yacc)&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="110" y="960" width="160" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-20" value="use uasm" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#d80073;strokeColor=#A50040;endFill=1;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-14" target="Y1SQiho-c_f4feoZnBCQ-8" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="903.125" as="sourcePoint"/>
+            <mxPoint x="620" y="903.8194444444445" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-21" value="build/X86/arch/x86/generated/decoder-ns.hh.inc" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;fontFamily=mono;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="790" y="590" width="350" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-22" value="build/X86/arch/x86/generated/exec-ns.cc.inc" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;fontFamily=mono;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="810" y="770" width="330" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-23" value="build/X86/arch/x86/generated/decoder-ns.cc.inc" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;fontFamily=mono;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="830" y="520" width="350" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-24" value="src/arch/x86/isa/microops/limmop.isa" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;fontFamily=mono;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="100" y="710" width="280" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-26" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;def template MicroLimmOpDeclare {{&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; class %(class_name)s: public %(base_class)s&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; {&lt;/font&gt;&lt;font style=&quot;background-color: initial;&quot; face=&quot;mono&quot;&gt;...&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-family: mono;&quot;&gt;}&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;}};&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;...&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;let {{&lt;/font&gt;&lt;/div&gt;&lt;span style=&quot;font-family: mono;&quot;&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; iop = InstObjParams(&quot;limm&quot;, &quot;LimmBig&quot;, ...)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; header_output += MicroLimmOpDeclare.subst(iop)&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;}};&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="410" y="550" width="360" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-27" value="" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#f5f5f5;strokeColor=#666666;endFill=1;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-24" target="Y1SQiho-c_f4feoZnBCQ-26" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="903.125" as="sourcePoint"/>
+            <mxPoint x="620" y="903.8194444444443" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-28" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;def template MicroLimmOpExecute {{&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; Fault&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; $(class_name)s::execute(...) const&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; {...}&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;}};&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;...&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;let {{&lt;/font&gt;&lt;/div&gt;&lt;span style=&quot;font-family: mono;&quot;&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; iop = InstObjParams(&quot;limm&quot;, &quot;LimmBig&quot;, ...)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; exec_output += MicroLimmOpExecute.subst(iop)&lt;/span&gt;&lt;/div&gt;&lt;/span&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;}};&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="410" y="700" width="350" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-29" value="" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#f5f5f5;strokeColor=#666666;endFill=1;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-24" target="Y1SQiho-c_f4feoZnBCQ-28" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="326.66666666666674" y="740" as="sourcePoint"/>
+            <mxPoint x="430" y="721.7647058823529" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-30" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;namespace x86_macroop {&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; class MOV_R_I : public Macroop&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; {...};&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;}&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="1290" y="390" width="250" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-32" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;Fault&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;LimmBig::execute(...) const&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;{...}&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="1180" y="760" width="210" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-33" value="" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#f5f5f5;strokeColor=#666666;endFill=1;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-22" target="Y1SQiho-c_f4feoZnBCQ-32" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1210" y="730" as="sourcePoint"/>
+            <mxPoint x="1300" y="730" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-34" value="" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#dae8fc;strokeColor=#6c8ebf;endFill=1;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-28" target="Y1SQiho-c_f4feoZnBCQ-22" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="312.72727272727275" y="740" as="sourcePoint"/>
+            <mxPoint x="420" y="757.1014492753623" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-35" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;x86_macroop::MOV_R_I::MOV_R_I(...)&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;{...}&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;std::string&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;x86_macroop::MOV_R_I::generateDisassembly(...)&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;{...}&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="1250" y="500" width="350" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-36" value="" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#dae8fc;strokeColor=#6c8ebf;endFill=1;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-26" target="Y1SQiho-c_f4feoZnBCQ-38" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="770" y="802.5" as="sourcePoint"/>
+            <mxPoint x="930" y="600" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-37" value="" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#f5f5f5;strokeColor=#666666;endFill=1;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-23" target="Y1SQiho-c_f4feoZnBCQ-35" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1220" y="424.6052631578948" as="sourcePoint"/>
+            <mxPoint x="1300" y="426.7105263157896" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-38" value="build/X86/arch/x86/generated/decoder-ns.hh.inc" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;fontFamily=mono;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="790" y="610" width="350" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-39" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;class LimmBig : public X86ISA::RegOpT&amp;lt;...&amp;gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;{...}&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="1250" y="640" width="320" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-40" value="" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#f5f5f5;strokeColor=#666666;endFill=1;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-38" target="Y1SQiho-c_f4feoZnBCQ-39" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1230" y="704.6052631578948" as="sourcePoint"/>
+            <mxPoint x="1310" y="706.7105263157896" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-43" value="build/X86/arch/x86/generated/decode-method.cc.inc" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;fontFamily=mono;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="750" y="280" width="370" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-44" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;X86ISA::Decoder::decodeInst(&lt;/font&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;X86ISA::ExtMachInst&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-family: mono;&quot;&gt;) {&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; switch (LEGACY_LOCK) {&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; &amp;nbsp; case 0x0:&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; &amp;nbsp; switch (OPCODE_TYPE) {&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; case X86ISA::OneByteOpcode:&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; switch (OPCODE_OP_TOP5) {&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; case 0x17:&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; return new x86_macroop::MOV_R_I(...);&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; break;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;}&lt;font style=&quot;background-color: initial;&quot;&gt;}&lt;/font&gt;&lt;font style=&quot;background-color: initial;&quot;&gt;}&lt;/font&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;}&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="1220" y="200" width="380" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-45" value="" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#f5f5f5;strokeColor=#666666;endFill=1;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-43" target="Y1SQiho-c_f4feoZnBCQ-44" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1220" y="424.6052631578948" as="sourcePoint"/>
+            <mxPoint x="1300" y="426.7105263157896" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-46" value="&lt;font face=&quot;mono&quot;&gt;instantiate&lt;/font&gt;" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#dae8fc;strokeColor=#6c8ebf;endFill=1;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-44" target="Y1SQiho-c_f4feoZnBCQ-30" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="770" y="787.2435897435898" as="sourcePoint"/>
+            <mxPoint x="820" y="787.8846153846155" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-47" value="&lt;font face=&quot;mono&quot;&gt;instantiate&lt;/font&gt;" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#dae8fc;strokeColor=#6c8ebf;endFill=1;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-35" target="Y1SQiho-c_f4feoZnBCQ-39" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1408.1034482758623" y="360" as="sourcePoint"/>
+            <mxPoint x="1417.7586206896553" y="400" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-48" value="definition/&lt;br&gt;declaration" style="shape=link;html=1;rounded=0;sketch=1;fontFamily=mono;fontColor=#003300;endArrow=classic;endFill=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-35" target="Y1SQiho-c_f4feoZnBCQ-30" edge="1">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="1130" y="520" as="sourcePoint"/>
+            <mxPoint x="1230" y="520" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-50" value="definition/&lt;br&gt;declaration" style="shape=link;html=1;rounded=0;sketch=1;fontFamily=mono;fontColor=#003300;endArrow=classic;endFill=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-32" target="Y1SQiho-c_f4feoZnBCQ-39" edge="1">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="1431.6666666666665" y="510" as="sourcePoint"/>
+            <mxPoint x="1427.5" y="460" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-51" value="src/arch/x86/decoder.cc" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;fontFamily=mono;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="825" y="130" width="180" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-52" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;/// Decode State Machine&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;void Decoder::process() {&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; uint8_t nextByte = getNextByte();&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; switch (state) {&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; &amp;nbsp; case PrefixState:&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; state = doPrefixState(nextByte);&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; break;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; &amp;nbsp; ...&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;}&lt;span style=&quot;background-color: initial;&quot;&gt;}&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="1190" y="20" width="290" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-53" value="" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#f5f5f5;strokeColor=#666666;endFill=1;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-51" target="Y1SQiho-c_f4feoZnBCQ-52" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1130" y="294.1578947368421" as="sourcePoint"/>
+            <mxPoint x="1230" y="291" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y1SQiho-c_f4feoZnBCQ-54" value="decode without knowing opcode&lt;br&gt;(determine the inst length)" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#dae8fc;strokeColor=#6c8ebf;endFill=1;" parent="1" source="Y1SQiho-c_f4feoZnBCQ-52" target="Y1SQiho-c_f4feoZnBCQ-44" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1422.586206896552" y="360" as="sourcePoint"/>
+            <mxPoint x="1423.9655172413795" y="400" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vtPPCyBWZjFwsPT4l5og-1" value="src/arch/x86/isa/macroop.isa" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#666666;fillColor=#f5f5f5;fontColor=#333333;fontFamily=mono;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="420" width="220" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="vtPPCyBWZjFwsPT4l5og-2" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;def template MacroConstructor {{&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; x86_macroop::%(class_name)s::%(class_name)s(...)&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; {...}&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;}};&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;def template MacroDisassembly {{&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; std::string&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; x86_macroop::%(class_name)s::generateDisassembly(...)&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;&amp;nbsp; {...}&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;font face=&quot;mono&quot;&gt;}};&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#6c8ebf;fillColor=#dae8fc;sketch=1;" parent="1" vertex="1">
+          <mxGeometry x="375" y="360" width="410" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="vtPPCyBWZjFwsPT4l5og-3" value="" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#f5f5f5;strokeColor=#666666;endFill=1;" parent="1" source="vtPPCyBWZjFwsPT4l5og-1" target="vtPPCyBWZjFwsPT4l5og-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="283.3333333333335" y="720" as="sourcePoint"/>
+            <mxPoint x="420" y="679" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vtPPCyBWZjFwsPT4l5og-4" value="" style="endArrow=classic;html=1;rounded=0;sketch=1;fillColor=#dae8fc;strokeColor=#6c8ebf;endFill=1;" parent="1" source="vtPPCyBWZjFwsPT4l5og-2" target="Y1SQiho-c_f4feoZnBCQ-23" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="770" y="787.2435897435898" as="sourcePoint"/>
+            <mxPoint x="820" y="787.8846153846155" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
