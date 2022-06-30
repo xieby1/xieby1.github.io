@@ -25,7 +25,7 @@
     * [2018.process_migration.venkat.doc_thesis.5.md](./Arch/HT/2018.process_migration.venkat.doc_thesis.5.md)
     * [2019.composite_isa.venkat.hpca.17.md](./Arch/HT/2019.composite_isa.venkat.hpca.17.md)
     * [2020.byoc_framework.balkind.asplos.3.md](./Arch/HT/2020.byoc_framework.balkind.asplos.3.md)
-    * [doc_thoughts.md](./Arch/HT/doc_thoughts.md)
+    * [xa64](./Arch/HT/xa64/README.md)
   * [reconf]()
     * [1997.chimaera.hauck.fccm.461.md](./Arch/reconf/1997.chimaera.hauck.fccm.461.md)
     * [2008.reconf_acc.beck.date.97.md](./Arch/reconf/2008.reconf_acc.beck.date.97.md)
