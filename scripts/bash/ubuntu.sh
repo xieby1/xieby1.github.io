@@ -16,10 +16,12 @@ CREATE_IMAGE() {
     # ~~one RUN command, avoid redundent layers~~
     echo "RUN echo 'root:miqbxgyfdA.PY' | chpasswd -e" >> /tmp/u${VER}/Dockerfile
     echo "RUN useradd -u ${UID} -G users,sudo -p miqbxgyfdA.PY -s /bin/bash xieby1" >> /tmp/u${VER}/Dockerfile
+    echo "RUN sed -i 's/http.*com/http:\/\/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list" >> /tmp/u${VER}/Dockerfile
+    # echo "RUN echo 'Acquire::http::Proxy \"http://127.0.0.1:8889\";' > /etc/apt/apt.conf" >> /tmp/u${VER}/Dockerfile
     echo "RUN apt update" >> /tmp/u${VER}/Dockerfile
-    echo "RUN apt install sudo" >> /tmp/u${VER}/Dockerfile
+    echo "RUN apt install -y sudo tmux" >> /tmp/u${VER}/Dockerfile
 
-    sudo podman build -t u${VER} /tmp/u${VER}
+    sudo podman build --network=host -t u${VER} /tmp/u${VER}
 }
 
 # podman volumes always owned by root:
@@ -66,7 +68,7 @@ OPTIONS=(
 )
 
 CREATE="no"
-VER=20
+VER=22
 while [[ ${OPTIND} -le $# ]]
 do
     getopts "lhcv:" opt
