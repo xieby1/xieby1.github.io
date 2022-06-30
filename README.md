@@ -11,6 +11,17 @@
 
 * [Linux日常操作的cheatsheet](https://xieby1.github.io/cheatsheet.html)
 
+Gem5
+
+* [gem5 files](https://xieby1.github.io/Emulator/gem5/files.html)
+* [isa, a new DSL(Domain Specific Language)](https://xieby1.github.io/Emulator/gem5/isa.html)
+* [logs.md](https://xieby1.github.io/Emulator/gem5/logs.html)
+* [microop in gem5](https://xieby1.github.io/Emulator/gem5/microop.html)
+* [O3 CPU in Gem5](https://xieby1.github.io/Emulator/gem5/o3cpu.html)
+* [PLY(Python Lex Yacc) in gem5](https://xieby1.github.io/Emulator/gem5/ply.html)
+* [Python in Gem5](https://xieby1.github.io/Emulator/gem5/python.html)
+* [Simple CPU in Gem5](https://xieby1.github.io/Emulator/gem5/simplecpu.html)
+
 Nix/NixOS
 
 * [我的Nix/NixOS的配置](https://github.com/xieby1/nix_config)
