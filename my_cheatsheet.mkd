@@ -16,7 +16,7 @@
 # Print all but the first column
 awk '{$1=""; print substr($0,2)}' somefile
 # Print all but the fisrt two columns
-awk '{$1=$2=""; print substr($0,2)}' somefile
+awk '{$1=$2=""; print substr($0,3)}' somefile
 ```
 
 ### delimiter
@@ -25,6 +25,12 @@ awk '{$1=$2=""; print substr($0,2)}' somefile
 
 ```bash
 awk -F'[, ]' '{print $1 " " $2}'
+```
+
+### sum column
+
+```bash
+awk '{sum+=$1} END {print sum}'
 ```
 
 ## bash
@@ -348,6 +354,15 @@ Simulation Mode
 scons build/ARM/params/MyMemObject.hh
 ```
 
+### generate doxygen
+
+output: src/doxygen/html
+
+```bash
+cd src
+doxygen
+```
+
 ### SE (syscall emu)
 
 ```bash
@@ -402,6 +417,19 @@ git ls-remote --tags <repo>
 
 ```bash
 git daemon --base-path=/home/xieby1/Codes/ --export-all
+```
+
+## grep
+
+### only filename
+
+> Scanning each input file
+> stops upon first match.
+
+Therefore, it is fast!
+
+```bash
+grep -l
 ```
 
 ## html
@@ -559,6 +587,29 @@ make -nd <target> | make2graph
 
 ```bash
 remake --targets
+```
+
+## maven
+
+### proxy
+
+https://maven.apache.org/guides/mini/guide-proxies.html
+
+```xml
+<settings>
+  <proxies>
+   <proxy>
+      <id>example-proxy</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>proxy.example.com</host>
+      <port>8080</port>
+      <username>proxyuser</username>
+      <password>somepassword</password>
+      <nonProxyHosts>www.google.com|*.example.com</nonProxyHosts>
+    </proxy>
+  </proxies>
+</settings>
 ```
 
 ## mdbook
@@ -825,6 +876,16 @@ scons -c
 
 ## sed
 
+### if match
+
+if match return 1
+
+else return 0
+
+```bash
+sed '/<pattern>/Q 1'
+```
+
 ### new line
 
 [SO: How replace a newline](https://stackoverflow.com/questions/1251999/)
@@ -1067,6 +1128,29 @@ sort -s -n -k 1,1
 
 # vim
 
+## buffer
+
+### list all
+
+```vim
+:buffers " or
+:ls " or
+:files
+```
+
+### delete
+
+```vim
+:bdelete
+```
+
+### open/edit
+
+```vim
+" tab key works
+:buffer <name>
+```
+
 ## Misc
 
 ### debug log
@@ -1151,10 +1235,11 @@ ls <$VIMRUNTIME>/syntax/
 ### split调整
 
 ```vim
-c-w _ ;当前窗口最高
-c-w = ;所有窗口等高
-:on ;关闭所有其他窗口
-c-w o ;同上
+c-w _ ; max height
+1c-w _ ;min height
+c-w = ;same height
+:on ; close others
+c-w o ;same above
 ```
 
 ### set filetype (nvim)
