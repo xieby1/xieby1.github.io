@@ -9,6 +9,65 @@ Depict how a macroop is translated to microops.
 
 ![](./pictures/microop.svg)
 
+## microop instantiation
+
+* src/arch/x86/isa/microasm.isa:
+
+  ```isa
+  assembler = MicroAssembler(X86Macroop, microopClasses, mainRom, Rom_Macroop)
+  ```
+
+  Here `microopClasses` is included from src/arch/x86/isa/microops/limmop.isa.
+  For example, `microopClasses["limm"] = LimmOp`.
+
+  `MicroAssembler` is defined in src/arch/micro_asm.py.
+
+* src/arch/x86/isa/microasm.isa:
+
+  ```isa
+  macroopDict = assembler.assemble(microcode)
+  ```
+
+  `microcode` is import from src/arch/x86/isa/insts/.
+
+  * src/arch/x86/isa/insts/general_purpose/data_transfer/move.py:
+
+    ```isa
+    def macroop MOV_R_I {
+        limm reg, imm
+    };
+    ```
+
+  When `assembler.assemble(microcode)` is called,
+  every microcode(statement) is parsed,
+
+  * src/arch/micro_asm.py:
+
+    ```python
+    def handle_statement(parser, container, statement):
+      ...
+      parser.symbols["__microopClassFromInsideTheAssembler"] = \
+        parser.microops[statement.mnemonic]
+      ...
+      microop = eval('__microopClassFromInsideTheAssembler(%s)' %
+        statement.params, {}, parser.symbols)
+    ```
+
+    `parser.microops` is `microopClasses`.
+    Therefore,
+    Here means `microopClasses["limm"](parser.symbols.reg, parser.symbols.imm)` is called.
+
+    `parser.symbols` are defined in src/arch/x86/isa/microasm.isa
+
+    ```isa
+    symbols = {
+      "reg" : gpRegIdx("env.reg"),
+      ...
+      "imm": "adjustedImm",
+      ...
+    }
+    ```
+
 ## macroop => microops
 
 This chapter describes how
