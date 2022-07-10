@@ -70,6 +70,16 @@ eval "${CMD[@]}" # "${CMD[*]}"
 cd -
 ```
 
+### func src file
+
+[SO: find definition of bash func](https://superuser.com/questions/144772)
+
+```bash
+shopt -s extdebug
+declare -F <func>
+shopt -u extdebug
+```
+
 ### print command
 
 ```bash
@@ -333,6 +343,17 @@ gcc -dM -E - < /dev/null
 touch bla.c && gcc -dM -E bla.c
 ```
 
+## gdb
+
+### frame
+
+```gdb
+bt
+frame <bt num>
+info frame <bt num>
+info locals
+```
+
 ## gem5
 
 ### terminology
@@ -432,7 +453,32 @@ Therefore, it is fast!
 grep -l
 ```
 
+## headscale tailscale
+
+### exec cmd
+
+```bash
+sudo docker exec headscale headscale --help
+```
+
+### client register
+
+```bash
+sudo tailscale up --login-server URL[:PORT]
+```
+
 ## html
+
+### detail
+
+fold/collapse/expand
+
+```html
+<details>
+  <summary>Details</summary>
+  miao
+</details>
+```
 
 ### span color
 
@@ -876,6 +922,19 @@ scons -c
 
 ## sed
 
+### recursive all files
+
+[SO](https://stackoverflow.com/questions/1583219)
+
+* `-print0`
+
+  results separated by null char
+
+```bash
+find . -type f -print0 | \
+xargs -0 sed -i 's/.../.../g'
+```
+
 ### if match
 
 if match return 1
@@ -983,6 +1042,15 @@ systemctl --user status <service>
 journalctl --user -u <service>
 ```
 
+### service output
+
+```bash
+# sys
+journalctl -f -u <service>
+# user
+journalctl --user -f -u <service>
+```
+
 ### 列举unit类
 
 ```bash
@@ -1033,6 +1101,16 @@ Alt-F2
 r
 ```
 
+### Xephyr
+
+```bash
+Xephyr :2 -resizeable  -dpi 48 -host-cursor
+```
+
+```bash
+DISPLAY=:2 <command>
+```
+
 ## xdg
 
 ### xdg-mime
@@ -1050,6 +1128,12 @@ xdg-mime query default <type>
 perl -e "print crypt('wjxby','xb');"
 ```
 
+### dgen-sdl
+
+```bash
+dgen <path>
+```
+
 ### gnome autostart
 
 [gnome autostart programs](https://www.addictivetips.com/ubuntu-linux-tips/autostart-programs-on-gnome-shell/)
@@ -1057,6 +1141,14 @@ perl -e "print crypt('wjxby','xb');"
 mov desktop file to
 
 `~/.config/autostart/`
+
+### kitty ssh
+
+[SO: tmux kitty](https://unix.stackexchange.com/questions/470676)
+
+```bash
+kitty +kitten ssh myserver
+```
 
 ### pkg-config
 
@@ -1320,6 +1412,17 @@ ale支持的fix位于
 <F9>
 ```
 
+### terminal mode
+
+`:h :terminal`
+
+```
+# exit temrinal mode
+<C-\><C-N>
+# enter temrinal mode
+i
+```
+
 ## diff
 
 ### diffthis
@@ -1399,6 +1502,13 @@ O " new tab open
 :ConfigEdit
 :ConfigTrust
 :ConfigIgnore
+```
+
+### lightspeed.nvim
+
+```vim
+s ; forward
+S ; backward
 ```
 
 ### tree-sitter update
@@ -1523,6 +1633,8 @@ nix-hash --type sha256 \
 
 ### size
 
+`man nix3-path-info`
+
 ```bash
 nix path-info -Sh <path>
 ```
@@ -1581,6 +1693,18 @@ nix-version --hash
 ```bash
 sshd-start
 ```
+
+## func/lib
+
+### fetch
+
+pkgs/build-support/fetch.*/
+
+### mkDerivation
+
+https://nixos.org/manual/nix/stable/expressions/advanced-attributes.html
+
+pkgs/stdenv/generic/make-derivation.nix
 
 ## lang
 
@@ -1662,6 +1786,15 @@ nix-locate 'bin/hello'
 ```
 
 ## Usage
+
+### musl libc
+
+Support -static
+
+```bash
+nix-shell -p pkgsCross.musl64.stdenv.cc
+x86_64-unknown-linux-musl-gcc -static hello.c
+```
 
 ### static compile
 
