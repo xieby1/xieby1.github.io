@@ -39,3 +39,24 @@ Instruction behaviors are described by
 * C++ code
 * bitfield operators
 * operand type qualifiers
+
+## files
+
+see src/arch/isa_parser/isa_parser.py:
+
+```python
+# Get the file object for emitting code into the specified section
+# (header, decoder, exec, decode_block).
+def get_file(self, section):
+  ...
+
+# Change the file suffix of a base filename:
+#   (e.g.) decoder.cc -> decoder-g.cc.inc for 'global' outputs
+def suffixize(self, s, sec):
+  ...
+```
+
+suffix
+
+* `-ns`: namespace
+* `-g`: global
