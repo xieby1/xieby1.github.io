@@ -33,27 +33,32 @@ build/X86/cpu/o3/cpu.cc:
 
   `fetch.tick()`
 
-  * `fetch()`
-    * `staticInst = dec_ptr->decode(this_pc);`
-      * src/arch/x86/decoder.cc:
+  * src/cpu/o3/fetch.cc
+
+    ```cpp
+    void Fetch::fetch(bool &status_change) {
+      ...
+      /// `staticInst` microop is fetched from `curMacroop`.
+      /// `curMacroop` is a `staticInst` macroop.
+      /// File decode.md notes how binary code is decoded to macroop `staticInst`.
+      ...
+      DynInstPtr instruction = buildInst(tid, staticInst, curMacroop, this_pc, *next_pc, true);
+    }
+    ```
+
+    `buildInst` connects `DynInst` and `StaticInst`!
+
+      * src/cpu/o3/fetch.cc:
 
         ```cpp
-        StaticInstPtr Decoder::decode(PCStateBase &next_pc);
-        StaticInstPtr Decoder::decode(ExtMachInst mach_inst, Addr addr);
+        DynInstPtr instruction = new (arrays) DynInst(
+          arrays, staticInst, curMacroop, this_pc, next_pc, seq, cpu);
         ```
 
-        * `si = decodeInst(mach_inst);`
+        TODO: how `new (arrays) DynInst` works?
+        This is a placement new.
 
-          * build/X86/arch/x86/generated/decoder-ns.cc.inc:
 
-            ```cpp
-            x86_macroop::MOV_R_I::MOV_R_I
-            ```
-    * This is where `DynInst` and `StaticInst` connect!
-
-      `DynInstPtr instruction = buildInst(tid, staticInst, curMacroop, this_pc, *next_pc, true);`
-
-      * `DynInstPtr instruction = new (arrays) DynInst(arrays, staticInst, curMacroop, this_pc, next_pc, seq, cpu);`
 
 ### Rename
 

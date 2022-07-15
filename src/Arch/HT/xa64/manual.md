@@ -12,9 +12,15 @@ N-way associated.
 
 ![](./pictures/manual_l1ucahe.svg)
 
+## Mnemonic
+
+```
+<op>.<ext> <dst> <src0> <src1>
+```
+
 ## Encoding
 
-### Operand Extension and Size
+### Operand Extension
 
 One instruction contains one 5-bit field,
 representing the operand extension and size.
@@ -22,33 +28,151 @@ representing the operand extension and size.
 * Extension (2 bits)
   * Zero
   * Signed
-  * M? without modification other bits
-* Size (3 bits)
-  * Low
-  * High
-  * Word
-  * Double word
-  * Quadruple word
+  * Merge (without modification other bits)
 
-Macroop with H & L, needs to be decoded to shift and corresponding microop.
-E.g. mov al, ah => shr tmp, ah, 8; mov al, tmp
+### Operand Size
+
+2 bits
+
+* 8 bits: Short
+* 16 bits: Word
+* 32 bits: Double word
+* 64 bits: Quadruple word
 
 ### arithmetic flags
 
 There is bit in encoding,
 presenting whether arithmetic flags need to be calculated. 
 
+### general registers
+
+6 bits
+
+* 1 bit: 0 low, 1 high
+* 5 bits: index to 32 general registers
+
 ### Immediate
 
 Immediate is saved along with uops in uop slot.
 
-Immediate is access by 5-bit field
+Immediate is access by 6-bit field
 
-```
-[0b00000]:          reserved
-[0b00001]:          1 64-bit imm
-[0b00010, 0b00011]: 2 32-bit imm
-[0b00100, 0b00111]: 4 16-bit imm
-[0b01000, 0b01111]: 8  8-bit imm
-[0b10000, 0b11111]: 16 4-bit imm
-```
+* 1 bit: 0 direct, 1 indirect
+* 1 bit: sign
+* 4 bits: indirect
+
+  ```
+  [0b0000]:          reserved
+  [0b0001]:          1 64-bit imm
+  [0b0010, 0b0011]: 2 32-bit imm
+  [0b0100, 0b0111]: 4 16-bit imm
+  [0b1000, 0b1111]: 8  8-bit imm
+  ```
+
+### Instructions List
+
+direct immediate
+indirect immediate
+
+![](./pictures/manual_inst_encoding.svg)
+
+`0x00000000` is invalid instruction.
+
+TODO:
+
+* pc related insts
+
+#### 4
+
+mul2
+mul2_f
+mul2_i
+mul2_if
+shliadd
+
+#### 3
+
+add
+add_f
+add_i
+add_if
+adc
+adc_f
+adc_i
+adc_if
+ld
+ld_i
+and
+and_f
+and_i
+and_if
+rotl
+rotl_f # TODO: flags
+rotli
+rotli_f
+rotr
+rotr_f
+rotri
+rotri_f
+shl
+shl_f
+shli
+shli_f
+shr
+shr_f
+shri
+shri_f
+mul
+mul_f
+mul_i
+mul_if
+or
+or_f
+or_i
+or_if
+st
+sar
+sar_f
+sar_i
+sar_if
+sub
+sub_f
+sub_i
+sub_if
+sbb
+sbb_f
+sbb_i
+sbb_if
+xor
+xor_f
+xor_i
+xor_if
+shl2
+shl2_f # TODO: flags
+shl2_i
+shl2_if # TODO: flags
+cmpxchg
+cmpxchg_f # TODO: flags
+
+#### 2
+
+bswap
+clz
+clz_f # TODO: flags
+ctz
+ctz_f # TODO: flags
+mov
+mov_i
+neg
+neg_f # TODO: flags
+not
+not_f # TODO: flags
+ld
+st
+
+#### 1
+
+#### 0
+
+invalid
+nop

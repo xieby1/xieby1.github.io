@@ -7,13 +7,24 @@
 ### Resp
 
 ```
-CacheResponsePort -> QueuedResponsePort -> ResponsePort -> Port
-                                                        -> AtomicResponseProtocol
-                                                        -> TimingResponseProtocol
-                                                        -> FunctionalResponseProtocol
+CpuSidePort -> CacheResponsePort -> QueuedResponsePort -> ResponsePort -> Port
+                                                                       -> AtomicResponseProtocol
+                                                                       -> TimingResponseProtocol
+                                                                       -> FunctionalResponseProtocol
 ```
 
 I focus on `TimingResponseProtocol`.
+
+Port
+
+* reportUnbound
+* getPeer
+* name
+* getId
+* bind
+* unbind
+* isConnected
+* takeOverFrom
 
 TimingResponseProtocol
 
@@ -22,12 +33,142 @@ TimingResponseProtocol
   * recvTimingSnoopResp
   * sendRetrySnoopResp
 * normal
+  * sendResp
+  * tryTiming
+  * recvRespRetry
   * recvTimingReq
   * sendRetryReq
-  * sendResp
-  * recvRespRetry
-  * tryTiming
 
+ResponsePort
+
+* snoop
+  * isSnooping
+  * sendAtomicSnoop
+  * sendFunctionalSnoop
+  * sendTimingSnoopReq
+  * sendRetrySnoopResp
+  * recvTimingSnoopResp
+* normal
+  * sendTimingResp
+  * sendRetryReq
+  * tryTiming
+* backdoor
+  * recvAtomicBackdoor
+* other
+  * unbind
+  * bind
+  * sendRangeChange
+  * getAddrRanges
+  * responderUnbind
+  * responderBind
+
+QueuedResponsePort
+
+* normal
+  * recvRespRetry
+  * schedTimingResp
+  * trySatisfyFunctional
+
+CacheResponsePort
+
+* block
+  * isBlocked
+  * clearBlocked
+  * setBlocked
+* normal
+  * processSendRetry
+
+CpuSidePort
+
+* snoop
+  * recvTimingSnoopResp
+* normal
+  * tryTiming
+  * recvTimingReq
+  * recvAtomic
+  * recvFunctional
+* other
+  * getAddrRanges
+
+```
+MemSidePort -> CacheRequestPort -> QueuedRequestPort -> RequestPort -> Port
+                                                                    -> AtomicRequestProtocol
+                                                                    -> TimingRequestProtocol
+                                                                    -> FunctionalRequestProtocol
+```
+
+Port
+
+* reportUnbound
+* getPeer
+* name
+* getId
+* bind
+* unbind
+* isConnected
+* takeOverFrom
+
+TimingRequestProtocol
+
+* snoop
+  * sendSnoopResp
+  * recvTimingSnoopReq
+  * recvRetrySnoopResp
+* normal
+  * sendReq
+  * trySend
+  * sendRetryResp
+  * recvTimingResp
+  * recvReqRetry
+
+RequestPort
+
+* snoop
+  * isSnooping
+  * recvAtomicSnoop
+  * recvFunctionalSnoop
+  * recvTimingSnoopReq
+  * recvRetrySnoopResp
+  * sendTimingSnoopResp
+* normal
+  * sendAtomic
+  * sendFunctional
+  * sendTimingReq
+  * tryTiming
+  * sendRetryResp
+* backdoor
+  * sendAtomicBackdoor
+* other
+  * bind
+  * unbind
+  * getAddrRanges
+  * recvRangeChange
+  * printAddr
+
+QueuedRequestPort
+
+* snoop
+  * recvRetrySnoopResp
+  * schedTimingSnoopResp
+* normal
+  * recvReqRetry
+  * schedTimingReq
+  * trySatisfyFunctional
+
+CacheRequestPort
+
+* snoop
+  * isSnooping
+* schedSendEvent
+
+MemSidePort
+
+* snoop
+  * recvTimingSnoopReq
+  * recvAtomicSnoop
+  * recvFunctionalSnoop
+* normal
+  * recvTimingResp
 
 <div style="text-align:right; font-size:3em;">2022.07.05</div>
 
