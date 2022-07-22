@@ -4,13 +4,46 @@
 
 ![](./pictures/manual_uop_slot.svg)
 
+* v: 1 bit: valid
+* un: 3 bits: uops number
+* npc: 4 bits: next pc offset
+* uop4/5 overrlap with iimm
+
 ## Ucache
 
 ### L1 uache
 
-N-way associated.
+Granularity: entry (1B in macroop addr)
+
+2-way associated 4K entries, size=`2*4K*32B`=256KB
+
+Able to hold 2 pages (8KB) inst's microops at most.
 
 ![](./pictures/manual_l1ucahe.svg)
+
+### L2 ucache
+
+Granularity: entry (1B in macroop addr)
+
+4-way associated 64K entries, size=`4*64K*32B`=8MB
+
+64 pages
+
+### ucache memory area
+
+Granularity: one macroop page
+
+256MB
+
+2048 macroop pages
+
+### ucahce controller
+
+(inspired by CAM)
+
+TODO:
+
+64-way associated 32 entries, to index 2048 macroop pages.
 
 ## Mnemonic
 
