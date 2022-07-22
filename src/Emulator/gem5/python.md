@@ -49,10 +49,38 @@ find -name SConscript -exec grep sim_objects {}  \; \
 
 ## SimObject
 
-* src/SConsript: gem5_lib_simobjects = SimObject.all.with_tag(env, 'gem5 lib')
-  * SimObject(PySource): super().__init__('m5.objects', source, tags, add_tags)
-    * PySource(SourceFile): super().__init__(source, tags, add_tags)
-      * site_scons/gem5_scons/sources.py: SourceFile(object, metaclass=SourceMeta): `__init__`
+* src/SConsript:
+
+  ```python
+  gem5_lib_simobjects = SimObject.all.with_tag(env, 'gem5 lib')
+  ```
+
+  * SimObject(PySource):
+
+    ```python
+    super().__init__('m5.objects', source, tags, add_tags)
+    ```
+
+    * src/SConscript:
+
+      ```python
+      class PySource(SourceFile):
+        ...
+        def __init__(self, package, source, tags=None, add_tags=None):
+          super().__init__(source, tags, add_tags)
+          ...
+          cpp = File(self.filename + '.cc')
+          ...
+      ```
+
+      `cpp = X86Decoder.py.cc`
+
+      * site_scons/gem5_scons/sources.py:
+
+        ```python
+        SourceFile(object, metaclass=SourceMeta): `__init__`
+        ```
+
         * SourceMeta(type): `__init__(cls, ...)`
 
           cls.all = SourceList() // class `__init__(self, ...)` first arg is self!

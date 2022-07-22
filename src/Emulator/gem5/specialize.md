@@ -37,7 +37,8 @@ def specializeInst(Name, opTypes, env):
 
 Here `Name = "MOV"`, `opTypes = ("Bv", "Iv")`.
 
-`r` prefixed opType is reg, others are tag specialization as below
+`r` prefixed opType is reg, others are tag.
+Tag specialization are listed as below.
 
 Note: '_P' means RIP relative addressing
 
