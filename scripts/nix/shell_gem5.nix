@@ -1,8 +1,9 @@
 # xieby1 2022.06.10
 # place this file in gem5 src dir root
-let
-  pkgs = import <nixpkgs> {};
-in
+{
+  pkgs ? import <nixpkgs> {},
+  clang ? false
+}:
 pkgs.mkShell {
   name = "gem5-dev";
   packages = with pkgs; [
@@ -20,6 +21,8 @@ pkgs.mkShell {
 
     # for commit
     python3Packages.pyyaml
+  ] ++ lib.optionals clang [
+    clangStdenv.cc
   ];
 
   _VIMRC = builtins.toString ./shell_gem5/vimrc;
@@ -55,6 +58,13 @@ pkgs.mkShell {
       ln -fs ''${_PSEDOIMPORT} ./
     fi
 
+    # add syncthing ignore
+    if [[ ! -f ./.stignore ]]
+    then
+      echo "set .stignore"
+      echo "#include .gitignore" > .stignore
+    fi
+
     # set python path for gem5
     echo "set PYTHONPATH"
     PYTHONPATH+=":''$(realpath src/python)"
@@ -64,5 +74,11 @@ pkgs.mkShell {
     # for FS binaries
     echo "set IMG_ROOT"
     export IMG_ROOT=/home/xiebenyi/Img/aarch-system-20210904
-  '';
+  '' + pkgs.lib.optionalString clang ''
+
+    # for clang
+    export CC=${pkgs.clangStdenv.cc}/bin/clang
+    export CXX=${pkgs.clangStdenv.cc}/bin/clang++
+  ''
+  ;
 }
