@@ -95,8 +95,8 @@ Immediate is access by 6-bit field
 * 4 bits: indirect
 
   ```
-  [0b0000]:          reserved
-  [0b0001]:          1 64-bit imm
+  [0b0000]:         reserved
+  [0b0001]:         1 64-bit imm
   [0b0010, 0b0011]: 2 32-bit imm
   [0b0100, 0b0111]: 4 16-bit imm
   [0b1000, 0b1111]: 8  8-bit imm
