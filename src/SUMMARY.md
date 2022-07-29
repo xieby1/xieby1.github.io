@@ -17,6 +17,7 @@
 * [analysis]()
 * [Arch]()
   * [Cache]()
+    * [2022.dsa_cache.sedaghati.isca.0.md](./Arch/Cache/2022.dsa_cache.sedaghati.isca.0.md)
   * [HT]()
     * [2005.cell.kahle.ibmjrd.1093.md](./Arch/HT/2005.cell.kahle.ibmjrd.1093.md)
     * [2012.process_migration.devuyst.asplos.83.md](./Arch/HT/2012.process_migration.devuyst.asplos.83.md)
