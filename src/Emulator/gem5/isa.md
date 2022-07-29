@@ -420,6 +420,7 @@ inst : ID DBLCOLON ID LPAREN arg_list RPAREN
 
   ```python
   def p_inst_0(self, t):
+    'inst : ID LPAREN arg_list RPAREN'
     ...
     codeObj = currentFormat.defineInst(self, t[1], t[3], t.lexer.lineno)
     ...
@@ -429,6 +430,7 @@ inst : ID DBLCOLON ID LPAREN arg_list RPAREN
 
   ```python
   def p_inst_1(self, t):
+    'inst : ID DBLCOLON ID LPAREN arg_list RPAREN'
     ...
     codeObj = format.defineInst(self, t[3], t[5], t.lexer.lineno)
     ...
@@ -462,7 +464,7 @@ inst : ID DBLCOLON ID LPAREN arg_list RPAREN
     `args` are `[Bv, Iv]`
     `user_code` is `Inst` format code in multi.isa, see above.
 
-    Executing `user_code` is a very long precedure.
+    Executing `user_code` is a very long procedure.
     I would like to depict `GenCode` first.
 
     After parsing isa file, `GenCode` object's `emit()` will be called.
@@ -537,12 +539,25 @@ inst : ID DBLCOLON ID LPAREN arg_list RPAREN
             return MacroDeclare.subst(iop);
           ```
 
+          By using `MacroDeclare` template, macroop declaration is generated.
+
           * src/arch/x86/isa/macroop.isa:
 
             ```isa
             def template MacroDeclare {{
               ...
             }};
+            ```
+
+          The output is write to
+
+          * build/X86/arch/x86/generated/decoder-ns.hh.inc:
+
+            ```cpp
+            ...
+              class MOV_R_I : public Macroop
+              {...};
+            ...
             ```
 
         * src/arch/x86/isa/macroop.isa:
@@ -582,6 +597,18 @@ inst : ID DBLCOLON ID LPAREN arg_list RPAREN
             return "new x86_macroop::%s(machInst, %s)" % \
               (self.name, env.getAllocator())
           ```
+
+          `macroop.getAllocator(env)` expands to
+
+          ```cpp
+          new x86_macroop::MOV_R_I(machInst, EmulEnv((OPCODE_OP_BOTTOM3 | (REX_B << 3)),
+                                   0,
+                                   1,
+                                   ADDRSIZE,
+                                   STACKSIZE))
+          ```
+
+          The expansion of env (`env.getAllocator()`) is as follow,
 
           * src/arch/x86/isa/macroop.isa:
 
