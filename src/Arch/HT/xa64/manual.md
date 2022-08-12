@@ -75,7 +75,7 @@ representing the operand extension and size.
 ### arithmetic flags
 
 There is bit in encoding,
-presenting whether arithmetic flags need to be calculated. 
+presenting whether arithmetic flags need to be calculated.
 
 ### general registers
 

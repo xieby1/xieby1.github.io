@@ -202,6 +202,12 @@
 {{ #include nix/shell_qemu_tests_tcg.nix }}
 ```
 
+### shell_spike.nix
+
+```nix
+{{ #include nix/shell_spike.nix }}
+```
+
 ### shell_texlive.nix
 
 ```nix

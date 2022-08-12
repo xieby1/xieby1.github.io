@@ -270,6 +270,23 @@ Depict how a macroop is translated to microops.
     }
     ```
 
+### eflags (flags)
+
+flags symbols are defined in src/arch/x86/isa/microasm.isa:
+
+```isa
+for flag in ('CF', 'PF', 'ECF', 'AF', 'EZF', 'ZF', 'SF', 'OF', \
+             'TF', 'IF', 'NT', 'RF', 'VM', 'AC', 'VIF', 'VIP', 'ID'                     ):
+    assembler.symbols[flag] = flag + "Bit"
+
+for cond in ('True', 'False', 'ECF', 'EZF', 'SZnZF',
+             'MSTRZ', 'STRZ', 'MSTRC',
+             'OF', 'CF', 'ZF', 'CvZF',
+             'SF', 'PF', 'SxOF', 'SxOvZF'):
+    assembler.symbols["C%s" % cond] = "condition_tests::%s" % cond
+    assembler.symbols["nC%s" % cond] = "condition_tests::Not%s" % c            ond
+```
+
 ## macroop => microops
 
 This chapter describes how
@@ -414,4 +431,3 @@ However, `X86StaticInst` is special, only has two derived class `MacroopBase` an
       * build/X86/arch/x86/generated/decoder.hh
 
         all these classes is in namespace `X86ISAInst::`
-
