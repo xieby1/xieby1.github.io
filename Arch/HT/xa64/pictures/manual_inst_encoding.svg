@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="351px" height="412px" viewBox="-0.5 -0.5 351 412">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="351px" height="411px" viewBox="-0.5 -0.5 351 411">
   <defs/>
   <g>
     <rect x="0" y="30" width="20" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -9,11 +9,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 18px; height: 1px; padding-top: 40px; margin-left: 1px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">E</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">ex</div>
             </div>
           </div>
         </foreignObject>
-        <text x="10" y="44" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">E</text>
+        <text x="10" y="44" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">ex</text>
       </switch>
     </g>
     <rect x="0" y="0" width="20" height="30" fill="none" stroke="none" pointer-events="all"/>
@@ -35,11 +35,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 18px; height: 1px; padding-top: 40px; margin-left: 21px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">S</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">sz</div>
             </div>
           </div>
         </foreignObject>
-        <text x="30" y="44" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">S</text>
+        <text x="30" y="44" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">sz</text>
       </switch>
     </g>
     <rect x="40" y="30" width="40" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -48,11 +48,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 40px; margin-left: 41px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">OPC4</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">opc4</div>
             </div>
           </div>
         </foreignObject>
-        <text x="60" y="44" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">OPC4</text>
+        <text x="60" y="44" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">opc4</text>
       </switch>
     </g>
     <rect x="80" y="30" width="60" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -61,11 +61,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 40px; margin-left: 81px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">OPR0</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">opr3</div>
             </div>
           </div>
         </foreignObject>
-        <text x="110" y="44" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">OPR0</text>
+        <text x="110" y="44" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">opr3</text>
       </switch>
     </g>
     <rect x="140" y="30" width="60" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -74,11 +74,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 40px; margin-left: 141px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">OPR1</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">opr2</div>
             </div>
           </div>
         </foreignObject>
-        <text x="170" y="44" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">OPR1</text>
+        <text x="170" y="44" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">opr2</text>
       </switch>
     </g>
     <rect x="200" y="30" width="60" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -87,11 +87,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 40px; margin-left: 201px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">OPR2</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">opr1</div>
             </div>
           </div>
         </foreignObject>
-        <text x="230" y="44" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">OPR2</text>
+        <text x="230" y="44" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">opr1</text>
       </switch>
     </g>
     <rect x="260" y="30" width="60" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -100,11 +100,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 40px; margin-left: 261px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">OPR3</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">opr0</div>
             </div>
           </div>
         </foreignObject>
-        <text x="290" y="44" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">OPR3</text>
+        <text x="290" y="44" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">opr0</text>
       </switch>
     </g>
     <rect x="0" y="320" width="350" height="60" fill="none" stroke="none" pointer-events="all"/>
@@ -113,11 +113,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 350px; margin-left: 2px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">E: Extension:<br/>  00 unsign, 01 merge,  10 sign,    11 reserve<br/>S: Size:<br/>  00 short8, 01 word16, 10 dword32, 11 qword64</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">ex: extension:<br/>  00 unsign, 01 merge,  10 sign,    11 reserve<br/>sz: Size:<br/>  00 short8, 01 word16, 10 dword32, 11 qword64</div>
             </div>
           </div>
         </foreignObject>
-        <text x="2" y="354" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px">E: Extension:...</text>
+        <text x="2" y="354" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px">ex: extension:...</text>
       </switch>
     </g>
     <rect x="0" y="50" width="280" height="20" fill="none" stroke="none" pointer-events="all"/>
@@ -126,11 +126,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 60px; margin-left: 2px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">OPC4: [0b100,0b1111]: 12 4-opr insts</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">opc4: [0b100,0b1111]: 12 4-opr insts</div>
             </div>
           </div>
         </foreignObject>
-        <text x="2" y="64" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px">OPC4: [0b100,0b1111]: 12 4-opr insts</text>
+        <text x="2" y="64" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px">opc4: [0b100,0b1111]: 12 4-opr insts</text>
       </switch>
     </g>
     <rect x="0" y="90" width="20" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -139,11 +139,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 18px; height: 1px; padding-top: 100px; margin-left: 1px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">E</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">ex</div>
             </div>
           </div>
         </foreignObject>
-        <text x="10" y="104" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">E</text>
+        <text x="10" y="104" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">ex</text>
       </switch>
     </g>
     <rect x="20" y="90" width="20" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -152,11 +152,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 18px; height: 1px; padding-top: 100px; margin-left: 21px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">S</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">sz</div>
             </div>
           </div>
         </foreignObject>
-        <text x="30" y="104" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">S</text>
+        <text x="30" y="104" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">sz</text>
       </switch>
     </g>
     <rect x="60" y="90" width="80" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -165,11 +165,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 78px; height: 1px; padding-top: 100px; margin-left: 61px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">OPC3</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">opc3</div>
             </div>
           </div>
         </foreignObject>
-        <text x="100" y="104" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">OPC3</text>
+        <text x="100" y="104" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">opc3</text>
       </switch>
     </g>
     <rect x="0" y="110" width="280" height="20" fill="none" stroke="none" pointer-events="all"/>
@@ -178,11 +178,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 120px; margin-left: 2px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">OPC3: [1,0b11111111]: 255 3-opr insts</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">opc3: [1,0b11111111]: 255 3-opr insts</div>
             </div>
           </div>
         </foreignObject>
-        <text x="2" y="124" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px">OPC3: [1,0b11111111]: 255 3-opr insts</text>
+        <text x="2" y="124" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px">opc3: [1,0b11111111]: 255 3-opr insts</text>
       </switch>
     </g>
     <rect x="0" y="150" width="20" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -191,11 +191,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 18px; height: 1px; padding-top: 160px; margin-left: 1px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">E</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">ex</div>
             </div>
           </div>
         </foreignObject>
-        <text x="10" y="164" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">E</text>
+        <text x="10" y="164" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">ex</text>
       </switch>
     </g>
     <rect x="20" y="150" width="20" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -204,11 +204,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 18px; height: 1px; padding-top: 160px; margin-left: 21px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">S</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">sz</div>
             </div>
           </div>
         </foreignObject>
-        <text x="30" y="164" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">S</text>
+        <text x="30" y="164" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">sz</text>
       </switch>
     </g>
     <rect x="140" y="150" width="60" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -217,11 +217,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 160px; margin-left: 141px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">OPC2</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">opc2</div>
             </div>
           </div>
         </foreignObject>
-        <text x="170" y="164" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">OPC2</text>
+        <text x="170" y="164" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">opc2</text>
       </switch>
     </g>
     <rect x="140" y="90" width="60" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -230,11 +230,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 100px; margin-left: 141px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">OPR0</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">opr2</div>
             </div>
           </div>
         </foreignObject>
-        <text x="170" y="104" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">OPR0</text>
+        <text x="170" y="104" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">opr2</text>
       </switch>
     </g>
     <rect x="200" y="90" width="60" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -243,11 +243,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 100px; margin-left: 201px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">OPR1</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">opr1</div>
             </div>
           </div>
         </foreignObject>
-        <text x="230" y="104" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">OPR1</text>
+        <text x="230" y="104" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">opr1</text>
       </switch>
     </g>
     <rect x="260" y="90" width="60" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -256,11 +256,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 100px; margin-left: 261px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">OPR2</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">opr0</div>
             </div>
           </div>
         </foreignObject>
-        <text x="290" y="104" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">OPR2</text>
+        <text x="290" y="104" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">opr0</text>
       </switch>
     </g>
     <rect x="200" y="150" width="60" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -269,11 +269,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 160px; margin-left: 201px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">OPR0</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">opr1</div>
             </div>
           </div>
         </foreignObject>
-        <text x="230" y="164" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">OPR0</text>
+        <text x="230" y="164" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">opr1</text>
       </switch>
     </g>
     <rect x="260" y="150" width="60" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -282,11 +282,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 160px; margin-left: 261px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">OPR1</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">opr0</div>
             </div>
           </div>
         </foreignObject>
-        <text x="290" y="164" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">OPR1</text>
+        <text x="290" y="164" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">opr0</text>
       </switch>
     </g>
     <rect x="0" y="170" width="260" height="20" fill="none" stroke="none" pointer-events="all"/>
@@ -295,11 +295,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 180px; margin-left: 2px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">OPC2: [1,0b111111]: 63 2-opr insts</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">opc2: [1,0b111111]: 63 2-opr insts</div>
             </div>
           </div>
         </foreignObject>
-        <text x="2" y="184" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px">OPC2: [1,0b111111]: 63 2-opr insts</text>
+        <text x="2" y="184" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px">opc2: [1,0b111111]: 63 2-opr insts</text>
       </switch>
     </g>
     <rect x="0" y="210" width="20" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -308,11 +308,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 18px; height: 1px; padding-top: 220px; margin-left: 1px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">E</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">ex</div>
             </div>
           </div>
         </foreignObject>
-        <text x="10" y="224" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">E</text>
+        <text x="10" y="224" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">ex</text>
       </switch>
     </g>
     <rect x="20" y="210" width="20" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -321,11 +321,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 18px; height: 1px; padding-top: 220px; margin-left: 21px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">S</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">sz</div>
             </div>
           </div>
         </foreignObject>
-        <text x="30" y="224" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">S</text>
+        <text x="30" y="224" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">sz</text>
       </switch>
     </g>
     <rect x="200" y="210" width="60" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -334,11 +334,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 220px; margin-left: 201px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">OPC1</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">opc1</div>
             </div>
           </div>
         </foreignObject>
-        <text x="230" y="224" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">OPC1</text>
+        <text x="230" y="224" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">opc1</text>
       </switch>
     </g>
     <rect x="260" y="210" width="60" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -347,11 +347,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 220px; margin-left: 261px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">OPR</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">opr0</div>
             </div>
           </div>
         </foreignObject>
-        <text x="290" y="224" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">OPR</text>
+        <text x="290" y="224" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">opr0</text>
       </switch>
     </g>
     <rect x="0" y="230" width="260" height="20" fill="none" stroke="none" pointer-events="all"/>
@@ -360,11 +360,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 240px; margin-left: 2px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">OPC1: [1,0b111111]: 63 1-opr insts</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">opc1: [1,0b111111]: 63 1-opr insts</div>
             </div>
           </div>
         </foreignObject>
-        <text x="2" y="244" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px">OPC1: [1,0b111111]: 63 1-opr insts</text>
+        <text x="2" y="244" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px">opc1: [1,0b111111]: 63 1-opr insts</text>
       </switch>
     </g>
     <rect x="40" y="150" width="10" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -737,11 +737,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 18px; height: 1px; padding-top: 280px; margin-left: 1px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">E</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">ex</div>
             </div>
           </div>
         </foreignObject>
-        <text x="10" y="284" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">E</text>
+        <text x="10" y="284" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">ex</text>
       </switch>
     </g>
     <rect x="20" y="270" width="20" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -750,11 +750,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 18px; height: 1px; padding-top: 280px; margin-left: 21px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">S</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">sz</div>
             </div>
           </div>
         </foreignObject>
-        <text x="30" y="284" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">S</text>
+        <text x="30" y="284" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">sz</text>
       </switch>
     </g>
     <rect x="260" y="270" width="60" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -763,11 +763,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 280px; margin-left: 261px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">OPC0</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">opc0</div>
             </div>
           </div>
         </foreignObject>
-        <text x="290" y="284" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">OPC0</text>
+        <text x="290" y="284" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px" text-anchor="middle">opc0</text>
       </switch>
     </g>
     <rect x="40" y="270" width="10" height="20" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
@@ -1062,11 +1062,11 @@
         <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
           <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe flex-start; width: 1px; height: 1px; padding-top: 300px; margin-left: 2px;">
             <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: left;">
-              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">OPC0: [0,0b111111]: 64 0-opr insts</div>
+              <div style="display: inline-block; font-size: 12px; font-family: mono; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: nowrap;">opc0: [0,0b111111]: 64 0-opr insts</div>
             </div>
           </div>
         </foreignObject>
-        <text x="2" y="304" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px">OPC0: [0,0b111111]: 64 0-opr insts</text>
+        <text x="2" y="304" fill="rgb(0, 0, 0)" font-family="mono" font-size="12px">opc0: [0,0b111111]: 64 0-opr insts</text>
       </switch>
     </g>
     <rect x="10" y="0" width="20" height="30" fill="none" stroke="none" pointer-events="all"/>

@@ -679,6 +679,21 @@ host <domain name>
 nmap 192.168.1.0/24
 ```
 
+### connect hidden wifi
+
+[wpa_cli connection to hidden ssid](https://unix.stackexchange.com/questions/555380)
+
+```
+> add_network x
+> set_network x ssid "hidden_ssid"
+> set_network x psk "secret"
+// ALLOW CONNECT TO HIDDEN SSID 
+> set_network x scan_ssid 1
+> enable_network x
+> save_config
+> select_network x
+```
+
 ## ocr
 
 ### tesseract
@@ -1084,6 +1099,7 @@ cnnect to the same session.
 ### shrink vdisk
 
 ```powershell
+wsl --shutdown
 diskpart
 select vdisk \
 file="C:\Users\<User>\AppData\Local\ \
@@ -1440,11 +1456,6 @@ diff两个竖分buffers
 
 ```vim
 let g:gitgutter_diff_base = ''
-```
-
-### gitgutter-diff
-
-```vim
 :GitGutterDiffOrig
 ```
 
@@ -1533,6 +1544,21 @@ S ; backward
 ```vim
 :let b:coc_diagnostic_disable=1
 :e
+```
+
+## search
+
+### by column
+
+`:h /\%c`
+
+```vim
+\%23c   Matches in a specific column.
+\%<23c  Matches before a specific column.
+\%>23c  Matches after a specific column.
+\%.c    Matches at the cursor column.
+\%<.c   Matches before the cursor column.
+\%>.c   Matches after the cursor column.
 ```
 
 # nix
