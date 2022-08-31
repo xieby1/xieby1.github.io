@@ -220,6 +220,19 @@ podman run --rm --network=host -it <image>
 --cap-add=SYS_PTRACE
 ```
 
+## dd
+
+### extract bytes from file
+
+https://stackoverflow.com/questions/1423346
+
+Noted: dd only take decimal number,
+0x prefix does not work.
+
+```bash
+dd skip=<start> count=<size> if=<input> of=<output> bs=1
+```
+
 ## disk
 
 ### dd
@@ -1150,6 +1163,17 @@ perl -e "print crypt('wjxby','xb');"
 dgen <path>
 ```
 
+### flame graph
+
+https://github.com/brendangregg/FlameGraph
+
+```bash
+sudo perf record -g <cmd>
+sudo perf script > out.perf
+stackcollapse-perf.pl out.perf > out.folded
+flamegraph.pl out.folded > out.svg
+```
+
 ### gnome autostart
 
 [gnome autostart programs](https://www.addictivetips.com/ubuntu-linux-tips/autostart-programs-on-gnome-shell/)
@@ -1280,6 +1304,22 @@ vim -V9myVim.log
 
 ```bash
 rm ~/.local/share/nvim/.netrwhist
+```
+
+### Increase column
+
+```vim
+c-v ; select block
+g c-a
+```
+
+### lower/upper case
+
+In select mode
+
+```vim
+u ; lower case
+U ; upper case
 ```
 
 ### netrw new file
@@ -1527,6 +1567,16 @@ S ; backward
 [GH Issue: query.lua query: error at position #759](https://github.com/nvim-treesitter/nvim-treesitter/issues/759)
 
 ```vim
+:TSUpdate
+```
+
+### tree-sitter reinstall
+
+```
+:TSUninstall all
+; exit vim
+home-manager switch
+vim
 :TSUpdate
 ```
 

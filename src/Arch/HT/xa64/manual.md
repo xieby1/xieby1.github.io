@@ -111,34 +111,39 @@ indirect immediate
 
 `0x00000000` is invalid instruction.
 
+suffix
+
+* i: immediate version
+* f: arithmetic flags version
+
 TODO:
 
 * pc related insts
 
-#### 4
+#### 4 operands
 
 mul2
 mul2_f
 mul2_i
-mul2_if
+mul2_fi
 shliadd
 
-#### 3
+#### 3 operands
 
 add
 add_f
 add_i
-add_if
+add_fi
 adc
 adc_f
 adc_i
-adc_if
+adc_fi
 ld
 ld_i
 and
 and_f
 and_i
-and_if
+and_fi
 rotl
 rotl_f # TODO: flags
 rotli
@@ -158,36 +163,36 @@ shri_f
 mul
 mul_f
 mul_i
-mul_if
+mul_fi
 or
 or_f
 or_i
-or_if
+or_fi
 st
 sar
 sar_f
 sar_i
-sar_if
+sar_fi
 sub
 sub_f
 sub_i
-sub_if
+sub_fi
 sbb
 sbb_f
 sbb_i
-sbb_if
+sbb_fi
 xor
 xor_f
 xor_i
-xor_if
+xor_fi
 shl2
 shl2_f # TODO: flags
 shl2_i
-shl2_if # TODO: flags
+shl2_fi # TODO: flags
 cmpxchg
 cmpxchg_f # TODO: flags
 
-#### 2
+#### 2 operands
 
 bswap
 clz
@@ -203,9 +208,13 @@ not_f # TODO: flags
 ld
 st
 
-#### 1
+#### 1 operand
 
-#### 0
+ret
+rdpc
+
+#### 0 operand
 
 invalid
 nop
+syscall

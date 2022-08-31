@@ -42,28 +42,28 @@ Tag specialization are listed as below.
 
 Note: '_P' means RIP relative addressing
 
-| tag | meaning                                               | size | name suffix |
-|-----|-------------------------------------------------------|------|-------------|
-| B   | reg encoded in opcode                                 |      | _R          |
-| M   | memory encoded in modrm(rm)                           |      | _M/_P       |
-| C   | ctl reg encoded in modrm(reg)                         |      | _C          |
-| D   | dbg reg encoded in modrm(reg)                         |      | _D          |
-| S   | seg selector encoded in modrm(reg)                    |      | _S          |
-| G   | reg encoded in modrm(reg)                             |      | _R          |
-| P   | reg encoded in modrm(reg)                             | -    | _MMX        |
-| T   | reg encoded in modrm(reg)                             |      | _R          |
-| V   | reg encoded in modrm(reg)                             | -    | _XMM        |
-| E   | reg or mem encoded in modrm(rm)                       |      | _R/_M/_P    |
-| Q   | reg or mem encoded in modrm(rm)                       | -    | _MMX/_M/_P  |
-| W   | reg or mem encoded in modrm(rm)                       | -    | _XMM/_M/_P  |
-| I   | immediate                                             | -    | _I          |
-| J   | immediate                                             | -    | _I          |
-| O   | immediate: mem offset                                 |      | _MI         |
-| PR  | reg encoded in modrm(rm)                              | -    | _MMX        |
-| R   | reg encoded in modrm(rm)                              |      | _R          |
-| VR  | reg encoded in modrm(rm)                              | -    | _XMM        |
-| X   | mem addr for string inst (use index & seg internally) |      | _M          |
-| Y   | mem addr for string inst (use index & seg internally) |      | _M          |
+| tag | meaning                                | size | suffix     |
+|-----|----------------------------------------|------|------------|
+| B   | reg encoded in opcode                  |      | _R         |
+| M   | memory encoded in modrm(rm)            |      | _M/_P      |
+| C   | ctl reg encoded in modrm(reg)          |      | _C         |
+| D   | dbg reg encoded in modrm(reg)          |      | _D         |
+| S   | seg selector encoded in modrm(reg)     |      | _S         |
+| G   | reg encoded in modrm(reg)              |      | _R         |
+| P   | reg encoded in modrm(reg)              | -    | _MMX       |
+| T   | reg encoded in modrm(reg)              |      | _R         |
+| V   | reg encoded in modrm(reg)              | -    | _XMM       |
+| E   | reg or mem encoded in modrm(rm)        |      | _R/_M/_P   |
+| Q   | reg or mem encoded in modrm(rm)        | -    | _MMX/_M/_P |
+| W   | reg or mem encoded in modrm(rm)        | -    | _XMM/_M/_P |
+| I   | immediate                              | -    | _I         |
+| J   | immediate                              | -    | _I         |
+| O   | immediate: mem offset                  |      | _MI        |
+| PR  | reg encoded in modrm(rm)               | -    | _MMX       |
+| R   | reg encoded in modrm(rm)               |      | _R         |
+| VR  | reg encoded in modrm(rm)               | -    | _XMM       |
+| X   | string inst mem (index&seg internally) |      | _M         |
+| Y   | string inst mem (index&seg internally) |      | _M         |
 
 Available data size is defined in src/arch/x86/isa/macroop.isa: `getAllocator`
 

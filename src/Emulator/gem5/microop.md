@@ -431,3 +431,99 @@ However, `X86StaticInst` is special, only has two derived class `MacroopBase` an
       * build/X86/arch/x86/generated/decoder.hh
 
         all these classes is in namespace `X86ISAInst::`
+
+## uslot/uop
+
+### init
+
+Xa_mov_i recieves op_ext
+
+#### uop
+
+##### Declare
+
+Uop is declared in X86MicroopBase.
+
+##### Definition
+
+* uop.ex
+
+  * src/arch/x86/insts/microop.hh:
+
+    ```cpp
+    class X86MicroopBase : public X86StaticInst {
+      X86MicroopBase(..., OpExt op_ext=OpExt_Zero) : ... {
+        ...
+        uop.ex = op_ext;
+    }}
+    ```
+* uop.sz
+
+  * src/arch/x86/insts/microregop.hh:
+
+    ```cpp
+    class RegOpBase : public X86MicroopBase {
+      RegOpBase(...) :
+        X86MicroopBase(mach_inst, mnem, inst_mnem,
+            set_flags, op_class, op_ext), ...
+      {
+        switch (data_size) {
+          case 1: uop.sz = 0; break;
+          case 2: uop.sz = 1; break;
+          case 4: uop.sz = 2; break;
+          case 8: uop.sz = 3; break;
+          default: panic("%s data_size %d", inst_mnem, data_size);
+    }}}
+    ```
+
+* uop.opcx, uop.oprx
+
+  * build/X86/arch/x86/generated/bt/decoder-ns.hh.inc:
+
+    ```cpp
+    class Xa_mov_i : ... {
+      Xa_mov_i(...) : ... {
+        uop.opc2 = XA64ISA::opc2_mov_i;
+        uop.opr0 = dest;
+        uop.opr1 = XA64ISA::USlot::generateIIMM(_used, _iimm, data_size, _imm);
+    }}
+    ```
+
+#### TODO: uslot
+
+XA64USlot
+
+## Specific microops
+
+### cda
+
+cda is add by commit 2eff46f9a682b8dc7f36fef5d287bb8163dffb0b,
+
+> X86: Implement the cda microop which checks if an address is legal to write to.
+
+Take POP_M for example,
+
+src/arch/x86/isa/insts/general_purpose/data_transfer/stack_operations.py:
+
+```isa
+def macroop POP_M {
+    # Make the default data size of pops 64 bits in 64 bit mode
+    .adjust_env oszIn64Override
+
+    ldis t1, ss, [1, t0, rsp], dataSize=ssz
+    cda seg, sib, disp, dataSize=ssz
+    addi rsp, rsp, ssz, dataSize=asz
+    st t1, seg, sib, disp, dataSize=ssz
+};
+```
+
+Before add rsp, the to-be-stored memory address is checked by cda.
+
+#### TODO:
+
+* How gem5 implement precise exception?
+
+  See commit.md
+
+* Is cda redundant here?
+
