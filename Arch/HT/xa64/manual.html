@@ -125,6 +125,115 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="xa64-manual"><a class="header" href="#xa64-manual">XA64 MANUAL</a></h1>
+<h2 id="toc"><a class="header" href="#toc">ToC</a></h2>
+<!-- vim-markdown-toc GFM -->
+<ul>
+<li><a href="#uop-slot">Uop slot</a></li>
+<li><a href="#ucache">Ucache</a>
+<ul>
+<li><a href="#l1-uache">L1 uache</a></li>
+<li><a href="#l2-ucache">L2 ucache</a></li>
+<li><a href="#ucache-memory-area">ucache memory area</a></li>
+<li><a href="#ucahce-controller">ucahce controller</a></li>
+</ul>
+</li>
+<li><a href="#mnemonic">Mnemonic</a></li>
+<li><a href="#encoding">Encoding</a>
+<ul>
+<li><a href="#operand-extension">Operand Extension</a></li>
+<li><a href="#operand-size">Operand Size</a></li>
+<li><a href="#arithmetic-flags">arithmetic flags</a></li>
+<li><a href="#general-registers">general registers</a></li>
+<li><a href="#immediate">Immediate</a></li>
+</ul>
+</li>
+<li><a href="#instructions-list">Instructions List</a>
+<ul>
+<li><a href="#pseudo-functions">Pseudo Functions</a>
+<ul>
+<li><a href="#flags">Flags</a></li>
+</ul>
+</li>
+<li><a href="#4-operands">4 operands</a>
+<ul>
+<li><a href="#todo-mul2-mul2_f-mul2_i-mul2_fi">[TODO] mul2, mul2_f, mul2_i, mul2_fi</a></li>
+<li><a href="#shliadd">shliadd</a></li>
+<li><a href="#segaddld_i">segaddld_i</a></li>
+<li><a href="#segaddst_i">segaddst_i</a></li>
+<li><a href="#segadd_i">segadd_i</a></li>
+</ul>
+</li>
+<li><a href="#3-operands">3 operands</a>
+<ul>
+<li><a href="#add-add_f-add_i-add_fi">add, add_f, add_i, add_fi</a></li>
+<li><a href="#adc-adc_f-adc_i-adc_fi">adc, adc_f, adc_i, adc_fi</a></li>
+<li><a href="#todo-addld-addld_i">[TODO] addld, addld_i</a></li>
+<li><a href="#and-and_f-and_i-and_fi">and, and_f, and_i, and_fi</a></li>
+<li><a href="#todo-rotl-rotl_f-rotli-rotli_f">[TODO] rotl, rotl_f, rotli, rotli_f</a></li>
+<li><a href="#todo-rotr-rotr_f-rotri-rotri_f">[TODO] rotr, rotr_f, rotri, rotri_f</a></li>
+<li><a href="#shl-shl_f-shli-shli_f">shl, shl_f, shli, shli_f</a></li>
+<li><a href="#shr-shr_f-shri-shri_f">shr, shr_f, shri, shri_f</a></li>
+<li><a href="#todo-mul-mul_f-mul_i-mul_fi">[TODO] mul, mul_f, mul_i, mul_fi</a></li>
+<li><a href="#or-or_f-or_i-or_fi">or, or_f, or_i, or_fi</a></li>
+<li><a href="#todo-addst_i">[TODO] addst_i</a></li>
+<li><a href="#sar-sar_f-sari-sari_f">sar, sar_f, sari, sari_f</a></li>
+<li><a href="#sub-sub_f-sub_i-sub_fi">sub, sub_f, sub_i, sub_fi</a></li>
+<li><a href="#sbb-sbb_f-sbb_i-sbb_fi">sbb, sbb_f, sbb_i, sbb_fi</a></li>
+<li><a href="#xor-xor_f-xor_i-xor_fi">xor, xor_f, xor_i, xor_fi</a></li>
+<li><a href="#todo-shl2-shl2_f-shl2_i-shl2_fi">[TODO] shl2, shl2_f, shl2_i, shl2_fi</a></li>
+<li><a href="#todo-cmpxchg-cmpxchg_f">[TODO] cmpxchg, cmpxchg_f</a></li>
+<li><a href="#segld">segld</a></li>
+<li><a href="#segst">segst</a></li>
+<li><a href="#sexti">sexti</a></li>
+<li><a href="#zexti">zexti</a></li>
+<li><a href="#movc-movc_i">movc, movc_i</a></li>
+<li><a href="#bit-biti">bit, biti</a></li>
+<li><a href="#hop">hop</a></li>
+</ul>
+</li>
+<li><a href="#2-operands">2 operands</a>
+<ul>
+<li><a href="#todo-bswap">[TODO] bswap</a></li>
+<li><a href="#todo-clz-clz_f">[TODO] clz, clz_f</a></li>
+<li><a href="#todo-ctz-ctz_f">[TODO] ctz, ctz_f</a></li>
+<li><a href="#mov">mov</a></li>
+<li><a href="#mov_i">mov_i</a></li>
+<li><a href="#todo-neg-neg_f">[TODO] neg, neg_f</a></li>
+<li><a href="#todo-not-not_f">[TODO] not, not_f</a></li>
+<li><a href="#todo-ld">[TODO] ld</a></li>
+<li><a href="#todo-st">[TODO] st</a></li>
+<li><a href="#callrel-callrel_i">callrel, callrel_i</a></li>
+<li><a href="#callabs-callabs_i">callabs, callabs_i</a></li>
+<li><a href="#jrelc-jrelc_i">jrelc, jrelc_i</a></li>
+<li><a href="#muls-muls_i-muls_f-muls_fi">muls, muls_i, muls_f, muls_fi</a></li>
+<li><a href="#loopcnt">loopcnt</a></li>
+<li><a href="#step">step</a></li>
+</ul>
+</li>
+<li><a href="#1-operand">1 operand</a>
+<ul>
+<li><a href="#ret">ret</a></li>
+<li><a href="#rdpc">rdpc</a></li>
+<li><a href="#jrel-jrel_i">jrel, jrel_i</a></li>
+<li><a href="#jabs-jabs_i">jabs, jabs_i</a></li>
+<li><a href="#inc-inc_f">inc, inc_f</a></li>
+<li><a href="#dec-dec_f">dec, dec_f</a></li>
+<li><a href="#rdmull-rdmulh">rdmull, rdmulh</a></li>
+<li><a href="#loopend">loopend</a></li>
+</ul>
+</li>
+<li><a href="#0-operand">0 operand</a>
+<ul>
+<li><a href="#invalid">invalid</a></li>
+<li><a href="#nop">nop</a></li>
+<li><a href="#syscall">syscall</a></li>
+<li><a href="#halt">halt</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- vim-markdown-toc -->
 <h2 id="uop-slot"><a class="header" href="#uop-slot">Uop slot</a></h2>
 <p><img src="./pictures/manual_uop_slot.svg" alt="" /></p>
 <ul>
@@ -152,23 +261,22 @@
 <p>TODO:</p>
 <p>64-way associated 32 entries, to index 2048 macroop pages.</p>
 <h2 id="mnemonic"><a class="header" href="#mnemonic">Mnemonic</a></h2>
-<pre><code>&lt;op&gt;.&lt;ext&gt; &lt;dst&gt; &lt;src0&gt; &lt;src1&gt;
+<pre><code>&lt;op&gt;_&lt;ext&gt; &lt;dst&gt; &lt;src0&gt; &lt;src1&gt;
 </code></pre>
 <h2 id="encoding"><a class="header" href="#encoding">Encoding</a></h2>
 <h3 id="operand-extension"><a class="header" href="#operand-extension">Operand Extension</a></h3>
-<p>One instruction contains one 5-bit field,
-representing the operand extension and size.</p>
-<ul>
-<li>Extension (2 bits)
+<p>The <code>ex</code> is a 2-bit field encoded in every xa64 inst,
+usually representing the operand size.</p>
+<p>3 types of extension are available:</p>
 <ul>
 <li>Zero</li>
 <li>Signed</li>
 <li>Merge (without modification other bits)</li>
 </ul>
-</li>
-</ul>
 <h3 id="operand-size"><a class="header" href="#operand-size">Operand Size</a></h3>
-<p>2 bits</p>
+<p>The <code>sz</code> is a 2-bit field encoded in every xa64 inst,
+representing the extension mode.</p>
+<p>4 types of size are available:</p>
 <ul>
 <li>8 bits: Short</li>
 <li>16 bits: Word</li>
@@ -204,7 +312,7 @@ presenting whether arithmetic flags need to be calculated.</p>
 </code></pre>
 </li>
 </ul>
-<h3 id="instructions-list"><a class="header" href="#instructions-list">Instructions List</a></h3>
+<h2 id="instructions-list"><a class="header" href="#instructions-list">Instructions List</a></h2>
 <p>direct immediate
 indirect immediate</p>
 <p><img src="./pictures/manual_inst_encoding.svg" alt="" /></p>
@@ -214,99 +322,463 @@ indirect immediate</p>
 <li>i: immediate version</li>
 <li>f: arithmetic flags version</li>
 </ul>
-<p>TODO:</p>
+<h3 id="pseudo-functions"><a class="header" href="#pseudo-functions">Pseudo Functions</a></h3>
 <ul>
-<li>pc related insts</li>
+<li><code>GPR(idx, sz)</code>: get GPR value by GPR index <code>idx</code> and GPR size <code>sz</code>.</li>
+<li><code>GPR(idx, sz, ex)</code>: set GPR value by GPR index <code>idx</code>, GPR size <code>sz</code> and extension mode <code>ex</code>.</li>
+<li><code>Load(addr, sz)</code>: load value from memory address <code>addr</code> with size of <code>sz</code>.</li>
+<li><code>Store(data, addr, sz)</code>: store value <code>data</code> to memory address <code>addr</code> with size of <code>sz</code>.</li>
 </ul>
-<h4 id="4-operands"><a class="header" href="#4-operands">4 operands</a></h4>
-<p>mul2
-mul2_f
-mul2_i
-mul2_fi
-shliadd</p>
-<h4 id="3-operands"><a class="header" href="#3-operands">3 operands</a></h4>
-<p>add
-add_f
-add_i
-add_fi
-adc
-adc_f
-adc_i
-adc_fi
-ld
-ld_i
-and
-and_f
-and_i
-and_fi
-rotl
-rotl_f # TODO: flags
-rotli
-rotli_f
-rotr
-rotr_f
-rotri
-rotri_f
-shl
-shl_f
-shli
-shli_f
-shr
-shr_f
-shri
-shri_f
-mul
-mul_f
-mul_i
-mul_fi
-or
-or_f
-or_i
-or_fi
-st
-sar
-sar_f
-sar_i
-sar_fi
-sub
-sub_f
-sub_i
-sub_fi
-sbb
-sbb_f
-sbb_i
-sbb_fi
-xor
-xor_f
-xor_i
-xor_fi
-shl2
-shl2_f # TODO: flags
-shl2_i
-shl2_fi # TODO: flags
-cmpxchg
-cmpxchg_f # TODO: flags</p>
-<h4 id="2-operands"><a class="header" href="#2-operands">2 operands</a></h4>
-<p>bswap
-clz
-clz_f # TODO: flags
-ctz
-ctz_f # TODO: flags
-mov
-mov_i
-neg
-neg_f # TODO: flags
-not
-not_f # TODO: flags
-ld
-st</p>
-<h4 id="1-operand"><a class="header" href="#1-operand">1 operand</a></h4>
-<p>ret
-rdpc</p>
-<h4 id="0-operand"><a class="header" href="#0-operand">0 operand</a></h4>
-<p>invalid
-nop
-syscall</p>
+<h4 id="flags"><a class="header" href="#flags">Flags</a></h4>
+<p>Currently flags are identical to x86</p>
+<p>E.g. add flags</p>
+<pre><code>C = (!dest[sz-1] + src1[sz-1] + op2[sz-1]) &amp; 0x2
+P = findParity(8, dest)
+A = (!dest[3] + src1[3] + op2[3]) &amp; 0x2
+Z = !dest[sz-1:0]
+S = dest[sz-1]
+O = (src1[sz-1] ^ !op2[sz-1]) &amp; (src1[sz-1] ^ dest[sz-1])
+</code></pre>
+<h3 id="4-operands"><a class="header" href="#4-operands">4 operands</a></h3>
+<h4 id="todo-mul2-mul2_f-mul2_i-mul2_fi"><a class="header" href="#todo-mul2-mul2_f-mul2_i-mul2_fi">[TODO] mul2, mul2_f, mul2_i, mul2_fi</a></h4>
+<h4 id="shliadd"><a class="header" href="#shliadd">shliadd</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>shliadd dest, imm6, src1, src2
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>GPR(dest, 64, Zero) = (GPR(src1, sz) &lt;&lt; imm6) + GPR(src2, sz)
+</code></pre>
+<p><strong>Typical Usage</strong></p>
+<p>Calculate memory address.
+<code>imm</code>, <code>src1</code>, <code>src2</code> are scale, index, base repectively.</p>
+<h4 id="segaddld_i"><a class="header" href="#segaddld_i">segaddld_i</a></h4>
+<p><strong>Type</strong></p>
+<p>MemReadOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>segaddld_i data, segment, base, disp
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>GPR(data, sz, ex) = Load(GPR(base) + SEG(segment) + disp, sz)
+</code></pre>
+<h4 id="segaddst_i"><a class="header" href="#segaddst_i">segaddst_i</a></h4>
+<p><strong>Type</strong></p>
+<p>MemWriteOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>segaddst_i data, segment, base, disp
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>Load(GPR(data), GPR(base) + SEG(segment) + disp, sz)
+</code></pre>
+<h4 id="segadd_i"><a class="header" href="#segadd_i">segadd_i</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>segadd_i data, segment, base, disp
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>GPR(data, sz, Merge) = GPR(base) + SEG(segment) + disp
+</code></pre>
+<p><strong>Typical Usage</strong></p>
+<p>Calculate effective address, together with <code>shliadd</code>.</p>
+<h3 id="3-operands"><a class="header" href="#3-operands">3 operands</a></h3>
+<h4 id="add-add_f-add_i-add_fi"><a class="header" href="#add-add_f-add_i-add_fi">add, add_f, add_i, add_fi</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>add dest, src1, src2
+add_f dest, src1, src2
+add_i dest, src1, imm
+add_fi dest, src1, imm
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>op2 = imm_version? IIMM(imm) : GPR(src2, sz)
+GPR(dest, sz, ex) = GPR(src1, sz) + op2
+</code></pre>
+<h4 id="adc-adc_f-adc_i-adc_fi"><a class="header" href="#adc-adc_f-adc_i-adc_fi">adc, adc_f, adc_i, adc_fi</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>adc dest, src1, src2
+adc_f dest, src1, src2
+adc_i dest, src1, imm
+adc_fi dest, src1, imm
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>op2 = imm_version? IIMM(imm) : GPR(src2, sz)
+GPR(dest, sz, ex) = GPR(src1, sz) + op2 + C
+</code></pre>
+<h4 id="todo-addld-addld_i"><a class="header" href="#todo-addld-addld_i">[TODO] addld, addld_i</a></h4>
+<h4 id="and-and_f-and_i-and_fi"><a class="header" href="#and-and_f-and_i-and_fi">and, and_f, and_i, and_fi</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>and dest, src1, src2
+and_f dest, src1, src2
+and_i dest, src1, imm
+and_fi dest, src1, imm
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>op2 = imm_version? IIMM(imm) : GPR(src2, sz)
+GPR(dest, sz, ex) = GPR(src1, sz) &amp; op2
+</code></pre>
+<h4 id="todo-rotl-rotl_f-rotli-rotli_f"><a class="header" href="#todo-rotl-rotl_f-rotli-rotli_f">[TODO] rotl, rotl_f, rotli, rotli_f</a></h4>
+<h4 id="todo-rotr-rotr_f-rotri-rotri_f"><a class="header" href="#todo-rotr-rotr_f-rotri-rotri_f">[TODO] rotr, rotr_f, rotri, rotri_f</a></h4>
+<h4 id="shl-shl_f-shli-shli_f"><a class="header" href="#shl-shl_f-shli-shli_f">shl, shl_f, shli, shli_f</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>shl dest, src1, src2
+shl_f dest, src1, src2
+shli dest, src1, imm6
+shli_f dest, src1, imm6
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>op2 = imm_version? imm6 : GPR(src2, sz)
+shiftAmt = op2 &amp; ((sz==8)? mask(6) : mask(5))
+GPR(dest, sz, ex) = GPR(src1, sz) &lt;&lt; shiftAmt
+</code></pre>
+<h4 id="shr-shr_f-shri-shri_f"><a class="header" href="#shr-shr_f-shri-shri_f">shr, shr_f, shri, shri_f</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>shr dest, src1, src2
+shr_f dest, src1, src2
+shri dest, src1, imm6
+shri_f dest, src1, imm6
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>op2 = imm_version? imm6 : GPR(src2, sz)
+shiftAmt = op2 &amp; ((sz==8)? mask(6) : mask(5))
+GPR(dest, sz, ex) = GPR(src1, sz) &gt;&gt; shiftAmt
+</code></pre>
+<h4 id="todo-mul-mul_f-mul_i-mul_fi"><a class="header" href="#todo-mul-mul_f-mul_i-mul_fi">[TODO] mul, mul_f, mul_i, mul_fi</a></h4>
+<h4 id="or-or_f-or_i-or_fi"><a class="header" href="#or-or_f-or_i-or_fi">or, or_f, or_i, or_fi</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>or dest, src1, src2
+or_f dest, src1, src2
+or_i dest, src1, imm6
+or_fi dest, src1, imm6
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>op2 = imm_version? imm6 : GPR(src2, sz)
+GPR(dest, sz, ex) = GPR(src1, sz) | op2
+</code></pre>
+<h4 id="todo-addst_i"><a class="header" href="#todo-addst_i">[TODO] addst_i</a></h4>
+<h4 id="sar-sar_f-sari-sari_f"><a class="header" href="#sar-sar_f-sari-sari_f">sar, sar_f, sari, sari_f</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>shl dest, src1, src2
+shl_f dest, src1, src2
+shli dest, src1, imm6
+shli_f dest, src1, imm6
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>op2 = imm_version? imm6 : GPR(src2, sz)
+shiftAmt = op2 &amp; ((sz==8)? mask(6) : mask(5))
+GPR(dest, sz, ex) = GPR(src1, sz) s&gt;&gt; shiftAmt)
+</code></pre>
+<h4 id="sub-sub_f-sub_i-sub_fi"><a class="header" href="#sub-sub_f-sub_i-sub_fi">sub, sub_f, sub_i, sub_fi</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>sub dest, src1, src2
+sub_f dest, src1, src2
+sub_i dest, src1, imm
+sub_fi dest, src1, imm
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>op2 = imm_version? IIMM(imm) : GPR(src2, sz)
+GPR(dest, sz, ex) = GPR(src1, sz) - op2
+</code></pre>
+<h4 id="sbb-sbb_f-sbb_i-sbb_fi"><a class="header" href="#sbb-sbb_f-sbb_i-sbb_fi">sbb, sbb_f, sbb_i, sbb_fi</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>sub dest, src1, src2
+sub_f dest, src1, src2
+sub_i dest, src1, imm
+sub_fi dest, src1, imm
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>op2 = imm_version? IIMM(imm) : GPR(src2, sz)
+GPR(dest, sz, ex) = GPR(src1, sz) - op2 - C
+</code></pre>
+<h4 id="xor-xor_f-xor_i-xor_fi"><a class="header" href="#xor-xor_f-xor_i-xor_fi">xor, xor_f, xor_i, xor_fi</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>xor dest, src1, src2
+xor_f dest, src1, src2
+xor_i dest, src1, imm6
+xor_fi dest, src1, imm6
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>op2 = imm_version? imm6 : GPR(src2, sz)
+GPR(dest, sz, ex) = GPR(src1, sz) ^ op2
+</code></pre>
+<h4 id="todo-shl2-shl2_f-shl2_i-shl2_fi"><a class="header" href="#todo-shl2-shl2_f-shl2_i-shl2_fi">[TODO] shl2, shl2_f, shl2_i, shl2_fi</a></h4>
+<h4 id="todo-cmpxchg-cmpxchg_f"><a class="header" href="#todo-cmpxchg-cmpxchg_f">[TODO] cmpxchg, cmpxchg_f</a></h4>
+<h4 id="segld"><a class="header" href="#segld">segld</a></h4>
+<p><strong>Type</strong></p>
+<p>MemReadOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>segld_i data, segment, base
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>GPR(data, sz, ex) = Load(GPR(base) + SEG(segment), sz)
+</code></pre>
+<h4 id="segst"><a class="header" href="#segst">segst</a></h4>
+<p><strong>Type</strong></p>
+<p>MemWriteOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>segst_i data, segment, base
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>Load(GPR(data), GPR(base) + SEG(segment), sz)
+</code></pre>
+<h4 id="sexti"><a class="header" href="#sexti">sexti</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>sexti dest, src1, imm6
+</code></pre>
+<p><strong>Operation</strong></p>
+<p>Sign extend <code>src1</code> from size <code>imm6</code> to size <code>sz</code>.
+The result is stored into <code>dest</code>.</p>
+<h4 id="zexti"><a class="header" href="#zexti">zexti</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>zexti dest, src1, imm6
+</code></pre>
+<p><strong>Operation</strong></p>
+<p>Zero extend <code>src1</code> from size <code>imm6</code> to size <code>sz</code>.
+The result is stored into <code>dest</code>.</p>
+<h4 id="movc-movc_i"><a class="header" href="#movc-movc_i">movc, movc_i</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>movc dest, src, cond
+movc_i dest, imm, cond
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>op = imm_version? IIMM(imm) : GPR(src, sz)
+if (cond)
+  GPR(dest, sz, Merge) = op
+</code></pre>
+<h4 id="bit-biti"><a class="header" href="#bit-biti">bit, biti</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>bit src1, src2, flag
+bit src1, imm6, flag
+</code></pre>
+<p><strong>Operation</strong></p>
+<p>set <code>flag</code> with bit <code>src1[src2]</code> or <code>src1[imm6]</code></p>
+<h4 id="hop"><a class="header" href="#hop">hop</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>hop src1, src2, flag
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>if (flag) {
+  GPR(src1, sz, Zero) = GPR(src1, sz) + sz
+  GPR(src2, sz, Zero) = GPR(src2, sz) + sz
+} else {
+  GPR(src1, sz, Zero) = GPR(src1, sz) - sz
+  GPR(src2, sz, Zero) = GPR(src2, sz) - sz
+}
+</code></pre>
+<p><strong>Typical Usage</strong></p>
+<p>Translate x86 string inst which has two counters.</p>
+<h3 id="2-operands"><a class="header" href="#2-operands">2 operands</a></h3>
+<h4 id="todo-bswap"><a class="header" href="#todo-bswap">[TODO] bswap</a></h4>
+<h4 id="todo-clz-clz_f"><a class="header" href="#todo-clz-clz_f">[TODO] clz, clz_f</a></h4>
+<h4 id="todo-ctz-ctz_f"><a class="header" href="#todo-ctz-ctz_f">[TODO] ctz, ctz_f</a></h4>
+<h4 id="mov"><a class="header" href="#mov">mov</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>mov dest, src
+</code></pre>
+<p><strong>Operation</strong></p>
+<p>[TODO] add extension mode</p>
+<pre><code>GPR(dest, sz, Merge) = GRR(src, sz)
+</code></pre>
+<h4 id="mov_i"><a class="header" href="#mov_i">mov_i</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>mov_i dest, imm
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>GPR(dest, sz, ex) = IIMM(imm)
+</code></pre>
+<h4 id="todo-neg-neg_f"><a class="header" href="#todo-neg-neg_f">[TODO] neg, neg_f</a></h4>
+<h4 id="todo-not-not_f"><a class="header" href="#todo-not-not_f">[TODO] not, not_f</a></h4>
+<h4 id="todo-ld"><a class="header" href="#todo-ld">[TODO] ld</a></h4>
+<h4 id="todo-st"><a class="header" href="#todo-st">[TODO] st</a></h4>
+<h4 id="callrel-callrel_i"><a class="header" href="#callrel-callrel_i">callrel, callrel_i</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>callrel dest, src
+callrel_i dest, imm
+</code></pre>
+<p><strong>Operation</strong></p>
+<p>Call relative to pc with offset <code>src</code> or <code>imm</code>.
+The return address is stored in <code>dest</code>.</p>
+<h4 id="callabs-callabs_i"><a class="header" href="#callabs-callabs_i">callabs, callabs_i</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>callabs dest, src
+callabs_i dest, imm
+</code></pre>
+<p><strong>Operation</strong></p>
+<p>Call address <code>src</code> or <code>imm</code>.
+The return address is stored in <code>dest</code>.</p>
+<h4 id="jrelc-jrelc_i"><a class="header" href="#jrelc-jrelc_i">jrelc, jrelc_i</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>jrelc src, cond
+jrelc_i imm, cond
+</code></pre>
+<p><strong>Operation</strong></p>
+<p>Jump relative to pc with offset <code>src</code> or <code>imm</code>,
+according to condition <code>cond</code>.</p>
+<h4 id="muls-muls_i-muls_f-muls_fi"><a class="header" href="#muls-muls_i-muls_f-muls_fi">muls, muls_i, muls_f, muls_fi</a></h4>
+<p><strong>Type</strong></p>
+<p>IntMultOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>muls src1, src2
+muls_f src1, src2
+muls_i src1, imm
+muls_fi src1, imm
+</code></pre>
+<p><strong>Operation</strong></p>
+<p>Signed multiply <code>src1</code> and <code>src2</code>/<code>imm</code>.
+The upper half of the product will be stored in an dedicated reg <code>ProdHi</code>,
+the lower half of the product will be stored in an dedicated reg <code>ProdLow</code>.</p>
+<h4 id="loopcnt"><a class="header" href="#loopcnt">loopcnt</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>loopcnt counter, target
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>if (counter) {
+  GPR(counter, sz, Zero) = GPR(counter, sz) - 1
+} else {
+  next_micro_pc = target
+}
+</code></pre>
+<p><strong>Typical Usage</strong></p>
+<p>Together with loopend, they can construct a loop
+to translate x86 rep prefix.</p>
+<h4 id="step"><a class="header" href="#step">step</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>step src, flag
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>if (flag) {
+  GPR(src, sz, Zero) = GPR(src, sz) + sz
+} else {
+  GPR(src, sz, Zero) = GPR(src, sz) - sz
+}
+</code></pre>
+<p><strong>Typical Usage</strong></p>
+<p>Translate x86 string inst which has a counter.</p>
+<h3 id="1-operand"><a class="header" href="#1-operand">1 operand</a></h3>
+<h4 id="ret"><a class="header" href="#ret">ret</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>ret src
+</code></pre>
+<p><strong>Operation</strong></p>
+<p>Return to address <code>src</code>.</p>
+<h4 id="rdpc"><a class="header" href="#rdpc">rdpc</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>rdpc dest
+</code></pre>
+<p><strong>Operation</strong></p>
+<p>Read pc and store it to <code>dest</code>.</p>
+<h4 id="jrel-jrel_i"><a class="header" href="#jrel-jrel_i">jrel, jrel_i</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>jrel src
+jrel_i imm
+</code></pre>
+<p><strong>Operation</strong></p>
+<p>Jump relative to pc with offset <code>src</code> or <code>imm</code>.</p>
+<h4 id="jabs-jabs_i"><a class="header" href="#jabs-jabs_i">jabs, jabs_i</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>jabs src
+jabs_i imm
+</code></pre>
+<p><strong>Operation</strong></p>
+<p>Jump to address <code>src</code> or <code>imm</code>.</p>
+<h4 id="inc-inc_f"><a class="header" href="#inc-inc_f">inc, inc_f</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>inc dest
+inc_f dest
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>GPR(dest, sz, ex) = GPR(dest, sz) + 1
+</code></pre>
+<h4 id="dec-dec_f"><a class="header" href="#dec-dec_f">dec, dec_f</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>dec dest
+dec_f dest
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>GPR(dest, sz, ex) = GPR(dest, sz) - 1
+</code></pre>
+<h4 id="rdmull-rdmulh"><a class="header" href="#rdmull-rdmulh">rdmull, rdmulh</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>rdmull dest
+rdmulh dest
+</code></pre>
+<p><strong>Operation</strong></p>
+<p>Read <code>ProdLow</code>/<code>ProdHi</code> to <code>dest</code>.</p>
+<h4 id="loopend"><a class="header" href="#loopend">loopend</a></h4>
+<p><strong>Type</strong></p>
+<p>IntAluOp</p>
+<p><strong>Mnemonic</strong></p>
+<pre><code>loopend target
+</code></pre>
+<p><strong>Operation</strong></p>
+<pre><code>next_micro_pc = target
+</code></pre>
+<p><strong>Typical Usage</strong></p>
+<p>Together with loopcnt, they can construct a loop
+to translate x86 rep prefix.</p>
+<h3 id="0-operand"><a class="header" href="#0-operand">0 operand</a></h3>
+<h4 id="invalid"><a class="header" href="#invalid">invalid</a></h4>
+<h4 id="nop"><a class="header" href="#nop">nop</a></h4>
+<h4 id="syscall"><a class="header" href="#syscall">syscall</a></h4>
+<h4 id="halt"><a class="header" href="#halt">halt</a></h4>
 
                     </main>
                     <script src="https://utteranc.es/client.js"
