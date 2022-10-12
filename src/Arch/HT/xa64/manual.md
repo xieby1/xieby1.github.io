@@ -89,9 +89,12 @@
 ![](./pictures/manual_uop_slot.svg)
 
 * v: 1 bit: valid
+if (v)
 * un: 3 bits: uops number
 * npc: 4 bits: next pc offset
 * uop4/5 overrlap with iimm
+else
+* \[un:npc\]: ivt: 7 bits: invalid types
 
 ## Ucache
 

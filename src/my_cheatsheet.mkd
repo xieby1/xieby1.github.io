@@ -262,6 +262,16 @@ exiftool -Title=<title> <file>
 exiftool -Author=<author> <file>
 ```
 
+## figlet
+
+### example
+
+http://www.figlet.org/examples.html
+
+### fonts
+
+<FIGLET_PATH>/share/figlet/*.flf
+
 ## font
 
 ### list
@@ -505,6 +515,14 @@ fold/collapse/expand
 <div style="text-align:right; font-size:3em;">2022.04.12</div>
 ```
 
+## image/picture
+
+### get dimension/size
+
+```
+identify <image>
+```
+
 ## Inkscape
 
 ### extract pdf
@@ -615,6 +633,17 @@ endef
 $(foreach x,${EXECUTABLES},rm ${x}${\n})
 ```
 
+### grouped targets
+
+[make manual: multiple targets](https://www.gnu.org/software/make/manual/html_node/Multiple-Targets.html#Multiple-Targets)
+
+```makefile
+foo bar biz &: baz boz
+        echo $^ > foo
+        echo $^ > bar
+        echo $^ > biz
+```
+
 ### hash dep
 
 [GH: hashdeps](https://github.com/olipratt/hashdeps)
@@ -631,6 +660,17 @@ combined.txt: $(call hash_deps,a.txt b.txt)
 ```makefile
 %:%.c
 	$(CC) $< -o $@
+```
+
+### grouped target
+
+[make manual](https://www.gnu.org/software/make/manual/html_node/Multiple-Targets.html#Multiple-Targets)
+
+```
+foo bar biz &: baz boz
+        echo $^ > foo
+        echo $^ > bar
+        echo $^ > biz
 ```
 
 ### target依赖树
@@ -755,6 +795,12 @@ pandoc --list-highlight-languages
 pandoc -D <FORMAT>
 ```
 
+### print default styles
+
+```bash
+--print-default-data-file=templates/styles.html
+```
+
 ## pic
 
 ### jpgs2pdf
@@ -787,22 +833,6 @@ dpkg-query -L <package_name>
 
 ```bash
 apt-file list <package_name>
-```
-
-## python
-
-### debug script
-
-```python
-import pdb
-pdb.set_trace()
-```
-
-### object attr
-
-```python
-dir()
-vars()
 ```
 
 ## qemu
@@ -903,6 +933,14 @@ right click: eraser
 
 Append `?print-pdf` to URL.
 
+### toc style
+
+```html
+<style>nav {...}<style>
+```
+
+### TODO: yaml_metadata_block
+
 ## route
 
 ### add
@@ -949,6 +987,25 @@ scons -c
 ```
 
 ## sed
+
+* detailed document
+  * [gnu sed manual](https://www.gnu.org/software/sed/manual/sed.html)
+* brief synopsis
+  * `man sed`
+
+### terminology
+
+```
+[addr]X[options]
+[addr]{X1[options]; X2[options]; ...}
+```
+
+### regex
+
+POSIX.2 BREs
+
+* [gnu sed manual](https://www.gnu.org/software/sed/manual/sed.html#Regular-Expressions-Overview)
+* [wikibooks: POSIX BREs](https://en.wikibooks.org/wiki/Regular_Expressions/POSIX_Basic_Regular_Expressions)
 
 ### recursive all files
 
@@ -1182,6 +1239,10 @@ mov desktop file to
 
 `~/.config/autostart/`
 
+### gnome desktop spec
+
+https://developer-old.gnome.org/desktop-entry-spec/
+
 ### kitty ssh
 
 [SO: tmux kitty](https://unix.stackexchange.com/questions/470676)
@@ -1256,6 +1317,39 @@ iconv -f gb18030 -t utf-8 <output>
 
 ```bash
 sort -s -n -k 1,1
+```
+
+# Lang
+
+## python
+
+### nix pkgs
+
+```
+pkgs/top-level/python-packages.nix
+pkgs/development/python-modules/
+```
+
+### debug script
+
+```python
+import pdb
+pdb.set_trace()
+```
+
+### object attr
+
+```python
+dir()
+vars()
+```
+
+### pyright ignore
+
+[ignore one line](https://stackoverflow.com/questions/57335636)
+
+```python
+<code needed to be ignored> # type: ignore
 ```
 
 # vim
