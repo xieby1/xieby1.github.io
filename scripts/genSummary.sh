@@ -36,7 +36,7 @@ solve_an_entry()
           ${1##*/} == "." || \
           ${1##*/} == "Essays.md" || \
           ${1##*/} == "abbreviations.md" || \
-          ${1##*/} == "miao" ]]
+          ${1} =~ "/miao" ]]
     then
         return 0
     fi

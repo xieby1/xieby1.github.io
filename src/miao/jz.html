@@ -11,7 +11,7 @@
   <title>喵</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimal-ui">
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/reset.css">
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/reveal.css">
   <style>
@@ -24,32 +24,6 @@
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/theme/white.css" id="theme">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.6.0/lxgwwenkai-regular.css"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.6.0/lxgwwenkaimono-regular.css"/>
-<style>
-  /* copy from reset.css */
-  html, body, div, span, applet, object, iframe,
-  h1, h2, h3, h4, h5, h6,
-  p, blockquote, pre, a, abbr, acronym, address,
-  big, cite, code, del, dfn, em, img, ins, kbd,
-  q, s, samp, small, strike, strong, sub, sup,
-  tt, var, b, u, i, center, dl, dt, dd,
-  ol, ul, li, fieldset, form, label, legend,
-  table, caption, tbody, tfoot, thead,
-  tr, th, td, article, aside, canvas, details,
-  embed, figure, figcaption, footer, header,
-  hgroup, main, menu, nav, output, ruby,
-  section, summary, time, mark, audio, video,
-  /* copy from white.css */
-  .reveal h1, .reveal h2, .reveal h3,
-  .reveal h4, .reveal h5, .reveal h6
-  {
-    font-family: "LXGW WenKai"
-  }
-  code {
-    font-family: "LXGW WenKai Mono"
-  }
-</style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/style.css">
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/style.css">
@@ -130,6 +104,33 @@ table {
 .reveal h5 {
     text-transform: none;
 }
+
+/* make customcontrols hiden when print-pdf */
+@media print {
+  .slide-menu-button,
+  #customcontrols {
+    visibility: hidden;
+  }
+}
+
+/* make customcontrols always collapse */
+@media only screen and (min-width: 500px) {
+  #customcontrols > button {
+      display: block;
+  }
+  #customcontrols > ul {
+    position: fixed;
+    left: 54px;
+    bottom: 64px;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid var(--r-link-color);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--r-background-color)
+  }
+}
 </style>
 </head>
 <body>
@@ -144,9 +145,26 @@ table {
 <section id="TOC">
 <nav role="doc-toc"> 
 <ul>
+<li><a href="#/壹语">壹语</a></li>
 <li><a href="#/奖状">奖状</a></li>
 </ul>
 </nav>
+</section>
+
+<section id="壹语" class="title-slide slide level1 unnumbered"
+data-background-iframe="./mario-background-parallax/index.html">
+<h1 class="unnumbered"
+data-background-iframe="./mario-background-parallax/index.html">壹语</h1>
+<p></br> 空想并不能实现财富自由🪙，去<strong>提升</strong>自己吧。
+</br></br> 机会🍄随时可能来，就看你<strong>准备</strong>好没。
+</br></br></p>
+<div
+style="display: inline-flex; flex-direction: column; justify-content: space-between; width: 800px; color=DimGrey;">
+<div style="align-self: flex-end; font-size: 0.7em;">
+<p>木一🐱</p>
+<p>2022年程序员日</p>
+</div>
+</div>
 </section>
 
 <section id="奖状" class="title-slide slide level1 unnumbered"
@@ -173,6 +191,9 @@ style="display: inline-flex; flex-direction: column; justify-content: space-betw
 </div>
 </section>
     </div>
+    <!-- <div id=footer style="position:absolute; bottom:12px; width:100%; text-align:center; z-index:40;"> -->
+    <!--     test -->
+    <!-- </div> -->
   </div>
 
   <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
@@ -183,6 +204,7 @@ style="display: inline-flex; flex-direction: column; justify-content: space-betw
   <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/plugin/zoom/zoom.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/plugin.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/plugin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js"></script>
 
   <script>
 
@@ -339,20 +361,33 @@ style="display: inline-flex; flex-direction: column; justify-content: space-betw
         chalkboard: {
           theme: "whiteboard",
         },
+        menu: {
+          sticky: true,
+        },
         customcontrols: {
           controls: [
+            {
+              icon: '<i class="fas fa-expand"></i>',
+              title: 'Toggle fullscreen',
+              action: 'document.documentElement.requestFullscreen()'
+            },
             {
               icon: '<i class="fa fa-th"></i>',
               title: 'Toggle overview (O,Esc)',
               action: 'Reveal.toggleOverview();'
             },
-            // { icon: '<i class="fa fa-pen-square"></i>',
-            //   title: 'Toggle chalkboard (B)',
-            //   action: 'RevealChalkboard.toggleChalkboard();'
-            // },
+            { icon: '<i class="fa fa-pen-square"></i>',
+              title: 'Toggle chalkboard (B)',
+              action: 'RevealChalkboard.toggleChalkboard();'
+            },
             { icon: '<i class="fa fa-pen"></i>',
               title: 'Toggle notes canvas (C)',
               action: 'RevealChalkboard.toggleNotesCanvas();'
+            },
+            {
+              icon: '<i class="fa fa-print"></i>',
+              title: 'Print PDF Mode',
+              action: "window.location.search = 'print-pdf';"
             },
           ]
         },
@@ -362,8 +397,19 @@ style="display: inline-flex; flex-direction: column; justify-content: space-betw
           RevealCustomControls,
           RevealNotes,
           RevealSearch,
-          RevealZoom
-        ]
+          RevealZoom,
+          RevealMenu,
+        ],
+      });
+      // make customcontrols collapsed by default
+      Reveal.on("ready", event => {
+        var div = document.querySelector("div#customcontrols");
+        div.classList.add('collapsed');
+        document.addEventListener("resize", event => {
+          // make sure customcontrols are collapsed
+          var div = document.querySelector("div#customcontrols");
+          div.classList.add('collapsed');
+        });
       });
     </script>
     </body>
