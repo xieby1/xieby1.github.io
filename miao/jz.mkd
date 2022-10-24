@@ -2,6 +2,22 @@
 % 汪
 % ！
 
+# 壹语 {data-background-iframe="./mario-background-parallax/index.html" .unnumbered}
+
+</br>
+空想并不能实现财富自由🪙，去**提升**自己吧。
+</br></br>
+机会🍄随时可能来，就看你**准备**好没。
+</br></br>
+
+::: {style="display: inline-flex; flex-direction: column; justify-content: space-between; width: 800px; color=DimGrey;"}
+:::: {style="align-self: flex-end; font-size: 0.7em;"}
+木一🐱
+
+2022年程序员日
+::::
+:::
+
 # 奖状 {data-background-image="./jz.svg" data-background-size="95% 95%" .unnumbered}
 
 <i class="fas fa-holly-berry"></i>
