@@ -14,6 +14,18 @@
 {{ #include bash/asm.sh }}
 ```
 
+### chroot.sh
+
+```bash
+{{ #include bash/chroot.sh }}
+```
+
+### conenv.sh
+
+```bash
+{{ #include bash/conenv.sh }}
+```
+
 ### ff.sh
 
 ```bash
@@ -68,6 +80,12 @@
 {{ #include bash/pwrThr.sh }}
 ```
 
+### qemu-android.sh
+
+```bash
+{{ #include bash/qemu-android.sh }}
+```
+
 ### quteapp.sh
 
 ```bash
@@ -98,6 +116,24 @@
 {{ #include bash/ubuntu.sh }}
 ```
 
+### x-html-time_stamp.sh
+
+```bash
+{{ #include bash/x-html-time_stamp.sh }}
+```
+
+### x-sixu-all.sh
+
+```bash
+{{ #include bash/x-sixu-all.sh }}
+```
+
+### x-sixu-today.sh
+
+```bash
+{{ #include bash/x-sixu-today.sh }}
+```
+
 ## Nix Scripts
 
 ### android.nix
@@ -122,6 +158,12 @@
 
 ```nix
 {{ #include nix/pkgs_coremark.nix }}
+```
+
+### pkgs_coremarks.nix
+
+```nix
+{{ #include nix/pkgs_coremarks.nix }}
 ```
 
 ### pkgs_cross_mips.nix

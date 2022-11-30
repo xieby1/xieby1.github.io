@@ -1,3 +1,9 @@
+<div style="text-align:right; font-size:3em;">2022.10.15</div>
+
+* nb
+  * 看起来很不错，但需要添加git管理，不太喜欢
+* TODO: logseq
+
 <div style="text-align:right; font-size:3em;">2022.04.20</div>
 
 记录笔记是思考记录下来。

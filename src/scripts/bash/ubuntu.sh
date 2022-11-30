@@ -4,10 +4,10 @@
 #       https://www.redhat.com/sysadmin/sudo-rootless-podman
 #   tldr: not recommend use su/sudo in rootless container
 
-# create image
-CREATE_IMAGE() {
-    VER=$1
+VER=20
 
+# create image
+CREATE_IMAGE_FUNC() {
     mkdir -p /tmp/u${VER}
     echo "FROM ubuntu:${VER}.04" > /tmp/u${VER}/Dockerfile
 
@@ -16,20 +16,15 @@ CREATE_IMAGE() {
     # ~~one RUN command, avoid redundent layers~~
     echo "RUN echo 'root:miqbxgyfdA.PY' | chpasswd -e" >> /tmp/u${VER}/Dockerfile
     echo "RUN useradd -u ${UID} -G users,sudo -p miqbxgyfdA.PY -s /bin/bash xieby1" >> /tmp/u${VER}/Dockerfile
-    echo "RUN sed -i 's/http.*com/http:\/\/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list" >> /tmp/u${VER}/Dockerfile
-    # echo "RUN echo 'Acquire::http::Proxy \"http://127.0.0.1:8889\";' > /etc/apt/apt.conf" >> /tmp/u${VER}/Dockerfile
     echo "RUN apt update" >> /tmp/u${VER}/Dockerfile
-    echo "RUN apt install -y sudo tmux" >> /tmp/u${VER}/Dockerfile
+    echo "RUN apt install sudo" >> /tmp/u${VER}/Dockerfile
 
-    sudo podman build --network=host -t u${VER} /tmp/u${VER}
+    sudo podman build -t u${VER} /tmp/u${VER}
 }
 
 # podman volumes always owned by root:
 #   https://github.com/containers/podman/issues/2898
-CREATE_CONTAINER() {
-    VER=$1
-
-    CMD=(
+CREATE_CONTAINER=(
     "sudo"
     "podman" "run"
 
@@ -55,23 +50,23 @@ CREATE_CONTAINER() {
     "-it"
     "u${VER}"
 #    "/usr/bin/tmux"
-    )
-
-    eval "${CMD[@]}"
-}
+)
 
 
 OPTIONS=(
     "-h"
     "-c"
-    "-v"
 )
 
-CREATE="no"
-VER=22
+# Input variables
+if [[ $# -lt 1 ]]
+then
+    eval "${CREATE_CONTAINER[@]}"
+    exit
+fi
 while [[ ${OPTIND} -le $# ]]
 do
-    getopts "lhcv:" opt
+    getopts "lhc" opt
     case "${opt}" in
     l)
         echo "${OPTIONS[@]}"
@@ -79,28 +74,16 @@ do
     ;;
     h)
         echo "ubuntu container"
-        echo "Usage: ${0##*/} [-h] [-c] [-v <VER>]"
+        echo "Usage: ${0##*/} [-h] [-c]"
         echo "  run with no arg: enter a ubuntu container"
         echo "  -c: reate a ubuntu container image"
         echo "  -h: show this help"
-        echo "  -v <VER>: set ubuntu version, default is 20"
         exit 0;
     ;;
     c)
-        CREATE="yes"
-    ;;
-    v)
-        VER=${OPTARG}
-        echo ${OPTARG}
+        CREATE_IMAGE_FUNC
     ;;
     *)
         shift
     esac
 done
-
-if [[ "${CREATE}" == "yes" ]]
-then
-    CREATE_IMAGE ${VER}
-else
-    CREATE_CONTAINER ${VER}
-fi

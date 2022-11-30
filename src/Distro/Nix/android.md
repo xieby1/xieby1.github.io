@@ -9,12 +9,13 @@ TLDR: 使用Android Studio提供的Android Emulator体验最好，其次是使�
 * [Anbox & Waydroid](#anbox--waydroid)
 * [qemu + x86 Android](#qemu--x86-android)
 * [Google Android Emulator](#google-android-emulator)
-    * [获取apk package和activity](#获取apk-package和activity)
-    * [avdmanager找不到镜像](#avdmanager找不到镜像)
-    * [模拟器闪退](#模拟器闪退)
-    * [debug 方法](#debug-方法)
-    * [PCI bus not available for hda](#pci-bus-not-available-for-hda)
+  * [获取apk package和activity](#获取apk-package和activity)
+  * [avdmanager找不到镜像](#avdmanager找不到镜像)
+  * [模拟器闪退](#模拟器闪退)
+  * [debug 方法](#debug-方法)
+  * [PCI bus not available for hda](#pci-bus-not-available-for-hda)
 * [Google Android Studio](#google-android-studio)
+* [redroid](#redroid)
 
 <!-- vim-markdown-toc -->
 
@@ -140,3 +141,9 @@ https://stackoverflow.com/questions/69297141/android-11-emulator-gives-pci-bus-n
 使用Android Studio的AVD安装Android emulator最省心。
 
 可以使用微信（公众号闪退），语音视频流畅，小游戏流畅。
+
+## redroid
+
+暂时没成功
+
+文档并未提供和各个参数相关的源文件？

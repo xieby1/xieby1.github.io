@@ -6,6 +6,15 @@
 
 * '🐁'仅在我的配置下可用，并不通用
 
+## apt
+
+### proxy
+
+```
+# /etc/apt/apt.conf
+Acquire::http::Proxy "http://10.90.50.122:8889";
+```
+
 ## awk
 
 ### print nth to last
@@ -51,6 +60,15 @@ ${@:3:2} # from position 3, length 2
 ${@:3} # from position 3, to last
 ```
 
+### cd last dir
+
+参考bash手册关于cd的说明
+
+```bash
+# 等价于cd $OLDPATH
+cd -
+```
+
 ### commentable string concat
 
 ```bash
@@ -61,13 +79,26 @@ CMD=(
 eval "${CMD[@]}" # "${CMD[*]}"
 ```
 
-### cd last dir
+### conditional constructs
 
-参考bash手册关于cd的说明
+[gnu bash manual 3.2.5.2](https://www.gnu.org/software/bash/manual/bash.html#Conditional-Constructs)
 
 ```bash
-# 等价于cd $OLDPATH
-cd -
+if test-commands; then
+  consequent-commands;
+[elif more-test-commands; then
+  more-consequents;]
+[else alternate-consequents;]
+fi
+```
+
+* if its return 0,
+  * consequent-commands are executed
+
+### exit on fail
+
+```bash
+set -o errexit
 ```
 
 ### func src file
@@ -109,6 +140,12 @@ then
 fi
 ```
 
+### trace
+
+```bash
+set -o xtrace
+```
+
 ## binfmt
 
 ### i386
@@ -139,46 +176,54 @@ echo ':x64:M::\x7fELF\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x3
 
 ## container
 
+### build show stdout
+
+[SO](https://stackoverflow.com/questions/65580085/)
+
+```
+--progress=plain
+```
+
 ### ls containers
 
 ```bash
-sudo docker ps -as
+docker ps -as
 ```
 
 ### ls imgs
 
 ```bash
-sudo docker images -a
+docker images -a
 ```
 
 ### prune
 
 ```bash
-sudo docker system prune
+docker system prune
 ```
 
 ### rm all-containers
 
 ```bash
-sudo docker ps -aq | sudo xargs docker rm
+docker ps -aq | xargs docker rm
 ```
 
 ### rm all-imgs
 
 ```bash
-sudo docker images -aq | xargs sudo docker rmi
+docker images -aq | xargs docker rmi
 ```
 
 ### rm container
 
 ```bash
-sudo docker rm <containers>
+docker rm <containers>
 ```
 
 ### rm img
 
 ```bash
-sudo docker rmi <images>
+docker rmi <images>
 ```
 
 ### rm untagged-img
@@ -190,7 +235,7 @@ podman images | grep "^<none>" | awk '{print $3}' | xargs podman rmi
 ### stop containers
 
 ```bash
-sudo docker stop <containers>
+docker stop <containers>
 ```
 
 ### build
@@ -311,6 +356,39 @@ vim /boot/grub/grub.cfg
 
 ```bash
 otf2bdf -r 242 -p 36 /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf -o ~/Desktop/DejaVuSansMono.bdf
+```
+
+## freebsd
+
+### increase disk
+
+Increase qcow2 2GB
+
+```bash
+qemu-img resize <.qcow2> +2G
+```
+
+Inside FreeBSD
+
+```bash
+camcontrol reporbe ada0
+# find out index
+gpart show
+gpart resize -i <index> ada0
+growfs /
+```
+
+### linuxulator
+
+[FreeBSD: Linux Bin Compat](https://docs.freebsd.org/en/books/handbook/linuxemu/)
+
+```
+# edit /etc/rc.conf
+linux_enable="YES"
+```
+
+```bash
+service linux start
 ```
 
 ## gcc
@@ -463,6 +541,14 @@ git ls-remote --tags <repo>
 git daemon --base-path=/home/xieby1/Codes/ --export-all
 ```
 
+### create uncommit patch
+
+[create uncommit patch](https://stackoverflow.com/questions/5159185/)
+
+```bash
+git diff > <xxx.patch>
+```
+
 ## grep
 
 ### only filename
@@ -478,6 +564,24 @@ grep -l
 
 ## headscale tailscale
 
+### register
+
+```bash
+sudo docker exec headscale headscale -n <NETWORK> nodes register --key <KEY>
+```
+
+### reset login server
+
+```bash
+tailscale up --force-reauth --reset
+```
+
+### rm node
+
+```bash
+sudo docker exec -it headscale headscale nodes del -i <ID>
+```
+
 ### exec cmd
 
 ```bash
@@ -487,7 +591,7 @@ sudo docker exec headscale headscale --help
 ### client register
 
 ```bash
-sudo tailscale up --login-server URL[:PORT]
+sudo tailscale --socket <PATH> up --login-server <URL>[:PORT]
 ```
 
 ## html
@@ -603,6 +707,14 @@ tty # `who am i` may not output
 cat /proc/kmsg > <stdio dev file>
 ```
 
+### mod
+
+show info about a mod
+
+```bash
+modinfo <mod>
+```
+
 ## make
 
 ### terminology
@@ -631,6 +743,12 @@ define \n
 
 endef
 $(foreach x,${EXECUTABLES},rm ${x}${\n})
+```
+
+### func wildcard
+
+```makefile
+$(wildcard pictures/*.drawio)
 ```
 
 ### grouped targets
@@ -671,6 +789,14 @@ foo bar biz &: baz boz
         echo $^ > foo
         echo $^ > bar
         echo $^ > biz
+```
+
+### prerequisite
+
+```makefile
+$< # first
+$^ # all
+$(word 2,$^) # second
 ```
 
 ### target依赖树
@@ -1099,6 +1225,26 @@ x22Apr12_
 }
 ```
 
+## ssh
+
+### bind address
+
+```bash
+ssh -L 8890:example.org:8889 -N -T username@remote_host
+```
+
+## swap
+
+### create swapfile
+
+```
+sudo fallocate -l 4G /swapfile
+# optional
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+```
+
 ## systemd unit
 
 ### After/Before说明
@@ -1143,6 +1289,23 @@ journalctl --user -f -u <service>
 systemctl list-units --type target
 ```
 
+## systemd unit examples
+
+### auto login
+
+[ubuntu auto login](https://gist.github.com/thelimeburner/a033c1f8445bfb003b24b4c7bca4f601)
+
+```bash
+#Create the directory:
+sudo mkdir /etc/systemd/system/getty@tty1.service.d
+#Create file:
+sudo vim /etc/systemd/system/getty@tty1.service.d/autologin.conf
+#Insert:
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --autologin YOURUSERNAMEHERE --noclear %I 38400 linux
+```
+
 ## tmux
 
 ### terminology
@@ -1163,6 +1326,14 @@ cnnect to the same session.
 <C-b> " // vertical
 <C-b> % // horizontal
 ```
+
+## wine
+
+### regedit
+
+* [Regedit](https://wiki.winehq.org/Regedit)
+* [Useful Registry Keys](https://wiki.winehq.org/index.php?title=Useful_Registry_Keys)
+* `wine regedit /?`
 
 ## WSL
 
@@ -1206,13 +1377,43 @@ xdg-mime query filetype <file>
 xdg-mime query default <type>
 ```
 
+## xilinx
+
+### vitis_hls repl
+
+```bash
+vitis_hls -i
+```
+
+### commands
+
+`Xilinx/Vitis/2022.2/doc/eng/man/`
+
+```
+list_targets
+```
+
 ## others
+
+### ccls
+
+[.ccls file](https://github.com/MaskRay/ccls/wiki/Project-Setup#ccls-file)
+
+```
+clang
+-I<PATH>
+-D<VAR>
+```
 
 ### crypt
 
 ```bash
 perl -e "print crypt('wjxby','xb');"
 ```
+
+### combine pdf
+
+pdftk <file1.pdf ...> cat output <output.pdf>
 
 ### dgen-sdl
 
@@ -1243,12 +1444,28 @@ mov desktop file to
 
 https://developer-old.gnome.org/desktop-entry-spec/
 
+### gprof
+
+```bash
+# compile
+gcc ... -gp
+# run <file>
+# show
+gprof <file>
+```
+
 ### kitty ssh
 
 [SO: tmux kitty](https://unix.stackexchange.com/questions/470676)
 
 ```bash
 kitty +kitten ssh myserver
+```
+
+[second-level servers](https://github.com/kovidgoyal/kitty/issues/2053)
+
+```bash
+kitty +kitten ssh -J jump_server destination_server
 ```
 
 ### pkg-config
@@ -1323,13 +1540,6 @@ sort -s -n -k 1,1
 
 ## python
 
-### nix pkgs
-
-```
-pkgs/top-level/python-packages.nix
-pkgs/development/python-modules/
-```
-
 ### debug script
 
 ```python
@@ -1350,6 +1560,27 @@ vars()
 
 ```python
 <code needed to be ignored> # type: ignore
+```
+
+## python matpltlib
+
+### pdf
+
+chinese support compromise
+
+use `rsvg-convert` to convert
+
+### rcParams
+
+[default `matplotlibrc` file](
+https://matplotlib.org/stable/tutorials/introductory/customizing.html#the-default-matplotlibrc-file)
+
+### svg
+
+svg able to copy, support chinese
+
+```python
+plt.rcParams["svg.fonttype"] = "none"
 ```
 
 # vim
@@ -1405,6 +1636,17 @@ rm ~/.local/share/nvim/.netrwhist
 ```vim
 c-v ; select block
 g c-a
+```
+
+### insert stdout
+
+```vim
+; insert below
+:r!<cmd>
+; insert above
+:-r!<cmd>
+; insert top
+:0r!<cmd>
 ```
 
 ### lower/upper case
@@ -1483,6 +1725,10 @@ c-w = ;same height
 :on ; close others
 c-w o ;same above
 ```
+
+### filetype syntax bindings
+
+<$VIMRUNTIME>/filetype.vim
 
 ### set filetype (nvim)
 
@@ -1744,10 +1990,88 @@ nix copy --no-check-sigs \
 nix-env -i <output/path>
 ```
 
+### get closure paths
+
+```bash
+nix-store -qR
+```
+
 ### copy closure
 
 ```bash
 sudo nix-copy-closure --from <user@ssh> <path>
+```
+
+## channel
+
+### force update
+
+```bash
+nix-channel --option tarball-ttl 0 --update [<channel>]
+```
+
+## config (nix)
+
+### manual
+
+```
+man nix.conf
+```
+
+### show
+
+```
+nix show-config
+```
+
+## config (pkgs)
+
+[nixpkgs manual: Global configuration](https://nixos.org/manual/nixpkgs/stable/#chap-packageconfig)
+
+### nixos
+
+/etc/nixosconfiguration.nix
+
+```nix
+{
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+}
+```
+
+### nix user
+
+~/.config/nixpkgs/config.nix
+
+```nix
+{
+  allowUnfree = true;
+}
+```
+
+## expr
+
+### eval
+
+```
+nix eval --expr "<EXPR>"
+```
+
+## folder
+
+### .desktop
+
+`~/.nix-profile/share/applications`
+
+## home-manager
+
+### sysconfig
+
+[GH: sysconfig](https://github.com/nix-community/home-manager/issues/143)
+
+```nix
+sysconfig = (import <nixpkgs/nixos> {}).config;
 ```
 
 ## misc
@@ -1762,10 +2086,11 @@ nix-build '<nixpkgs>' -A <pkg>
 
 [NixOS Wiki Cheatsheet](https://nixos.wiki/wiki/Cheatsheet)
 
-### eval
+### nix direnv
 
 ```bash
-nix eval "()"
+echo "use nix" >> .envrc
+direnv allow
 ```
 
 ### gnome extension
@@ -1803,9 +2128,9 @@ nix-hash --type sha256 \
 
 ### size
 
-`man nix3-path-info`
-
 ```bash
+# man nix3-path-info
+# closure-size
 nix path-info -Sh <path>
 ```
 
@@ -1864,6 +2189,20 @@ nix-version --hash
 sshd-start
 ```
 
+## option
+
+### home-manager option
+
+```bash
+home-manager option <OPTION>
+```
+
+### nixos-option
+
+```bash
+nixos-option <OPTION>
+```
+
 ## func/lib
 
 ### fetch
@@ -1872,18 +2211,54 @@ pkgs/build-support/fetch.*/
 
 ### mkDerivation
 
-https://nixos.org/manual/nix/stable/expressions/advanced-attributes.html
+[nix manual: advanced-attrs](https://nixos.org/manual/nix/stable/expressions/advanced-attributes.html)
 
 pkgs/stdenv/generic/make-derivation.nix
 
+### <pkgs>.override
+
+* override {...}
+  * override arguments
+* overrideAttrs (old: {...})
+  * override attrs before mkDerivation
+
 ## lang
 
-### escape indented str
+### indented string
 
 ```bash
 ''
-    ''${bash_var}
+  # escape ${
+  ''${bash_var}
+  # escape ''
+  '''
 ''
+```
+
+### <nixpkgs>
+
+[Nix manual: values](https://nixos.org/manual/nix/stable/language/values.html)
+
+`<path>`, like `<nixpkgs>`, is path
+
+listed in env `NIX_PATH`
+
+## module
+
+### args
+
+[SO: import module with](https://stackoverflow.com/questions/47650857/nixos-module-imports-with-arguments)
+
+```nix
+# foobar.nix
+{lib, withFoo ? "bar", ...}:
+{# ...}
+
+# configuration.nix
+args@{ ... }:
+{imports = [(
+  import ./foobar.nix (args // { withFoo = "baz"; })
+)];}
 ```
 
 ## nixos
@@ -1896,19 +2271,42 @@ sudo nix-env -p /nix/var/nix/profiles/system --list-generations
 
 ## nix-shell
 
-### build input
-
-```bash
-nix-shell '<nixpkgs>' -A
-```
-
 ### build env
 
 ```bash
 nix-shell '<nixpkgs>' -A <pkg>
 ```
 
+### direnv
+
+```
+use nix <path>
+```
+
+### direnv fhs
+
+```
+if [[ -z "$IN_NIX_SHELL" ]]; then
+  use nix <path>
+fi
+```
+
+### patchShebang
+
+```bash
+patchShebang <path>
+```
+
 ## pkg
+
+### bundle
+
+```bash
+# nix built-in
+nix bundle
+# github 465 start
+nix-bundle
+```
 
 ### dependency
 
@@ -1921,6 +2319,12 @@ nix-store --query -R </nix/store/path>
 nix-store --query --tree </nix/store/path>
 # only immediate dependencies
 nix-store --query --references </nix/store/path>
+```
+
+### nix-tree
+
+```bash
+nix-tree </nix/store/path>
 ```
 
 ### not in nixpkgs
@@ -1941,6 +2345,35 @@ lib.lowPrio <pkg>
 nix-locate 'bin/hello'
 ```
 
+## pkgs
+
+### python
+
+```
+pkgs/top-level/python-packages.nix
+pkgs/development/python-modules/
+pkgs/development/interpreters/python/mk-python-derivation.nix
+```
+
+### python3 gi
+
+`pyobject3`
+
+### tex live
+
+```
+pkgs/tools/typesetting/tex/texlive/pkgs.nix
+```
+
+### static
+
+[SO: How to produce static executable on NixOS?](https://stackoverflow.com/questions/62065592/)
+
+```
+pkgs.glibc.static
+pkgs.zlib.static
+```
+
 ## repl
 
 ### help
@@ -1953,6 +2386,15 @@ nix-locate 'bin/hello'
 
 ```nix
 :e <expr>
+```
+
+### home-manager
+
+refers to
+[nix repl home.nix config](https://gist.github.com/573/c06ccea910abcc8f9255cb8f3ace3e86)
+
+```nix
+hm = import <home-manager/modules> { configuration = ~/.config/nixpkgs/home.nix; pkgs = import <nixpkgs> {}; }
 ```
 
 ## Usage

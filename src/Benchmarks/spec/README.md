@@ -1,3 +1,75 @@
+<div style="text-align:right; font-size:3em;">2022.11.17</div>
+
+## 编译(NixOS)
+
+### tools
+
+Using FHS to build tools
+
+#### Err: `__stat`
+
+```
+undefined reference to `__stat'
+```
+
+**Solution**:
+
+```c
+// file: tools/src/make-3.80/glob/glob.c
+// change
+if _GNU_GLOB_INTERFACE_VERSION == GLOB_INTERFACE_VERSION
+// to
+if _GNU_GLOB_INTERFACE_VERSION >= GLOB_INTERFACE_VERSION
+```
+
+#### Err: `getline`
+
+```
+error: conflicting types for 'getline'
+```
+
+**Solution**:
+
+```c
+// file: tools/src/specmd5sum/lib/getline.h
+// comment
+int
+getline PARAMS ((char **_lineptr, size_t *_n, FILE *_stream));
+
+int
+getdelim PARAMS ((char **_lineptr, size_t *_n, int _delimiter, FILE *_stream));
+```
+
+#### Err: `asm/page.h`
+
+```
+asm/page.h: No such file or directory
+```
+
+**Solution**:
+
+```c
+// file: tools/src/perl-5.8.7/ext/IPC/SysV/SysV.xs
+// comment
+#   include <asm/page.h>
+```
+
+### NixOS native
+
+#### `cwd`
+
+Cwd.pm: /bin/pwd => pwd
+
+MakeMaker.pm: cwd => getcwd
+
+#### Errno_pm.PL
+
+```perl
+# file: Errno_pm.PL
+# comment
+die "No error definitions found" unless keys %err;
+```
+
 <div style="text-align:right; font-size:3em;">2021.07.15</div>
 
 运行spec没什么难事，仔细阅读官方完整和`docs/`即可。毕竟是长期运作了几十年的商业软件，使用的坑早被大量用户踩平了。

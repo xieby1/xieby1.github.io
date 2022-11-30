@@ -2,10 +2,19 @@
 
 Here list wayland problems I have met.
 
+## fcitx input method not work
+
+## waydroid
+
+waydroid tile not work
+
+## tabbed not work
+
+
 ## gnome terminal headerbar cannot be hidden
 
 Both gnome extension unite and gtk-title-bar
-cannot hide gnome terminal's headerbar.
+cannot hide gnome terminal(kitty and alacritty)'s headerbar.
 
 * https://github.com/velitasali/gtktitlebar/issues/25
 * https://github.com/velitasali/gtktitlebar/issues/14
