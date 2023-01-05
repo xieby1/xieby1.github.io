@@ -1,0 +1,39 @@
+// command line:
+//   neato -Tsvg -O Essays.gv
+digraph {
+// attributes
+style=filled;
+/// color name: https://graphviz.org/doc/info/colors.html
+color=whitesmoke;
+
+// node attributes
+node[
+shape=box,
+style="filled, solid",
+color=black,
+fillcolor=white,
+];
+
+/// edge attributes
+edge[
+];
+
+"2004.bt_fused_isa.hu.cgo.43.pdf" -> {
+    "2002.ildp.kim.isca.99.pdf";
+    "TODO: kim-MacroOP.pdf";
+}
+
+"2011.multi_isa.karaki.iceac.1.pdf" ->
+    "1996.tuning_pentium_pro.papworth.micro.147.pdf" [label="[9]"];
+
+"TODO: isca02.hskim.pdf" ->
+    "TODO: Instruction Path Coprocessors" [label="[6]"];
+
+// 2023.01.02
+"2023_1_2: 胡起/李欣宇" -> "TODO: CARRV2020_paper_4_Cheng.pdf";
+
+"TODO: TSC: MICRO_22_cr_em.pdf";
+
+// 2023.01.03
+"2002.ildp.kim.isca.99.pdf" -> "TODO: 写XA64论的参考"
+}

@@ -1,2 +1,2 @@
 my_cheatsheet.html: my_cheatsheet.mkd
-	cheatsheet.sh $<
+	~/Codes/MyRepos/markdown_cheatsheet/cheatsheet.sh $<
