@@ -111,6 +111,14 @@ declare -F <func>
 shopt -u extdebug
 ```
 
+### here document
+
+```bash
+COMMAND <<InputComesFromHERE
+# ...
+InputComesFromHERE
+```
+
 ### print command
 
 ```bash
@@ -168,11 +176,24 @@ echo ':x64:M::\x7fELF\x02\x01\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x3
 
 ## cmake
 
+### NOTED
+
+cmake use CMakeCache.txt
+
+If meet unexpected behavior,
+
+clean all cmake generated files
+
 ### compile_command.json
 
 ```bash
 -DCMAKE_EXPORT_COMPILE_COMMANDS=1
 ```
+
+### log
+
+* `CMakeFiles/CMakeError.log`
+* `CMakeFiles/CMakeOutput.log`
 
 ## container
 
@@ -549,6 +570,17 @@ git daemon --base-path=/home/xieby1/Codes/ --export-all
 git diff > <xxx.patch>
 ```
 
+### visualization
+
+[SO: git visualization](https://stackoverflow.com/questions/51838290/visualize-git-branch-topology-only-with-no-commit-history)
+
+```bash
+# simplified
+git log --all --decorate --oneline --graph --simplify-by-decoration
+# full
+git log --all --decorate --oneline --graph
+```
+
 ## grep
 
 ### only filename
@@ -866,7 +898,7 @@ nmap 192.168.1.0/24
 > add_network x
 > set_network x ssid "hidden_ssid"
 > set_network x psk "secret"
-// ALLOW CONNECT TO HIDDEN SSID 
+// ALLOW CONNECT TO HIDDEN SSID
 > set_network x scan_ssid 1
 > enable_network x
 > save_config
@@ -1233,6 +1265,12 @@ x22Apr12_
 ssh -L 8890:example.org:8889 -N -T username@remote_host
 ```
 
+### nixos x forward
+
+```bash
+ssh -Y
+```
+
 ## swap
 
 ### create swapfile
@@ -1306,6 +1344,19 @@ ExecStart=
 ExecStart=-/sbin/agetty --autologin YOURUSERNAMEHERE --noclear %I 38400 linux
 ```
 
+### auto swapon
+
+```ini
+[Unit]
+Description=Swapon
+
+[Install]
+WantedBy=default.target multi-user.target
+
+[Service]
+ExecStart=swapon /swapfile
+```
+
 ## tmux
 
 ### terminology
@@ -1377,23 +1428,15 @@ xdg-mime query filetype <file>
 xdg-mime query default <type>
 ```
 
-## xilinx
-
-### vitis_hls repl
-
-```bash
-vitis_hls -i
-```
-
-### commands
-
-`Xilinx/Vitis/2022.2/doc/eng/man/`
-
-```
-list_targets
-```
-
 ## others
+
+### alacritty search
+
+```
+C-S-f
+Enter
+S-Enter
+```
 
 ### ccls
 
@@ -1443,6 +1486,12 @@ mov desktop file to
 ### gnome desktop spec
 
 https://developer-old.gnome.org/desktop-entry-spec/
+
+### open desktop file
+
+```bash
+gtk-launch <xxx.desktop>
+```
 
 ### gprof
 
@@ -1534,6 +1583,14 @@ iconv -f gb18030 -t utf-8 <output>
 
 ```bash
 sort -s -n -k 1,1
+```
+
+### calibrate touchscreen
+
+[SO: Calibrate one touch one not](https://unix.stackexchange.com/questions/473721/calibrating-a-touch-screen-on-dual-monitors-one-touch-one-not)
+
+```bash
+xinput --map-to-output $(xinput list --id-only "WingCoolTouch WingCoolTouch") DP-1
 ```
 
 # Lang
@@ -1895,6 +1952,16 @@ O " new tab open
 :ConfigIgnore
 ```
 
+### git-wip
+
+trigger every time `:w`,
+
+or trigger manually
+
+```bash
+:call GitWipSave()
+```
+
 ### lightspeed.nvim
 
 ```vim
@@ -2050,6 +2117,21 @@ nix show-config
 }
 ```
 
+## debug
+
+### setup
+
+```bash
+nix-shell
+. $stdenv/setup
+```
+
+### nix-build
+
+```bash
+nix-build '<nixpkgs>' -A xxx
+```
+
 ## expr
 
 ### eval
@@ -2072,6 +2154,32 @@ nix eval --expr "<EXPR>"
 
 ```nix
 sysconfig = (import <nixpkgs/nixos> {}).config;
+```
+
+## garbage collect(gc)
+
+### sys garbage
+
+```bash
+sudo nix-collect-garbage -d
+```
+
+### usr garbage
+
+```bash
+nix-collect-garbage -d
+```
+
+### nix-build garbage
+
+​````bash
+ls -l /nix/var/nix/gcroots/auto
+````
+
+### direnv garbage
+
+```bash
+ls -l /nix/var/nix/gcroots/per-user/<user>
 ```
 
 ## misc
@@ -2140,18 +2248,6 @@ nix path-info -Sh <path>
 nix show-derivation <.drv>
 ```
 
-### sys garbage
-
-```bash
-sudo nix-collect-garbage -d
-```
-
-### usr garbage
-
-```bash
-nix-collect-garbage -d
-```
-
 ### repl
 
 ```nix
@@ -2202,6 +2298,62 @@ home-manager option <OPTION>
 ```bash
 nixos-option <OPTION>
 ```
+
+## dependency
+
+### types
+
+[possible dependency types and examples](https://nixos.org/manual/nixpkgs/stable/#possible-dependency-types)
+
+| D type          | D’s host | D’s target |
+|-----------------|----------|------------|
+| build → *       | build    | (none)     |
+| build → build   | build    | build      |
+| build → host    | build    | host       |
+| build → target  | build    | target     |
+| host → *        | host     | (none)     |
+| host → host     | host     | host       |
+| host → target   | host     | target     |
+| target → *      | target   | (none)     |
+| target → target | target   | target     |
+
+### examples
+
+[possible dependency types and examples](https://nixos.org/manual/nixpkgs/stable/#possible-dependency-types)
+
+TODO: simplify
+
+* g++ links against the host platform’s glibc C library, which is a “host→ *” dependency with a triple of (bar, bar, *). Since it is a library, not a compiler, it has no “target”.
+
+* Since g++ is written in C, the gcc compiler used to compile it is a “build→ host” dependency of g++ with a triple of (foo, foo, bar). This compiler runs on the build platform and emits code for the host platform.
+
+* gcc links against the build platform’s glibc C library, which is a “build→ *” dependency with a triple of (foo, foo, *). Since it is a library, not a compiler, it has no “target”.
+
+* This gcc is itself compiled by an earlier copy of gcc. This earlier copy of gcc is a “build→ build” dependency of g++ with a triple of (foo, foo, foo). This “early gcc” runs on the build platform and emits code for the build platform.
+
+* g++ is bundled with libgcc, which includes a collection of target-machine routines for exception handling and software floating point emulation. libgcc would be a “target→ *” dependency with triple (foo, baz, *), because it consists of machine code which gets linked against the output of the compiler that we are building. It is a library, not a compiler, so it has no target of its own.
+
+* libgcc is written in C and compiled with gcc. The gcc that compiles it will be a “build→ target” dependency with triple (foo, foo, baz). It gets compiled and run at g++-build-time (on platform foo), but must emit code for the baz-platform.
+
+* g++ allows inline assembler code, so it depends on access to a copy of the gas assembler. This would be a “host→ target” dependency with triple (foo, bar, baz).
+
+* g++ (and gcc) include a library libgccjit.so, which wrap the compiler in a library to create a just-in-time compiler. In nixpkgs, this library is in the libgccjit package; if C++ required that programs have access to a JIT, g++ would need to add a “target→ target” dependency for libgccjit with triple (foo, baz, baz). This would ensure that the compiler ships with a copy of libgccjit which both executes on and generates code for the baz-platform.
+
+* If g++ itself linked against libgccjit.so (for example, to allow compile-time-evaluated C++ expressions), then the libgccjit package used to provide this functionality would be a “host→ host” dependency of g++: it is code which runs on the host and emits code for execution on the host.
+
+### propagation
+
+[dependency propagation](https://nixos.org/manual/nixpkgs/stable/#ssec-stdenv-dependencies)
+
+| host → target     | attribute name    | offset |
+|-------------------|-------------------|--------|
+| build --> build   | depsBuildBuild    | -1, -1 |
+| build --> host    | nativeBuildInputs | -1, 0  |
+| build --> target  | depsBuildTarget   | -1, 1  |
+| host --> host     | depsHostHost      | 0, 0   |
+| host --> target   | buildInputs       | 0, 1   |
+| target --> target | depsTargetTarget  | 1, 1   |
+
 
 ## func/lib
 
@@ -2291,10 +2443,10 @@ if [[ -z "$IN_NIX_SHELL" ]]; then
 fi
 ```
 
-### patchShebang
+### patchShebangs
 
 ```bash
-patchShebang <path>
+patchShebangs <path>
 ```
 
 ## pkg
