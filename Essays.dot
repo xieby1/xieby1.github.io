@@ -3,7 +3,7 @@
 digraph {
 // attributes
 style=filled;
-/// color name: https://graphviz.org/doc/info/colors.html
+// color name: https://graphviz.org/doc/info/colors.html
 color=whitesmoke;
 
 // node attributes
@@ -14,7 +14,7 @@ color=black,
 fillcolor=white,
 ];
 
-/// edge attributes
+// edge attributes
 edge[
 ];
 
@@ -26,14 +26,87 @@ edge[
 "2011.multi_isa.karaki.iceac.1.pdf" ->
     "1996.tuning_pentium_pro.papworth.micro.147.pdf" [label="[9]"];
 
-"TODO: isca02.hskim.pdf" ->
+"2002.ildp.kim.isca.99.pdf" ->
     "TODO: Instruction Path Coprocessors" [label="[6]"];
 
 // 2023.01.02
-"2023_1_2: 胡起/李欣宇" -> "TODO: CARRV2020_paper_4_Cheng.pdf";
+"2023_1_2: 胡起/李欣宇" -> "2020.co_design_arm32_riscv.cheng.carrv.0.pdf";
 
-"TODO: TSC: MICRO_22_cr_em.pdf";
+"TSC" -> "2022.fuse_mem.singh.micro.0.pdf";
 
 // 2023.01.03
 "2002.ildp.kim.isca.99.pdf" -> "TODO: 写XA64论的参考"
+
+// 2023.01.06
+"2020.co_design_arm32_riscv.cheng.carrv.0.pdf" ->
+    "TODO: FPGA based hardware-software co-designed dynamic binary translation system" [label="[22]"];
+"2020.co_design_arm32_riscv.cheng.carrv.0.pdf" ->
+    "TODO: 专利: MULTIPLE-CORE PROCESSOR SUPPORTING MULTIPLE INSTRUCTION SET ARCHITECTURES" [label="[20]"];
+
+// 2023.01.07
+"TSC" -> "2017.bt_fuse_riscv_x86.clark.carrv.0.pdf" -> {
+    "TODO: An approach for implementing efficient superscalar CISC processors"; // [17]
+    "TODO: The Renewed Case for the Reduced Instruction Set Computer: Avoiding ISA Bloat with Macro-Op Fusion for RISC-V"; // [6]
+};
+"TSC" ->
+"2012.hw_dynamic.lee.master_thesis.0.pdf" ->
+    "Dataflow Mini-Graphs: Amplifying Superscalar Capacity and Bandwidth" [label="[6]"];
+"2012.hw_dynamic.lee.master_thesis.0.pdf" ->
+    "Macro-op Scheduling: Relaxing Scheduling Loop Constraints" [label="[7]"];
+"2012.hw_dynamic.lee.master_thesis.0.pdf" ->
+    "Interlock Collapsing ALU's" [label="[8]"];
+"2012.hw_dynamic.lee.master_thesis.0.pdf" ->
+    "Dynamically Reducing Pressure on the Physical Register File through Simple Register Sharing" [label="[9]"];
+"2012.hw_dynamic.lee.master_thesis.0.pdf" ->
+    "tatic Strands: Safelu Collapsing Dependence Chains for Increasing Embedded Power Efficiency" [label="[10]"];
+
+// 2023.01.08
+"Dataflow Mini-Graphs: Amplifying Superscalar Capacity and Bandwidth" ->
+    "2003.near_optimal_cuts.atasu.dac.363.pdf" [label="[1]"];
+"Dataflow Mini-Graphs: Amplifying Superscalar Capacity and Bandwidth" ->
+    "Instruction Generation and Regularity Extraction for Reconfigurable Processors" [label="[4]"];
+"Dataflow Mini-Graphs: Amplifying Superscalar Capacity and Bandwidth" ->
+    "Application-Specific Processing on a General-Purpose Core via Transparent Instruction Set Customization" [label="[6]"];
+"Dataflow Mini-Graphs: Amplifying Superscalar Capacity and Bandwidth" ->
+    "Processor Acceleration through Automated Instruction Set Customization" [label="[7]"];
+
+"2003.near_optimal_cuts.atasu.dac.363.pdf" ->
+    "Automatic Design of Computer Instruction Sets" [label="[9]"];
+"2003.near_optimal_cuts.atasu.dac.363.pdf" ->
+    "Synthesis of application speciﬁc instruction sets" [label="[10]"];
+"2003.near_optimal_cuts.atasu.dac.363.pdf" ->
+    "Instruction set deﬁnition and instruction selection for ASIPs" [label="[16]"];
+
+"2003.near_optimal_cuts.atasu.dac.363.pdf" ->
+    "Designing domain-specific processors" [label="[2]"];
+"2003.near_optimal_cuts.atasu.dac.363.pdf" ->
+    "Instruction generation for hybrid reconﬁgurable systems" [label="[11]"];
+
+// 2023.01.09
+subgraph cluster_ISA_Generated {
+    label = "ISA/Generated/";
+    "2003.near_optimal_cuts.atasu.dac.363.pdf"
+    "Instruction Generation and Regularity Extraction for Reconfigurable Processors"
+    "Application-Specific Processing on a General-Purpose Core via Transparent Instruction Set Customization"
+    "Processor Acceleration through Automated Instruction Set Customization"
+    "Automatic Design of Computer Instruction Sets"
+    "Synthesis of application speciﬁc instruction sets"
+    "Instruction set deﬁnition and instruction selection for ASIPs"
+    "1998.subset_sum.choi.iccad.92.pdf"
+    "Designing domain-specific processors"
+    "Instruction generation for hybrid reconﬁgurable systems"
+}
+"2003.near_optimal_cuts.atasu.dac.363.pdf" ->
+    "1998.subset_sum.choi.iccad.92.pdf" [label="[5]"];
+
+// 2023.01.12
+  // 指令压缩
+"2014.isa_explore.venkat.isca.112.pdf" ->
+    "TODO: Code Density Concerns for New Architectures" [label="[38]"];
+  // 微码膨胀率
+"2014.isa_explore.venkat.isca.112.pdf" ->
+    "TODO: A Detailed Analysis of Contemporary ARM and x86 Architectures" [label="[8]"];
+
+
+
 }

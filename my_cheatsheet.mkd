@@ -1419,6 +1419,18 @@ Xephyr :2 -resizeable  -dpi 48 -host-cursor
 DISPLAY=:2 <command>
 ```
 
+### multiple DPI
+
+[Mixed DPI](http://wok.oblomov.eu/tecnologia/mixed-dpi-x11/#therandrway)
+
+[SE: cursor flicker](https://unix.stackexchange.com/questions/358992/cursor-flickers-with-xrandr-scaling)
+
+```bash
+xrandr --output DP-1 --scale-from 2880x1800
+# Stop flicker
+xrandr --output eDP-1 --scale 0.9999x0.9999
+```
+
 ## xdg
 
 ### xdg-mime
@@ -1426,6 +1438,20 @@ DISPLAY=:2 <command>
 ```bash
 xdg-mime query filetype <file>
 xdg-mime query default <type>
+```
+
+## yarn
+
+### add
+
+```bash
+yarn global add node_module
+```
+
+### bin
+
+```bash
+yarn global bin
 ```
 
 ## others
@@ -2018,6 +2044,15 @@ vim
 \%>.c   Matches after the cursor column.
 ```
 
+## zellij
+
+### check
+
+```bash
+# list all DIR/FILE
+zellij setup --check
+```
+
 # nix
 
 ## binary cache
@@ -2132,6 +2167,20 @@ nix-shell
 nix-build '<nixpkgs>' -A xxx
 ```
 
+## dependency
+
+### find referrers
+
+```bash
+nix-store --query --referrers <nix-path>
+```
+
+### find references
+
+```bash
+nix-store --query --references <nix-path>
+```
+
 ## expr
 
 ### eval
@@ -2172,7 +2221,7 @@ nix-collect-garbage -d
 
 ### nix-build garbage
 
-​````bash
+````bash
 ls -l /nix/var/nix/gcroots/auto
 ````
 
@@ -2213,7 +2262,7 @@ nix-prefetch-url
 
 ### prefetch github
 
-```bash
+​```bash
 nix-prefetch-url --unpack \
 https://github.com/<owner>/
 <repo>/archive/<rev>.tar.gz
