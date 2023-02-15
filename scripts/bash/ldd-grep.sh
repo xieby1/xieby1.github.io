@@ -42,10 +42,20 @@ done
 
 ldd_real_path()
 {
-    ldd "$1" 2> /dev/null |\
-        sed 's/.*=>//' |\
-        grep -E -o '\/.*\s' |\
-        sed 's/\s//'
+    ldd "$1" 2> /dev/null | while read Line; do
+        # start with /
+        if [[ $Line =~ ^\s*\/ ]]; then
+            echo ${Line%% *}
+        else
+            _temp=${Line##*=> }
+            echo ${_temp%% *}
+        fi
+    done
+
+    # ldd "$1" 2> /dev/null |\
+    #     sed 's/.*=>//' |\
+    #     grep -E -o '\/.*\s' |\
+    #     sed 's/\s//'
 }
 
 get_dependencies()

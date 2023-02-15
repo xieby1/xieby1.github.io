@@ -160,7 +160,9 @@ usage() {
     echo &quot;  ${CMD} \&quot;int \\\$0x80\&quot;&quot;
     echo &quot;  ${CMD} \&quot;add \\\$12, %eax\&quot;&quot;
     echo &quot;  ${CMD} \&quot;nop\\nnop\&quot;&quot;
-    echo &quot;  ${CMD} \&quot;nop\\;nop\&quot;&quot;
+    echo &quot;  ${CMD} \&quot;nop;nop\&quot;&quot;
+    echo &quot;  ${CMD} \&quot;movl \\\$0x5657e589, 0x55(%esp)\&quot;&quot;
+    echo &quot;  ${CMD} \&quot;movq \\\$0x12345678, %gs:0x9abcdef(%rax, %rbx, 2)\&quot;&quot;
     exit 0
 }
 if [[ $# -lt 1 ]]
@@ -172,7 +174,8 @@ then
     usage
 fi
 
-echo -e &quot;$@&quot; | as -al --32 -o /dev/null
+echo -e &quot;$@&quot; | as -al -o /dev/null
+# echo -e &quot;$@&quot; | as -al --32 -o /dev/null
 </code></pre>
 <h3 id="chrootsh"><a class="header" href="#chrootsh">chroot.sh</a></h3>
 <pre><code class="language-bash">#!/usr/bin/env bash
@@ -254,18 +257,21 @@ fi
 #   https://github.com/containers/podman/issues/2898
 # if the first line of containerfile contains sudo
 if head --lines=1 ${CONTAINERFILE} | grep sudo &gt; /dev/null; then
-    SUDO=1
+    SUDO=&quot;sudo&quot;
+fi
+if head --lines=1 ${CONTAINERFILE} | grep commit &gt; /dev/null; then
+    COMMIT=1
 fi
 
 CMDRUN=(&quot;run&quot;)
-if [[ ${SUDO} == 1 ]]; then
+if [[ -n ${SUDO} ]]; then
     CMDRUN+=(&quot;-u&quot; &quot;${USER}&quot;) # [root container]
 else
     CMDRUN+=(&quot;--userns=keep-id&quot;) # [rootless container]
 fi
 CMDRUN+=(
 #&quot;-d&quot; # deamon, not exit
-&quot;--rm&quot; # exit then remove this container
+# &quot;--rm&quot; # exit then remove this container
 &quot;--env&quot; &quot;debian_chroot=$CONTAINER&quot;
 # &quot;-h&quot; &quot;container-$CONTAINER&quot; # host name
 &quot;-h&quot; &quot;localhost&quot; # host name # avoid edit /etc/hosts
@@ -310,16 +316,20 @@ else
     echo &quot;Not found valid container backend&quot;
     exit 1
 fi
-CMD=(&quot;${BACKEND}&quot; &quot;${CMD[@]}&quot;)
-
-if [[ ${SUDO} == 1 ]]; then
-    CMD=(&quot;sudo&quot; &quot;${CMD[@]}&quot;)
-fi
+CMD=(&quot;${SUDO}&quot; &quot;${BACKEND}&quot; &quot;${CMD[@]}&quot;)
 
 if [[ ${ECHO} == 1 ]]; then
     CMD=(&quot;echo&quot; &quot;${CMD[@]}&quot;)
 fi
 eval &quot;${CMD[@]}&quot;
+
+if [[ -z ${CREATE} &amp;&amp; -z ${ECHO} ]]; then
+    if [[ -n ${COMMIT} ]]; then
+        eval &quot;${SUDO} ${BACKEND} commit ${CONTAINER} ${CONTAINER}&quot;
+    fi
+    # remove container
+    eval &quot;${SUDO} ${BACKEND} rm ${CONTAINER}&quot;
+fi
 </code></pre>
 <h3 id="ffsh"><a class="header" href="#ffsh">ff.sh</a></h3>
 <pre><code class="language-bash">#!/usr/bin/env bash
@@ -463,10 +473,20 @@ done
 
 ldd_real_path()
 {
-    ldd &quot;$1&quot; 2&gt; /dev/null |\
-        sed 's/.*=&gt;//' |\
-        grep -E -o '\/.*\s' |\
-        sed 's/\s//'
+    ldd &quot;$1&quot; 2&gt; /dev/null | while read Line; do
+        # start with /
+        if [[ $Line =~ ^\s*\/ ]]; then
+            echo ${Line%% *}
+        else
+            _temp=${Line##*=&gt; }
+            echo ${_temp%% *}
+        fi
+    done
+
+    # ldd &quot;$1&quot; 2&gt; /dev/null |\
+    #     sed 's/.*=&gt;//' |\
+    #     grep -E -o '\/.*\s' |\
+    #     sed 's/\s//'
 }
 
 get_dependencies()

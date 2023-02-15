@@ -51,18 +51,21 @@ fi
 #   https://github.com/containers/podman/issues/2898
 # if the first line of containerfile contains sudo
 if head --lines=1 ${CONTAINERFILE} | grep sudo > /dev/null; then
-    SUDO=1
+    SUDO="sudo"
+fi
+if head --lines=1 ${CONTAINERFILE} | grep commit > /dev/null; then
+    COMMIT=1
 fi
 
 CMDRUN=("run")
-if [[ ${SUDO} == 1 ]]; then
+if [[ -n ${SUDO} ]]; then
     CMDRUN+=("-u" "${USER}") # [root container]
 else
     CMDRUN+=("--userns=keep-id") # [rootless container]
 fi
 CMDRUN+=(
 #"-d" # deamon, not exit
-"--rm" # exit then remove this container
+# "--rm" # exit then remove this container
 "--env" "debian_chroot=$CONTAINER"
 # "-h" "container-$CONTAINER" # host name
 "-h" "localhost" # host name # avoid edit /etc/hosts
@@ -107,13 +110,17 @@ else
     echo "Not found valid container backend"
     exit 1
 fi
-CMD=("${BACKEND}" "${CMD[@]}")
-
-if [[ ${SUDO} == 1 ]]; then
-    CMD=("sudo" "${CMD[@]}")
-fi
+CMD=("${SUDO}" "${BACKEND}" "${CMD[@]}")
 
 if [[ ${ECHO} == 1 ]]; then
     CMD=("echo" "${CMD[@]}")
 fi
 eval "${CMD[@]}"
+
+if [[ -z ${CREATE} && -z ${ECHO} ]]; then
+    if [[ -n ${COMMIT} ]]; then
+        eval "${SUDO} ${BACKEND} commit ${CONTAINER} ${CONTAINER}"
+    fi
+    # remove container
+    eval "${SUDO} ${BACKEND} rm ${CONTAINER}"
+fi
