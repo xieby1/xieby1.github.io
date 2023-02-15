@@ -12,7 +12,9 @@ usage() {
     echo "  ${CMD} \"int \\\$0x80\""
     echo "  ${CMD} \"add \\\$12, %eax\""
     echo "  ${CMD} \"nop\\nnop\""
-    echo "  ${CMD} \"nop\\;nop\""
+    echo "  ${CMD} \"nop;nop\""
+    echo "  ${CMD} \"movl \\\$0x5657e589, 0x55(%esp)\""
+    echo "  ${CMD} \"movq \\\$0x12345678, %gs:0x9abcdef(%rax, %rbx, 2)\""
     exit 0
 }
 if [[ $# -lt 1 ]]
@@ -24,4 +26,5 @@ then
     usage
 fi
 
-echo -e "$@" | as -al --32 -o /dev/null
+echo -e "$@" | as -al -o /dev/null
+# echo -e "$@" | as -al --32 -o /dev/null
