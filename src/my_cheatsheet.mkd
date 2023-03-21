@@ -119,6 +119,24 @@ COMMAND <<InputComesFromHERE
 InputComesFromHERE
 ```
 
+### parallel execution
+
+[SE: bash parellel exec](https://unix.stackexchange.com/questions/103920/parallelize-a-bash-for-loop/436713#436713)
+
+```bash
+N=4
+for i in {a..z}; do
+  (
+    # do your stuff here
+  ) &
+  if [[ $(jobs -r -p | wc -l) -ge $N ]]; then
+    wait -n
+  fi
+done
+wait
+echo all done
+```
+
 ### print command
 
 ```bash
@@ -747,6 +765,26 @@ show info about a mod
 modinfo <mod>
 ```
 
+## llvm
+
+### generate ll
+
+```bash
+clang -S -emit-llvm <file.c> -o <file.ll>
+```
+
+### generate bc
+
+```bash
+clang -c -emit-llvm <file.c> -o <file.bc>
+```
+
+### run ir
+
+```bash
+lli <file.ll/bc>
+```
+
 ## make
 
 ### terminology
@@ -959,6 +997,22 @@ pandoc -D <FORMAT>
 --print-default-data-file=templates/styles.html
 ```
 
+## perl
+
+### man/doc
+
+```bash
+perldoc perlrun
+```
+
+### sed like rexeg lookbehind
+
+[sed lookbehind](https://stackoverflow.com/questions/26110266/does-lookbehind-work-in-sed)
+
+```bash
+perl -pe 's/(?<=foo)bar/test/g' file.txt
+```
+
 ## pic
 
 ### jpgs2pdf
@@ -995,6 +1049,10 @@ apt-file list <package_name>
 
 ## qemu
 
+### host net
+
+`10.0.2.2`
+
 ### smb
 
 ```bash
@@ -1015,6 +1073,26 @@ mount -t cifs -o user=miao%miao //10.0.2.4/qemu Host/
 * <arch>/: tcg => <arch>
 * tci.c: tcg => interpreting
 * README: tcg syntax intro
+
+## qemu wrapper
+
+### quickemu
+
+```bash
+quickemu --display none --vm ~/Img/ubuntu-22.10.conf
+# cat ~/Img/ubuntu-22.10/ubuntu-22.10.ports
+ssh quickemu
+```
+
+### OSX-KVM
+
+```bash
+./OpenCore-Boot.sh
+```
+
+### utm
+
+ssh forward by useing `emulated vlan`
 
 ## revealjs
 
@@ -1145,6 +1223,8 @@ scons -c
 ```
 
 ## sed
+
+### overview
 
 * detailed document
   * [gnu sed manual](https://www.gnu.org/software/sed/manual/sed.html)
@@ -1359,6 +1439,12 @@ ExecStart=swapon /swapfile
 
 ## tmux
 
+### auto start tmux
+
+```bash
+[[ $TERM != "screen" ]] && exec tmux
+```
+
 ### terminology
 
 `man tmux`: Description
@@ -1513,6 +1599,12 @@ mov desktop file to
 
 https://developer-old.gnome.org/desktop-entry-spec/
 
+### gnome dock new window
+
+TODO: dash-to-dock? or original dock?
+
+`ctrl`+`super`+`<num>`
+
 ### open desktop file
 
 ```bash
@@ -1621,6 +1713,22 @@ xinput --map-to-output $(xinput list --id-only "WingCoolTouch WingCoolTouch") DP
 
 # Lang
 
+## C/CPP
+
+### clang-format config
+
+```bash
+clang-format -style=llvm -dump-config > .clang-format
+```
+
+### clang-format on/off
+
+```c
+// clang-format off
+...
+// clang-format on
+```
+
 ## python
 
 ### debug script
@@ -1643,6 +1751,17 @@ vars()
 
 ```python
 <code needed to be ignored> # type: ignore
+```
+
+### pyright local conf
+
+https://microsoft.github.io/pyright/#/configuration
+
+```yaml
+# pyrightconfig.json
+{
+  reportGeneralTypeIssues = false,
+}
 ```
 
 ## python matpltlib
@@ -1922,6 +2041,15 @@ let g:gitgutter_diff_base = ''
 :GitGutterDiffOrig
 ```
 
+## gitsigns diff
+
+```vim
+" Diff against the index
+:Gitsigns diffthis
+" Diff against the last commit
+:Gitsigns diffthis ~1
+```
+
 ### diff obtain/put
 
 ```vim
@@ -2090,6 +2218,12 @@ nix-store --import/--export
 nix copy --no-check-sigs \
 --to <output/path> </nixstore/path>
 nix-env -i <output/path>
+```
+
+### verify
+
+```bash
+nix-store --verify [--check-contents] [--repair]
 ```
 
 ### get closure paths
@@ -2262,7 +2396,7 @@ nix-prefetch-url
 
 ### prefetch github
 
-​```bash
+```bash
 nix-prefetch-url --unpack \
 https://github.com/<owner>/
 <repo>/archive/<rev>.tar.gz
@@ -2344,7 +2478,7 @@ home-manager option <OPTION>
 
 ### nixos-option
 
-```bash
+​```bash
 nixos-option <OPTION>
 ```
 
@@ -2629,12 +2763,36 @@ aarch64-unknown-linux-gnu-gcc
 
 ## Arm
 
+### cond code
+
+2021.armv8.pdf: C1.2.4: Table C1-1
+
+| cond | Mnem     | Mean(int)              | Mean(flp)        | Cond flags    |
+|------|----------|------------------------|------------------|---------------|
+| 0000 | EQ       | ==                     | ==               | Z==1          |
+| 0001 | NE       | !=                     | != or unordered  | Z==0          |
+| 0010 | CS or HS | Carry set              | >=, or unordered | C==1          |
+| 0011 | CC or LO | Carry clear            | <                | C==0          |
+| 0100 | MI       | Minus, negative        | <                | N==1          |
+| 0101 | PL       | Plus, positive or zero | >=, or unordered | N==0          |
+| 0110 | VS       | Overflow               | Unordered        | V==1          |
+| 0111 | VC       | No overflow            | Ordered          | V==0          |
+| 1000 | HI       | Unsigned higher        | >, or unordered  | C==1&&Z==0    |
+| 1001 | LS       | Unsigned lower or same | <=               | !(C==1&&Z==0) |
+| 1010 | GE       | Signed >=              | >=               | N==V          |
+| 1011 | LT       | Signed <               | <, or unordered  | N!=V          |
+| 1100 | GT       | Signed >               | >                | Z==0&&N==V    |
+| 1101 | LE       | Signed <=              | <=, or unordered | !(Z==0&&N==V) |
+| 1110 | AL       | Always                 | Always           | Any           |
+| 1111 | NV       | Always                 | Always           | Any           |
+
 ### cond flags
 
 2021.armv8.pdf: B1.2.2
 2021.armv8.pdf: C5.2.9
 
 ```
+// gdb: p cpsr # Current Program Status Register
 // 6     333222       | N: Negative
 // 3 ... 210987 ... 0 | Z: Zero
 //  RES0  NZCV  RES0  | C: Carry (unsigned)
@@ -2727,7 +2885,46 @@ cannot be nested,
 
 as each hardware thread supports only one monitor.
 
+## riscv
+
+### regs
+
+https://en.wikichip.org/wiki/risc-v/registers
+
+* C col: 3-bit compressed encoding
+* Last col: save by caller or callee
+
+| C   | Reg    | ABI   | Description               |   |
+|-----|--------|-------|---------------------------|---|
+| -   | x0     | zero  | hardwired zero            | - |
+| -   | x1     | ra    | return addr               | r |
+| -   | x2     | sp    | stack pointer             | e |
+| -   | x3     | gp    | global pointer            | - |
+| -   | x4     | tp    | thread pointer            | - |
+| -   | x5-7   | t0-2  | temp reg 0-2              | r |
+| 0   | x8     | s0/fp | saved reg 0/frame pointer | e |
+| 1   | x9     | s1    | saved reg 1               | e |
+| 2-3 | x10-11 | a0-1  | func arg 0-1/ret val 0-1  | r |
+| 4-7 | x12-15 | a2-5  | func arg 2-7              | r |
+| -   | x16-17 | a6-7  | func arg 6-7              | r |
+| -   | x18-27 | s2-11 | saved reg 2-11            | e |
+| -   | x28-31 | t3-t6 | temp reg 3-6              | r |
+
 ## x86
+
+### Cache Parameters
+
+2022.intel64_opt.pdf
+
+搜索Cache Parameters可搜到各个架构的cache参数
+
+### caller/callee reg
+
+x86_64-abi.pdf: Figure 3.4
+
+x86-64-linux callee saved regs:
+
+%rbx, %rbp, %r12-r15
 
 ### rflags/eflags
 
@@ -2857,3 +3054,24 @@ Offset =
   |edi|   |   |     | |      |      |
   +- -+   +---+     +-+      +------+
 ```
+
+### seg regs
+
+[Kernel: FS and GS](https://kernel.org/doc/html/latest/x86/x86_64/fsgs.html)
+
+* 32-bit mode
+  * 6 seg regs, support seg limit
+* 64-bit mode
+  * C/S/D/ES are ignored, base addr is 0
+  * FS: Thread Local Storage(TLS)
+  * GS: use freely by app
+
+Read and write from user space
+
+* syscall: arch_prctl()
+* FSGSBASE inst family (introduced by Ivy Bridge)
+
+Addressing
+
+* compiler: `__seg_fs`, `__seg_gs`
+* assembly: `mov %fs:offset, %reg`, `mov %reg, %fs:offset`
