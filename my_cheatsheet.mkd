@@ -2926,6 +2926,29 @@ x86-64-linux callee saved regs:
 
 %rbx, %rbp, %r12-r15
 
+### conditinal code
+
+2018.intel64.pdf: Volume 1: Appendix B: Table B-1
+
+| CC        | subcode | status          |
+|-----------|---------|-----------------|
+| O         | 0000    | OF              |
+| NO        | 0001    | !OF             |
+| C, B, NAE | 0010    | CF              |
+| NB, AE    | 0011    | !CF             |
+| E, Z      | 0100    | ZF              |
+| NE, NZ    | 0101    | !ZF             |
+| BE, NA    | 0110    | CF\|ZF          |
+| NBE, A    | 0111    | !(CF\|ZF)       |
+| S         | 1000    | SF              |
+| NS        | 1001    | !SF             |
+| P, PE     | 1010    | PF              |
+| NP, PO    | 1011    | !PF             |
+| L, NGE    | 1100    | SF!=OF          |
+| NL, GE    | 1101    | SF==OF          |
+| LE, NG    | 1110    | (SF!=OF)\|ZF    |
+| NLE, G    | 1111    | !((SF!=OF)\|ZF) |
+
 ### rflags/eflags
 
 2020.amd64.pdf: 3.1.4

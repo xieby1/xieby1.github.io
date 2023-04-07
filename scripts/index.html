@@ -180,16 +180,30 @@ echo -e &quot;$@&quot; | as -al -o /dev/null
 <h3 id="chrootsh"><a class="header" href="#chrootsh">chroot.sh</a></h3>
 <pre><code class="language-bash">#!/usr/bin/env bash
 
-CHROOT=/home/chroot/u20
+# TODO: /debootstrap/debootstrap --second-stage
+#       failed, because of no mail group
+#       see /debootstrap/debootstrap.log
+
+CHROOT=~/Img/chroot_u22_a64.1
 # $HOME is defined in host bash
 #HOME=/home/xieby1
 
-sudo mount --bind ${HOME} ${CHROOT}${HOME}
-
+# ${HOME} /proc /sys /dev
+DIRS=&quot;/nix /run/binfmt&quot;
+for dir in ${DIRS}; do
+    sudo mkdir -p ${CHROOT}${dir}
+    sudo mount --bind ${dir} ${CHROOT}${dir}
+done
+FILES=&quot;/etc/hosts /etc/passwd /etc/group&quot;
+for file in ${FILES}; do
+    sudo touch ${CHROOT}${file}
+    sudo mount --bind ${file} ${CHROOT}${file}
+done
+echo miao
 CMD=(
     &quot;sudo&quot;
     &quot;chroot&quot;
-    &quot;--userspec=xieby1:users&quot;
+    # &quot;--userspec=xieby1:users&quot;
     &quot;${CHROOT}&quot;
     &quot;/usr/bin/env&quot;
     # start with an empty environment
@@ -200,8 +214,15 @@ CMD=(
     &quot;PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin&quot;
     &quot;/bin/bash&quot;
 )
-
 eval &quot;${CMD[@]}&quot;
+echo wang
+
+for dir in ${DIRS}; do
+    sudo umount ${CHROOT}${dir}
+done
+for file in ${FILES}; do
+    sudo umount ${CHROOT}${file}
+done
 </code></pre>
 <h3 id="conenvsh"><a class="header" href="#conenvsh">conenv.sh</a></h3>
 <pre><code class="language-bash">#!/usr/bin/env bash
@@ -995,95 +1016,79 @@ tar \
 
 </code></pre>
 <h3 id="ubuntush"><a class="header" href="#ubuntush">ubuntu.sh</a></h3>
-<pre><code class="language-bash">#!/usr/bin/env bash
+<pre><code class="language-bash">#/usr/bin/env bash
 
-# DONE: sudo broken inside container
-#       https://www.redhat.com/sysadmin/sudo-rootless-podman
-#   tldr: not recommend use su/sudo in rootless container
+# parsing arguments
+VERSION=latest
+while [[ ${OPTIND} -le $# ]]; do
+    getopts &quot;lhe&quot; opt
+    case &quot;${opt}&quot; in
+    l|h)
+        echo &quot;aarch64 riscv64 x86_64 18.04 20.04 22.04 22.10 23.04 latest -h -e&quot;
+        exit 0
+    ;;
+    e)
+        ECHO=1
+    ;;
+    *)
+        arg=${!OPTIND}
+        case &quot;$arg&quot; in
+        aarch64|riscv64|x86_64)
+            ARCH=$arg
+        ;;
+        *)
+            VERSION=$arg
+        ;;
+        esac
+        shift
+    ;;
+    esac
+done
+NAME=ubuntu-${ARCH}
 
-VER=20
-
-# create image
-CREATE_IMAGE_FUNC() {
-    mkdir -p /tmp/u${VER}
-    echo &quot;FROM ubuntu:${VER}.04&quot; &gt; /tmp/u${VER}/Dockerfile
-
-    # buildah default not save intermediate layers,
-    # it seems podman layers default true?
-    # ~~one RUN command, avoid redundent layers~~
-    echo &quot;RUN echo 'root:miqbxgyfdA.PY' | chpasswd -e&quot; &gt;&gt; /tmp/u${VER}/Dockerfile
-    echo &quot;RUN useradd -u ${UID} -G users,sudo -p miqbxgyfdA.PY -s /bin/bash xieby1&quot; &gt;&gt; /tmp/u${VER}/Dockerfile
-    echo &quot;RUN apt update&quot; &gt;&gt; /tmp/u${VER}/Dockerfile
-    echo &quot;RUN apt install sudo&quot; &gt;&gt; /tmp/u${VER}/Dockerfile
-
-    sudo podman build -t u${VER} /tmp/u${VER}
-}
-
-# podman volumes always owned by root:
-#   https://github.com/containers/podman/issues/2898
-CREATE_CONTAINER=(
-    &quot;sudo&quot;
-    &quot;podman&quot; &quot;run&quot;
-
-    &quot;-u&quot; &quot;xieby1&quot; # [root container]
+OPTS=(
+    &quot;-u root&quot;
     # &quot;--userns=keep-id&quot; # [rootless container]
+    &quot;--env debian_chroot=$NAME&quot;
+    # &quot;-h&quot; &quot;container-$NAME&quot; # host name
+    &quot;-h localhost&quot; # host name # avoid edit /etc/hosts
+    &quot;--name=$NAME-$VERSION&quot; # container name
 
-    #&quot;-d&quot; # deamon, not exit
-    &quot;--rm&quot; # exit then remove this container
-    &quot;--env&quot; &quot;debian_chroot=u${VER}&quot;
-    # &quot;-h&quot; &quot;container-u${VER}&quot; # host name
-    &quot;-h&quot; &quot;localhost&quot; # host name # avoid edit /etc/hosts
-    &quot;--name='u${VER}'&quot; # container name
-
-    &quot;-v&quot; &quot;/home/xieby1:/home/xieby1&quot;
-    &quot;-v&quot; &quot;/nix:/nix&quot; # make sure symbol links in home work
-
-    &quot;-w&quot; &quot;/home/xieby1&quot; # working directory
+    &quot;-v $HOME:$HOME&quot;
+    &quot;-v /nix:/nix&quot; # make sure symbol links in home work
+    &quot;-v /run/binfmt:/run/binfmt&quot;
+    &quot;-w $PWD&quot; # working directory
 
     # this will cause guest /etc/hosts override by host's
     # use host ip instead, see host's ip address
     &quot;--network=host&quot; # use host network stack
 
     &quot;-it&quot;
-    &quot;u${VER}&quot;
-#    &quot;/usr/bin/tmux&quot;
+    &quot;$NAME:$VERSION&quot;
+    &quot;/bin/bash&quot;
 )
 
-
-OPTIONS=(
-    &quot;-h&quot;
-    &quot;-c&quot;
-)
-
-# Input variables
-if [[ $# -lt 1 ]]
-then
-    eval &quot;${CREATE_CONTAINER[@]}&quot;
-    exit
+# Pull image
+podman images ${NAME}:${VERSION} | grep ${NAME} &amp;&gt; /dev/null
+if [[ $? != 0 ]]; then
+    if [[ $ARCH == &quot;riscv64&quot; ]]; then
+        image_id=$(podman pull --arch ${ARCH} riscv64/ubuntu:$VERSION)
+    else
+        image_id=$(podman pull --arch ${ARCH} ubuntu:$VERSION)
+    fi
+    podman tag $image_id ${NAME}:${VERSION}
 fi
-while [[ ${OPTIND} -le $# ]]
-do
-    getopts &quot;lhc&quot; opt
-    case &quot;${opt}&quot; in
-    l)
-        echo &quot;${OPTIONS[@]}&quot;
-        exit 0;
-    ;;
-    h)
-        echo &quot;ubuntu container&quot;
-        echo &quot;Usage: ${0##*/} [-h] [-c]&quot;
-        echo &quot;  run with no arg: enter a ubuntu container&quot;
-        echo &quot;  -c: reate a ubuntu container image&quot;
-        echo &quot;  -h: show this help&quot;
-        exit 0;
-    ;;
-    c)
-        CREATE_IMAGE_FUNC
-    ;;
-    *)
-        shift
-    esac
-done
+
+# Run container
+if [[ -z $ECHO ]]; then
+    eval &quot;podman run ${OPTS[@]}&quot;
+    podman commit $NAME-$VERSION $NAME:$VERSION
+    podman rm $NAME-$VERSION
+else
+    echo &quot;podman run ${OPTS[@]}&quot;
+    echo podman commit $NAME-$VERSION $NAME:$VERSION
+    echo podman rm $NAME-$VERSION
+fi
 </code></pre>
 <h3 id="x-html-time_stampsh"><a class="header" href="#x-html-time_stampsh">x-html-time_stamp.sh</a></h3>
 <pre><code class="language-bash">#!/usr/bin/env bash

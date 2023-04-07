@@ -811,6 +811,7 @@ fugitive]</a></li>
 <ul>
 <li><a href="#cache-parameters">Cache Parameters</a></li>
 <li><a href="#callercallee-reg">caller/callee reg</a></li>
+<li><a href="#conditinal-code">conditinal code</a></li>
 <li><a href="#rflagseflags">rflags/eflags</a></li>
 <li><a href="#regs-ext">regs ext</a></li>
 <li><a href="#legacy-encode">legacy encode</a></li>
@@ -3914,6 +3915,101 @@ Monitor</a></p>
 <p>x86_64-abi.pdf: Figure 3.4</p>
 <p>x86-64-linux callee saved regs:</p>
 <p>%rbx, %rbp, %r12-r15</p>
+</section>
+<section id="conditinal-code" class="level3">
+<h3>conditinal code</h3>
+<p>2018.intel64.pdf: Volume 1: Appendix B: Table B-1</p>
+<table>
+<thead>
+<tr class="header">
+<th>CC</th>
+<th>subcode</th>
+<th>status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>O</td>
+<td>0000</td>
+<td>OF</td>
+</tr>
+<tr class="even">
+<td>NO</td>
+<td>0001</td>
+<td>!OF</td>
+</tr>
+<tr class="odd">
+<td>C, B, NAE</td>
+<td>0010</td>
+<td>CF</td>
+</tr>
+<tr class="even">
+<td>NB, AE</td>
+<td>0011</td>
+<td>!CF</td>
+</tr>
+<tr class="odd">
+<td>E, Z</td>
+<td>0100</td>
+<td>ZF</td>
+</tr>
+<tr class="even">
+<td>NE, NZ</td>
+<td>0101</td>
+<td>!ZF</td>
+</tr>
+<tr class="odd">
+<td>BE, NA</td>
+<td>0110</td>
+<td>CF|ZF</td>
+</tr>
+<tr class="even">
+<td>NBE, A</td>
+<td>0111</td>
+<td>!(CF|ZF)</td>
+</tr>
+<tr class="odd">
+<td>S</td>
+<td>1000</td>
+<td>SF</td>
+</tr>
+<tr class="even">
+<td>NS</td>
+<td>1001</td>
+<td>!SF</td>
+</tr>
+<tr class="odd">
+<td>P, PE</td>
+<td>1010</td>
+<td>PF</td>
+</tr>
+<tr class="even">
+<td>NP, PO</td>
+<td>1011</td>
+<td>!PF</td>
+</tr>
+<tr class="odd">
+<td>L, NGE</td>
+<td>1100</td>
+<td>SF!=OF</td>
+</tr>
+<tr class="even">
+<td>NL, GE</td>
+<td>1101</td>
+<td>SF==OF</td>
+</tr>
+<tr class="odd">
+<td>LE, NG</td>
+<td>1110</td>
+<td>(SF!=OF)|ZF</td>
+</tr>
+<tr class="even">
+<td>NLE, G</td>
+<td>1111</td>
+<td>!((SF!=OF)|ZF)</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="rflagseflags" class="level3">
 <h3>rflags/eflags</h3>
