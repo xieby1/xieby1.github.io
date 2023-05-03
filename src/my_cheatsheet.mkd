@@ -483,6 +483,14 @@ gcc -dM -E - < /dev/null
 touch bla.c && gcc -dM -E bla.c
 ```
 
+### text segment addr
+
+[SO](https://stackoverflow.com/questions/19470666/gcc-how-to-tell-gcc-to-put-the-main-function-at-the-start-of-the-text-sectio)
+
+```bash
+gcc -static -Wl,-Ttext=0x1000 <Args>
+```
+
 ## gdb
 
 ### frame
@@ -1027,7 +1035,13 @@ convert input1.jpg input2.jpg input3.jpg output.pdf
 convert input.xxx -resize 100x200\! output.xxx
 ```
 
-## pkg
+## pkgs
+
+### apk
+
+```bash
+apk info -L <pkg>
+```
 
 ### deb
 
@@ -2630,6 +2644,21 @@ fi
 
 ```bash
 patchShebangs <path>
+```
+
+### non-interp shebang
+
+Inspired by [cursed.nix](https://discourse.nixos.org/t/c-u-r-s-e-d-n-i-x/12417/)
+
+My tests show, as long as there are arguments in nix-shell,
+the interp mode of nix-shell is not triggered!
+
+Therefore, I change `-v` to `--keep miao`
+
+Why it works?
+
+```bash
+#!/usr/bin/env -S nix-shell --keep miao
 ```
 
 ## pkg

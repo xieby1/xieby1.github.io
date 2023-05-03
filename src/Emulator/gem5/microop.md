@@ -241,7 +241,7 @@ Depict how a macroop is translated to microops.
     ```
 
   When `assembler.assemble(microcode)` is called,
-  every microcode(statement) is parsed,
+  every microcode aka statement is parsed,
 
   * src/arch/micro_asm.py:
 

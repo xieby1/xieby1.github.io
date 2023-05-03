@@ -60,7 +60,7 @@ asm/page.h: No such file or directory
 
 Cwd.pm: /bin/pwd => pwd
 
-MakeMaker.pm: cwd => getcwd
+MakeMaker.pm: 162&163: cwd => getcwd
 
 #### Errno_pm.PL
 
@@ -77,6 +77,41 @@ die "No error definitions found" unless keys %err;
 <div style="text-align:right; font-size:3em;">2020.10.12</div>
 
 **注**：以下提及的SPEC若无特殊说明都指SPEC2000。
+
+#### Undefined reference to pow
+
+在nix-shell中添加链接器参数
+
+NIX_LDFLAGS+=" -lm"
+
+### ubuntu (docker: x86_64, aarch64, riscv64)
+
+编译时链接libm，使用 PERLFLAGS="-A libs=-lm -A libs=-ldl" ./buildtools
+
+#### Undefined reference to pow
+
+编译时链接libm，使用 PERLFLAGS="-A libs=-lm -A libs=-ldl" ./buildtools
+
+#### You haven't done a "make depend" yet!
+
+https://www.okqubit.net/runspec.html
+
+把/bin/sh从dash换成bash
+
+```bash
+dpkg-reconfigure dash
+# no
+```
+
+### 编译测试
+
+#### 252.eon
+
+CXXPORTABILITY  = -DHAS_ERRLIST -fpermissive
+
+改成
+
+CXXPORTABILITY  = -DUSE_STRERROR -fpermissive
 
 ## 编译
 

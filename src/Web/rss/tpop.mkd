@@ -1,0 +1,70 @@
+% RSS
+% 木一
+% 2023.2.18
+
+# RSS
+
+Really Simple Syndication
+
+简易信息聚合
+
+是一种互联网上信息传递的规范
+
+## 工作模式
+
+发布-订阅的模式
+
+<img src="./pictures/rss_work_flow.svg" style="width: 80%;">
+
+订阅软件会自动拉取网站更新的内容
+
+无需用户再手动查看网站是否有更新
+
+## RSS的优势
+
+对于用户
+
+快速&方便地获取信息
+
+:::{.fragment}
+::::{.fragment .strike style="font-size:2em;color:red;"}
+刷手机
+::::
+:::
+
+## RSS的劣势
+
+对于网站
+
+用户黏度降低
+
+:::{.fragment style="font-size:2em;"}
+不赚钱
+:::
+
+# RSS使用
+
+## RSS阅读器
+
+**主动**拉取各个网站提供的RSS信息
+
+存在的问题
+
+* 许多网站不提供RSS服务
+* 需要主动拉取
+
+## RSS生成
+
+https://rsshub.app/
+
+<img src="./pictures/rsshub.svg" style="width: 80%;">
+
+## RSS服务
+
+Inoreader
+
+<img src="./pictures/rss_server.svg" style="width: 80%;">
+
+# 总结
+
+<img src="./pictures/rss_overview.svg" style="width: 60%;">

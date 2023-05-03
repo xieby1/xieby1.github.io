@@ -18,5 +18,6 @@ https://news.ycombinator.com/item?id=31625407
 我找到的
 
 * gnome extension: switcher: 窗口多了不能完全列举
-* Ulauncher: 没尝试，https://ext.ulauncher.io/ switch插件重复的很多（重复造轮子的很多），不太想尝试了
+* Ulauncher: 3k stars, 没尝试，https://ext.ulauncher.io/ switch插件重复的很多（重复造轮子的很多），不太想尝试了
 * albert: https://github.com/albertlauncher/albert：switch插件不工作？已经正常启用了，但是没有说明？
+* rofi: 10.5k stars

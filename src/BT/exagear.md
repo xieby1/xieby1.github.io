@@ -1,3 +1,87 @@
+# ExaGear
+
+<div style="text-align:right; font-size:3em;">2023.03.12</div>
+
+## exagaer 2.0 patch
+
+参考
+
+* https://hu60.cn/q.php/bbs.topic.102147.html
+  * https://blog.csdn.net/buknow/article/details/107721094
+    * `/proc/cpuinfo`
+    * `/sys/devices/system/cpu/cpu0/regs/identification/midr_el1`
+    * `GetArmCpuid.cpp` ✅exagear使用的这个
+
+`GetArmCpuid.cpp`
+
+```cpp
+#include <asm/hwcap.h>
+#include <stdio.h>
+#include <sys/auxv.h>
+
+#define get_cpu_ftr(id) ({					\
+		unsigned long __val;				\
+		asm("mrs %0, "#id : "=r" (__val));		\
+         printf("%-20s: 0x%016lx\n", #id, __val);	\
+		})
+		//printf("0x%08lx\n", __val);	
+		//printf("%-20s: 0x%016lx\n", #id, __val);	
+
+int main(void)
+{
+/*	unsigned long cpuid;
+	asm("mrs %0, MIDR_EL1" : "=r" (cpuid));
+	printf("CPUID from register: 0x%016lx\n",  cpuid);	
+*/
+	if (!(getauxval(AT_HWCAP) & HWCAP_CPUID)) {
+		fputs("CPUID registers unavailable\n", stderr);
+		return 1;
+	}
+	get_cpu_ftr(ID_AA64ISAR0_EL1);
+	get_cpu_ftr(ID_AA64ISAR1_EL1);
+	get_cpu_ftr(ID_AA64MMFR0_EL1);
+	get_cpu_ftr(ID_AA64MMFR1_EL1);
+	get_cpu_ftr(ID_AA64PFR0_EL1);
+	get_cpu_ftr(ID_AA64PFR1_EL1);
+	get_cpu_ftr(ID_AA64DFR0_EL1);
+	get_cpu_ftr(ID_AA64DFR1_EL1);
+	get_cpu_ftr(MIDR_EL1);
+	get_cpu_ftr(MPIDR_EL1);
+	get_cpu_ftr(REVIDR_EL1);
+
+#if 0
+	/* Unexposed register access causes SIGILL */
+	get_cpu_ftr(ID_MMFR0_EL1);
+#endif
+	return 0;
+}
+```
+
+寻找mrs指令
+
+```bash
+aarch64-unknown-linux-gnu-objdump -d ubt_x64a64_al | vim -
+```
+
+找到一条读midr_el1的
+
+```bash
+80080016c26c: d503201f nop
+80080016c270: d5380000 mrs>x0, midr_el1
+```
+
+树莓派4可以运行exagear，
+通过`cat /sys/devices/system/cpu/cpu0/regs/identification/midr_el1`
+或`GetArmCpuid.cpp`获取midr_el1的值为`410fd083`
+
+将上述两条指令改为，即可
+即写死了读midr_el1函数的返回值。
+
+```bash
+80080016c26c: 410fd083 .inst 0x410fd083 ; undefined
+80080016c270: 18ffffe0 ldr>w0, 0x80080016c26c
+```
+
 <div style="text-align:right; font-size:3em;">2021.07.26</div>
 
 https://support.huaweicloud.com/ug-exagear-kunpengdevps/kunpengexagear_06_0005.html

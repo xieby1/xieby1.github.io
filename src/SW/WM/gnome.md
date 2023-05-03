@@ -1,3 +1,26 @@
+<div style="text-align:right; font-size:3em;">2023.02.15</div>
+
+## random wallpaper在hasee上不正常
+
+打出debug信息的方法
+
+```bash
+journalctl <Path-to-gnome-shell>/bin/.gnome-shell-wrapped -f -o cat
+```
+
+每次刷新壁纸就显示
+
+```
+JS ERROR: Gio.ResolverError: Error resolving “http”: Name or service not known
+_send_and_receive_soup30/<@/home/xieby1/.local/share/gnome-shell/extensions/randomwallpaper@iflow.space/soupBowl.js:44:38
+```
+
+网上找不到这个报错。
+
+想了半天，猜是不是gnome network proxy设置的问题。
+看yoga没有http://但hasee有。
+改了之后，成功！
+
 <div style="text-align:right; font-size:3em;">2023.01.10</div>
 
 ## 不同scale
