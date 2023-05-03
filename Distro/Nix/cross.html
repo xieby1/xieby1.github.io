@@ -344,34 +344,7 @@ nix在解析时会将省略的维度按以某些默认值补充完整。
 <p>因此基于这3种组合，可以在同一个shell环境中配置出3种软件，
 <a href="https://xieby1.github.io/scripts/index.html#shell_cross_platformnix">shell_cross_platform.nix</a>
 的代码如下。</p>
-<pre><code class="language-nix"># xieby1: 2022.04.26
-
-let
-  pkgs_arm_cross = import &lt;nixpkgs&gt; {
-    # get this config on my android
-    #   nix repl
-    #   builtins.currentSystem
-    crossSystem = &quot;aarch64-linux&quot;;
-  };
-  pkgs_arm_native = import &lt;nixpkgs&gt; {
-    localSystem = &quot;aarch64-linux&quot;;
-    crossSystem = &quot;aarch64-linux&quot;;
-  };
-  pkgs = import &lt;nixpkgs&gt; {};
-in
-pkgs.mkShell {
-  buildInputs = with pkgs_arm_cross; [
-    # packages for cross compiling, run on local system (x86_64)
-    stdenv.cc
-    # here stdenv.cc is the same with buildPackages.gcc
-  ] ++ (with pkgs_arm_native; [
-    # packages run on aarch64
-    figlet
-  ]) ++ (with pkgs; [
-    # packages run on local system (x86_64)
-    qemu
-  ]);
-}
+<pre><code class="language-nix">{{#include ../../scripts/nix/shell_cross_platform.nix}}
 </code></pre>
 <p><code>pkgs_arm_cross</code>软件包的<code>stdenv.cc</code>为x86平台的arm交叉编译器。
 nixpkgs channel只包含了原生x86应用和原生arm应用。

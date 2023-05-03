@@ -1,3 +1,0 @@
-if (&ft=="python")
-    let b:coc_diagnostic_disable = 1
-endif
