@@ -16,7 +16,7 @@ do
 done
 echo
 echo "## Nix Scripts"
-for script in ./src/scripts/nix/*.nix
+for script in $(find ./src/scripts/nix -name "*.nix")
 do
     echo
     echo "### ${script##*/}"
@@ -24,7 +24,7 @@ do
     # echo -n "TLDR: "
     # ${script} -h | sed -z 's/\n/\n\n/g'
     echo "\`\`\`nix"
-    echo "{{ #include nix/${script##*/} }}"
+    echo "{{ #include nix/${script##*nix/} }}"
     echo "\`\`\`"
 done
 echo "{{ #include foot.html }}"

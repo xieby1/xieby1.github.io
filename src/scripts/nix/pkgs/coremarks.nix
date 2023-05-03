@@ -62,7 +62,7 @@ pkgs.symlinkJoin {
         target = "x86_64-unknown-linux-musl";
       }) stdenv;
     })
-    # aarch64 linux static
+    # aarch64 linux
     (mkCoremark {
       inherit (import zig-env-src {
         target = "aarch64-unknown-linux-gnu";
@@ -72,6 +72,18 @@ pkgs.symlinkJoin {
     (mkCoremark {
       inherit (import zig-env-src {
         target = "aarch64-unknown-linux-musl";
+      }) stdenv;
+    })
+    # riscv64 linux
+    # (mkCoremark {
+    #   inherit (import zig-env-src {
+    #     target = "riscv64-unknown-linux-gnu";
+    #   }) stdenv;
+    # })
+    # riscv64 linux static
+    (mkCoremark {
+      inherit (import zig-env-src {
+        target = "riscv64-unknown-linux-musl";
       }) stdenv;
     })
     # x86_64 windows

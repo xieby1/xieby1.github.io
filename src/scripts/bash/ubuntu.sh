@@ -37,6 +37,7 @@ OPTS=(
     "--name=$NAME-$VERSION" # container name
 
     "-v $HOME:$HOME"
+    "-v $HOME:/root"
     "-v /nix:/nix" # make sure symbol links in home work
     "-v /run/binfmt:/run/binfmt"
     "-w $PWD" # working directory

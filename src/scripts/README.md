@@ -20,10 +20,28 @@
 {{ #include bash/chroot.sh }}
 ```
 
+### conenv-neo.sh
+
+```bash
+{{ #include bash/conenv-neo.sh }}
+```
+
 ### conenv.sh
 
 ```bash
 {{ #include bash/conenv.sh }}
+```
+
+### coninit.sh
+
+```bash
+{{ #include bash/coninit.sh }}
+```
+
+### essays.sh
+
+```bash
+{{ #include bash/essays.sh }}
 ```
 
 ### ff.sh
@@ -80,10 +98,22 @@
 {{ #include bash/pwrThr.sh }}
 ```
 
+### pyvenv.sh
+
+```bash
+{{ #include bash/pyvenv.sh }}
+```
+
 ### qemu-android.sh
 
 ```bash
 {{ #include bash/qemu-android.sh }}
+```
+
+### qpaeq.sh
+
+```bash
+{{ #include bash/qpaeq.sh }}
 ```
 
 ### quteapp.sh
@@ -98,10 +128,10 @@
 {{ #include bash/resize_gif.sh }}
 ```
 
-### singleton.sh
+### route-ict-lx.sh
 
 ```bash
-{{ #include bash/singleton.sh }}
+{{ #include bash/route-ict-lx.sh }}
 ```
 
 ### tar-repo.sh
@@ -122,6 +152,12 @@
 {{ #include bash/x-html-time_stamp.sh }}
 ```
 
+### x.sh
+
+```bash
+{{ #include bash/x.sh }}
+```
+
 ### x-sixu-all.sh
 
 ```bash
@@ -136,123 +172,231 @@
 
 ## Nix Scripts
 
+### cross_mips.nix
+
+```nix
+{{ #include nix/shell/cross_mips.nix }}
+```
+
+### qemu_tests_tcg.nix
+
+```nix
+{{ #include nix/shell/qemu_tests_tcg.nix }}
+```
+
+### pygame.nix
+
+```nix
+{{ #include nix/shell/pygame.nix }}
+```
+
+### venv.nix
+
+```nix
+{{ #include nix/shell/venv.nix }}
+```
+
+### spec.nix
+
+```nix
+{{ #include nix/shell/fhs/spec.nix }}
+```
+
+### hello.nix
+
+```nix
+{{ #include nix/shell/fhs/hello.nix }}
+```
+
+### pin.nix
+
+```nix
+{{ #include nix/shell/fhs/pin.nix }}
+```
+
+### xilinx.nix
+
+```nix
+{{ #include nix/shell/fhs/xilinx.nix }}
+```
+
+### x11.nix
+
+```nix
+{{ #include nix/shell/fhs/x11.nix }}
+```
+
+### dynamorio.nix
+
+```nix
+{{ #include nix/shell/fhs/dynamorio.nix }}
+```
+
+### devshell_hello.nix
+
+```nix
+{{ #include nix/shell/devshell_hello.nix }}
+```
+
+### qemu_plugins.nix
+
+```nix
+{{ #include nix/shell/qemu_plugins.nix }}
+```
+
+### ucasproposal.nix
+
+```nix
+{{ #include nix/shell/ucasproposal.nix }}
+```
+
+### hello.nix
+
+```nix
+{{ #include nix/shell/hello.nix }}
+```
+
+### cross_platform.nix
+
+```nix
+{{ #include nix/shell/cross_platform.nix }}
+```
+
+### v8.nix
+
+```nix
+{{ #include nix/shell/v8.nix }}
+```
+
+### spike.nix
+
+```nix
+{{ #include nix/shell/spike.nix }}
+```
+
+### wine6.nix
+
+```nix
+{{ #include nix/shell/wine6.nix }}
+```
+
+### python_mach.nix
+
+```nix
+{{ #include nix/shell/python_mach.nix }}
+```
+
+### texlive.nix
+
+```nix
+{{ #include nix/shell/texlive.nix }}
+```
+
+### gcc.nix
+
+```nix
+{{ #include nix/shell/gcc.nix }}
+```
+
 ### android.nix
 
 ```nix
 {{ #include nix/android.nix }}
 ```
 
-### libllvm13_debug.nix
+### temp_pkgs_proot_static.nix
 
 ```nix
-{{ #include nix/libllvm13_debug.nix }}
+{{ #include nix/temp_pkgs_proot_static.nix }}
 ```
 
-### pkgs2105_cross_static_hello.nix
+### fhs_spec2000_perl.nix
 
 ```nix
-{{ #include nix/pkgs2105_cross_static_hello.nix }}
+{{ #include nix/pkgs/fhs_spec2000_perl.nix }}
 ```
 
-### pkgs_coremark.nix
+### cross_mips.nix
 
 ```nix
-{{ #include nix/pkgs_coremark.nix }}
+{{ #include nix/pkgs/cross_mips.nix }}
 ```
 
-### pkgs_coremarks.nix
+### qemu_tests_tcg.nix
 
 ```nix
-{{ #include nix/pkgs_coremarks.nix }}
+{{ #include nix/pkgs/qemu_tests_tcg.nix }}
 ```
 
-### pkgs_cross_mips.nix
+### 7z.nix
 
 ```nix
-{{ #include nix/pkgs_cross_mips.nix }}
+{{ #include nix/pkgs/7z.nix }}
 ```
 
-### pkgs_docker_tailscale.nix
+### qemu-sys_riscv64_static.nix
 
 ```nix
-{{ #include nix/pkgs_docker_tailscale.nix }}
+{{ #include nix/pkgs/qemu-sys_riscv64_static.nix }}
 ```
 
-### pkgs_qemu_riscv64_static.nix
+### qemu_static.nix
 
 ```nix
-{{ #include nix/pkgs_qemu_riscv64_static.nix }}
+{{ #include nix/pkgs/qemu_static.nix }}
 ```
 
-### pkgs_qemu_static.nix
+### default.nix
 
 ```nix
-{{ #include nix/pkgs_qemu_static.nix }}
+{{ #include nix/pkgs/fhs_hello/default.nix }}
 ```
 
-### shell_cross_mips.nix
+### appimage_runtime.nix
 
 ```nix
-{{ #include nix/shell_cross_mips.nix }}
+{{ #include nix/pkgs/appimage_runtime.nix }}
 ```
 
-### shell_cross_platform.nix
+### coremarks.nix
 
 ```nix
-{{ #include nix/shell_cross_platform.nix }}
+{{ #include nix/pkgs/coremarks.nix }}
 ```
 
-### shell_fhs_x11.nix
+### temp.nix
 
 ```nix
-{{ #include nix/shell_fhs_x11.nix }}
+{{ #include nix/pkgs/temp.nix }}
 ```
 
-### shell_gem5.nix
+### qemus.nix
 
 ```nix
-{{ #include nix/shell_gem5.nix }}
+{{ #include nix/pkgs/qemus.nix }}
 ```
 
-### shell.nix
+### shellinabox.nix
 
 ```nix
-{{ #include nix/shell.nix }}
+{{ #include nix/pkgs/shellinabox.nix }}
 ```
 
-### shell_python_mach.nix
+### qemu-sys-static.nix
 
 ```nix
-{{ #include nix/shell_python_mach.nix }}
+{{ #include nix/pkgs/qemu-sys-static.nix }}
 ```
 
-### shell_python.nix
+### qemu_riscv64_static.nix
 
 ```nix
-{{ #include nix/shell_python.nix }}
+{{ #include nix/pkgs/qemu_riscv64_static.nix }}
 ```
 
-### shell_python_venv.nix
+### cross_static_hello.nix
 
 ```nix
-{{ #include nix/shell_python_venv.nix }}
-```
-
-### shell_qemu_tests_tcg.nix
-
-```nix
-{{ #include nix/shell_qemu_tests_tcg.nix }}
-```
-
-### shell_spike.nix
-
-```nix
-{{ #include nix/shell_spike.nix }}
-```
-
-### shell_texlive.nix
-
-```nix
-{{ #include nix/shell_texlive.nix }}
+{{ #include nix/pkgs/cross_static_hello.nix }}
 ```
 {{ #include foot.html }}

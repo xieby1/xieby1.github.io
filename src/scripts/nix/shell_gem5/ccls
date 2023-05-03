@@ -1,5 +1,0 @@
-clang
--Isrc
--Ibuild/ARM
--Ibuild/X86
--DTRACING_ON=1
