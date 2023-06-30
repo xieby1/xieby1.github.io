@@ -132,40 +132,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <div style="text-align:right; font-size:3em;">2022.05.11</div>
-<h1 id="安装deb包以飞书为例"><a class="header" href="#安装deb包以飞书为例">安装deb包，以飞书为例</a></h1>
-<p><strong>太长不看</strong></p>
-<ul>
-<li>nix文件: https://github.com/xieby1/nix_config/blob/main/usr/gui/feishu.nix</li>
-<li>使用方法:
-<pre><code class="language-nix">home.packages = with pkgs; [
-  (callPackage ./feishu.nix {})
-];
-</code></pre>
-</li>
-</ul>
-<p>参考nixpkgs/pkgs/applications/networking/instant-messengers/skypeforlinux/default.nix</p>
-<h2 id="测试环境"><a class="header" href="#测试环境">测试环境</a></h2>
-<p>nix-build -E &quot;with import <nixpkgs> {}; callPackage ./default.nix {}&quot;</p>
-<h2 id="权限问题"><a class="header" href="#权限问题">权限问题</a></h2>
-<p>nix-build遇到dpkg -x解压失败。
-但是手动执行dpkg -x一切正常。</p>
-<p>https://unix.stackexchange.com/questions/138188/easily-unpack-deb-edit-postinst-and-repack-deb</p>
-<p>确认是权限问题的实验</p>
-<p>是s权限的问题。
-nix-build下不能添加s权限。
-原因未知</p>
-<p>复现方法</p>
-<pre><code class="language-bash">touch $out/miao
-chmox +s $out/miao
-ls -l $out/miao
-</code></pre>
-<p>解决方法，使用fakeroot.</p>
-<h2 id="补全库"><a class="header" href="#补全库">补全库</a></h2>
-<p>使用ldd脚本，获取所有elf所需的库，挨个添加进rpath即可。</p>
-<h2 id="桌面"><a class="header" href="#桌面">桌面</a></h2>
-<p>application/<em>.desktop
-menu/</em>.menu // 负责图标</p>
+                        <h1 id="安装deb包以飞书为例"><a class="header" href="#安装deb包以飞书为例">安装deb包，以飞书为例</a></h1>
 
                     </main>
                     <script src="https://utteranc.es/client.js"

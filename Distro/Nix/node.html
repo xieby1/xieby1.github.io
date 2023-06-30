@@ -132,63 +132,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <div style="text-align:right; font-size:3em;">2022.09.07</div>
-<h1 id="nodejs-packages-npm-in-nixos"><a class="header" href="#nodejs-packages-npm-in-nixos">Nodejs packages (npm) in NixOS</a></h1>
-<h1 id="nixos中的nodejs包npm"><a class="header" href="#nixos中的nodejs包npm">NixOS中的Nodejs包（npm）</a></h1>
-<p>太长不看：手动暴露<code>buildNodePackage</code>，添加自定义的npm包。</p>
-<p>nixpkgs中的node包虽多但有限，
-遇到需要的node包不存在时，是个麻烦事。</p>
-<p>让我觉得十分诡异的是，
-nixpkgs中存在一个十分方便的添加node包的函数<code>nodeEnv.buildNodePackage</code>，
-但是这个函数却不暴露出来给用户。
-甚至，有些nixpkgs中的包为了使用这个函数，
-复制粘贴该函数到自己的包中。</p>
-<p>在这些奇怪的事情的基础上，
-还衍生出来自动生成该<code>buildNodePackage</code>函数软件<code>node2nix</code>。</p>
-<p>所以这真的是存在即合理嘛？
-还是我学艺不精，不能理解设计者的意图？</p>
-<p>一个简单的暴露<code>buildNodePackage</code>的方法，
-直接导入<code>buildNodePackage</code>所在的文件。
-为了跨平台可用，
-路径的构建采用了一点使用了点点小把戏，</p>
-<pre><code class="language-nix">&lt;nixpkgs&gt; + /pkgs/development/node-packages/node-env.nix
-</code></pre>
-<p>以@types/node为例子，nodepkgs.nix：</p>
-<pre><code class="language-nix">{ ... }:
-let
-  pkgs = import &lt;nixpkgs&gt; {};
-  nodeEnv = import (&lt;nixpkgs&gt; + /pkgs/development/node-packages/node-env.nix) {
-    inherit (pkgs) lib stdenv nodejs python2;
-    inherit pkgs;
-    inherit (pkgs) libtool runCommand writeTextFile writeShellScript;
-  };
-  globalBuildInputs = [];
-in {
-  &quot;@types/node&quot; = nodeEnv.buildNodePackage {
-    name = &quot;_at_types_slash_node&quot;;
-    packageName = &quot;@types/node&quot;;
-    version = &quot;18.7.15&quot;;
-    src = pkgs.fetchurl {
-      url = &quot;https://registry.npmjs.org/@types/node/-/node-18.7.15.tgz&quot;;
-      sha512 = &quot;XnjpaI8Bgc3eBag2Aw4t2Uj/49lLBSStHWfqKvIuXD7FIrZyMLWp8KuAFHAqxMZYTF9l08N1ctUn9YNybZJVmQ==&quot;;
-    };
-    buildInputs = globalBuildInputs;
-    meta = {
-      description = &quot;TypeScript definitions for Node.js&quot;;
-      homepage = &quot;https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node&quot;;
-      license = &quot;MIT&quot;;
-    };
-    production = true;
-    bypassCache = true;
-    reconstructLock = true;
-  };
-}
-</code></pre>
-<p>该nodepkgs.nix文件为用户自定义的node包，
-可以像nixpkgs一样使用这个文件，例如导入</p>
-<pre><code class="language-nix">myNodePkgs = import ./cli/nodepkgs.nix {}
-</code></pre>
-<p>包的表达式为<code>myNodePkgs.&quot;@types/node&quot;</code>。</p>
+                        <h1 id="nodejs-packages-npm-in-nixos"><a class="header" href="#nodejs-packages-npm-in-nixos">Nodejs packages (npm) in NixOS</a></h1>
 
                     </main>
                     <script src="https://utteranc.es/client.js"

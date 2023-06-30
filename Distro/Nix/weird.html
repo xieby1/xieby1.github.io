@@ -133,39 +133,6 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="weird-things-in-nixnixos"><a class="header" href="#weird-things-in-nixnixos">Weird Things in Nix/NixOS</a></h1>
-<h2 id="binutilss-ld-and-gccs-ld-collsion"><a class="header" href="#binutilss-ld-and-gccs-ld-collsion">binutils's ld and gcc's ld collsion</a></h2>
-<p>Background: I want to install <code>gcc</code> and <code>objdump</code>, where <code>objdump</code> is contained in <code>binutils</code>.
-Home-manager tolds me <code>gcc</code>'s <code>ld</code> collides with <code>binutils</code>'s <code>ld</code>.
-As I explore into <code>gcc</code> and <code>binutils</code>, weird thing comes.</p>
-<p>Packages <code>binutils</code> and <code>gcc</code> both contain ld executable.
-<code>binutils</code> and <code>gcc</code> has the same priority 10.</p>
-<p>The WEIRD thing is,</p>
-<ul>
-<li><code>binutils</code> wants to have a lower priority than gcc-wrapper,
-so sets its priority to 10,
-see nixpkgs: <code>pkgs/development/tools/misc/binutils/default.nix</code>
-<blockquote>
-<p>Give binutils a lower priority than gcc-wrapper to prevent a
-collision due to the ld/as wrappers/symlinks in the latter.</p>
-</blockquote>
-</li>
-<li>Both <code>gcc</code> wrapper and all-packages set gcc priority to 10,
-see nixpkgs: <code>pkgs/top-level/all-packages.nix</code> and
-<code>pkgs/build-support/cc-wrapper/default.nix</code>
-All-packages set priority by lowPrio function,
-which will set priority to 10.
-Cc-wrapper directly set priority to 10.</li>
-</ul>
-<p>As a result, <code>binutils</code> will definitely collide with <code>gcc</code>!</p>
-<p>My solution: assign <code>binutils</code> a lower priority, like this</p>
-<pre><code class="language-nix">home.packages = with pkgs; [
-  (lib.setPrio # higher value, less prior
-    (bintools-unwrapped.meta.priority + 1)
-    bintools-unwrapped
-  )
-  gdb
-]
-</code></pre>
 
                     </main>
                     <script src="https://utteranc.es/client.js"

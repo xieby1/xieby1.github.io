@@ -133,38 +133,6 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="tailscaleheadscale"><a class="header" href="#tailscaleheadscale">Tailscale/Headscale</a></h1>
-<h2 id="overview"><a class="header" href="#overview">overview</a></h2>
-<ul>
-<li>client
-<ul>
-<li>tailscale</li>
-<li>tailscaled</li>
-</ul>
-</li>
-<li>server
-<ul>
-<li>headscale</li>
-</ul>
-</li>
-</ul>
-<h2 id="command"><a class="header" href="#command">Command</a></h2>
-<p>TODO: exit node</p>
-<ul>
-<li>https://www.reddit.com/r/Tailscale/comments/w9mtow/question_about_headscale_and_routing/</li>
-<li>https://icloudnative.io/posts/how-to-set-up-or-migrate-headscale/</li>
-</ul>
-<p>TODO: headtail config
-TODO: nix config</p>
-<ul>
-<li>rootless service</li>
-<li>root service</li>
-</ul>
-<pre><code class="language-bash">tailscale --socket /tmp/tailscaled.sock up --login-server http://82.157.197.100
-tailscale --socket /tmp/tailscaled.sock up --login-server http://82.157.197.100 --force-reauth
-</code></pre>
-<h3 id="enable-routes-exit-node"><a class="header" href="#enable-routes-exit-node">enable routes, exit node</a></h3>
-<p>sudo tailscale --socket /tmp/tailscaled.sock up --login-server http://82.157.197.100 --advertise-routes=0.0.0.0/0,::/0 --accept-routes=true</p>
-<p>sudo docker exec headscale headscale nodes routes enable -i 13 -a -r 0.0.0.0/0 -r ::/0</p>
 
                     </main>
                     <script src="https://utteranc.es/client.js"
