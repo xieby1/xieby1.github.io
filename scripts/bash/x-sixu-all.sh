@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 cat <<EOL
-// command line:
-//   dot -Tsvg -O sixu.dot
-
+#!/usr/bin/env -S dot -Tsvg -O
 
 digraph {
 // attributes

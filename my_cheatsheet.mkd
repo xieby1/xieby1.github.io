@@ -6,6 +6,14 @@
 
 * '🐁'仅在我的配置下可用，并不通用
 
+## Android
+
+### apktool
+
+```
+apktool d <APK_FILE>
+```
+
 ## apt
 
 ### proxy
@@ -432,6 +440,12 @@ service linux start
 
 ## gcc
 
+### default -march
+
+```
+gcc -Q --help=target
+```
+
 ### inline asm
 
 No clobber, may segment fault!
@@ -540,6 +554,22 @@ gem5.opt configs/example/se.py --cmd <CMD>
 
 ## git
 
+### create Repos/*
+
+```bash
+# can use git update then
+git clone --mirror <URL>
+```
+
+### convert bare to mirror
+
+[SO](https://stackoverflow.com/questions/12350918)
+
+```bash
+git config remote.origin.fetch "+refs/*:refs/*" 
+git config remote.origin.mirror true
+```
+
 ### remote branches
 
 列举remote的分支
@@ -580,6 +610,15 @@ git clone -b <tag> --depth=1 <repo>
 
 ```bash
 git ls-remote --tags <repo>
+```
+
+### rebase interactive
+
+```bash
+# root commit
+git rebase -i --root
+# non-root commit
+git rebase -i <commits>
 ```
 
 ### server Codes
@@ -677,6 +716,14 @@ fold/collapse/expand
 <div style="text-align:right; font-size:3em;">2022.04.12</div>
 ```
 
+## icon design
+
+* figma
+* svgo
+* edit
+  * stroke="currentColor"
+  * move attrs to svg tag
+
 ## image/picture
 
 ### get dimension/size
@@ -695,6 +742,15 @@ Poppler/Cairo import (Huge size)
 ! # invert selection
 <Ctrl><Shift>R # resize canvas
 Extensions->Text->Replace Font
+```
+
+## jekyll
+
+```bash
+# first time run
+nix-shell -p bundler --run "bundle install"
+# serve
+nix-shell -p bundler -p jekyll --run "bundle exec jekyll serve -H 0.0.0.0 -P 4000"
 ```
 
 ## libreoffice
@@ -951,6 +1007,24 @@ nmap 192.168.1.0/24
 > select_network x
 ```
 
+### raspberrypi ubuntu netplan
+
+
+```yaml
+# /etc/netplan/50-cloud-init.yaml
+network:
+  version: 2
+  wifis:
+    renderer: networkd
+    wlan0:
+      access-points:
+        <name>:
+          password: <...>
+          hidden: true
+      dhcp4: true
+      optional: true
+```
+
 ## ocr
 
 ### tesseract
@@ -1003,6 +1077,20 @@ pandoc -D <FORMAT>
 
 ```bash
 --print-default-data-file=templates/styles.html
+```
+
+## parallel
+
+### home (tilde)
+
+write '~' to file `home`
+
+```bash
+parallel --tag ssh {1} ls {2}/Codes ::: myloongson55 myloongson56 myloongson57 myloongson58 :::: ./home
+```
+
+```bash
+parallel --tag ssh {1} ls \\~/Codes ::: myloongson55 myloongson56 myloongson57 myloongson58
 ```
 
 ## perl
@@ -1236,6 +1324,17 @@ cargo build --target=<TARGET> --release
 scons -c
 ```
 
+## scrcpy
+
+### otg mouse/keyboard
+
+[GH: barrier: Please make an Android client](https://github.com/debauchee/barrier/issues/1452)
+
+```bash
+# In this mode, adb (USB debugging) is not necessary
+scrcpy --window-width 100 --window-height 100 --otg -s DEVICEID
+```
+
 ## sed
 
 ### overview
@@ -1451,6 +1550,15 @@ WantedBy=default.target multi-user.target
 ExecStart=swapon /swapfile
 ```
 
+## tar
+
+### create directory
+
+```
+# NOTED: no ./ before dir !!!
+tar czf bin.tar.gz <dir>
+```
+
 ## tmux
 
 ### auto start tmux
@@ -1487,6 +1595,10 @@ cnnect to the same session.
 * `wine regedit /?`
 
 ## WSL
+
+### wslcompact
+
+https://github.com/okibcn/wslcompact
 
 ### shrink vdisk
 
@@ -1529,6 +1641,12 @@ DISPLAY=:2 <command>
 xrandr --output DP-1 --scale-from 2880x1800
 # Stop flicker
 xrandr --output eDP-1 --scale 0.9999x0.9999
+```
+
+### x0vncserver
+
+```bash
+x0vncserver -password <PSWD> -securitytypes=none -geometry 800x600+0+480 -FrameRate 10
 ```
 
 ## xdg
@@ -1778,6 +1896,19 @@ https://microsoft.github.io/pyright/#/configuration
 }
 ```
 
+### requirement syntax
+
+requirements.txt
+
+* [Requirement Specifiers](https://pip.pypa.io/en/stable/reference/requirement-specifiers/)
+  * [PEP 508](https://peps.python.org/pep-0508/)
+
+E.g.
+
+```python
+requests [security] >= 2.8.1, == 2.8.* ; python_version < "2.7"
+```
+
 ## python matpltlib
 
 ### pdf
@@ -1945,6 +2076,13 @@ c-w o ;same above
 ### filetype syntax bindings
 
 <$VIMRUNTIME>/filetype.vim
+
+### scrollbind
+
+```vim
+:set scrollbind
+:set noscrollbind
+```
 
 ### set filetype (nvim)
 
@@ -2300,6 +2438,14 @@ nix show-config
 }
 ```
 
+## nix daemon
+
+### proxy
+
+[Nix manual: Proxy Environment Variables](https://nixos.org/manual/nix/stable/installation/env-variables.html#proxy-environment-variables)
+
+`/etc/systemd/system/nix-daemon.service.d/override.conf`
+
 ## debug
 
 ### setup
@@ -2307,6 +2453,12 @@ nix show-config
 ```bash
 nix-shell
 . $stdenv/setup
+```
+
+### nix-build
+
+```bash
+nix-build -K <drv>
 ```
 
 ### nix-build
@@ -2390,6 +2542,14 @@ nix-build '<nixpkgs>' -A <pkg>
 ### cheatsheet
 
 [NixOS Wiki Cheatsheet](https://nixos.wiki/wiki/Cheatsheet)
+
+### disable gcc hardening in shell
+
+[SE: Disabling the security hardening options for a `nix-shell` environment](https://unix.stackexchange.com/questions/356232/disabling-the-security-hardening-options-for-a-nix-shell-environment)
+
+```bash
+export NIX_HARDENING_ENABLE=""
+```
 
 ### nix direnv
 
@@ -2831,6 +2991,25 @@ mrs x1, NZCV // get NZCV
 msr NZCV, x1 // set NZCV
 ```
 
+### page size (Manual)
+
+2021.armv8.pdf:
+
+* D5.2.7:
+  * granule & block size
+* D5.5.6
+  * The Contiguous bit
+
+### page size (Linux)
+
+`arch/arm64/mm/hugetlbpage.c`
+
+| Page Size | CONT PTE | PMD  | CONT PMD | PUD |
+|-----------|----------|------|----------|-----|
+| 4K        | 64K      | 2M   | 32M      | 1G  |
+| 16K       | 2M       | 32M  | 1G       |     |
+| 64K       | 2M       | 512M | 16G      |     |
+
 ### ldst align
 
 2021.armv8.pdf
@@ -3031,6 +3210,47 @@ popf  // set
 | SIB            | 1       | optional                          |
 | Displacement   | 1,2,4,8 | 8B Disp & 8B Imm mutual exclusive |
 | Immediate      | 1,2,4,8 | 8B Disp & 8B Imm mutual exclusive |
+
+### page size
+
+2020.amd64.pdf: Table 5-1
+
+* PAE: Physical-Address Extensions
+* PSE: Page-Size Extensions
+* PDPE:
+* PDE
+
+| Mode   | PAE | PSE | PDPE.PS | PDE.PS | Page Size | Max VA | Max PA |
+|--------|-----|-----|---------|--------|-----------|--------|--------|
+| Long   | 1   | -   | 0       | 0      | 4KB       | 64bit  | 52bit  |
+| Long   | 1   | -   | 0       | 1      | 2MB       | 64bit  | 52bit  |
+| Long   | 1   | -   | 1       | -      | 1GB       | 64bit  | 52bit  |
+| Legacy | 1   | -   | 0       | 0      | 4KB       | 32bit  | 52bit  |
+| Legacy | 1   | -   | 0       | 1      | 2MB       | 32bit  | 52bit  |
+| Legacy | 0   | 0   | 0       | -      | 4KB       | 32bit  | 32bit  |
+| Legacy | 0   | 1   | 0       | 0      | 4kB       | 32bit  | 32bit  |
+| Legacy | 0   | 1   | 0       | 1      | 4MB       | 32bit  | 40bit  |
+
+### mnemonic syntax
+
+2020.amd64.pdf: Volume 3: 2.5.1
+
+```
+        ADDPD xmm1, xmm2/mem128
+        ──┬── ──┬─  ───────┬───
+Mnemonic ─┘     │          │
+                └────────┐ │
+First Source Operand    ─┘ │
+and Destination Operand    │
+                           │
+Second Source Operand ─────┘
+```
+
+### opcode syntax
+
+2020.amd64.pdf: Volume 3: 2.5.2
+
+2018.intel64.pdf: Volume 2: 3.1.1.1
 
 ### modrm
 

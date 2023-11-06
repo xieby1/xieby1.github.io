@@ -6,7 +6,7 @@ while [[ ${OPTIND} -le $# ]]; do
     getopts "lhe" opt
     case "${opt}" in
     l|h)
-        echo "aarch64 riscv64 x86_64 18.04 20.04 22.04 22.10 23.04 latest -h -e"
+        echo "aarch64 riscv64 x86_64 16.04 18.04 20.04 22.04 22.10 23.04 latest -h -e"
         exit 0
     ;;
     e)
