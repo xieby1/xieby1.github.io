@@ -1,3 +1,10 @@
+<div style="text-align:right; font-size:3em;">2023.07.10</div>
+
+## 编译（ubuntu）
+
+* 改config
+*
+
 <div style="text-align:right; font-size:3em;">2022.11.17</div>
 
 ## 编译(NixOS)

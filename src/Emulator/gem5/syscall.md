@@ -94,7 +94,7 @@ TODO: In IEW the `SESyscallFault` will be invoke.
 
             ```cpp
             template <class OS>
-            SyscallReturn twriteFunc(SyscallDesc *desc, ThreadContext *tc, int tgt_fd, VPtr<> buf_ptr, int nbytes) {
+            SyscallReturn writeFunc(SyscallDesc *desc, ThreadContext *tc, int tgt_fd, VPtr<> buf_ptr, int nbytes) {
               ...
             }
             ```

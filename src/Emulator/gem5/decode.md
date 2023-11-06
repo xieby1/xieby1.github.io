@@ -206,7 +206,7 @@ Take `Inst::MOV(['Eb', 'Gb'],{})` for an example.
           };
           ```
 
-          `foldOBit` is initilized for every potential a/b/c/dh registers.
+          `foldOBit` is initialized for every potential a/b/c/dh registers.
           TODO: why not determine a/b/c/dh registers here?
 
         * src/arch/x86/insts/microop_args.hh:

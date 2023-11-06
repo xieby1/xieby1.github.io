@@ -26,7 +26,7 @@ while [[ ${OPTIND} -le $# ]]; do
     ;;
     esac
 done
-NAME=ubuntu-${ARCH}
+NAME=alpine-${ARCH}
 
 OPTS=(
     "-u root"
@@ -48,17 +48,13 @@ OPTS=(
 
     "-it"
     "$NAME:$VERSION"
-    "/bin/bash"
+    "/bin/sh"
 )
 
 # Pull image
 podman images ${NAME}:${VERSION} | grep ${NAME} &> /dev/null
 if [[ $? != 0 ]]; then
-    if [[ $ARCH == "riscv64" ]]; then
-        image_id=$(podman pull --arch ${ARCH} riscv64/ubuntu:$VERSION)
-    else
-        image_id=$(podman pull --arch ${ARCH} ubuntu:$VERSION)
-    fi
+        image_id=$(podman pull --arch ${ARCH} alpine:$VERSION)
     podman tag $image_id ${NAME}:${VERSION}
 fi
 

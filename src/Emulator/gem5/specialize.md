@@ -70,3 +70,9 @@ Available data size is defined in src/arch/x86/isa/macroop.isa: `getAllocator`
 | b | w | d | q | v      | z                    | dp          |
 |---|---|---|---|--------|----------------------|-------------|
 | 1 | 2 | 4 | 8 | OPSIZE | (OPSIZE==8)?4:OPSIZE | (rex_w?8:4) |
+
+### string specialization
+
+See `gem5/src/arch/x86/isa/formats/string.isa`
+
+`_E` for repe, `_N` for repne, e.g. `STOS_E_M`
