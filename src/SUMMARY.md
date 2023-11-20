@@ -504,6 +504,8 @@
   * [2009.static_timing_analysis.chadha.md](./SoC/2009.static_timing_analysis.chadha.md)
   * [2009.static_timing_analysis.chadha.note.md](./SoC/2009.static_timing_analysis.chadha.note.md)
   * [2020.soc_design_guide.chakravarthi.md](./SoC/2020.soc_design_guide.chakravarthi.md)
+  * [Chipyard]()
+    * [nixos.md](./SoC/Chipyard/nixos.md)
   * [FPGA]()
     * [iverilog.md](./SoC/FPGA/iverilog.md)
   * [HLS](./SoC/HLS/README.md)
