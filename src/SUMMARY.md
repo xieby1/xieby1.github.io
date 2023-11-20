@@ -243,6 +243,8 @@
 * [Distro]()
   * [JingOS.md](./Distro/JingOS.md)
   * [Nix]()
+* [Docs]()
+  * [文档和代码](./Docs/docs_and_codes.md)
 * [EPaper]()
   * [eink.md](./EPaper/eink.md)
   * [laptop.md](./EPaper/laptop.md)
