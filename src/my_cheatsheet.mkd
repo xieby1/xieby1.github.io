@@ -442,8 +442,14 @@ service linux start
 
 ### default -march
 
-```
+```bash
 gcc -Q --help=target
+```
+
+### native -march
+
+```bash
+gcc -march=native -Q --help=target
 ```
 
 ### inline asm
@@ -2436,6 +2442,14 @@ nix show-config
 {
   allowUnfree = true;
 }
+```
+
+## env
+
+### query out path
+
+```bash
+nix-env -q --out-path
 ```
 
 ## nix daemon
