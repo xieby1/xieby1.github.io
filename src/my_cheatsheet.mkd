@@ -2576,6 +2576,12 @@ direnv allow
 
 `pkgs/desktops/gnome/extensions/extensions.json`
 
+### nurl
+
+```bash
+nurl [OPTIONS] [URL] [REV]
+```
+
 ### prefetch url
 
 ```bash

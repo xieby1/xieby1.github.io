@@ -17,7 +17,7 @@
   </style>
   <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -862,6 +862,7 @@ shell</a></li>
 <li><a href="#nix-direnv" id="toc-nix-direnv">nix direnv</a></li>
 <li><a href="#gnome-extension" id="toc-gnome-extension">gnome
 extension</a></li>
+<li><a href="#nurl" id="toc-nurl">nurl</a></li>
 <li><a href="#prefetch-url" id="toc-prefetch-url">prefetch url</a></li>
 <li><a href="#prefetch-github" id="toc-prefetch-github">prefetch
 github</a></li>
@@ -1650,20 +1651,20 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb75-1"><a href=
 <h3>detail</h3>
 <p>fold/collapse/expand</p>
 <div class="sourceCode" id="cb76"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;details&gt;</span></span>
-<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;summary&gt;</span>Details<span class="kw">&lt;/summary&gt;</span></span>
+class="sourceCode html"><code class="sourceCode html"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">details</span><span class="dt">&gt;</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">summary</span><span class="dt">&gt;</span>Details<span class="dt">&lt;/</span><span class="kw">summary</span><span class="dt">&gt;</span></span>
 <span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>  miao</span>
-<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/details&gt;</span></span></code></pre></div>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">details</span><span class="dt">&gt;</span></span></code></pre></div>
 </section>
 <section id="span-color" class="level3">
 <h3>span color</h3>
 <div class="sourceCode" id="cb77"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;span</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;background: red; color: white; font-weight: bold;&quot;</span><span class="kw">&gt;</span></span></code></pre></div>
+class="sourceCode html"><code class="sourceCode html"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;background: red; color: white; font-weight: bold;&quot;</span><span class="dt">&gt;</span></span></code></pre></div>
 </section>
 <section id="time-stamp" class="level3">
 <h3>time stamp</h3>
 <div class="sourceCode" id="cb78"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">style</span><span class="ot">=</span><span class="st">&quot;text-align:right; font-size:3em;&quot;</span><span class="kw">&gt;</span>2022.04.12<span class="kw">&lt;/div&gt;</span></span></code></pre></div>
+class="sourceCode html"><code class="sourceCode html"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;text-align:right; font-size:3em;&quot;</span><span class="dt">&gt;</span>2022.04.12<span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code></pre></div>
 </section>
 </section>
 <section id="icon-design" class="level2">
@@ -1801,7 +1802,7 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb91-1"><a href=
 <div class="sourceCode" id="cb92"><pre
 class="sourceCode makefile"><code class="sourceCode makefile"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a rule</span></span>
 <span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="dv">target … :</span><span class="dt"> prerequisites …</span></span>
-<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a>    recipe</span>
+<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a><span class="er">    </span>recipe</span>
 <span id="cb92-4"><a href="#cb92-4" aria-hidden="true" tabindex="-1"></a>    …</span></code></pre></div>
 </section>
 <section id="all-executables" class="level3">
@@ -1815,7 +1816,7 @@ class="sourceCode makefile"><code class="sourceCode makefile"><span id="cb93-1">
 <p><a href="https://stackoverflow.com/questions/12528637/">SO: How do I
 execute each command in a list?</a></p>
 <div class="sourceCode" id="cb94"><pre
-class="sourceCode makefile"><code class="sourceCode makefile"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="kw">define</span> \n</span>
+class="sourceCode makefile"><code class="sourceCode makefile"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="kw">define</span> <span class="dt">\n</span></span>
 <span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a><span class="kw">endef</span></span>
@@ -1833,7 +1834,7 @@ href="https://www.gnu.org/software/make/manual/html_node/Multiple-Targets.html#M
 manual: multiple targets</a></p>
 <div class="sourceCode" id="cb96"><pre
 class="sourceCode makefile"><code class="sourceCode makefile"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="dv">foo bar biz &amp;:</span><span class="dt"> baz boz</span></span>
-<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>        echo <span class="ch">$^</span> &gt; foo</span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="er">        </span>echo <span class="ch">$^</span> &gt; foo</span>
 <span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a>        echo <span class="ch">$^</span> &gt; bar</span>
 <span id="cb96-4"><a href="#cb96-4" aria-hidden="true" tabindex="-1"></a>        echo <span class="ch">$^</span> &gt; biz</span></code></pre></div>
 </section>
@@ -1843,14 +1844,14 @@ class="sourceCode makefile"><code class="sourceCode makefile"><span id="cb96-1">
 <div class="sourceCode" id="cb97"><pre
 class="sourceCode makefile"><code class="sourceCode makefile"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="kw">include</span> hashdeps.mk</span>
 <span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="dv">combined.txt:</span><span class="dt"> </span><span class="ch">$(</span><span class="kw">call</span><span class="st"> hash_deps</span><span class="kw">,</span><span class="st">a.txt b.txt</span><span class="ch">)</span></span>
-<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a>    echo <span class="st">&quot;Concatenating files&quot;</span></span>
+<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a><span class="er">    </span>echo <span class="st">&quot;Concatenating files&quot;</span></span>
 <span id="cb97-4"><a href="#cb97-4" aria-hidden="true" tabindex="-1"></a>    cat <span class="ch">$(</span><span class="kw">call</span><span class="st"> unhash_deps</span><span class="kw">,</span><span class="ch">$^)</span> &gt; <span class="ch">$@</span></span></code></pre></div>
 </section>
 <section id="implicit-rule" class="level3">
 <h3>implicit rule</h3>
 <div class="sourceCode" id="cb98"><pre
 class="sourceCode makefile"><code class="sourceCode makefile"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="dv">%:</span><span class="dt">%.c</span></span>
-<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>    <span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> <span class="ch">$&lt;</span> -o <span class="ch">$@</span></span></code></pre></div>
+<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="er">    </span><span class="ch">$(</span><span class="dt">CC</span><span class="ch">)</span> <span class="ch">$&lt;</span> -o <span class="ch">$@</span></span></code></pre></div>
 </section>
 <section id="grouped-target" class="level3">
 <h3>grouped target</h3>
@@ -2264,9 +2265,9 @@ right click: eraser</code></pre>
 <section id="fragments-order" class="level3">
 <h3>fragments order</h3>
 <div class="sourceCode" id="cb129"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;fragment&quot;</span> <span class="er">data-fragment-index</span><span class="ot">=</span><span class="st">&quot;3&quot;</span><span class="kw">&gt;</span>Appears last<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;fragment&quot;</span> <span class="er">data-fragment-index</span><span class="ot">=</span><span class="st">&quot;1&quot;</span><span class="kw">&gt;</span>Appears first<span class="kw">&lt;/p&gt;</span></span>
-<span id="cb129-3"><a href="#cb129-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">class</span><span class="ot">=</span><span class="st">&quot;fragment&quot;</span> <span class="er">data-fragment-index</span><span class="ot">=</span><span class="st">&quot;2&quot;</span><span class="kw">&gt;</span>Appears second<span class="kw">&lt;/p&gt;</span></span></code></pre></div>
+class="sourceCode html"><code class="sourceCode html"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;fragment&quot;</span><span class="ot"> data-fragment-index</span><span class="op">=</span><span class="st">&quot;3&quot;</span><span class="dt">&gt;</span>Appears last<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;fragment&quot;</span><span class="ot"> data-fragment-index</span><span class="op">=</span><span class="st">&quot;1&quot;</span><span class="dt">&gt;</span>Appears first<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb129-3"><a href="#cb129-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;fragment&quot;</span><span class="ot"> data-fragment-index</span><span class="op">=</span><span class="st">&quot;2&quot;</span><span class="dt">&gt;</span>Appears second<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code></pre></div>
 </section>
 <section id="print-pdf" class="level3">
 <h3>print pdf</h3>
@@ -2275,7 +2276,7 @@ class="sourceCode html"><code class="sourceCode html"><span id="cb129-1"><a href
 <section id="toc-style" class="level3">
 <h3>toc style</h3>
 <div class="sourceCode" id="cb130"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;style&gt;</span>nav {<span class="fu">...</span>}&lt;style<span class="op">&gt;</span></span></code></pre></div>
+class="sourceCode html"><code class="sourceCode html"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span>nav {<span class="fu">...</span>}&lt;style<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="todo-yaml_metadata_block" class="level3">
 <h3>TODO: yaml_metadata_block</h3>
@@ -3438,82 +3439,87 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb263-1"><a href
 <h3>gnome extension</h3>
 <p><code>pkgs/desktops/gnome/extensions/extensions.json</code></p>
 </section>
+<section id="nurl" class="level3">
+<h3>nurl</h3>
+<div class="sourceCode" id="cb264"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb264-1"><a href="#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nurl</span> <span class="pp">[</span><span class="ss">OPTIONS</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">URL</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">REV</span><span class="pp">]</span></span></code></pre></div>
+</section>
 <section id="prefetch-url" class="level3">
 <h3>prefetch url</h3>
-<div class="sourceCode" id="cb264"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb264-1"><a href="#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-prefetch-url</span></span></code></pre></div>
+<div class="sourceCode" id="cb265"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb265-1"><a href="#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-prefetch-url</span></span></code></pre></div>
 </section>
 <section id="prefetch-github" class="level3">
 <h3>prefetch github</h3>
-<div class="sourceCode" id="cb265"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb265-1"><a href="#cb265-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-prefetch-url</span> <span class="at">--unpack</span> <span class="dt">\</span></span>
-<span id="cb265-2"><a href="#cb265-2" aria-hidden="true" tabindex="-1"></a>https://github.com/<span class="op">&lt;</span>owner<span class="op">&gt;</span>/</span>
-<span id="cb265-3"><a href="#cb265-3" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>repo<span class="op">&gt;</span>/archive/<span class="op">&lt;</span>rev<span class="op">&gt;</span>.tar.gz</span></code></pre></div>
+<div class="sourceCode" id="cb266"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb266-1"><a href="#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-prefetch-url</span> <span class="at">--unpack</span> <span class="dt">\</span></span>
+<span id="cb266-2"><a href="#cb266-2" aria-hidden="true" tabindex="-1"></a>https://github.com/<span class="op">&lt;</span>owner<span class="op">&gt;</span>/</span>
+<span id="cb266-3"><a href="#cb266-3" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>repo<span class="op">&gt;</span>/archive/<span class="op">&lt;</span>rev<span class="op">&gt;</span>.tar.gz</span></code></pre></div>
 </section>
 <section id="prefetch-sha256" class="level3">
 <h3>prefetch sha256</h3>
 <p><a href="https://github.com/NixOS/nix/issues/1880">GH</a></p>
-<div class="sourceCode" id="cb266"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb266-1"><a href="#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-prefetch-url</span> <span class="at">--unpack</span></span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb267-1"><a href="#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-prefetch-url</span> <span class="at">--unpack</span></span></code></pre></div>
 </section>
 <section id="sha256" class="level3">
 <h3>sha256</h3>
-<div class="sourceCode" id="cb267"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb267-1"><a href="#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-hash</span> <span class="at">--type</span> sha256 <span class="dt">\</span></span>
-<span id="cb267-2"><a href="#cb267-2" aria-hidden="true" tabindex="-1"></a>--flat <span class="at">--base32</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb268"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb268-1"><a href="#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-hash</span> <span class="at">--type</span> sha256 <span class="dt">\</span></span>
+<span id="cb268-2"><a href="#cb268-2" aria-hidden="true" tabindex="-1"></a>--flat <span class="at">--base32</span> <span class="op">&lt;</span>file<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="size" class="level3">
 <h3>size</h3>
-<div class="sourceCode" id="cb268"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb268-1"><a href="#cb268-1" aria-hidden="true" tabindex="-1"></a><span class="co"># man nix3-path-info</span></span>
-<span id="cb268-2"><a href="#cb268-2" aria-hidden="true" tabindex="-1"></a><span class="co"># closure-size</span></span>
-<span id="cb268-3"><a href="#cb268-3" aria-hidden="true" tabindex="-1"></a><span class="ex">nix</span> path-info <span class="at">-Sh</span> <span class="op">&lt;</span>path<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb269"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb269-1"><a href="#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="co"># man nix3-path-info</span></span>
+<span id="cb269-2"><a href="#cb269-2" aria-hidden="true" tabindex="-1"></a><span class="co"># closure-size</span></span>
+<span id="cb269-3"><a href="#cb269-3" aria-hidden="true" tabindex="-1"></a><span class="ex">nix</span> path-info <span class="at">-Sh</span> <span class="op">&lt;</span>path<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="show-drv" class="level3">
 <h3>show drv</h3>
-<div class="sourceCode" id="cb269"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb269-1"><a href="#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix</span> show-derivation <span class="op">&lt;</span>.drv<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb270"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb270-1"><a href="#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix</span> show-derivation <span class="op">&lt;</span>.drv<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="repl" class="level3">
 <h3>repl</h3>
-<div class="sourceCode" id="cb270"><pre
-class="sourceCode nix"><code class="sourceCode nix"><span id="cb270-1"><a href="#cb270-1" aria-hidden="true" tabindex="-1"></a>pkgs = <span class="bu">import</span> &lt;nixpkgs&gt; <span class="op">{}</span></span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre
+class="sourceCode nix"><code class="sourceCode nix"><span id="cb271-1"><a href="#cb271-1" aria-hidden="true" tabindex="-1"></a>pkgs = <span class="bu">import</span> &lt;nixpkgs&gt; <span class="op">{}</span></span></code></pre></div>
 </section>
 <section id="old-generations" class="level3">
 <h3>old generations</h3>
 <p><a href="https://nixos.wiki/wiki/Storage_optimization">Nix Wiki:
 Storage Opt</a></p>
-<div class="sourceCode" id="cb271"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb271-1"><a href="#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nix-env <span class="at">-p</span> /nix/var/nix/profiles/system <span class="at">--list-generations</span></span>
-<span id="cb271-2"><a href="#cb271-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nix-collect-garbage <span class="at">-d</span></span>
-<span id="cb271-3"><a href="#cb271-3" aria-hidden="true" tabindex="-1"></a><span class="co"># User Generations (Home-Manager)</span></span>
-<span id="cb271-4"><a href="#cb271-4" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-collect-garbage</span> <span class="at">-d</span></span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb272-1"><a href="#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nix-env <span class="at">-p</span> /nix/var/nix/profiles/system <span class="at">--list-generations</span></span>
+<span id="cb272-2"><a href="#cb272-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nix-collect-garbage <span class="at">-d</span></span>
+<span id="cb272-3"><a href="#cb272-3" aria-hidden="true" tabindex="-1"></a><span class="co"># User Generations (Home-Manager)</span></span>
+<span id="cb272-4"><a href="#cb272-4" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-collect-garbage</span> <span class="at">-d</span></span></code></pre></div>
 </section>
 <section id="path" class="level3">
 <h3>path</h3>
 <p><a
 href="https://nixos.org/guides/nix-pills/nix-search-paths.html">Nix
 Pills: search Paths</a></p>
-<div class="sourceCode" id="cb272"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb272-1"><a href="#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-instantiate</span> <span class="at">--eval</span> <span class="at">-E</span> <span class="st">&quot;&lt;path&gt;&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb273-1"><a href="#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-instantiate</span> <span class="at">--eval</span> <span class="at">-E</span> <span class="st">&quot;&lt;path&gt;&quot;</span></span></code></pre></div>
 </section>
 <section id="version" class="level3">
 <h3>version</h3>
-<div class="sourceCode" id="cb273"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb273-1"><a href="#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-version</span> <span class="at">--hash</span></span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb274-1"><a href="#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-version</span> <span class="at">--hash</span></span></code></pre></div>
 </section>
 <section id="nix-on-droid-sshd" class="level3">
 <h3>nix-on-droid sshd</h3>
-<div class="sourceCode" id="cb274"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb274-1"><a href="#cb274-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sshd-start</span></span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb275-1"><a href="#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sshd-start</span></span></code></pre></div>
 </section>
 </section>
 <section id="option" class="level2">
 <h2>option</h2>
 <section id="home-manager-option" class="level3">
 <h3>home-manager option</h3>
-<div class="sourceCode" id="cb275"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb275-1"><a href="#cb275-1" aria-hidden="true" tabindex="-1"></a><span class="ex">home-manager</span> option <span class="op">&lt;</span>OPTION<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb276-1"><a href="#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="ex">home-manager</span> option <span class="op">&lt;</span>OPTION<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="nixos-option" class="level3">
 <h3>nixos-option</h3>
@@ -3711,13 +3717,13 @@ manual: advanced-attrs</a></p>
 <h2>lang</h2>
 <section id="indented-string" class="level3">
 <h3>indented string</h3>
-<div class="sourceCode" id="cb276"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb276-1"><a href="#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;&#39;</span></span>
-<span id="cb276-2"><a href="#cb276-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># escape ${</span></span>
-<span id="cb276-3"><a href="#cb276-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;&#39;</span><span class="va">${bash_var}</span></span>
-<span id="cb276-4"><a href="#cb276-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># escape &#39;&#39;</span></span>
-<span id="cb276-5"><a href="#cb276-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;&#39;&#39;</span></span>
-<span id="cb276-6"><a href="#cb276-6" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb277"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb277-1"><a href="#cb277-1" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;&#39;</span></span>
+<span id="cb277-2"><a href="#cb277-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># escape ${</span></span>
+<span id="cb277-3"><a href="#cb277-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;&#39;</span><span class="va">${bash_var}</span></span>
+<span id="cb277-4"><a href="#cb277-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># escape &#39;&#39;</span></span>
+<span id="cb277-5"><a href="#cb277-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb277-6"><a href="#cb277-6" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;&#39;</span></span></code></pre></div>
 </section>
 <section id="section" class="level3">
 <h3><nixpkgs></h3>
@@ -3736,32 +3742,32 @@ path</p>
 <p><a
 href="https://stackoverflow.com/questions/47650857/nixos-module-imports-with-arguments">SO:
 import module with</a></p>
-<div class="sourceCode" id="cb277"><pre
-class="sourceCode nix"><code class="sourceCode nix"><span id="cb277-1"><a href="#cb277-1" aria-hidden="true" tabindex="-1"></a><span class="co"># foobar.nix</span></span>
-<span id="cb277-2"><a href="#cb277-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span><span class="va">lib</span><span class="op">,</span> <span class="va">withFoo</span> <span class="op">?</span> <span class="st">&quot;bar&quot;</span><span class="op">,</span> <span class="op">...}</span>:</span>
-<span id="cb277-3"><a href="#cb277-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span><span class="co"># ...}</span></span>
-<span id="cb277-4"><a href="#cb277-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb277-5"><a href="#cb277-5" aria-hidden="true" tabindex="-1"></a><span class="co"># configuration.nix</span></span>
-<span id="cb277-6"><a href="#cb277-6" aria-hidden="true" tabindex="-1"></a><span class="va">args</span>@{ <span class="op">...</span> <span class="op">}</span>:</span>
-<span id="cb277-7"><a href="#cb277-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span><span class="va">imports</span> <span class="op">=</span> <span class="op">[(</span></span>
-<span id="cb277-8"><a href="#cb277-8" aria-hidden="true" tabindex="-1"></a>  <span class="bu">import</span> <span class="ss">./foobar.nix</span> <span class="op">(</span>args <span class="op">//</span> <span class="op">{</span> <span class="va">withFoo</span> <span class="op">=</span> <span class="st">&quot;baz&quot;</span><span class="op">;</span> <span class="op">})</span></span>
-<span id="cb277-9"><a href="#cb277-9" aria-hidden="true" tabindex="-1"></a><span class="op">)];}</span></span></code></pre></div>
+<div class="sourceCode" id="cb278"><pre
+class="sourceCode nix"><code class="sourceCode nix"><span id="cb278-1"><a href="#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="co"># foobar.nix</span></span>
+<span id="cb278-2"><a href="#cb278-2" aria-hidden="true" tabindex="-1"></a><span class="op">{</span><span class="va">lib</span><span class="op">,</span> <span class="va">withFoo</span> <span class="op">?</span> <span class="st">&quot;bar&quot;</span><span class="op">,</span> <span class="op">...}</span>:</span>
+<span id="cb278-3"><a href="#cb278-3" aria-hidden="true" tabindex="-1"></a><span class="op">{</span><span class="co"># ...}</span></span>
+<span id="cb278-4"><a href="#cb278-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb278-5"><a href="#cb278-5" aria-hidden="true" tabindex="-1"></a><span class="co"># configuration.nix</span></span>
+<span id="cb278-6"><a href="#cb278-6" aria-hidden="true" tabindex="-1"></a><span class="va">args</span>@{ <span class="op">...</span> <span class="op">}</span>:</span>
+<span id="cb278-7"><a href="#cb278-7" aria-hidden="true" tabindex="-1"></a><span class="op">{</span><span class="va">imports</span> <span class="op">=</span> <span class="op">[(</span></span>
+<span id="cb278-8"><a href="#cb278-8" aria-hidden="true" tabindex="-1"></a>  <span class="bu">import</span> <span class="ss">./foobar.nix</span> <span class="op">(</span>args <span class="op">//</span> <span class="op">{</span> <span class="va">withFoo</span> <span class="op">=</span> <span class="st">&quot;baz&quot;</span><span class="op">;</span> <span class="op">})</span></span>
+<span id="cb278-9"><a href="#cb278-9" aria-hidden="true" tabindex="-1"></a><span class="op">)];}</span></span></code></pre></div>
 </section>
 </section>
 <section id="nixos-1" class="level2">
 <h2>nixos</h2>
 <section id="list-build-generations" class="level3">
 <h3>list build-generations</h3>
-<div class="sourceCode" id="cb278"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb278-1"><a href="#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nix-env <span class="at">-p</span> /nix/var/nix/profiles/system <span class="at">--list-generations</span></span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb279-1"><a href="#cb279-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> nix-env <span class="at">-p</span> /nix/var/nix/profiles/system <span class="at">--list-generations</span></span></code></pre></div>
 </section>
 </section>
 <section id="nix-shell" class="level2">
 <h2>nix-shell</h2>
 <section id="build-env" class="level3">
 <h3>build env</h3>
-<div class="sourceCode" id="cb279"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb279-1"><a href="#cb279-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-shell</span> <span class="st">&#39;&lt;nixpkgs&gt;&#39;</span> <span class="at">-A</span> <span class="op">&lt;</span>pkg<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb280"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb280-1"><a href="#cb280-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-shell</span> <span class="st">&#39;&lt;nixpkgs&gt;&#39;</span> <span class="at">-A</span> <span class="op">&lt;</span>pkg<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="direnv" class="level3">
 <h3>direnv</h3>
@@ -3775,8 +3781,8 @@ fi</code></pre>
 </section>
 <section id="patchshebangs" class="level3">
 <h3>patchShebangs</h3>
-<div class="sourceCode" id="cb282"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb282-1"><a href="#cb282-1" aria-hidden="true" tabindex="-1"></a><span class="ex">patchShebangs</span> <span class="op">&lt;</span>path<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb283-1"><a href="#cb283-1" aria-hidden="true" tabindex="-1"></a><span class="ex">patchShebangs</span> <span class="op">&lt;</span>path<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="non-interp-shebang" class="level3">
 <h3>non-interp shebang</h3>
@@ -3786,19 +3792,19 @@ href="https://discourse.nixos.org/t/c-u-r-s-e-d-n-i-x/12417/">cursed.nix</a></p>
 interp mode of nix-shell is not triggered!</p>
 <p>Therefore, I change <code>-v</code> to <code>--keep miao</code></p>
 <p>Why it works?</p>
-<div class="sourceCode" id="cb283"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb283-1"><a href="#cb283-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env -S nix-shell --keep miao</span></span></code></pre></div>
+<div class="sourceCode" id="cb284"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb284-1"><a href="#cb284-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/usr/bin/env -S nix-shell --keep miao</span></span></code></pre></div>
 </section>
 </section>
 <section id="pkg" class="level2">
 <h2>pkg</h2>
 <section id="bundle" class="level3">
 <h3>bundle</h3>
-<div class="sourceCode" id="cb284"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb284-1"><a href="#cb284-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nix built-in</span></span>
-<span id="cb284-2"><a href="#cb284-2" aria-hidden="true" tabindex="-1"></a><span class="ex">nix</span> bundle</span>
-<span id="cb284-3"><a href="#cb284-3" aria-hidden="true" tabindex="-1"></a><span class="co"># github 465 start</span></span>
-<span id="cb284-4"><a href="#cb284-4" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-bundle</span></span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb285-1"><a href="#cb285-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nix built-in</span></span>
+<span id="cb285-2"><a href="#cb285-2" aria-hidden="true" tabindex="-1"></a><span class="ex">nix</span> bundle</span>
+<span id="cb285-3"><a href="#cb285-3" aria-hidden="true" tabindex="-1"></a><span class="co"># github 465 start</span></span>
+<span id="cb285-4"><a href="#cb285-4" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-bundle</span></span></code></pre></div>
 </section>
 <section id="dependency-2" class="level3">
 <h3>dependency</h3>
@@ -3813,23 +3819,23 @@ nix-store --query --references &lt;/nix/store/path&gt;</code></pre>
 </section>
 <section id="nix-tree" class="level3">
 <h3>nix-tree</h3>
-<div class="sourceCode" id="cb286"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb286-1"><a href="#cb286-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-tree</span> <span class="op">&lt;</span>/nix/store/path<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb287-1"><a href="#cb287-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-tree</span> <span class="op">&lt;</span>/nix/store/path<span class="op">&gt;</span></span></code></pre></div>
 </section>
 <section id="not-in-nixpkgs" class="level3">
 <h3>not in nixpkgs</h3>
-<div class="sourceCode" id="cb287"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb287-1"><a href="#cb287-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-shell</span> <span class="at">-E</span> <span class="st">&quot;with import &lt;nixpkgs&gt; {}; callPackage ./default.nix {}&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb288"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb288-1"><a href="#cb288-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-shell</span> <span class="at">-E</span> <span class="st">&quot;with import &lt;nixpkgs&gt; {}; callPackage ./default.nix {}&quot;</span></span></code></pre></div>
 </section>
 <section id="priority" class="level3">
 <h3>priority</h3>
-<div class="sourceCode" id="cb288"><pre
-class="sourceCode nix"><code class="sourceCode nix"><span id="cb288-1"><a href="#cb288-1" aria-hidden="true" tabindex="-1"></a>lib.lowPrio &lt;pkg&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre
+class="sourceCode nix"><code class="sourceCode nix"><span id="cb289-1"><a href="#cb289-1" aria-hidden="true" tabindex="-1"></a>lib.lowPrio &lt;pkg&gt;</span></code></pre></div>
 </section>
 <section id="search-file" class="level3">
 <h3>search file</h3>
-<div class="sourceCode" id="cb289"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb289-1"><a href="#cb289-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-locate</span> <span class="st">&#39;bin/hello&#39;</span></span></code></pre></div>
+<div class="sourceCode" id="cb290"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb290-1"><a href="#cb290-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-locate</span> <span class="st">&#39;bin/hello&#39;</span></span></code></pre></div>
 </section>
 </section>
 <section id="pkgs-1" class="level2">
@@ -3860,21 +3866,21 @@ pkgs.zlib.static</code></pre>
 <h2>repl</h2>
 <section id="help" class="level3">
 <h3>help</h3>
-<div class="sourceCode" id="cb293"><pre
-class="sourceCode nix"><code class="sourceCode nix"><span id="cb293-1"><a href="#cb293-1" aria-hidden="true" tabindex="-1"></a>:<span class="op">?</span></span></code></pre></div>
+<div class="sourceCode" id="cb294"><pre
+class="sourceCode nix"><code class="sourceCode nix"><span id="cb294-1"><a href="#cb294-1" aria-hidden="true" tabindex="-1"></a>:<span class="op">?</span></span></code></pre></div>
 </section>
 <section id="open-editor" class="level3">
 <h3>open editor</h3>
-<div class="sourceCode" id="cb294"><pre
-class="sourceCode nix"><code class="sourceCode nix"><span id="cb294-1"><a href="#cb294-1" aria-hidden="true" tabindex="-1"></a>:e &lt;expr&gt;</span></code></pre></div>
+<div class="sourceCode" id="cb295"><pre
+class="sourceCode nix"><code class="sourceCode nix"><span id="cb295-1"><a href="#cb295-1" aria-hidden="true" tabindex="-1"></a>:e &lt;expr&gt;</span></code></pre></div>
 </section>
 <section id="home-manager-1" class="level3">
 <h3>home-manager</h3>
 <p>refers to <a
 href="https://gist.github.com/573/c06ccea910abcc8f9255cb8f3ace3e86">nix
 repl home.nix config</a></p>
-<div class="sourceCode" id="cb295"><pre
-class="sourceCode nix"><code class="sourceCode nix"><span id="cb295-1"><a href="#cb295-1" aria-hidden="true" tabindex="-1"></a>hm = <span class="bu">import</span> &lt;<span class="ss">home-manager/modules</span>&gt; <span class="op">{</span> <span class="va">configuration</span> <span class="op">=</span> ~<span class="ss">/.config/nixpkgs/home.nix</span><span class="op">;</span> <span class="va">pkgs</span> <span class="op">=</span> <span class="bu">import</span> &lt;nixpkgs&gt; <span class="op">{};</span> <span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb296"><pre
+class="sourceCode nix"><code class="sourceCode nix"><span id="cb296-1"><a href="#cb296-1" aria-hidden="true" tabindex="-1"></a>hm = <span class="bu">import</span> &lt;<span class="ss">home-manager/modules</span>&gt; <span class="op">{</span> <span class="va">configuration</span> <span class="op">=</span> ~<span class="ss">/.config/nixpkgs/home.nix</span><span class="op">;</span> <span class="va">pkgs</span> <span class="op">=</span> <span class="bu">import</span> &lt;nixpkgs&gt; <span class="op">{};</span> <span class="op">}</span></span></code></pre></div>
 </section>
 </section>
 <section id="usage" class="level2">
@@ -3882,22 +3888,22 @@ class="sourceCode nix"><code class="sourceCode nix"><span id="cb295-1"><a href="
 <section id="musl-libc" class="level3">
 <h3>musl libc</h3>
 <p>Support -static</p>
-<div class="sourceCode" id="cb296"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb296-1"><a href="#cb296-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-shell</span> <span class="at">-p</span> pkgsCross.musl64.stdenv.cc</span>
-<span id="cb296-2"><a href="#cb296-2" aria-hidden="true" tabindex="-1"></a><span class="ex">x86_64-unknown-linux-musl-gcc</span> <span class="at">-static</span> hello.c</span></code></pre></div>
+<div class="sourceCode" id="cb297"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb297-1"><a href="#cb297-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-shell</span> <span class="at">-p</span> pkgsCross.musl64.stdenv.cc</span>
+<span id="cb297-2"><a href="#cb297-2" aria-hidden="true" tabindex="-1"></a><span class="ex">x86_64-unknown-linux-musl-gcc</span> <span class="at">-static</span> hello.c</span></code></pre></div>
 </section>
 <section id="static-compile" class="level3">
 <h3>static compile</h3>
 <p>Nix currently use musl-gcc</p>
-<div class="sourceCode" id="cb297"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb297-1"><a href="#cb297-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-shell</span> <span class="at">-p</span> pkgsStatic.stdenv.cc</span>
-<span id="cb297-2"><a href="#cb297-2" aria-hidden="true" tabindex="-1"></a><span class="ex">x86_64-unknown-linux-musl-gcc</span> <span class="at">-static</span> hello.c</span></code></pre></div>
+<div class="sourceCode" id="cb298"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb298-1"><a href="#cb298-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-shell</span> <span class="at">-p</span> pkgsStatic.stdenv.cc</span>
+<span id="cb298-2"><a href="#cb298-2" aria-hidden="true" tabindex="-1"></a><span class="ex">x86_64-unknown-linux-musl-gcc</span> <span class="at">-static</span> hello.c</span></code></pre></div>
 </section>
 <section id="aarch64-cross" class="level3">
 <h3>aarch64 cross</h3>
-<div class="sourceCode" id="cb298"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb298-1"><a href="#cb298-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-shell</span> <span class="at">-p</span> pkgsCross.aarch64-multiplatform.stdenv.cc</span>
-<span id="cb298-2"><a href="#cb298-2" aria-hidden="true" tabindex="-1"></a><span class="ex">aarch64-unknown-linux-gnu-gcc</span></span></code></pre></div>
+<div class="sourceCode" id="cb299"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb299-1"><a href="#cb299-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nix-shell</span> <span class="at">-p</span> pkgsCross.aarch64-multiplatform.stdenv.cc</span>
+<span id="cb299-2"><a href="#cb299-2" aria-hidden="true" tabindex="-1"></a><span class="ex">aarch64-unknown-linux-gnu-gcc</span></span></code></pre></div>
 </section>
 </section>
 </section>
