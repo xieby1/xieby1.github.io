@@ -29,3 +29,19 @@ src/Benchmarks/my_spec2000.html: ~/Documents/Tech/Benchmarks/spec2000.xlsx
 	./scripts/genExcel.sh $< $@
 
 miao:
+
+clean:
+	find src/ -maxdepth 1 \
+		! -wholename src/ \
+		! -wholename src/fonts \
+		! -wholename src/abbreviations.md \
+		! -wholename src/cheatsheet.md \
+		! -wholename src/README.md \
+		! -wholename src/scripts \
+		! -wholename src/Benchmarks \
+		-exec rm -rf "{}" \;
+	find src/scripts/ -maxdepth 1 \
+		! -wholename src/scripts/ \
+		! -wholename src/scripts/foot.html \
+		-exec rm -rf "{}" \;
+	rm -f src/Benchmarks/*.html
