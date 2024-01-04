@@ -17,7 +17,7 @@ echo "# Summary"
 echo
 echo "* [Welcome](./README.md)"
 echo "* [Essays](./Essays.md)"
-echo "* [abbreviations](./abbreviations.md)"
+echo "* [Abbreviations](./abbreviations.md)"
 echo
 echo "# xieby1's notes"
 echo

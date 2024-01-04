@@ -2,7 +2,7 @@ all: cli gui
 
 cli: src/SUMMARY.md src/scripts/README.md
 
-src/SUMMARY.md: miao
+src/SUMMARY.md: miao src/scripts/README.md
 	rsync -r --exclude-from ~/Documents/Tech/rsync_exclude ~/Documents/Tech/ src/
 	./scripts/genSummary.sh > $@
 
@@ -36,6 +36,7 @@ clean:
 		! -wholename src/fonts \
 		! -wholename src/abbreviations.md \
 		! -wholename src/cheatsheet.md \
+		! -wholename src/Essays.md \
 		! -wholename src/README.md \
 		! -wholename src/scripts \
 		! -wholename src/Benchmarks \

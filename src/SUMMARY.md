@@ -2,7 +2,7 @@
 
 * [Welcome](./README.md)
 * [Essays](./Essays.md)
-* [abbreviations](./abbreviations.md)
+* [Abbreviations](./abbreviations.md)
 
 # xieby1's notes
 
@@ -365,6 +365,7 @@
   * [2011.llvm_sim.helmstetter.imecs.6.md](./JIT/2011.llvm_sim.helmstetter.imecs.6.md)
   * [dynarmic]()
   * [opt]()
+* [Journals](./Journals.md)
 * [Kernel](./Kernel/README.md)
   * [2020_9_9.prepare_new_feat.edge.lwn-lpc.md](./Kernel/2020_9_9.prepare_new_feat.edge.lwn-lpc.md)
   * [Driver]()
