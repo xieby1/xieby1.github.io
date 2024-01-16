@@ -12,12 +12,16 @@ src/scripts/README.md: miao
 
 gui: src/my_cheatsheet.html \
 	 src/my_Essays.html \
+	 src/my_Essays_bubble.html \
 	 src/my_abbreviations.html \
 	 src/Benchmarks/my_coremark.html \
 	 src/Benchmarks/my_spec2000.html
 
 src/my_Essays.html: ~/Documents/Tech/Essays.xlsx
 	./scripts/genExcel.sh $< $@
+
+src/my_Essays_bubble.html: ~/Documents/Tech/Essays.xlsx
+	./scripts/EssayBubbles.py
 
 src/my_abbreviations.html: ~/Documents/Tech/abbreviations.xlsx
 	./scripts/genExcel.sh $< $@
