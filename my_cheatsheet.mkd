@@ -1273,6 +1273,18 @@ right click: eraser
 <p class="fragment" data-fragment-index="2">Appears second</p>
 ```
 
+### plotly
+
+~~~md
+::: {style="width:1000px; height: 400px; display:inline-block; text-align:center;"}
+:::: {style="transform: scale(2); transform-origin: left top;"}
+``` {.include}
+./plotly/bt_perf-mini.html
+```
+::::
+:::
+~~~
+
 ### print pdf
 
 Append `?print-pdf` to URL.
@@ -1866,6 +1878,18 @@ clang-format -style=llvm -dump-config > .clang-format
 ...
 // clang-format on
 ```
+
+## html/css
+
+### scale/zoom
+
+TLDR: if no interaction use `zoom`, else use `scale` + `width` + `height`
+
+* [SO: CSS transform not resizing](https://stackoverflow.com/questions/10858523/css-transform-with-element-resizing)
+* [MDN: zoom](https://developer.mozilla.org/en-US/docs/Web/CSS/zoom)
+  * recommand  transform: scale(), but it does not affect the layout size
+  * firefox starting support in nightly (fuck ff)
+* zoom: plotly iteractive not work!
 
 ## python
 
@@ -2533,11 +2557,42 @@ sudo nix-collect-garbage -d
 nix-collect-garbage -d
 ```
 
+### home-manager generations
+
+```bash
+# list
+home-manager generations
+# clean generations beyond 1 day
+home-manager expire-generations -1day
+```
+
+### rm broken links
+
+[SO: delete all broken symbolic links](https://stackoverflow.com/questions/22097130)
+
+```bash
+find -L . -name . -o -type d -prune -o -type l -exec rm {} +
+```
+
 ### nix-build garbage
 
 ````bash
 ls -l /nix/var/nix/gcroots/auto
 ````
+
+### filter nix-build garbage
+
+```bash
+cd /nix/var/nix/gcroots/auto
+for i in *; do if [[ $(readlink $i) =~ /result ]]; then echo $i; echo $(readlink $i); fi; done
+```
+
+### filter direnv garbage
+
+```bash
+cd /nix/var/nix/gcroots/auto
+for i in *; do if [[ $(readlink $i) =~ /.direnv/ ]]; then echo $i; echo $(readlink $i); fi; done
+```
 
 ### direnv garbage
 
