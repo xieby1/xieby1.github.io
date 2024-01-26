@@ -254,6 +254,8 @@
       * [logs.md](./Connect/Network/nginx/logs.md)
     * [p2p.md](./Connect/Network/p2p.md)
     * [streaming_server.md](./Connect/Network/streaming_server.md)
+* [Debug]()
+  * [0126.debug](./Debug/0126.debug/index.md)
 * [Distro]()
   * [JingOS.md](./Distro/JingOS.md)
   * [Nix]()
