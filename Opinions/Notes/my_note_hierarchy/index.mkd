@@ -1,0 +1,291 @@
+---
+title: <img style="height:0.5em;" src="https://xieby1.github.io/markdown_revealjs/themes/loongson/logo.png"><br>毕业经验分享
+author: <img style="height:1em;" src="images/u1f913_u1f431.png">谢本壹
+date: 2024年4月23日
+
+headerr: <img style="height:1em;"  src="https://xieby1.github.io/markdown_revealjs/themes/loongson/logo.png">
+title-slide-background-image:           https://xieby1.github.io/markdown_revealjs/themes/loongson/2020.ls_16x9.1x.png
+toc-slide-background-image:             https://xieby1.github.io/markdown_revealjs/themes/loongson/2020.ls_16x9.2.png
+level1-slide-background-image:          https://xieby1.github.io/markdown_revealjs/themes/loongson/2020.ls_16x9.2.png
+level2-slide-background-image:          https://xieby1.github.io/markdown_revealjs/themes/loongson/2020.ls_16x9.3.png
+
+toc-depth: 3
+toc-column-width: 560px;
+---
+
+# 笔记
+
+如何记得多、查得快？
+
+</br>
+
+[和内存面临的问题相似：容量vs速度]{.fragment}
+
+---
+
+**解决方法**：多层次缓存
+
+</br>
+
+| 容量       | 速度       | 形式                 |
+|-----------:|:-----------|:---------------------|
+| 🟦         | 🟩🟩🟩🟩🟩 | 📃一张超大的速查清单 |
+| 🟦🟦       | 🟩🟩🟩🟩   | 📑网上各类速查清单   |
+| 🟦🟦🟦     | 🟩🟩🟩     | 📔个人笔记           |
+| 🟦🟦🟦🟦   | 🟩🟩       | 📚官方文档           |
+| 🟦🟦🟦🟦🟦 | 🟩         | 🌏互联网             |
+
+## 📃一张超大的速查清单
+
+* 常用软件操作：tar, gcc, cmake, ...
+* 编程语言语法: c/c++, python, bash, ...
+* 复杂软件用法：vim, tmux, ...
+* 指令集语义：x86, arm, la, ...
+* ...
+
+---
+
+**例子**：一张超大的速查清单
+
+<iframe src="https://xieby1.github.io/cheatsheet.html" style="width:1200px; height: 500px;"></iframe>
+
+::: {style="font-size: 0.6em;"}
+特点：小而全，快速打开；
+例子的[网址](https://xieby1.github.io/cheatsheet.html) | [模板](https://github.com/xieby1/markdown_cheatsheet) | [快速打开原理](https://github.com/xieby1/nix_config/blob/main/usr/gui/singleton_web_apps.nix)
+:::
+
+## 📑网上各类速查清单
+
+* 常用软件用法
+  * [tldr](https://github.com/tldr-pages/tldr)
+* 编程语言语法：
+  * [devdocs.io](https://devdocs.io/)
+  * [devhints.io](https://devhints.io/)
+* 复杂软件用法：
+  * [quickref.me](https://quickref.me/)
+* 指令集语义
+  * [felixcloutier/x86](https://www.felixcloutier.com/x86/)
+
+## 📔个人笔记
+
+分成三个部分，分别和Git类比
+
+::: {style="font-size: 36px;"}
+| 个人笔记     | Git                |
+|--------------|--------------------|
+| 笔记主体     | Working tree       |
+| 思路         | Commit之间的关系   |
+| 待办（TODO） | Issues & Milestone |
+:::
+
+### 个人笔记：笔记主体
+
+很多同学都非常有经验
+
+参考：实验室的Gitlab: Notes仓库
+
+关键：做好分类，方便自己查询
+
+<iframe src="https://xieby1.github.io/" style="width: 1200px; height: 400px;"></iframe>
+
+::: {style="font-size: 0.6em;"}
+我的笔记[网址](https://xieby1.github.io/) | [源码](https://github.com/xieby1/xieby1.github.io)
+:::
+
+### 个人笔记：思路
+
+尽管markdown有超链接（类似[Obsidian](https://obsidian.md/)做得更多）
+
+但文字不直观不方便
+
+</br>
+
+[思维导图]{.fragment}
+
+---
+
+::: {style="overflow-y: auto; height: 600px;"}
+<img src="./images/nix.dot.svg" style="width: 1200px;">
+:::
+
+::: {style="font-size: 0.6em;"}
+作图使用[graphviz](https://www.graphviz.org/)
+:::
+
+### 个人笔记：待办
+
+尽管markdown写TODO+grep就可以
+
+但是不直观不方便
+
+</br>
+
+[专门的待办软件]{.fragment}
+
+## 📚官方文档
+
+::: {.container}
+:::: {.col}
+* 常用软件操作
+  * man
+  * -h/--help
+* 编程语言语法
+  * [cppreference.com](https://en.cppreference.com)
+::::
+:::: {.col}
+* 复杂软件用法
+  * Github README.md/Wiki
+  * vim :h
+* 指令集语义
+  * 指令集手册
+::::
+:::
+
+</br>
+
+::: {style="font-size: 0.6em;"}
+注：进行分类，全放入浏览器收藏夹
+:::
+
+## 🌏互联网
+
+博客、论坛、书籍等各类资料
+
+* 通用搜索
+  * Google, Bing, ...
+* 专用搜索
+  * StackOverflow家族, ...
+* 内部搜索
+  * Github issues, Mail archives, [Hacker News](https://news.ycombinator.com), [LWN.net](https://lwn.net/), ...
+* ...
+
+# 论文笔记
+
+论文笔记：笔记的一类特殊子集
+
+特点：标题、发表时间、作者、期刊/会议、引用数、团队等信息
+
+</br>
+
+[如何记得多、查得快？]{.fragment}
+
+</br>
+
+[和内存/笔记面临的问题相似：容量vs速度]{.fragment}
+
+---
+
+**解决方法**：多层次缓存
+
+</br>
+
+| 容量       | 速度       | 形式                 |
+|-----------:|:-----------|:---------------------|
+| 🟦         | 🟩🟩🟩🟩🟩 | 🖥️自动生成的速查清单 |
+| 🟦🟦       | 🟩🟩🟩🟩   | 🗓️手动维护的清单     |
+| 🟦🟦🟦     | 🟩🟩🟩     | 📥团队的论文仓库     |
+| 🟦🟦🟦🟦   | 🟩🟩       | 📚学术网址           |
+| 🟦🟦🟦🟦🟦 | 🟩         | 🌏互联网             |
+
+## 🖥️自动生成的速查清单
+
+对每一篇论文进行[编码]{style="font-size: 1.5em;"}
+
+::: {.fragment}
+```bash
+# 编码方法
+<路径>/<年>.<内容缩写>.<作者缩写>.<会议期刊缩写>.<引用数>.pdf
+```
+:::
+::: {.fragment}
+```bash
+# 例子一
+Tech/Arch/HT/2014.isa_explore.venkat.isca.112.pdf
+# 例子二
+Tech/ISA/Uop/2020.improve_ucache.kotra.micro.3.pdf
+# 例子三
+Tech/BT/QEMU/2005.qemu.bellard.usenix.2217.pdf
+```
+:::
+
+---
+
+实际操作的例子
+
+</br>
+</br>
+
+* venkat的论文笔记`venkat md`
+* isca的论文：`isca pdf`
+* ucache相关的论文：`ucache pdf`
+
+</br>
+</br>
+
+::: {.fragment style="font-size: 0.6em;"}
+实现方式：
+[快速打开](https://github.com/xieby1/nix_config/blob/main/usr/gui/singleton_web_apps.nix)
++[模糊搜索器fzf](https://github.com/junegunn/fzf)
++[fzf-doc bash脚本](https://github.com/xieby1/nix_config/blob/main/usr/cli.nix#L21)
+:::
+
+## 🗓️手动维护的清单
+
+论文清单：除了上述**编码**的内容以外还有注和题目
+
+<iframe src="https://xieby1.github.io/Essays.html" style="width:1200px; height: 500px;"></iframe>
+
+## 📥团队的论文仓库
+
+大家添加了很多文章
+
+[Zotero: lslab-all](https://www.zotero.org/groups/4574884/lslab-all/library)
+
+## 📚学术网址
+
+::: {.container}
+:::: {.col}
+* 排名
+  * [Journal Ranks](https://www.scimagojr.com/journalrank.php)
+  * [Conference Ranks](http://www.conferenceranks.com/)
+* 出版商
+  * [文献情报中心：资源所外获取](https://www.las.ac.cn/front/dataCenter/literatureAcquisition)
+    * 超多出版商...
+  * [中科院学位论文知识发现系统](http://dpaper.las.ac.cn/homeNew)
+::::
+:::: {.col}
+* 学术搜索引擎
+  * [Semantic Scholar](https://www.semanticscholar.org/me/research)
+  * [Connected Paper](https://www.connectedpapers.com/)
+  * [Sci-hub](https://sci-hub.st)
+  * [DBLP](https://dblp.uni-trier.de/)
+  * [Google Scholar](https://scholar.google.com/)
+  * ...
+::::
+:::
+
+## 🌏互联网
+
+略
+
+# 谢谢
+
+::: {style="font-size: 2em;"}
+👨👩🙋
+
+👩🙋👨
+
+🙋👨👩
+:::
+
+# 问答 {style="visibility: hidden;" data-background-image="https://xieby1.github.io/markdown_revealjs/themes/loongson/2020.ls_16x9.4.png"}
+
+# <img style="height:1em;" src="images/u1f913_u1f431.png">
+
+<style>
+:root {
+  --r-link-color: #E60012;
+  --r-link-color-dark: #7F2C23;
+  --r-link-color-hover: #FF5946;
+}
+</style>
