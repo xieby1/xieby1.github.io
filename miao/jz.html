@@ -2,7 +2,6 @@
 <!-- Export by pandoc -D revealjs, pandoc version 2.14.03 -->
 <!-- pandoc-types 1.22.1, texmath 0.12.3.2, skylighting 0.10.5.2, -->
 <!-- citeproc 0.4.0.1, ipynb 0.1.0.2 -->
-<!-- delete /dist after revealjs-url -->
 <html>
 <head>
   <meta charset="utf-8">
@@ -12,18 +11,25 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimal-ui">
-  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/reset.css">
-  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/reveal.css">
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/reveal.js/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
   </style>
-  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/theme/white.css" id="theme">
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/reveal.js/dist/theme/white.css" id="theme">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/style.css">
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/style.css">
@@ -59,14 +65,14 @@ a.sourceLine {
 
 [role="doc-toc"] > ul {
     /* multiple column in first level TOC */
-    column-width: 290px;
+    column-width:  290px ;
     width: 100%;
     column-rule-style: solid;
     /* no margin in first level TOC */
-    margin: 0 0 0 0;
+    margin:  0 0 0 0 ;
 }
 
-#TOC ul {
+[role="doc-toc"] ul {
     /* no bullet */
     list-style-type: none;
     /* no margin, no padding in TOC ul */
@@ -145,8 +151,12 @@ table {
 <section id="TOC">
 <nav role="doc-toc"> 
 <ul>
-<li><a href="#/壹语">壹语</a></li>
-<li><a href="#/奖状">奖状</a></li>
+<li><a href="#/壹语" id="/toc-壹语">壹语</a></li>
+<li><a href="#/奖状" id="/toc-奖状">奖状</a>
+<ul>
+<li><a href="#/教学用的奖状"
+id="/toc-教学用的奖状">2024教学用的奖状</a></li>
+</ul></li>
 </ul>
 </nav>
 </section>
@@ -167,6 +177,7 @@ style="display: inline-flex; flex-direction: column; justify-content: space-betw
 </div>
 </section>
 
+<section>
 <section id="奖状" class="title-slide slide level1 unnumbered"
 data-background-image="./jz.svg" data-background-size="95% 95%">
 <h1 class="unnumbered" data-background-image="./jz.svg"
@@ -190,22 +201,48 @@ style="display: inline-flex; flex-direction: column; justify-content: space-betw
 </div>
 </div>
 </section>
+<section id="教学用的奖状" class="title-slide slide level2 unnumbered"
+data-background-image="./jz.svg" data-background-size="95% 95%">
+<h2 class="unnumbered" data-background-image="./jz.svg"
+data-background-size="95% 95%">2024教学用的奖状</h2>
+<p><i class="fas fa-holly-berry"></i> <i class="fas fa-holly-berry"></i>
+<i class="fas fa-holly-berry"></i> <i class="fas fa-holly-berry"></i>
+<i class="fas fa-holly-berry"></i>
+<i class="fas fa-holly-berry"></i></p>
+<div
+style="display: inline-flex; flex-direction: column; justify-content: space-between; width: 800px; height: 450px; color=DimGrey;">
+<div style="align-self: flex-start; text-align:left;">
+<p>祝贺小乖乖🫨</p>
+<p>在杨美顺兴楼中获得：</p>
+</div>
+<h2>
+床上打滚厉害崽奖
+</h2>
+<div style="align-self: flex-end;">
+<p>小可爱🌸</p>
+<p>2024年2月2日</p>
+</div>
+</div>
+</section>
+</section>
     </div>
-    <!-- <div id=footer style="position:absolute; bottom:12px; width:100%; text-align:center; z-index:40;"> -->
-    <!--     test -->
-    <!-- </div> -->
   </div>
+  <div id=headerl style="position:absolute; top:0;    left:0;  padding:0.5em; font-size:16pt;"></div>
+  <div id=headerr style="position:absolute; top:0;    right:0; padding:0.5em; font-size:16pt;"></div>
+  <div id=footerl style="position:absolute; bottom:0; left:0;  padding:0.5em; font-size:16pt;"></div>
+  <div id=footerr style="position:absolute; bottom:0; right:0; padding:0.5em; font-size:16pt;"></div>
 
-  <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/reveal.js/dist/reveal.js"></script>
 
   <!-- reveal.js plugins -->
-  <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.js"></script>
-  <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/plugin/search/search.js"></script>
-  <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/plugin/zoom/zoom.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/reveal.js/plugin/notes/notes.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/reveal.js/plugin/search/search.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/reveal.js/plugin/zoom/zoom.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/reveal.js/plugin/math/math.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/plugin.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/plugin.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-verticator@1.2.3/plugin/verticator/verticator.js"></script>
   <script>
 
       // Full list of configuration options available at:
@@ -229,7 +266,11 @@ style="display: inline-flex; flex-direction: column; justify-content: space-betw
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        // * h.v Horizontal . Vertical slide number (default)
+        // * h/v Horizontal / Vertical slide number
+        // * c Flattened slide number, including both horizontal and vertical slides
+        // * c/t Flattened slide number / total slides
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -358,6 +399,23 @@ style="display: inline-flex; flex-direction: column; justify-content: space-betw
 
         height: 700,
 
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
         chalkboard: {
           theme: "whiteboard",
         },
@@ -393,12 +451,14 @@ style="display: inline-flex; flex-direction: column; justify-content: space-betw
         },
         // reveal.js plugins
         plugins: [
+          RevealMath,
           RevealChalkboard,
           RevealCustomControls,
           RevealNotes,
           RevealSearch,
           RevealZoom,
           RevealMenu,
+          Verticator,
         ],
       });
       // make customcontrols collapsed by default
@@ -411,6 +471,20 @@ style="display: inline-flex; flex-direction: column; justify-content: space-betw
           div.classList.add('collapsed');
         });
       });
+    </script>
+    <script>
+      const headerl = document.getElementById("headerl");
+      const headerr = document.getElementById("headerr");
+      const footerl = document.getElementById("footerl");
+      const footerr = document.getElementById("footerr");
+      Reveal.on('pdf-ready', () => {
+        document.querySelectorAll('.pdf-page').forEach(page => {
+          page.appendChild(headerl.cloneNode(true));
+          page.appendChild(headerr.cloneNode(true));
+          page.appendChild(footerl.cloneNode(true));
+          page.appendChild(footerr.cloneNode(true));
+        });
+      })
     </script>
     </body>
 </html>
