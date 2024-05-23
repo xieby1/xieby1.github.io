@@ -666,6 +666,25 @@ git log --all --decorate --oneline --graph --simplify-by-decoration
 git log --all --decorate --oneline --graph
 ```
 
+### worktree
+
+see `man git-worktree`
+
+|                              | main worktree | linked worktree |
+|------------------------------|---------------|-----------------|
+| bare repo                    | 0             | 0               |
+| normal repo (git init/clone) | 1             | 0               |
+| (git worktree cmds)          | 1             | >=0             |
+
+### worktree basics
+
+```bash
+# add a linked worktree in ../folder
+git worktree add ../<folder> [<commit>]
+# its ok to directly remove folder, then
+git worktree prune
+```
+
 ## grep
 
 ### only filename
@@ -1260,6 +1279,13 @@ y: next color
 right click: eraser
 ```
 
+### right half crop image
+
+::: {style="width: 380px; height: 400px;"}
+<img src="PATH" style="height: 400px; max-width: none; max-height: none; float:right;">
+:::
+
+
 ### fragments fade
 
 [revealjs fragments](https://revealjs.com/fragments/)
@@ -1502,7 +1528,14 @@ x22Apr12_
 ### bind address
 
 ```bash
-ssh -L 8890:example.org:8889 -N -T username@remote_host
+ssh -L <localPort>:<remoteURL>:<remotePort> -N -T <sshTarget>
+```
+
+### bind address (Browser proxy)
+
+```bash
+ssh -L 8890:localhost:8889 -N -T tso.rsp3
+# then change switchyomega to SSH_L preset
 ```
 
 ### nixos x forward
@@ -1631,6 +1664,22 @@ cnnect to the same session.
 ```
 <C-b> " // vertical
 <C-b> % // horizontal
+```
+
+## video
+
+### video compress
+
+[SE: ffmpeg video compress](https://superuser.com/questions/933264)
+
+```bash
+ffmpeg -i input.avi -c:v libx264 -crf 18 -preset veryslow -c:a copy out.mp4
+```
+
+使用parallel
+
+```bash
+parallel -j2 ffmpeg -i {} -c:v libx264 -crf 18 -preset veryslow -c:a copy {.}.x264.18.mp4 ::: *.MP4
 ```
 
 ## wine
@@ -1827,6 +1876,17 @@ pkg-config --cflags --libs <pkg>
 
 ```bash
 pdftotext -noframes -i -q -p -c <pdf>
+```
+
+### pdftosvg
+
+[SO: pdf to svg](https://stackoverflow.com/questions/10288065/convert-pdf-to-clean-svg)
+
+```bash
+inkscape \
+  --without-gui \
+  --file=input.pdf \
+  --export-plain-svg=output.svg
 ```
 
 ### pdftotext
@@ -2714,6 +2774,15 @@ nix-build '<nixpkgs>' -A <pkg>
 
 [NixOS Wiki Cheatsheet](https://nixos.wiki/wiki/Cheatsheet)
 
+### disable gcc hardening in drv
+
+see: pkgs/stdenv/generic/make-derivation.nix
+
+```nix
+hardeningDisable = ["formt"];
+hardeningDisable = ["all"];
+```
+
 ### disable gcc hardening in shell
 
 [SE: Disabling the security hardening options for a `nix-shell` environment](https://unix.stackexchange.com/questions/356232/disabling-the-security-hardening-options-for-a-nix-shell-environment)
@@ -2779,7 +2848,7 @@ nix path-info -Sh <path>
 ### show drv
 
 ```bash
-nix show-derivation <.drv>
+nix derivation show <.drv>
 ```
 
 ### repl
@@ -3269,6 +3338,64 @@ cannot be nested,
 as each hardware thread supports only one monitor.
 
 ## riscv
+
+### base
+
+`2023.riscv-unpriv.pdf`: Preface & TOC
+
+Version 20191214, Revised 20230723
+
+| Base   | Description | Ver | Status   |
+|--------|-------------|-----|----------|
+| RVWMO  |             | 2.0 | Ratified |
+| RV32I  |             | 2.1 | Ratified |
+| RV64I  |             | 2.1 | Ratified |
+| RV32E  |             | 2.0 | Ratified |
+| RV64E  |             | 2.0 | Ratified |
+| RV128I |             | 1.7 | Draft    |
+
+### extensions
+
+| Ext         | Description                                                 | Ver | Status |
+|-------------|-------------------------------------------------------------|-----|--------|
+| A           | Atomic instructions                                         |     |        |
+| B           | Bit manipulation                                            |     |        |
+| C           | Compressed instructions                                     |     |        |
+| D           | Double-precision floating-point                             |     |        |
+| F           | Single-precision floating-point                             |     |        |
+| Q           | Quad-precision floating-point                               |     |        |
+| Zfh         | Half-precision floating-point                               |     |        |
+| Zfhmin      | Minimal half-precision floating-point (subset of the Zfh)   |     |        |
+| Zfinx       | Single-precision floating-point in x registers (GPRs)       |     |        |
+| Zdinx       | Double-precision floating-point in x registers (GPRs)       |     |        |
+| Zhinx       | Half-precision floating-point in x registers (GPRs)         |     |        |
+| Zhinxmin    | Minimal half-precision floating-point in x registers (GPRs) |     |        |
+| G           | Shorthand for IMAFD extensions                              |     |        |
+| H           | Hypervisor extension                                        |     |        |
+| J           | Dynamically translated languages                            |     |        |
+| L           | Decimal floating-point                                      |     |        |
+| M           | Integer multiplication and division                         |     |        |
+| N           | User-level interrupts                                       |     |        |
+| P           | Packed-SIMD instructions                                    |     |        |
+| S           | Supervisor mode                                             |     |        |
+| T           | Transactional memory                                        |     |        |
+| V           | Vector operations                                           |     |        |
+| Zifencei    | Instruction-fetch fence                                     |     |        |
+| Zihintntl   | Non-temporal locality hints                                 |     |        |
+| Zihintpause | Pause hint                                                  |     |        |
+| Zicsr       | Control and status register (CSR) instructions              |     |        |
+| Zicntr      | Base counters and timers                                    |     |        |
+| Zihpm       | Hardware performance counters                               |     |        |
+| Zimop       | May-be-operations                                           |     |        |
+| Zam         | Misaligned atomics                                          |     |        |
+| Ztso        | Total store ordering                                        |     |        |
+| Zfa         | Additional floating-point instructions                      |     |        |
+
+### combination
+
+| Combination | Extensions          |
+|-------------|---------------------|
+| RV32G/RV64G | IMAFDZicsr_Zifencei |
 
 ### regs
 

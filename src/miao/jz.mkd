@@ -43,3 +43,28 @@
 ::::
 :::
 
+## 2024教学用的奖状 {data-background-image="./jz.svg" data-background-size="95% 95%" .unnumbered}
+
+<i class="fas fa-holly-berry"></i>
+<i class="fas fa-holly-berry"></i>
+<i class="fas fa-holly-berry"></i>
+<i class="fas fa-holly-berry"></i>
+<i class="fas fa-holly-berry"></i>
+<i class="fas fa-holly-berry"></i>
+
+::: {style="display: inline-flex; flex-direction: column; justify-content: space-between; width: 800px; height: 450px; color=DimGrey;"}
+:::: {style="align-self: flex-start; text-align:left;"}
+祝贺小乖乖🫨
+
+在杨美顺兴楼中获得：
+::::
+
+<h2>床上打滚厉害崽奖</h2>
+
+:::: {style="align-self: flex-end;"}
+小可爱🌸
+
+2024年2月2日
+::::
+:::
+
