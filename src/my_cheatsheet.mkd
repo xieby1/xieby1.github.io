@@ -1111,6 +1111,15 @@ qpdf notext.pdf --overlay \
 textonly.pdf -- <output.pdf>
 ```
 
+### ocrmypdf & compress
+
+```bash
+ocrmypdf -O 3 --jpeg-quality 1 \
+  --png-quality 1 --force-ocr \
+  --output-type pdf -l chi_sim \
+  in.pdf out.pdf
+```
+
 ## pandoc
 
 ### 可用代码高亮
@@ -1664,6 +1673,15 @@ cnnect to the same session.
 ```
 <C-b> " // vertical
 <C-b> % // horizontal
+```
+
+## ubuntu ssh login info
+
+[AU: Where does the System Information information come from on login by SSH?](https://askubuntu.com/questions/1130813/where-does-the-system-information-information-come-from-on-login-by-ssh)
+
+```bash
+run-parts /etc/update-motd.d/
+# landscape-sysinfo
 ```
 
 ## video
@@ -2516,6 +2534,14 @@ zellij setup --check
 
 ## binary cache
 
+### check existence
+
+[NixOS Wiki](https://nixos.wiki/wiki/Binary_Cache#How_to_check_if_content_is_on_a_binary_cache)
+
+```bash
+curl/wget https://xieby1.cachix.org/bw0w5ar1fcwvbk1s1yysiljs21lqd5sp.narinfo
+```
+
 ### paths
 
 `<nix channel url>/store-path.xz`
@@ -2694,16 +2720,6 @@ nix eval --expr "<EXPR>"
 ### .desktop
 
 `~/.nix-profile/share/applications`
-
-## home-manager
-
-### sysconfig
-
-[GH: sysconfig](https://github.com/nix-community/home-manager/issues/143)
-
-```nix
-sysconfig = (import <nixpkgs/nixos> {}).config;
-```
 
 ## garbage collect(gc)
 
@@ -2898,7 +2914,7 @@ home-manager option <OPTION>
 
 ### nixos-option
 
-​```bash
+```bash
 nixos-option <OPTION>
 ```
 
@@ -2976,6 +2992,8 @@ pkgs/stdenv/generic/make-derivation.nix
   * override arguments
 * overrideAttrs (old: {...})
   * override attrs before mkDerivation
+* overrideDerivation (old: {...})
+  * override attrs after mkDerivation
 
 ## lang
 
@@ -3163,6 +3181,14 @@ refers to
 
 ```nix
 hm = import <home-manager/modules> { configuration = ~/.config/nixpkgs/home.nix; pkgs = import <nixpkgs> {}; }
+```
+
+### sysconfig
+
+[GH: sysconfig](https://github.com/nix-community/home-manager/issues/143)
+
+```nix
+sysconfig = (import <nixpkgs/nixos> {}).config
 ```
 
 ## Usage
@@ -3396,6 +3422,18 @@ Version 20191214, Revised 20230723
 | Combination | Extensions          |
 |-------------|---------------------|
 | RV32G/RV64G | IMAFDZicsr_Zifencei |
+
+### privilege modes
+
+2024.riscv-priv.pdf: 19.1: Privilege Modes
+
+| Virt | Privilege | Abbr | Name                                | 2Stage Trans |
+|------|-----------|------|-------------------------------------|--------------|
+| 0    | U         | U    | User mode                           | Off          |
+| 0    | S         | HS   | Hypervisor-extended supervisor mode | Off          |
+| 0    | M         | M    | Machine Mode                        | Off          |
+| 1    | U         | VU   | Virtual user mode                   | On           |
+| 1    | S         | VS   | Virtual supervisor mode             | On           |
 
 ### regs
 
