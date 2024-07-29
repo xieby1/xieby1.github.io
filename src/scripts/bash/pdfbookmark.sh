@@ -5,6 +5,10 @@ echoHelp() {
     echo "Usage:"
     echo "  Extract Bookmarks from pdf: ${0##*/} FILE.pdf [FILE.md]" 
     echo "  Update Bookmarks to pdf:  ${0##*/} FILE.md FILE.pdf"
+    echo "Markdown syntax:"
+    echo "  * Chapter 1 @3"
+    echo "    * Chapter 1.1 @19"
+    echo "      * Chapter 1.1.1 @20"
     exit 0
 }
 
