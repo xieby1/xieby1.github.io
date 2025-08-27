@@ -221,7 +221,38 @@ clean all cmake generated files
 * `CMakeFiles/CMakeError.log`
 * `CMakeFiles/CMakeOutput.log`
 
+### verbose
+
+```
+# 命令行
+--log-level=VERBOSE
+# 环境变量
+export CMAKE_MESSAGE_LOG_LEVEL=VERBOSE
+```
+
 ## container
+
+### rootless podman not support NFS
+
+See:
+* `man podman`
+* [containers-storage.conf.5](https://github.com/containers/storage/blob/main/docs/containers-storage.conf.5.md)
+
+Solution: save images in non-nfs FS
+
+```toml
+# $HOME/.config/containers/storage.conf
+[storage]
+driver = "overlay"
+rootless_storage_path = "/tmp/xieby1/containers/storage"
+```
+
+Then,
+
+```bash
+rm -rf $HOME/.local/share/containers/storage
+podman system migrate
+```
 
 ### build show stdout
 
@@ -371,6 +402,25 @@ http://www.figlet.org/examples.html
 ### fonts
 
 <FIGLET_PATH>/share/figlet/*.flf
+
+## firefox
+
+### debug extension
+
+* about:debugging
+* This Firefox
+* ... Inspect
+* top-right: Select an iframe as the currently targeted document
+
+### toolbox mode
+
+* Developer Tools (F12)
+  * Settings (F1)
+    * Advanced Settings
+      * “Enable browser chrome and add-on debugging toolboxes”
+      * “Enable remote debugging”
+
+Ctrl + Alt + Shift + I
 
 ## font
 
@@ -810,6 +860,10 @@ ctrl+shift+m
 
 ## linux
 
+### nolibc (header only libc)
+
+tools/include/nolibc/
+
 ### 编译
 
 ```bash
@@ -996,6 +1050,14 @@ make -nd <target> | make2graph
 remake --targets
 ```
 
+### variable priority
+
+TLDR: env < makefile < cli
+
+* [Variables from the Environment](https://www.gnu.org/software/make/manual/html_node/Environment.html)
+  * Prioritize env: add `-e`
+* [Overriding Variables](https://www.gnu.org/software/make/manual/html_node/Overriding.html)
+
 ## maven
 
 ### proxy
@@ -1109,6 +1171,23 @@ gs -o textonly.pdf -dFILTERIMAGE \
 # 叠加文本
 qpdf notext.pdf --overlay \
 textonly.pdf -- <output.pdf>
+```
+
+### ocrmypdf & compress
+
+```bash
+ocrmypdf -O 3 --jpeg-quality 1 \
+  --png-quality 1 --force-ocr \
+  --output-type pdf -l chi_sim \
+  in.pdf out.pdf
+```
+
+## objdump
+
+### objdump binary
+
+```bash
+riscv64-unknown-linux-gnu-objdump -b binary -m riscv:rv64 --start-address=0x97b500 --stop-address=0x97b600 -D <file>
 ```
 
 ## pandoc
@@ -1343,6 +1422,18 @@ right click: eraser
 ### print pdf
 
 Append `?print-pdf` to URL.
+
+### svg image
+
+详细参考Tech/Mem/slides/images/order_summary.dot
+
+svg里的image用相对svg的路径，前面不跟`./`
+
+AI：插入网页要用object，不然不能显示
+
+例如<object data="A.svg" type="image/svg+xml"></object>
+
+dot编译需要加--filepath=path
 
 ### toc style
 
@@ -1582,6 +1673,8 @@ man systemd.unit
 ```bash
 systemctl --user status <service>
 journalctl --user -u <service>
+# follow mode
+journalctl --user -f -u <service>
 ```
 
 ### service output
@@ -1591,6 +1684,12 @@ journalctl --user -u <service>
 journalctl -f -u <service>
 # user
 journalctl --user -f -u <service>
+```
+
+### journal
+
+```
+journalctl -f | grep gnome-shell
 ```
 
 ### 列举unit类
@@ -1664,6 +1763,15 @@ cnnect to the same session.
 ```
 <C-b> " // vertical
 <C-b> % // horizontal
+```
+
+## ubuntu ssh login info
+
+[AU: Where does the System Information information come from on login by SSH?](https://askubuntu.com/questions/1130813/where-does-the-system-information-information-come-from-on-login-by-ssh)
+
+```bash
+run-parts /etc/update-motd.d/
+# landscape-sysinfo
 ```
 
 ## video
@@ -1833,6 +1941,20 @@ TODO: dash-to-dock? or original dock?
 
 `ctrl`+`super`+`<num>`
 
+### gnome sound overamplifier
+
+```bash
+gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
+```
+
+### inkscape embed image
+
+convert <image href="..."> to embeded image
+
+```bash
+inkscape --actions "org.inkscape.filter.embed-image" -o <output.svg> <input.svg>
+```
+
 ### open desktop file
 
 ```bash
@@ -1926,6 +2048,18 @@ iconv -f gb18030 -t utf-8 <output>
 
 ```
  | xclip -selection clipboard
+```
+
+### clipboard rich text
+
+* https://superuser.com/questions/912712/how-to-send-rich-text-to-the-clipboard-from-command-line
+* https://superuser.com/questions/144185/getting-html-source-or-rich-text-from-the-x-clipboard
+
+```bash
+# html => rich text format
+xclip -selection clipboard -o | xclip -t text/html
+# rich text format => html
+xclip -selection clipboard -o -t text/html
 ```
 
 ### shebang with arguments
@@ -2081,6 +2215,29 @@ svg able to copy, support chinese
 plt.rcParams["svg.fonttype"] = "none"
 ```
 
+## verilog
+
+### assignment
+
+`2005.verilog_std.pdf`
+
+* continuous assign: 6.1
+  * ```verilog
+    wire net
+    assign net = enable
+    ```
+* procedural assign: 6.2
+  * blocking assign: 9.2.2
+    ```verilog
+    reg = 0
+    ```
+  * nonblocking assign: 9.2.1
+    ```verilog
+    initial begin
+      reg <= 0
+    end
+    ```
+
 # vim
 
 ## buffer
@@ -2134,7 +2291,45 @@ plt.rcParams["svg.fonttype"] = "none"
 
 ### complete 
 
+## nvim config
+
+### nix plugins
+
+```bash
+vim `which nvim`
+set rtp^=/nix/store/...-vim-pack-dir
+```
+
+## easy align
+
+### not ignore comment & str
+
+```vim
+:'<,'>EasyAlign /REGX/ {'ig':[]}
+```
+
+### left/right margin
+
+```vim
+:'<,'>EasyAlign /REGX/<l0
+:'<,'>EasyAlign /REGX/>l0r0
+```
+
 ## Misc
+
+### colors
+
+Draw.IO color palette
+
+| Fill                                         | Border                                       |
+|----------------------------------------------|----------------------------------------------|
+| [#F5F5F5]{style="background-color:#F5F5F5;"} | [#666666]{style="background-color:#666666;"} |
+| [#DAE8FC]{style="background-color:#DAE8FC;"} | [#6C8EBF]{style="background-color:#6C8EBF;"} |
+| [#D5E8D4]{style="background-color:#D5E8D4;"} | [#82B366]{style="background-color:#82B366;"} |
+| [#FFE6CC]{style="background-color:#FFE6CC;"} | [#D79B00]{style="background-color:#D79B00;"} |
+| [#FFF2CC]{style="background-color:#FFF2CC;"} | [#D6B656]{style="background-color:#D6B656;"} |
+| [#F8CECC]{style="background-color:#F8CECC;"} | [#B85450]{style="background-color:#B85450;"} |
+| [#E1D5E7]{style="background-color:#E1D5E7;"} | [#9673A6]{style="background-color:#9673A6;"} |
 
 ### debug log
 
@@ -2151,6 +2346,12 @@ vim -V9myVim.log
 :E[xplore]
 ```
 
+### cd current (netrw)
+
+```
+:cd %
+```
+
 ### Explore crash (netrw)
 
 ```bash
@@ -2160,6 +2361,7 @@ rm ~/.local/share/nvim/.netrwhist
 ### Increase column
 
 ```vim
+:h v_g_CTRL-A
 c-v ; select block
 g c-a
 ```
@@ -2352,6 +2554,12 @@ ale支持的fix位于
 i
 ```
 
+### var last edit
+
+```
+:verbose set shiftwidth?
+```
+
 ## diff
 
 ### diffthis
@@ -2419,6 +2627,20 @@ O " new tab open
 ```
 
 ## plugins
+
+### nvim nix plugins
+
+home-manager & nixpkgs srcs:
+
+* <hm>/modules/programs/neovim.nix: pkgs.wrapNeovimUnstable ... neovimConfig
+* pkgs/applications/editors/neovim/wrapper.nix: generatedWrapperArgs
+
+packpath^=...
+
+```bash
+view `which nvim`
+/packpath^=...
+```
 
 ### AnsiEsc
 
@@ -2503,18 +2725,52 @@ vim
 \%>.c   Matches after the cursor column.
 ```
 
-## zellij
+## visual block
 
-### check
+### change area
 
-```bash
-# list all DIR/FILE
-zellij setup --check
+```
+o
+```
+
+### previous area
+
+```
+gv
+```
+
+### replace
+
+```
+<c-v>
+r
+```
+
+### virtual edit
+
+```
+:set ve=all
 ```
 
 # nix
 
 ## binary cache
+
+### check existence 1
+
+[NixOS Wiki](https://nixos.wiki/wiki/Binary_Cache#How_to_check_if_content_is_on_a_binary_cache)
+
+```bash
+curl/wget https://xieby1.cachix.org/<pkg's nix store hash>.narinfo
+```
+
+### check existence 2
+
+[NixOS Wiki](https://nixos.wiki/wiki/Binary_Cache#How_to_check_if_content_is_on_a_binary_cache)
+
+```bash
+nix path-info <path-to-pkg> --store https://xieby1.cachix.org
+```
 
 ### paths
 
@@ -2567,6 +2823,35 @@ nix-store -qR
 
 ```bash
 sudo nix-copy-closure --from <user@ssh> <path>
+```
+
+## build
+
+### env
+
+[nix文档：building](https://nix.dev/manual/nix/2.29/store/building.html#builder-execution)
+
+在builder执行前会设置环境变量：
+
+```bash
+NIX_BUILD_TOP
+TMPDIR, TEMPDIR, TMP, TEMP
+PATH=/path-not-set
+HOME=/homeless-shelter
+NIX_STORE=/nix/store
+...
+```
+
+### remote-build
+
+```bash
+nix-build ... --builders "szopen1;szopen2"
+```
+
+### force remote-build
+
+```bash
+nix-build ... -j 0 --builders "szopen1;szopen2"
 ```
 
 ## channel
@@ -2631,7 +2916,15 @@ nix-env -q --out-path
 
 [Nix manual: Proxy Environment Variables](https://nixos.org/manual/nix/stable/installation/env-variables.html#proxy-environment-variables)
 
-`/etc/systemd/system/nix-daemon.service.d/override.conf`
+```
+# /etc/systemd/system/nix-daemon.service.d/overrides.conf
+Environment="all_proxy=http://127.0.0.1:8889"
+Environment="ftp_proxy=http://127.0.0.1:8889"
+Environment="http_proxy=http://127.0.0.1:8889"
+Environment="https_proxy=http://127.0.0.1:8889"
+Environment="no_proxy=127.0.0.1,localhost,internal.domain"
+Environment="rsync_proxy=http://127.0.0.1:8889"
+```
 
 ## debug
 
@@ -2695,16 +2988,6 @@ nix eval --expr "<EXPR>"
 
 `~/.nix-profile/share/applications`
 
-## home-manager
-
-### sysconfig
-
-[GH: sysconfig](https://github.com/nix-community/home-manager/issues/143)
-
-```nix
-sysconfig = (import <nixpkgs/nixos> {}).config;
-```
-
 ## garbage collect(gc)
 
 ### sys garbage
@@ -2717,6 +3000,12 @@ sudo nix-collect-garbage -d
 
 ```bash
 nix-collect-garbage -d
+```
+
+### nix-env generations
+
+```bash
+nix-env --delete-generations 10d
 ```
 
 ### home-manager generations
@@ -2898,7 +3187,7 @@ home-manager option <OPTION>
 
 ### nixos-option
 
-​```bash
+```bash
 nixos-option <OPTION>
 ```
 
@@ -2925,6 +3214,8 @@ nixos-option <OPTION>
 [possible dependency types and examples](https://nixos.org/manual/nixpkgs/stable/#possible-dependency-types)
 
 TODO: simplify
+
+Suppose we are building g++ with a (build, host, target) platform triple of (foo, bar, baz). This means we are using a foo-machine to build a copy of g++ which will run on a bar-machine and emit binaries for the baz-machine.
 
 * g++ links against the host platform’s glibc C library, which is a “host→ *” dependency with a triple of (bar, bar, *). Since it is a library, not a compiler, it has no “target”.
 
@@ -2974,8 +3265,28 @@ pkgs/stdenv/generic/make-derivation.nix
 
 * override {...}
   * override arguments
+* override (old: {...})
+  * override arguments
 * overrideAttrs (old: {...})
   * override attrs before mkDerivation
+* overrideDerivation (old: {...})
+  * override attrs after mkDerivation
+
+### how override (old: {})?
+
+```nix
+# customisation.nix
+makeOverridable = f:
+  mirrorArgs (origArgs: result // {
+   override = mirrorArgs (newArgs: makeOverridable f (overrideWith newArgs));
+  })
+
+override callable
+=> (mirrorArgs (newArgs: makeOverridable f (overrideWith newArgs))) callable
+=> (fArgs: makeOverridable f (overrideWith fArgs)) callable
+=> makeOverridable f (overrideWith callable)
+=> makeOverridable f ((newArgs: origArgs // (callable origArgs)))
+```
 
 ## lang
 
@@ -3162,7 +3473,15 @@ refers to
 [nix repl home.nix config](https://gist.github.com/573/c06ccea910abcc8f9255cb8f3ace3e86)
 
 ```nix
-hm = import <home-manager/modules> { configuration = ~/.config/nixpkgs/home.nix; pkgs = import <nixpkgs> {}; }
+hm = import <home-manager/modules> { configuration = ~/.config/home-manager/home.nix; pkgs = import <nixpkgs> {}; }
+```
+
+### sysconfig
+
+[GH: sysconfig](https://github.com/nix-community/home-manager/issues/143)
+
+```nix
+sysconfig = (import <nixpkgs/nixos> {}).config
 ```
 
 ## Usage
@@ -3190,6 +3509,111 @@ x86_64-unknown-linux-musl-gcc -static hello.c
 ```bash
 nix-shell -p pkgsCross.aarch64-multiplatform.stdenv.cc
 aarch64-unknown-linux-gnu-gcc
+```
+
+# SoC
+
+## AMBA
+
+### AMBA 2.0分类
+
+2008.on-chip_comm_arch.pasricha.toc.pdf: 3.1.1 AMBA 2.0
+
+* AHB: Advanced high performance bus
+  * 意思是连接对象时高性能的模块
+* ASB: Advanced system bus
+  * AHB的子集，少了一些高级协议
+* APB: Advanced peripheral bus
+
+## CHI
+
+### B1.3 Terminology 1
+
+* Transaction: a single read/write operation【由Messages组成】
+* Message: protocol layer terminology
+  * Request
+  * Data response
+  * Snoop request
+  * ...
+  由packets组成
+* Packet
+* Flit
+* Phit
+
+### B1.3 Terminology 2
+
+* `Requester: RN+HN+MN`
+* `Completer:    HN+MN+SN`
+
+### B1.5.2 Cache State Model
+
+* Valid, Invalid
+* Unique, Shared
+* Clean, Dirty
+* Full, Partial, Empty
+
+```
+        Valid  Invalid
+      ┌───────┬───────┐
+    Unique Shared
+      ┌───┬───┐
+     ┌┌───┬───┬───────┐┐
+     ││UC │SC │       ││Full
+Clean│├───┼───┤       │┤
+     ││UCE│-  │       ││Partial/Empty
+     ├├───┼───┤   I   │┤
+     ││UD │SD │       ││Full
+Dirty│├───┼───┤       │┤
+     ││UDP│-  │       ││Partial/Empty
+     └└───┴───┴───────┘┘
+```
+
+### B1.6 Component naming
+
+* RN (Request Node)
+  * RN-F (Fully Coherent Request Node)
+  * RN-D (IO Coherent Request Node with DVM support)
+  * RN-I (IO Coherent Request Node)
+* HN (Home Node)
+  * HN-F (Fully Coherent Home Node)
+  * HN-I (IO coherent Home Node)
+  * MN (Miscellaneous Node): DVM
+* SN (Subordinate Node)
+  * SN-F (Fully Subordinate Node)
+  * SN-I (IO coherent Subordinate Node)
+
+```
+
+         ┌─────┐┌─────┐┌─────┐
+         │RN-F0││RN-F1││RN-F2│
+         └──┬──┘└──┬──┘└──┬──┘
+        ┌───┴──────┴──────┴───┐
+        │ Interconnect ┌─────┐│
+        │ (ICN)        │MN   ││
+┌─────┐ │              └─────┘│
+│RN-I ├─┤                     │
+└─────┘ │┌─────┐┌─────┐┌─────┐│
+        ││HN-I ││HN-F ││HN-F ││
+        │└──┬──┘└──┬──┘└──┬──┘│
+        │   │      └───┬──┘   │
+        └───│──────────│──────┘
+         ┌──┴──┐    ┌──┴──┐
+         │SN-I │    │SN-F │
+         └─────┘    └─────┘
+```
+
+## B2.1 Channel overview
+
+```
+                        Channel
+┌──────────┐                              ┌───────────┐
+│          ├──TXREQ─▶   ─REQ──   ──RXREQ─▶│           │
+│Request   ├──TXDAT─▶   ─WDAT─   ──RXDAT─▶│Subordinate│
+│Node      ├──TXRSP─▶   ─SRSP─            │Node       │
+│channel   │◀─RXRSP─    ─CRSP─   ◀─RXRSP──┤channel    │
+│desigation│◀─RXDAT─    ─RDAT─   ◀─RXDAT──┤desigation │
+│          │◀─RXSNP─    ─SNP──            │           │
+└──────────┘                              └───────────┘
 ```
 
 # ISA
@@ -3273,12 +3697,6 @@ B2.5.2
 | EL2 | virtualization                            | Hypervisor     |
 | EL3 | switching between Secure/Non-secure state | Secure monitor |
 
-## Arm-Insts
-
-### refs
-
-📑 Arm Architecture Reference Manual Armv8
-
 ### addr
 
 * normal: `[x1]`
@@ -3336,6 +3754,40 @@ E.g. an atomic subtract
 cannot be nested,
 
 as each hardware thread supports only one monitor.
+
+### Privilege Levels
+
+nVHE (none Virtualization Host Extensions)
+
+```
+| EL0 | Guest Apps                | Host Apps |
+| EL1 | Guest OS                  | Host OS   |
+| EL2 | Hypervisor                            |
+| EL3 | Secure Monitor / Firmware             |
+```
+
+VHE (Virtualization Host Extensions)
+
+```
+| EL0 | Guest Apps                | Host Apps |
+| EL1 | Guest OS                  | -         |
+| EL2 | Hypervisor + Host OS                  |
+| EL3 | Secure Monitor / Firmware             |
+```
+
+### Virt
+
+2019.armv8a_virt.pdf
+
+* CPU
+  * 5 Trapping and emulation of instructions
+  * 6 Virtualizing exceptions
+    * Generic Interrupt Controller (GIC version >= 2)
+  * 7 Virtualizing the Generic Timers
+* Mem
+  * 4 Stage2 translation
+* IO
+  * 4.6 System Memory Management Units (SMMU, IOMMU)
 
 ## riscv
 
@@ -3397,6 +3849,18 @@ Version 20191214, Revised 20230723
 |-------------|---------------------|
 | RV32G/RV64G | IMAFDZicsr_Zifencei |
 
+### privilege modes
+
+2024.riscv-priv.pdf: 19.1: Privilege Modes
+
+| Virt | Privilege | Abbr | Name                                | 2Stage Trans |
+|------|-----------|------|-------------------------------------|--------------|
+| 0    | U         | U    | User mode                           | Off          |
+| 0    | S         | HS   | Hypervisor-extended supervisor mode | Off          |
+| 0    | M         | M    | Machine Mode                        | Off          |
+| 1    | U         | VU   | Virtual user mode                   | On           |
+| 1    | S         | VS   | Virtual supervisor mode             | On           |
+
 ### regs
 
 https://en.wikichip.org/wiki/risc-v/registers
@@ -3419,6 +3883,48 @@ https://en.wikichip.org/wiki/risc-v/registers
 | -   | x16-17 | a6-7  | func arg 6-7              | r |
 | -   | x18-27 | s2-11 | saved reg 2-11            | e |
 | -   | x28-31 | t3-t6 | temp reg 3-6              | r |
+
+### imsic csrs
+
+| *iselect | name        |
+|----------|-------------|
+| 0x72     | eithreshold |
+| 0x80     | eip0        |
+| 0x81     | eip1        |
+| …        |             |
+| 0xBF     | eip63       |
+| 0xC0     | eie0        |
+| 0xC1     | eie1        |
+| …        |             |
+| 0xFF     | eie63       |
+
+### imsic mem map
+
+Memory region for an interrupt file
+
+| off  | size | name         |
+|------|------|--------------|
+| 0x00 | 4    | seteipnum_le |
+| 0x04 | 4    | seteipnum_be |
+
+### Privilege Levels
+
+```
+|   | V=0 |                | V=1 |            |
+| U | U   | Host Apps      | VU  | Guest Apps |
+| S | HS  | Host OS        | VS  | Guest OS   |
+| M | M   | Firmware (SBI) | -   | -          |
+```
+
+### Virt
+
+* CPU
+  * H Extensions
+  * 2025.riscv-aia.pdf
+* Mem
+  * H Extensions
+* IO
+  * IOMMU: 2024.riscv-iommu.pdf
 
 ## x86
 
@@ -3649,3 +4155,47 @@ Addressing
 
 * compiler: `__seg_fs`, `__seg_gs`
 * assembly: `mov %fs:offset, %reg`, `mov %reg, %fs:offset`
+
+### Privilege Levels (AMD)
+
+2020.amd64.pdf: 15 Secure Virtual Machine
+
+```
+|      | Host Mode | Guest Mode |
+| CPL3 | Host Apps | Guest Apps |
+| CPL2 | -         | -          |
+| CPL1 | -         | -          |
+| CPL0 | Host OS   | Guest OS   |
+```
+
+### Privilege Levels (Intel)
+
+2023.intel64.pdf: Chapter 24 Introduction to Virtual Machine Extensions
+
+```
+|      | Root Operation | Non-root Operation |
+| CPL3 | Host Apps      | Guest Apps         |
+| CPL2 | -              | -                  |
+| CPL1 | -              | -                  |
+| CPL0 | Host OS        | Guest OS           |
+```
+
+### Virt (AMD)
+
+2020.amd64.pdf: 15 Secure Virtual Machine
+
+TODO
+
+* CPU
+* Mem
+* IO
+
+### Virt (Intel)
+
+2023.intel64.pdf: Chapter 24 Introduction to Virtual Machine Extensions
+
+TODO
+
+* CPU
+* Mem
+* IO

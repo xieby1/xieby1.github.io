@@ -28,6 +28,11 @@ while [[ ${OPTIND} -le $# ]]; do
 done
 NAME=ubuntu-${ARCH}
 
+BINFMTS=""
+for binfmt in /run/binfmt/*; do
+    BINFMTS+=" -v $(realpath ${binfmt}):${binfmt}"
+done
+
 OPTS=(
     "-u root"
     # "--userns=keep-id" # [rootless container]
@@ -38,8 +43,15 @@ OPTS=(
 
     "-v $HOME:$HOME"
     "-v $HOME:/root"
-    "-v /nix:/nix" # make sure symbol links in home work
-    "-v /run/binfmt:/run/binfmt"
+
+    # "-v /nix:/nix" # make sure symbol links in home work
+
+    # BINFMT:
+    # Directly mount NixOS's binfmt folder
+    # "-v /run/binfmt:/run/binfmt"
+    # Mount binfmt interpreter one by one
+    "${BINFMTS}"
+
     "-w $PWD" # working directory
 
     # this will cause guest /etc/hosts override by host's
