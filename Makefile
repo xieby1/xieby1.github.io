@@ -1,3 +1,6 @@
+cheatsheet:
+	cp ~/Documents/Tech/my_cheatsheet.* src/
+
 all: cli gui
 
 cli: src/SUMMARY.md src/scripts/README.md
